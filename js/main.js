@@ -1,5 +1,5 @@
 /* ============================================================
-   Lumitek 0.7 — Core (profile v5, coins economy, VIP, AI plans,
+   Lumitek 0.8 — Core (profile v5, coins economy, VIP, game skins,
    PWA/offline engine, auth hooks, store+weapons, achievements,
    checkout gateway, changelog, game scroll-lock)
    ============================================================ */
@@ -33,13 +33,7 @@ const COIN_PACKAGES = [
 ];
 const VIP_PLAN = { price: 149000, days: 30 };
 
-/* ---- بسته‌ها و اشتراک هوش مصنوعی لومیتک (پرداخت واقعی از فروشگاه) ---- */
-const AI_PLANS = [
-  { id: "ai_q50",  name: { fa: "بسته ۵۰ پرسش", en: "50 Questions" },        questions: 50,  price: 39000, icon: "💬" },
-  { id: "ai_q150", name: { fa: "بسته ۱۵۰ پرسش", en: "150 Questions" },      questions: 150, price: 89000, icon: "🚀", popular: true },
-  { id: "ai_q400", name: { fa: "بسته ۴۰۰ پرسش", en: "400 Questions" },      questions: 400, price: 199000, icon: "🏆" },
-  { id: "ai_unl",  name: { fa: "نامحدود ۱ ماهه", en: "Unlimited — 1 month" }, unlimitedDays: 30, price: 149000, icon: "♾️", best: true }
-];
+/* هوش مصنوعی لومیتک: فقط با سکه — هر پرسش ۲ سکه (بدون اشتراک) */
 
 const defaultProfile = {
   name: "Lumitek User",
@@ -61,6 +55,7 @@ const defaultProfile = {
   aiCredits: 0,
   aiUnlimitedUntil: 0,
   aiAsked: 0,
+  readArticles: [],
   createdAt: Date.now()
 };
 
@@ -86,6 +81,7 @@ function getProfile() {
   p.coinSpent = Math.max(0, parseInt(p.coinSpent, 10) || 0);
   p.vip = !!p.vip;
   p.vipUntil = parseInt(p.vipUntil, 10) || 0;
+  p.readArticles = Array.isArray(raw && raw.readArticles) ? raw.readArticles : [];
   if (p.vip && p.vipUntil && Date.now() > p.vipUntil) { p.vip = false; p.vipUntil = 0; }
   if (p.equippedGun && p.inventory && p.inventory.indexOf(p.equippedGun) === -1) p.equippedGun = "";
   p.aiCredits = Math.max(0, parseInt(p.aiCredits, 10) || 0);
@@ -159,7 +155,7 @@ const catalog = [
   ["جدول NBA", "NBA Standings", "pages/sports.html", "جدول"],
   ["جدول سوپرلیگ ترکیه", "Turkish League Table", "pages/sports.html", "جدول"],
   ["بازی‌های پیش رو", "Upcoming Matches", "pages/sports.html", "بخش"],
-  ["اشتراک هوش مصنوعی", "AI Subscription", "pages/store.html#coins", "فروشگاه"],
+  ["هوش مصنوعی لومیتک", "Lumitek AI", "pages/ai.html", "هوش مصنوعی"],
   ["فناوری", "Technology", "pages/technology.html", "بخش"],
   ["مقالات", "Articles", "pages/articles.html", "بخش"],
   ["پشتیبانی هوشمند", "AI Support", "pages/support.html", "بخش"],
@@ -224,8 +220,20 @@ const catalog = [
   ["آواتار استور", "Store Avatars", "pages/store.html", "فروشگاه"],
   ["عنوان پروفایل", "Profile Titles", "pages/store.html", "فروشگاه"],
   ["اسلحه و اسکین", "Weapons & Skins", "pages/store.html", "فروشگاه"],
+  ["اسکین بازی‌ها", "Game Skins", "pages/store.html", "فروشگاه"],
   ["پاداش روزانه", "Daily Reward", "pages/store.html", "فروشگاه"],
-  ["اشتراک VIP", "VIP Plan", "pages/store.html", "فروشگاه"]
+  ["اشتراک VIP", "VIP Plan", "pages/store.html", "فروشگاه"],
+  ["آموزش پایتون", "Python Tutorial", "pages/articles.html", "مقاله"],
+  ["آموزش HTML", "HTML Tutorial", "pages/articles.html", "مقاله"],
+  ["آموزش CSS", "CSS Tutorial", "pages/articles.html", "مقاله"],
+  ["آموزش جاوااسکریپت", "JavaScript Tutorial", "pages/articles.html", "مقاله"],
+  ["میان‌برهای ویندوز", "Windows Shortcuts", "pages/articles.html", "مقاله"],
+  ["رمز عبور قوی", "Strong Password", "pages/articles.html", "مقاله"],
+  ["آموزش اکسل", "Excel Tutorial", "pages/articles.html", "مقاله"],
+  ["پرامپت‌نویسی", "Prompt Writing", "pages/articles.html", "مقاله"],
+  ["فیشینگ و امنیت اینترنت", "Phishing & Security", "pages/articles.html", "مقاله"],
+  ["سریع‌تر کردن گوشی اندروید", "Speed Up Android", "pages/articles.html", "مقاله"],
+  ["مقالات آموزشی کامپیوتر", "Computer Tutorials", "pages/articles.html", "مقاله"]
 ];
 
 /* ---------------- Store catalog ---------------- */
@@ -269,6 +277,18 @@ const STORE_ITEMS = [
   { id: "gun_toxic",  type: "gun", label: { fa: "اسلحه سمی", en: "Toxic Ray" },        price: 480, rarity: "epic" },
   { id: "gun_plasma", type: "gun", label: { fa: "تفنگ پلاسما", en: "Plasma Rifle" },   price: 700, rarity: "epic" },
   { id: "gun_rainbow",type: "gun", label: { fa: "لیزر رنگین‌کمان", en: "Rainbow Laser" }, price: 1000, rarity: "legendary" },
+  { id: "sniper_night", type: "sniper", label: { fa: "اسنایپر شب‌شکن", en: "Night Sniper" },   price: 450, rarity: "rare" },
+  { id: "sniper_ember", type: "sniper", label: { fa: "اسنایپر گداخته", en: "Ember Sniper" },   price: 700, rarity: "epic" },
+  { id: "sniper_gold",  type: "sniper", label: { fa: "اسنایپر طلایی", en: "Golden Sniper" },   price: 1000, rarity: "legendary" },
+  { id: "car_falcon",   type: "car",    label: { fa: "شاهین سرخ", en: "Red Falcon" },          price: 450, rarity: "rare" },
+  { id: "car_neon",     type: "car",    label: { fa: "گران‌تور نئون", en: "Neon GT" },          price: 700, rarity: "epic" },
+  { id: "car_gold",     type: "car",    label: { fa: "کلاسیک طلایی", en: "Golden Classic" },   price: 1000, rarity: "legendary" },
+  { id: "hero_ninja",   type: "hero",   label: { fa: "نینجای سایه", en: "Shadow Ninja" },      price: 450, rarity: "rare" },
+  { id: "hero_explorer",type: "hero",   label: { fa: "کاوشگر جزیره", en: "Island Explorer" },  price: 700, rarity: "epic" },
+  { id: "hero_frost",   type: "hero",   label: { fa: "پیشتاز یخی", en: "Frost Scout" },        price: 1000, rarity: "legendary" },
+  { id: "tower_magma",  type: "tower",  label: { fa: "برج مذاب", en: "Magma Tower" },          price: 450, rarity: "rare" },
+  { id: "tower_toxic",  type: "tower",  label: { fa: "برج زهرآلود", en: "Toxic Tower" },       price: 700, rarity: "epic" },
+  { id: "tower_frost",  type: "tower",  label: { fa: "برج یخی", en: "Frost Tower" },           price: 1000, rarity: "legendary" },
   { id: "boost_5",  type: "boost", games: 5,  label: { fa: "بوست ۲× XP (۵ بازی)", en: "2× XP Boost (5 games)" }, price: 100, rarity: "common" },
   { id: "boost_10", type: "boost", games: 10, label: { fa: "بوست ۲× XP (۱۰ بازی)", en: "2× XP Boost (10 games)" }, price: 180, rarity: "rare" }
 ];
@@ -282,6 +302,48 @@ const GUN_SKINS = {
   gun_plasma:  { bullet: "#c98bff", glow: "rgba(201,139,255,.85)" },
   gun_rainbow: { bullet: "rainbow", glow: "rgba(255,255,255,.9)" }
 };
+
+/* اسکین‌های بازی‌های ۰.۸: اسنایپر، درگ‌ریس، جزیره گنج، دژبان */
+const GAME_SKINS = {
+  sniper_default: { scope: "#76e6c3", trail: "rgba(118,230,195,.8)" },
+  sniper_night:   { scope: "#7cd5ff", trail: "rgba(124,213,255,.85)" },
+  sniper_ember:   { scope: "#ff8a5c", trail: "rgba(255,138,92,.85)" },
+  sniper_gold:    { scope: "#ffd166", trail: "rgba(255,209,102,.9)" },
+  car_default:    { body: "#3f8cff", glow: "rgba(63,140,255,.6)" },
+  car_falcon:     { body: "#ff5c5c", glow: "rgba(255,92,92,.6)" },
+  car_neon:       { body: "#22e5a5", glow: "rgba(34,229,165,.6)" },
+  car_gold:       { body: "#ffc861", glow: "rgba(255,200,97,.65)" },
+  hero_default:   { skin: "#76e6c3", hat: "#3f8cff" },
+  hero_ninja:     { skin: "#8f9bb3", hat: "#222433" },
+  hero_explorer:  { skin: "#d9a066", hat: "#8a5a2b" },
+  hero_frost:     { skin: "#9fd8ff", hat: "#4f7cb0" },
+  tower_default:  { color: "#7ca7ff", shot: "rgba(124,167,255,.9)" },
+  tower_magma:    { color: "#ff7a45", shot: "rgba(255,122,69,.9)" },
+  tower_toxic:    { color: "#9dff5c", shot: "rgba(157,255,92,.85)" },
+  tower_frost:    { color: "#7cd5ff", shot: "rgba(124,213,255,.9)" }
+};
+const GAME_SKIN_DEFAULTS = { sniper: "sniper_default", car: "car_default", hero: "hero_default", tower: "tower_default" };
+function migrateAiLegacy() {
+  try {
+    const raw = JSON.parse(localStorage.getItem("lumitek_profile_v5") || "null");
+    if (!raw) return;
+    let changed = false;
+    if ((raw.aiCredits || 0) > 0) { raw.coins = (raw.coins || 0) + raw.aiCredits * 2; raw.aiCredits = 0; changed = true; }
+    if (raw.aiUnlimitedUntil && raw.aiUnlimitedUntil > Date.now()) {
+      const days = Math.ceil((raw.aiUnlimitedUntil - Date.now()) / 86400000);
+      raw.coins = (raw.coins || 0) + days * 12; raw.aiUnlimitedUntil = 0; changed = true;
+    }
+    if (changed) localStorage.setItem("lumitek_profile_v5", JSON.stringify(raw));
+  } catch (e) {}
+}
+migrateAiLegacy();
+
+function equippedSkin(kind) {
+  const p = getProfile();
+  const eq = p["equipped_" + kind];
+  if (eq && p.inventory && p.inventory.indexOf(eq) !== -1 && GAME_SKINS[eq]) return eq;
+  return GAME_SKIN_DEFAULTS[kind] || "default";
+}
 
 function equippedGun() {
   const p = getProfile();
@@ -480,7 +542,7 @@ function gameReward(opts) {
 
 /* ---------------- Compatibility bridge (old game code) ---------------- */
 window.Lumitek = {
-  version: "0.7",
+  version: "0.8",
   AI_COST: AI_QUESTION_COST,
   get profile() { return _liveProfile; },
   save: function() {
@@ -495,6 +557,8 @@ window.Lumitek = {
   spendCoins: spendCoins,
   store: { items: STORE_ITEMS, buy: buyItem, equip: equipItem },
   guns: { skins: GUN_SKINS, equipped: equippedGun },
+  gameSkins: GAME_SKINS,
+  skin: equippedSkin,
   achievements: ACHIEVEMENTS
 };
 
@@ -555,6 +619,7 @@ function equipItem(id) {
   else if (item.type === "title") p.title = (p.title === id ? "" : id);
   else if (item.type === "accent") p.accent = (p.accent === item.value ? "" : item.value);
   else if (item.type === "gun") p.equippedGun = (p.equippedGun === id ? "" : id);
+  else if (GAME_SKIN_DEFAULTS[item.type]) p["equipped_" + item.type] = (p["equipped_" + item.type] === id ? "" : id);
   else if (item.type === "boost") return { ok: false, msg: T("m.boostAuto") };
   saveProfile(p);
   applyAccent();
@@ -562,34 +627,18 @@ function equipItem(id) {
 }
 
 /* ---------------- Lumitek AI access engine (سکه / اعتبار / نامحدود) ---------------- */
-function aiAccessMode() {
-  const p = getProfile();
-  if (p.aiUnlimitedUntil && p.aiUnlimitedUntil > Date.now()) return "unlimited";
-  if ((p.aiCredits || 0) > 0) return "credit";
-  return "coins";
-}
+function aiAccessMode() { return "coins"; }
 function aiCanAsk() {
-  if (aiAccessMode() !== "coins") return true;
   return getProfile().coins >= AI_QUESTION_COST;
 }
 function aiConsumeQuestion() {
   const p = getProfile();
-  const mode = aiAccessMode();
-  if (mode === "unlimited") return { ok: true, mode: "unlimited" };
-  if (mode === "credit") {
-    p.aiCredits = Math.max(0, p.aiCredits - 1);
-    saveProfile(p);
-    return { ok: true, mode: "credit" };
-  }
+  const mode = "coins";
   if (spendCoins(AI_QUESTION_COST)) return { ok: true, mode: "coins" };
   return { ok: false };
 }
 function aiRefund(mode) {
-  if (mode === "credit") {
-    const p = getProfile();
-    p.aiCredits = (p.aiCredits || 0) + 1;
-    saveProfile(p);
-  } else if (mode === "coins") {
+  if (mode === "coins") {
     addCoins(AI_QUESTION_COST, true);
   }
 }
@@ -640,21 +689,6 @@ function applyVipPurchase() {
   checkAchievements(p);
   saveProfile(p);
   addNotification("👑", T("m.welcomeVip"));
-}
-
-function applyAiPlanPurchase(id) {
-  const plan = AI_PLANS.filter(function(x){ return x.id === id; })[0];
-  if (!plan) return;
-  const p = getProfile();
-  if (plan.unlimitedDays) {
-    const base = Math.max(Date.now(), p.aiUnlimitedUntil || 0);
-    p.aiUnlimitedUntil = base + plan.unlimitedDays * 24 * 3600 * 1000;
-  } else {
-    p.aiCredits = (p.aiCredits || 0) + plan.questions;
-  }
-  checkAchievements(p);
-  saveProfile(p);
-  addNotification("✨", getLang() === "fa" ? "بسته هوش مصنوعی لومیتک فعال شد!" : "Lumitek AI plan activated!");
 }
 
 function buyPackage(id) {
@@ -771,12 +805,16 @@ function applyLanguage() {
 /* ---------------- Profile rendering ---------------- */
 function renderProfile() {
   const p = getProfile();
-  document.querySelectorAll("[data-profile-name]").forEach(function(el){ el.textContent = p.name; });
+  const signedOut = window.LumiAuth ? !window.LumiAuth.currentUser() : false;
+  document.querySelectorAll("[data-profile-name]").forEach(function(el){
+    el.textContent = signedOut ? (getLang() === "fa" ? "ورود / ثبت‌نام" : "Sign in / Up") : p.name;
+  });
+  document.querySelectorAll("#profileButton").forEach(function(el){ el.classList.toggle("signedout", signedOut); });
   document.querySelectorAll("[data-profile-level]").forEach(function(el){ el.textContent = p.level; });
   document.querySelectorAll("[data-profile-xp]").forEach(function(el){ el.textContent = p.xp; });
   document.querySelectorAll("[data-profile-coins]").forEach(function(el){ el.textContent = p.coins.toLocaleString(getLang() === "fa" ? "fa-IR" : "en-US"); });
   document.querySelectorAll("[data-games-played]").forEach(function(el){ el.textContent = p.gamesPlayed; });
-  document.querySelectorAll("[data-profile-avatar]").forEach(function(el){ el.textContent = p.avatar; });
+  document.querySelectorAll("[data-profile-avatar]").forEach(function(el){ el.textContent = signedOut ? "👤" : p.avatar; });
   document.querySelectorAll("[data-profile-title]").forEach(function(el){ el.textContent = currentTitle(p); });
   const need = xpForNext(p.level);
   document.querySelectorAll("[data-profile-xpbar]").forEach(function(el){ el.style.width = Math.min(100, Math.round(p.xp / need * 100)) + "%"; });
@@ -931,6 +969,10 @@ function setupProfile() {
   if (!modal || !open) return;
 
   open.addEventListener("click", function() {
+    if (window.LumiAuth && !window.LumiAuth.currentUser() && typeof window.LumiAuth.openModal === "function") {
+      window.LumiAuth.openModal();
+      return;
+    }
     const p = getProfile();
     if (input) input.value = p.name;
     modal.classList.add("show");
@@ -980,6 +1022,7 @@ function setupNotifications() {
 
 /* ---------------- Changelog (تغییرات نسخه‌ها در هدر) ---------------- */
 const LUMITEK_VERSIONS = [
+  { v: "0.8", fa: "۴ بازی جدید با اسکین اختصاصی در فروشگاه، ۴ ابزار جدید، ۱۰ مقاله آموزشی، اسپورتک با رشته‌ها و لیگ‌های بیشتر و اخبار تخصصی هر رشته، ورود مهمان و ورود با مایکروسافت، فوتر شبکه‌های اجتماعی ایرانی و ظاهر بهتر", en: "4 new games with store skins, 4 new tools, 10 tutorial articles, Sportek with more sports/leagues & per-sport news, guest + Microsoft sign-in, Iranian social footer and UI polish" },
   { v: "0.7", fa: "لوگوی جدید در هدر، اسپورتک با جدول لیگ‌ها و بازی‌های پیش رو، ۴ بازی جدید، ماشین‌حساب مهندسی کامل، درگاه پرداخت فروشگاه، ارتقای ابزارها و هوش مصنوعی قوی‌تر", en: "New header logo, Sportek with league tables & fixtures, 4 new games, full engineering calculator, store checkout, upgraded tools and stronger AI" },
   { v: "0.6", fa: "فروشگاه کامل (سکه، اسلحه، اسکین)، ۶ بازی و ۹ ابزار جدید، هوش مصنوعی لومیتک با هزینه ۲ سکه", en: "Full store (coins, guns, skins), 6 new games & 9 new tools, Lumitek AI at 2 coins per question" },
   { v: "0.5", fa: "موتور آفلاین، نصب PWA، فروشگاه سکه و VIP، ورود با گوگل", en: "Offline engine, PWA install, coin store & VIP, Google sign-in" },
@@ -1282,11 +1325,11 @@ document.addEventListener("DOMContentLoaded", function() {
     window.LumiAuth.onChange(function() { renderProfile(); });
   }
 
-  const notifyFirst = localStorage.getItem("lumitek_first_notice_v7");
+  const notifyFirst = localStorage.getItem("lumitek_first_notice_v8");
   if (!notifyFirst) {
     addNotification("🚀", getLang() === "fa"
-      ? "Lumitek 0.7 منتشر شد: لوگوی جدید، اسپورتک با جدول لیگ‌ها، ۴ بازی جدید، ماشین‌حساب مهندسی کامل و درگاه پرداخت!"
-      : "Lumitek 0.7 is out: new logo, Sportek league tables, 4 new games, full engineering calculator and store checkout!");
-    localStorage.setItem("lumitek_first_notice_v7", "1");
+      ? "Lumitek 0.8 منتشر شد: ۱۰ مقاله آموزشی با خواندن داخل سایت، اسکین بازی‌ها، ورود مهمان و مایکروسافت، ۴ رشته ورزشی جدید و فوتر اجتماعی ایرانی!"
+      : "Lumitek 0.8 is out: 10 in-site tutorials, game skins, guest & Microsoft sign-in, 4 new sports and Iranian social footer!");
+    localStorage.setItem("lumitek_first_notice_v8", "1");
   }
 });

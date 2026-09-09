@@ -1,5 +1,5 @@
 /* ============================================================
-   Lumitek 0.5 — Auth (demo mode + Firebase-ready)
+   Lumitek 0.8 — Auth (demo mode + Firebase-ready)
    ------------------------------------------------------------
    حالت فعلی: "demo" — حساب‌ها روی localStorage همین مرورگر
    ذخیره می‌شوند (ایمیل + رمز هش‌شده با SHA-256 + salt).
@@ -109,6 +109,35 @@ window.LumiAuth = (function () {
 
   /* ورود با گوگل — در حالت نمایشی یک حساب گوگل محلی می‌سازد/وارد می‌کند.
      با Firebase واقعی، از popup گوگل استفاده می‌شود. */
+  function signInGuest() {
+    if (AUTH_CONFIG.provider === "firebase") return Promise.reject({ code: "errWrong" });
+    var email = "guest@lumitek.local";
+    var u = { email: email, name: "مهمان", provider: "guest", createdAt: Date.now() };
+    var users = usersObj();
+    if (!users[email]) { users[email] = u; saveUsers(users); }
+    setSession(u);
+    return Promise.resolve();
+  }
+
+  function usersObj() {
+    try { return JSON.parse(localStorage.getItem(USERS_KEY)) || {}; } catch (e) { return {}; }
+  }
+
+  function signInMicrosoft(email) {
+    email = (email || "").trim().toLowerCase();
+    if (!validEmail(email)) return Promise.reject({ code: "errEmail" });
+    if (AUTH_CONFIG.provider === "firebase") return Promise.reject({ code: "errWrong" });
+    var users = usersObj();
+    var u = users[email];
+    if (u && u.provider === "local") return Promise.reject({ code: "errTaken" });
+    if (!u) {
+      u = { email: email, name: email.split("@")[0], provider: "microsoft", createdAt: Date.now() };
+      users[email] = u; saveUsers(users);
+    }
+    setSession(u);
+    return Promise.resolve();
+  }
+
   function signInGoogle() {
     if (AUTH_CONFIG.provider === "firebase" && window.firebase) {
       var provider = new firebase.auth.GoogleAuthProvider();
@@ -153,6 +182,9 @@ window.LumiAuth = (function () {
   }
 
   /* --- UI: auth modal --- */
+  function msLogo() {
+    return '<svg width="18" height="18" viewBox="0 0 23 23"><rect x="1" y="1" width="10" height="10" fill="#F25022"/><rect x="12" y="1" width="10" height="10" fill="#7FBA00"/><rect x="1" y="12" width="10" height="10" fill="#00A4EF"/><rect x="12" y="12" width="10" height="10" fill="#FFB900"/></svg>';
+  }
   function ensureModal() {
     if (document.querySelector("#authModal")) return;
     var m = document.createElement("div");
@@ -161,24 +193,37 @@ window.LumiAuth = (function () {
     m.innerHTML =
       '<div class="modal-card modal-small">' +
       '<button class="modal-close" data-auth-close>×</button>' +
-      '<h3 class="auth-title">' + "ورود به Lumitek" + '</h3>' +
+      '<div class="auth-brand"><span class="auth-brand-logo">⚡</span><h3 class="auth-title">ورود به Lumitek</h3></div>' +
+      '<div data-auth-main>' +
+      '<div class="auth-oauth-row">' +
       '<button class="google-btn" data-auth-google>' +
       '<svg width="18" height="18" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.9 1.2 8 3l5.7-5.7C34.3 6.1 29.4 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.6-.4-3.9z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.9 1.2 8 3l5.7-5.7C34.3 6.1 29.4 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C36.9 39.2 44 34 44 24c0-1.3-.1-2.6-.4-3.9z"/></svg>' +
       '<span>ادامه با گوگل</span></button>' +
+      '<button class="ms-btn" data-auth-ms>' + msLogo() + '<span>ورود با مایکروسافت</span></button>' +
+      '</div>' +
+      '<button class="guest-btn" data-auth-guest>👤 <span>ورود سریع به عنوان مهمان</span></button>' +
       '<div class="auth-or"><span></span><i data-i18n="auth.or">یا با ایمیل</i><span></span></div>' +
       '<div class="auth-tabs"><button data-auth-tab="in" class="active">ورود</button><button data-auth-tab="up">ثبت‌نام</button></div>' +
       '<div data-auth-mode="in">' +
       '<input data-auth-email type="email" autocomplete="email" placeholder="ایمیل">' +
-      '<input data-auth-pass type="password" autocomplete="current-password" placeholder="رمز عبور">' +
+      '<div class="auth-pass-wrap"><input data-auth-pass type="password" autocomplete="current-password" placeholder="رمز عبور"><button type="button" class="auth-eye" data-auth-eye tabindex="-1">👁</button></div>' +
       '</div>' +
       '<div data-auth-mode="up" style="display:none">' +
       '<input data-auth-name type="text" maxlength="24" placeholder="نام نمایشی">' +
       '<input data-auth-email2 type="email" autocomplete="email" placeholder="ایمیل">' +
-      '<input data-auth-pass2 type="password" autocomplete="new-password" placeholder="رمز عبور (حداقل ۶ کاراکتر)">' +
+      '<div class="auth-pass-wrap"><input data-auth-pass2 type="password" autocomplete="new-password" placeholder="رمز عبور (حداقل ۶ کاراکتر)"><button type="button" class="auth-eye" data-auth-eye tabindex="-1">👁</button></div>' +
       '</div>' +
       '<div class="auth-error" data-auth-error style="display:none"></div>' +
       '<button class="primary-btn" style="width:100%" data-auth-submit>ورود</button>' +
-      '<p class="auth-note">حالت نمایشی: حساب‌ها روی همین مرورگر ذخیره می‌شوند. برای ورود واقعی گوگل/ایمیل، Firebase را در فایل js/auth.js وصل کن.</p>' +
+      '</div>' +
+      '<div data-auth-msstep style="display:none">' +
+      '<p class="auth-ms-lead" data-i18n="auth.msLead">برای ورود با مایکروسافت، ایمیل اکانت خود را وارد کن:</p>' +
+      '<input data-auth-msemail type="email" autocomplete="email" dir="ltr" placeholder="you@outlook.com">' +
+      '<div class="auth-error" data-auth-error2 style="display:none"></div>' +
+      '<button class="ms-btn ms-solid" style="width:100%;justify-content:center" data-auth-msgo>' + msLogo() + '<span>ادامه با مایکروسافت</span></button>' +
+      '<button class="ghost-btn" style="width:100%;margin-top:8px" data-auth-msback>بازگشت</button>' +
+      '</div>' +
+      '<p class="auth-note">حالت نمایشی: حساب‌ها روی همین مرورگر ذخیره می‌شوند. برای ورود واقعی گوگل/مایکروسافت/ایمیل، Firebase را در فایل js/auth.js وصل کن.</p>' +
       '</div>';
     document.body.appendChild(m);
     translateModal(m);
@@ -189,6 +234,8 @@ window.LumiAuth = (function () {
     if (!window.LumiI18n) return;
     m.querySelector(".auth-title").textContent = T("auth.title");
     m.querySelector("[data-auth-google] span").textContent = T("auth.google");
+    m.querySelector("[data-auth-ms] span").textContent = T("auth.ms") || "ورود با مایکروسافت";
+    m.querySelector("[data-auth-guest] span").textContent = T("auth.guest") || "ورود سریع به عنوان مهمان";
     m.querySelector("[data-i18n='auth.or']").textContent = T("auth.or");
     var tabs = m.querySelectorAll(".auth-tabs button");
     tabs[0].textContent = T("auth.signinTab"); tabs[1].textContent = T("auth.signupTab");
@@ -199,17 +246,49 @@ window.LumiAuth = (function () {
     m.querySelector("[data-auth-pass2]").placeholder = T("auth.pass");
     m.querySelector("[data-auth-submit]").textContent = T("auth.signinBtn");
     m.querySelector(".auth-note").textContent = T("auth.demoNote");
+    var lead = m.querySelector("[data-i18n='auth.msLead']");
+    if (lead) lead.textContent = T("auth.msLead") || "برای ورود با مایکروسافت، ایمیل اکانت خود را وارد کن:";
+  }
+
+  function showMsStep(m, on) {
+    m.querySelector("[data-auth-main]").style.display = on ? "none" : "";
+    m.querySelector("[data-auth-msstep]").style.display = on ? "" : "none";
   }
 
   var mode = "in";
 
   function wireModal(m) {
     m.addEventListener("click", function (e) {
-      if (e.target === m || e.target.hasAttribute("data-auth-close")) { m.classList.remove("show"); return; }
+      if (e.target === m || e.target.hasAttribute("data-auth-close")) { m.classList.remove("show"); showMsStep(m, false); return; }
       var g = e.target.closest("[data-auth-google]");
       if (g) {
         setLoading(g, true);
         signInGoogle().then(function () { ok(); }).catch(function (err) { showErr(err && err.code); }).finally(function () { setLoading(g, false); });
+        return;
+      }
+      var ms = e.target.closest("[data-auth-ms]");
+      if (ms) { showMsStep(m, true); var f = m.querySelector("[data-auth-msemail]"); setTimeout(function(){ f && f.focus(); }, 60); return; }
+      var back = e.target.closest("[data-auth-msback]");
+      if (back) { showMsStep(m, false); return; }
+      var msgo = e.target.closest("[data-auth-msgo]");
+      if (msgo) {
+        setLoading(msgo, true);
+        signInMicrosoft(m.querySelector("[data-auth-msemail]").value)
+          .then(function () { showMsStep(m, false); ok(); })
+          .catch(function (err) { var el = m.querySelector("[data-auth-error2]"); el.textContent = err && err.code ? T("auth." + err.code) : T("auth.errWrong"); el.style.display = "block"; })
+          .finally(function () { setLoading(msgo, false); });
+        return;
+      }
+      var guest = e.target.closest("[data-auth-guest]");
+      if (guest) {
+        setLoading(guest, true);
+        signInGuest().then(function () { ok(); }).catch(function (err) { showErr(err && err.code); }).finally(function () { setLoading(guest, false); });
+        return;
+      }
+      var eye = e.target.closest("[data-auth-eye]");
+      if (eye) {
+        var inp = eye.parentElement.querySelector("input");
+        if (inp) { inp.type = inp.type === "password" ? "text" : "password"; eye.textContent = inp.type === "password" ? "👁" : "🙈"; }
         return;
       }
       var tab = e.target.closest("[data-auth-tab]");
@@ -225,7 +304,11 @@ window.LumiAuth = (function () {
       if (e.target.closest("[data-auth-submit]")) submit(m);
     });
     m.addEventListener("keydown", function (e) {
-      if (e.key === "Enter" && e.target.tagName === "INPUT") submit(m);
+      if (e.key === "Enter" && e.target.tagName === "INPUT") {
+        var inMs = m.querySelector("[data-auth-msstep]").style.display !== "none";
+        if (inMs) { if (e.target === m.querySelector("[data-auth-msemail]")) { var go = m.querySelector("[data-auth-msgo]"); go && go.click(); } return; }
+        submit(m);
+      }
     });
   }
 

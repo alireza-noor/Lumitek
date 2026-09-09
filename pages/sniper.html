@@ -3,23 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>🌀 ماز | بازی‌های Lumitek</title>
-<meta name="description" content="بازی ماز آنلاین — از هزارتوی تصادفی به گنج برس؛ هر بار یک ماز جدید با سطح‌های سخت‌تر.">
+<title>🎯 تک‌تیرانداز حرفه‌ای | بازی‌های Lumitek</title>
+<meta name="description" content="بازی تیراندازی تک‌تیرانداز با زوم، باد و اهداف متحرک — اسکین اسلحه از فروشگاه لومیتک.">
 <meta name="keywords" content="لومیتک, lumitek, بازی آنلاین, ابزار آنلاین, هوش مصنوعی, خرید سکه, وب اپلیکیشن">
 <meta name="robots" content="index,follow">
 <meta name="theme-color" content="#070b15">
-<link rel="canonical" href="https://lumitek.netlify.app/pages/maze.html">
+<link rel="canonical" href="https://lumitek.netlify.app/pages/sniper.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Lumitek">
-<meta property="og:title" content="🌀 ماز | بازی‌های Lumitek">
-<meta property="og:description" content="بازی ماز آنلاین — از هزارتوی تصادفی به گنج برس؛ هر بار یک ماز جدید با سطح‌های سخت‌تر.">
-<meta property="og:url" content="https://lumitek.netlify.app/pages/maze.html">
+<meta property="og:title" content="🎯 تک‌تیرانداز حرفه‌ای | بازی‌های Lumitek">
+<meta property="og:description" content="بازی تیراندازی تک‌تیرانداز با زوم، باد و اهداف متحرک — اسکین اسلحه از فروشگاه لومیتک.">
+<meta property="og:url" content="https://lumitek.netlify.app/pages/drive.html">
 <meta property="og:image" content="https://lumitek.netlify.app/assets/icons/og-cover.png">
 <meta property="og:locale" content="fa_IR">
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="🌀 ماز | بازی‌های Lumitek">
-<meta name="twitter:description" content="بازی ماز آنلاین — از هزارتوی تصادفی به گنج برس؛ هر بار یک ماز جدید با سطح‌های سخت‌تر.">
+<meta name="twitter:title" content="🎯 تک‌تیرانداز حرفه‌ای | بازی‌های Lumitek">
+<meta name="twitter:description" content="بازی تیراندازی تک‌تیرانداز با زوم، باد و اهداف متحرک — اسکین اسلحه از فروشگاه لومیتک.">
 <meta name="twitter:image" content="https://lumitek.netlify.app/assets/icons/og-cover.png">
 <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
 <link rel="apple-touch-icon" href="../assets/icons/icon-192.png">
@@ -104,24 +104,32 @@
 </div>
 <main class="page"><div class="game">
 <p class="eyebrow">LUMITEK GAME · NEW</p>
-<h1 data-i18n="g.maze.n">🌀 ماز</h1>
-<p class="muted" data-i18n="g.maze.d">از هزارتوی تصادفی به گنج برس — هر بار یک ماز جدید!</p>
+<h1 data-i18n="g.sniper.n">🎯 تک‌تیرانداز حرفه‌ای</h1>
+<p class="muted" data-i18n="g.sniper.d">زوم کن، باد را حساب کن و اهداف متحرک را بزن — با اسنایپرهای فروشگاه اسکین اختصاصی بگیر!</p>
 
 <div class="gamebox mt">
   <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
-    <span class="coin-pill"><span data-i18n="games.cat.puzzle">پازل</span> <b id="mzLevel">1</b></span>
-    <span class="coin-pill">⏱️ <b id="mzTime">0</b>s</span>
-    <span class="coin-pill">🏆 <span data-i18n="unit.solved">حل‌شده:</span> <b id="mzSolved">0</b></span>
+    <span class="coin-pill">⭐ <b id="snScore">0</b></span>
+    <span class="coin-pill">⏱ <b id="snTime">60</b>s</span>
+    <span class="coin-pill">🌬 باد: <b id="snWind">•</b></span>
+    <span class="coin-pill">🏆 <span data-i18n="games.yourBest">رکورد شما</span>: <b id="snBest">—</b></span>
   </div>
-  <canvas id="mzCanvas" width="361" height="361" style="max-width:100%;border-radius:16px;touch-action:none;margin-top:12px"></canvas>
-  <div class="snake-pad">
-    <span></span><button data-dir="up">▲</button><span></span>
-    <button data-dir="left">◀</button><button data-dir="down">▼</button><button data-dir="right">▶</button>
+  <canvas id="snCanvas" width="360" height="520" style="max-width:100%;border-radius:16px;touch-action:none;margin-top:12px"></canvas>
+  <div style="display:flex;gap:10px;justify-content:center;margin-top:12px;flex-wrap:wrap">
+    <button class="gamebutton" id="snStart">شروع بازی</button>
+    <button class="gamebutton" id="snZoom" style="background:var(--card2)">🔭 زوم</button>
   </div>
-  <button class="gamebutton" id="mzNew" style="margin-top:10px">ماز جدید</button>
-  <p id="mzMsg" class="muted" style="margin:8px 0 0"></p>
+  <div class="sh-hint" id="snHint">🎯 لمس/کلیک = شلیک | Space = زوم/شروع | وسط هدف = ۵۰ امتیاز | کامبو = امتیاز بیشتر</div>
+  <p id="snReward" class="muted" style="margin:8px 0 0"></p>
+</div>
+
+<div class="grid mt" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
+  <div class="card"><h3>🌬 باد را بخوان</h3><p class="muted">هر راند باد تغییر می‌کند و گلوله در جهت باد منحرف می‌شود؛ با فلش باد حساب کن و زودتر جلوتر نشانه بگیر.</p></div>
+  <div class="card"><h3>🔭 زوم تک‌تیر</h3><p class="muted">با زوم، لرزش دست نصف می‌شود و نشانه‌روی دقیق‌تر است — ولی بخشی از دیدت را از دست می‌دهی.</p></div>
+  <div class="card"><h3>🎨 اسکین اسنایپر</h3><p class="muted">اسنایپر شب‌شکن، گداخته یا طلایی را از فروشگاه بگیر تا نشانه‌گر با رنگ اختصاصی خودت بدرخشد.</p></div>
 </div>
 </div></main>
+
 
 <footer class="footer-v2">
   <div class="fv-grid">
@@ -182,155 +190,163 @@
   </div>
 </footer>
 
+
+
 <script src="../js/i18n.js"></script>
 <script src="../js/main.js"></script>
 <script src="../js/auth.js"></script>
-
 <script>
+/* Lumitek 0.8 — تک‌تیرانداز حرفه‌ای */
 (function(){
-  var canvas = document.getElementById("mzCanvas");
-  var ctx = canvas.getContext("2d");
-  var W = canvas.width, COLS = 15, CELL = W / COLS, ROWS = COLS;
-  var levelEl = document.getElementById("mzLevel");
-  var timeEl = document.getElementById("mzTime");
-  var solvedEl = document.getElementById("mzSolved");
-  var msgEl = document.getElementById("mzMsg");
-  function L(fa,en){ return getLang()==="fa"?fa:en; }
+  var canvas = document.getElementById("snCanvas"), ctx = canvas.getContext("2d");
+  var W = canvas.width, H = canvas.height;
+  var L = function(fa, en){ return (window.LumiI18n && getLang() === "en") ? en : fa; };
+  var running = false, t0 = 0, last = 0, score = 0, timeLeft = 60, combo = 0;
+  var targets = [], flash = 0, wind = 0, scoped = false, sway = 0, spawnT = 0;
+  var aim = { x: W/2, y: H/2 }, pointer = { x: W/2, y: H/2 };
+  var skin = { scope: "#76e6c3", trail: "rgba(118,230,195,.8)" };
+  try {
+    var gs = (window.Lumitek && Lumitek.skin) ? Lumitek.skin("sniper") : "sniper_default";
+    var all = (window.Lumitek && Lumitek.gameSkins) ? Lumitek.gameSkins : {};
+    if (all[gs]) skin = all[gs];
+  } catch(e) {}
 
-  var p0 = getProfile();
-  var solvedTotal = p0.bests.mazeSolves || 0;
-  solvedEl.textContent = solvedTotal;
-
-  var grid, player, goal, level = 1, timer = null, seconds = 0, solvedNow = false;
-
-  function newMaze() {
-    grid = [];
-    for (var y = 0; y < ROWS; y++) {
-      var row = [];
-      for (var x = 0; x < COLS; x++) row.push({ v: [1,1,1,1], seen: false }); /* top,right,bottom,left walls */
-      grid.push(row);
-    }
-    var stack = [[0,0]];
-    grid[0][0].seen = true;
-    var DIRS = [[0,-1,0,2],[1,0,1,3],[0,1,2,0],[-1,0,3,1]];
-    while (stack.length) {
-      var cur = stack[stack.length-1];
-      var cx = cur[0], cy = cur[1];
-      var opts = [];
-      for (var d = 0; d < 4; d++) {
-        var nx = cx + DIRS[d][0], ny = cy + DIRS[d][1];
-        if (nx >= 0 && ny >= 0 && nx < COLS && ny < ROWS && !grid[ny][nx].seen) opts.push(d);
-      }
-      if (!opts.length) { stack.pop(); continue; }
-      var dd = opts[Math.floor(Math.random()*opts.length)];
-      grid[cy][cx].v[DIRS[dd][2]] = 0;
-      grid[cy+DIRS[dd][1]][cx+DIRS[dd][0]].v[DIRS[dd][3]] = 0;
-      grid[cy+DIRS[dd][1]][cx+DIRS[dd][0]].seen = true;
-      stack.push([cx+DIRS[dd][0], cy+DIRS[dd][1]]);
-    }
-    player = { x: 0, y: 0 };
-    goal = { x: COLS-1, y: ROWS-1 };
-    seconds = 0; solvedNow = false;
-    timeEl.textContent = "0";
-    levelEl.textContent = level;
-    msgEl.textContent = "";
-    draw();
-    if (timer) clearInterval(timer);
-    timer = setInterval(function(){ seconds++; timeEl.textContent = seconds; }, 1000);
+  function paintBest() {
+    var b = (getProfile().bests || {}).sniper;
+    document.getElementById("snBest").textContent = b != null ? b : "—";
   }
+  document.addEventListener("lumitek:langchange", paintBest); paintBest();
 
-  function cssVar(n){ return getComputedStyle(document.documentElement).getPropertyValue(n).trim() || "#76e6c3"; }
-
+  function reset() {
+    score = 0; timeLeft = 60; targets = []; combo = 0; spawnT = 0; flash = 0;
+    wind = (Math.random() * 6 - 3);
+    updHud();
+  }
+  function updHud() {
+    document.getElementById("snScore").textContent = score;
+    document.getElementById("snTime").textContent = Math.ceil(timeLeft);
+    var w = document.getElementById("snWind");
+    w.textContent = (wind > 0 ? "→ " : wind < 0 ? "← " : "• ") + Math.abs(wind).toFixed(1);
+    w.style.color = Math.abs(wind) > 1.5 ? "var(--a)" : "";
+  }
+  function spawn() {
+    var r = 16 + Math.random() * 14;
+    var y = 90 + Math.random() * (H - 240);
+    var fromLeft = Math.random() < .5;
+    targets.push({ x: fromLeft ? -r : W + r, y: y, r: r, vx: (fromLeft ? 1 : -1) * (0.7 + Math.random() * 1.6), ring: r * .38 });
+  }
+  function loop(ts) {
+    if (!running) return;
+    if (!t0) t0 = ts;
+    var dt = Math.min(50, ts - (last || ts)); last = ts;
+    timeLeft -= dt / 1000;
+    if (timeLeft <= 0) { end(); return; }
+    sway += dt / 1000;
+    spawnT -= dt / 1000;
+    if (spawnT <= 0 && targets.length < 5) { spawn(); spawnT = 1.25 - Math.min(.7, (60 - timeLeft) * .012); }
+    targets.forEach(function(t){ t.x += t.vx * dt / 16; });
+    targets = targets.filter(function(t){ return t.x > -80 && t.x < W + 80; });
+    var sv = scoped ? 1.2 : 2.6;
+    aim.x += ((pointer.x + Math.sin(sway * 2.1) * sv) - aim.x) * .35;
+    aim.y += ((pointer.y + Math.cos(sway * 1.7) * sv * .8) - aim.y) * .35;
+    if (flash > 0) flash -= dt / 1000;
+    draw();
+    updHud();
+    requestAnimationFrame(loop);
+  }
   function draw() {
-    ctx.clearRect(0,0,W,W);
-    ctx.fillStyle = "rgba(255,255,255,.03)";
-    ctx.fillRect(0,0,W,W);
-    ctx.strokeStyle = cssVar("--line") || "#25324a";
-    ctx.lineWidth = 2.4;
-    ctx.lineCap = "round";
-    for (var y = 0; y < ROWS; y++) for (var x = 0; x < COLS; x++) {
-      var c = grid[y][x], px = x*CELL, py = y*CELL;
-      ctx.beginPath();
-      if (c.v[0]) { ctx.moveTo(px, py); ctx.lineTo(px+CELL, py); }
-      if (c.v[1]) { ctx.moveTo(px+CELL, py); ctx.lineTo(px+CELL, py+CELL); }
-      if (c.v[2]) { ctx.moveTo(px, py+CELL); ctx.lineTo(px+CELL, py+CELL); }
-      if (c.v[3]) { ctx.moveTo(px, py); ctx.lineTo(px, py+CELL); }
-      ctx.stroke();
+    var g = ctx.createLinearGradient(0, 0, 0, H);
+    var light = document.documentElement.classList.contains("light");
+    g.addColorStop(0, light ? "#dfeeff" : "#0b1024"); g.addColorStop(.7, light ? "#cfe3f8" : "#131a33"); g.addColorStop(1, light ? "#e8dfc8" : "#2a2417");
+    ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+    ctx.fillStyle = light ? "#c9b98a" : "#3a3122"; ctx.fillRect(0, H - 90, W, 90);
+    ctx.fillStyle = light ? "#b7a675" : "#463a28"; ctx.fillRect(0, H - 90, W, 8);
+    for (var i = 0; i < 6; i++) {
+      var tx = 30 + i * 62;
+      ctx.fillStyle = light ? "#5d4a2f" : "#241d12"; ctx.fillRect(tx, H - 118, 8, 34);
+      ctx.fillStyle = light ? "#3e7a4a" : "#173322"; ctx.beginPath(); ctx.arc(tx + 4, H - 128, 20, 0, 7); ctx.fill();
     }
-    /* goal treasure */
-    ctx.font = (CELL*0.72)+"px serif";
-    ctx.textAlign = "center"; ctx.textBaseline = "middle";
-    ctx.fillText("💎", goal.x*CELL + CELL/2, goal.y*CELL + CELL/2 + 1);
-    /* player */
-    var px2 = player.x*CELL + CELL/2, py2 = player.y*CELL + CELL/2;
-    var grad = ctx.createRadialGradient(px2,py2,2,px2,py2,CELL*0.75);
-    grad.addColorStop(0, cssVar("--a")); grad.addColorStop(1, "transparent");
-    ctx.fillStyle = grad;
-    ctx.beginPath(); ctx.arc(px2,py2,CELL*0.75,0,7); ctx.fill();
-    ctx.fillStyle = cssVar("--a");
-    ctx.beginPath(); ctx.arc(px2,py2,CELL*0.3,0,7); ctx.fill();
-  }
-
-  function move(dx, dy) {
-    if (solvedNow) return;
-    var c = grid[player.y][player.x];
-    if (dx === 1 && c.v[1]) return;
-    if (dx === -1 && c.v[3]) return;
-    if (dy === 1 && c.v[2]) return;
-    if (dy === -1 && c.v[0]) return;
-    player.x += dx; player.y += dy;
-    draw();
-    if (player.x === goal.x && player.y === goal.y) finish();
-  }
-
-  function finish() {
-    solvedNow = true;
-    clearInterval(timer);
-    solvedTotal++; solvedNow = true;
-    solvedEl.textContent = solvedTotal;
-    var base = 30 + level*8;
-    var bonus = Math.max(5, 60 - seconds*2);
-    var xp = base + bonus, coins = 8 + level*2;
-    Lumitek.reward({ xp: xp, coins: coins, game: "mazeSolves", score: solvedTotal });
-    updateBest("maze", seconds, true);
-    msgEl.textContent = L("🎉 ماز حل شد! +"+xp+" XP و +"+coins+" سکه — ماز بعدی سخت‌تر است.", "🎉 Maze solved! +"+xp+" XP and +"+coins+" coins — next one is harder.");
-    level++;
-    setTimeout(function(){ newMaze(); }, 1600);
-  }
-
-  document.addEventListener("keydown", function(e) {
-    if (e.key === "ArrowUp" || e.key === "w") move(0,-1);
-    if (e.key === "ArrowDown" || e.key === "s") move(0,1);
-    if (e.key === "ArrowLeft" || e.key === "a") move(-1,0);
-    if (e.key === "ArrowRight" || e.key === "d") move(1,0);
-  });
-  document.querySelectorAll(".snake-pad button").forEach(function(b) {
-    b.addEventListener("click", function() {
-      var d = b.getAttribute("data-dir");
-      if (d === "up") move(0,-1);
-      if (d === "down") move(0,1);
-      if (d === "left") move(-1,0);
-      if (d === "right") move(1,0);
+    targets.forEach(function(t) {
+      ctx.beginPath(); ctx.arc(t.x, t.y, t.r, 0, 7); ctx.fillStyle = "#f3f5f7"; ctx.fill();
+      ctx.beginPath(); ctx.arc(t.x, t.y, t.r * .68, 0, 7); ctx.fillStyle = "#e33"; ctx.fill();
+      ctx.beginPath(); ctx.arc(t.x, t.y, t.r * .38, 0, 7); ctx.fillStyle = "#f3f5f7"; ctx.fill();
+      ctx.beginPath(); ctx.arc(t.x, t.y, t.r * .18, 0, 7); ctx.fillStyle = "#e33"; ctx.fill();
+      ctx.strokeStyle = "rgba(0,0,0,.25)"; ctx.stroke();
     });
+    if (scoped) {
+      ctx.save();
+      var rg = ctx.createRadialGradient(aim.x, aim.y, 90, aim.x, aim.y, 300);
+      rg.addColorStop(0, "rgba(0,0,0,0)"); rg.addColorStop(1, "rgba(0,0,0,.72)");
+      ctx.fillStyle = rg; ctx.fillRect(0, 0, W, H);
+      ctx.restore();
+    }
+    ctx.strokeStyle = skin.scope; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.moveTo(aim.x - 16, aim.y); ctx.lineTo(aim.x - 5, aim.y);
+    ctx.moveTo(aim.x + 5, aim.y); ctx.lineTo(aim.x + 16, aim.y);
+    ctx.moveTo(aim.x, aim.y - 16); ctx.lineTo(aim.x, aim.y - 5);
+    ctx.moveTo(aim.x, aim.y + 5); ctx.lineTo(aim.x, aim.y + 16); ctx.stroke();
+    ctx.beginPath(); ctx.arc(aim.x, aim.y, 2.2, 0, 7); ctx.fillStyle = skin.scope; ctx.fill();
+    if (flash > 0) {
+      ctx.fillStyle = "rgba(255,220,120," + (flash * 2 > 1 ? 1 : flash * 2) + ")";
+      ctx.beginPath(); ctx.arc(aim.x, aim.y, 26, 0, 7); ctx.fill();
+    }
+  }
+  function shoot(px, py) {
+    if (!running) return;
+    pointer.x = px; pointer.y = py;
+    var ix = aim.x + wind * 3.2, iy = aim.y + Math.cos(sway * 1.7) * (scoped ? .8 : 1.6);
+    var hit = null, bestD = 1e9;
+    targets.forEach(function(t) {
+      var d = Math.hypot(t.x - ix, t.y - iy);
+      if (d < t.r + 2 && d < bestD) { bestD = d; hit = t; }
+    });
+    flash = .12;
+    if (hit) {
+      var bull = bestD <= hit.ring + 2;
+      combo++;
+      var pts = bull ? 50 : (bestD <= hit.r * .68 ? 25 : 10);
+      pts += Math.min(30, combo * 2);
+      score += pts;
+      targets.splice(targets.indexOf(hit), 1);
+    } else combo = 0;
+  }
+  function end() {
+    running = false;
+    document.getElementById("snStart").textContent = L("دوباره شلیک کن!", "Snipe again!");
+    document.getElementById("snHint").style.display = "";
+    var xp = Math.min(220, Math.round(score / 2));
+    var cn = Math.min(40, Math.round(score / 10));
+    Lumitek.reward({ xp: xp, coins: cn, game: "sniper", score: score });
+    document.getElementById("snReward").textContent = L(
+      "🎉 امتیاز " + score + "! +" + xp + " XP و +" + cn + " سکه",
+      "🎉 Score " + score + "! +" + xp + " XP and +" + cn + " coins");
+    paintBest();
+  }
+  function start() {
+    reset(); running = true; t0 = 0; last = 0;
+    document.getElementById("snStart").textContent = L("در حال شلیک...", "Sniping...");
+    document.getElementById("snHint").style.display = "none";
+    document.getElementById("snReward").textContent = "";
+    requestAnimationFrame(loop);
+  }
+  function pos(e) {
+    var r = canvas.getBoundingClientRect();
+    var cx = (e.touches ? e.touches[0].clientX : e.clientX), cy = (e.touches ? e.touches[0].clientY : e.clientY);
+    return { x: (cx - r.left) * W / r.width, y: (cy - r.top) * H / r.height };
+  }
+  canvas.addEventListener("mousemove", function(e){ var p = pos(e); pointer.x = p.x; pointer.y = p.y; }, { passive: true });
+  canvas.addEventListener("touchmove", function(e){ e.preventDefault(); var p = pos(e); pointer.x = p.x; pointer.y = p.y; }, { passive: false });
+  canvas.addEventListener("pointerdown", function(e){ var p = pos(e); pointer.x = p.x; pointer.y = p.y; aim.x = p.x; aim.y = p.y; shoot(p.x, p.y); });
+  document.getElementById("snZoom").onclick = function() { scoped = !scoped; this.textContent = scoped ? L("🔭 خروج از زوم", "🔭 Exit zoom") : L("🔭 زوم", "🔭 Zoom"); };
+  document.getElementById("snStart").onclick = start;
+  document.addEventListener("keydown", function(e) {
+    if (e.code === "Space") { if (!running) start(); else { scoped = !scoped; } e.preventDefault(); }
   });
-  /* swipe */
-  var ts = null;
-  canvas.addEventListener("touchstart", function(e){ ts = { x: e.touches[0].clientX, y: e.touches[0].clientY }; }, { passive: true });
-  canvas.addEventListener("touchend", function(e) {
-    if (!ts) return;
-    var dx = e.changedTouches[0].clientX - ts.x, dy = e.changedTouches[0].clientY - ts.y;
-    if (Math.abs(dx) > Math.abs(dy)) { if (Math.abs(dx) > 18) move(dx > 0 ? 1 : -1, 0); }
-    else if (Math.abs(dy) > 18) move(0, dy > 0 ? 1 : -1);
-    ts = null;
-  }, { passive: true });
-
-  document.getElementById("mzNew").addEventListener("click", newMaze);
-  newMaze();
 })();
 </script>
 
 <script>
-/* Lumitek v0.7 — هنگام بازی صفحه جابه‌جا نشود (قفل اسکرول + WASD) */
+/* Lumitek v0.7 — هنگام بازی صفحه جابه‌جا نشود */
 (function(){
   function isGameKey(k){ return k==="ArrowUp"||k==="ArrowDown"||k==="ArrowLeft"||k==="ArrowRight"||k===" "||k==="Spacebar"; }
   document.addEventListener("keydown", function(e){
@@ -344,5 +360,7 @@
   }, { passive:false });
 })();
 </script>
+
 </body>
+
 </html>

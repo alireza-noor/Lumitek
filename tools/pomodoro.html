@@ -3,23 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>％ درصد و تخفیف | ابزارهای Lumitek</title>
-<meta name="description" content="محاسبه درصد آنلاین: درصد یک عدد، تخفیف، افزایش و کاهش درصدی — آفلاین.">
+<title>🍅 تایمر پومودورو | ابزارهای Lumitek</title>
+<meta name="description" content="تایمر تمرکز پومودورو با حلقه پیشرفت، زنگ پایان و تنظیم دلخواه دوره‌ها — آفلاین.">
 <meta name="keywords" content="لومیتک, lumitek, ابزار آنلاین, بازی آنلاین, اخبار ورزش, پشتیبانی هوش مصنوعی, خرید سکه, وب اپلیکیشن">
 <meta name="robots" content="index,follow">
 <meta name="theme-color" content="#070b15">
-<link rel="canonical" href="https://lumitek.netlify.app/tools/percent.html">
+<link rel="canonical" href="https://lumitek.netlify.app/tools/pomodoro.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Lumitek">
-<meta property="og:title" content="％ درصد و تخفیف | ابزارهای Lumitek">
-<meta property="og:description" content="محاسبه درصد آنلاین: درصد یک عدد، تخفیف، افزایش و کاهش درصدی — آفلاین.">
-<meta property="og:url" content="https://lumitek.netlify.app/tools/percent.html">
+<meta property="og:title" content="🍅 تایمر پومودورو | ابزارهای Lumitek">
+<meta property="og:description" content="تایمر تمرکز پومودورو با حلقه پیشرفت، زنگ پایان و تنظیم دلخواه دوره‌ها — آفلاین.">
+<meta property="og:url" content="https://lumitek.netlify.app/tools/stopwatch.html">
 <meta property="og:image" content="https://lumitek.netlify.app/assets/icons/og-cover.png">
 <meta property="og:locale" content="fa_IR">
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="％ درصد و تخفیف | ابزارهای Lumitek">
-<meta name="twitter:description" content="محاسبه درصد آنلاین: درصد یک عدد، تخفیف، افزایش و کاهش درصدی — آفلاین.">
+<meta name="twitter:title" content="🍅 تایمر پومودورو | ابزارهای Lumitek">
+<meta name="twitter:description" content="تایمر تمرکز پومودورو با حلقه پیشرفت، زنگ پایان و تنظیم دلخواه دوره‌ها — آفلاین.">
 <meta name="twitter:image" content="https://lumitek.netlify.app/assets/icons/og-cover.png">
 <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
 <link rel="apple-touch-icon" href="../assets/icons/icon-192.png">
@@ -99,35 +99,46 @@
 </div>
 
 <main class="page">
-<p class="eyebrow">LUMITEK TOOL</p>
-<h1 id="t-title">％ درصد و تخفیف</h1>
-<p class="muted" id="t-lead">درصد یک عدد، تخفیف قیمت و تغییرات درصدی — همه در یک جا.</p>
+<p class="eyebrow">LUMITEK TOOL · NEW</p>
+<h1 data-i18n="tl.pomoT">🍅 تایمر پومودورو</h1>
+<p class="muted" data-i18n="tl.pomoL">تمرکز ۲۵ دقیقه‌ای با استراحت‌های کوتاه — روش معروف پومودورو با حلقه پیشرفت و زنگ پایان.</p>
 
-<div class="grid mt2" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">
-  <div class="card">
-    <h3 id="c1t">X٪ از Y</h3>
-    <label id="c1l1">درصد (X)</label><input id="p1" class="input" type="number" value="20">
-    <label id="c1l2">عدد (Y)</label><input id="p2" class="input" type="number" value="150">
-    <div class="result"><h2 id="r1">—</h2></div>
+<div class="card mt" style="display:grid;gap:18px;justify-items:center">
+  <div style="position:relative;width:210px;height:210px">
+    <svg width="210" height="210" viewBox="0 0 110 110" style="transform:rotate(-90deg)">
+      <circle cx="55" cy="55" r="46" fill="none" stroke="var(--line)" stroke-width="8"/>
+      <circle id="poRing" cx="55" cy="55" r="46" fill="none" stroke="var(--a)" stroke-width="8" stroke-linecap="round" stroke-dasharray="289" stroke-dashoffset="0" style="transition:stroke-dashoffset .5s linear"/>
+    </svg>
+    <div style="position:absolute;inset:0;display:grid;place-content:center;text-align:center">
+      <div id="poMode" style="font-weight:900;font-size:.85rem;color:var(--muted)">تمرکز</div>
+      <div id="poTime" style="font-size:2.1rem;font-weight:900;font-family:Orbitron,monospace" dir="ltr">25:00</div>
+    </div>
   </div>
-  <div class="card">
-    <h3 id="c2t">X چند درصد از Y است؟</h3>
-    <label id="c2l1">عدد (X)</label><input id="q1" class="input" type="number" value="45">
-    <label id="c2l2">عدد (Y)</label><input id="q2" class="input" type="number" value="150">
-    <div class="result"><h2 id="r2">—</h2></div>
+  <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center">
+    <button id="poStart" class="primary-btn">شروع</button>
+    <button id="poSkip" class="ghost-btn">رد شدن</button>
+    <button id="poReset" class="ghost-btn">ریست</button>
   </div>
-  <div class="card">
-    <h3 id="c3t">محاسبه تخفیف</h3>
-    <label id="c3l1">قیمت اصلی (تومان)</label><input id="d1" class="input" type="number" value="500000">
-    <label id="c3l2">درصد تخفیف</label><input id="d2" class="input" type="number" value="25">
-    <div class="result"><h2 id="r3">—</h2><p class="muted" id="r3b" style="margin:0"></p></div>
+  <div class="profile-stats" style="width:100%">
+    <div><span data-i18n="tl.poSessions">دوره‌های امروز</span><strong id="poSessions">۰</strong></div>
   </div>
-  <div class="card">
-    <h3 id="c4t">افزایش / کاهش درصدی</h3>
-    <label id="c4l1">مقدار اولیه</label><input id="g1" class="input" type="number" value="200">
-    <label id="c4l2">درصد تغییر (منفی = کاهش)</label><input id="g2" class="input" type="number" value="15">
-    <div class="result"><h2 id="r4">—</h2></div>
+  <p id="poStatus" class="muted" style="margin:0"></p>
+</div>
+
+<div class="card mt">
+  <h3>⚙️ تنظیمات</h3>
+  <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:10px">
+    <label style="flex:1;min-width:120px"><span class="muted" data-i18n="tl.poW">دقیقه تمرکز</span><input id="poW" class="amount-input" type="number" min="1" max="120" style="width:100%"></label>
+    <label style="flex:1;min-width:120px"><span class="muted" data-i18n="tl.poS">دقیقه استراحت</span><input id="poS" class="amount-input" type="number" min="1" max="60" style="width:100%"></label>
+    <label style="flex:1;min-width:120px"><span class="muted" data-i18n="tl.poL">استراحت بلند</span><input id="poL" class="amount-input" type="number" min="1" max="60" style="width:100%"></label>
   </div>
+  <button id="poSave" class="primary-btn mt" style="width:100%">ذخیره تنظیمات</button>
+</div>
+
+<div class="grid mt" style="grid-template-columns:repeat(auto-fit,minmax(230px,1fr))">
+  <div class="card"><h3>🧠 چرا پومودورو؟</h3><p class="muted">مغز با تمرکز کوتاه و منظم بهتر کار می‌کند؛ ۲۵ دقیقه کار عمیق + ۵ دقیقه استراحت، بعد از هر ۴ دور یک استراحت بلند ۱۵ دقیقه‌ای.</p></div>
+  <div class="card"><h3>🔔 زنگ پایان</h3><p class="muted">پایان هر دوره با سه بوق ملایم اعلام می‌شود؛ حتی اگر تب را عوض کنی، عنوان صفحه هم زمان را نشان می‌دهد.</p></div>
+  <div class="card"><h3>📊 شمارش دوره‌ها</h3><p class="muted">دوره‌های تمرکز امروزت شمرده می‌شود؛ هر ۴ دوره، استراحت بلند خودکار فعال می‌شود.</p></div>
 </div>
 </main>
 
@@ -200,56 +211,101 @@
 
 <script src="../js/main.js"></script>
 <script>
+
 (function(){
   var fa = {
-    "t-title": "％ درصد و تخفیف", "t-lead": "درصد یک عدد، تخفیف قیمت و تغییرات درصدی — همه در یک جا.",
-    "c1t": "X٪ از Y", "c1l1": "درصد (X)", "c1l2": "عدد (Y)",
-    "c2t": "X چند درصد از Y است؟", "c2l1": "عدد (X)", "c2l2": "عدد (Y)",
-    "c3t": "محاسبه تخفیف", "c3l1": "قیمت اصلی (تومان)", "c3l2": "درصد تخفیف",
-    "c4t": "افزایش / کاهش درصدی", "c4l1": "مقدار اولیه", "c4l2": "درصد تغییر (منفی = کاهش)",
-    "final": "پرداخت نهایی:", "saved": "سود شما:"
+    "t-title": "🍅 تایمر پومودورو", "t-lead": "تمرکز ۲۵ دقیقه‌ای با استراحت‌های کوتاه — روش معروف پومودورو.",
+    "work": "تمرکز", "short": "استراحت کوتاه", "long": "استراحت بلند",
+    "start": "شروع", "pause": "توقف", "reset": "ریست", "skip": "رد شدن",
+    "sessions": "دوره‌های امروز", "done": "✅ تمام شد! وقت استراحت است.", "back": "⏰ استراحت تمام شد — برگردیم سر کار!",
+    "wmin": "دقیقه تمرکز", "smin": "دقیقه استراحت", "lmin": "استراحت بلند", "save": "ذخیره تنظیمات"
   };
   var en = {
-    "t-title": "％ Percentage & Discount", "t-lead": "Percent of a number, price discounts and percentage change — all in one place.",
-    "c1t": "X% of Y", "c1l1": "Percent (X)", "c1l2": "Number (Y)",
-    "c2t": "X is what % of Y?", "c2l1": "Number (X)", "c2l2": "Number (Y)",
-    "c3t": "Discount calculator", "c3l1": "Original price", "c3l2": "Discount %",
-    "c4t": "Percentage increase / decrease", "c4l1": "Initial value", "c4l2": "Change % (negative = decrease)",
-    "final": "Final price:", "saved": "You save:"
+    "t-title": "🍅 Pomodoro Timer", "t-lead": "25-minute focus with short breaks — the famous Pomodoro method.",
+    "work": "Focus", "short": "Short break", "long": "Long break",
+    "start": "Start", "pause": "Pause", "reset": "Reset", "skip": "Skip",
+    "sessions": "Sessions today", "done": "✅ Done! Time for a break.", "back": "⏰ Break over — back to work!",
+    "wmin": "Focus minutes", "smin": "Break minutes", "lmin": "Long break", "save": "Save settings"
   };
-  function fmt(n){ return Number(n).toLocaleString(getLang() === "fa" ? "fa-IR" : "en-US"); }
+  function d(){ return getLang() === "fa" ? fa : en; }
+  var CFG_KEY = "lumitek_pomodoro_cfg";
+  var cfg = { w: 25, s: 5, l: 15 };
+  try { var c = JSON.parse(localStorage.getItem(CFG_KEY)); if (c && c.w) cfg = c; } catch(e) {}
+  var mode = "work", left = cfg.w * 60, total = left, running = false, iv = null, sessions = parseInt(localStorage.getItem("lumitek_pomo_sessions") || "0", 10);
+  var today = new Date().toDateString();
+  try { var st = JSON.parse(localStorage.getItem("lumitek_pomo_state") || "{}"); if (st.day === today) sessions = st.n; } catch(e) {}
+  var el = function(id){ return document.getElementById(id); };
 
-  function apply(){
-    var d = getLang() === "fa" ? fa : en;
-    for (var k in d) {
-      var el = document.getElementById(k);
-      if (el) el.textContent = d[k];
+  function beep() {
+    try {
+      var ac = new (window.AudioContext || window.webkitAudioContext)();
+      [0, .2, .4].forEach(function(t) {
+        var o = ac.createOscillator(), g = ac.createGain();
+        o.connect(g); g.connect(ac.destination);
+        o.frequency.value = 880; o.type = "sine";
+        g.gain.setValueAtTime(.25, ac.currentTime + t);
+        g.gain.exponentialRampToValueAtTime(.001, ac.currentTime + t + .18);
+        o.start(ac.currentTime + t); o.stop(ac.currentTime + t + .2);
+      });
+    } catch(e) {}
+  }
+  function paint() {
+    var m = Math.floor(left / 60), s = Math.floor(left % 60);
+    el("poTime").textContent = String(m).padStart(2, "0") + ":" + String(s).padStart(2, "0");
+    el("poRing").style.strokeDashoffset = String(289 * (1 - left / total));
+    el("poMode").textContent = d()[mode === "work" ? "work" : mode === "short" ? "short" : "long"];
+    el("poSessions").textContent = getLang() === "fa" ? Number(sessions).toLocaleString("fa-IR") : sessions;
+    el("poStart").textContent = running ? d().pause : d().start;
+    document.title = (running ? "(" + el("poTime").textContent + ") " : "") + d()["t-title"];
+  }
+  function setMode(m2) {
+    mode = m2;
+    total = (m2 === "work" ? cfg.w : m2 === "short" ? cfg.s : cfg.l) * 60;
+    left = total;
+    paint();
+  }
+  function tick() {
+    left--;
+    if (left <= 0) {
+      beep();
+      if (mode === "work") {
+        sessions++;
+        localStorage.setItem("lumitek_pomo_state", JSON.stringify({ day: new Date().toDateString(), n: sessions }));
+        var m2 = (sessions % 4 === 0) ? "long" : "short";
+        el("poStatus").textContent = d().done;
+        setMode(m2);
+      } else {
+        el("poStatus").textContent = d().back;
+        setMode("work");
+      }
     }
-    calc();
+    paint();
   }
-
-  function num(id){ var v = parseFloat(document.getElementById(id).value); return isNaN(v) ? 0 : v; }
-
-  function calc(){
-    var r1 = num("p1") / 100 * num("p2");
-    document.getElementById("r1").textContent = Number.isFinite(r1) ? fmt(+r1.toFixed(4)) : "—";
-    var r2 = num("q2") ? (num("q1") / num("q2")) * 100 : 0;
-    document.getElementById("r2").textContent = Number.isFinite(r2) ? "+" + (+r2.toFixed(2)) + "٪" : "—";
-    var price = num("d1"), disc = num("d2");
-    var save = price * disc / 100;
-    document.getElementById("r3").textContent = fmt(+(price - save).toFixed(2));
-    var d = getLang() === "fa" ? fa : en;
-    document.getElementById("r3b").textContent = d.final + " " + fmt(+(price - save).toFixed(0)) + " — " + d.saved + " " + fmt(+save.toFixed(0));
-    var r4 = num("g1") * (1 + num("g2") / 100);
-    document.getElementById("r4").textContent = Number.isFinite(r4) ? fmt(+r4.toFixed(2)) : "—";
-  }
-
-  ["p1","p2","q1","q2","d1","d2","g1","g2"].forEach(function(id){
-    document.getElementById(id).addEventListener("input", calc);
+  el("poStart").onclick = function() {
+    running = !running;
+    clearInterval(iv);
+    if (running) iv = setInterval(tick, 1000);
+    paint();
+  };
+  el("poReset").onclick = function() { running = false; clearInterval(iv); setMode(mode); el("poStatus").textContent = ""; };
+  el("poSkip").onclick = function() { running = false; clearInterval(iv); setMode(mode === "work" ? (sessions % 4 === 0 ? "long" : "short") : "work"); };
+  ["w","s","l"].forEach(function(k) {
+    el("po" + k.toUpperCase()).value = cfg[k];
   });
-  document.addEventListener("lumitek:langchange", apply);
-  apply();
+  el("poSave").onclick = function() {
+    cfg.w = Math.max(1, parseInt(el("poW").value, 10) || 25);
+    cfg.s = Math.max(1, parseInt(el("poS").value, 10) || 5);
+    cfg.l = Math.max(1, parseInt(el("poL").value, 10) || 15);
+    localStorage.setItem(CFG_KEY, JSON.stringify(cfg));
+    running = false; clearInterval(iv);
+    setMode(mode);
+    el("poStatus").textContent = "✅";
+  };
+  paint();
 })();
+
 </script>
+
 </body>
+
 </html>

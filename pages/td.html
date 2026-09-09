@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>🗼 دژبان | بازی‌های Lumitek</title>
+<meta name="description" content="بازی استراتژی دفاع از برج — برج بچین، ۱۰ موج دشمن را دفع کن و دژ را نگه دار.">
+<meta name="keywords" content="لومیتک, lumitek, بازی آنلاین, ابزار آنلاین, هوش مصنوعی, خرید سکه, وب اپلیکیشن">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#070b15">
+<link rel="canonical" href="https://lumitek.netlify.app/pages/td.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Lumitek">
+<meta property="og:title" content="🗼 دژبان | بازی‌های Lumitek">
+<meta property="og:description" content="بازی استراتژی دفاع از برج — برج بچین، ۱۰ موج دشمن را دفع کن و دژ را نگه دار.">
+<meta property="og:url" content="https://lumitek.netlify.app/pages/drive.html">
+<meta property="og:image" content="https://lumitek.netlify.app/assets/icons/og-cover.png">
+<meta property="og:locale" content="fa_IR">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="🗼 دژبان | بازی‌های Lumitek">
+<meta name="twitter:description" content="بازی استراتژی دفاع از برج — برج بچین، ۱۰ موج دشمن را دفع کن و دژ را نگه دار.">
+<meta name="twitter:image" content="https://lumitek.netlify.app/assets/icons/og-cover.png">
+<link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+<link rel="apple-touch-icon" href="../assets/icons/icon-192.png">
+<link rel="manifest" href="../manifest.json">
+<link rel="preconnect" href="https://fontnegar.ir/" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fontnegar.ir/css2?family=shabnam:wght@100;300;400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="../css/style.css">
+<script>try{var t=localStorage.getItem("lumitek_theme");if(t==="light")document.documentElement.classList.add("light");var l=localStorage.getItem("lumitek_lang");if(l==="en"){document.documentElement.lang="en";document.documentElement.dir="ltr"}else{document.documentElement.lang="fa";document.documentElement.dir="rtl"}}catch(e){}</script>
+</head>
+<body data-game="1">
+<div id="offlineBanner" class="offline-banner" data-i18n="offline.banner">🔌 حالت آفلاین — صفحه‌ها و بازی‌ها از حافظه اجرا می‌شوند و اخبار از آخرین نسخه ذخیره‌شده نمایش داده می‌شوند.</div>
+<!--LT5-CHROME-->
+<header class="site-header">
+  <a class="brand" href="../index.html"><img class="brand-logo" src="../assets/icons/logo-lt.png" alt="Lumitek" width="46" height="46"><span class="brand-word">Lumitek</span></a>
+  <nav class="main-nav" id="mainNav">
+    <a href="../index.html" data-i18n="nav.home">nav.home</a>
+    <a href="../pages/tools.html" data-i18n="nav.tools">nav.tools</a>
+    <a href="../pages/games.html" data-i18n="nav.games">nav.games</a>
+    <a href="../pages/store.html" data-i18n="nav.store">nav.store</a>
+    <a href="../pages/sports.html" data-i18n="nav.sports">nav.sports</a>
+    <a href="../pages/ai.html" data-i18n="nav.ai">لومیتک ای‌آی ✨</a>
+    <a href="../pages/download.html" data-i18n="nav.download">nav.download</a>
+    <a href="../pages/support.html" data-i18n="nav.supportE">nav.supportE</a>
+    <a href="../pages/technology.html" class="nav-extra" data-i18n="nav.tech">nav.tech</a>
+    <a href="../pages/articles.html" class="nav-extra" data-i18n="nav.articles">nav.articles</a>
+    <a href="../pages/announcements.html" class="nav-extra" data-i18n="nav.updates">nav.updates</a>
+    <a href="../pages/about.html" class="nav-extra" data-i18n="nav.about">nav.about</a>
+    <a href="../pages/contact.html" class="nav-extra" data-i18n="nav.contact">nav.contact</a>
+    <a href="../pages/account.html" class="nav-extra" data-i18n="nav.account">nav.account</a>
+    <a href="../pages/donate.html" class="nav-extra" data-i18n="nav.donate">nav.donate</a>
+  </nav>
+  <div class="header-actions">
+    <button id="languageToggle" class="icon-btn" data-i18n-title="nav.home" title="Language">EN</button>
+    <button id="themeToggle" class="icon-btn" aria-label="Theme">☀️</button>
+    <button id="notificationButton" class="icon-btn notification-btn">🔔<span id="notificationCount">0</span></button>
+    <button id="changelogButton" class="icon-btn" aria-label="Changelog" title="تغییرات">🕒</button>
+    <button id="profileButton" class="profile-btn"><span data-profile-avatar>🙂</span> <span data-profile-name>Lumitek User</span></button>
+    <button id="menuToggle" class="icon-btn menu-toggle" aria-label="Menu">☰</button>
+  </div>
+</header>
+<div id="notificationPanel" class="notification-panel">
+  <div class="panel-title" data-i18n="notif.title">اعلان‌ها</div>
+  <div id="notificationList"></div>
+</div>
+<div id="changelogPanel" class="notification-panel changelog-panel">
+  <div class="panel-title" data-i18n="ch.title">🕒 تغییرات نسخه‌ها</div>
+  <div id="changelogList"></div>
+  <a class="cl-all" href="../pages/announcements.html" data-i18n="ch.all">مشاهده همه تغییرات →</a>
+</div>
+<div id="profileModal" class="modal">
+  <div class="modal-card">
+    <button id="profileClose" class="modal-close">×</button>
+    <div class="pm-head"><span class="pm-avatar" data-profile-avatar>🙂</span><div><h2 data-i18n="pm.title">پروفایل کاربر</h2><span class="pm-title" data-profile-title>تازه‌کار</span></div></div>
+    <label data-i18n="pm.nameLabel">نام نمایشی</label>
+    <input id="profileNameInput" maxlength="24" data-i18n-ph="pm.namePh" placeholder="نام شما">
+    <div class="xpbar"><div class="xpbar-fill" data-profile-xpbar style="width:0%"></div></div>
+    <p class="muted" style="font-size:.75rem;margin:0 0 10px" data-profile-xptext>0 / 100 XP</p>
+    <div class="profile-stats">
+      <div><span data-i18n="coins.level">سطح</span><strong data-profile-level>1</strong></div>
+      <div><span data-i18n="acc.xp">XP</span><strong data-profile-xp>0</strong></div>
+      <div><span data-i18n="coins.unit">سکه</span><strong data-profile-coins>0</strong></div>
+      <div><span data-i18n="pm.games">بازی‌ها</span><strong data-games-played>0</strong></div>
+    </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <button id="profileSave" class="primary-btn" data-i18n="pm.save" style="flex:1">ذخیره</button>
+      <a class="ghost-btn" href="../pages/account.html" data-i18n="pm.fullAccount">حساب کامل</a>
+    </div>
+    <div class="pm-auth-row" id="pmAuthArea">
+      <button id="pmAuthButton" class="primary-btn" data-i18n="pm.signIn" data-auth-open>🔓 ورود / ثبت‌نام</button>
+      <span class="auth-email" id="pmAuthEmail" style="display:none"></span>
+      <button id="pmLogout" class="ghost-btn" style="display:none" data-i18n="pm.signOut">خروج</button>
+    </div>
+  </div>
+</div>
+
+<div class="search-wrap">
+<input id="globalSearchInput" type="search" data-i18n-ph="head.searchPh" placeholder="جستجو..." aria-label="Search">
+<div id="searchResults" class="search-results"></div>
+</div>
+<main class="page"><div class="game">
+<p class="eyebrow">LUMITEK GAME · NEW</p>
+<h1 data-i18n="g.td.n">🗼 دژبان</h1>
+<p class="muted" data-i18n="g.td.d">برج‌های خودت را کنار مسیر بچین، ۱۰ موج دشمن را دفع کن و دژ را نگه دار — با برج‌های اسکین‌دار فروشگاه!</p>
+
+<div class="gamebox mt">
+  <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center">
+    <span class="coin-pill">💰 <b id="tdGold">90</b></span>
+    <span class="coin-pill">🌊 موج <b id="tdWave">0</b>/۱۰</span>
+    <span class="coin-pill">❤ <b id="tdLives">10</b></span>
+    <span class="coin-pill">🏆 <span data-i18n="games.yourBest">رکورد شما</span>: <b id="tdBest">—</b></span>
+  </div>
+  <div id="tdTowerBar" style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:12px"></div>
+  <canvas id="tdCanvas" width="380" height="532" style="max-width:100%;border-radius:16px;touch-action:none;margin-top:12px"></canvas>
+  <div style="display:flex;gap:10px;justify-content:center;margin-top:12px;flex-wrap:wrap">
+    <button class="gamebutton" id="tdStart">شروع بازی</button>
+    <button class="gamebutton" id="tdWaveBtn" style="background:var(--card2)">🌊 موج بعدی</button>
+    <button class="gamebutton" id="tdSpeed" style="background:var(--card2)">⏩ سرعت ×۱</button>
+  </div>
+  <div class="sh-hint" id="tdHint">برج انتخاب کن → روی خانه سبز بزن تا ساخته شود | روی برج بزن = ارتقا (تا سطح ۳) | «موج بعدی» را بزن!</div>
+  <p id="tdReward" class="muted" style="margin:8px 0 0"></p>
+</div>
+
+<div class="grid mt" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
+  <div class="card"><h3>🏹 سه نوع برج</h3><p class="muted">تک‌تیر ارزان و سریع، توپخانه سنگین و کوبنده، یخ‌زن که دشمن را کند می‌کند — ترکیب درست بچین!</p></div>
+  <div class="card"><h3>⬆️ ارتقا تا سطح ۳</h3><p class="muted">روی هر برج بزن تا ارتقا پیدا کند؛ هر سطح ۴۰٪ آسیای بیشتر — برج سطح ۳ طلایی می‌درخشد.</p></div>
+  <div class="card"><h3>🎨 اسکین برج</h3><p class="muted">برج مذاب، زهرآلود یا یخی از فروشگاه — رنگ برج‌ها و گلوله‌هایت عوض می‌شود.</p></div>
+</div>
+</div></main>
+
+
+<footer class="footer-v2">
+  <div class="fv-grid">
+    <div>
+      <div class="fv-brand"><img class="brand-logo" src="../assets/icons/logo-lt.png" alt="Lumitek" width="34" height="34"><span class="brand-word">Lumitek</span></div>
+      <p data-i18n="footer.tag">همه ابزارها و بازی‌های مورد نیازت، سریع و ساده — همه‌جا با هم.</p>
+      <span class="vip-badge" style="display:inline-flex">v0.8 · PWA</span>
+    </div>
+    <div>
+      <h4 data-i18n="footer.explore">کاوش</h4>
+      <ul>
+        <li><a href="../pages/technology.html" data-i18n="nav.tech">فناوری</a></li>
+        <li><a href="../pages/articles.html" data-i18n="nav.articles">مقالات</a></li>
+        <li><a href="../pages/announcements.html" data-i18n="nav.updates">تغییرات</a></li>
+        <li><a href="../pages/about.html" data-i18n="nav.about">درباره ما</a></li>
+        <li><a href="../pages/contact.html" data-i18n="nav.contact">تماس</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-i18n="footer.services">خدمات</h4>
+      <ul>
+        <li><a href="../pages/store.html" data-i18n="nav.store">فروشگاه</a></li>
+        <li><a href="../pages/store.html#coins" data-i18n="nav.coins">شارژ سکه</a></li>
+        <li><a href="../pages/ai.html" data-i18n="nav.ai">لومیتک ای‌آی</a></li>
+        <li><a href="../pages/account.html" data-i18n="nav.account">حساب کاربری</a></li>
+        <li><a href="../pages/donate.html" style="color:var(--a)" data-i18n="nav.donate">حمایت مالی</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-i18n="footer.newsletter">خبرنامه Lumitek</h4>
+      <p data-i18n="footer.newsText">از امکانات جدید زودتر باخبر شو.</p>
+      <form class="news-row" id="newsletterForm">
+        <input type="email" required data-i18n-ph="footer.newsPh" placeholder="ایمیل شما" aria-label="email">
+        <button type="submit" data-i18n="footer.newsBtn">عضویت</button>
+      </form>
+    </div>
+  </div>
+    <div class="fv-social">
+    <div class="fv-social-title" data-i18n="footer.socialT">ما را در شبکه‌های اجتماعی دنبال کنید</div>
+    <div class="fv-social-row">
+      <a href="https://www.aparat.com/lumitek" target="_blank" rel="noopener" title="آپارات" aria-label="Aparat">
+        <svg width="26" height="26" viewBox="0 0 32 32"><rect x="1" y="1" width="30" height="30" rx="9" fill="#DF0F38"/><path d="M11 9.5l13 6.5-13 6.5v-13z" fill="#fff"/></svg>
+        <span>آپارات</span></a>
+      <a href="https://bale.ai/lumitek" target="_blank" rel="noopener" title="بله" aria-label="Bale">
+        <svg width="26" height="26" viewBox="0 0 32 32"><rect x="1" y="1" width="30" height="30" rx="9" fill="#00A693"/><path d="M8 22V10h5.2c2.6 0 4.3 1.3 4.3 3.4 0 1.5-.8 2.6-2.1 3.1l3.3 5.5h-3.4l-2.8-5h-1.4v5H8zm3.1-7.4h1.9c1 0 1.6-.5 1.6-1.3s-.6-1.3-1.6-1.3h-1.9v2.6z" fill="#fff"/><circle cx="22.5" cy="11.5" r="2.5" fill="#fff"/></svg>
+        <span>بله</span></a>
+      <a href="https://eitaa.com/lumitek" target="_blank" rel="noopener" title="ایتا" aria-label="Eitaa">
+        <svg width="26" height="26" viewBox="0 0 32 32"><rect x="1" y="1" width="30" height="30" rx="9" fill="#F5793B"/><path d="M25 8.5L6.5 15.7c-.7.3-.6 1.3.1 1.4l4.6 1.2 1.7 5.2c.2.7 1.1.8 1.5.2l2.3-3 4.6 3.4c.6.4 1.4.1 1.6-.6L26.4 9.6c.2-.8-.6-1.4-1.4-1.1zm-9.8 10.6l-.4 3 1.6-2.4-1.2-.6z" fill="#fff"/></svg>
+        <span>ایتا</span></a>
+      <a href="https://rubika.ir/lumitek" target="_blank" rel="noopener" title="روبیکا" aria-label="Rubika">
+        <svg width="26" height="26" viewBox="0 0 32 32"><rect x="1" y="1" width="30" height="30" rx="9" fill="#8E24AA"/><path d="M9 24V8h6.5c3.4 0 5.5 1.7 5.5 4.5 0 2-.9 3.4-2.6 4.1l4 7.4h-4.2l-3.4-6.6h-1.9V24H9zm3.9-9.6h2.4c1.4 0 2.2-.7 2.2-1.9s-.8-1.9-2.2-1.9h-2.4v3.8z" fill="#fff"/></svg>
+        <span>روبیکا</span></a>
+    </div>
+  </div>
+  <div class="fv-bottom">
+    <span data-i18n="footer.rights">© 2026 Lumitek — همه حقوق محفوظ است.</span>
+    <span data-i18n="footer.made">ساخته‌شده با ❤ و بدون فریم‌ورک</span>
+  </div>
+</footer>
+
+
+
+<script src="../js/i18n.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/auth.js"></script>
+<script>
+/* Lumitek 0.8 — دژبان (دفاع از برج) */
+(function(){
+  var canvas = document.getElementById("tdCanvas"), ctx = canvas.getContext("2d");
+  var W = canvas.width, H = canvas.height, CELL = 38;
+  var COLS = 10, ROWS = 14;
+  var L = function(fa, en){ return (window.LumiI18n && getLang() === "en") ? en : fa; };
+  /* path waypoints in cells (S curve: top-right entry -> bottom-left exit) */
+  var PATH = [[9,0],[9,3],[3,3],[3,6],[7,6],[7,9],[2,9],[2,12],[0,12]];
+  var pathCells = {};
+  for (var i = 0; i < PATH.length - 1; i++) {
+    var a = PATH[i], b = PATH[i+1];
+    if (a[0] === b[0]) { for (var y = Math.min(a[1],b[1]); y <= Math.max(a[1],b[1]); y++) pathCells[a[0]+","+y] = 1; }
+    else { for (var x = Math.min(a[0],b[0]); x <= Math.max(a[0],b[0]); x++) pathCells[x+","+a[1]] = 1; }
+  }
+  var TOWERS = [
+    { id: 0, cost: 40, dmg: 9,  rate: 26, range: 100, name: { fa: "تک‌تیر", en: "Archer" },    icon: "🏹" },
+    { id: 1, cost: 75, dmg: 24, rate: 58, range: 125, name: { fa: "توپخانه", en: "Cannon" },   icon: "💣" },
+    { id: 2, cost: 55, dmg: 5,  rate: 30, range: 95,  name: { fa: "یخ‌زن", en: "Frost" },      icon: "❄️", slow: .45 }
+  ];
+  var skin = { color: "#7ca7ff", shot: "rgba(124,167,255,.9)" };
+  try {
+    var sk = (window.Lumitek && Lumitek.skin) ? Lumitek.skin("tower") : "tower_default";
+    var all = (window.Lumitek && Lumitek.gameSkins) ? Lumitek.gameSkins : {};
+    if (all[sk]) skin = all[sk];
+  } catch(e) {}
+
+  var running = false, gold, lives, wave, towers, enemies, bullets, wavesActive, selTower = 0, speedMul = 1;
+  var spawnQ = [], spawnT = 0, hoverCell = null;
+
+  function paintBest() {
+    var b = (getProfile().bests || {}).td;
+    document.getElementById("tdBest").textContent = b != null ? b : "—";
+  }
+  document.addEventListener("lumitek:langchange", paintBest); paintBest();
+
+  function reset() {
+    gold = 90; lives = 10; wave = 0;
+    towers = []; enemies = []; bullets = []; spawnQ = []; wavesActive = false;
+    updHud();
+  }
+  function updHud() {
+    document.getElementById("tdGold").textContent = gold;
+    document.getElementById("tdWave").textContent = wave;
+    document.getElementById("tdLives").textContent = lives;
+    document.querySelectorAll("#tdTowerBar button").forEach(function(b, i) {
+      b.classList.toggle("active", i === selTower);
+      b.disabled = gold < TOWERS[i].cost;
+    });
+  }
+  function waveCount(w) { return 5 + w * 2; }
+  function enemyHp(w) { return 18 + w * 9; }
+  function startWave() {
+    if (wavesActive || wave >= 10) return;
+    wave++;
+    wavesActive = true;
+    var n = waveCount(wave);
+    spawnQ = [];
+    for (var i = 0; i < n; i++) spawnQ.push({ t: i * 26, hp: enemyHp(wave), slow: 0, prog: 0, boss: wave % 5 === 0 && i === n - 1 });
+    updHud();
+  }
+  function cellCenter(cx, cy) { return { x: cx * CELL + CELL/2, y: cy * CELL + CELL/2 }; }
+  function pathPos(prog) {
+    /* prog: 0..(PATH.length-1) continuous */
+    var i = Math.floor(prog), t = prog - i;
+    if (i >= PATH.length - 1) i = PATH.length - 2;
+    var a = cellCenter(PATH[i][0], PATH[i][1]), b = cellCenter(PATH[i+1][0], PATH[i+1][1]);
+    return { x: a.x + (b.x - a.x) * t, y: a.y + (b.y - a.y) * t };
+  }
+  var MAX_PROG = PATH.length - 1;
+  function loop() {
+    if (!running) return;
+    for (var step = 0; step < speedMul; step++) tick();
+    draw();
+    requestAnimationFrame(loop);
+  }
+  function tick() {
+    /* spawn */
+    if (spawnQ.length) {
+      spawnT++;
+      if (spawnT >= spawnQ[0].t) { var e = spawnQ.shift(); e.prog = 0; enemies.push(e); }
+    }
+    /* enemies */
+    enemies.forEach(function(e) {
+      var sp = 0.006 * (e.boss ? .6 : 1);
+      e.prog += sp * (1 - (e.slow > 0 ? .55 : 0));
+      if (e.slow > 0) e.slow--;
+    });
+    enemies.forEach(function(e) {
+      if (e.prog >= MAX_PROG && !e.dead) {
+        e.dead = true; lives--;
+        if (lives <= 0) end();
+      }
+    });
+    enemies = enemies.filter(function(e) { return !e.dead; });
+    /* towers shoot */
+    towers.forEach(function(t) {
+      t.cd--;
+      if (t.cd > 0) return;
+      var def = TOWERS[t.type], c = cellCenter(t.cx, t.cy);
+      var target = null, best = 1e9;
+      enemies.forEach(function(e) {
+        if (e.dead) return;
+        var p = pathPos(e.prog);
+        var d = Math.hypot(p.x - c.x, p.y - c.y);
+        if (d < def.range && e.prog > best) { best = e.prog; target = e; }
+      });
+      if (target) {
+        t.cd = def.rate;
+        var p = pathPos(target.prog);
+        bullets.push({ x: c.x, y: c.y, tx: p.x, ty: p.y, tgt: target, dmg: def.dmg * t.lvl, slow: def.slow });
+      }
+    });
+    /* bullets */
+    bullets.forEach(function(b) {
+      var p = b.tgt && !b.tgt.dead ? pathPos(b.tgt.prog) : { x: b.tx, y: b.ty };
+      b.tx = p.x; b.ty = p.y;
+      var d = Math.hypot(b.tx - b.x, b.ty - b.y);
+      if (d < 7) {
+        b.hit = true;
+        if (b.tgt && !b.tgt.dead) {
+          b.tgt.hp -= b.dmg;
+          if (b.slow) b.tgt.slow = 40;
+          if (b.tgt.hp <= 0) { b.tgt.dead = true; gold += b.tgt.boss ? 20 : 6; }
+        }
+      } else { b.x += (b.tx - b.x) / d * 9; b.y += (b.ty - b.y) / d * 9; }
+    });
+    bullets = bullets.filter(function(b) { return !b.hit; });
+    enemies = enemies.filter(function(e) { return !e.dead; });
+    /* wave end */
+    if (wavesActive && !spawnQ.length && !enemies.length) {
+      wavesActive = false;
+      gold += 25 + wave * 3;
+      if (wave >= 10) { end(); return; }
+    }
+    updHud();
+  }
+  function draw() {
+    var light = document.documentElement.classList.contains("light");
+    ctx.fillStyle = light ? "#79b76a" : "#1d3a24"; ctx.fillRect(0, 0, W, H);
+    /* path */
+    ctx.strokeStyle = light ? "#c9b98a" : "#4a3d26"; ctx.lineWidth = CELL - 8; ctx.lineCap = "round"; ctx.lineJoin = "round";
+    ctx.beginPath();
+    for (var i = 0; i < PATH.length; i++) {
+      var c = cellCenter(PATH[i][0], PATH[i][1]);
+      if (i === 0) ctx.moveTo(c.x, c.y); else ctx.lineTo(c.x, c.y);
+    }
+    ctx.stroke();
+    /* grid hint on buildable cells */
+    ctx.strokeStyle = "rgba(255,255,255,.06)"; ctx.lineWidth = 1;
+    for (var cx = 0; cx < COLS; cx++) for (var cy = 0; cy < ROWS; cy++) {
+      if (pathCells[cx + "," + cy]) continue;
+      ctx.strokeRect(cx * CELL + 2, cy * CELL + 2, CELL - 4, CELL - 4);
+    }
+    /* hover */
+    if (hoverCell && !pathCells[hoverCell.cx + "," + hoverCell.cy]) {
+      var def = TOWERS[selTower];
+      ctx.fillStyle = "rgba(255,255,255,.08)";
+      ctx.fillRect(hoverCell.cx * CELL, hoverCell.cy * CELL, CELL, CELL);
+      ctx.strokeStyle = gold >= def.cost ? skin.color : "#e55";
+      var c2 = cellCenter(hoverCell.cx, hoverCell.cy);
+      ctx.beginPath(); ctx.arc(c2.x, c2.y, def.range, 0, 7); ctx.stroke();
+    }
+    /* towers */
+    towers.forEach(function(t) {
+      var c = cellCenter(t.cx, t.cy), def = TOWERS[t.type];
+      ctx.fillStyle = "rgba(0,0,0,.25)"; ctx.beginPath(); ctx.arc(c.x, c.y + 3, 13, 0, 7); ctx.fill();
+      ctx.fillStyle = t.lvl >= 3 ? "#ffd166" : t.lvl === 2 ? "#c8d8ff" : skin.color;
+      ctx.beginPath(); ctx.arc(c.x, c.y, 13, 0, 7); ctx.fill();
+      ctx.font = "14px sans-serif"; ctx.textAlign = "center"; ctx.fillText(def.icon, c.x, c.y + 5); ctx.textAlign = "start";
+      ctx.fillStyle = "#fff"; ctx.font = "bold 9px sans-serif"; ctx.fillText(t.lvl, c.x + 9, c.y + 12);
+    });
+    /* enemies */
+    enemies.forEach(function(e) {
+      var p = pathPos(e.prog);
+      var r = e.boss ? 12 : 8;
+      ctx.fillStyle = e.boss ? "#c44" : e.slow > 0 ? "#7cd5ff" : "#e66";
+      ctx.beginPath(); ctx.arc(p.x, p.y, r, 0, 7); ctx.fill();
+      ctx.fillStyle = "rgba(0,0,0,.4)";
+      ctx.fillRect(p.x - r, p.y - r - 5, r * 2 * Math.max(0, e.hp / enemyHp(wave)), 3);
+    });
+    /* bullets */
+    bullets.forEach(function(b) {
+      ctx.fillStyle = skin.shot;
+      ctx.beginPath(); ctx.arc(b.x, b.y, 3.2, 0, 7); ctx.fill();
+    });
+    /* wave status */
+    if (wavesActive && spawnQ.length) {
+      ctx.fillStyle = "rgba(0,0,0,.5)"; ctx.fillRect(W/2 - 60, 6, 120, 26);
+      ctx.fillStyle = "#fff"; ctx.font = "bold 13px Shabnam, sans-serif"; ctx.textAlign = "center";
+      ctx.fillText(L("موج " + wave + " — دشمن: " + (spawnQ.length + enemies.length), "Wave " + wave + " — foes: " + (spawnQ.length + enemies.length)), W/2, 24);
+      ctx.textAlign = "start";
+    }
+  }
+  function end() {
+    running = false;
+    document.getElementById("tdStart").textContent = L("دفاع دوباره!", "Defend again!");
+    document.getElementById("tdHint").style.display = "";
+    var reached = Math.max(1, wave);
+    var xp = Math.min(240, 20 + reached * 20), cn = Math.min(48, 10 + reached * 4);
+    Lumitek.reward({ xp: xp, coins: cn, game: "td", score: reached });
+    document.getElementById("tdReward").textContent = L(
+      "🎉 تا موج " + reached + " مقاومت کردی! +" + xp + " XP و +" + cn + " سکه",
+      "🎉 You held until wave " + reached + "! +" + xp + " XP and +" + cn + " coins");
+    paintBest();
+  }
+  function start() {
+    reset(); running = true;
+    document.getElementById("tdStart").textContent = L("در حال دفاع...", "Defending...");
+    document.getElementById("tdHint").style.display = "none";
+    document.getElementById("tdReward").textContent = "";
+    requestAnimationFrame(loop);
+  }
+  /* tower bar */
+  var bar = document.getElementById("tdTowerBar");
+  TOWERS.forEach(function(def) {
+    var b = document.createElement("button");
+    b.className = "gamebutton"; b.style.padding = "6px 10px"; b.style.fontSize = ".8rem";
+    b.innerHTML = def.icon + " " + def.name.fa + " · " + def.cost;
+    b.onclick = function() { selTower = def.id; updHud(); };
+    bar.appendChild(b);
+  });
+  /* canvas interactions */
+  function cellFromEvent(e) {
+    var r = canvas.getBoundingClientRect();
+    var cx2 = (e.touches ? e.touches[0].clientX : e.clientX), cy2 = (e.touches ? e.touches[0].clientY : e.clientY);
+    var x = (cx2 - r.left) * W / r.width, y = (cy2 - r.top) * H / r.height;
+    return { cx: Math.floor(x / CELL), cy: Math.floor(y / CELL) };
+  }
+  canvas.addEventListener("touchmove", function(e){ e.preventDefault(); hoverCell = cellFromEvent(e); }, { passive: false });
+  canvas.addEventListener("mousemove", function(e){ hoverCell = cellFromEvent(e); }, { passive: true });
+  canvas.addEventListener("pointerdown", function(e) {
+    if (!running) { start(); return; }
+    var cell = cellFromEvent(e);
+    var key = cell.cx + "," + cell.cy;
+    if (pathCells[key]) return;
+    var existing = null;
+    towers.forEach(function(t){ if (t.cx === cell.cx && t.cy === cell.cy) existing = t; });
+    if (existing) {
+      if (existing.lvl >= 3) return;
+      var upCost = TOWERS[existing.type].cost * .8;
+      if (gold >= upCost) { gold -= upCost; existing.lvl++; }
+    } else {
+      var def = TOWERS[selTower];
+      if (gold >= def.cost) {
+        gold -= def.cost;
+        towers.push({ cx: cell.cx, cy: cell.cy, type: def.id, lvl: 1, cd: 0 });
+      }
+    }
+    updHud();
+  });
+  document.getElementById("tdWaveBtn").onclick = startWave;
+  document.getElementById("tdSpeed").onclick = function() { speedMul = speedMul === 1 ? 2 : 1; this.textContent = speedMul === 1 ? "⏩ سرعت ×۱" : "⏩ سرعت ×۲"; };
+  document.getElementById("tdStart").onclick = start;
+  reset();
+})();
+</script>
+
+<script>
+/* Lumitek v0.7 — هنگام بازی صفحه جابه‌جا نشود */
+(function(){
+  function isGameKey(k){ return k==="ArrowUp"||k==="ArrowDown"||k==="ArrowLeft"||k==="ArrowRight"||k===" "||k==="Spacebar"; }
+  document.addEventListener("keydown", function(e){
+    if (!isGameKey(e.key)) return;
+    var t = e.target && e.target.tagName;
+    if (t === "INPUT" || t === "TEXTAREA" || t === "SELECT") return;
+    e.preventDefault();
+  }, { passive:false });
+  document.addEventListener("touchmove", function(e){
+    if (e.target && e.target.closest && e.target.closest("canvas,.snake-pad,.touch-pad,.game-pad,.dpad")) e.preventDefault();
+  }, { passive:false });
+})();
+</script>
+
+</body>
+
+</html>

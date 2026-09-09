@@ -3,23 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>％ درصد و تخفیف | ابزارهای Lumitek</title>
-<meta name="description" content="محاسبه درصد آنلاین: درصد یک عدد، تخفیف، افزایش و کاهش درصدی — آفلاین.">
+<title>⌨️ تایپ‌سنجی | ابزارهای Lumitek</title>
+<meta name="description" content="آزمون سرعت تایپ فارسی و انگلیسی با WPM، دقت و رکورد شخصی — آفلاین.">
 <meta name="keywords" content="لومیتک, lumitek, ابزار آنلاین, بازی آنلاین, اخبار ورزش, پشتیبانی هوش مصنوعی, خرید سکه, وب اپلیکیشن">
 <meta name="robots" content="index,follow">
 <meta name="theme-color" content="#070b15">
-<link rel="canonical" href="https://lumitek.netlify.app/tools/percent.html">
+<link rel="canonical" href="https://lumitek.netlify.app/tools/typing.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Lumitek">
-<meta property="og:title" content="％ درصد و تخفیف | ابزارهای Lumitek">
-<meta property="og:description" content="محاسبه درصد آنلاین: درصد یک عدد، تخفیف، افزایش و کاهش درصدی — آفلاین.">
-<meta property="og:url" content="https://lumitek.netlify.app/tools/percent.html">
+<meta property="og:title" content="⌨️ تایپ‌سنجی | ابزارهای Lumitek">
+<meta property="og:description" content="آزمون سرعت تایپ فارسی و انگلیسی با WPM، دقت و رکورد شخصی — آفلاین.">
+<meta property="og:url" content="https://lumitek.netlify.app/tools/stopwatch.html">
 <meta property="og:image" content="https://lumitek.netlify.app/assets/icons/og-cover.png">
 <meta property="og:locale" content="fa_IR">
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="％ درصد و تخفیف | ابزارهای Lumitek">
-<meta name="twitter:description" content="محاسبه درصد آنلاین: درصد یک عدد، تخفیف، افزایش و کاهش درصدی — آفلاین.">
+<meta name="twitter:title" content="⌨️ تایپ‌سنجی | ابزارهای Lumitek">
+<meta name="twitter:description" content="آزمون سرعت تایپ فارسی و انگلیسی با WPM، دقت و رکورد شخصی — آفلاین.">
 <meta name="twitter:image" content="https://lumitek.netlify.app/assets/icons/og-cover.png">
 <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
 <link rel="apple-touch-icon" href="../assets/icons/icon-192.png">
@@ -99,35 +99,29 @@
 </div>
 
 <main class="page">
-<p class="eyebrow">LUMITEK TOOL</p>
-<h1 id="t-title">％ درصد و تخفیف</h1>
-<p class="muted" id="t-lead">درصد یک عدد، تخفیف قیمت و تغییرات درصدی — همه در یک جا.</p>
+<p class="eyebrow">LUMITEK TOOL · NEW</p>
+<h1 data-i18n="tl.typingT">⌨️ تایپ‌سنجی</h1>
+<p class="muted" data-i18n="tl.typingL">سرعت تایپ فارسی و انگلیسی‌ات را بسنج — WPM، دقت و رکورد شخصی.</p>
 
-<div class="grid mt2" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">
-  <div class="card">
-    <h3 id="c1t">X٪ از Y</h3>
-    <label id="c1l1">درصد (X)</label><input id="p1" class="input" type="number" value="20">
-    <label id="c1l2">عدد (Y)</label><input id="p2" class="input" type="number" value="150">
-    <div class="result"><h2 id="r1">—</h2></div>
+<div class="card mt">
+  <div class="profile-stats">
+    <div><span data-i18n="tl.tyWpm">سرعت (WPM)</span><strong id="tyWpm">۰</strong></div>
+    <div><span data-i18n="tl.tyAcc">دقت</span><strong id="tyAcc">۱۰۰٪</strong></div>
+    <div><span data-i18n="tl.tyTime">زمان</span><strong id="tyTime">۶۰</strong></div>
+    <div><span data-i18n="tl.tyBest">بهترین WPM</span><strong id="tyBest">—</strong></div>
   </div>
-  <div class="card">
-    <h3 id="c2t">X چند درصد از Y است؟</h3>
-    <label id="c2l1">عدد (X)</label><input id="q1" class="input" type="number" value="45">
-    <label id="c2l2">عدد (Y)</label><input id="q2" class="input" type="number" value="150">
-    <div class="result"><h2 id="r2">—</h2></div>
+  <div id="tyText" style="background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:18px;font-size:1.15rem;line-height:2.2;margin:16px 0;min-height:96px"></div>
+  <input id="tyInput" class="amount-input" style="width:100%;font-size:1.05rem" autocomplete="off" placeholder="اینجا تایپ کن..." disabled>
+  <div style="display:flex;gap:10px;margin-top:14px;flex-wrap:wrap;align-items:center">
+    <button id="tyStart" class="primary-btn">شروع آزمون</button>
+    <span id="tyStatus" class="muted"></span>
   </div>
-  <div class="card">
-    <h3 id="c3t">محاسبه تخفیف</h3>
-    <label id="c3l1">قیمت اصلی (تومان)</label><input id="d1" class="input" type="number" value="500000">
-    <label id="c3l2">درصد تخفیف</label><input id="d2" class="input" type="number" value="25">
-    <div class="result"><h2 id="r3">—</h2><p class="muted" id="r3b" style="margin:0"></p></div>
-  </div>
-  <div class="card">
-    <h3 id="c4t">افزایش / کاهش درصدی</h3>
-    <label id="c4l1">مقدار اولیه</label><input id="g1" class="input" type="number" value="200">
-    <label id="c4l2">درصد تغییر (منفی = کاهش)</label><input id="g2" class="input" type="number" value="15">
-    <div class="result"><h2 id="r4">—</h2></div>
-  </div>
+</div>
+
+<div class="grid mt" style="grid-template-columns:repeat(auto-fit,minmax(230px,1fr))">
+  <div class="card"><h3>⏱ آزمون ۶۰ ثانیه‌ای</h3><p class="muted">۶۰ ثانیه فرصت داری؛ هر متن تمام شود بلافاصله متن بعدی می‌آید تا اعشار WPM دقیق بماند.</p></div>
+  <div class="card"><h3>🎯 دقت زنده</h3><p class="muted">کاراکتر درست سبز و غلط قرمز می‌شود؛ دقت بالای ۹۵٪ یعنی تایپ حرفه‌ای.</p></div>
+  <div class="card"><h3>🏆 رکورد شخصی</h3><p class="muted">بهترین WPM تو همین مرورگر ذخیره می‌شود؛ هر بار بهتر از قبل تایپ کن!</p></div>
 </div>
 </main>
 
@@ -200,56 +194,108 @@
 
 <script src="../js/main.js"></script>
 <script>
+
 (function(){
   var fa = {
-    "t-title": "％ درصد و تخفیف", "t-lead": "درصد یک عدد، تخفیف قیمت و تغییرات درصدی — همه در یک جا.",
-    "c1t": "X٪ از Y", "c1l1": "درصد (X)", "c1l2": "عدد (Y)",
-    "c2t": "X چند درصد از Y است؟", "c2l1": "عدد (X)", "c2l2": "عدد (Y)",
-    "c3t": "محاسبه تخفیف", "c3l1": "قیمت اصلی (تومان)", "c3l2": "درصد تخفیف",
-    "c4t": "افزایش / کاهش درصدی", "c4l1": "مقدار اولیه", "c4l2": "درصد تغییر (منفی = کاهش)",
-    "final": "پرداخت نهایی:", "saved": "سود شما:"
+    "t-title": "⌨️ تایپ‌سنجی", "t-lead": "سرعت تایپ فارسی و انگلیسی‌ات را بسنج — WPM، دقت و رکورد.",
+    "start": "شروع آزمون", "again": "آزمون دوباره", "typeHere": "اینجا تایپ کن...",
+    "wpm": "سرعت (WPM)", "acc": "دقت", "time": "زمان", "best": "بهترین WPM",
+    "result": "نتیجه آزمون", "chars": "کاراکتر درست", "tip": "انگشت‌ها را روی ردیف میانی بگذار و بدون نگاه به کیبورد تایپ کن؛ سرعت با تمرین می‌آید!",
+    "ready": "برای شروع، دکمه شروع را بزن و متن را تایپ کن."
   };
   var en = {
-    "t-title": "％ Percentage & Discount", "t-lead": "Percent of a number, price discounts and percentage change — all in one place.",
-    "c1t": "X% of Y", "c1l1": "Percent (X)", "c1l2": "Number (Y)",
-    "c2t": "X is what % of Y?", "c2l1": "Number (X)", "c2l2": "Number (Y)",
-    "c3t": "Discount calculator", "c3l1": "Original price", "c3l2": "Discount %",
-    "c4t": "Percentage increase / decrease", "c4l1": "Initial value", "c4l2": "Change % (negative = decrease)",
-    "final": "Final price:", "saved": "You save:"
+    "t-title": "⌨️ Typing Speed Test", "t-lead": "Measure your typing speed — WPM, accuracy and records.",
+    "start": "Start test", "again": "Test again", "typeHere": "Type here...",
+    "wpm": "Speed (WPM)", "acc": "Accuracy", "time": "Time", "best": "Best WPM",
+    "result": "Test result", "chars": "Correct chars", "tip": "Rest fingers on home row and type without looking; speed comes with practice!",
+    "ready": "Press start, then type the text."
   };
-  function fmt(n){ return Number(n).toLocaleString(getLang() === "fa" ? "fa-IR" : "en-US"); }
+  var SENT_FA = [
+    "زمین گرد است و گردش می‌کند و همه ما با آن می‌گردیم و می‌چرخیم",
+    "هر کسی به زبانی که خود می‌داند دل‌خوش دارد و شیرینی سخن به زبان خود اوست",
+    "دانش بهتر از ثروت است زیرا دانش نگهبان ثروت است ولی ثروت نگهبان دانش نیست",
+    "باران که ببارد همه چیز تازه می‌شود کوچه و بام و درخت و دل خسته من",
+    "کتاب بهترین دوست انسان است چون همیشه آماده سخن گفتن با ماست",
+    "پرنده‌ها با بال پرواز می‌کنند و انسان با دل",
+    "صبح واقعی آن است که با امید و اراده آغاز شود",
+    "موفقیت مجموع تلاش‌های کوچکی است که هر روز تکرار می‌شود"
+  ];
+  var SENT_EN = [
+    "the quick brown fox jumps over the lazy dog while the sun sets",
+    "practice makes perfect so keep typing every single day",
+    "a journey of a thousand miles begins with a single step",
+    "great things are done by a series of small things brought together",
+    "the best way to predict the future is to create it"
+  ];
+  function d(){ return getLang() === "fa" ? fa : en; }
+  var DUR = 60, running = false, left = DUR, startT = 0, typed = "", target = "", correct = 0, iv = null;
+  var el = function(id){ return document.getElementById(id); };
 
-  function apply(){
-    var d = getLang() === "fa" ? fa : en;
-    for (var k in d) {
-      var el = document.getElementById(k);
-      if (el) el.textContent = d[k];
+  function pick() {
+    var pool = getLang() === "fa" ? SENT_FA : SENT_EN;
+    return pool[Math.floor(Math.random() * pool.length)];
+  }
+  function paintText() {
+    var box = el("tyText"); box.innerHTML = "";
+    for (var i = 0; i < target.length; i++) {
+      var s = document.createElement("span");
+      s.textContent = target[i];
+      if (i < typed.length) s.className = typed[i] === target[i] ? "ok" : "bad";
+      else if (i === typed.length) s.className = "cur";
+      box.appendChild(s);
     }
-    calc();
   }
-
-  function num(id){ var v = parseFloat(document.getElementById(id).value); return isNaN(v) ? 0 : v; }
-
-  function calc(){
-    var r1 = num("p1") / 100 * num("p2");
-    document.getElementById("r1").textContent = Number.isFinite(r1) ? fmt(+r1.toFixed(4)) : "—";
-    var r2 = num("q2") ? (num("q1") / num("q2")) * 100 : 0;
-    document.getElementById("r2").textContent = Number.isFinite(r2) ? "+" + (+r2.toFixed(2)) + "٪" : "—";
-    var price = num("d1"), disc = num("d2");
-    var save = price * disc / 100;
-    document.getElementById("r3").textContent = fmt(+(price - save).toFixed(2));
-    var d = getLang() === "fa" ? fa : en;
-    document.getElementById("r3b").textContent = d.final + " " + fmt(+(price - save).toFixed(0)) + " — " + d.saved + " " + fmt(+save.toFixed(0));
-    var r4 = num("g1") * (1 + num("g2") / 100);
-    document.getElementById("r4").textContent = Number.isFinite(r4) ? fmt(+r4.toFixed(2)) : "—";
+  function wpm() {
+    var mins = Math.max(1/60, (DUR - left) / 60);
+    return Math.round((correct / 5) / mins);
   }
-
-  ["p1","p2","q1","q2","d1","d2","g1","g2"].forEach(function(id){
-    document.getElementById(id).addEventListener("input", calc);
+  function paintStats() {
+    el("tyWpm").textContent = getLang() === "fa" ? Number(wpm()).toLocaleString("fa-IR") : wpm();
+    var acc = typed.length ? Math.round(correct / typed.length * 100) : 100;
+    el("tyAcc").textContent = (getLang() === "fa" ? Number(acc).toLocaleString("fa-IR") : acc) + "٪";
+    el("tyTime").textContent = getLang() === "fa" ? Number(left).toLocaleString("fa-IR") : left;
+  }
+  function finish() {
+    running = false; clearInterval(iv);
+    el("tyInput").disabled = true;
+    var score = wpm();
+    var bestKey = "lumitek_typing_best";
+    var best = parseInt(localStorage.getItem(bestKey) || "0", 10);
+    if (score > best) { best = score; localStorage.setItem(bestKey, String(best)); }
+    el("tyBest").textContent = best;
+    el("tyStatus").textContent = d().result + ": " + score + " WPM · " + d().chars + " " + correct;
+    el("tyStart").textContent = d().again;
+    el("tyStart").style.display = "";
+  }
+  el("tyStart").onclick = function() {
+    target = pick(); typed = ""; correct = 0; left = DUR;
+    running = true;
+    el("tyInput").disabled = false; el("tyInput").value = ""; el("tyInput").focus();
+    this.style.display = "none";
+    el("tyStatus").textContent = "";
+    paintText(); paintStats();
+    clearInterval(iv);
+    iv = setInterval(function() {
+      left--;
+      paintStats();
+      if (left <= 0) finish();
+    }, 1000);
+  };
+  el("tyInput").addEventListener("input", function() {
+    if (!running) return;
+    typed = this.value;
+    correct = 0;
+    for (var i = 0; i < typed.length; i++) if (typed[i] === target[i]) correct++;
+    paintText(); paintStats();
+    if (typed.length >= target.length) { this.value = ""; target = pick(); paintText(); }
   });
-  document.addEventListener("lumitek:langchange", apply);
-  apply();
+  el("tyBest").textContent = localStorage.getItem("lumitek_typing_best") || "—";
+  el("tyStatus").textContent = d().ready;
+  document.addEventListener("lumitek:langchange", function(){ el("tyStatus").textContent = d().ready; });
 })();
+
 </script>
+
 </body>
+
 </html>

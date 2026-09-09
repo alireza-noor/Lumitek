@@ -16,6 +16,10 @@
   <url><loc>https://lumitek.netlify.app/pages/about.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
   <url><loc>https://lumitek.netlify.app/pages/contact.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
   <url><loc>https://lumitek.netlify.app/pages/donate.html</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://lumitek.netlify.app/pages/sniper.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://lumitek.netlify.app/pages/island.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://lumitek.netlify.app/pages/td.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://lumitek.netlify.app/pages/dragrace.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <!-- games -->
   <url><loc>https://lumitek.netlify.app/pages/shooter.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://lumitek.netlify.app/pages/maze.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -60,4 +64,8 @@
   <url><loc>https://lumitek.netlify.app/pages/runner.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://lumitek.netlify.app/pages/rally.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://lumitek.netlify.app/pages/hoops.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://lumitek.netlify.app/tools/typing.html</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://lumitek.netlify.app/tools/pomodoro.html</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://lumitek.netlify.app/tools/colors.html</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://lumitek.netlify.app/tools/basehash.html</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
 </urlset>

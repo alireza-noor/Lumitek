@@ -44,7 +44,7 @@ window.LumiI18n = (function () {
 
     /* ---------- index ---------- */
     "idx.h1a": "همه چیز یکجا،", "idx.h1b": "سریع و ساده.",
-    "idx.lead": "۲۰ ابزار کاربردی، ۲۲ بازی در ۷ دسته، فروشگاه کامل با سکه و اسلحه و اسکین، هوش مصنوعی لومیتک، اسپورتک با جدول لیگ‌ها و نصب به‌صورت اپ — همه در یک تجربه سریع و زیبا.",
+    "idx.lead": "۲۴ ابزار کاربردی، ۲۶ بازی در ۷ دسته، ۱۶ مقاله آموزشی با خواندن داخل سایت، فروشگاه کامل با سکه و اسلحه و اسکین، هوش مصنوعی لومیتک، اسپورتک با جدول لیگ‌ها و نصب به‌صورت اپ — همه در یک تجربه سریع و زیبا.",
     "idx.ctaGames": "🎮 بازی کن", "idx.ctaStore": "🛍️ فروشگاه", "idx.ctaCoins": "🪙 شارژ سکه", "idx.ctaDownload": "⬇️ نصب اپ", "idx.ctaAI": "✨ هوش مصنوعی لومیتک",
     "idx.statTools": "ابزار کاربردی", "idx.statGames": "بازی آنلاین", "idx.statItems": "آیتم فروشگاه", "idx.statAI": "ساعته AI آنلاین", "idx.statLeagues": "لیگ در اسپورتک",
     "idx.card.ai.t": "هوش مصنوعی لومیتک", "idx.card.ai.d": "دستیار AI آنلاین و قوی برای هر سوالی — هر سوال فقط ۲ سکه!",
@@ -55,13 +55,13 @@ window.LumiI18n = (function () {
     "idx.card.coins.t": "سکه و VIP", "idx.card.coins.d": "شارژ سکه، پاداش روزانه ۱۰ سکه‌ای و اشتراک VIP — همه داخل فروشگاه.",
     "idx.card.sports.t": "اسپورتک 🏆", "idx.card.sports.d": "اخبار زنده، جدول لیگ‌های ایران و دنیا (خلیج فارس، پرمیرلیگ، لالیگا، سری آ، بوندسلیگا، NBA و...) و بازی‌های پیش رو.",
     "idx.card.tech.t": "فناوری", "idx.card.tech.d": "هوش مصنوعی، نرم‌افزار، سخت‌افزار و راهنماهای برنامه‌نویسی.",
-    "idx.card.articles.t": "مقالات", "idx.card.articles.d": "علم، آموزش، تاریخ، فناوری و دانستنی‌های عمومی.",
+    "idx.card.articles.t": "مقالات", "idx.card.articles.d": "۱۶ مقاله: ۱۰ آموزش گام‌به‌گام کامپیوتر (پایتون، HTML، امنیت و...) + علم، تاریخ و فناوری — با خواندن کامل داخل سایت.",
     "idx.card.download.t": "دانلود اپ", "idx.card.download.d": "Lumitek را مثل یک اپلیکیشن واقعی روی گوشی و کامپیوتر نصب کن — حتی آفلاین کار می‌کند.",
-    "idx.card.account.t": "حساب کاربری", "idx.card.account.d": "ورود با گوگل یا ایمیل، آواتار، سطح، دستاوردها، رکوردها و بکاپ‌گیری.",
+    "idx.card.account.t": "حساب کاربری", "idx.card.account.d": "ورود با گوگل، مایکروسافت، ایمیل یا مهمان — آواتار، سطح، دستاوردها، رکوردها و بکاپ‌گیری.",
     "idx.card.support.t": "پشتیبانی هوشمند", "idx.card.support.d": "دستیار AI که به سوالاتت درباره Lumitek جواب می‌دهد.",
-    "idx.noticeTitle": "جدیدترین: Lumitek 0.7",
-    "idx.noticeText": "لوگوی جدید، اسپورتک با جدول ۱۴ لیگ و بازی‌های پیش رو، ۴ بازی جدید (تیراندازی دقیق، دونده ماجراجویی، رالی شبانه، بسکتبال)، ماشین‌حساب مهندسی کامل، درگاه پرداخت و ارتقای ابزارها!",
-    "idx.noticeText2": "لوگوی جدید هدر، اسپورتک با جدول لیگ‌ها و بازی‌های پیش رو، ۴ بازی جدید، ماشین‌حساب مهندسی کامل، درگاه پرداخت فروشگاه و هوش مصنوعی قوی‌تر!",
+    "idx.noticeTitle": "جدیدترین: Lumitek 0.8",
+    "idx.noticeText": "۱۰ مقاله آموزشی با خواندن داخل سایت، اسکین بازی‌ها در فروشگاه، ورود مهمان و مایکروسافت، ۴ رشته ورزشی جدید و ۸ جدول لیگ و فوتر اجتماعی ایرانی!",
+    "idx.noticeText2": "۱۰ مقاله آموزشی کامپیوتر با خواندن داخل سایت، اسکین اختصاصی بازی‌ها در فروشگاه، ورود مهمان و ورود با مایکروسافت، ۴ رشته ورزشی جدید و ۸ جدول لیگ، شبکه‌های اجتماعی ایرانی در فوتر و لوگوی بزرگ‌تر!",
     "idx.noticeLink": "مشاهده تغییرات →",
     "idx.supportTitle": "به رشد Lumitek کمک کن.",
     "idx.supportText": "اگه Lumitek برات مفیده، یه حمایت اختیاری به هزینه‌های هاست، توسعه و امکانات جدید کمک می‌کنه.",
@@ -79,6 +79,20 @@ window.LumiI18n = (function () {
     "g.range.n": "تیراندازی دقیق", "g.range.d": "اهداف متحرک را در ۴۵ ثانیه شکار کن؛ دقت و کمبو امتیازت را بالا می‌برد!",
     "g.runner.n": "دونده ماجراجویی", "g.runner.d": "در غار بدو، از موانع بپر و سکه‌های گنج را جمع کن — سرعت هر لحظه بیشتر می‌شود!",
     "g.rally.n": "رالی شبانه", "g.rally.d": "شبانه در جاده کوهستانی رانندگی کن، با نیترو از ترافیک رد شو و رکورد مسافت بزن!",
+    "g.sniper.n": "تک‌تیرانداز حرفه‌ای", "g.sniper.d": "زوم کن، باد را حساب کن و اهداف متحرک را بزن — با اسنایپرهای فروشگاه اسکین اختصاصی بگیر!",
+    "g.island.n": "گنج جزیره", "g.island.d": "کاوشگر جزیره باش: ۳ کلید پیدا کن، صندوق گنج را باز کن و از راهزن‌ها فرار کن!",
+    "g.td.n": "دژبان", "g.td.d": "برج‌های خودت را کنار مسیر بچین، ۱۰ موج دشمن را دفع کن و دژ را نگه دار!",
+    "g.dragrace.n": "درگ‌ریس", "g.dragrace.d": "۴۰۲ متر، ۵ دنده، یک حریف سرسخت — سر وقت دنده بزن، نیترو بسوزان و ببر!",
+    "unit.wave": "موج",
+    "store.tabGameSkin": "🎮 اسکین بازی‌ها",
+    "auth.ms": "ورود با مایکروسافت",
+    "auth.guest": "ورود سریع به عنوان مهمان",
+    "auth.msLead": "برای ورود با مایکروسافت، ایمیل اکانت خود را وارد کن:",
+    "footer.socialT": "ما را در شبکه‌های اجتماعی دنبال کنید",
+    "tools.typing.t": "⌨️ تایپ‌سنجی", "tools.typing.d": "آزمون سرعت تایپ با WPM، دقت و رکورد.",
+    "tools.pomo.t": "🍅 تایمر پومودورو", "tools.pomo.d": "تمرکز ۲۵ دقیقه‌ای با استراحت — حلقه پیشرفت و زنگ.",
+    "tools.color.t": "🎨 رنگ‌ساز و پالت", "tools.color.d": "HEX/RGB/HSL، سایه‌ها، هارمونی و گرادیان.",
+    "tools.base.t": "🔢 مبدل مبنا و هش", "tools.base.d": "دودویی/شانزده‌شانزدهی، Base64 و هش SHA-256.",
     "g.hoops.n": "بسکتبال", "g.hoops.d": "زاویه و قدرت پرتاب را تنظیم کن و در ۶۰ ثانیه بیشترین سبکت را بزن!",
     "g.numberrush.n": "مسابقه اعداد", "g.numberrush.d": "عدد هدف را قبل از تمام شدن ۱۰ دور پیدا کن.",
     "g.colortap.n": "رنگ‌یار", "g.colortap.d": "رنگ درست را از بین گزینه‌ها انتخاب کن.",
@@ -159,7 +173,7 @@ window.LumiI18n = (function () {
 
     /* ---------- tools hub ---------- */
     "tools.h1": "ابزارهایی که کار را انجام می‌دهند.",
-    "tools.lead": "۲۰ ابزار کاربردی، سریع و بدون ارسال داده به هیچ سروری — از تقویم ایران و اوقات شرعی تا آمار، نمودار و فیزیک.",
+    "tools.lead": "۲۴ ابزار کاربردی، سریع و کاملاً آفلاین — از ماشین‌حساب مهندسی و تقویم ایران و اوقات شرعی تا آمار، نمودار، فیزیک، تایپ‌سنجی و رنگ‌ساز.",
     "tools.tagReady": "آماده", "tools.tagNew": "جدید",
     "tools.calc.t": "🧮 ماشین‌حساب پیشرفته", "tools.calc.d": "حالت‌های مهندسی، علمی، آمار و عبارت.",
     "tools.conv.t": "📏 تبدیل واحد", "tools.conv.d": "طول، جرم، دما، مساحت و سرعت.",
@@ -272,7 +286,7 @@ window.LumiI18n = (function () {
     "ct.idea": "ایده‌ای برای بازی، ابزار یا بخش جدید داری؟ خوشحال می‌شویم بشنویم!",
     "ct.name": "نام", "ct.msg": "پیام", "ct.send": "ارسال پیام",
     "ct.err": "نام و پیام را وارد کن.", "ct.ok": "پیامت ثبت شد — به‌زودی جواب می‌دهیم!",
-    "ar.h1": "مقالات", "ar.lead": "بخوان، یاد بگیر، کشف کن.",
+    "ar.h1": "مقالات", "ar.lead": "بخوان، یاد بگیر، کشف کن — ۱۶ مقاله علمی، آموزشی و فناوری با خواندن کامل داخل سایت. با خواندن هر آموزش هم ۵ سکه جایزه بگیر!", "ar.tutTitle": "🎓 آموزش‌های گام‌به‌گام کامپیوتر — برای شروع کلیک کن", "ar.sciTitle": "🔬 مقالات علمی و فناوری", "ar.minutes": "دقیقه مطالعه", "ar.readCta": "✅ خواندم و یاد گرفتم — ۵ سکه بگیر!", "ar.readDone": "خوانده‌شده ✓ جایزه‌ات قبلاً واریز شده است", "m.articleReward": "🎉 ۵ سکه بابت خواندن آموزش اضافه شد! ادامه بده!",
     "ar.t1": "علم", "ar.t2": "فناوری", "ar.t3": "آموزش", "ar.t4": "تاریخ", "ar.t5": "ورزش", "ar.t6": "عمومی",
     "ar.a1t": "اینترنت چطور کار می‌کند؟", "ar.a1d": "نگاهی ساده به سیستم‌های پشت وب برای مبتدی‌ها.",
     "ar.a2t": "هوش مصنوعی چیست؟", "ar.a2d": "معرفی ساده‌ای از هوش مصنوعی و کاربردهایش.",
@@ -406,7 +420,7 @@ window.LumiI18n = (function () {
     /* ---------- v0.7: Sportek ---------- */
     "sp.sportTitle": "🎲 رشته ورزشی را انتخاب کن",
     "sp.sport.football": "فوتبال", "sp.sport.basketball": "بسکتبال", "sp.sport.volleyball": "والیبال",
-    "sp.sport.tennis": "تنیس", "sp.sport.futsal": "فوتسال", "sp.sport.martial": "ورزش‌های رزمی",
+    "sp.sport.tennis": "تنیس", "sp.sport.futsal": "فوتسال", "sp.sport.martial": "ورزش‌های رزمی", "sp.sport.handball": "هندبال", "sp.sport.tabletennis": "تنیس روی میز", "sp.sport.f1": "فرمول یک", "sp.sport.cycling": "دوچرخه‌سواری",
     "sp.tabUpcoming": "🔥 بازی‌های پیش رو",
     "sp.leagueTitle": "لیگ را انتخاب کن",
     "sp.refreshAll": "🔄 بروزرسانی همه",
@@ -427,7 +441,8 @@ window.LumiI18n = (function () {
     "coins.aiUnl": "هوش مصنوعی نامحدود",
 
     /* ---------- v0.7: announcements v0.7 entry ---------- */
-    "up.v7t": "نسخه 0.7 — لوگوی جدید، اسپورتک و درگاه پرداخت 🏆",
+    "up.v8t": "نسخه 0.8 — بازی‌ها، ابزارها، مقالات و اسپورتک بزرگ‌تر شد! 🚀", "up.v8d": "۴ بازی و ۴ ابزار و ۱۰ مقاله جدید، اسپورتک با رشته‌ها و لیگ‌های بیشتر + اخبار تخصصی، ورود مهمان و مایکروسافت، فوتر شبکه‌های اجتماعی ایرانی، لوگوی بزرگ‌تر، حذف اشتراک هوش مصنوعی و ظاهر بهتر.",
+"up.v7t": "نسخه 0.7 — لوگوی جدید، اسپورتک و درگاه پرداخت 🏆",
     "up.v7d": "لوگوی جدید Lumitek در هدر همه صفحات (بدون پس‌زمینه، سازگار با تم روز و شب)، بازطراحی کامل بخش ورزش به اسپورتک Sportek با انتخاب رشته، جدول ۱۴ لیگ (خلیج فارس، پرمیرلیگ، لالیگا، سری آ، بوندسلیگا، لیگ ۱، NBA و...) و بازی‌های پیش رو با دکمه بروزرسانی همه، ۴ بازی جدید (تیراندازی دقیق، دونده ماجراجویی، رالی شبانه، بسکتبال)، حذف بازی حافظه، ماشین‌حساب مهندسی کامل تک‌حالته با چیدمان عمودی عملگرها، درگاه پرداخت فروشگاه برای سکه، VIP و بسته‌های هوش مصنوعی، دکمه تغییرات نسخه‌ها در هدر، اعلان‌های خوانده‌شده، جلوگیری از جابه‌جایی صفحه هنگام بازی + پشتیبانی WASD، حذف بخش سکه از هدر، ارتقای ابزارها و هوش مصنوعی قوی‌تر."
   };
 
@@ -470,7 +485,7 @@ window.LumiI18n = (function () {
 
     /* ---------- index ---------- */
     "idx.h1a": "Everything in one place,", "idx.h1b": "fast and simple.",
-    "idx.lead": "20 practical tools, 22 games in 7 categories, a full store with coins, weapons & skins, Lumitek AI, Sportek with league standings, and an installable app — all in one fast, beautiful experience.",
+    "idx.lead": "24 practical tools, 26 games in 7 categories, 16 in-site tutorial articles, a full store with coins, weapons & skins, Lumitek AI, Sportek with league standings, and an installable app — all in one fast, beautiful experience.",
     "idx.ctaGames": "🎮 Play now", "idx.ctaStore": "🛍️ Store", "idx.ctaCoins": "🪙 Buy coins", "idx.ctaDownload": "⬇️ Install app", "idx.ctaAI": "✨ Lumitek AI",
     "idx.statTools": "practical tools", "idx.statGames": "online games", "idx.statItems": "store items", "idx.statAI": "/7 online AI", "idx.statLeagues": "sports leagues",
     "idx.card.ai.t": "Lumitek AI", "idx.card.ai.d": "A powerful online assistant for anything — only 2 coins per question!",
@@ -481,13 +496,13 @@ window.LumiI18n = (function () {
     "idx.card.coins.t": "Coins & VIP", "idx.card.coins.d": "Coin top-ups, the 10-coin daily reward and VIP subscription — all inside the Store.",
     "idx.card.sports.t": "Sportek 🏆", "idx.card.sports.d": "Live news, standings of Iran & world leagues (PGPL, Premier League, La Liga, Serie A, Bundesliga, NBA and more) and upcoming matches.",
     "idx.card.tech.t": "Technology", "idx.card.tech.d": "AI, software, hardware and programming guides.",
-    "idx.card.articles.t": "Articles", "idx.card.articles.d": "Science, learning, history, technology and general knowledge.",
+    "idx.card.articles.t": "Articles", "idx.card.articles.d": "16 articles: 10 step-by-step computer tutorials (Python, HTML, security...) plus science, history and technology — fully readable in-site.",
     "idx.card.download.t": "Get the app", "idx.card.download.d": "Install Lumitek like a real app on your phone or computer — works even offline.",
-    "idx.card.account.t": "Account", "idx.card.account.d": "Sign in with Google or email, avatars, levels, achievements, records and backups.",
+    "idx.card.account.t": "Account", "idx.card.account.d": "Sign in with Google, Microsoft, email or as guest — avatars, levels, achievements, records and backups.",
     "idx.card.support.t": "AI support", "idx.card.support.d": "An AI assistant that answers your Lumitek questions.",
-    "idx.noticeTitle": "Latest: Lumitek 0.7",
-    "idx.noticeText": "New logo, Sportek with 14 league tables & fixtures, 4 new games (Precision Range, Cave Runner, Night Rally, Hoops), full engineering calculator, store checkout and upgraded tools!",
-    "idx.noticeText2": "New header logo, Sportek with league tables & fixtures, 4 new games, full engineering calculator, store checkout and a stronger AI!",
+    "idx.noticeTitle": "Latest: Lumitek 0.8",
+    "idx.noticeText": "10 in-site tutorials, game skins in the store, guest & Microsoft sign-in, 4 new sports, 8 new league tables and an Iranian social footer!",
+    "idx.noticeText2": "10 in-site computer tutorials, dedicated game skins in the store, guest + Microsoft sign-in, 4 new sports & 8 league tables, Iranian social networks in the footer and a bigger logo!",
     "idx.noticeLink": "View changelog →",
     "idx.supportTitle": "Help Lumitek grow.",
     "idx.supportText": "If Lumitek is useful to you, an optional donation helps cover hosting, development and new features.",
@@ -505,6 +520,20 @@ window.LumiI18n = (function () {
     "g.range.n": "Precision Range", "g.range.d": "Hit moving targets in 45 seconds — accuracy and combos boost your score!",
     "g.runner.n": "Cave Runner", "g.runner.d": "Run through the cave, jump over obstacles and collect treasure coins — speed keeps rising!",
     "g.rally.n": "Night Rally", "g.rally.d": "Drive a mountain road at night, dodge traffic with nitro and set the distance record!",
+    "g.sniper.n": "Pro Sniper", "g.sniper.d": "Zoom, read the wind and hit moving targets — style them with store snipers!",
+    "g.island.n": "Treasure Island", "g.island.d": "Be the island explorer: find 3 keys, open the chest and dodge pirates!",
+    "g.td.n": "Tower Defense", "g.td.d": "Place towers along the path, repel 10 waves and hold the fort!",
+    "g.dragrace.n": "Drag Race", "g.dragrace.d": "402m, 5 gears, one fierce rival — shift in time, burn nitro and win!",
+    "unit.wave": "wave",
+    "store.tabGameSkin": "🎮 Game Skins",
+    "auth.ms": "Sign in with Microsoft",
+    "auth.guest": "Quick sign-in as guest",
+    "auth.msLead": "To continue with Microsoft, enter your account email:",
+    "footer.socialT": "Follow us on social media",
+    "tools.typing.t": "⌨️ Typing Speed Test", "tools.typing.d": "Measure typing speed — WPM, accuracy, records.",
+    "tools.pomo.t": "🍅 Pomodoro Timer", "tools.pomo.d": "25-min focus with breaks — progress ring and bell.",
+    "tools.color.t": "🎨 Color Studio", "tools.color.d": "HEX/RGB/HSL, shades, harmony and gradients.",
+    "tools.base.t": "🔢 Base & Hash Converter", "tools.base.d": "Binary/hex, Base64 and SHA-256 hashes.",
     "g.hoops.n": "Hoops Shot", "g.hoops.d": "Set the angle and power, sink as many baskets as you can in 60 seconds!",
     "g.numberrush.n": "Number Rush", "g.numberrush.d": "Find the target number before 10 rounds run out.",
     "g.colortap.n": "Color Tap", "g.colortap.d": "Pick the right color from the options.",
@@ -585,7 +614,7 @@ window.LumiI18n = (function () {
 
     /* ---------- tools hub ---------- */
     "tools.h1": "Tools that do the work.",
-    "tools.lead": "20 practical tools — fast, private and entirely in your browser. From the Iranian calendar and prayer times to statistics, plots and physics.",
+    "tools.lead": "24 practical tools — fast, private and fully offline. From the engineering calculator, Iranian calendar and prayer times to statistics, plots, physics, typing test and color studio.",
     "tools.tagReady": "READY", "tools.tagNew": "NEW",
     "tools.calc.t": "🧮 Advanced Calculator", "tools.calc.d": "Engineering, scientific, statistics and expression modes.",
     "tools.conv.t": "📏 Unit Converter", "tools.conv.d": "Length, mass, temperature, area and speed.",
@@ -698,7 +727,7 @@ window.LumiI18n = (function () {
     "ct.idea": "Have an idea for a game, tool or section? We'd love to hear it!",
     "ct.name": "Name", "ct.msg": "Message", "ct.send": "Send message",
     "ct.err": "Enter your name and message.", "ct.ok": "Message saved — we will reply soon!",
-    "ar.h1": "Articles", "ar.lead": "Read. Learn. Explore.",
+    "ar.h1": "Articles", "ar.lead": "Read. Learn. Explore — 16 science, tech and tutorial articles, fully readable in-site. Earn 5 coins for each tutorial you finish!", "ar.tutTitle": "🎓 Step-by-Step Computer Tutorials — click to start", "ar.sciTitle": "🔬 Science & Technology Articles", "ar.minutes": "min read", "ar.readCta": "✅ I read and learned — claim 5 coins!", "ar.readDone": "Already read ✓ your reward was deposited", "m.articleReward": "🎉 5 coins added for finishing the tutorial! Keep going!",
     "ar.t1": "SCIENCE", "ar.t2": "TECH", "ar.t3": "EDUCATION", "ar.t4": "HISTORY", "ar.t5": "SPORTS", "ar.t6": "GENERAL",
     "ar.a1t": "How does the internet work?", "ar.a1d": "A beginner-friendly look at the systems behind the web.",
     "ar.a2t": "What is AI?", "ar.a2d": "A simple introduction to artificial intelligence.",
@@ -832,7 +861,7 @@ window.LumiI18n = (function () {
     /* ---------- v0.7: Sportek ---------- */
     "sp.sportTitle": "🎲 Pick your sport",
     "sp.sport.football": "Football", "sp.sport.basketball": "Basketball", "sp.sport.volleyball": "Volleyball",
-    "sp.sport.tennis": "Tennis", "sp.sport.futsal": "Futsal", "sp.sport.martial": "Martial Arts",
+    "sp.sport.tennis": "Tennis", "sp.sport.futsal": "Futsal", "sp.sport.martial": "Martial Arts", "sp.sport.handball": "Handball", "sp.sport.tabletennis": "Table Tennis", "sp.sport.f1": "Formula 1", "sp.sport.cycling": "Cycling",
     "sp.tabUpcoming": "🔥 Upcoming matches",
     "sp.leagueTitle": "Choose a league",
     "sp.refreshAll": "🔄 Refresh everything",
@@ -853,7 +882,8 @@ window.LumiI18n = (function () {
     "coins.aiUnl": "Unlimited AI",
 
     /* ---------- v0.7: announcements v0.7 entry ---------- */
-    "up.v7t": "Version 0.7 — New logo, Sportek & checkout 🏆",
+    "up.v8t": "Version 0.8 — Bigger games, tools, articles & Sportek! 🚀", "up.v8d": "4 new games & 4 new tools & 10 new articles, Sportek with more sports/leagues + per-sport news, guest & Microsoft sign-in, Iranian social footer, bigger logo, AI subscription removed and UI polish.",
+"up.v7t": "Version 0.7 — New logo, Sportek & checkout 🏆",
     "up.v7d": "New transparent Lumitek logo in every header (day/night friendly), sports section rebuilt as Sportek with sport picker, 14 league tables (PGPL, Premier League, La Liga, Serie A, Bundesliga, Ligue 1, NBA and more), upcoming fixtures + a refresh-all button, 4 new games (Precision Range, Cave Runner, Night Rally, Hoops Shot), memory game removed, single full engineering calculator with vertical operator layout, store checkout for coins, VIP and AI packs, header changelog button, read-state notifications, page-scroll lock while gaming + WASD support, coins section removed from header, upgraded tools and a stronger AI."
   };
 

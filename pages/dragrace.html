@@ -3,23 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>🌀 ماز | بازی‌های Lumitek</title>
-<meta name="description" content="بازی ماز آنلاین — از هزارتوی تصادفی به گنج برس؛ هر بار یک ماز جدید با سطح‌های سخت‌تر.">
+<title>🏁 درگ‌ریس | بازی‌های Lumitek</title>
+<meta name="description" content="بازی رانندگی درگ‌ریس — دنده‌ها را سر وقت عوض کن، نیترو بسوزان و حریف را شکست بده.">
 <meta name="keywords" content="لومیتک, lumitek, بازی آنلاین, ابزار آنلاین, هوش مصنوعی, خرید سکه, وب اپلیکیشن">
 <meta name="robots" content="index,follow">
 <meta name="theme-color" content="#070b15">
-<link rel="canonical" href="https://lumitek.netlify.app/pages/maze.html">
+<link rel="canonical" href="https://lumitek.netlify.app/pages/dragrace.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Lumitek">
-<meta property="og:title" content="🌀 ماز | بازی‌های Lumitek">
-<meta property="og:description" content="بازی ماز آنلاین — از هزارتوی تصادفی به گنج برس؛ هر بار یک ماز جدید با سطح‌های سخت‌تر.">
-<meta property="og:url" content="https://lumitek.netlify.app/pages/maze.html">
+<meta property="og:title" content="🏁 درگ‌ریس | بازی‌های Lumitek">
+<meta property="og:description" content="بازی رانندگی درگ‌ریس — دنده‌ها را سر وقت عوض کن، نیترو بسوزان و حریف را شکست بده.">
+<meta property="og:url" content="https://lumitek.netlify.app/pages/drive.html">
 <meta property="og:image" content="https://lumitek.netlify.app/assets/icons/og-cover.png">
 <meta property="og:locale" content="fa_IR">
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="🌀 ماز | بازی‌های Lumitek">
-<meta name="twitter:description" content="بازی ماز آنلاین — از هزارتوی تصادفی به گنج برس؛ هر بار یک ماز جدید با سطح‌های سخت‌تر.">
+<meta name="twitter:title" content="🏁 درگ‌ریس | بازی‌های Lumitek">
+<meta name="twitter:description" content="بازی رانندگی درگ‌ریس — دنده‌ها را سر وقت عوض کن، نیترو بسوزان و حریف را شکست بده.">
 <meta name="twitter:image" content="https://lumitek.netlify.app/assets/icons/og-cover.png">
 <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
 <link rel="apple-touch-icon" href="../assets/icons/icon-192.png">
@@ -104,24 +104,32 @@
 </div>
 <main class="page"><div class="game">
 <p class="eyebrow">LUMITEK GAME · NEW</p>
-<h1 data-i18n="g.maze.n">🌀 ماز</h1>
-<p class="muted" data-i18n="g.maze.d">از هزارتوی تصادفی به گنج برس — هر بار یک ماز جدید!</p>
+<h1 data-i18n="g.dragrace.n">🏁 درگ‌ریس</h1>
+<p class="muted" data-i18n="g.dragrace.d">۴۰۲ متر، ۵ دنده، یک حریف سرسخت — سر وقت دنده بزن، نیترو بسوزان و با ماشین اسکین‌دار خودت ببر!</p>
 
 <div class="gamebox mt">
-  <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
-    <span class="coin-pill"><span data-i18n="games.cat.puzzle">پازل</span> <b id="mzLevel">1</b></span>
-    <span class="coin-pill">⏱️ <b id="mzTime">0</b>s</span>
-    <span class="coin-pill">🏆 <span data-i18n="unit.solved">حل‌شده:</span> <b id="mzSolved">0</b></span>
+  <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center">
+    <span class="coin-pill">🏆 <span data-i18n="games.yourBest">رکورد شما</span>: <b id="drBest">—</b></span>
+    <span class="coin-pill">⚡ نیترو: W</span>
+    <span class="coin-pill">⎵ دنده: Space</span>
   </div>
-  <canvas id="mzCanvas" width="361" height="361" style="max-width:100%;border-radius:16px;touch-action:none;margin-top:12px"></canvas>
-  <div class="snake-pad">
-    <span></span><button data-dir="up">▲</button><span></span>
-    <button data-dir="left">◀</button><button data-dir="down">▼</button><button data-dir="right">▶</button>
+  <canvas id="drCanvas" width="360" height="520" style="max-width:100%;border-radius:16px;touch-action:none;margin-top:12px"></canvas>
+  <div style="display:flex;gap:10px;justify-content:center;margin-top:12px;flex-wrap:wrap">
+    <button class="gamebutton" id="drStart">شروع مسابقه</button>
+    <button class="gamebutton" id="drShift" style="background:var(--card2)">⎵ دنده بزن</button>
+    <button class="gamebutton" id="drNitro" style="background:var(--card2)">⚡ نیترو</button>
   </div>
-  <button class="gamebutton" id="mzNew" style="margin-top:10px">ماز جدید</button>
-  <p id="mzMsg" class="muted" style="margin:8px 0 0"></p>
+  <div class="sh-hint" id="drHint">عقربه در ناحیه سبز = دنده بی‌نقص (شتاب حفظ می‌شود) | زود بزنی دیر، دیر بزنی موتور می‌خوابد!</div>
+  <p id="drReward" class="muted" style="margin:8px 0 0"></p>
+</div>
+
+<div class="grid mt" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
+  <div class="card"><h3>⏱ زمان‌بندی دنده</h3><p class="muted">وقتی عقربه دور به ناحیه سبز رسید دنده بزن — دنده بی‌نقص شتاب را حفظ می‌کند و مزیت واقعی می‌دهد.</p></div>
+  <div class="card"><h3>⚡ نیترو استراتژیک</h3><p class="muted">نیترو فقط یک بار در هر مسابقه است؛ در دنده ۳ یا ۴ استفاده‌اش کن تا بیشترین اثر را بگیری.</p></div>
+  <div class="card"><h3>🎨 اسکین ماشین</h3><p class="muted">شاهین سرخ، گران‌تور نئون یا کلاسیک طلایی را از فروشگاه بگیر و با ماشین خودت خط شروع بایست.</p></div>
 </div>
 </div></main>
+
 
 <footer class="footer-v2">
   <div class="fv-grid">
@@ -182,155 +190,181 @@
   </div>
 </footer>
 
+
+
 <script src="../js/i18n.js"></script>
 <script src="../js/main.js"></script>
 <script src="../js/auth.js"></script>
-
 <script>
+/* Lumitek 0.8 — درگ‌ریس */
 (function(){
-  var canvas = document.getElementById("mzCanvas");
-  var ctx = canvas.getContext("2d");
-  var W = canvas.width, COLS = 15, CELL = W / COLS, ROWS = COLS;
-  var levelEl = document.getElementById("mzLevel");
-  var timeEl = document.getElementById("mzTime");
-  var solvedEl = document.getElementById("mzSolved");
-  var msgEl = document.getElementById("mzMsg");
-  function L(fa,en){ return getLang()==="fa"?fa:en; }
+  var canvas = document.getElementById("drCanvas"), ctx = canvas.getContext("2d");
+  var W = canvas.width, H = canvas.height;
+  var L = function(fa, en){ return (window.LumiI18n && getLang() === "en") ? en : fa; };
+  var running = false, last = 0, dist = 0, speed = 0, gear = 1, rpm = 0, nitro = 0, nitroUsed = false;
+  var stumble = 0, shifts = 0, perfects = 0, raceOver = false, playerWin = null, raceTime = 0;
+  var rival = { dist: 0, speed: 0, gear: 1, skill: .75 };
+  var wins = 0;
+  var skin = { body: "#3f8cff", glow: "rgba(63,140,255,.6)" };
+  try {
+    var sk = (window.Lumitek && Lumitek.skin) ? Lumitek.skin("car") : "car_default";
+    var all = (window.Lumitek && Lumitek.gameSkins) ? Lumitek.gameSkins : {};
+    if (all[sk]) skin = all[sk];
+  } catch(e) {}
+  var FINISH = 402;
+  var GEAR_TOP = [60, 105, 150, 195, 250];
 
-  var p0 = getProfile();
-  var solvedTotal = p0.bests.mazeSolves || 0;
-  solvedEl.textContent = solvedTotal;
-
-  var grid, player, goal, level = 1, timer = null, seconds = 0, solvedNow = false;
-
-  function newMaze() {
-    grid = [];
-    for (var y = 0; y < ROWS; y++) {
-      var row = [];
-      for (var x = 0; x < COLS; x++) row.push({ v: [1,1,1,1], seen: false }); /* top,right,bottom,left walls */
-      grid.push(row);
-    }
-    var stack = [[0,0]];
-    grid[0][0].seen = true;
-    var DIRS = [[0,-1,0,2],[1,0,1,3],[0,1,2,0],[-1,0,3,1]];
-    while (stack.length) {
-      var cur = stack[stack.length-1];
-      var cx = cur[0], cy = cur[1];
-      var opts = [];
-      for (var d = 0; d < 4; d++) {
-        var nx = cx + DIRS[d][0], ny = cy + DIRS[d][1];
-        if (nx >= 0 && ny >= 0 && nx < COLS && ny < ROWS && !grid[ny][nx].seen) opts.push(d);
-      }
-      if (!opts.length) { stack.pop(); continue; }
-      var dd = opts[Math.floor(Math.random()*opts.length)];
-      grid[cy][cx].v[DIRS[dd][2]] = 0;
-      grid[cy+DIRS[dd][1]][cx+DIRS[dd][0]].v[DIRS[dd][3]] = 0;
-      grid[cy+DIRS[dd][1]][cx+DIRS[dd][0]].seen = true;
-      stack.push([cx+DIRS[dd][0], cy+DIRS[dd][1]]);
-    }
-    player = { x: 0, y: 0 };
-    goal = { x: COLS-1, y: ROWS-1 };
-    seconds = 0; solvedNow = false;
-    timeEl.textContent = "0";
-    levelEl.textContent = level;
-    msgEl.textContent = "";
-    draw();
-    if (timer) clearInterval(timer);
-    timer = setInterval(function(){ seconds++; timeEl.textContent = seconds; }, 1000);
+  function paintBest() {
+    var b = (getProfile().bests || {}).dragrace;
+    document.getElementById("drBest").textContent = b != null ? b : "—";
   }
+  document.addEventListener("lumitek:langchange", paintBest); paintBest();
 
-  function cssVar(n){ return getComputedStyle(document.documentElement).getPropertyValue(n).trim() || "#76e6c3"; }
-
+  function reset() {
+    dist = 0; speed = 0; gear = 1; rpm = 0; nitro = 0; nitroUsed = false; stumble = 0;
+    shifts = 0; perfects = 0; raceOver = false; playerWin = null; raceTime = 0;
+    rival = { dist: 0, speed: 0, gear: 1, skill: Math.min(.95, .72 + wins * .05) };
+  }
+  function drawCar(x, y, color, glow, label) {
+    ctx.save();
+    ctx.shadowColor = glow; ctx.shadowBlur = 14;
+    ctx.fillStyle = color;
+    var r = 8;
+    ctx.beginPath();
+    ctx.moveTo(x - 14, y - 22); ctx.lineTo(x + 14, y - 22);
+    ctx.quadraticCurveTo(x + 22, y - 10, x + 16, y + 24);
+    ctx.lineTo(x - 16, y + 24); ctx.quadraticCurveTo(x - 22, y - 10, x - 14, y - 22);
+    ctx.fill();
+    ctx.shadowBlur = 0;
+    ctx.fillStyle = "rgba(20,26,40,.9)"; ctx.fillRect(x - 10, y - 8, 20, 14);
+    ctx.fillStyle = "#ffe9a8"; ctx.fillRect(x - 12, y + 20, 6, 4); ctx.fillRect(x + 6, y + 20, 6, 4);
+    ctx.fillStyle = "#ff8a5c"; ctx.fillRect(x - 12, y - 26, 5, 3); ctx.fillRect(x + 7, y - 26, 5, 3);
+    if (label) { ctx.fillStyle = "rgba(0,0,0,.55)"; ctx.fillRect(x - 16, y - 40, 32, 14); ctx.fillStyle = "#fff"; ctx.font = "bold 10px Shabnam, sans-serif"; ctx.textAlign = "center"; ctx.fillText(label, x, y - 30); ctx.textAlign = "start"; }
+    ctx.restore();
+  }
   function draw() {
-    ctx.clearRect(0,0,W,W);
-    ctx.fillStyle = "rgba(255,255,255,.03)";
-    ctx.fillRect(0,0,W,W);
-    ctx.strokeStyle = cssVar("--line") || "#25324a";
-    ctx.lineWidth = 2.4;
-    ctx.lineCap = "round";
-    for (var y = 0; y < ROWS; y++) for (var x = 0; x < COLS; x++) {
-      var c = grid[y][x], px = x*CELL, py = y*CELL;
-      ctx.beginPath();
-      if (c.v[0]) { ctx.moveTo(px, py); ctx.lineTo(px+CELL, py); }
-      if (c.v[1]) { ctx.moveTo(px+CELL, py); ctx.lineTo(px+CELL, py+CELL); }
-      if (c.v[2]) { ctx.moveTo(px, py+CELL); ctx.lineTo(px+CELL, py+CELL); }
-      if (c.v[3]) { ctx.moveTo(px, py); ctx.lineTo(px, py+CELL); }
-      ctx.stroke();
+    var light = document.documentElement.classList.contains("light");
+    /* asphalt */
+    ctx.fillStyle = light ? "#5a6068" : "#20242c"; ctx.fillRect(0, 0, W, H);
+    /* lanes */
+    ctx.strokeStyle = "#ffd166"; ctx.lineWidth = 3; ctx.setLineDash([14, 12]);
+    ctx.beginPath(); ctx.moveTo(W/2, 0); ctx.lineTo(W/2, H); ctx.stroke(); ctx.setLineDash([]);
+    ctx.strokeStyle = "#f3f5f7"; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.moveTo(14, 0); ctx.lineTo(14, H); ctx.moveTo(W - 14, 0); ctx.lineTo(W - 14, H); ctx.stroke();
+    /* finish line */
+    var prog = Math.min(1, Math.max(dist, rival.dist) / FINISH);
+    var fy = H - 60 - prog * (H - 120);
+    if (prog < 1) {
+      for (var i = 0; i < 8; i++) { ctx.fillStyle = i % 2 ? "#111" : "#fff"; ctx.fillRect(14 + i * (W - 28) / 8, fy, (W - 28) / 8, 10); }
     }
-    /* goal treasure */
-    ctx.font = (CELL*0.72)+"px serif";
-    ctx.textAlign = "center"; ctx.textBaseline = "middle";
-    ctx.fillText("💎", goal.x*CELL + CELL/2, goal.y*CELL + CELL/2 + 1);
-    /* player */
-    var px2 = player.x*CELL + CELL/2, py2 = player.y*CELL + CELL/2;
-    var grad = ctx.createRadialGradient(px2,py2,2,px2,py2,CELL*0.75);
-    grad.addColorStop(0, cssVar("--a")); grad.addColorStop(1, "transparent");
-    ctx.fillStyle = grad;
-    ctx.beginPath(); ctx.arc(px2,py2,CELL*0.75,0,7); ctx.fill();
-    ctx.fillStyle = cssVar("--a");
-    ctx.beginPath(); ctx.arc(px2,py2,CELL*0.3,0,7); ctx.fill();
+    /* cars: player right (RTL), rival left */
+    var py = H - 60 - Math.min(1, dist / FINISH) * (H - 120);
+    var ry = H - 60 - Math.min(1, rival.dist / FINISH) * (H - 120);
+    drawCar(W/2 + 50, py, skin.body, skin.glow, "تو");
+    drawCar(W/2 - 50, ry, "#8f9bb3", "rgba(140,150,175,.4)", L("حریف", "Rival"));
+    /* tachometer */
+    var tx = W/2, ty = 58, tr = 44;
+    ctx.beginPath(); ctx.arc(tx, ty, tr, 0, 7); ctx.fillStyle = "rgba(10,14,22,.85)"; ctx.fill();
+    ctx.strokeStyle = "#39414f"; ctx.lineWidth = 5; ctx.beginPath(); ctx.arc(tx, ty, tr - 4, Math.PI * .75, Math.PI * 2.25); ctx.stroke();
+    var zoneA = Math.PI * .75 + (Math.PI * 1.5) * .85, zoneB = Math.PI * .75 + (Math.PI * 1.5) * .95;
+    ctx.strokeStyle = "#9dff5c"; ctx.beginPath(); ctx.arc(tx, ty, tr - 4, zoneA, zoneB); ctx.stroke();
+    var ang = Math.PI * .75 + (Math.PI * 1.5) * Math.min(1, rpm);
+    ctx.strokeStyle = rpm > .95 ? "#ff5c5c" : "#fff"; ctx.lineWidth = 3;
+    ctx.beginPath(); ctx.moveTo(tx, ty); ctx.lineTo(tx + Math.cos(ang) * (tr - 10), ty + Math.sin(ang) * (tr - 10)); ctx.stroke();
+    ctx.fillStyle = "#fff"; ctx.font = "bold 13px Shabnam, sans-serif"; ctx.textAlign = "center";
+    ctx.fillText("دنده " + gear, tx, ty + 26);
+    if (nitro > 0) { ctx.fillStyle = "#7cd5ff"; ctx.fillText("⚡ نیترو!", tx, ty + 40); }
+    ctx.textAlign = "start";
+    /* speed */
+    ctx.fillStyle = "#fff"; ctx.font = "bold 15px Shabnam, sans-serif";
+    ctx.fillText(Math.round(speed) + " km/h", 20, 24);
+    ctx.fillText(Math.round(Math.max(dist, rival.dist)) + " / ۴۰۲ m", 20, 46);
   }
-
-  function move(dx, dy) {
-    if (solvedNow) return;
-    var c = grid[player.y][player.x];
-    if (dx === 1 && c.v[1]) return;
-    if (dx === -1 && c.v[3]) return;
-    if (dy === 1 && c.v[2]) return;
-    if (dy === -1 && c.v[0]) return;
-    player.x += dx; player.y += dy;
+  function loop(ts) {
+    if (!running) return;
+    var dt = Math.min(40, ts - (last || ts)); last = ts;
+    var f = dt / 1000;
+    if (!raceOver) raceTime += f;
+    /* player physics */
+    var top = GEAR_TOP[gear - 1];
+    var acc = 34 * (1.25 - gear * .12) * (nitro > 0 ? 1.7 : 1);
+    if (stumble > 0) { stumble -= f; acc = 6; }
+    speed += acc * f;
+    if (speed > top) speed = top;
+    rpm = speed / top;
+    dist += speed * f * 1.1;
+    if (nitro > 0) nitro -= f;
+    /* rival AI */
+    var rtop = GEAR_TOP[rival.gear - 1];
+    var racc = 34 * (1.25 - rival.gear * .12) * rival.skill;
+    rival.speed += racc * f;
+    if (rival.speed > rtop) rival.speed = rtop;
+    rival.dist += rival.speed * f * 1.1;
+    if (rival.speed / rtop > rival.skill * .97) { if (rival.gear < 5) { rival.gear++; rival.speed *= .82; } }
+    /* finish */
+    if (!raceOver && (dist >= FINISH || rival.dist >= FINISH)) {
+      raceOver = true;
+      playerWin = dist > rival.dist;
+      if (playerWin) wins++;
+      end();
+    }
     draw();
-    if (player.x === goal.x && player.y === goal.y) finish();
+    requestAnimationFrame(loop);
   }
-
-  function finish() {
-    solvedNow = true;
-    clearInterval(timer);
-    solvedTotal++; solvedNow = true;
-    solvedEl.textContent = solvedTotal;
-    var base = 30 + level*8;
-    var bonus = Math.max(5, 60 - seconds*2);
-    var xp = base + bonus, coins = 8 + level*2;
-    Lumitek.reward({ xp: xp, coins: coins, game: "mazeSolves", score: solvedTotal });
-    updateBest("maze", seconds, true);
-    msgEl.textContent = L("🎉 ماز حل شد! +"+xp+" XP و +"+coins+" سکه — ماز بعدی سخت‌تر است.", "🎉 Maze solved! +"+xp+" XP and +"+coins+" coins — next one is harder.");
-    level++;
-    setTimeout(function(){ newMaze(); }, 1600);
+  function shift() {
+    if (!running || raceOver) return;
+    shifts++;
+    if (rpm > .84 && rpm < .96) {
+      perfects++;
+      speed *= .92;
+      if (gear < 5) gear++;
+    } else if (rpm >= .96) {
+      stumble = .9; /* over-rev */
+      if (gear < 5) gear++;
+    } else {
+      stumble = .45; /* early */
+      if (gear < 5) gear++;
+    }
   }
-
+  function useNitro() {
+    if (!running || raceOver || nitroUsed) return;
+    nitroUsed = true; nitro = 2;
+  }
+  function end() {
+    running = false;
+    document.getElementById("drStart").textContent = L("مسابقه دوباره!", "Race again!");
+    document.getElementById("drHint").style.display = "";
+    var t = raceTime.toFixed(1);
+    var xp = Math.min(220, 40 + wins * 0 + (playerWin ? 60 : 20) + perfects * 8);
+    var cn = Math.min(44, (playerWin ? 18 : 6) + perfects * 2);
+    Lumitek.reward({ xp: xp, coins: cn, game: "dragrace", score: playerWin ? wins : 0 });
+    document.getElementById("drReward").textContent = L(
+      playerWin ? "🏆 بردی! زمان " + t + " ثانیه — " + perfects + " دنده بی‌نقص! +" + xp + " XP و +" + cn + " سکه"
+                : "😐 باختی — زمان " + t + " ثانیه، " + perfects + " دنده بی‌نقص. دوباره امتحان کن!",
+      playerWin ? "🏆 You won! " + t + "s — " + perfects + " perfect shifts! +" + xp + " XP and +" + cn + " coins"
+                : "😐 You lost — " + t + "s, " + perfects + " perfect shifts. Try again!");
+    paintBest();
+  }
+  function start() {
+    reset(); running = true; last = 0;
+    document.getElementById("drStart").textContent = L("در حال مسابقه...", "Racing...");
+    document.getElementById("drHint").style.display = "none";
+    document.getElementById("drReward").textContent = "";
+    requestAnimationFrame(loop);
+  }
   document.addEventListener("keydown", function(e) {
-    if (e.key === "ArrowUp" || e.key === "w") move(0,-1);
-    if (e.key === "ArrowDown" || e.key === "s") move(0,1);
-    if (e.key === "ArrowLeft" || e.key === "a") move(-1,0);
-    if (e.key === "ArrowRight" || e.key === "d") move(1,0);
+    if (e.code === "Space") { if (!running) start(); else shift(); e.preventDefault(); }
+    if (e.key === "w" || e.key === "W" || e.key === "ن") useNitro();
   });
-  document.querySelectorAll(".snake-pad button").forEach(function(b) {
-    b.addEventListener("click", function() {
-      var d = b.getAttribute("data-dir");
-      if (d === "up") move(0,-1);
-      if (d === "down") move(0,1);
-      if (d === "left") move(-1,0);
-      if (d === "right") move(1,0);
-    });
-  });
-  /* swipe */
-  var ts = null;
-  canvas.addEventListener("touchstart", function(e){ ts = { x: e.touches[0].clientX, y: e.touches[0].clientY }; }, { passive: true });
-  canvas.addEventListener("touchend", function(e) {
-    if (!ts) return;
-    var dx = e.changedTouches[0].clientX - ts.x, dy = e.changedTouches[0].clientY - ts.y;
-    if (Math.abs(dx) > Math.abs(dy)) { if (Math.abs(dx) > 18) move(dx > 0 ? 1 : -1, 0); }
-    else if (Math.abs(dy) > 18) move(0, dy > 0 ? 1 : -1);
-    ts = null;
-  }, { passive: true });
-
-  document.getElementById("mzNew").addEventListener("click", newMaze);
-  newMaze();
+  document.getElementById("drShift").onclick = function() { if (!running) start(); else shift(); };
+  document.getElementById("drNitro").onclick = useNitro;
+  canvas.addEventListener("pointerdown", function() { if (!running) start(); else shift(); });
+  document.getElementById("drStart").onclick = start;
 })();
 </script>
 
 <script>
-/* Lumitek v0.7 — هنگام بازی صفحه جابه‌جا نشود (قفل اسکرول + WASD) */
+/* Lumitek v0.7 — هنگام بازی صفحه جابه‌جا نشود */
 (function(){
   function isGameKey(k){ return k==="ArrowUp"||k==="ArrowDown"||k==="ArrowLeft"||k==="ArrowRight"||k===" "||k==="Spacebar"; }
   document.addEventListener("keydown", function(e){
@@ -344,5 +378,7 @@
   }, { passive:false });
 })();
 </script>
+
 </body>
+
 </html>

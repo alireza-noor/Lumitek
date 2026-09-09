@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>🏝️ گنج جزیره | بازی‌های Lumitek</title>
+<meta name="description" content="بازی ماجراجویی جزیره — کلید پیدا کن، صندوق گنج را باز کن و از راهزن‌ها فرار کن.">
+<meta name="keywords" content="لومیتک, lumitek, بازی آنلاین, ابزار آنلاین, هوش مصنوعی, خرید سکه, وب اپلیکیشن">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#070b15">
+<link rel="canonical" href="https://lumitek.netlify.app/pages/island.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Lumitek">
+<meta property="og:title" content="🏝️ گنج جزیره | بازی‌های Lumitek">
+<meta property="og:description" content="بازی ماجراجویی جزیره — کلید پیدا کن، صندوق گنج را باز کن و از راهزن‌ها فرار کن.">
+<meta property="og:url" content="https://lumitek.netlify.app/pages/drive.html">
+<meta property="og:image" content="https://lumitek.netlify.app/assets/icons/og-cover.png">
+<meta property="og:locale" content="fa_IR">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="🏝️ گنج جزیره | بازی‌های Lumitek">
+<meta name="twitter:description" content="بازی ماجراجویی جزیره — کلید پیدا کن، صندوق گنج را باز کن و از راهزن‌ها فرار کن.">
+<meta name="twitter:image" content="https://lumitek.netlify.app/assets/icons/og-cover.png">
+<link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+<link rel="apple-touch-icon" href="../assets/icons/icon-192.png">
+<link rel="manifest" href="../manifest.json">
+<link rel="preconnect" href="https://fontnegar.ir/" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fontnegar.ir/css2?family=shabnam:wght@100;300;400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="../css/style.css">
+<script>try{var t=localStorage.getItem("lumitek_theme");if(t==="light")document.documentElement.classList.add("light");var l=localStorage.getItem("lumitek_lang");if(l==="en"){document.documentElement.lang="en";document.documentElement.dir="ltr"}else{document.documentElement.lang="fa";document.documentElement.dir="rtl"}}catch(e){}</script>
+<style>.dpad{display:grid;grid-template-columns:repeat(3,54px);grid-template-rows:repeat(2,54px);gap:6px;justify-content:center;margin-top:10px;user-select:none}
+.dpad button{border-radius:14px;border:1px solid var(--line);background:var(--card2);font-size:20px;touch-action:none;cursor:pointer}
+.dpad button:active{background:var(--a);color:#fff}</style>
+</head>
+<body data-game="1">
+<div id="offlineBanner" class="offline-banner" data-i18n="offline.banner">🔌 حالت آفلاین — صفحه‌ها و بازی‌ها از حافظه اجرا می‌شوند و اخبار از آخرین نسخه ذخیره‌شده نمایش داده می‌شوند.</div>
+<!--LT5-CHROME-->
+<header class="site-header">
+  <a class="brand" href="../index.html"><img class="brand-logo" src="../assets/icons/logo-lt.png" alt="Lumitek" width="46" height="46"><span class="brand-word">Lumitek</span></a>
+  <nav class="main-nav" id="mainNav">
+    <a href="../index.html" data-i18n="nav.home">nav.home</a>
+    <a href="../pages/tools.html" data-i18n="nav.tools">nav.tools</a>
+    <a href="../pages/games.html" data-i18n="nav.games">nav.games</a>
+    <a href="../pages/store.html" data-i18n="nav.store">nav.store</a>
+    <a href="../pages/sports.html" data-i18n="nav.sports">nav.sports</a>
+    <a href="../pages/ai.html" data-i18n="nav.ai">لومیتک ای‌آی ✨</a>
+    <a href="../pages/download.html" data-i18n="nav.download">nav.download</a>
+    <a href="../pages/support.html" data-i18n="nav.supportE">nav.supportE</a>
+    <a href="../pages/technology.html" class="nav-extra" data-i18n="nav.tech">nav.tech</a>
+    <a href="../pages/articles.html" class="nav-extra" data-i18n="nav.articles">nav.articles</a>
+    <a href="../pages/announcements.html" class="nav-extra" data-i18n="nav.updates">nav.updates</a>
+    <a href="../pages/about.html" class="nav-extra" data-i18n="nav.about">nav.about</a>
+    <a href="../pages/contact.html" class="nav-extra" data-i18n="nav.contact">nav.contact</a>
+    <a href="../pages/account.html" class="nav-extra" data-i18n="nav.account">nav.account</a>
+    <a href="../pages/donate.html" class="nav-extra" data-i18n="nav.donate">nav.donate</a>
+  </nav>
+  <div class="header-actions">
+    <button id="languageToggle" class="icon-btn" data-i18n-title="nav.home" title="Language">EN</button>
+    <button id="themeToggle" class="icon-btn" aria-label="Theme">☀️</button>
+    <button id="notificationButton" class="icon-btn notification-btn">🔔<span id="notificationCount">0</span></button>
+    <button id="changelogButton" class="icon-btn" aria-label="Changelog" title="تغییرات">🕒</button>
+    <button id="profileButton" class="profile-btn"><span data-profile-avatar>🙂</span> <span data-profile-name>Lumitek User</span></button>
+    <button id="menuToggle" class="icon-btn menu-toggle" aria-label="Menu">☰</button>
+  </div>
+</header>
+<div id="notificationPanel" class="notification-panel">
+  <div class="panel-title" data-i18n="notif.title">اعلان‌ها</div>
+  <div id="notificationList"></div>
+</div>
+<div id="changelogPanel" class="notification-panel changelog-panel">
+  <div class="panel-title" data-i18n="ch.title">🕒 تغییرات نسخه‌ها</div>
+  <div id="changelogList"></div>
+  <a class="cl-all" href="../pages/announcements.html" data-i18n="ch.all">مشاهده همه تغییرات →</a>
+</div>
+<div id="profileModal" class="modal">
+  <div class="modal-card">
+    <button id="profileClose" class="modal-close">×</button>
+    <div class="pm-head"><span class="pm-avatar" data-profile-avatar>🙂</span><div><h2 data-i18n="pm.title">پروفایل کاربر</h2><span class="pm-title" data-profile-title>تازه‌کار</span></div></div>
+    <label data-i18n="pm.nameLabel">نام نمایشی</label>
+    <input id="profileNameInput" maxlength="24" data-i18n-ph="pm.namePh" placeholder="نام شما">
+    <div class="xpbar"><div class="xpbar-fill" data-profile-xpbar style="width:0%"></div></div>
+    <p class="muted" style="font-size:.75rem;margin:0 0 10px" data-profile-xptext>0 / 100 XP</p>
+    <div class="profile-stats">
+      <div><span data-i18n="coins.level">سطح</span><strong data-profile-level>1</strong></div>
+      <div><span data-i18n="acc.xp">XP</span><strong data-profile-xp>0</strong></div>
+      <div><span data-i18n="coins.unit">سکه</span><strong data-profile-coins>0</strong></div>
+      <div><span data-i18n="pm.games">بازی‌ها</span><strong data-games-played>0</strong></div>
+    </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <button id="profileSave" class="primary-btn" data-i18n="pm.save" style="flex:1">ذخیره</button>
+      <a class="ghost-btn" href="../pages/account.html" data-i18n="pm.fullAccount">حساب کامل</a>
+    </div>
+    <div class="pm-auth-row" id="pmAuthArea">
+      <button id="pmAuthButton" class="primary-btn" data-i18n="pm.signIn" data-auth-open>🔓 ورود / ثبت‌نام</button>
+      <span class="auth-email" id="pmAuthEmail" style="display:none"></span>
+      <button id="pmLogout" class="ghost-btn" style="display:none" data-i18n="pm.signOut">خروج</button>
+    </div>
+  </div>
+</div>
+
+<div class="search-wrap">
+<input id="globalSearchInput" type="search" data-i18n-ph="head.searchPh" placeholder="جستجو..." aria-label="Search">
+<div id="searchResults" class="search-results"></div>
+</div>
+<main class="page"><div class="game">
+<p class="eyebrow">LUMITEK GAME · NEW</p>
+<h1 data-i18n="g.island.n">🏝️ گنج جزیره</h1>
+<p class="muted" data-i18n="g.island.d">کاوشگر جزیره باش: ۳ کلید پیدا کن، صندوق گنج را باز کن و از راهزن‌ها فرار کن — با قهرمان اسکین‌دار خودت!</p>
+
+<div class="gamebox mt">
+  <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center">
+    <span class="coin-pill">🪙 <b id="isCoins">0</b></span>
+    <span class="coin-pill">🔑 <b id="isKeys">0/3</b></span>
+    <span class="coin-pill">🎯 مرحله <b id="isLevel">1</b></span>
+    <span class="coin-pill" id="isLives">❤❤❤</span>
+    <span class="coin-pill">🏆 <span data-i18n="games.yourBest">رکورد شما</span>: <b id="isBest">—</b></span>
+  </div>
+  <canvas id="isCanvas" width="360" height="520" style="max-width:100%;border-radius:16px;touch-action:none;margin-top:12px"></canvas>
+  <div class="dpad">
+    <span></span><button id="isU">⬆️</button><span></span>
+    <button id="isL">⬅️</button><button id="isD">⬇️</button><button id="isR">➡️</button>
+  </div>
+  <button class="gamebutton" id="isStart" style="margin-top:12px">شروع ماجراجویی</button>
+  <div class="sh-hint" id="isHint">WASD / کلیدهای جهت / دکمه‌های لمسی = حرکت | ۳ کلید جمع کن و به صندوق برس!</div>
+  <p id="isReward" class="muted" style="margin:8px 0 0"></p>
+</div>
+
+<div class="grid mt" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
+  <div class="card"><h3>🔑 سه کلید طلایی</h3><p class="muted">در هر مرحله ۳ کلید گوشه‌به‌گوشه جزیره پنهان شده؛ سراغ صندوق نرو مگر با هر سه کلید.</p></div>
+  <div class="card"><h3>🏴‍☠️ راهزن‌های هوشمند</h3><p class="muted">هر مرحله راهزن‌ها بیشتر و سریع‌تر می‌شوند؛ نزدیک که شوی تعقیبت می‌کنند — با ۳ جان بازی کن!</p></div>
+  <div class="card"><h3>🥷 اسکین قهرمان</h3><p class="muted">نینجای سایه، کاوشگر جزیره یا پیشتاز یخی را از فروشگاه بگیر و با استایل خودت کاوش کن.</p></div>
+</div>
+</div></main>
+
+
+<footer class="footer-v2">
+  <div class="fv-grid">
+    <div>
+      <div class="fv-brand"><img class="brand-logo" src="../assets/icons/logo-lt.png" alt="Lumitek" width="34" height="34"><span class="brand-word">Lumitek</span></div>
+      <p data-i18n="footer.tag">همه ابزارها و بازی‌های مورد نیازت، سریع و ساده — همه‌جا با هم.</p>
+      <span class="vip-badge" style="display:inline-flex">v0.8 · PWA</span>
+    </div>
+    <div>
+      <h4 data-i18n="footer.explore">کاوش</h4>
+      <ul>
+        <li><a href="../pages/technology.html" data-i18n="nav.tech">فناوری</a></li>
+        <li><a href="../pages/articles.html" data-i18n="nav.articles">مقالات</a></li>
+        <li><a href="../pages/announcements.html" data-i18n="nav.updates">تغییرات</a></li>
+        <li><a href="../pages/about.html" data-i18n="nav.about">درباره ما</a></li>
+        <li><a href="../pages/contact.html" data-i18n="nav.contact">تماس</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-i18n="footer.services">خدمات</h4>
+      <ul>
+        <li><a href="../pages/store.html" data-i18n="nav.store">فروشگاه</a></li>
+        <li><a href="../pages/store.html#coins" data-i18n="nav.coins">شارژ سکه</a></li>
+        <li><a href="../pages/ai.html" data-i18n="nav.ai">لومیتک ای‌آی</a></li>
+        <li><a href="../pages/account.html" data-i18n="nav.account">حساب کاربری</a></li>
+        <li><a href="../pages/donate.html" style="color:var(--a)" data-i18n="nav.donate">حمایت مالی</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-i18n="footer.newsletter">خبرنامه Lumitek</h4>
+      <p data-i18n="footer.newsText">از امکانات جدید زودتر باخبر شو.</p>
+      <form class="news-row" id="newsletterForm">
+        <input type="email" required data-i18n-ph="footer.newsPh" placeholder="ایمیل شما" aria-label="email">
+        <button type="submit" data-i18n="footer.newsBtn">عضویت</button>
+      </form>
+    </div>
+  </div>
+    <div class="fv-social">
+    <div class="fv-social-title" data-i18n="footer.socialT">ما را در شبکه‌های اجتماعی دنبال کنید</div>
+    <div class="fv-social-row">
+      <a href="https://www.aparat.com/lumitek" target="_blank" rel="noopener" title="آپارات" aria-label="Aparat">
+        <svg width="26" height="26" viewBox="0 0 32 32"><rect x="1" y="1" width="30" height="30" rx="9" fill="#DF0F38"/><path d="M11 9.5l13 6.5-13 6.5v-13z" fill="#fff"/></svg>
+        <span>آپارات</span></a>
+      <a href="https://bale.ai/lumitek" target="_blank" rel="noopener" title="بله" aria-label="Bale">
+        <svg width="26" height="26" viewBox="0 0 32 32"><rect x="1" y="1" width="30" height="30" rx="9" fill="#00A693"/><path d="M8 22V10h5.2c2.6 0 4.3 1.3 4.3 3.4 0 1.5-.8 2.6-2.1 3.1l3.3 5.5h-3.4l-2.8-5h-1.4v5H8zm3.1-7.4h1.9c1 0 1.6-.5 1.6-1.3s-.6-1.3-1.6-1.3h-1.9v2.6z" fill="#fff"/><circle cx="22.5" cy="11.5" r="2.5" fill="#fff"/></svg>
+        <span>بله</span></a>
+      <a href="https://eitaa.com/lumitek" target="_blank" rel="noopener" title="ایتا" aria-label="Eitaa">
+        <svg width="26" height="26" viewBox="0 0 32 32"><rect x="1" y="1" width="30" height="30" rx="9" fill="#F5793B"/><path d="M25 8.5L6.5 15.7c-.7.3-.6 1.3.1 1.4l4.6 1.2 1.7 5.2c.2.7 1.1.8 1.5.2l2.3-3 4.6 3.4c.6.4 1.4.1 1.6-.6L26.4 9.6c.2-.8-.6-1.4-1.4-1.1zm-9.8 10.6l-.4 3 1.6-2.4-1.2-.6z" fill="#fff"/></svg>
+        <span>ایتا</span></a>
+      <a href="https://rubika.ir/lumitek" target="_blank" rel="noopener" title="روبیکا" aria-label="Rubika">
+        <svg width="26" height="26" viewBox="0 0 32 32"><rect x="1" y="1" width="30" height="30" rx="9" fill="#8E24AA"/><path d="M9 24V8h6.5c3.4 0 5.5 1.7 5.5 4.5 0 2-.9 3.4-2.6 4.1l4 7.4h-4.2l-3.4-6.6h-1.9V24H9zm3.9-9.6h2.4c1.4 0 2.2-.7 2.2-1.9s-.8-1.9-2.2-1.9h-2.4v3.8z" fill="#fff"/></svg>
+        <span>روبیکا</span></a>
+    </div>
+  </div>
+  <div class="fv-bottom">
+    <span data-i18n="footer.rights">© 2026 Lumitek — همه حقوق محفوظ است.</span>
+    <span data-i18n="footer.made">ساخته‌شده با ❤ و بدون فریم‌ورک</span>
+  </div>
+</footer>
+
+
+
+<script src="../js/i18n.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/auth.js"></script>
+<script>
+/* Lumitek 0.8 — گنج جزیره (ماجراجویی) */
+(function(){
+  var canvas = document.getElementById("isCanvas"), ctx = canvas.getContext("2d");
+  var W = canvas.width, H = canvas.height;
+  var MW = 720, MH = 1040;
+  var L = function(fa, en){ return (window.LumiI18n && getLang() === "en") ? en : fa; };
+  var keys = { u:0, d:0, l:0, r:0 };
+  var running = false, last = 0;
+  var player, pirates, coins, keyItems, cam, level, lives, keysHeld, totalCoins, msgT = 0, msg = "";
+  var chest = { x: MW/2, y: 90, r: 22 };
+  var obstacles = [];
+  var skin = { skin: "#76e6c3", hat: "#3f8cff" };
+  try {
+    var sk = (window.Lumitek && Lumitek.skin) ? Lumitek.skin("hero") : "hero_default";
+    var all = (window.Lumitek && Lumitek.gameSkins) ? Lumitek.gameSkins : {};
+    if (all[sk]) skin = all[sk];
+  } catch(e) {}
+
+  function paintBest() {
+    var b = (getProfile().bests || {}).island;
+    document.getElementById("isBest").textContent = b != null ? b : "—";
+  }
+  document.addEventListener("lumitek:langchange", paintBest); paintBest();
+
+  function buildMap() {
+    obstacles = [];
+    for (var i = 0; i < 26; i++) {
+      var x = 60 + Math.random() * (MW - 120), y = 140 + Math.random() * (MH - 260);
+      if (Math.hypot(x - chest.x, y - chest.y) < 120) continue;
+      if (Math.hypot(x - MW/2, y - MH - 90) < 100) continue;
+      obstacles.push({ x: x, y: y, r: 14 + Math.random() * 10, palm: Math.random() < .6 });
+    }
+  }
+  function freeSpot(pad) {
+    for (var tries = 0; tries < 60; tries++) {
+      var x = 50 + Math.random() * (MW - 100), y = 150 + Math.random() * (MH - 220);
+      var ok = Math.hypot(x - chest.x, y - chest.y) > 90 && Math.hypot(x - MW/2, y - (MH - 80)) > 120;
+      for (var j = 0; j < obstacles.length && ok; j++) if (Math.hypot(x - obstacles[j].x, y - obstacles[j].y) < obstacles[j].r + 24) ok = false;
+      if (ok) return { x: x, y: y };
+    }
+    return { x: MW/2, y: MH/2 };
+  }
+  function reset(full) {
+    if (full) { level = 1; lives = 3; totalCoins = 0; }
+    keysHeld = 0;
+    player = { x: MW/2, y: MH - 80, r: 12, sp: 2.3, inv: 0 };
+    cam = { x: 0, y: 0 };
+    buildMap();
+    keyItems = [];
+    for (var k = 0; k < 3; k++) keyItems.push({ x: 0, y: 0, got: false });
+    keyItems.forEach(function(it){ var s = freeSpot(30); it.x = s.x; it.y = s.y; });
+    coins = [];
+    for (var c = 0; c < 10; c++) { var s2 = freeSpot(16); coins.push({ x: s2.x, y: s2.y, got: false, ph: Math.random() * 7 }); }
+    pirates = [];
+    var n = 2 + level;
+    for (var p = 0; p < n; p++) {
+      var s3 = freeSpot(30);
+      if (Math.hypot(s3.x - player.x, s3.y - player.y) < 200) { s3.x = (s3.x + MW/2) % MW; }
+      pirates.push({ x: s3.x, y: s3.y, r: 13, sp: .9 + level * .16 + Math.random() * .3, tx: s3.x, ty: s3.y, wait: 0 });
+    }
+    updHud();
+  }
+  function updHud() {
+    document.getElementById("isLevel").textContent = level;
+    document.getElementById("isLives").textContent = "❤".repeat(Math.max(0, lives));
+    document.getElementById("isKeys").textContent = keysHeld + "/3";
+    document.getElementById("isCoins").textContent = totalCoins;
+  }
+  function say(t) { msg = t; msgT = 2.2; }
+  function moveCam() {
+    cam.x = Math.max(0, Math.min(MW - W, player.x - W/2));
+    cam.y = Math.max(0, Math.min(MH - H, player.y - H/2));
+  }
+  function blocked(x, y) {
+    if (x < 34 || x > MW - 34 || y < 34 || y > MH - 34) return true;
+    for (var i = 0; i < obstacles.length; i++) {
+      var o = obstacles[i];
+      if (Math.hypot(x - o.x, y - o.y) < o.r + player.r - 2) return true;
+    }
+    return false;
+  }
+  function loop(ts) {
+    if (!running) return;
+    var dt = Math.min(40, ts - (last || ts)); last = ts;
+    var f = dt / 16.7;
+    if (msgT > 0) msgT -= dt / 1000;
+    if (player.inv > 0) player.inv -= dt / 1000;
+    /* movement */
+    var dx = (keys.r - keys.l), dy = (keys.d - keys.u);
+    if (dx || dy) {
+      var len = Math.hypot(dx, dy) || 1;
+      var nx = player.x + dx / len * player.sp * f, ny = player.y + dy / len * player.sp * f;
+      if (!blocked(nx, player.y)) player.x = nx;
+      if (!blocked(player.x, ny)) player.y = ny;
+    }
+    /* keys */
+    keyItems.forEach(function(it) {
+      if (!it.got && Math.hypot(player.x - it.x, player.y - it.y) < 20) {
+        it.got = true; keysHeld++;
+        say(L("🔑 کلید " + keysHeld + " از ۳!", "🔑 Key " + keysHeld + " of 3!"));
+        updHud();
+      }
+    });
+    /* coins */
+    coins.forEach(function(c) {
+      if (!c.got && Math.hypot(player.x - c.x, player.y - c.y) < 18) {
+        c.got = true; totalCoins++;
+        updHud();
+      }
+    });
+    /* chest */
+    if (keysHeld >= 3 && Math.hypot(player.x - chest.x, player.y - chest.y) < 34) {
+      var bonus = 12 + level * 4;
+      totalCoins += bonus;
+      level++;
+      say(L("🎁 صندوق باز شد! +" + bonus + " سکه — مرحله " + level, "🎁 Chest opened! +" + bonus + " coins — level " + level));
+      reset(false);
+      return requestAnimationFrame(loop);
+    }
+    /* pirates */
+    pirates.forEach(function(p) {
+      var dp = Math.hypot(player.x - p.x, player.y - p.y);
+      if (dp < 260) {
+        p.x += (player.x - p.x) / dp * p.sp * f;
+        p.y += (player.y - p.y) / dp * p.sp * f;
+      } else {
+        if (p.wait > 0) { p.wait -= dt / 1000; }
+        else {
+          var d2 = Math.hypot(p.tx - p.x, p.ty - p.y);
+          if (d2 < 8) { var s = freeSpot(20); p.tx = s.x; p.ty = s.y; p.wait = Math.random(); }
+          else { p.x += (p.tx - p.x) / d2 * p.sp * .6 * f; p.y += (p.ty - p.y) / d2 * p.sp * .6 * f; }
+        }
+      }
+      if (dp < p.r + player.r && player.inv <= 0) {
+        lives--; player.inv = 1.6;
+        say(L("🏴‍☠️ راهزن گرفتت! جان -۱", "🏴‍☠️ Pirate caught you! -1 life"));
+        updHud();
+        if (lives <= 0) { end(); return; }
+      }
+    });
+    moveCam();
+    draw();
+    if (msgT > 0) {
+      ctx.font = "bold 15px Shabnam, sans-serif"; ctx.textAlign = "center";
+      ctx.fillStyle = "rgba(0,0,0,.55)"; var w = ctx.measureText(msg).width + 24;
+      ctx.fillRect(W/2 - w/2, 14, w, 30); ctx.fillStyle = "#ffd166"; ctx.fillText(msg, W/2, 35);
+      ctx.textAlign = "start";
+    }
+    requestAnimationFrame(loop);
+  }
+  function draw() {
+    var light = document.documentElement.classList.contains("light");
+    /* water bg */
+    ctx.fillStyle = light ? "#79c4ea" : "#0d4a66"; ctx.fillRect(0, 0, W, H);
+    ctx.save();
+    ctx.translate(-cam.x, -cam.y);
+    /* island sand */
+    ctx.fillStyle = light ? "#e8d9a8" : "#c7b076";
+    ctx.beginPath();
+    ctx.moveTo(50, 40); ctx.lineTo(MW - 50, 40); ctx.quadraticCurveTo(MW - 10, MH/2, MW - 50, MH - 40);
+    ctx.lineTo(50, MH - 40); ctx.quadraticCurveTo(10, MH/2, 50, 40); ctx.fill();
+    /* chest */
+    ctx.fillStyle = "#8a5a2b"; ctx.fillRect(chest.x - 20, chest.y - 14, 40, 26);
+    ctx.fillStyle = "#ffd166"; ctx.fillRect(chest.x - 20, chest.y - 6, 40, 6);
+    ctx.fillStyle = keysHeld >= 3 ? "#9dff5c" : "#666"; ctx.beginPath(); ctx.arc(chest.x, chest.y + 4, 4, 0, 7); ctx.fill();
+    /* obstacles */
+    obstacles.forEach(function(o) {
+      if (o.palm) {
+        ctx.strokeStyle = light ? "#7a5a33" : "#4a3a22"; ctx.lineWidth = 5;
+        ctx.beginPath(); ctx.moveTo(o.x, o.y + 12); ctx.lineTo(o.x + 3, o.y - 14); ctx.stroke();
+        ctx.fillStyle = light ? "#3e7a4a" : "#1d4a2c";
+        for (var a = 0; a < 6; a++) { ctx.beginPath(); ctx.ellipse(o.x + 3 + Math.cos(a) * 10, o.y - 16 + Math.sin(a) * 6, 10, 4, a, 0, 7); ctx.fill(); }
+      } else {
+        ctx.fillStyle = light ? "#9a9a92" : "#5a5a52"; ctx.beginPath(); ctx.arc(o.x, o.y, o.r, 0, 7); ctx.fill();
+      }
+    });
+    /* coins */
+    coins.forEach(function(c) {
+      if (c.got) return;
+      var bob = Math.sin(Date.now() / 300 + c.ph) * 2;
+      ctx.fillStyle = "#ffd166"; ctx.beginPath(); ctx.arc(c.x, c.y + bob, 6, 0, 7); ctx.fill();
+      ctx.fillStyle = "#c99b2e"; ctx.font = "bold 9px sans-serif"; ctx.fillText("¢", c.x - 2.5, c.y + bob + 3);
+    });
+    /* keys */
+    keyItems.forEach(function(it) {
+      if (it.got) return;
+      ctx.font = "16px sans-serif"; ctx.fillText("🔑", it.x - 8, it.y + 6);
+    });
+    /* pirates */
+    pirates.forEach(function(p) {
+      ctx.fillStyle = "#b33"; ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, 7); ctx.fill();
+      ctx.fillStyle = "#111"; ctx.fillRect(p.x - p.r, p.y - p.r - 4, p.r * 2, 5);
+      ctx.fillStyle = "#fff"; ctx.beginPath(); ctx.arc(p.x - 4, p.y - 2, 1.6, 0, 7); ctx.arc(p.x + 4, p.y - 2, 1.6, 0, 7); ctx.fill();
+    });
+    /* player */
+    if (player.inv > 0 && Math.floor(player.inv * 10) % 2 === 0) { ctx.globalAlpha = .35; }
+    ctx.fillStyle = skin.skin; ctx.beginPath(); ctx.arc(player.x, player.y, player.r, 0, 7); ctx.fill();
+    ctx.fillStyle = skin.hat; ctx.beginPath(); ctx.arc(player.x, player.y - 7, player.r * .72, Math.PI, 0); ctx.fill();
+    ctx.fillStyle = "#111"; ctx.beginPath(); ctx.arc(player.x - 4, player.y - 1, 1.5, 0, 7); ctx.arc(player.x + 4, player.y - 1, 1.5, 0, 7); ctx.fill();
+    ctx.globalAlpha = 1;
+    ctx.restore();
+  }
+  function end() {
+    running = false;
+    document.getElementById("isStart").textContent = L("سفر دوباره!", "Sail again!");
+    document.getElementById("isHint").style.display = "";
+    var xp = Math.min(230, 30 + totalCoins * 2), cn = Math.min(46, 8 + Math.round(totalCoins * .8));
+    Lumitek.reward({ xp: xp, coins: cn, game: "island", score: totalCoins });
+    document.getElementById("isReward").textContent = L(
+      "🎉 " + totalCoins + " سکه در مرحله " + level + "! +" + xp + " XP و +" + cn + " سکه",
+      "🎉 " + totalCoins + " coins at level " + level + "! +" + xp + " XP and +" + cn + " coins");
+    paintBest();
+  }
+  function start() {
+    reset(true); running = true; last = 0;
+    document.getElementById("isStart").textContent = L("در حال کاوش...", "Exploring...");
+    document.getElementById("isHint").style.display = "none";
+    document.getElementById("isReward").textContent = "";
+    requestAnimationFrame(loop);
+  }
+  /* input: WASD + arrows + touch dpad */
+  var map = { w: "u", arrowup: "u", s: "d", arrowdown: "d", a: "l", arrowleft: "l", d: "r", arrowright: "r" };
+  document.addEventListener("keydown", function(e) {
+    var k = map[(e.key || "").toLowerCase()];
+    if (k) { keys[k] = 1; e.preventDefault(); }
+    if (e.code === "Space" && !running) start();
+  });
+  document.addEventListener("keyup", function(e) {
+    var k = map[(e.key || "").toLowerCase()];
+    if (k) keys[k] = 0;
+  });
+  [["u","isU"],["d","isD"],["l","isL"],["r","isR"]].forEach(function(pair) {
+    var el = document.getElementById(pair[1]);
+    var on = function(e){ e.preventDefault(); keys[pair[0]] = 1; };
+    var off = function(e){ keys[pair[0]] = 0; };
+    el.addEventListener("touchstart", on, { passive: false }); el.addEventListener("touchend", off);
+    el.addEventListener("mousedown", on); el.addEventListener("mouseup", off); el.addEventListener("mouseleave", off);
+  });
+  document.getElementById("isStart").onclick = start;
+})();
+</script>
+
+<script>
+/* Lumitek v0.7 — هنگام بازی صفحه جابه‌جا نشود */
+(function(){
+  function isGameKey(k){ return k==="ArrowUp"||k==="ArrowDown"||k==="ArrowLeft"||k==="ArrowRight"||k===" "||k==="Spacebar"; }
+  document.addEventListener("keydown", function(e){
+    if (!isGameKey(e.key)) return;
+    var t = e.target && e.target.tagName;
+    if (t === "INPUT" || t === "TEXTAREA" || t === "SELECT") return;
+    e.preventDefault();
+  }, { passive:false });
+  document.addEventListener("touchmove", function(e){
+    if (e.target && e.target.closest && e.target.closest("canvas,.snake-pad,.touch-pad,.game-pad,.dpad")) e.preventDefault();
+  }, { passive:false });
+})();
+</script>
+
+</body>
+
+</html>

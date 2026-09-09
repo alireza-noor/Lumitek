@@ -36,7 +36,7 @@
 <div id="offlineBanner" class="offline-banner" data-i18n="offline.banner">🔌 حالت آفلاین — صفحه‌ها و بازی‌ها از حافظه اجرا می‌شوند و اخبار از آخرین نسخه ذخیره‌شده نمایش داده می‌شوند.</div>
 <!--LT5-CHROME-->
 <header class="site-header">
-  <a class="brand" href="../index.html"><img class="brand-logo" src="../assets/icons/logo-lt.png" alt="Lumitek" width="34" height="34"><span class="brand-word">Lumitek</span></a>
+  <a class="brand" href="../index.html"><img class="brand-logo" src="../assets/icons/logo-lt.png" alt="Lumitek" width="46" height="46"><span class="brand-word">Lumitek</span></a>
   <nav class="main-nav" id="mainNav">
     <a href="../index.html" data-i18n="nav.home">nav.home</a>
     <a href="../pages/tools.html" data-i18n="nav.tools">nav.tools</a>
@@ -113,6 +113,10 @@
     <button class="sp-sport-chip" data-sport="tennis">🎾 <span data-i18n="sp.sport.tennis">تنیس</span></button>
     <button class="sp-sport-chip" data-sport="futsal">🥅 <span data-i18n="sp.sport.futsal">فوتسال</span></button>
     <button class="sp-sport-chip" data-sport="martial">🥊 <span data-i18n="sp.sport.martial">ورزش‌های رزمی</span></button>
+    <button class="sp-sport-chip" data-sport="handball">🤾 <span data-i18n="sp.sport.handball">هندبال</span></button>
+    <button class="sp-sport-chip" data-sport="tabletennis">🏓 <span data-i18n="sp.sport.tabletennis">تنیس روی میز</span></button>
+    <button class="sp-sport-chip" data-sport="f1">🏎️ <span data-i18n="sp.sport.f1">فرمول یک</span></button>
+    <button class="sp-sport-chip" data-sport="cycling">🚴 <span data-i18n="sp.sport.cycling">دوچرخه‌سواری</span></button>
   </div>
 </div>
 
@@ -179,16 +183,20 @@
   <div class="card"><div class="icon">🎾</div><h3 data-i18n="sp.sport.tennis">تنیس</h3><p class="muted" data-i18n="sp.c3d">گرند اسلم‌ها، رده‌بندی جهانی ATP و بازیکنان برتر.</p></div>
   <div class="card"><div class="icon">🏐</div><h3 data-i18n="sp.sport.volleyball">والیبال</h3><p class="muted" data-i18n="sp.c4d">لیگ ملت‌ها، تیم ملی ایران و مسابقات جهانی.</p></div>
   <div class="card"><div class="icon">🥅</div><h3 data-i18n="sp.sport.futsal">فوتسال</h3><p class="muted" data-i18n="sp.c5d">لیگ فوتسال ایران و مسابقات جهانی فوتسال.</p></div>
-  <div class="card"><div class="icon">🥊</div><h3 data-i18n="sp.sport.martial">ورزش‌های رزمی</h3><p class="muted" data-i18n="sp.c6d">مشت‌زنی، UFC، ووشو و کاراته.</p></div>
+  <div class="card"><div class="icon">🥊</div><h3 data-i18n="sp.sport.martial">ورزش‌های رزمی</h3><p class="muted" data-i18n="sp.c6d">مشت‌زنی، UFC، بوکس جهانی، ووشو و کاراته.</p></div>
+  <div class="card"><div class="icon">🤾</div><h3 data-i18n="sp.sport.handball">هندبال</h3><p class="muted">لیگ قهرمانان اروپا و اخبار هندبال ایران و جهان.</p></div>
+  <div class="card"><div class="icon">🏓</div><h3 data-i18n="sp.sport.tabletennis">تنیس روی میز</h3><p class="muted">رده‌بندی جهانی ITTF و مسابقات WTT.</p></div>
+  <div class="card"><div class="icon">🏎️</div><h3 data-i18n="sp.sport.f1">فرمول یک</h3><p class="muted">رده‌بندی رانندگان، گراند پری‌ها و اخبار تیم‌ها.</p></div>
+  <div class="card"><div class="icon">🚴</div><h3 data-i18n="sp.sport.cycling">دوچرخه‌سواری</h3><p class="muted">رده‌بندی UCI، تور دو فرانس و کلاسیک‌های بزرگ.</p></div>
 </div>
 </main>
 
 <footer class="footer-v2">
   <div class="fv-grid">
     <div>
-      <div class="fv-brand"><img class="brand-logo" src="../assets/icons/logo-lt.png" alt="Lumitek" width="28" height="28"><span class="brand-word">Lumitek</span></div>
+      <div class="fv-brand"><img class="brand-logo" src="../assets/icons/logo-lt.png" alt="Lumitek" width="34" height="34"><span class="brand-word">Lumitek</span></div>
       <p data-i18n="footer.tag">همه ابزارها و بازی‌های مورد نیازت، سریع و ساده — همه‌جا با هم.</p>
-      <span class="vip-badge" style="display:inline-flex">v0.7 · PWA</span>
+      <span class="vip-badge" style="display:inline-flex">v0.8 · PWA</span>
     </div>
     <div>
       <h4 data-i18n="footer.explore">کاوش</h4>
@@ -219,6 +227,23 @@
       </form>
     </div>
   </div>
+    <div class="fv-social">
+    <div class="fv-social-title" data-i18n="footer.socialT">ما را در شبکه‌های اجتماعی دنبال کنید</div>
+    <div class="fv-social-row">
+      <a href="https://www.aparat.com/lumitek" target="_blank" rel="noopener" title="آپارات" aria-label="Aparat">
+        <svg width="26" height="26" viewBox="0 0 32 32"><rect x="1" y="1" width="30" height="30" rx="9" fill="#DF0F38"/><path d="M11 9.5l13 6.5-13 6.5v-13z" fill="#fff"/></svg>
+        <span>آپارات</span></a>
+      <a href="https://bale.ai/lumitek" target="_blank" rel="noopener" title="بله" aria-label="Bale">
+        <svg width="26" height="26" viewBox="0 0 32 32"><rect x="1" y="1" width="30" height="30" rx="9" fill="#00A693"/><path d="M8 22V10h5.2c2.6 0 4.3 1.3 4.3 3.4 0 1.5-.8 2.6-2.1 3.1l3.3 5.5h-3.4l-2.8-5h-1.4v5H8zm3.1-7.4h1.9c1 0 1.6-.5 1.6-1.3s-.6-1.3-1.6-1.3h-1.9v2.6z" fill="#fff"/><circle cx="22.5" cy="11.5" r="2.5" fill="#fff"/></svg>
+        <span>بله</span></a>
+      <a href="https://eitaa.com/lumitek" target="_blank" rel="noopener" title="ایتا" aria-label="Eitaa">
+        <svg width="26" height="26" viewBox="0 0 32 32"><rect x="1" y="1" width="30" height="30" rx="9" fill="#F5793B"/><path d="M25 8.5L6.5 15.7c-.7.3-.6 1.3.1 1.4l4.6 1.2 1.7 5.2c.2.7 1.1.8 1.5.2l2.3-3 4.6 3.4c.6.4 1.4.1 1.6-.6L26.4 9.6c.2-.8-.6-1.4-1.4-1.1zm-9.8 10.6l-.4 3 1.6-2.4-1.2-.6z" fill="#fff"/></svg>
+        <span>ایتا</span></a>
+      <a href="https://rubika.ir/lumitek" target="_blank" rel="noopener" title="روبیکا" aria-label="Rubika">
+        <svg width="26" height="26" viewBox="0 0 32 32"><rect x="1" y="1" width="30" height="30" rx="9" fill="#8E24AA"/><path d="M9 24V8h6.5c3.4 0 5.5 1.7 5.5 4.5 0 2-.9 3.4-2.6 4.1l4 7.4h-4.2l-3.4-6.6h-1.9V24H9zm3.9-9.6h2.4c1.4 0 2.2-.7 2.2-1.9s-.8-1.9-2.2-1.9h-2.4v3.8z" fill="#fff"/></svg>
+        <span>روبیکا</span></a>
+    </div>
+  </div>
   <div class="fv-bottom">
     <span data-i18n="footer.rights">© 2026 Lumitek — همه حقوق محفوظ است.</span>
     <span data-i18n="footer.made">ساخته‌شده با ❤ و بدون فریم‌ورک</span>
@@ -230,7 +255,7 @@
 <script src="../js/auth.js"></script>
 <script>
 /* ============================================================
-   Sportek 0.7 — sport picker + live news + 14 league tables
+   Sportek 0.8 — sport picker + per-sport live news + 24 league tables
    + upcoming fixtures + refresh-all
    ============================================================ */
 (function(){
@@ -322,6 +347,68 @@
         ["گتی کیش",22,18,2,2,35,56],["مقیاس قم",22,15,3,4,20,48],["پارس الکتریک بوشهر",22,14,4,4,17,46],
         ["سن‌ایر سولدوز",22,12,5,5,12,41],["گیتی پسند",22,10,6,6,8,36],["آرما نقره‌ای",22,8,4,10,-4,28],
         ["فرش آرمان",22,5,3,14,-16,18],["لوح وصال",22,2,1,19,-32,7]] },
+    ucl: { sport: "football", name: FT("لیگ قهرمانان اروپا","UEFA Champions League"), type: "football",
+      top: FT("پرافتخارترین: رئال مادرید","Most titles: Real Madrid"),
+      teams: [
+        ["Real Madrid",15,0,0,0,0,15],["Milan",7,0,0,0,0,7],["Bayern München",6,0,0,0,0,6],
+        ["Liverpool",6,0,0,0,0,6],["Barcelona",5,0,0,0,0,5],["Ajax",4,0,0,0,0,4],
+        ["Inter",3,0,0,0,0,3],["Manchester United",3,0,0,0,0,3],["Juventus",2,0,0,0,0,2],["Porto",2,0,0,0,0,2]] },
+    eredivisie: { sport: "football", name: FT("اردیویزه هلند","Eredivisie (Netherlands)"), type: "football",
+      top: FT("داده نمایشی — به‌زودی زنده","Sample data — live soon"),
+      teams: [
+        ["PSV",34,26,5,3,60,88],["Feyenoord",34,23,7,4,38,76],["Ajax",34,21,8,5,32,71],
+        ["AZ Alkmaar",34,19,6,9,22,63],["Twente",34,16,9,9,15,57],["Utrecht",34,14,9,11,8,51],
+        ["NEC",34,13,10,11,6,49],["Sparta Rotterdam",34,11,9,14,-6,42],["Go Ahead Eagles",34,10,9,15,-9,39],["Heerenveen",34,9,10,15,-14,37]] },
+    ligapt: { sport: "football", name: FT("لیگ پرتغال","Primeira Liga (Portugal)"), type: "football",
+      top: FT("داده نمایشی — به‌زودی زنده","Sample data — live soon"),
+      teams: [
+        ["Sporting CP",34,29,3,2,50,90],["Benfica",34,25,7,2,40,82],["Porto",34,23,8,3,32,77],
+        ["Braga",34,19,7,8,17,64],["Vitória SC",34,15,8,11,10,53],["Moreirense",34,12,8,14,-4,44],
+        ["Arouca",34,12,6,16,-8,42],["Famalicão",34,10,10,14,-6,40],["Gil Vicente",34,9,11,14,-8,38],["Estoril",34,8,8,18,-14,32]] },
+    euroleague: { sport: "basketball", name: FT("یورولیگ بسکتبال","EuroLeague Basketball"), type: "basketball",
+      top: FT("داده نمایشی — به‌زودی زنده","Sample data — live soon"),
+      teams: [
+        ["Panathinaikos",38,27,11,.711],["Real Madrid",38,26,12,.684],["Fenerbahçe",38,25,13,.658],
+        ["Olympiacos",38,25,13,.658],["Barcelona",38,23,15,.605],["Monaco",38,22,16,.579],
+        ["Maccabi Tel Aviv",38,20,18,.526],["Milan",38,18,20,.474],["Baskonia",38,17,21,.447],["Partizan",38,16,22,.421]] },
+    wta: { sport: "tennis", name: FT("رده‌بندی WTA (تکی)","WTA Singles Rankings"), type: "ranking",
+      top: FT("شماره ۱ جهان","World No. 1"),
+      teams: [
+        ["Iga Świątek (POL)",0,0,0,10775],["Aryna Sabalenka (BLR)",0,0,0,8625],["Coco Gauff (USA)",0,0,0,6720],
+        ["Elena Rybakina (KAZ)",0,0,0,5563],["Jessica Pegula (USA)",0,0,0,5050],["Qinwen Zheng (CHN)",0,0,0,4480],
+        ["Jasmine Paolini (ITA)",0,0,0,4112],["Madison Keys (USA)",0,0,0,3768]] },
+    boxing: { sport: "martial", name: FT("رده‌بندی بوکس — پوند برای پوند","Boxing Rankings — Pound for Pound"), type: "ranking",
+      top: FT("بهترین بوکسور جهان","Best boxer in the world"),
+      teams: [
+        ["Terence Crawford",0,0,0,1],["Naoya Inoue",0,0,0,2],["Oleksandr Usyk",0,0,0,3],
+        ["Dmitry Bivol",0,0,0,4],["Gervonta Davis",0,0,0,5],["Artur Beterbiev",0,0,0,6],
+        ["Canelo Álvarez",0,0,0,7],["Junto Nakatani",0,0,0,8]] },
+    ihf: { sport: "handball", name: FT("لیگ قهرمانان هندبال اروپا","EHF Champions League"), type: "football",
+      top: FT("داده نمایشی — به‌زودی زنده","Sample data — live soon"),
+      teams: [
+        ["Barça",18,15,1,2,44],["Magdeburg",18,13,2,3,41],["Kielce",18,12,2,4,38],
+        ["Aalborg",18,12,1,5,37],["Kiel",18,10,3,5,33],["Veszprém",18,10,2,6,32],
+        ["Nantes",18,9,2,7,29],["Vardar",18,7,2,9,23]] },
+    wtt: { sport: "tabletennis", name: FT("رده‌بندی جهانی تنیس روی میز","ITTF World Table Tennis Rankings"), type: "ranking",
+      top: FT("شماره ۱ جهان","World No. 1"),
+      teams: [
+        ["Fan Zhendong (CHN)",0,0,0,1],["Wang Chuqin (CHN)",0,0,0,2],["Ma Long (CHN)",0,0,0,3],
+        ["Liang Jingkun (CHN)",0,0,0,4],["Hugo Calderano (BRA)",0,0,0,5],["Tomokazu Harimoto (JPN)",0,0,0,6],
+        ["Truls Möregårdh (SWE)",0,0,0,7],["Lin Shidong (CHN)",0,0,0,8]] },
+    f1: { sport: "f1", name: FT("رده‌بندی رانندگان فرمول یک","F1 Drivers Championship"), type: "ranking",
+      top: FT("قهرمان جهان","World Champion"),
+      teams: [
+        ["Max Verstappen (Red Bull)",24,9,0,437],["Lando Norris (McLaren)",24,4,0,374],
+        ["Charles Leclerc (Ferrari)",24,3,0,356],["Oscar Piastri (McLaren)",24,2,0,347],
+        ["Carlos Sainz (Ferrari)",24,2,0,290],["George Russell (Mercedes)",24,0,0,245],
+        ["Lewis Hamilton (Mercedes)",24,2,0,223],["Sergio Pérez (Red Bull)",24,0,0,152]] },
+    uci: { sport: "cycling", name: FT("رده‌بندی جهانی UCI","UCI World Cycling Ranking"), type: "ranking",
+      top: FT("بهترین رکابزن جهان","World No.1 rider"),
+      teams: [
+        ["Tadej Pogačar (SLO)",0,0,0,5186],["Remco Evenepoel (BEL)",0,0,0,3812],
+        ["Jonas Vingegaard (DEN)",0,0,0,3345],["Primož Roglič (SLO)",0,0,0,2980],
+        ["Wout van Aert (BEL)",0,0,0,2710],["Mads Pedersen (DEN)",0,0,0,2450],
+        ["Jasper Philipsen (BEL)",0,0,0,2210],["Mathieu van der Poel (NED)",0,0,0,2140]] },
     ufc: { sport: "martial", name: FT("رده‌بندی UFC — پوند برای پوند","UFC Rankings — Pound for Pound"), type: "ranking",
       top: FT("قهرمان سنگین‌وزن: جون جونز","Heavyweight champ: J. Jones"),
       teams: [
@@ -457,18 +544,49 @@
 
   /* ================= live news engine ================= */
   var FEEDS = [
-    { id: "mehr",     name: "خبرگزاری مهر", fa: true,  url: "https://www.mehrnews.com/rss" },
-    { id: "khabar",   name: "خبرآنلاین",    fa: true,  url: "https://www.khabaronline.ir/rss" },
-    { id: "bbc",      name: "BBC Sport",    fa: false, url: "https://feeds.bbci.co.uk/sport/rss.xml" },
-    { id: "sky",      name: "Sky Sports",   fa: false, url: "https://www.skysports.com/rss/12040" }
+    { id: "mehr",     name: "خبرگزاری مهر", fa: true,  url: "https://www.mehrnews.com/rss", sports: ["football","basketball","volleyball","tennis","futsal","martial","handball","tabletennis","f1","cycling"] },
+    { id: "khabar",   name: "خبرآنلاین",    fa: true,  url: "https://www.khabaronline.ir/rss", sports: ["football","basketball","volleyball","tennis","futsal","martial","handball","tabletennis","f1","cycling"] },
+    { id: "bbc",      name: "BBC Sport",    fa: false, url: "https://feeds.bbci.co.uk/sport/rss.xml", sports: ["football","basketball","volleyball","tennis","futsal","martial","handball","tabletennis","f1","cycling"] },
+    { id: "sky",      name: "Sky Sports",   fa: false, url: "https://www.skysports.com/rss/12040", sports: ["football","basketball","volleyball","tennis","futsal","martial","handball","tabletennis","f1","cycling"] }
   ];
+  /* اخبار تخصصی هر رشته — گوگل نیوز (فارسی + انگلیسی) */
+  var SPORT_FEEDS = {
+    football:    [{ fa: true,  q: "فوتبال لیگ برتر" }, { fa: false, q: "football soccer" }],
+    basketball:  [{ fa: true,  q: "بسکتبال" },          { fa: false, q: "basketball NBA" }],
+    volleyball:  [{ fa: true,  q: "والیبال" },           { fa: false, q: "volleyball" }],
+    tennis:      [{ fa: true,  q: "تنیس" },              { fa: false, q: "tennis ATP WTA" }],
+    futsal:      [{ fa: true,  q: "فوتسال" },            { fa: false, q: "futsal" }],
+    martial:     [{ fa: true,  q: "بوکس کیک‌بوکسینگ" },  { fa: false, q: "UFC MMA boxing" }],
+    handball:    [{ fa: true,  q: "هندبال" },            { fa: false, q: "handball" }],
+    tabletennis: [{ fa: true,  q: "تنیس روی میز" },      { fa: false, q: "table tennis ITTF" }],
+    f1:          [{ fa: true,  q: "فرمول یک" },          { fa: false, q: "formula 1 racing" }],
+    cycling:     [{ fa: true,  q: "دوچرخه‌سواری" },      { fa: false, q: "cycling UCI" }]
+  };
+  function googleNewsFeed(f) {
+    var lang = f.fa ? "fa" : "en";
+    var ceid = f.fa ? "IR:fa" : "US:en";
+    var url = "https://news.google.com/rss/search?hl=" + lang + "&gl=" + (f.fa ? "IR" : "US") + "&ceid=" + ceid + "&q=" + encodeURIComponent(f.q);
+    var src = f.fa ? "گوگل نیوز فارسی" : "Google News";
+    return fetch("https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent(url))
+      .then(function(r) { if (!r.ok) throw 0; return r.json(); })
+      .then(function(d) {
+        if (!d || d.status !== "ok" || !d.items) throw 0;
+        return d.items.map(function(it) {
+          return { title: cleanTitle(it.title), link: it.link || "#", source: src, fa: f.fa, pub: it.pubDate || "", desc: stripHtml(it.description || "").slice(0, 130) };
+        });
+      });
+  }
   var SPORT_WORDS = {
     football: ["فوتبال","فوتبالیست","لیگ برتر","جام جهانی","جام حذفی","سوپرجام","پرسپولیس","استقلال","سپاهان","تراکتور","فولاد","گل‌گهر","ذوب‌آهن","نساجی","سایپا","ملوان","پنالتی","دربی","hafback","NFL","soccer","Premier League","La Liga","Serie A","Bundesliga","Ligue 1","Champions League"],
     basketball: ["بسکتبال","NBA","بسکتبالیست","اسلم","دانک","سه امتیازی","کپس","لیکرز","warriors","basketball","NBA draft","Lakers","Celtics"],
     volleyball: ["والیبال","لیگ ملت","سرویس","دمار","والیبالیست","پتریکو","volleyball","VNL"],
     tennis: ["تنیس","tenis","ویمبلدون","رولان گاروس","اترالین اپن","US Open","گرند اسلم","ATP","WTA","tennis","Wimbledon"],
     futsal: ["فوتسال","futsal","گتی کیش","مقیاس"],
-    martial: ["مشت‌زنی","بوکس","کیک‌بوکسing","ووشو","کاراته","جودو","کشتی","MMA","UFC","box","wrestling","karate","judo"]
+    martial: ["مشت‌زنی","بوکس","کیک‌بوکسینگ","ووشو","کاراته","جودو","کشتی","MMA","UFC","box","wrestling","karate","judo"],
+    handball: ["هندبال","handball","EHF"],
+    tabletennis: ["تنیس روی میز","پینگ‌پنگ","پینگ پنگ","table tennis","ITTF","WTT"],
+    f1: ["فرمول یک","فرمول‌یک","F1","فرمول ۱","ورستپن","همیلتون","formula","Verstappen","Hamilton","Grand Prix"],
+    cycling: ["دوچرخه‌سواری","دوچرخه سواری","تور دو فرانس","cycling","Tour de France","UCI"]
   };
   var GENERAL_SPORT = ["ورزش","ورزشگاه","تیم ملی","المپیک","قهرمان","فینال","لیگ","باشگاه","مربی","sport","league","cup","final","champion"];
   var STRONG_WORDS = ["فوتبال","فوتبالیست","فوتبالی","بسکتبال","والیبال","هندبال","ورزش","ورزشگاه","ورزشکار","تیم ملی","جام جهانی","جام حذفی","سوپرجام","لیگ برتر","بازیکن","المپیک","پارالمپیک","پرسپولیس","تراکتور","سپاهان","فولاد خوزستان","گل‌گهر","ذوب‌آهن","نساجی","سایپا","ملوان","نیمه‌نهایی","پنالتی","گلر","هافبک","وینگر","دربی","UFC","بوکس","جودو","وزنه‌برداری","کاراته","ووشو","شناگر","تنیس","گلف","اسکواش","بدمینتون","کبدی","دو و میدانی","دوچرخه‌سواری","کاپیتان","NBA","فوتسال"];
@@ -548,6 +666,9 @@
     loading = true;
     meta.innerHTML = '<span class="spinner"></span>' + T("sp.loading");
     var jobs = FEEDS.map(function(f) { return fetchFeed(f).catch(function() { return []; }); });
+    (SPORT_FEEDS[curSport] || []).forEach(function(f) {
+      jobs.push(googleNewsFeed(f).catch(function() { return []; }));
+    });
     Promise.all(jobs).then(function(results) {
       var merged = [];
       results.forEach(function(rs) {

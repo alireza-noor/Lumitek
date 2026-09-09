@@ -31,12 +31,27 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&display=swap">
 <link rel="stylesheet" href="../css/style.css">
 <script>try{var t=localStorage.getItem("lumitek_theme");if(t==="light")document.documentElement.classList.add("light");var l=localStorage.getItem("lumitek_lang");if(l==="en"){document.documentElement.lang="en";document.documentElement.dir="ltr"}else{document.documentElement.lang="fa";document.documentElement.dir="rtl"}}catch(e){}</script>
+
+<style>
+.ar-item{position:relative;cursor:pointer;transition:transform .18s,box-shadow .18s}
+.ar-item:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(0,0,0,.25)}
+.ar-meta{display:flex;gap:10px;align-items:center;font-size:.72rem;opacity:.65;margin-top:6px}
+.ar-body{line-height:2.15;font-size:.95rem}
+.ar-body h4{margin:18px 0 8px;font-size:1.02rem;color:var(--a)}
+.ar-body ul{margin:8px 0 8px 0;padding-right:20px}
+html[dir="ltr"] .ar-body ul{padding-right:0;padding-left:20px}
+.ar-body li{margin:5px 0}
+.ar-body pre{background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:14px;overflow-x:auto;font-size:.8rem;direction:ltr;text-align:left;margin:12px 0;font-family:ui-monospace,monospace}
+html.light .ar-body pre{background:#f0f4fa;border-color:rgba(20,30,50,.1)}
+.ar-body code{background:rgba(118,230,195,.12);color:var(--a);border-radius:6px;padding:1px 6px;font-size:.85em}
+.ar-modal .modal-card{max-width:720px;max-height:82vh;overflow-y:auto}
+</style>
 </head>
 <body>
 <div id="offlineBanner" class="offline-banner" data-i18n="offline.banner">🔌 حالت آفلاین — صفحه‌ها و بازی‌ها از حافظه اجرا می‌شوند و اخبار از آخرین نسخه ذخیره‌شده نمایش داده می‌شوند.</div>
 <!--LT5-CHROME-->
 <header class="site-header">
-  <a class="brand" href="../index.html"><img class="brand-logo" src="../assets/icons/logo-lt.png" alt="Lumitek" width="34" height="34"><span class="brand-word">Lumitek</span></a>
+  <a class="brand" href="../index.html"><img class="brand-logo" src="../assets/icons/logo-lt.png" alt="Lumitek" width="46" height="46"><span class="brand-word">Lumitek</span></a>
   <nav class="main-nav" id="mainNav">
     <a href="../index.html" data-i18n="nav.home">nav.home</a>
     <a href="../pages/tools.html" data-i18n="nav.tools">nav.tools</a>
@@ -102,8 +117,16 @@
 <input id="globalSearchInput" type="search" data-i18n-ph="head.searchPh" placeholder="جستجو..." aria-label="Search">
 <div id="searchResults" class="search-results"></div>
 </div>
-<main class="page"><p class="eyebrow">LUMITEK ARTICLES</p><h1 data-i18n="ar.h1">مقالات</h1><p class="muted" data-i18n="ar.lead">بخوان، یاد بگیر، کشف کن.</p>
-<div class="grid" style="margin-top:35px">
+<main class="page">
+<p class="eyebrow">LUMITEK ARTICLES</p>
+<h1 data-i18n="ar.h1">مقالات</h1>
+<p class="muted" data-i18n="ar.lead">بخوان، یاد بگیر، کشف کن — ۱۶ مقاله علمی، آموزشی و فناوری با خواندن کامل داخل سایت.</p>
+
+<div class="section-title mt2" data-i18n="ar.tutTitle">🎓 آموزش‌های گام‌به‌گام — برای شروع کلیک کن</div>
+<div class="grid" id="tutGrid" style="margin-top:20px"></div>
+
+<div class="section-title mt2" data-i18n="ar.sciTitle">🔬 مقالات علمی و فناوری</div>
+<div class="grid" style="margin-top:20px">
 <article class="card"><span class="tag" data-i18n="ar.t1">علم</span><h3 data-i18n="ar.a1t">اینترنت چطور کار می‌کند؟</h3><p class="muted" data-i18n="ar.a1d">نگاهی ساده به سیستم‌های پشت وب برای مبتدی‌ها.</p></article>
 <article class="card"><span class="tag" data-i18n="ar.t2">فناوری</span><h3 data-i18n="ar.a2t">هوش مصنوعی چیست؟</h3><p class="muted" data-i18n="ar.a2d">معرفی ساده‌ای از هوش مصنوعی و کاربردهایش.</p></article>
 <article class="card"><span class="tag" data-i18n="ar.t3">آموزش</span><h3 data-i18n="ar.a3t">یادگیری برنامه‌نویسی</h3><p class="muted" data-i18n="ar.a3d">نقشه راه عملی برای شروع از صفر.</p></article>
@@ -113,20 +136,22 @@
 </div>
 </main>
 
-
-
-<script src="../js/i18n.js"></script>
-<script src="../js/auth.js"></script>
-
-
-
+<div id="arModal" class="modal ar-modal">
+  <div class="modal-card">
+    <button id="arClose" class="modal-close">×</button>
+    <h2 id="arTitle" style="font-size:1.25rem;line-height:1.8"></h2>
+    <p class="muted" id="arTag" style="font-size:.78rem;margin-top:2px"></p>
+    <div id="arBody" class="ar-body mt"></div>
+    <div class="ar-read-row" id="arReadRow"></div>
+  </div>
+</div>
 
 <footer class="footer-v2">
   <div class="fv-grid">
     <div>
-      <div class="fv-brand"><img class="brand-logo" src="../assets/icons/logo-lt.png" alt="Lumitek" width="28" height="28"><span class="brand-word">Lumitek</span></div>
+      <div class="fv-brand"><img class="brand-logo" src="../assets/icons/logo-lt.png" alt="Lumitek" width="34" height="34"><span class="brand-word">Lumitek</span></div>
       <p data-i18n="footer.tag">همه ابزارها و بازی‌های مورد نیازت، سریع و ساده — همه‌جا با هم.</p>
-      <span class="vip-badge" style="display:inline-flex">v0.7 · PWA</span>
+      <span class="vip-badge" style="display:inline-flex">v0.8 · PWA</span>
     </div>
     <div>
       <h4 data-i18n="footer.explore">کاوش</h4>
@@ -157,13 +182,160 @@
       </form>
     </div>
   </div>
+    <div class="fv-social">
+    <div class="fv-social-title" data-i18n="footer.socialT">ما را در شبکه‌های اجتماعی دنبال کنید</div>
+    <div class="fv-social-row">
+      <a href="https://www.aparat.com/lumitek" target="_blank" rel="noopener" title="آپارات" aria-label="Aparat">
+        <svg width="26" height="26" viewBox="0 0 32 32"><rect x="1" y="1" width="30" height="30" rx="9" fill="#DF0F38"/><path d="M11 9.5l13 6.5-13 6.5v-13z" fill="#fff"/></svg>
+        <span>آپارات</span></a>
+      <a href="https://bale.ai/lumitek" target="_blank" rel="noopener" title="بله" aria-label="Bale">
+        <svg width="26" height="26" viewBox="0 0 32 32"><rect x="1" y="1" width="30" height="30" rx="9" fill="#00A693"/><path d="M8 22V10h5.2c2.6 0 4.3 1.3 4.3 3.4 0 1.5-.8 2.6-2.1 3.1l3.3 5.5h-3.4l-2.8-5h-1.4v5H8zm3.1-7.4h1.9c1 0 1.6-.5 1.6-1.3s-.6-1.3-1.6-1.3h-1.9v2.6z" fill="#fff"/><circle cx="22.5" cy="11.5" r="2.5" fill="#fff"/></svg>
+        <span>بله</span></a>
+      <a href="https://eitaa.com/lumitek" target="_blank" rel="noopener" title="ایتا" aria-label="Eitaa">
+        <svg width="26" height="26" viewBox="0 0 32 32"><rect x="1" y="1" width="30" height="30" rx="9" fill="#F5793B"/><path d="M25 8.5L6.5 15.7c-.7.3-.6 1.3.1 1.4l4.6 1.2 1.7 5.2c.2.7 1.1.8 1.5.2l2.3-3 4.6 3.4c.6.4 1.4.1 1.6-.6L26.4 9.6c.2-.8-.6-1.4-1.4-1.1zm-9.8 10.6l-.4 3 1.6-2.4-1.2-.6z" fill="#fff"/></svg>
+        <span>ایتا</span></a>
+      <a href="https://rubika.ir/lumitek" target="_blank" rel="noopener" title="روبیکا" aria-label="Rubika">
+        <svg width="26" height="26" viewBox="0 0 32 32"><rect x="1" y="1" width="30" height="30" rx="9" fill="#8E24AA"/><path d="M9 24V8h6.5c3.4 0 5.5 1.7 5.5 4.5 0 2-.9 3.4-2.6 4.1l4 7.4h-4.2l-3.4-6.6h-1.9V24H9zm3.9-9.6h2.4c1.4 0 2.2-.7 2.2-1.9s-.8-1.9-2.2-1.9h-2.4v3.8z" fill="#fff"/></svg>
+        <span>روبیکا</span></a>
+    </div>
+  </div>
   <div class="fv-bottom">
     <span data-i18n="footer.rights">© 2026 Lumitek — همه حقوق محفوظ است.</span>
     <span data-i18n="footer.made">ساخته‌شده با ❤ و بدون فریم‌ورک</span>
   </div>
 </footer>
-
+<script src="../js/i18n.js"></script>
 <script src="../js/main.js"></script>
+<script src="../js/auth.js"></script>
+<script>
+var TUTORIALS = [
+{
+  id: "python", tag: "آموزش", emoji: "🐍", min: 8,
+  title: "آموزش پایتون از صفر؛ اولین برنامه خودت را بنویس!",
+  lead: "پایتون ساده‌ترین زبان برای شروع است؛ در این آموزش اولین برنامه‌ات را می‌نویسی و مفهوم متغیر و شرط را یاد می‌گیری.",
+  body: "<h4>چرا پایتون؟</h4><p>پایتون به خاطر دستورهای ساده و شبیه زبان انگلیسی، محبوب‌ترین زبان آموزشی دنیاست. با پایتون می‌توانی سایت بسازی، بازی بسازی، ربات تلگرام بنویسی و هوش مصنوعی کار کنی. همه‌چیز همین امروز با یک لپ‌تاپ ساده ممکن است!</p><h4>۱) نصب پایتون</h4><p>از سایت python.org نسخه ۳ را دانلود و نصب کن؛ حین نصب تیک «Add to PATH» را بزن. بعد در ترمینال بنویس:</p><pre>python --version</pre><h4>۲) اولین برنامه</h4><p>یک فایل به نام <code>hello.py</code> بساز و این را بنویس:</p><pre>print(\"سلام لومیتک!\")\nname = input(\"اسمت چیه؟ \")\nprint(\"خوش اومدی\", name)</pre><h4>۳) متغیر و شرط</h4><pre>age = 14\nif age >= 18:\n    print(\"بزرگسال\")\nelse:\n    print(\"نوجوان\")</pre><p>به فاصله‌ها (indent) دقت کن؛ در پایتون فاصله بخشی از قواعد است.</p><h4>۴) حلقه تمرین</h4><pre>for i in range(1, 11):\n    print(i, \"x 7 =\", i * 7)</pre><p>تمرین هفته اول: برنامه‌ای بنویس که عددی بگیرد و زوج یا فرد بودنش را بگوید. نکته: با عملگر <code>%</code> باقیمانده تقسیم را می‌گیری.</p>"
+},
+{
+  id: "html", tag: "آموزش", emoji: "🌐", min: 6,
+  title: "آموزش HTML؛ اولین صفحه وب خودت را بساز",
+  lead: "HTML اسکلت هر سایت است؛ با چند تگ ساده یک صفحه واقعی می‌سازی و در مرورگر باز می‌کنی.",
+  body: "<h4>HTML چیست؟</h4><p>HTML زبان ساختار صفحه وب است؛ مثل دیوار و در و پنجره یک خانه. هر سایتی که باز می‌کنی — از لومیتک تا گوگل — اول با HTML شروع می‌شود.</p><h4>اولین صفحه</h4><p>یک فایل <code>index.html</code> بساز و این را داخلش بنویس، بعد با مرورگر بازش کن:</p><pre>&lt;!doctype html&gt;\n&lt;html lang=\"fa\" dir=\"rtl\"&gt;\n&lt;head&gt;\n  &lt;meta charset=\"utf-8\"&gt;\n  &lt;title&gt;صفحه من&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n  &lt;h1&gt;سلام دنیا!&lt;/h1&gt;\n  &lt;p&gt;این اولین صفحه من است.&lt;/p&gt;\n  &lt;a href=\"https://example.com\"&gt;یک لینک&lt;/a&gt;\n  &lt;img src=\"photo.jpg\" width=\"300\"&gt;\n&lt;/body&gt;\n&lt;/html&gt;</pre><h4>تگ‌های مهم</h4><ul><li><code>h1</code> تا <code>h6</code>: تیترها</li><li><code>p</code>: پاراگراف</li><li><code>a</code>: لینک</li><li><code>img</code>: عکس</li><li><code>ul/li</code>: لیست</li><li><code>div</code>: جعبه و بخش‌بندی</li></ul><h4>تمرین</h4><p>یک صفحه «درباره من» بساز که عکس، لیست علاقه‌مندی‌ها و لینک شبکه اجتماعی داشته باشد. همین گام اول ورود تو به دنیای وب است!</p>"
+},
+{
+  id: "css", tag: "آموزش", emoji: "🎨", min: 7,
+  title: "آموزش CSS؛ به صفحه‌ات جان بده",
+  lead: "با CSS رنگ، فاصله و چیدمان می‌سازی؛ از مرکز کردن یک باکس تا گرادیان‌های خوشگل.",
+  body: "<h4>CSS چیست؟</h4><p>اگر HTML اسکلت خانه است، CSS نقاشی و دکوراسیون آن است. رنگ‌ها، فونت‌ها، سایه‌ها و انیمیشن‌ها همه با CSS ساخته می‌شوند.</p><h4>سه راه افزودن CSS</h4><pre>&lt;style&gt; h1 { color: blue; } &lt;/style&gt;  &lt;!-- داخل فایل --&gt;\n&lt;link rel=\"stylesheet\" href=\"style.css\"&gt; &lt;!-- فایل جدا --&gt;</pre><h4>مفهوم جعبه (Box Model)</h4><p>هر عنصر یک جعبه است: محتوا + padding + border + margin. نصف زیبایی‌سازی سایت یعنی مدیریت همین چهار چیز.</p><pre>.card {\n  background: #16203a;\n  padding: 20px;\n  border-radius: 16px;\n  margin: 10px;\n}</pre><h4>ترفند طلایی: وسط‌چین کردن</h4><pre>.parent {\n  display: flex;\n  justify-content: center; /* افقی */\n  align-items: center;     /* عمودی */\n  min-height: 100vh;\n}</pre><h4>گرادیان</h4><pre>background: linear-gradient(135deg, #3896ff, #76e6c3);</pre><p>تمرین: برای صفحه HTML قبلی‌ات یک کارت با گوشه گرد و سایه بساز. ابزار «رنگ‌ساز و پالت» لومیتک هم برای ساختن گرادیان عالی است!</p>"
+},
+{
+  id: "js", tag: "آموزش", emoji: "⚡", min: 8,
+  title: "آموزش جاوااسکریپت؛ منطق و رفتار سایت",
+  lead: "با JS دکمه‌ها را زنده می‌کنی؛ کلیک، محاسبه و تغییر صفحه را یاد بگیر.",
+  body: "<h4>جاوااسکریپت چه‌کار می‌کند؟</h4><p>اگر HTML بدن و CSS لباس باشد، JS مغز است: دکمه که کلیک شد چه اتفاقی بیفتد؟ عدد چطور حساب شود؟ همه این‌ها با JS است. تمام بازی‌های لومیتک با همین زبان ساخته شده‌اند!</p><h4>متغیر و تابع</h4><pre>let score = 0;\nfunction addPoint() {\n  score = score + 1;\n  document.getElementById(\"out\").textContent = score;\n}</pre><h4>گرفتن عنصر و رویداد</h4><pre>&lt;button onclick=\"addPoint()\"&gt;+1&lt;/button&gt;\n&lt;p id=\"out\"&gt;0&lt;/p&gt;</pre><h4>شرط و آرایه</h4><pre>let games = [\"شوتر\", \"ماجرا\", \"مسابقه\"];\ngames.forEach(function(g) {\n  console.log(\"بازی: \" + g);\n});</pre><h4>تمرین پروژه‌ای</h4><p>یک شمارنده کلیک بساز: هر بار دکمه را زدی عدد زیاد شود و اگر از ۱۰ گذشت رنگش سبز شود. همین پروژه کوچک سه مفهوم اساسی JS را تمرین می‌کند: متغیر، تابع و شرط.</p>"
+},
+{
+  id: "win", tag: "ویندوز", emoji: "🪟", min: 5,
+  title: "۱۲ میان‌بر طلایی ویندوز که هر روز لازم داری",
+  lead: "با این ترکیب‌ها سریع‌تر کار کن: کپی، قفل صفحه، تغییر پنجره و جادوی Win+V.",
+  body: "<h4>میان‌برهای ضروری</h4><ul><li><b>Ctrl+C / Ctrl+V</b> — کپی و چسباندن (همه‌جا)</li><li><b>Ctrl+Z</b> — برگرداندن اشتباه! نجات‌دهنده واقعی</li><li><b>Alt+Tab</b> — جابه‌جایی سریع بین پنجره‌ها</li><li><b>Win+D</b> — پرش به دسکتاپ</li><li><b>Win+L</b> — قفل فوری کامپیوتر</li><li><b>Win+Shift+S</b> — اسکرین‌شات از قسمت دلخواه</li><li><b>Win+V</b> — تاریخچه کپی‌ها (باید یک بار فعالش کنی)</li><li><b>Ctrl+Shift+Esc</b> — باز کردن مستقیم Task Manager</li><li><b>Win+کلید فلش</b> — چسباندن پنجره به نصف صفحه</li><li><b>Win+.</b> — باز کردن ایموجی‌ها 😄</li><li><b>Ctrl+W</b> — بستن تب فعلی مرورگر</li><li><b>F2</b> — تغییر نام فایل انتخاب‌شده</li></ul><h4>ترفند جایزه</h4><p>اگر <code>Win+;</code> و <code>Win+V</code> را فعال کنی، سرعت تایپ و یادداشت‌برداری‌ات دو برابر می‌شود. برای سنجش سرعت تایپ هم ابزار «تایپ‌سنجی» لومیتک را امتحان کن!</p>"
+},
+{
+  id: "pass", tag: "امنیت", emoji: "🔐", min: 6,
+  title: "رمز عبور قوی + ورود دو مرحله‌ای به زبان ساده",
+  lead: "چطور رمزی بسازیم که هکرها نتوانند حدس بزنند و یادمان هم نرود؟",
+  body: "<h4>چرا رمز ساده خطرناک است؟</h4><p>برنامه‌های هک در یک دقیقه میلیون‌ها ترکیب را امتحان می‌کنند؛ رمزهایی مثل <code>123456</code> یا تاریخ تولد در چند ثانیه شکسته می‌شوند. طول رمز مهم‌تر از پیچیدگی آن است.</p><h4>فرمول رمز قوی</h4><ul><li>حداقل <b>۱۲ کاراکتر</b></li><li>ترکیب ۴ کلمه بی‌ربط: مثل <code>آب‌بنبات‌سرخس‌۱۴فیل</code></li><li>برای هر سایت یک رمز جدا</li><li>از ابزار «تولید رمز عبور» لومیتک استفاده کن!</li></ul><h4>ورود دو مرحله‌ای (2FA)</h4><p>حتی اگر رمزت لو برود، با 2FA هکر به حساب نمی‌رسد؛ چون بعد از رمز، یک کد موقت لازم است. برای همه حساب‌های مهم (ایمیل، بانک، شبکه‌های اجتماعی) فعالش کن:</p><ul><li>تنظیمات → امنیت → تأیید دومرحله‌ای</li><li>روش پیامکی بهتر از هیچ است، ولی اپ «Authenticator» امن‌تر است</li></ul><h4>چک‌لیست امنیت</h4><ul><li>رمزها را در یک رمزنگار ذخیره کن، نه در فایل متنی!</li><li>روی سایت‌ها فقط لینک https را اعتماد کن</li><li>کد ۲FA را به هیچ‌کس — حتی «پشتیبانی» — نده</li></ul>"
+},
+{
+  id: "excel", tag: "آفیس", emoji: "📊", min: 7,
+  title: "آموزش اکسل مقدماتی؛ از فرمول تا نمودار",
+  lead: "۵ فرمولی که ۸۰ درصد کارهای اکسل را حل می‌کند + ساخت نمودار در ۳۰ ثانیه.",
+  body: "<h4>آشنایی با محیط</h4><p>اکسل جدولی است از سطر (۱،۲،۳...) و ستون (A،B،C...). هر خانه یک آدرس دارد مثل B4. هر فرمول با علامت <code>=</code> شروع می‌شود.</p><h4>۵ فرمول طلایی</h4><pre>=SUM(A1:A10)      ← جمع محدوده\n=AVERAGE(B2:B20)  ← میانگین\n=MAX(C1:C15)      ← بزرگ‌ترین\n=IF(B2>=50,\"قبول\",\"مردود\")\n=COUNTIF(A1:A30,\">18\") ← تعداد شرط‌دار</pre><h4>نکته‌های حرفه‌ای</h4><ul><li>برای پرکردن سریع، از گوشه پایین سلول بگیر و بکش (Fill Handle)</li><li>با <b>Ctrl+T</b> داده را «جدول رسمی» کن تا فیلتر و رنگ خودکار بگیرد</li><li>با <b>Alt+=</b> جمع سریع ستون می‌زنی</li></ul><h4>نمودار در ۳۰ ثانیه</h4><p>داده‌ها را انتخاب کن → Insert → نوع نمودار (ستونی برای مقایسه، خطی برای روند، دایره‌ای برای سهم). برای تحلیل عمیق‌تر، ابزار «آمار و احتمال» لومیتک میانگین و انحراف معیار را همین‌جا حساب می‌کند.</p>"
+},
+{
+  id: "prompt", tag: "هوش مصنوعی", emoji: "🤖", min: 6,
+  title: "هنوز پرسیدن از هوش مصنوعی؛ راهنمای پرامپت‌نویسی",
+  lead: "جواب بهتر = سوال بهتر. ۴ اصل پرامپت‌نویسی + مثال‌های واقعی.",
+  body: "<h4>اصل اول: دقیق باش</h4><p>به جای «درباره فوتبال بنویس» بگو: «یک پاراگراف ۵ جمله‌ای درباره تاریخ دربی تهران بنویس، برای نوجوان ۱۵ ساله». جزئیات، کیفیت جواب را ده‌ها برابر می‌کند.</p><h4>اصل دوم: نقش بده</h4><p>«از نگاه یک معلم ریاضی توضیح بده...» یا «طوری جواب بده که یک بچه ۱۰ ساله بفهمد». مدل با نقش مشخص، لحن و سطح مناسب‌تری می‌گیرد.</p><h4>اصل سوم: قالب بخواه</h4><ul><li>«در قالب جدول»</li><li>«مرحله‌به‌مرحله»</li><li>«حداکثر در ۵ بولت»</li></ul><h4>اصل چهارم: مثال بده</h4><p>یک نمونه جواب خوب نشان بده تا سبکش را کپی کند. مثلاً: «مثل این جمله شروع کن: ...»</p><h4>در لومیتک</h4><p>هوش مصنوعی لومیتک این تکنیک‌ها را کامل ساپورت می‌کند — هر سوال فقط ۲ سکه! سوال‌های پیاپی بپرس، دکمه «بازتولید» را بزن یا جواب را کپی کن. اگر جواب عجیب بود، همان سوال را دقیق‌تر و با جزئیات بیشتر دوباره بپرس.</p>"
+},
+{
+  id: "safe", tag: "امنیت", emoji: "🛡️", min: 6,
+  title: "امنیت در اینترنت؛ فیشینگ را بشناس و دام نخور",
+  lead: "پیام «برنده شدی!» نیست؛ حملات فیشینگ را با ۵ نشانه تشخیص بده.",
+  body: "<h4>فیشینگ چیست؟</h4><p>کلاهبرداری با پیام و سایت جعلی: ایمیل از «بانک»، پیام «جایزه» یا لینک «برای گرفتن بسته پستی». هدفشان رمز و کد کارت توست.</p><h4>۵ نشانه هشدار</h4><ul><li>فوریت ساختگی: «تا ۱۰ دقیقه دیگر اکانتت بسته می‌شود!»</li><li>لینک مشابه ولی غلط: <code>banke-meli.xyz</code> یا <code>g00gle.com</code></li><li>درخواست رمز یا کد — هیچ بانکی هرگز رمز نمی‌خواهد</li><li>غلط املایی زیاد و ترجمه ماشینی</li><li>فایل ضمیمه عجیب (exe، apk از چت ناشناس)</li></ul><h4>قانون طلایی</h4><p>قبل از کلیک، آدرس بار مرورگر را بخوان. اگر شک کردی، به‌جای لینک پیام، خودت آدرس رسمی سایت را در مرورگر بنویس.</p><h4>حریم خصوصی</h4><ul><li>موقعیت مکان و دسترسی دوربین را فقط به اپ‌های مطمئن بده</li><li>در WiFi عمومی وارد حساب بانکی نشو</li><li>به‌روزرسانی‌های مرورگر و ویندوز را جدی بگیر — هر آپدیت، سوراخ‌های امنیتی را می‌بندد</li></ul>"
+},
+{
+  id: "android", tag: "موبایل", emoji: "📱", min: 5,
+  title: "گوشی اندروید را ۲ برابر سریع‌تر کن",
+  lead: "۸ قدم ساده: از خاموش کردن انیمیشن‌ها تا مدیریت باتری و حافظه.",
+  body: "<h4>۱) حذف و غیرفعال کردن اپ‌های بلااستفاده</h4><p>اپ‌های بی‌استفاده هم حافظه می‌گیرند هم در پس‌زمینه می‌دوند: تنظیمات → برنامه‌ها → غیرفعال.</p><h4>۲) کاهش انیمیشن‌ها</h4><p>گزینه‌های توسعه‌دهنده را باز کن (۷ بار روی «شماره ساخت» بزن) و مقیاس انیمیشن‌های سه‌گانه را روی <code>0.5x</code> بگذار — گوشی فوری‌تر جواب می‌دهد!</p><h4>۳) پاک‌سازی حافظه نهان</h4><p>تنظیمات → ذخیره‌سازی → داده‌های کش شده را پاک کن؛ مخصوصاً اپ‌های شبکه اجتماعی.</p><h4>۴) مدیریت باتری</h4><ul><li>بخوان کدام اپ باتری خور است و حالت «بهینه‌شده» را فعال کن</li><li>روشنایی خودکار + تم تاریک = باتری بیشتر</li></ul><h4>۵) نکته‌های کوچک اما مؤثر</h4><ul><li>ویجت‌های اضافی صفحه اصلی را کم کن</li><li>همگام‌سازی اپ‌های بی‌استفاده را خاموش کن</li><li>هر چند هفته یک بار ری‌استارت کن</li><li>لایو والپر (پس‌زمینه متحرک) باتری‌خور است</li></ul><p>با این کارها حتی گوشی‌های ۲-۳ ساله هم جان تازه می‌گیرند!</p>"
+}
+];
+
+var grid = document.getElementById("tutGrid");
+var currentTut = null;
+function isTutRead(id) {
+  try { var p = getProfile(); return (p.readArticles || []).indexOf(id) !== -1; } catch(e) { return false; }
+}
+function claimTutReward() {
+  if (!currentTut) return;
+  var p = getProfile();
+  p.readArticles = Array.isArray(p.readArticles) ? p.readArticles : [];
+  if (p.readArticles.indexOf(currentTut.id) !== -1) { renderReadRow(); return; }
+  p.readArticles.push(currentTut.id);
+  saveProfile(p);
+  var r = addReward(10, 5);
+  addNotification("🎓", T("m.articleReward") + " (" + r.coins + " 🪙)");
+  renderTuts();
+  renderReadRow();
+}
+function renderReadRow() {
+  var row = document.getElementById("arReadRow");
+  if (!row || !currentTut) return;
+  row.innerHTML = "";
+  if (isTutRead(currentTut.id)) {
+    var done = document.createElement("div");
+    done.className = "ar-read-done";
+    done.textContent = T("ar.readDone");
+    row.appendChild(done);
+  } else {
+    var btn = document.createElement("button");
+    btn.className = "ar-read-btn";
+    btn.textContent = T("ar.readCta");
+    btn.onclick = claimTutReward;
+    row.appendChild(btn);
+  }
+}
+function renderTuts() {
+  grid.innerHTML = "";
+  TUTORIALS.forEach(function(a) {
+    var card = document.createElement("article");
+    card.className = "card ar-item reveal" + (isTutRead(a.id) ? " is-done" : "");
+    card.innerHTML = '<span class="ar-done-chip">✓ ' + T("coins.unit") + '</span><span class="tag">' + a.emoji + " " + a.tag + '</span><h3></h3><p class="muted"></p>' +
+      '<div class="ar-meta">🕒 ' + a.min + " " + T("ar.minutes") + '</div>';
+    card.querySelector("h3").textContent = a.title;
+    card.querySelector("p").textContent = a.lead;
+    card.onclick = function() { openTut(a); };
+    grid.appendChild(card);
+  });
+  if (window.LumiReveal) window.LumiReveal.scan(grid);
+}
+function openTut(a) {
+  currentTut = a;
+  var m = document.getElementById("arModal");
+  document.getElementById("arTitle").textContent = a.emoji + " " + a.title;
+  document.getElementById("arTag").textContent = a.tag + " · " + a.min + " " + T("ar.minutes");
+  document.getElementById("arBody").innerHTML = a.body;
+  renderReadRow();
+  m.classList.add("show");
+}
+var arModal = document.getElementById("arModal");
+arModal.addEventListener("click", function(e) { if (e.target === arModal) arModal.classList.remove("show"); });
+document.getElementById("arClose").onclick = function() { arModal.classList.remove("show"); };
+document.addEventListener("keydown", function(e) { if (e.key === "Escape") arModal.classList.remove("show"); });
+document.addEventListener("lumitek:langchange", renderTuts);
+renderTuts();
+</script>
 
 </body>
+
 </html>

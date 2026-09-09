@@ -3,23 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>％ درصد و تخفیف | ابزارهای Lumitek</title>
-<meta name="description" content="محاسبه درصد آنلاین: درصد یک عدد، تخفیف، افزایش و کاهش درصدی — آفلاین.">
+<title>🎨 رنگ‌ساز و پالت | ابزارهای Lumitek</title>
+<meta name="description" content="رنگ‌ساز آنلاین — تبدیل HEX/RGB/HSL، سایه‌ها، هارمونی، گرادیان و پالت شخصی با خروجی CSS.">
 <meta name="keywords" content="لومیتک, lumitek, ابزار آنلاین, بازی آنلاین, اخبار ورزش, پشتیبانی هوش مصنوعی, خرید سکه, وب اپلیکیشن">
 <meta name="robots" content="index,follow">
 <meta name="theme-color" content="#070b15">
-<link rel="canonical" href="https://lumitek.netlify.app/tools/percent.html">
+<link rel="canonical" href="https://lumitek.netlify.app/tools/colors.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Lumitek">
-<meta property="og:title" content="％ درصد و تخفیف | ابزارهای Lumitek">
-<meta property="og:description" content="محاسبه درصد آنلاین: درصد یک عدد، تخفیف، افزایش و کاهش درصدی — آفلاین.">
-<meta property="og:url" content="https://lumitek.netlify.app/tools/percent.html">
+<meta property="og:title" content="🎨 رنگ‌ساز و پالت | ابزارهای Lumitek">
+<meta property="og:description" content="رنگ‌ساز آنلاین — تبدیل HEX/RGB/HSL، سایه‌ها، هارمونی، گرادیان و پالت شخصی با خروجی CSS.">
+<meta property="og:url" content="https://lumitek.netlify.app/tools/stopwatch.html">
 <meta property="og:image" content="https://lumitek.netlify.app/assets/icons/og-cover.png">
 <meta property="og:locale" content="fa_IR">
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="％ درصد و تخفیف | ابزارهای Lumitek">
-<meta name="twitter:description" content="محاسبه درصد آنلاین: درصد یک عدد، تخفیف، افزایش و کاهش درصدی — آفلاین.">
+<meta name="twitter:title" content="🎨 رنگ‌ساز و پالت | ابزارهای Lumitek">
+<meta name="twitter:description" content="رنگ‌ساز آنلاین — تبدیل HEX/RGB/HSL، سایه‌ها، هارمونی، گرادیان و پالت شخصی با خروجی CSS.">
 <meta name="twitter:image" content="https://lumitek.netlify.app/assets/icons/og-cover.png">
 <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
 <link rel="apple-touch-icon" href="../assets/icons/icon-192.png">
@@ -99,35 +99,47 @@
 </div>
 
 <main class="page">
-<p class="eyebrow">LUMITEK TOOL</p>
-<h1 id="t-title">％ درصد و تخفیف</h1>
-<p class="muted" id="t-lead">درصد یک عدد، تخفیف قیمت و تغییرات درصدی — همه در یک جا.</p>
+<p class="eyebrow">LUMITEK TOOL · NEW</p>
+<h1 data-i18n="tl.colorT">🎨 رنگ‌ساز و پالت</h1>
+<p class="muted" data-i18n="tl.colorL">تبدیل HEX/RGB/HSL، سایه‌ها، هارمونی رنگ و گرادیان با خروجی CSS — کاملاً آفلاین.</p>
 
-<div class="grid mt2" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">
-  <div class="card">
-    <h3 id="c1t">X٪ از Y</h3>
-    <label id="c1l1">درصد (X)</label><input id="p1" class="input" type="number" value="20">
-    <label id="c1l2">عدد (Y)</label><input id="p2" class="input" type="number" value="150">
-    <div class="result"><h2 id="r1">—</h2></div>
+<div class="card mt">
+  <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:center">
+    <div id="coPreview" style="width:110px;height:110px;border-radius:18px;border:1px solid var(--line);box-shadow:0 8px 24px rgba(0,0,0,.18)"></div>
+    <div style="flex:1;min-width:220px;display:grid;gap:8px">
+      <label class="muted">HEX <input id="coHex" class="amount-input" value="#7ca7ff" dir="ltr" style="width:100%"></label>
+      <div style="display:flex;gap:10px;align-items:center">
+        <input id="coPick" type="color" value="#7ca7ff" style="width:52px;height:38px;border:none;background:none;cursor:pointer">
+        <span id="coRgb" class="mono" dir="ltr"></span>
+      </div>
+      <span id="coHsl" class="mono muted" dir="ltr"></span>
+    </div>
   </div>
-  <div class="card">
-    <h3 id="c2t">X چند درصد از Y است؟</h3>
-    <label id="c2l1">عدد (X)</label><input id="q1" class="input" type="number" value="45">
-    <label id="c2l2">عدد (Y)</label><input id="q2" class="input" type="number" value="150">
-    <div class="result"><h2 id="r2">—</h2></div>
+</div>
+
+<div class="grid mt" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">
+  <div class="card"><h3>🌗 سایه‌ها و تینت‌ها</h3><div id="coShades" style="display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-top:10px"></div></div>
+  <div class="card"><h3>🎯 هارمونی رنگ</h3><div id="coHarmony" style="display:grid;gap:8px;margin-top:10px"></div></div>
+  <div class="card"><h3>🌈 سازنده گرادیان</h3>
+    <div style="display:flex;gap:10px;align-items:center;margin-top:10px;flex-wrap:wrap">
+      <input id="coGrad2" type="color" value="#ff8a5c" style="width:44px;height:34px;border:none;background:none;cursor:pointer">
+      <span class="muted" data-i18n="tl.coAngle">زاویه</span>
+      <input id="coAngle" type="range" min="0" max="360" value="135" style="flex:1">
+    </div>
+    <div id="coGradPrev" style="height:64px;border-radius:12px;margin-top:12px"></div>
+    <code id="coCss" class="mono" style="display:block;background:var(--card2);padding:10px;border-radius:10px;font-size:.72rem;margin-top:10px;direction:ltr;overflow-x:auto"></code>
+    <button id="coCopyCss" class="ghost-btn mt" style="width:100%">کپی CSS</button>
   </div>
-  <div class="card">
-    <h3 id="c3t">محاسبه تخفیف</h3>
-    <label id="c3l1">قیمت اصلی (تومان)</label><input id="d1" class="input" type="number" value="500000">
-    <label id="c3l2">درصد تخفیف</label><input id="d2" class="input" type="number" value="25">
-    <div class="result"><h2 id="r3">—</h2><p class="muted" id="r3b" style="margin:0"></p></div>
+</div>
+
+<div class="card mt">
+  <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+    <h3 class="mb0" style="flex:1">💾 پالت من</h3>
+    <button id="coSave" class="ghost-btn">افزودن به پالت</button>
+    <button id="coRandom" class="ghost-btn">پالت شاد</button>
+    <button id="coClear" class="ghost-btn">خالی کردن</button>
   </div>
-  <div class="card">
-    <h3 id="c4t">افزایش / کاهش درصدی</h3>
-    <label id="c4l1">مقدار اولیه</label><input id="g1" class="input" type="number" value="200">
-    <label id="c4l2">درصد تغییر (منفی = کاهش)</label><input id="g2" class="input" type="number" value="15">
-    <div class="result"><h2 id="r4">—</h2></div>
-  </div>
+  <div id="coPal" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(56px,1fr));gap:8px;margin-top:12px"></div>
 </div>
 </main>
 
@@ -200,56 +212,146 @@
 
 <script src="../js/main.js"></script>
 <script>
+
 (function(){
   var fa = {
-    "t-title": "％ درصد و تخفیف", "t-lead": "درصد یک عدد، تخفیف قیمت و تغییرات درصدی — همه در یک جا.",
-    "c1t": "X٪ از Y", "c1l1": "درصد (X)", "c1l2": "عدد (Y)",
-    "c2t": "X چند درصد از Y است؟", "c2l1": "عدد (X)", "c2l2": "عدد (Y)",
-    "c3t": "محاسبه تخفیف", "c3l1": "قیمت اصلی (تومان)", "c3l2": "درصد تخفیف",
-    "c4t": "افزایش / کاهش درصدی", "c4l1": "مقدار اولیه", "c4l2": "درصد تغییر (منفی = کاهش)",
-    "final": "پرداخت نهایی:", "saved": "سود شما:"
+    "t-title": "🎨 رنگ‌ساز و پالت", "t-lead": "تبدیل رنگ، سایه‌ها، هارمونی و گرادیان با خروجی CSS — آفلاین.",
+    "hex": "کد HEX", "shades": "سایه‌ها و تینت‌ها", "harmony": "هارمونی رنگ",
+    "grad": "سازنده گرادیان", "angle": "زاویه", "cssOut": "خروجی CSS",
+    "copy": "کپی", "copied": "کپی شد!", "palette": "پالت من", "save": "افزودن به پالت",
+    "random": "پالت شاد", "clear": "خالی کردن"
   };
   var en = {
-    "t-title": "％ Percentage & Discount", "t-lead": "Percent of a number, price discounts and percentage change — all in one place.",
-    "c1t": "X% of Y", "c1l1": "Percent (X)", "c1l2": "Number (Y)",
-    "c2t": "X is what % of Y?", "c2l1": "Number (X)", "c2l2": "Number (Y)",
-    "c3t": "Discount calculator", "c3l1": "Original price", "c3l2": "Discount %",
-    "c4t": "Percentage increase / decrease", "c4l1": "Initial value", "c4l2": "Change % (negative = decrease)",
-    "final": "Final price:", "saved": "You save:"
+    "t-title": "🎨 Color Studio", "t-lead": "Convert colors, shades, harmonies and gradients with CSS output — offline.",
+    "hex": "HEX code", "shades": "Shades & tints", "harmony": "Color harmony",
+    "grad": "Gradient builder", "angle": "Angle", "cssOut": "CSS output",
+    "copy": "Copy", "copied": "Copied!", "palette": "My palette", "save": "Add to palette",
+    "random": "Happy palette", "clear": "Clear"
   };
-  function fmt(n){ return Number(n).toLocaleString(getLang() === "fa" ? "fa-IR" : "en-US"); }
+  function d(){ return getLang() === "fa" ? fa : en; }
+  var el = function(id){ return document.getElementById(id); };
 
-  function apply(){
-    var d = getLang() === "fa" ? fa : en;
-    for (var k in d) {
-      var el = document.getElementById(k);
-      if (el) el.textContent = d[k];
+  function hex2rgb(h) {
+    h = h.replace("#", "");
+    if (h.length === 3) h = h[0]+h[0]+h[1]+h[1]+h[2]+h[2];
+    var n = parseInt(h, 16);
+    return { r: (n >> 16) & 255, g: (n >> 8) & 255, b: n & 255 };
+  }
+  function rgb2hex(r, g, b) {
+    var f = function(x){ return ("0" + Math.max(0, Math.min(255, Math.round(x))).toString(16)).slice(-2); };
+    return "#" + f(r) + f(g) + f(b);
+  }
+  function rgb2hsl(r, g, b) {
+    r /= 255; g /= 255; b /= 255;
+    var mx = Math.max(r, g, b), mn = Math.min(r, g, b), h, s, l = (mx + mn) / 2;
+    if (mx === mn) { h = s = 0; }
+    else {
+      var dd = mx - mn;
+      s = l > .5 ? dd / (2 - mx - mn) : dd / (mx + mn);
+      if (mx === r) h = ((g - b) / dd + (g < b ? 6 : 0));
+      else if (mx === g) h = (b - r) / dd + 2;
+      else h = (r - g) / dd + 4;
+      h /= 6;
     }
-    calc();
+    return { h: Math.round(h * 360), s: Math.round(s * 100), l: Math.round(l * 100) };
   }
-
-  function num(id){ var v = parseFloat(document.getElementById(id).value); return isNaN(v) ? 0 : v; }
-
-  function calc(){
-    var r1 = num("p1") / 100 * num("p2");
-    document.getElementById("r1").textContent = Number.isFinite(r1) ? fmt(+r1.toFixed(4)) : "—";
-    var r2 = num("q2") ? (num("q1") / num("q2")) * 100 : 0;
-    document.getElementById("r2").textContent = Number.isFinite(r2) ? "+" + (+r2.toFixed(2)) + "٪" : "—";
-    var price = num("d1"), disc = num("d2");
-    var save = price * disc / 100;
-    document.getElementById("r3").textContent = fmt(+(price - save).toFixed(2));
-    var d = getLang() === "fa" ? fa : en;
-    document.getElementById("r3b").textContent = d.final + " " + fmt(+(price - save).toFixed(0)) + " — " + d.saved + " " + fmt(+save.toFixed(0));
-    var r4 = num("g1") * (1 + num("g2") / 100);
-    document.getElementById("r4").textContent = Number.isFinite(r4) ? fmt(+r4.toFixed(2)) : "—";
+  function hsl2rgb(h, s, l) {
+    s /= 100; l /= 100;
+    var k = function(n){ return (n + h / 30) % 12; };
+    var a = s * Math.min(l, 1 - l);
+    var f = function(n){ return l - a * Math.max(-1, Math.min(k(n) - 3, Math.min(9 - k(n), 1))); };
+    return { r: f(0) * 255, g: f(8) * 255, b: f(4) * 255 };
   }
-
-  ["p1","p2","q1","q2","d1","d2","g1","g2"].forEach(function(id){
-    document.getElementById(id).addEventListener("input", calc);
-  });
-  document.addEventListener("lumitek:langchange", apply);
-  apply();
+  function cur() { return hex2rgb(el("coHex").value); }
+  function paint(hex) {
+    if (hex) { el("coHex").value = hex; el("coPick").value = hex; }
+    var c = cur(), hsl = rgb2hsl(c.r, c.g, c.b);
+    el("coRgb").textContent = "rgb(" + Math.round(c.r) + ", " + Math.round(c.g) + ", " + Math.round(c.b) + ")";
+    el("coHsl").textContent = "hsl(" + hsl.h + ", " + hsl.s + "%, " + hsl.l + "%)";
+    el("coPreview").style.background = el("coHex").value;
+    /* shades */
+    var box = el("coShades"); box.innerHTML = "";
+    for (var i = 1; i <= 10; i++) {
+      var l2 = i * 10;
+      var rgb = hsl2rgb(hsl.h, hsl.s, l2);
+      var hx = rgb2hex(rgb.r, rgb.g, rgb.b);
+      var sw = document.createElement("div");
+      sw.style.cssText = "height:34px;border-radius:8px;cursor:pointer;display:grid;place-items:center;font-size:.62rem;font-weight:700;color:" + (l2 > 55 ? "#111" : "#fff");
+      sw.style.background = hx; sw.textContent = hx;
+      sw.onclick = (function(h2){ return function(){ el("coHex").value = h2; el("coPick").value = h2; paint(); }; })(hx);
+      box.appendChild(sw);
+    }
+    /* harmony */
+    var hb = el("coHarmony"); hb.innerHTML = "";
+    [[180, "مکمل"], [30, "جدا"], [120, "سه‌گانه"]].forEach(function(pair) {
+      var rgb = hsl2rgb((hsl.h + pair[0]) % 360, hsl.s, hsl.l);
+      var hx2 = rgb2hex(rgb.r, rgb.g, rgb.b);
+      var sw2 = document.createElement("div");
+      sw2.style.cssText = "height:44px;border-radius:10px;cursor:pointer;display:grid;place-items:center;font-size:.62rem;font-weight:700;color:#fff";
+      sw2.style.background = hx2; sw2.textContent = pair[1] + " " + hx2;
+      sw2.onclick = (function(h3){ return function(){ el("coHex").value = h3; el("coPick").value = h3; paint(); }; })(hx2);
+      hb.appendChild(sw2);
+    });
+    grad();
+  }
+  function grad() {
+    var a = el("coHex").value, b = el("coGrad2").value, ang = el("coAngle").value;
+    el("coGradPrev").style.background = "linear-gradient(" + ang + "deg, " + a + ", " + b + ")";
+    el("coCss").textContent = "background: linear-gradient(" + ang + "deg, " + a + ", " + b + ");";
+  }
+  function copyBtn(btn, txt) {
+    btn.onclick = function() {
+      try { navigator.clipboard.writeText(txt()); } catch(e) {}
+      var old = btn.textContent; btn.textContent = d().copied;
+      setTimeout(function(){ btn.textContent = old; }, 900);
+    };
+  }
+  el("coPick").addEventListener("input", function(){ paint(this.value); });
+  el("coHex").addEventListener("input", function(){ if (/^#[0-9a-fA-F]{6}$/.test(this.value)) paint(); });
+  el("coGrad2").addEventListener("input", grad);
+  el("coAngle").addEventListener("input", grad);
+  copyBtn(el("coCopyCss"), function(){ return el("coCss").textContent; });
+  el("coRgb").style.cursor = "pointer";
+  el("coRgb").title = "click to copy";
+  el("coRgb").onclick = function(){ copyText(this.textContent, null); };
+  /* palette */
+  var PAL_KEY = "lumitek_palette_v1";
+  function paintPal() {
+    var pal = [];
+    try { pal = JSON.parse(localStorage.getItem(PAL_KEY) || "[]"); } catch(e) {}
+    var box = el("coPal"); box.innerHTML = "";
+    if (!pal.length) { box.innerHTML = '<span class="muted" style="font-size:.8rem">—</span>'; return; }
+    pal.forEach(function(hx) {
+      var sw = document.createElement("div");
+      sw.style.cssText = "height:40px;border-radius:10px;cursor:pointer;position:relative";
+      sw.style.background = hx; sw.title = hx;
+      sw.onclick = function(){ el("coHex").value = hx; el("coPick").value = hx; paint(); };
+      box.appendChild(sw);
+    });
+  }
+  el("coSave").onclick = function() {
+    var pal = [];
+    try { pal = JSON.parse(localStorage.getItem(PAL_KEY) || "[]"); } catch(e) {}
+    pal.push(el("coHex").value);
+    if (pal.length > 10) pal.shift();
+    localStorage.setItem(PAL_KEY, JSON.stringify(pal));
+    paintPal();
+  };
+  el("coClear").onclick = function() { localStorage.removeItem(PAL_KEY); paintPal(); };
+  el("coRandom").onclick = function() {
+    var h = Math.floor(Math.random() * 360), out = [0, 60, 180, 240, 300].map(function(off) {
+      var rgb = hsl2rgb((h + off) % 360, 65 + Math.random() * 20, 55);
+      return rgb2hex(rgb.r, rgb.g, rgb.b);
+    });
+    localStorage.setItem(PAL_KEY, JSON.stringify(out));
+    paintPal();
+  };
+  paint("#7ca7ff");
+  paintPal();
 })();
+
 </script>
+
 </body>
+
 </html>

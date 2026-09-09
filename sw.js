@@ -1,5 +1,5 @@
 /* ============================================================
-   Lumitek 0.7 — Service Worker (موتور آفلاین)
+   Lumitek 0.8 — Service Worker (موتور آفلاین)
    ------------------------------------------------------------
    استراتژی:
    • App shell (صفحات/CSS/JS/آیکون‌ها): stale-while-revalidate
@@ -9,8 +9,8 @@
    • درخواست‌های خبری و AI: network-first با کش runtime
      → آخرین پاسخ موفق همیشه برای حالت آفلاین می‌ماند.
    ============================================================ */
-var CACHE = "lumitek-v0.7.0";
-var RUNTIME = "lumitek-runtime-v0.7.0";
+var CACHE = "lumitek-v0.8.1";
+var RUNTIME = "lumitek-runtime-v0.8.1";
 
 var CORE = [
   "./",
@@ -48,6 +48,10 @@ var CORE = [
   "./pages/range.html",
   "./pages/runner.html",
   "./pages/rally.html",
+  "./pages/sniper.html",
+  "./pages/island.html",
+  "./pages/td.html",
+  "./pages/dragrace.html",
   "./pages/hoops.html",
   "./pages/reaction.html",
   "./pages/number-rush.html",
@@ -73,6 +77,10 @@ var CORE = [
   "./tools/matrix.html",
   "./tools/deposit.html",
   "./tools/physics.html",
+  "./tools/typing.html",
+  "./tools/pomodoro.html",
+  "./tools/colors.html",
+  "./tools/basehash.html",
   "./tools/percent.html",
   "./tools/age.html",
   "./tools/text-tools.html",
