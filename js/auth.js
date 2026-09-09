@@ -1,0 +1,299 @@
+/* ============================================================
+   Lumitek 0.5 — Auth (demo mode + Firebase-ready)
+   ------------------------------------------------------------
+   حالت فعلی: "demo" — حساب‌ها روی localStorage همین مرورگر
+   ذخیره می‌شوند (ایمیل + رمز هش‌شده با SHA-256 + salt).
+
+   🔥 اتصال Firebase واقعی (ورود واقعی گوگل و ایمیل):
+   ۱) در console.firebase.google.com یک پروژه بساز و Authentication
+      را فعال کن (Google + Email/Password providers).
+   ۲) Web App بساز و config را در AUTH_CONFIG زیر قرار بده.
+   ۳) اسکریپت‌های Firebase را در <head> صفحات اضافه کن:
+      <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+   ۴) همین و! بقیه کار را این ماژول خودکار انجام می‌دهد.
+   ============================================================ */
+window.LumiAuth = (function () {
+  var AUTH_CONFIG = {
+    provider: "demo",   // "demo" | "firebase"
+    firebase: {
+      apiKey: "",
+      authDomain: "",
+      projectId: "",
+      appId: ""
+    }
+  };
+
+  var USERS_KEY = "lumitek_auth_users_v1";
+  var SESSION_KEY = "lumitek_auth_session_v1";
+  var _listeners = [];
+
+  function users() {
+    try { return JSON.parse(localStorage.getItem(USERS_KEY)) || {}; } catch (e) { return {}; }
+  }
+  function saveUsers(u) { localStorage.setItem(USERS_KEY, JSON.stringify(u)); }
+
+  function emit() {
+    var cur = currentUser();
+    _listeners.forEach(function (fn) { try { fn(cur); } catch (e) {} });
+  }
+
+  function onChange(fn) { if (typeof fn === "function") _listeners.push(fn); }
+
+  function currentUser() {
+    try {
+      var s = JSON.parse(localStorage.getItem(SESSION_KEY));
+      return s && s.email ? s : null;
+    } catch (e) { return null; }
+  }
+
+  function setSession(u) {
+    if (u) localStorage.setItem(SESSION_KEY, JSON.stringify({ email: u.email, name: u.name, provider: u.provider, at: Date.now() }));
+    else localStorage.removeItem(SESSION_KEY);
+    syncProfile(u);
+    emit();
+  }
+
+  function syncProfile(u) {
+    if (!u) return;
+    try {
+      var p = getProfile();
+      if (p.name === "Lumitek User" && u.name) { p.name = u.name; saveProfile(p); }
+    } catch (e) {}
+  }
+
+  function hash(pass, salt) {
+    if (window.crypto && crypto.subtle && crypto.subtle.digest && window.isSecureContext !== false) {
+      return crypto.subtle.digest("SHA-256", new TextEncoder().encode(salt + "::" + pass)).then(function (buf) {
+        return Array.from(new Uint8Array(buf)).map(function (b) { return b.toString(16).padStart(2, "0"); }).join("");
+      });
+    }
+    /* fallback ساده برای محیط‌های بدون crypto.subtle (مثل file:// در برخی مرورگرها) */
+    var h = 5381, s = salt + "::" + pass;
+    for (var i = 0; i < s.length; i++) h = ((h << 5) + h + s.charCodeAt(i)) >>> 0;
+    return Promise.resolve("fnv" + h.toString(16));
+  }
+
+  function validEmail(e) { return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(e); }
+
+  function signUp(email, pass, name) {
+    if (AUTH_CONFIG.provider === "firebase") return fbSignUp(email, pass, name);
+    email = (email || "").trim().toLowerCase();
+    name = (name || "").trim() || email.split("@")[0];
+    if (!validEmail(email)) return Promise.reject({ code: "errEmail" });
+    if (!pass || pass.length < 6) return Promise.reject({ code: "errPass" });
+    var all = users();
+    if (all[email]) return Promise.reject({ code: "errExists" });
+    var salt = Math.random().toString(36).slice(2, 10);
+    return hash(pass, salt).then(function (h) {
+      all[email] = { email: email, name: name, salt: salt, hash: h, provider: "email", createdAt: Date.now() };
+      saveUsers(all);
+      setSession(all[email]);
+      return all[email];
+    });
+  }
+
+  function signIn(email, pass) {
+    if (AUTH_CONFIG.provider === "firebase") return fbSignIn(email, pass);
+    email = (email || "").trim().toLowerCase();
+    if (!validEmail(email)) return Promise.reject({ code: "errEmail" });
+    var all = users();
+    var u = all[email];
+    if (!u) return Promise.reject({ code: "errNoUser" });
+    return hash(pass || "", u.salt).then(function (h) {
+      if (h !== u.hash) return Promise.reject({ code: "errWrong" });
+      setSession(u);
+      return u;
+    });
+  }
+
+  /* ورود با گوگل — در حالت نمایشی یک حساب گوگل محلی می‌سازد/وارد می‌کند.
+     با Firebase واقعی، از popup گوگل استفاده می‌شود. */
+  function signInGoogle() {
+    if (AUTH_CONFIG.provider === "firebase" && window.firebase) {
+      var provider = new firebase.auth.GoogleAuthProvider();
+      return firebase.auth().signInWithPopup(provider).then(function (res) {
+        var u = { email: res.user.email, name: res.user.displayName || res.user.email.split("@")[0], provider: "google" };
+        setSession(u);
+        return u;
+      });
+    }
+    /* demo */
+    var all = users();
+    var email = "google.user@demo.lumitek";
+    var u = all[email];
+    if (!u) {
+      u = { email: email, name: "Google User", provider: "google", createdAt: Date.now() };
+      all[email] = u; saveUsers(all);
+    }
+    setSession(u);
+    return Promise.resolve(u);
+  }
+
+  function signOut() {
+    if (AUTH_CONFIG.provider === "firebase" && window.firebase) firebase.auth().signOut();
+    setSession(null);
+    return Promise.resolve();
+  }
+
+  /* --- firebase wrappers --- */
+  function fbSignUp(email, pass, name) {
+    return firebase.auth().createUserWithEmailAndPassword(email, pass).then(function (res) {
+      if (name) return res.user.updateProfile({ displayName: name }).then(function () {
+        var u = { email: email, name: name, provider: "password" }; setSession(u); return u;
+      });
+      var u = { email: email, name: email.split("@")[0], provider: "password" }; setSession(u); return u;
+    });
+  }
+  function fbSignIn(email, pass) {
+    return firebase.auth().signInWithEmailAndPassword(email, pass).then(function (res) {
+      var u = { email: res.user.email, name: res.user.displayName || res.user.email.split("@")[0], provider: "password" };
+      setSession(u); return u;
+    });
+  }
+
+  /* --- UI: auth modal --- */
+  function ensureModal() {
+    if (document.querySelector("#authModal")) return;
+    var m = document.createElement("div");
+    m.id = "authModal";
+    m.className = "modal";
+    m.innerHTML =
+      '<div class="modal-card modal-small">' +
+      '<button class="modal-close" data-auth-close>×</button>' +
+      '<h3 class="auth-title">' + "ورود به Lumitek" + '</h3>' +
+      '<button class="google-btn" data-auth-google>' +
+      '<svg width="18" height="18" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.9 1.2 8 3l5.7-5.7C34.3 6.1 29.4 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.6-.4-3.9z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.9 1.2 8 3l5.7-5.7C34.3 6.1 29.4 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C36.9 39.2 44 34 44 24c0-1.3-.1-2.6-.4-3.9z"/></svg>' +
+      '<span>ادامه با گوگل</span></button>' +
+      '<div class="auth-or"><span></span><i data-i18n="auth.or">یا با ایمیل</i><span></span></div>' +
+      '<div class="auth-tabs"><button data-auth-tab="in" class="active">ورود</button><button data-auth-tab="up">ثبت‌نام</button></div>' +
+      '<div data-auth-mode="in">' +
+      '<input data-auth-email type="email" autocomplete="email" placeholder="ایمیل">' +
+      '<input data-auth-pass type="password" autocomplete="current-password" placeholder="رمز عبور">' +
+      '</div>' +
+      '<div data-auth-mode="up" style="display:none">' +
+      '<input data-auth-name type="text" maxlength="24" placeholder="نام نمایشی">' +
+      '<input data-auth-email2 type="email" autocomplete="email" placeholder="ایمیل">' +
+      '<input data-auth-pass2 type="password" autocomplete="new-password" placeholder="رمز عبور (حداقل ۶ کاراکتر)">' +
+      '</div>' +
+      '<div class="auth-error" data-auth-error style="display:none"></div>' +
+      '<button class="primary-btn" style="width:100%" data-auth-submit>ورود</button>' +
+      '<p class="auth-note">حالت نمایشی: حساب‌ها روی همین مرورگر ذخیره می‌شوند. برای ورود واقعی گوگل/ایمیل، Firebase را در فایل js/auth.js وصل کن.</p>' +
+      '</div>';
+    document.body.appendChild(m);
+    translateModal(m);
+    wireModal(m);
+  }
+
+  function translateModal(m) {
+    if (!window.LumiI18n) return;
+    m.querySelector(".auth-title").textContent = T("auth.title");
+    m.querySelector("[data-auth-google] span").textContent = T("auth.google");
+    m.querySelector("[data-i18n='auth.or']").textContent = T("auth.or");
+    var tabs = m.querySelectorAll(".auth-tabs button");
+    tabs[0].textContent = T("auth.signinTab"); tabs[1].textContent = T("auth.signupTab");
+    m.querySelector("[data-auth-email]").placeholder = T("auth.email");
+    m.querySelector("[data-auth-pass]").placeholder = T("auth.pass");
+    m.querySelector("[data-auth-name]").placeholder = T("auth.name");
+    m.querySelector("[data-auth-email2]").placeholder = T("auth.email");
+    m.querySelector("[data-auth-pass2]").placeholder = T("auth.pass");
+    m.querySelector("[data-auth-submit]").textContent = T("auth.signinBtn");
+    m.querySelector(".auth-note").textContent = T("auth.demoNote");
+  }
+
+  var mode = "in";
+
+  function wireModal(m) {
+    m.addEventListener("click", function (e) {
+      if (e.target === m || e.target.hasAttribute("data-auth-close")) { m.classList.remove("show"); return; }
+      var g = e.target.closest("[data-auth-google]");
+      if (g) {
+        setLoading(g, true);
+        signInGoogle().then(function () { ok(); }).catch(function (err) { showErr(err && err.code); }).finally(function () { setLoading(g, false); });
+        return;
+      }
+      var tab = e.target.closest("[data-auth-tab]");
+      if (tab) {
+        mode = tab.getAttribute("data-auth-tab");
+        m.querySelectorAll("[data-auth-tab]").forEach(function (b) { b.classList.toggle("active", b === tab); });
+        m.querySelector("[data-auth-mode='in']").style.display = mode === "in" ? "" : "none";
+        m.querySelector("[data-auth-mode='up']").style.display = mode === "up" ? "" : "none";
+        m.querySelector("[data-auth-submit]").textContent = mode === "in" ? T("auth.signinBtn") : T("auth.signupBtn");
+        hideErr();
+        return;
+      }
+      if (e.target.closest("[data-auth-submit]")) submit(m);
+    });
+    m.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" && e.target.tagName === "INPUT") submit(m);
+    });
+  }
+
+  function submit(m) {
+    hideErr();
+    var email = m.querySelector(mode === "in" ? "[data-auth-email]" : "[data-auth-email2]").value.trim();
+    var pass = m.querySelector(mode === "in" ? "[data-auth-pass]" : "[data-auth-pass2]").value;
+    var name = mode === "up" ? m.querySelector("[data-auth-name]").value.trim() : "";
+    var btn = m.querySelector("[data-auth-submit]");
+    setLoading(btn, true);
+    var p = mode === "in" ? signIn(email, pass) : signUp(email, pass, name);
+    p.then(function () { ok(); }).catch(function (err) { showErr(err && err.code); })
+     .finally(function () { setLoading(btn, false); });
+  }
+
+  function ok() {
+    var m = document.querySelector("#authModal");
+    if (m) m.classList.remove("show");
+    addNotification("✅", T("auth.welcome") + " " + (currentUser() || {}).name + " 👋");
+  }
+
+  function showErr(code) {
+    var m = document.querySelector("#authModal");
+    if (!m) return;
+    var el = m.querySelector("[data-auth-error]");
+    el.textContent = code ? T("auth." + code) : T("auth.errWrong");
+    el.style.display = "block";
+  }
+  function hideErr() {
+    var m = document.querySelector("#authModal");
+    if (!m) return;
+    var el = m.querySelector("[data-auth-error]");
+    if (el) el.style.display = "none";
+  }
+  function setLoading(btn, on) {
+    if (!btn) return;
+    btn.disabled = on;
+    btn.style.opacity = on ? ".6" : "";
+  }
+
+  function openModal() {
+    ensureModal();
+    translateModal(document.querySelector("#authModal"));
+    hideErr();
+    document.querySelector("#authModal").classList.add("show");
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("click", function (e) {
+      var t = e.target.closest("[data-auth-open]");
+      if (t) { openModal(); }
+    });
+    if (window.LumiI18n) {
+      document.addEventListener("lumitek:langchange", function () {
+        var m = document.querySelector("#authModal");
+        if (m) translateModal(m);
+      });
+    }
+  });
+
+  return {
+    AUTH_CONFIG: AUTH_CONFIG,
+    currentUser: currentUser,
+    signIn: signIn,
+    signUp: signUp,
+    signInGoogle: signInGoogle,
+    signOut: signOut,
+    onChange: onChange,
+    openModal: openModal
+  };
+})();

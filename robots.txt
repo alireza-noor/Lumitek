@@ -1,0 +1,5 @@
+# Lumitek robots.txt
+User-agent: *
+Allow: /
+
+Sitemap: https://lumitek.netlify.app/sitemap.xml

@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>⚛️ فیزیک و حل مسئله | ابزارهای Lumitek</title>
+<meta name="description" content="حل مسئله فیزیک — حرکت، نیروی نیوتن، کار و انرژی، برق، چگالی و پرتابه.">
+<meta name="keywords" content="لومیتک, lumitek, بازی آنلاین, ابزار آنلاین, هوش مصنوعی, خرید سکه, وب اپلیکیشن">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#070b15">
+<link rel="canonical" href="https://lumitek.netlify.app/tools/physics.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Lumitek">
+<meta property="og:title" content="⚛️ فیزیک و حل مسئله | ابزارهای Lumitek">
+<meta property="og:description" content="حل مسئله فیزیک — حرکت، نیروی نیوتن، کار و انرژی، برق، چگالی و پرتابه.">
+<meta property="og:url" content="https://lumitek.netlify.app/tools/physics.html">
+<meta property="og:image" content="https://lumitek.netlify.app/assets/icons/og-cover.png">
+<meta property="og:locale" content="fa_IR">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="⚛️ فیزیک و حل مسئله | ابزارهای Lumitek">
+<meta name="twitter:description" content="حل مسئله فیزیک — حرکت، نیروی نیوتن، کار و انرژی، برق، چگالی و پرتابه.">
+<meta name="twitter:image" content="https://lumitek.netlify.app/assets/icons/og-cover.png">
+<link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+<link rel="apple-touch-icon" href="../assets/icons/icon-192.png">
+<link rel="manifest" href="../manifest.json">
+<link rel="preconnect" href="https://fontnegar.ir/" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fontnegar.ir/css2?family=shabnam:wght@100;300;400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="../css/style.css">
+<script>try{var t=localStorage.getItem("lumitek_theme");if(t==="light")document.documentElement.classList.add("light");var l=localStorage.getItem("lumitek_lang");if(l==="en"){document.documentElement.lang="en";document.documentElement.dir="ltr"}else{document.documentElement.lang="fa";document.documentElement.dir="rtl"}}catch(e){}</script>
+</head>
+<body>
+<div id="offlineBanner" class="offline-banner" data-i18n="offline.banner">🔌 حالت آفلاین — صفحه‌ها و بازی‌ها از حافظه اجرا می‌شوند و اخبار از آخرین نسخه ذخیره‌شده نمایش داده می‌شوند.</div>
+<!--LT5-CHROME-->
+<header class="site-header">
+  <a class="brand" href="../index.html"><img class="brand-logo" src="../assets/icons/logo-lt.png" alt="Lumitek" width="34" height="34"><span class="brand-word">Lumitek</span></a>
+  <nav class="main-nav" id="mainNav">
+    <a href="../index.html" data-i18n="nav.home">nav.home</a>
+    <a href="../pages/tools.html" data-i18n="nav.tools">nav.tools</a>
+    <a href="../pages/games.html" data-i18n="nav.games">nav.games</a>
+    <a href="../pages/store.html" data-i18n="nav.store">nav.store</a>
+    <a href="../pages/sports.html" data-i18n="nav.sports">nav.sports</a>
+    <a href="../pages/ai.html" data-i18n="nav.ai">لومیتک ای‌آی ✨</a>
+    <a href="../pages/download.html" data-i18n="nav.download">nav.download</a>
+    <a href="../pages/support.html" data-i18n="nav.supportE">nav.supportE</a>
+    <a href="../pages/technology.html" class="nav-extra" data-i18n="nav.tech">nav.tech</a>
+    <a href="../pages/articles.html" class="nav-extra" data-i18n="nav.articles">nav.articles</a>
+    <a href="../pages/announcements.html" class="nav-extra" data-i18n="nav.updates">nav.updates</a>
+    <a href="../pages/about.html" class="nav-extra" data-i18n="nav.about">nav.about</a>
+    <a href="../pages/contact.html" class="nav-extra" data-i18n="nav.contact">nav.contact</a>
+    <a href="../pages/account.html" class="nav-extra" data-i18n="nav.account">nav.account</a>
+    <a href="../pages/donate.html" class="nav-extra" data-i18n="nav.donate">nav.donate</a>
+  </nav>
+  <div class="header-actions">
+    <button id="languageToggle" class="icon-btn" data-i18n-title="nav.home" title="Language">EN</button>
+    <button id="themeToggle" class="icon-btn" aria-label="Theme">☀️</button>
+    <button id="notificationButton" class="icon-btn notification-btn">🔔<span id="notificationCount">0</span></button>
+    <button id="changelogButton" class="icon-btn" aria-label="Changelog" title="تغییرات">🕒</button>
+    <button id="profileButton" class="profile-btn"><span data-profile-avatar>🙂</span> <span data-profile-name>Lumitek User</span></button>
+    <button id="menuToggle" class="icon-btn menu-toggle" aria-label="Menu">☰</button>
+  </div>
+</header>
+<div id="notificationPanel" class="notification-panel">
+  <div class="panel-title" data-i18n="notif.title">اعلان‌ها</div>
+  <div id="notificationList"></div>
+</div>
+<div id="changelogPanel" class="notification-panel changelog-panel">
+  <div class="panel-title" data-i18n="ch.title">🕒 تغییرات نسخه‌ها</div>
+  <div id="changelogList"></div>
+  <a class="cl-all" href="../pages/announcements.html" data-i18n="ch.all">مشاهده همه تغییرات →</a>
+</div>
+<div id="profileModal" class="modal">
+  <div class="modal-card">
+    <button id="profileClose" class="modal-close">×</button>
+    <div class="pm-head"><span class="pm-avatar" data-profile-avatar>🙂</span><div><h2 data-i18n="pm.title">پروفایل کاربر</h2><span class="pm-title" data-profile-title>تازه‌کار</span></div></div>
+    <label data-i18n="pm.nameLabel">نام نمایشی</label>
+    <input id="profileNameInput" maxlength="24" data-i18n-ph="pm.namePh" placeholder="نام شما">
+    <div class="xpbar"><div class="xpbar-fill" data-profile-xpbar style="width:0%"></div></div>
+    <p class="muted" style="font-size:.75rem;margin:0 0 10px" data-profile-xptext>0 / 100 XP</p>
+    <div class="profile-stats">
+      <div><span data-i18n="coins.level">سطح</span><strong data-profile-level>1</strong></div>
+      <div><span data-i18n="acc.xp">XP</span><strong data-profile-xp>0</strong></div>
+      <div><span data-i18n="coins.unit">سکه</span><strong data-profile-coins>0</strong></div>
+      <div><span data-i18n="pm.games">بازی‌ها</span><strong data-games-played>0</strong></div>
+    </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <button id="profileSave" class="primary-btn" data-i18n="pm.save" style="flex:1">ذخیره</button>
+      <a class="ghost-btn" href="../pages/account.html" data-i18n="pm.fullAccount">حساب کامل</a>
+    </div>
+    <div class="pm-auth-row" id="pmAuthArea">
+      <button id="pmAuthButton" class="primary-btn" data-i18n="pm.signIn" data-auth-open>🔓 ورود / ثبت‌نام</button>
+      <span class="auth-email" id="pmAuthEmail" style="display:none"></span>
+      <button id="pmLogout" class="ghost-btn" style="display:none" data-i18n="pm.signOut">خروج</button>
+    </div>
+  </div>
+</div>
+
+<div class="search-wrap">
+<input id="globalSearchInput" type="search" data-i18n-ph="head.searchPh" placeholder="جستجو..." aria-label="Search">
+<div id="searchResults" class="search-results"></div>
+</div>
+<main class="page">
+<p class="eyebrow">LUMITEK TOOLS</p>
+<h1 data-i18n="tools.phy.t">⚛️ فیزیک و حل مسئله</h1>
+<p class="muted" data-i18n="tools.phy.d">حرکت، نیرو، انرژی، برق، چگالی و پرتابه — حل‌گر گام‌به‌گام. همه واحدها SI است.</p>
+
+<div class="card mt2" style="max-width:680px">
+  <label>فرمول را انتخاب کن</label>
+  <select id="phFormula" class="select"></select>
+  <div id="phInputs" class="mt"></div>
+  <button class="primary-btn mt" id="phSolve" style="width:100%">حل کن</button>
+  <div id="phResult" class="result mt" style="line-height:2"></div>
+</div>
+
+<div class="card mt">
+  <h3 style="margin-top:0">📖 راهنمای سریع</h3>
+  <p class="muted" style="margin:0;line-height:2">
+    همه مقادیر را <b>به جز یک مجهول</b> وارد کن و «حل کن» را بزن. واحدها بر اساس SI هستند:
+    طول متر (m)، زمان ثانیه (s)، جرم کیلوگرم (kg)، نیرو نیوتن (N)، انرژی ژول (J)، توان وات (W)، ولتاژ ولت (V)، فشار پاسکال (Pa)، زاویه درجه.
+    g پیش‌فرض ۹٫۸ m/s² است (زمین).
+  </p>
+</div>
+</main>
+
+<footer class="footer-v2">
+  <div class="fv-grid">
+    <div>
+      <div class="fv-brand"><img class="brand-logo" src="../assets/icons/logo-lt.png" alt="Lumitek" width="28" height="28"><span class="brand-word">Lumitek</span></div>
+      <p data-i18n="footer.tag">همه ابزارها و بازی‌های مورد نیازت، سریع و ساده — همه‌جا با هم.</p>
+      <span class="vip-badge" style="display:inline-flex">v0.7 · PWA</span>
+    </div>
+    <div>
+      <h4 data-i18n="footer.explore">کاوش</h4>
+      <ul>
+        <li><a href="../pages/technology.html" data-i18n="nav.tech">فناوری</a></li>
+        <li><a href="../pages/articles.html" data-i18n="nav.articles">مقالات</a></li>
+        <li><a href="../pages/announcements.html" data-i18n="nav.updates">تغییرات</a></li>
+        <li><a href="../pages/about.html" data-i18n="nav.about">درباره ما</a></li>
+        <li><a href="../pages/contact.html" data-i18n="nav.contact">تماس</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-i18n="footer.services">خدمات</h4>
+      <ul>
+        <li><a href="../pages/store.html" data-i18n="nav.store">فروشگاه</a></li>
+        <li><a href="../pages/store.html#coins" data-i18n="nav.coins">شارژ سکه</a></li>
+        <li><a href="../pages/ai.html" data-i18n="nav.ai">لومیتک ای‌آی</a></li>
+        <li><a href="../pages/account.html" data-i18n="nav.account">حساب کاربری</a></li>
+        <li><a href="../pages/donate.html" style="color:var(--a)" data-i18n="nav.donate">حمایت مالی</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-i18n="footer.newsletter">خبرنامه Lumitek</h4>
+      <p data-i18n="footer.newsText">از امکانات جدید زودتر باخبر شو.</p>
+      <form class="news-row" id="newsletterForm">
+        <input type="email" required data-i18n-ph="footer.newsPh" placeholder="ایمیل شما" aria-label="email">
+        <button type="submit" data-i18n="footer.newsBtn">عضویت</button>
+      </form>
+    </div>
+  </div>
+  <div class="fv-bottom">
+    <span data-i18n="footer.rights">© 2026 Lumitek — همه حقوق محفوظ است.</span>
+    <span data-i18n="footer.made">ساخته‌شده با ❤ و بدون فریم‌ورک</span>
+  </div>
+</footer>
+
+<script src="../js/i18n.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/auth.js"></script>
+
+<script>
+(function(){
+  var SQRT = Math.sqrt, SIN = Math.sin, COS = Math.cos, PI = Math.PI;
+  var FORMULAS = [
+    { cat: "حرکت", name: "سرعت نهایی: v = v₀ + a·t", vars: { v: "سرعت نهایی v (m/s)", v0: "سرعت اولیه v₀ (m/s)", a: "شتاب a (m/s²)", t: "زمان t (s)" },
+      calc: { v: g => g.v0 + g.a*g.t, v0: g => g.v - g.a*g.t, a: g => (g.v - g.v0)/g.t, t: g => (g.v - g.v0)/g.a } },
+    { cat: "حرکت", name: "جابه‌جایی: Δx = v₀·t + ½a·t²", vars: { dx: "جابه‌جایی Δx (m)", v0: "سرعت اولیه v₀ (m/s)", t: "زمان t (s)", a: "شتاب a (m/s²)" },
+      calc: { dx: g => g.v0*g.t + 0.5*g.a*g.t*g.t,
+              v0: g => (g.dx - 0.5*g.a*g.t*g.t)/g.t,
+              a: g => 2*(g.dx - g.v0*g.t)/(g.t*g.t),
+              t: g => { var disc = g.v0*g.v0 + 2*g.a*g.dx; if (disc < 0) return NaN; var t1 = (-g.v0 + SQRT(disc))/g.a; var t2 = (-g.v0 - SQRT(disc))/g.a; var ok = [t1,t2].filter(function(x){ return x > 0; }); return ok.length ? Math.min.apply(null, ok) : NaN; } } },
+    { cat: "حرکت", name: "بدون زمان: v² = v₀² + 2aΔx", vars: { v: "سرعت نهایی v (m/s)", v0: "سرعت اولیه v₀ (m/s)", a: "شتاب a (m/s²)", dx: "جابه‌جایی Δx (m)" },
+      calc: { v: g => Math.sign(g.v0 || 1)*SQRT(g.v0*g.v0 + 2*g.a*g.dx),
+              v0: g => Math.sign(g.v || 1)*SQRT(g.v*g.v - 2*g.a*g.dx),
+              a: g => (g.v*g.v - g.v0*g.v0)/(2*g.dx),
+              dx: g => (g.v*g.v - g.v0*g.v0)/(2*g.a) } },
+    { cat: "نیرو", name: "نیوتن دوم: F = m·a", vars: { F: "نیرو F (N)", m: "جرم m (kg)", a: "شتاب a (m/s²)" },
+      calc: { F: g => g.m*g.a, m: g => g.F/g.a, a: g => g.F/g.m } },
+    { cat: "نیرو", name: "وزن: W = m·g", vars: { W: "وزن W (N)", m: "جرم m (kg)", g: "گرانش g (m/s²)" },
+      calc: { W: g => g.m*g.g, m: g => g.W/g.g, g: g => g.W/g.m } },
+    { cat: "انرژی", name: "کار: W = F·d·cosθ", vars: { W: "کار W (J)", F: "نیرو F (N)", d: "جابه‌جایی d (m)", th: "زاویه θ (درجه)" },
+      calc: { W: g => g.F*g.d*COS(g.th*PI/180), F: g => g.W/(g.d*COS(g.th*PI/180)), d: g => g.W/(g.F*COS(g.th*PI/180)), th: g => Math.acos(g.W/(g.F*g.d))*180/PI } },
+    { cat: "انرژی", name: "انرژی جنبشی: KE = ½mv²", vars: { KE: "انرژی جنبشی KE (J)", m: "جرم m (kg)", v: "سرعت v (m/s)" },
+      calc: { KE: g => 0.5*g.m*g.v*g.v, m: g => 2*g.KE/(g.v*g.v), v: g => SQRT(2*g.KE/g.m) } },
+    { cat: "انرژی", name: "انرژی پتانسیل: PE = m·g·h", vars: { PE: "انرژی پتانسیل PE (J)", m: "جرم m (kg)", g: "گرانش g (m/s²)", h: "ارتفاع h (m)" },
+      calc: { PE: g => g.m*g.g*g.h, m: g => g.PE/(g.g*g.h), g: g => g.PE/(g.m*g.h), h: g => g.PE/(g.m*g.g) } },
+    { cat: "انرژی", name: "توان: P = W/t", vars: { P: "توان P (W)", W: "کار W (J)", t: "زمان t (s)" },
+      calc: { P: g => g.W/g.t, W: g => g.P*g.t, t: g => g.W/g.P } },
+    { cat: "برق", name: "قانون اهم: V = I·R", vars: { V: "ولتاژ V (V)", I: "جریان I (A)", R: "مقاومت R (Ω)" },
+      calc: { V: g => g.I*g.R, I: g => g.V/g.R, R: g => g.V/g.I } },
+    { cat: "برق", name: "توان الکتریکی: P = V·I", vars: { P: "توان P (W)", V: "ولتاژ V (V)", I: "جریان I (A)" },
+      calc: { P: g => g.V*g.I, V: g => g.P/g.I, I: g => g.P/g.V } },
+    { cat: "چگالی و فشار", name: "چگالی: ρ = m/V", vars: { ro: "چگالی ρ (kg/m³)", m: "جرم m (kg)", V: "حجم V (m³)" },
+      calc: { ro: g => g.m/g.V, m: g => g.ro*g.V, V: g => g.m/g.ro } },
+    { cat: "چگالی و فشار", name: "فشار: P = F/A", vars: { P: "فشار P (Pa)", F: "نیرو F (N)", A: "مساحت A (m²)" },
+      calc: { P: g => g.F/g.A, F: g => g.P*g.A, A: g => g.F/g.P } },
+    { cat: "چگالی و فشار", name: "فشار شاره: P = ρ·g·h", vars: { P: "فشار P (Pa)", ro: "چگالی ρ (kg/m³)", g: "گرانش g (m/s²)", h: "ارتفاع h (m)" },
+      calc: { P: g => g.ro*g.g*g.h, ro: g => g.P/(g.g*g.h), g: g => g.P/(g.ro*g.h), h: g => g.P/(g.ro*g.g) } },
+    { cat: "پرتابه", name: "برد پرتابه: R = v²·sin(2θ)/g", vars: { R: "برد R (m)", v: "سرعت اولیه v (m/s)", th: "زاویه θ (درجه)", g: "گرانش g (m/s²)" },
+      calc: { R: g => g.v*g.v*SIN(2*g.th*PI/180)/g.g,
+              v: g => SQRT(g.R*g.g/SIN(2*g.th*PI/180)),
+              th: g => 0.5*Math.asin(Math.max(-1, Math.min(1, g.R*g.g/(g.v*g.v))))*180/PI,
+              g: g => g.v*g.v*SIN(2*g.th*PI/180)/g.R } },
+    { cat: "پرتابه", name: "بیشینه ارتفاع: H = v²·sin²θ/(2g)", vars: { H: "ارتفاع H (m)", v: "سرعت اولیه v (m/s)", th: "زاویه θ (درجه)", g: "گرانش g (m/s²)" },
+      calc: { H: g => g.v*g.v*Math.pow(SIN(g.th*PI/180),2)/(2*g.g),
+              v: g => SQRT(2*g.H*g.g)/Math.abs(SIN(g.th*PI/180)),
+              th: g => Math.asin(Math.max(-1, Math.min(1, SQRT(2*g.H*g.g)/g.v)))*180/PI,
+              g: g => g.v*g.v*Math.pow(SIN(g.th*PI/180),2)/(2*g.H) } }
+  ];
+
+  var sel = document.getElementById("phFormula");
+  var groups = {};
+  FORMULAS.forEach(function(f, i) { (groups[f.cat] = groups[f.cat] || []).push(i); });
+  Object.keys(groups).forEach(function(cat) {
+    var og = document.createElement("optgroup");
+    og.label = cat;
+    groups[cat].forEach(function(i) {
+      var o = document.createElement("option");
+      o.value = i; o.textContent = FORMULAS[i].name;
+      og.appendChild(o);
+    });
+    sel.appendChild(og);
+  });
+
+  function renderInputs() {
+    var f = FORMULAS[+sel.value];
+    var wrap = document.getElementById("phInputs");
+    wrap.innerHTML = "";
+    Object.keys(f.vars).forEach(function(k) {
+      var lab = document.createElement("label");
+      lab.textContent = f.vars[k];
+      var inp = document.createElement("input");
+      inp.className = "amount-input"; inp.type = "number"; inp.step = "any";
+      inp.setAttribute("data-var", k); inp.dir = "ltr";
+      if (k === "g") inp.placeholder = "9.8";
+      wrap.appendChild(lab); wrap.appendChild(inp);
+    });
+    document.getElementById("phResult").textContent = "";
+  }
+  sel.onchange = renderInputs;
+  renderInputs();
+
+  function faNum(v) {
+    var s = Math.abs(v) < 1e-10 ? "0" : (Math.abs(v) >= 1e6 ? (+v).toExponential(4) : (+v.toFixed(5)).toString());
+    if (getLang() === "fa") s = s.replace(/\d/g, function(d){ return "۰۱۲۳۴۵۶۷۸۹"[d]; }).replace(".", "٫").replace("-", "−");
+    return s;
+  }
+
+  document.getElementById("phSolve").onclick = function() {
+    var f = FORMULAS[+sel.value];
+    var given = {}, empty = [];
+    var inputs = document.querySelectorAll("#phInputs input");
+    inputs.forEach(function(inp) {
+      var k = inp.getAttribute("data-var");
+      if (inp.value === "" || isNaN(+inp.value)) empty.push(k);
+      else given[k] = +inp.value;
+    });
+    var box = document.getElementById("phResult");
+    if (empty.length !== 1) {
+      box.textContent = empty.length === 0 ? "همه مقادیر پر شده! یکی را خالی بگذار تا همان را حل کنم." : "دقیقاً یک مجهول (یک فیلد خالی) لازم است — فعلاً " + empty.length + " فیلد خالی است.";
+      return;
+    }
+    var target = empty[0];
+    try {
+      var val = f.calc[target](given);
+      if (isNaN(val) || !isFinite(val)) { box.textContent = "⚠️ با این مقادیر جواب معناداری به دست نیامد (مثلاً جذر عدد منفی یا تقسیم بر صفر)."; return; }
+      var label = f.vars[target];
+      box.innerHTML = "✅ <b>" + label + "</b> = <b style='color:var(--a);font-size:1.15rem'>" + faNum(val) + "</b>";
+    } catch(e) {
+      box.textContent = "⚠️ محاسبه ممکن نشد — مقادیر را بررسی کن.";
+    }
+  };
+})();
+</script>
+
+</body>
+</html>

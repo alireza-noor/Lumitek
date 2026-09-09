@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>📏 تبدیل واحد | ابزارهای Lumitek</title>
+<meta name="description" content="تبدیل واحد آنلاین: طول، جرم، دما، مساحت و سرعت — سریع و آفلاین.">
+<meta name="keywords" content="لومیتک, lumitek, ابزار آنلاین, بازی آنلاین, اخبار ورزش, پشتیبانی هوش مصنوعی, خرید سکه, وب اپلیکیشن">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#070b15">
+<link rel="canonical" href="https://lumitek.netlify.app/tools/converter.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Lumitek">
+<meta property="og:title" content="📏 تبدیل واحد | ابزارهای Lumitek">
+<meta property="og:description" content="تبدیل واحد آنلاین: طول، جرم، دما، مساحت و سرعت — سریع و آفلاین.">
+<meta property="og:url" content="https://lumitek.netlify.app/tools/converter.html">
+<meta property="og:image" content="https://lumitek.netlify.app/assets/icons/og-cover.png">
+<meta property="og:locale" content="fa_IR">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="📏 تبدیل واحد | ابزارهای Lumitek">
+<meta name="twitter:description" content="تبدیل واحد آنلاین: طول، جرم، دما، مساحت و سرعت — سریع و آفلاین.">
+<meta name="twitter:image" content="https://lumitek.netlify.app/assets/icons/og-cover.png">
+<link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+<link rel="apple-touch-icon" href="../assets/icons/icon-192.png">
+<link rel="manifest" href="../manifest.json">
+<link rel="preconnect" href="https://fontnegar.ir/" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fontnegar.ir/css2?family=shabnam:wght@100;300;400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="../css/style.css">
+<script>try{var t=localStorage.getItem("lumitek_theme");if(t==="light")document.documentElement.classList.add("light");var l=localStorage.getItem("lumitek_lang");if(l==="en"){document.documentElement.lang="en";document.documentElement.dir="ltr"}else{document.documentElement.lang="fa";document.documentElement.dir="rtl"}}catch(e){}</script>
+</head>
+<body>
+<div id="offlineBanner" class="offline-banner" data-i18n="offline.banner">🔌 حالت آفلاین — صفحه‌ها و بازی‌ها از حافظه اجرا می‌شوند و اخبار از آخرین نسخه ذخیره‌شده نمایش داده می‌شوند.</div>
+<!--LT5-CHROME-->
+<header class="site-header">
+  <a class="brand" href="../index.html"><img class="brand-logo" src="../assets/icons/logo-lt.png" alt="Lumitek" width="34" height="34"><span class="brand-word">Lumitek</span></a>
+  <nav class="main-nav" id="mainNav">
+    <a href="../index.html" data-i18n="nav.home">nav.home</a>
+    <a href="../pages/tools.html" data-i18n="nav.tools">nav.tools</a>
+    <a href="../pages/games.html" data-i18n="nav.games">nav.games</a>
+    <a href="../pages/store.html" data-i18n="nav.store">nav.store</a>
+    <a href="../pages/sports.html" data-i18n="nav.sports">nav.sports</a>
+    <a href="../pages/ai.html" data-i18n="nav.ai">لومیتک ای‌آی ✨</a>
+    <a href="../pages/download.html" data-i18n="nav.download">nav.download</a>
+    <a href="../pages/support.html" data-i18n="nav.supportE">nav.supportE</a>
+    <a href="../pages/technology.html" class="nav-extra" data-i18n="nav.tech">nav.tech</a>
+    <a href="../pages/articles.html" class="nav-extra" data-i18n="nav.articles">nav.articles</a>
+    <a href="../pages/announcements.html" class="nav-extra" data-i18n="nav.updates">nav.updates</a>
+    <a href="../pages/about.html" class="nav-extra" data-i18n="nav.about">nav.about</a>
+    <a href="../pages/contact.html" class="nav-extra" data-i18n="nav.contact">nav.contact</a>
+    <a href="../pages/account.html" class="nav-extra" data-i18n="nav.account">nav.account</a>
+    <a href="../pages/donate.html" class="nav-extra" data-i18n="nav.donate">nav.donate</a>
+  </nav>
+  <div class="header-actions">
+    <button id="languageToggle" class="icon-btn" data-i18n-title="nav.home" title="Language">EN</button>
+    <button id="themeToggle" class="icon-btn" aria-label="Theme">☀️</button>
+    <button id="notificationButton" class="icon-btn notification-btn">🔔<span id="notificationCount">0</span></button>
+    <button id="changelogButton" class="icon-btn" aria-label="Changelog" title="تغییرات">🕒</button>
+    <button id="profileButton" class="profile-btn"><span data-profile-avatar>🙂</span> <span data-profile-name>Lumitek User</span></button>
+    <button id="menuToggle" class="icon-btn menu-toggle" aria-label="Menu">☰</button>
+  </div>
+</header>
+<div id="notificationPanel" class="notification-panel">
+  <div class="panel-title" data-i18n="notif.title">اعلان‌ها</div>
+  <div id="notificationList"></div>
+</div>
+<div id="changelogPanel" class="notification-panel changelog-panel">
+  <div class="panel-title" data-i18n="ch.title">🕒 تغییرات نسخه‌ها</div>
+  <div id="changelogList"></div>
+  <a class="cl-all" href="../pages/announcements.html" data-i18n="ch.all">مشاهده همه تغییرات →</a>
+</div>
+<div id="profileModal" class="modal">
+  <div class="modal-card">
+    <button id="profileClose" class="modal-close">×</button>
+    <div class="pm-head"><span class="pm-avatar" data-profile-avatar>🙂</span><div><h2 data-i18n="pm.title">پروفایل کاربر</h2><span class="pm-title" data-profile-title>تازه‌کار</span></div></div>
+    <label data-i18n="pm.nameLabel">نام نمایشی</label>
+    <input id="profileNameInput" maxlength="24" data-i18n-ph="pm.namePh" placeholder="نام شما">
+    <div class="xpbar"><div class="xpbar-fill" data-profile-xpbar style="width:0%"></div></div>
+    <p class="muted" style="font-size:.75rem;margin:0 0 10px" data-profile-xptext>0 / 100 XP</p>
+    <div class="profile-stats">
+      <div><span data-i18n="coins.level">سطح</span><strong data-profile-level>1</strong></div>
+      <div><span data-i18n="acc.xp">XP</span><strong data-profile-xp>0</strong></div>
+      <div><span data-i18n="coins.unit">سکه</span><strong data-profile-coins>0</strong></div>
+      <div><span data-i18n="pm.games">بازی‌ها</span><strong data-games-played>0</strong></div>
+    </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <button id="profileSave" class="primary-btn" data-i18n="pm.save" style="flex:1">ذخیره</button>
+      <a class="ghost-btn" href="../pages/account.html" data-i18n="pm.fullAccount">حساب کامل</a>
+    </div>
+    <div class="pm-auth-row" id="pmAuthArea">
+      <button id="pmAuthButton" class="primary-btn" data-i18n="pm.signIn" data-auth-open>🔓 ورود / ثبت‌نام</button>
+      <span class="auth-email" id="pmAuthEmail" style="display:none"></span>
+      <button id="pmLogout" class="ghost-btn" style="display:none" data-i18n="pm.signOut">خروج</button>
+    </div>
+  </div>
+</div>
+
+<div class="search-wrap">
+<input id="globalSearchInput" type="search" placeholder="جستجوی ابزار، بازی، مقاله و بخش‌ها..." aria-label="Search">
+<div id="searchResults" class="search-results"></div>
+</div>
+<main class="page"><p class="eyebrow">LUMITEK TOOL</p><h1 id="cvT">🔄 تبدیل واحد</h1><p class="muted" id="cvL">تبدیل سریع بین واحدها با دقت دلخواه — طول، جرم، دما، سرعت، مساحت، حجم، داده و زاویه.</p><div class="form mt2" style="max-width:640px"><label id="cvCatL">دسته‌بندی</label><select id="cat" class="select"></select><div style="display:flex;gap:8px;align-items:end"><div style="flex:1"><label id="cvValL">مقدار</label><input id="val" class="input" type="number" value="1"></div><button class="ghost-btn" id="cvSwap" style="height:44px;margin-bottom:18px" title="جابه‌جایی">⇄</button></div><label id="cvFromL">از</label><select id="from" class="select"></select><label id="cvToL">به</label><select id="to" class="select"></select><label id="cvPrecL">دقت اعشار</label><select id="prec" class="select"><option value="2">۲</option><option value="4" selected>۴</option><option value="6">۶</option><option value="8">۸</option></select><div class="result"><h2 id="res">1</h2><p class="muted" style="margin:0;font-size:.8rem" id="cvFormula"></p></div></div><div class="card mt2" style="max-width:640px"><h3 style="margin-top:0" id="cvCommonT">⭐ تبدیل‌های پرکاربرد همین دسته</h3><div id="cvCommon" style="display:grid;grid-template-columns:1fr 1fr;gap:8px"></div></div></main>
+
+
+
+<script src="../js/i18n.js"></script>
+<script src="../js/auth.js"></script>
+
+
+
+
+<footer class="footer-v2">
+  <div class="fv-grid">
+    <div>
+      <div class="fv-brand"><img class="brand-logo" src="../assets/icons/logo-lt.png" alt="Lumitek" width="28" height="28"><span class="brand-word">Lumitek</span></div>
+      <p data-i18n="footer.tag">همه ابزارها و بازی‌های مورد نیازت، سریع و ساده — همه‌جا با هم.</p>
+      <span class="vip-badge" style="display:inline-flex">v0.7 · PWA</span>
+    </div>
+    <div>
+      <h4 data-i18n="footer.explore">کاوش</h4>
+      <ul>
+        <li><a href="../pages/technology.html" data-i18n="nav.tech">فناوری</a></li>
+        <li><a href="../pages/articles.html" data-i18n="nav.articles">مقالات</a></li>
+        <li><a href="../pages/announcements.html" data-i18n="nav.updates">تغییرات</a></li>
+        <li><a href="../pages/about.html" data-i18n="nav.about">درباره ما</a></li>
+        <li><a href="../pages/contact.html" data-i18n="nav.contact">تماس</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-i18n="footer.services">خدمات</h4>
+      <ul>
+        <li><a href="../pages/store.html" data-i18n="nav.store">استور</a></li>
+        <li><a href="../pages/store.html#coins" data-i18n="nav.coins">خرید سکه</a></li>
+        <li><a href="../pages/account.html" data-i18n="nav.account">حساب کاربری</a></li>
+        <li><a href="../pages/download.html" data-i18n="nav.download">دانلود اپ</a></li>
+        <li><a href="../pages/donate.html" style="color:var(--a)" data-i18n="nav.donate">حمایت مالی</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-i18n="footer.newsletter">خبرنامه Lumitek</h4>
+      <p data-i18n="footer.newsText">از امکانات جدید زودتر باخبر شو.</p>
+      <form class="news-row" id="newsletterForm">
+        <input type="email" required data-i18n-ph="footer.newsPh" placeholder="ایمیل شما" aria-label="email">
+        <button type="submit" data-i18n="footer.newsBtn">عضویت</button>
+      </form>
+    </div>
+  </div>
+  <div class="fv-bottom">
+    <span data-i18n="footer.rights">© 2026 Lumitek — همه حقوق محفوظ است.</span>
+    <span data-i18n="footer.made">ساخته‌شده با ❤ و بدون فریم‌ورک</span>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+
+<script>/* __V07_UPG__ converter v0.7: fa/en + 8 categories + swap + precision + common table */
+(function(){
+  var U = {
+    length: { label: ["طول","Length"], units: { meter:[1,"متر","Meter"], kilometer:[1000,"کیلومتر","Kilometer"], centimeter:[.01,"سانتی‌متر","Centimeter"], millimeter:[.001,"میلی‌متر","Millimeter"], mile:[1609.344,"مایل","Mile"], yard:[.9144,"یارد","Yard"], foot:[.3048,"فوت","Foot"], inch:[.0254,"اینچ","Inch"] } },
+    mass: { label: ["جرم","Mass"], units: { gram:[1,"گرم","Gram"], kilogram:[1000,"کیلوگرم","Kilogram"], ton:[1e6,"تن","Ton"], pound:[453.59237,"پوند","Pound"], ounce:[28.349523125,"اونس","Ounce"] } },
+    temp: { label: ["دما","Temperature"], units: { celsius:[1,"سلسیوس","Celsius"], fahrenheit:[1,"فارنهایت","Fahrenheit"], kelvin:[1,"کلوین","Kelvin"] } },
+    speed: { label: ["سرعت","Speed"], units: { mps:[1,"متر بر ثانیه","m/s"], kph:[.2777777778,"کیلومتر بر ساعت","km/h"], mph:[.44704,"مایل بر ساعت","mph"], knot:[.514444,"گره دریایی","Knot"] } },
+    area: { label: ["مساحت","Area"], units: { sqm:[1,"متر مربع","m²"], sqkm:[1e6,"کیلومتر مربع","km²"], hectare:[1e4,"هکتار","Hectare"], sqft:[.09290304,"فوت مربع","ft²"], acre:[4046.8564224,"acre","Acre"] } },
+    volume: { label: ["حجم","Volume"], units: { liter:[1,"لیتر","Liter"], milliliter:[.001,"میلی‌لیتر","Milliliter"], cubicmeter:[1000,"متر مکعب","m³"], gallon:[3.785411784,"گالن (US)","Gallon (US)"], cup:[.2365882365,"پیمانه","Cup"] } },
+    data: { label: ["حجم داده","Data"], units: { byte:[1,"بایت","Byte"], kilobyte:[1024,"کیلوبایت","KB"], megabyte:[1048576,"مگابایت","MB"], gigabyte:[1073741824,"گیگابایت","GB"], terabyte:[1099511627776,"ترابایت","TB"] } },
+    angle: { label: ["زاویه","Angle"], units: { degree:[1,"درجه","Degree"], radian:[57.2957795131,"رادیان","Radian"], grad:[0.9,"گراد","Gradian"], turn:[360,"دور","Turn"] } }
+  };
+  function fa(){ return getLang()==="fa"; }
+  var cat = document.getElementById("cat"), from = document.getElementById("from"), to = document.getElementById("to");
+  var val = document.getElementById("val"), res = document.getElementById("res"), prec = document.getElementById("prec");
+  Object.keys(U).forEach(function(k){
+    var o = document.createElement("option");
+    o.value = k; o.textContent = fa() ? U[k].label[0] : U[k].label[1];
+    cat.appendChild(o);
+  });
+  function fill() {
+    var c = U[cat.value], from2 = from, to2 = to;
+    from.innerHTML = ""; to.innerHTML = "";
+    Object.keys(c.units).forEach(function(u){
+      from.appendChild(new Option(fa() ? c.units[u][1] : c.units[u][2], u));
+      to.appendChild(new Option(fa() ? c.units[u][1] : c.units[u][2], u));
+    });
+    to.selectedIndex = Math.min(1, to.length - 1);
+    convert();
+    common();
+  }
+  function toBase(v, u, cat2) {
+    if (cat2 === "temp") {
+      if (u === "fahrenheit") return (v - 32) * 5 / 9;
+      if (u === "kelvin") return v - 273.15;
+      return v;
+    }
+    return v * U[cat2].units[u][0];
+  }
+  function fromBase(v, u, cat2) {
+    if (cat2 === "temp") {
+      if (u === "fahrenheit") return v * 9 / 5 + 32;
+      if (u === "kelvin") return v + 273.15;
+      return v;
+    }
+    return v / U[cat2].units[u][0];
+  }
+  function convert() {
+    var v = parseFloat(val.value) || 0;
+    var r = fromBase(toBase(v, from.value, cat.value), to.value, cat.value);
+    var p = parseInt(prec.value) || 4;
+    res.textContent = Number.isFinite(r) ? (+r.toPrecision(10)).toLocaleString(undefined, { maximumFractionDigits: p }) : "—";
+    var f = U[cat.value].units;
+    document.getElementById("cvFormula").textContent = "1 " + (fa() ? f[from.value][1] : f[from.value][2]) + " = " + (+fromBase(toBase(1, from.value, cat.value), to.value, cat.value).toPrecision(6)) + " " + (fa() ? f[to.value][1] : f[to.value][2]);
+  }
+  function common() {
+    var box = document.getElementById("cvCommon");
+    box.innerHTML = "";
+    var c = U[cat.value];
+    var keys = Object.keys(c.units);
+    if (cat.value === "temp") {
+      var pairs = [["celsius","fahrenheit"],["celsius","kelvin"],["fahrenheit","celsius"]];
+      pairs.forEach(function(pr) {
+        var r = fromBase(toBase(1, pr[0], "temp"), pr[1], "temp");
+        addRow((fa() ? c.units[pr[0]][1] : c.units[pr[0]][2]) + " → " + (fa() ? c.units[pr[1]][1] : c.units[pr[1]][2]), +r.toFixed(3));
+      });
+      return;
+    }
+    var base0 = keys[0];
+    keys.slice(1, 5).forEach(function(u) {
+      var r = fromBase(toBase(1, base0, cat.value), u, cat.value);
+      addRow("1 " + (fa() ? c.units[base0][1] : c.units[base0][2]) + " → " + (fa() ? c.units[u][1] : c.units[u][2]), +r.toPrecision(6));
+    });
+    function addRow(lbl, v) {
+      var d = document.createElement("div");
+      d.style.cssText = "padding:9px 12px;border-radius:11px;background:rgba(255,255,255,.045);font-size:.78rem;display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap";
+      d.innerHTML = "<span style='opacity:.75'></span><b style='color:var(--a)' dir='ltr'></b>";
+      d.querySelector("span").textContent = lbl;
+      d.querySelector("b").textContent = v.toLocaleString();
+      box.appendChild(d);
+    }
+  }
+  document.getElementById("cvSwap").onclick = function() {
+    var a = from.selectedIndex;
+    from.selectedIndex = to.selectedIndex;
+    to.selectedIndex = a;
+    convert();
+  };
+  ["cat","from","to","prec"].forEach(function(id){ document.getElementById(id).addEventListener("change", convert); if (id === "cat") document.getElementById(id).addEventListener("change", fill); });
+  val.addEventListener("input", convert);
+  var T = function(){ var f = fa(); return { t: f ? "🔄 تبدیل واحد" : "🔄 Unit Converter", l: f ? "تبدیل سریع بین واحدها با دقت دلخواه — طول، جرم، دما، سرعت، مساحت، حجم، داده و زاویه." : "Fast unit conversion with custom precision — length, mass, temperature, speed, area, volume, data and angle.", cat: f ? "دسته‌بندی" : "Category", val: f ? "مقدار" : "Value", from: f ? "از" : "From", to: f ? "به" : "To", prec: f ? "دقت اعشار" : "Decimal precision", common: f ? "⭐ تبدیل‌های پرکاربرد همین دسته" : "⭐ Common conversions in this category" }; };
+  function localize() {
+    var t = T();
+    document.getElementById("cvT").textContent = t.t;
+    document.getElementById("cvL").textContent = t.l;
+    document.getElementById("cvCatL").textContent = t.cat;
+    document.getElementById("cvValL").textContent = t.val;
+    document.getElementById("cvFromL").textContent = t.from;
+    document.getElementById("cvToL").textContent = t.to;
+    document.getElementById("cvPrecL").textContent = t.prec;
+    document.getElementById("cvCommonT").textContent = t.common;
+    /* rebuild options with new language */
+    var cv = cat.value, cf = from.value, ct = to.value;
+    Array.prototype.forEach.call(cat.options, function(o, i){ o.textContent = fa() ? U[o.value].label[0] : U[o.value].label[1]; });
+    fill(); from.value = cf; to.value = ct; convert();
+  }
+  document.addEventListener("lumitek:langchange", localize);
+  fill();
+})();
+</script>
+</body>
+</html>

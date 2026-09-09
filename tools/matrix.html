@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>🔢 ماتریس و بردار | ابزارهای Lumitek</title>
+<meta name="description" content="ماشین‌حساب ماتریس و بردار — دترمینان، معکوس، ضرب، ترانهاده، ضرب برداری و زاویه.">
+<meta name="keywords" content="لومیتک, lumitek, بازی آنلاین, ابزار آنلاین, هوش مصنوعی, خرید سکه, وب اپلیکیشن">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#070b15">
+<link rel="canonical" href="https://lumitek.netlify.app/tools/matrix.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Lumitek">
+<meta property="og:title" content="🔢 ماتریس و بردار | ابزارهای Lumitek">
+<meta property="og:description" content="ماشین‌حساب ماتریس و بردار — دترمینان، معکوس، ضرب، ترانهاده، ضرب برداری و زاویه.">
+<meta property="og:url" content="https://lumitek.netlify.app/tools/matrix.html">
+<meta property="og:image" content="https://lumitek.netlify.app/assets/icons/og-cover.png">
+<meta property="og:locale" content="fa_IR">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="🔢 ماتریس و بردار | ابزارهای Lumitek">
+<meta name="twitter:description" content="ماشین‌حساب ماتریس و بردار — دترمینان، معکوس، ضرب، ترانهاده، ضرب برداری و زاویه.">
+<meta name="twitter:image" content="https://lumitek.netlify.app/assets/icons/og-cover.png">
+<link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+<link rel="apple-touch-icon" href="../assets/icons/icon-192.png">
+<link rel="manifest" href="../manifest.json">
+<link rel="preconnect" href="https://fontnegar.ir/" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fontnegar.ir/css2?family=shabnam:wght@100;300;400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="../css/style.css">
+<script>try{var t=localStorage.getItem("lumitek_theme");if(t==="light")document.documentElement.classList.add("light");var l=localStorage.getItem("lumitek_lang");if(l==="en"){document.documentElement.lang="en";document.documentElement.dir="ltr"}else{document.documentElement.lang="fa";document.documentElement.dir="rtl"}}catch(e){}</script>
+</head>
+<body>
+<div id="offlineBanner" class="offline-banner" data-i18n="offline.banner">🔌 حالت آفلاین — صفحه‌ها و بازی‌ها از حافظه اجرا می‌شوند و اخبار از آخرین نسخه ذخیره‌شده نمایش داده می‌شوند.</div>
+<!--LT5-CHROME-->
+<header class="site-header">
+  <a class="brand" href="../index.html"><img class="brand-logo" src="../assets/icons/logo-lt.png" alt="Lumitek" width="34" height="34"><span class="brand-word">Lumitek</span></a>
+  <nav class="main-nav" id="mainNav">
+    <a href="../index.html" data-i18n="nav.home">nav.home</a>
+    <a href="../pages/tools.html" data-i18n="nav.tools">nav.tools</a>
+    <a href="../pages/games.html" data-i18n="nav.games">nav.games</a>
+    <a href="../pages/store.html" data-i18n="nav.store">nav.store</a>
+    <a href="../pages/sports.html" data-i18n="nav.sports">nav.sports</a>
+    <a href="../pages/ai.html" data-i18n="nav.ai">لومیتک ای‌آی ✨</a>
+    <a href="../pages/download.html" data-i18n="nav.download">nav.download</a>
+    <a href="../pages/support.html" data-i18n="nav.supportE">nav.supportE</a>
+    <a href="../pages/technology.html" class="nav-extra" data-i18n="nav.tech">nav.tech</a>
+    <a href="../pages/articles.html" class="nav-extra" data-i18n="nav.articles">nav.articles</a>
+    <a href="../pages/announcements.html" class="nav-extra" data-i18n="nav.updates">nav.updates</a>
+    <a href="../pages/about.html" class="nav-extra" data-i18n="nav.about">nav.about</a>
+    <a href="../pages/contact.html" class="nav-extra" data-i18n="nav.contact">nav.contact</a>
+    <a href="../pages/account.html" class="nav-extra" data-i18n="nav.account">nav.account</a>
+    <a href="../pages/donate.html" class="nav-extra" data-i18n="nav.donate">nav.donate</a>
+  </nav>
+  <div class="header-actions">
+    <button id="languageToggle" class="icon-btn" data-i18n-title="nav.home" title="Language">EN</button>
+    <button id="themeToggle" class="icon-btn" aria-label="Theme">☀️</button>
+    <button id="notificationButton" class="icon-btn notification-btn">🔔<span id="notificationCount">0</span></button>
+    <button id="changelogButton" class="icon-btn" aria-label="Changelog" title="تغییرات">🕒</button>
+    <button id="profileButton" class="profile-btn"><span data-profile-avatar>🙂</span> <span data-profile-name>Lumitek User</span></button>
+    <button id="menuToggle" class="icon-btn menu-toggle" aria-label="Menu">☰</button>
+  </div>
+</header>
+<div id="notificationPanel" class="notification-panel">
+  <div class="panel-title" data-i18n="notif.title">اعلان‌ها</div>
+  <div id="notificationList"></div>
+</div>
+<div id="changelogPanel" class="notification-panel changelog-panel">
+  <div class="panel-title" data-i18n="ch.title">🕒 تغییرات نسخه‌ها</div>
+  <div id="changelogList"></div>
+  <a class="cl-all" href="../pages/announcements.html" data-i18n="ch.all">مشاهده همه تغییرات →</a>
+</div>
+<div id="profileModal" class="modal">
+  <div class="modal-card">
+    <button id="profileClose" class="modal-close">×</button>
+    <div class="pm-head"><span class="pm-avatar" data-profile-avatar>🙂</span><div><h2 data-i18n="pm.title">پروفایل کاربر</h2><span class="pm-title" data-profile-title>تازه‌کار</span></div></div>
+    <label data-i18n="pm.nameLabel">نام نمایشی</label>
+    <input id="profileNameInput" maxlength="24" data-i18n-ph="pm.namePh" placeholder="نام شما">
+    <div class="xpbar"><div class="xpbar-fill" data-profile-xpbar style="width:0%"></div></div>
+    <p class="muted" style="font-size:.75rem;margin:0 0 10px" data-profile-xptext>0 / 100 XP</p>
+    <div class="profile-stats">
+      <div><span data-i18n="coins.level">سطح</span><strong data-profile-level>1</strong></div>
+      <div><span data-i18n="acc.xp">XP</span><strong data-profile-xp>0</strong></div>
+      <div><span data-i18n="coins.unit">سکه</span><strong data-profile-coins>0</strong></div>
+      <div><span data-i18n="pm.games">بازی‌ها</span><strong data-games-played>0</strong></div>
+    </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <button id="profileSave" class="primary-btn" data-i18n="pm.save" style="flex:1">ذخیره</button>
+      <a class="ghost-btn" href="../pages/account.html" data-i18n="pm.fullAccount">حساب کامل</a>
+    </div>
+    <div class="pm-auth-row" id="pmAuthArea">
+      <button id="pmAuthButton" class="primary-btn" data-i18n="pm.signIn" data-auth-open>🔓 ورود / ثبت‌نام</button>
+      <span class="auth-email" id="pmAuthEmail" style="display:none"></span>
+      <button id="pmLogout" class="ghost-btn" style="display:none" data-i18n="pm.signOut">خروج</button>
+    </div>
+  </div>
+</div>
+
+<div class="search-wrap">
+<input id="globalSearchInput" type="search" data-i18n-ph="head.searchPh" placeholder="جستجو..." aria-label="Search">
+<div id="searchResults" class="search-results"></div>
+</div>
+<main class="page">
+<p class="eyebrow">LUMITEK TOOLS</p>
+<h1 data-i18n="tools.mat.t">🔢 ماتریس و بردار</h1>
+<p class="muted" data-i18n="tools.mat.d">دترمینان، معکوس، ضرب، ترانهاده و عملیات بردار.</p>
+
+<div class="calc-grid mt2" style="display:grid;grid-template-columns:1fr 1fr;gap:18px">
+  <div class="card">
+    <h3 style="margin-top:0">🔲 ماتریس ۲×۲</h3>
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:6px">
+      <input id="m11" class="amount-input" type="number" value="4" dir="ltr">
+      <input id="m12" class="amount-input" type="number" value="7" dir="ltr">
+      <input id="m21" class="amount-input" type="number" value="2" dir="ltr">
+      <input id="m22" class="amount-input" type="number" value="6" dir="ltr">
+    </div>
+    <div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap">
+      <button class="primary-btn" id="mDet" style="flex:1">دترمینان</button>
+      <button class="primary-btn" id="mInv" style="flex:1">معکوس</button>
+      <button class="primary-btn" id="mTra" style="flex:1">ترانهاده</button>
+    </div>
+    <div id="mResult" class="result mt" style="line-height:2"></div>
+  </div>
+
+  <div class="card">
+    <h3 style="margin-top:0">➡️ بردارها (۲بعدی / ۳بعدی)</h3>
+    <label>بردار v</label>
+    <div style="display:flex;gap:6px">
+      <input id="vx" class="amount-input" type="number" value="3" dir="ltr" placeholder="x">
+      <input id="vy" class="amount-input" type="number" value="4" dir="ltr" placeholder="y">
+      <input id="vz" class="amount-input" type="number" value="0" dir="ltr" placeholder="z">
+    </div>
+    <label>بردار w</label>
+    <div style="display:flex;gap:6px">
+      <input id="wx" class="amount-input" type="number" value="1" dir="ltr" placeholder="x">
+      <input id="wy" class="amount-input" type="number" value="2" dir="ltr" placeholder="y">
+      <input id="wz" class="amount-input" type="number" value="0" dir="ltr" placeholder="z">
+    </div>
+    <button class="primary-btn mt" id="vCalc" style="width:100%">محاسبه</button>
+    <div id="vResult" class="result mt" style="line-height:2"></div>
+  </div>
+</div>
+
+<div class="card mt">
+  <h3 style="margin-top:0">📖 فرمول‌ها</h3>
+  <p class="muted" style="margin:0;line-height:2">
+    دترمینان ۲×۲: ad − bc — معکوس: (1/det) × [d −b؛ −c a] — طول بردار: |v| = √(x²+y²+z²) —
+    ضرب داخلی: v·w = x₁x₂+y₁y₂+z₁z₂ — زاویه بین دو بردار: cosθ = (v·w)/(|v||w|) — ضرب خارجی فقط برای بردارهای ۳بعدی.
+  </p>
+</div>
+</main>
+
+<footer class="footer-v2">
+  <div class="fv-grid">
+    <div>
+      <div class="fv-brand"><img class="brand-logo" src="../assets/icons/logo-lt.png" alt="Lumitek" width="28" height="28"><span class="brand-word">Lumitek</span></div>
+      <p data-i18n="footer.tag">همه ابزارها و بازی‌های مورد نیازت، سریع و ساده — همه‌جا با هم.</p>
+      <span class="vip-badge" style="display:inline-flex">v0.7 · PWA</span>
+    </div>
+    <div>
+      <h4 data-i18n="footer.explore">کاوش</h4>
+      <ul>
+        <li><a href="../pages/technology.html" data-i18n="nav.tech">فناوری</a></li>
+        <li><a href="../pages/articles.html" data-i18n="nav.articles">مقالات</a></li>
+        <li><a href="../pages/announcements.html" data-i18n="nav.updates">تغییرات</a></li>
+        <li><a href="../pages/about.html" data-i18n="nav.about">درباره ما</a></li>
+        <li><a href="../pages/contact.html" data-i18n="nav.contact">تماس</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-i18n="footer.services">خدمات</h4>
+      <ul>
+        <li><a href="../pages/store.html" data-i18n="nav.store">فروشگاه</a></li>
+        <li><a href="../pages/store.html#coins" data-i18n="nav.coins">شارژ سکه</a></li>
+        <li><a href="../pages/ai.html" data-i18n="nav.ai">لومیتک ای‌آی</a></li>
+        <li><a href="../pages/account.html" data-i18n="nav.account">حساب کاربری</a></li>
+        <li><a href="../pages/donate.html" style="color:var(--a)" data-i18n="nav.donate">حمایت مالی</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-i18n="footer.newsletter">خبرنامه Lumitek</h4>
+      <p data-i18n="footer.newsText">از امکانات جدید زودتر باخبر شو.</p>
+      <form class="news-row" id="newsletterForm">
+        <input type="email" required data-i18n-ph="footer.newsPh" placeholder="ایمیل شما" aria-label="email">
+        <button type="submit" data-i18n="footer.newsBtn">عضویت</button>
+      </form>
+    </div>
+  </div>
+  <div class="fv-bottom">
+    <span data-i18n="footer.rights">© 2026 Lumitek — همه حقوق محفوظ است.</span>
+    <span data-i18n="footer.made">ساخته‌شده با ❤ و بدون فریم‌ورک</span>
+  </div>
+</footer>
+
+<script src="../js/i18n.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/auth.js"></script>
+
+<script>
+(function(){
+  function fmt(x) {
+    if (isNaN(x) || !isFinite(x)) return "—";
+    if (Math.abs(x - Math.round(x)) < 1e-10) x = Math.round(x);
+    var v = (Math.abs(x) < 1e-10 ? 0 : x).toFixed(4).replace(/\.?0+$/, "");
+    if (getLang() === "fa") v = v.replace(/\d/g, function(c){ return "۰۱۲۳۴۵۶۷۸۹"[c]; }).replace(".", "٫").replace("-", "−");
+    return v;
+  }
+  function box(id) { return +document.getElementById(id).value || 0; }
+
+  function getM() { return [[box("m11"), box("m12")], [box("m21"), box("m22")]]; }
+
+  document.getElementById("mDet").onclick = function() {
+    var M = getM(), det = M[0][0]*M[1][1] - M[0][1]*M[1][0];
+    document.getElementById("mResult").innerHTML = "det = " + fmt(M[0][0]) + "×" + fmt(M[1][1]) + " − " + fmt(M[0][1]) + "×" + fmt(M[1][0]) + " = <b>" + fmt(det) + "</b>";
+  };
+  document.getElementById("mInv").onclick = function() {
+    var M = getM(), det = M[0][0]*M[1][1] - M[0][1]*M[1][0];
+    if (Math.abs(det) < 1e-12) { document.getElementById("mResult").textContent = "⚠️ دترمینان صفر است — معکوس‌پذیر نیست."; return; }
+    var I = [[M[1][1]/det, -M[0][1]/det], [-M[1][0]/det, M[0][0]/det]];
+    document.getElementById("mResult").innerHTML = "A⁻¹ = [[" + fmt(I[0][0]) + " ، " + fmt(I[0][1]) + "] ، [" + fmt(I[1][0]) + " ، " + fmt(I[1][1]) + "]]";
+  };
+  document.getElementById("mTra").onclick = function() {
+    var M = getM();
+    document.getElementById("mResult").innerHTML = "Aᵀ = [[" + fmt(M[0][0]) + " ، " + fmt(M[1][0]) + "] ، [" + fmt(M[0][1]) + " ، " + fmt(M[1][1]) + "]]";
+  };
+
+  document.getElementById("vCalc").onclick = function() {
+    var v = [box("vx"), box("vy"), box("vz")], w = [box("wx"), box("wy"), box("wz")];
+    var lv = Math.sqrt(v[0]*v[0]+v[1]*v[1]+v[2]*v[2]);
+    var lw = Math.sqrt(w[0]*w[0]+w[1]*w[1]+w[2]*w[2]);
+    var dot = v[0]*w[0]+v[1]*w[1]+v[2]*w[2];
+    var cross = [v[1]*w[2]-v[2]*w[1], v[2]*w[0]-v[0]*w[2], v[0]*w[1]-v[1]*w[0]];
+    var ang = (lv && lw) ? Math.acos(Math.max(-1, Math.min(1, dot/(lv*lw))))*180/Math.PI : NaN;
+    document.getElementById("vResult").innerHTML =
+      "|v| = <b>" + fmt(lv) + "</b> ، |w| = <b>" + fmt(lw) + "</b><br>" +
+      "v·w = <b>" + fmt(dot) + "</b><br>" +
+      "v×w = [" + fmt(cross[0]) + " ، " + fmt(cross[1]) + " ، " + fmt(cross[2]) + "]<br>" +
+      "زاویه بین v و w = <b>" + fmt(ang) + "°</b>";
+  };
+})();
+</script>
+
+</body>
+</html>

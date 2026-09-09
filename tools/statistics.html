@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>📊 آمار و احتمال | ابزارهای Lumitek</title>
+<meta name="description" content="ماشین‌حساب آمار و احتمال — میانگین، میانه، واریانس، انحراف معیار، ترکیب و جایگشت.">
+<meta name="keywords" content="لومیتک, lumitek, بازی آنلاین, ابزار آنلاین, هوش مصنوعی, خرید سکه, وب اپلیکیشن">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#070b15">
+<link rel="canonical" href="https://lumitek.netlify.app/tools/statistics.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Lumitek">
+<meta property="og:title" content="📊 آمار و احتمال | ابزارهای Lumitek">
+<meta property="og:description" content="ماشین‌حساب آمار و احتمال — میانگین، میانه، واریانس، انحراف معیار، ترکیب و جایگشت.">
+<meta property="og:url" content="https://lumitek.netlify.app/tools/statistics.html">
+<meta property="og:image" content="https://lumitek.netlify.app/assets/icons/og-cover.png">
+<meta property="og:locale" content="fa_IR">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="📊 آمار و احتمال | ابزارهای Lumitek">
+<meta name="twitter:description" content="ماشین‌حساب آمار و احتمال — میانگین، میانه، واریانس، انحراف معیار، ترکیب و جایگشت.">
+<meta name="twitter:image" content="https://lumitek.netlify.app/assets/icons/og-cover.png">
+<link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+<link rel="apple-touch-icon" href="../assets/icons/icon-192.png">
+<link rel="manifest" href="../manifest.json">
+<link rel="preconnect" href="https://fontnegar.ir/" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fontnegar.ir/css2?family=shabnam:wght@100;300;400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="../css/style.css">
+<script>try{var t=localStorage.getItem("lumitek_theme");if(t==="light")document.documentElement.classList.add("light");var l=localStorage.getItem("lumitek_lang");if(l==="en"){document.documentElement.lang="en";document.documentElement.dir="ltr"}else{document.documentElement.lang="fa";document.documentElement.dir="rtl"}}catch(e){}</script>
+</head>
+<body>
+<div id="offlineBanner" class="offline-banner" data-i18n="offline.banner">🔌 حالت آفلاین — صفحه‌ها و بازی‌ها از حافظه اجرا می‌شوند و اخبار از آخرین نسخه ذخیره‌شده نمایش داده می‌شوند.</div>
+<!--LT5-CHROME-->
+<header class="site-header">
+  <a class="brand" href="../index.html"><img class="brand-logo" src="../assets/icons/logo-lt.png" alt="Lumitek" width="34" height="34"><span class="brand-word">Lumitek</span></a>
+  <nav class="main-nav" id="mainNav">
+    <a href="../index.html" data-i18n="nav.home">nav.home</a>
+    <a href="../pages/tools.html" data-i18n="nav.tools">nav.tools</a>
+    <a href="../pages/games.html" data-i18n="nav.games">nav.games</a>
+    <a href="../pages/store.html" data-i18n="nav.store">nav.store</a>
+    <a href="../pages/sports.html" data-i18n="nav.sports">nav.sports</a>
+    <a href="../pages/ai.html" data-i18n="nav.ai">لومیتک ای‌آی ✨</a>
+    <a href="../pages/download.html" data-i18n="nav.download">nav.download</a>
+    <a href="../pages/support.html" data-i18n="nav.supportE">nav.supportE</a>
+    <a href="../pages/technology.html" class="nav-extra" data-i18n="nav.tech">nav.tech</a>
+    <a href="../pages/articles.html" class="nav-extra" data-i18n="nav.articles">nav.articles</a>
+    <a href="../pages/announcements.html" class="nav-extra" data-i18n="nav.updates">nav.updates</a>
+    <a href="../pages/about.html" class="nav-extra" data-i18n="nav.about">nav.about</a>
+    <a href="../pages/contact.html" class="nav-extra" data-i18n="nav.contact">nav.contact</a>
+    <a href="../pages/account.html" class="nav-extra" data-i18n="nav.account">nav.account</a>
+    <a href="../pages/donate.html" class="nav-extra" data-i18n="nav.donate">nav.donate</a>
+  </nav>
+  <div class="header-actions">
+    <button id="languageToggle" class="icon-btn" data-i18n-title="nav.home" title="Language">EN</button>
+    <button id="themeToggle" class="icon-btn" aria-label="Theme">☀️</button>
+    <button id="notificationButton" class="icon-btn notification-btn">🔔<span id="notificationCount">0</span></button>
+    <button id="changelogButton" class="icon-btn" aria-label="Changelog" title="تغییرات">🕒</button>
+    <button id="profileButton" class="profile-btn"><span data-profile-avatar>🙂</span> <span data-profile-name>Lumitek User</span></button>
+    <button id="menuToggle" class="icon-btn menu-toggle" aria-label="Menu">☰</button>
+  </div>
+</header>
+<div id="notificationPanel" class="notification-panel">
+  <div class="panel-title" data-i18n="notif.title">اعلان‌ها</div>
+  <div id="notificationList"></div>
+</div>
+<div id="changelogPanel" class="notification-panel changelog-panel">
+  <div class="panel-title" data-i18n="ch.title">🕒 تغییرات نسخه‌ها</div>
+  <div id="changelogList"></div>
+  <a class="cl-all" href="../pages/announcements.html" data-i18n="ch.all">مشاهده همه تغییرات →</a>
+</div>
+<div id="profileModal" class="modal">
+  <div class="modal-card">
+    <button id="profileClose" class="modal-close">×</button>
+    <div class="pm-head"><span class="pm-avatar" data-profile-avatar>🙂</span><div><h2 data-i18n="pm.title">پروفایل کاربر</h2><span class="pm-title" data-profile-title>تازه‌کار</span></div></div>
+    <label data-i18n="pm.nameLabel">نام نمایشی</label>
+    <input id="profileNameInput" maxlength="24" data-i18n-ph="pm.namePh" placeholder="نام شما">
+    <div class="xpbar"><div class="xpbar-fill" data-profile-xpbar style="width:0%"></div></div>
+    <p class="muted" style="font-size:.75rem;margin:0 0 10px" data-profile-xptext>0 / 100 XP</p>
+    <div class="profile-stats">
+      <div><span data-i18n="coins.level">سطح</span><strong data-profile-level>1</strong></div>
+      <div><span data-i18n="acc.xp">XP</span><strong data-profile-xp>0</strong></div>
+      <div><span data-i18n="coins.unit">سکه</span><strong data-profile-coins>0</strong></div>
+      <div><span data-i18n="pm.games">بازی‌ها</span><strong data-games-played>0</strong></div>
+    </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <button id="profileSave" class="primary-btn" data-i18n="pm.save" style="flex:1">ذخیره</button>
+      <a class="ghost-btn" href="../pages/account.html" data-i18n="pm.fullAccount">حساب کامل</a>
+    </div>
+    <div class="pm-auth-row" id="pmAuthArea">
+      <button id="pmAuthButton" class="primary-btn" data-i18n="pm.signIn" data-auth-open>🔓 ورود / ثبت‌نام</button>
+      <span class="auth-email" id="pmAuthEmail" style="display:none"></span>
+      <button id="pmLogout" class="ghost-btn" style="display:none" data-i18n="pm.signOut">خروج</button>
+    </div>
+  </div>
+</div>
+
+<div class="search-wrap">
+<input id="globalSearchInput" type="search" data-i18n-ph="head.searchPh" placeholder="جستجو..." aria-label="Search">
+<div id="searchResults" class="search-results"></div>
+</div>
+<main class="page">
+<p class="eyebrow">LUMITEK TOOLS</p>
+<h1 data-i18n="tools.stat.t">📊 آمار و احتمال</h1>
+<p class="muted" data-i18n="tools.stat.d">میانگین، میانه، واریانس، انحراف معیار، ترکیب و جایگشت.</p>
+
+<div class="calc-grid mt2" style="display:grid;grid-template-columns:1fr 1fr;gap:18px">
+  <div class="card">
+    <h3 style="margin-top:0">📈 آمار توصیفی</h3>
+    <label>داده‌ها را با ویرگول یا فاصله جدا کن</label>
+    <input id="stData" class="amount-input" placeholder="مثلاً: 12 15 18 22 19 25 30" dir="ltr">
+    <button class="primary-btn mt" id="stCalc" style="width:100%">محاسبه</button>
+    <div id="stResult" class="result mt" style="display:grid;grid-template-columns:1fr 1fr;gap:6px 14px;line-height:1.9"></div>
+  </div>
+
+  <div class="card">
+    <h3 style="margin-top:0">🎲 احتمال</h3>
+    <label>n (کل)</label>
+    <input id="prN" class="amount-input" type="number" value="5" min="0" dir="ltr">
+    <label>k (انتخابی)</label>
+    <input id="prK" class="amount-input" type="number" value="2" min="0" dir="ltr">
+    <button class="primary-btn mt" id="prCalc" style="width:100%">محاسبه</button>
+    <div id="prResult" class="result mt" style="line-height:2.1"></div>
+  </div>
+</div>
+
+<div class="card mt">
+  <h3 style="margin-top:0">📖 راهنما</h3>
+  <p class="muted" style="margin:0;line-height:2">
+    <b>میانگین:</b> مجموع داده‌ها تقسیم بر تعداد. <b>میانه:</b> مقدار وسط داده‌های مرتب‌شده.
+    <b>واریانس:</b> میانگین مربع انحراف‌ها از میانگین. <b>انحراف معیار:</b> جذر واریانس — شاخص پراکندگی.
+    <b>ترکیب C(n,k):</b> تعداد راه‌های انتخاب k شیء از n شیء بدون ترتیب.
+    <b>جایگشت P(n,k):</b> تعداد راه‌های انتخاب k شیء از n شیء با اهمیت ترتیب.
+  </p>
+</div>
+
+<div class="calc-grid mt2" style="__V07_UPG__;display:grid;grid-template-columns:1fr 1fr;gap:18px">
+  <div class="card">
+    <h3 style="margin-top:0" id="stHistT">📊 نمودار ستونی داده‌ها</h3>
+    <div id="stHist" style="min-height:170px;display:flex;align-items:flex-end;gap:4px;padding:10px 4px 0"></div>
+    <p class="muted" style="font-size:.72rem;margin:8px 0 0" id="stHistHint">بعد از «محاسبه»، توزیع داده‌ها در ۸ بازه رسم می‌شود.</p>
+  </div>
+  <div class="card">
+    <h3 style="margin-top:0" id="stZT">🎯 امتیاز استاندارد (z)</h3>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:end">
+      <div style="flex:1;min-width:90px"><label id="stZXL">مقدار x</label><input id="stZX" class="amount-input" type="number" dir="ltr" placeholder="18"></div>
+      <div style="flex:1;min-width:90px"><label id="stZMuL">μ (میانگین)</label><input id="stZMu" class="amount-input" type="number" value="15" dir="ltr"></div>
+      <div style="flex:1;min-width:90px"><label id="stZSL">σ (انحراف)</label><input id="stZS" class="amount-input" type="number" value="4" dir="ltr" min="0.0001"></div>
+    </div>
+    <div class="result mt" id="stZRes" style="line-height:2"></div>
+  </div>
+</div>
+<div class="card mt" style="__V07_UPG__">
+  <h3 style="margin-top:0" id="stRegT">📈 رگرسیون خطی (برازش خط)</h3>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:end">
+    <div style="flex:2;min-width:180px"><label id="stRX">متغیر x (با ویرگول)</label><input id="stRegX" class="amount-input" dir="ltr" placeholder="1, 2, 3, 4, 5"></div>
+    <div style="flex:2;min-width:180px"><label id="stRY">متغیر y (با ویرگول)</label><input id="stRegY" class="amount-input" dir="ltr" placeholder="2.1, 3.9, 6.2, 8.1, 9.8"></div>
+    <button class="primary-btn" id="stRegBtn" style="min-width:110px">محاسبه</button>
+  </div>
+  <div class="result mt" id="stRegRes" style="line-height:2.1"></div>
+  <svg id="stRegPlot" width="100%" height="200" viewBox="0 0 460 200" style="margin-top:10px;background:rgba(255,255,255,.03);border-radius:12px"></svg>
+</div>
+</main>
+
+<footer class="footer-v2">
+  <div class="fv-grid">
+    <div>
+      <div class="fv-brand"><img class="brand-logo" src="../assets/icons/logo-lt.png" alt="Lumitek" width="28" height="28"><span class="brand-word">Lumitek</span></div>
+      <p data-i18n="footer.tag">همه ابزارها و بازی‌های مورد نیازت، سریع و ساده — همه‌جا با هم.</p>
+      <span class="vip-badge" style="display:inline-flex">v0.7 · PWA</span>
+    </div>
+    <div>
+      <h4 data-i18n="footer.explore">کاوش</h4>
+      <ul>
+        <li><a href="../pages/technology.html" data-i18n="nav.tech">فناوری</a></li>
+        <li><a href="../pages/articles.html" data-i18n="nav.articles">مقالات</a></li>
+        <li><a href="../pages/announcements.html" data-i18n="nav.updates">تغییرات</a></li>
+        <li><a href="../pages/about.html" data-i18n="nav.about">درباره ما</a></li>
+        <li><a href="../pages/contact.html" data-i18n="nav.contact">تماس</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-i18n="footer.services">خدمات</h4>
+      <ul>
+        <li><a href="../pages/store.html" data-i18n="nav.store">فروشگاه</a></li>
+        <li><a href="../pages/store.html#coins" data-i18n="nav.coins">شارژ سکه</a></li>
+        <li><a href="../pages/ai.html" data-i18n="nav.ai">لومیتک ای‌آی</a></li>
+        <li><a href="../pages/account.html" data-i18n="nav.account">حساب کاربری</a></li>
+        <li><a href="../pages/donate.html" style="color:var(--a)" data-i18n="nav.donate">حمایت مالی</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-i18n="footer.newsletter">خبرنامه Lumitek</h4>
+      <p data-i18n="footer.newsText">از امکانات جدید زودتر باخبر شو.</p>
+      <form class="news-row" id="newsletterForm">
+        <input type="email" required data-i18n-ph="footer.newsPh" placeholder="ایمیل شما" aria-label="email">
+        <button type="submit" data-i18n="footer.newsBtn">عضویت</button>
+      </form>
+    </div>
+  </div>
+  <div class="fv-bottom">
+    <span data-i18n="footer.rights">© 2026 Lumitek — همه حقوق محفوظ است.</span>
+    <span data-i18n="footer.made">ساخته‌شده با ❤ و بدون فریم‌ورک</span>
+  </div>
+</footer>
+
+<script src="../js/i18n.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/auth.js"></script>
+
+<script>
+(function(){
+  function fmt(x, d) {
+    if (!isFinite(x)) return "—";
+    var v = (+x).toFixed(d == null ? 3 : d);
+    if (getLang() === "fa") v = v.replace(/\d/g, function(c){ return "۰۱۲۳۴۵۶۷۸۹"[c]; });
+    return v;
+  }
+
+  function statCalc() {
+    var raw = document.getElementById("stData").value.trim();
+    if (!raw) return;
+    var nums = raw.split(/[,;\s]+/).map(parseFloat).filter(function(x){ return !isNaN(x); });
+    if (!nums.length) return;
+    var n = nums.length, sum = 0, i;
+    for (i = 0; i < n; i++) sum += nums[i];
+    var mean = sum/n;
+    var sorted = nums.slice().sort(function(a,b){ return a-b; });
+    var median = n % 2 ? sorted[(n-1)/2] : (sorted[n/2-1] + sorted[n/2])/2;
+    var counts = {};
+    nums.forEach(function(x){ counts[x] = (counts[x]||0)+1; });
+    var mode = null, maxC = 1;
+    Object.keys(counts).forEach(function(k){ if (counts[k] > maxC) { maxC = counts[k]; mode = +k; } });
+    var ss = 0, sp = 0;
+    for (i = 0; i < n; i++) { var d2 = nums[i]-mean; ss += d2*d2; }
+    sp = ss; /* population uses same sum */
+    ss = ss/(n-1 || 1);
+    sp = n > 0 ? sp/n : 0;
+    var q1 = sorted[Math.floor((n-1)*0.25)], q3 = sorted[Math.floor((n-1)*0.75)];
+    var rows = [
+      ["تعداد (n)", fmt(n,0)], ["مجموع", fmt(sum)], ["میانگین", fmt(mean)],
+      ["میانه", fmt(median)], ["مد", mode != null && maxC > 1 ? fmt(mode) : "—"], ["کمینه", fmt(sorted[0])],
+      ["بیشینه", fmt(sorted[n-1])], ["دامنه", fmt(sorted[n-1]-sorted[0])],
+      ["واریانس (نمونه)", fmt(ss)], ["انحراف معیار (نمونه)", fmt(Math.sqrt(Math.max(0,ss)))],
+      ["واریانس (جامعه)", fmt(sp)], ["انحراف معیار (جامعه)", fmt(Math.sqrt(sp))],
+      ["چارک اول Q1", fmt(q1)], ["چارک سوم Q3", fmt(q3)]
+    ];
+    var box = document.getElementById("stResult");
+    box.innerHTML = "";
+    rows.forEach(function(r) {
+      var s = document.createElement("div");
+      s.innerHTML = '<span class="muted" style="font-size:.75rem"></span><br><b></b>';
+      s.querySelector("span").textContent = r[0];
+      s.querySelector("b").textContent = r[1];
+      box.appendChild(s);
+    });
+  }
+
+  function fact(x) { var r = 1; for (var i = 2; i <= x; i++) r *= i; return r; }
+  function probCalc() {
+    var n = +document.getElementById("prN").value, k = +document.getElementById("prK").value;
+    var box = document.getElementById("prResult");
+    if (isNaN(n) || isNaN(k) || n < 0 || k < 0) { box.textContent = "⚠️ مقادیر را درست وارد کن."; return; }
+    if (k > n) { box.textContent = "⚠️ k نمی‌تواند بزرگ‌تر از n باشد."; return; }
+    var c = fact(n)/(fact(k)*fact(n-k));
+    var p = fact(n)/fact(n-k);
+    box.innerHTML = "";
+    [["ترکیب C(n,k)", fmt(c, 0)], ["جایگشت P(n,k)", fmt(p, 0)], ["فاکتوریل n!", fmt(fact(n), 0)]].forEach(function(r) {
+      var s = document.createElement("div");
+      s.innerHTML = '<span class="muted" style="font-size:.78rem"></span> <b></b>';
+      s.querySelector("span").textContent = r[0];
+      s.querySelector("b").textContent = r[1];
+      box.appendChild(s);
+    });
+  }
+
+  document.getElementById("stCalc").onclick = statCalc;
+  document.getElementById("prCalc").onclick = probCalc;
+})();
+</script>
+
+
+<script>/* statistics: histogram + z-score + linear regression */
+(function(){
+  function L(){ return getLang()==="fa"; }
+  function parseNums(s) {
+    return (s || "").split(/[\s,،]+/).map(parseFloat).filter(function(x){ return Number.isFinite(x); });
+  }
+  document.getElementById("stCalc").addEventListener("click", function() {
+    setTimeout(renderHist, 30);
+  });
+  function renderHist() {
+    var xs = parseNums(document.getElementById("stData").value);
+    var box = document.getElementById("stHist");
+    if (xs.length < 3) { box.innerHTML = ""; return; }
+    var lo = Math.min.apply(null, xs), hi = Math.max.apply(null, xs);
+    if (lo === hi) { box.innerHTML = '<p class="muted">—</p>'; return; }
+    var K = 8, w = (hi - lo) / K, bins = new Array(K).fill(0);
+    xs.forEach(function(x) { var b = Math.min(K - 1, Math.floor((x - lo) / w)); bins[b]++; });
+    var max = Math.max.apply(null, bins);
+    box.innerHTML = "";
+    bins.forEach(function(c, i) {
+      var col = document.createElement("div");
+      col.style.cssText = "flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:4px";
+      col.innerHTML = '<span style="font-size:.62rem;opacity:.75">' + c + '</span>' +
+        '<div style="width:100%;height:' + Math.round(c / max * 120 + 4) + 'px;border-radius:6px 6px 0 0;background:linear-gradient(180deg,var(--a),var(--b));opacity:.85"></div>' +
+        '<span style="font-size:.58rem;opacity:.5" dir="ltr">' + (lo + i * w).toFixed(1) + '</span>';
+      box.appendChild(col);
+    });
+  }
+  function erf(x) {
+    var s = x < 0 ? -1 : 1; x = Math.abs(x);
+    var t = 1 / (1 + 0.3275911 * x);
+    var y = 1 - (((((1.061405429 * t - 1.453152027) * t) + 1.421413741) * t - 0.284496736) * t + 0.254829592) * t * Math.exp(-x * x);
+    return s * y;
+  }
+  function zCalc() {
+    var x = parseFloat(document.getElementById("stZX").value);
+    var mu = parseFloat(document.getElementById("stZMu").value);
+    var sd = parseFloat(document.getElementById("stZS").value);
+    var box = document.getElementById("stZRes");
+    if (!Number.isFinite(x) || !Number.isFinite(mu) || !Number.isFinite(sd) || sd <= 0) { box.textContent = "—"; return; }
+    var z = (x - mu) / sd;
+    var pct = 0.5 * (1 + erf(z / Math.SQRT2)) * 100;
+    box.innerHTML = (L()
+      ? "z = <b>" + z.toFixed(3) + "</b><br>درصد داده‌های کمتر از x ≈ <b>" + pct.toFixed(2) + "٪</b>"
+      : "z = <b>" + z.toFixed(3) + "</b><br>P(X &lt; x) ≈ <b>" + pct.toFixed(2) + "%</b>");
+  }
+  ["stZX","stZMu","stZS"].forEach(function(id){ document.getElementById(id).addEventListener("input", zCalc); });
+  zCalc();
+  function mean(a){ var s=0; a.forEach(function(v){s+=v;}); return s/a.length; }
+  document.getElementById("stRegBtn").onclick = function() {
+    var xs = parseNums(document.getElementById("stRegX").value);
+    var ys = parseNums(document.getElementById("stRegY").value);
+    var box = document.getElementById("stRegRes");
+    var n = Math.min(xs.length, ys.length);
+    if (n < 2) { box.textContent = L() ? "حداقل ۲ جفت داده وارد کن." : "Enter at least 2 pairs."; return; }
+    xs = xs.slice(0, n); ys = ys.slice(0, n);
+    var mx = mean(xs), my = mean(ys);
+    var sxy = 0, sxx = 0, syy = 0;
+    for (var i = 0; i < n; i++) { sxy += (xs[i]-mx)*(ys[i]-my); sxx += (xs[i]-mx)*(xs[i]-mx); syy += (ys[i]-my)*(ys[i]-my); }
+    var b = sxx ? sxy/sxx : 0, a = my - b * mx;
+    var r = (sxx && syy) ? sxy / Math.sqrt(sxx * syy) : 0;
+    box.innerHTML = (L()
+      ? "معادله خط: <b dir='ltr'>ŷ = " + a.toFixed(3) + " + " + b.toFixed(3) + "x</b><br>همبستگی r = <b>" + r.toFixed(4) + "</b> — R² = <b>" + (r*r).toFixed(4) + "</b>"
+      : "Line: <b dir='ltr'>ŷ = " + a.toFixed(3) + " + " + b.toFixed(3) + "x</b><br>r = <b>" + r.toFixed(4) + "</b> — R² = <b>" + (r*r).toFixed(4) + "</b>");
+    var svg = document.getElementById("stRegPlot");
+    var xlo = Math.min.apply(null, xs), xhi = Math.max.apply(null, xs);
+    var ylo = Math.min.apply(null, ys), yhi = Math.max.apply(null, ys);
+    if (xhi === xlo) { xhi = xlo + 1; }
+    if (yhi === ylo) { yhi = ylo + 1; }
+    function X(v){ return 30 + (v - xlo) / (xhi - xlo) * 410; }
+    function Y(v){ return 180 - (v - ylo) / (yhi - ylo) * 150; }
+    var h = '<line x1="25" y1="180" x2="450" y2="180" stroke="rgba(255,255,255,.25)"/><line x1="30" y1="15" x2="30" y2="185" stroke="rgba(255,255,255,.25)"/>';
+    h += '<line x1="' + X(xlo) + '" y1="' + Y(a + b * xlo) + '" x2="' + X(xhi) + '" y2="' + Y(a + b * xhi) + '" stroke="#7ca7ff" stroke-width="2"/>';
+    for (var j = 0; j < n; j++) h += '<circle cx="' + X(xs[j]) + '" cy="' + Y(ys[j]) + '" r="4.5" fill="#76e6c3"/>';
+    svg.innerHTML = h;
+  };
+  var T = function(){
+    var fa = L();
+    return {
+      histT: fa ? "📊 نمودار ستونی داده‌ها" : "📊 Data histogram",
+      histH: fa ? "بعد از «محاسبه»، توزیع داده‌ها در ۸ بازه رسم می‌شود." : "Press Calculate to plot the distribution in 8 bins.",
+      zT: fa ? "🎯 امتیاز استاندارد (z)" : "🎯 Z-score",
+      zXL: fa ? "مقدار x" : "Value x", zMuL: fa ? "μ (میانگین)" : "μ (mean)", zSL: fa ? "σ (انحراف)" : "σ (std dev)",
+      regT: fa ? "📈 رگرسیون خطی (برازش خط)" : "📈 Linear regression",
+      rX: fa ? "متغیر x (با ویرگول)" : "x values (comma separated)",
+      rY: fa ? "متغیر y (با ویرگول)" : "y values (comma separated)"
+    };
+  };
+  function localize(){
+    var t = T();
+    document.getElementById("stHistT").textContent = t.histT;
+    document.getElementById("stHistHint").textContent = t.histH;
+    document.getElementById("stZT").textContent = t.zT;
+    document.getElementById("stZXL").textContent = t.zXL;
+    document.getElementById("stZMuL").textContent = t.zMuL;
+    document.getElementById("stZSL").textContent = t.zSL;
+    document.getElementById("stRegT").textContent = t.regT;
+    document.getElementById("stRX").textContent = t.rX;
+    document.getElementById("stRY").textContent = t.rY;
+  }
+  document.addEventListener("lumitek:langchange", localize);
+  localize();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>🏁 رالی شبانه | بازی‌های Lumitek</title>
+<meta name="description" content="بازی ماشین‌رانی بزرگراه — لاین عوض کن، از ترافیک رد شو و رکورد مسافت بزن.">
+<meta name="keywords" content="لومیتک, lumitek, بازی آنلاین, ابزار آنلاین, هوش مصنوعی, خرید سکه, وب اپلیکیشن">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#070b15">
+<link rel="canonical" href="https://lumitek.netlify.app/pages/drive.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Lumitek">
+<meta property="og:title" content="🏎️ بزرگراه | بازی‌های Lumitek">
+<meta property="og:description" content="بازی ماشین‌رانی بزرگراه — لاین عوض کن، از ترافیک رد شو و رکورد مسافت بزن.">
+<meta property="og:url" content="https://lumitek.netlify.app/pages/drive.html">
+<meta property="og:image" content="https://lumitek.netlify.app/assets/icons/og-cover.png">
+<meta property="og:locale" content="fa_IR">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="🏎️ بزرگراه | بازی‌های Lumitek">
+<meta name="twitter:description" content="بازی ماشین‌رانی بزرگراه — لاین عوض کن، از ترافیک رد شو و رکورد مسافت بزن.">
+<meta name="twitter:image" content="https://lumitek.netlify.app/assets/icons/og-cover.png">
+<link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+<link rel="apple-touch-icon" href="../assets/icons/icon-192.png">
+<link rel="manifest" href="../manifest.json">
+<link rel="preconnect" href="https://fontnegar.ir/" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fontnegar.ir/css2?family=shabnam:wght@100;300;400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="../css/style.css">
+<script>try{var t=localStorage.getItem("lumitek_theme");if(t==="light")document.documentElement.classList.add("light");var l=localStorage.getItem("lumitek_lang");if(l==="en"){document.documentElement.lang="en";document.documentElement.dir="ltr"}else{document.documentElement.lang="fa";document.documentElement.dir="rtl"}}catch(e){}</script>
+</head>
+<body data-game="1">
+<div id="offlineBanner" class="offline-banner" data-i18n="offline.banner">🔌 حالت آفلاین — صفحه‌ها و بازی‌ها از حافظه اجرا می‌شوند و اخبار از آخرین نسخه ذخیره‌شده نمایش داده می‌شوند.</div>
+<!--LT5-CHROME-->
+<header class="site-header">
+  <a class="brand" href="../index.html"><img class="brand-logo" src="../assets/icons/logo-lt.png" alt="Lumitek" width="34" height="34"><span class="brand-word">Lumitek</span></a>
+  <nav class="main-nav" id="mainNav">
+    <a href="../index.html" data-i18n="nav.home">nav.home</a>
+    <a href="../pages/tools.html" data-i18n="nav.tools">nav.tools</a>
+    <a href="../pages/games.html" data-i18n="nav.games">nav.games</a>
+    <a href="../pages/store.html" data-i18n="nav.store">nav.store</a>
+    <a href="../pages/sports.html" data-i18n="nav.sports">nav.sports</a>
+    <a href="../pages/ai.html" data-i18n="nav.ai">لومیتک ای‌آی ✨</a>
+    <a href="../pages/download.html" data-i18n="nav.download">nav.download</a>
+    <a href="../pages/support.html" data-i18n="nav.supportE">nav.supportE</a>
+    <a href="../pages/technology.html" class="nav-extra" data-i18n="nav.tech">nav.tech</a>
+    <a href="../pages/articles.html" class="nav-extra" data-i18n="nav.articles">nav.articles</a>
+    <a href="../pages/announcements.html" class="nav-extra" data-i18n="nav.updates">nav.updates</a>
+    <a href="../pages/about.html" class="nav-extra" data-i18n="nav.about">nav.about</a>
+    <a href="../pages/contact.html" class="nav-extra" data-i18n="nav.contact">nav.contact</a>
+    <a href="../pages/account.html" class="nav-extra" data-i18n="nav.account">nav.account</a>
+    <a href="../pages/donate.html" class="nav-extra" data-i18n="nav.donate">nav.donate</a>
+  </nav>
+  <div class="header-actions">
+    <button id="languageToggle" class="icon-btn" data-i18n-title="nav.home" title="Language">EN</button>
+    <button id="themeToggle" class="icon-btn" aria-label="Theme">☀️</button>
+    <button id="notificationButton" class="icon-btn notification-btn">🔔<span id="notificationCount">0</span></button>
+    <button id="changelogButton" class="icon-btn" aria-label="Changelog" title="تغییرات">🕒</button>
+    <button id="profileButton" class="profile-btn"><span data-profile-avatar>🙂</span> <span data-profile-name>Lumitek User</span></button>
+    <button id="menuToggle" class="icon-btn menu-toggle" aria-label="Menu">☰</button>
+  </div>
+</header>
+<div id="notificationPanel" class="notification-panel">
+  <div class="panel-title" data-i18n="notif.title">اعلان‌ها</div>
+  <div id="notificationList"></div>
+</div>
+<div id="changelogPanel" class="notification-panel changelog-panel">
+  <div class="panel-title" data-i18n="ch.title">🕒 تغییرات نسخه‌ها</div>
+  <div id="changelogList"></div>
+  <a class="cl-all" href="../pages/announcements.html" data-i18n="ch.all">مشاهده همه تغییرات →</a>
+</div>
+<div id="profileModal" class="modal">
+  <div class="modal-card">
+    <button id="profileClose" class="modal-close">×</button>
+    <div class="pm-head"><span class="pm-avatar" data-profile-avatar>🙂</span><div><h2 data-i18n="pm.title">پروفایل کاربر</h2><span class="pm-title" data-profile-title>تازه‌کار</span></div></div>
+    <label data-i18n="pm.nameLabel">نام نمایشی</label>
+    <input id="profileNameInput" maxlength="24" data-i18n-ph="pm.namePh" placeholder="نام شما">
+    <div class="xpbar"><div class="xpbar-fill" data-profile-xpbar style="width:0%"></div></div>
+    <p class="muted" style="font-size:.75rem;margin:0 0 10px" data-profile-xptext>0 / 100 XP</p>
+    <div class="profile-stats">
+      <div><span data-i18n="coins.level">سطح</span><strong data-profile-level>1</strong></div>
+      <div><span data-i18n="acc.xp">XP</span><strong data-profile-xp>0</strong></div>
+      <div><span data-i18n="coins.unit">سکه</span><strong data-profile-coins>0</strong></div>
+      <div><span data-i18n="pm.games">بازی‌ها</span><strong data-games-played>0</strong></div>
+    </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <button id="profileSave" class="primary-btn" data-i18n="pm.save" style="flex:1">ذخیره</button>
+      <a class="ghost-btn" href="../pages/account.html" data-i18n="pm.fullAccount">حساب کامل</a>
+    </div>
+    <div class="pm-auth-row" id="pmAuthArea">
+      <button id="pmAuthButton" class="primary-btn" data-i18n="pm.signIn" data-auth-open>🔓 ورود / ثبت‌نام</button>
+      <span class="auth-email" id="pmAuthEmail" style="display:none"></span>
+      <button id="pmLogout" class="ghost-btn" style="display:none" data-i18n="pm.signOut">خروج</button>
+    </div>
+  </div>
+</div>
+
+<div class="search-wrap">
+<input id="globalSearchInput" type="search" data-i18n-ph="head.searchPh" placeholder="جستجو..." aria-label="Search">
+<div id="searchResults" class="search-results"></div>
+</div>
+<main class="page"><div class="game">
+<p class="eyebrow">LUMITEK GAME · NEW</p>
+<h1 data-i18n="g.rally.n">🏁 رالی شبانه</h1>
+<p class="muted" data-i18n="g.rally.d">شبانه در جاده کوهستانی رانندگی کن، با نیترو از ترافیک رد شو و رکورد مسافت بزن!</p>
+
+<div class="gamebox mt">
+  <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
+    <span class="coin-pill">📏 <b id="rlDist">0</b> m</span>
+    <span class="coin-pill">⚡ <b id="rlNitro">100</b>٪</span>
+    <span class="coin-pill">🚀 <b id="rlSpeed">0</b> km/h</span>
+    <span class="coin-pill">🏆 <span data-i18n="games.yourBest">رکورد شما</span>: <b id="rlBest">—</b> m</span>
+  </div>
+  <canvas id="rlCanvas" width="360" height="520" style="max-width:100%;border-radius:16px;touch-action:none;margin-top:12px"></canvas>
+  <div class="sh-hint" id="rlHint">⬅️ ➡️ (یا A/D) = لاین | نگه‌داشتن ↑ (یا W) = نیترو | لمس نیمه‌ها = لاین</div>
+  <button class="gamebutton" id="rlStart" style="margin-top:12px">شروع بازی</button>
+  <p id="rlReward" class="muted" style="margin:8px 0 0"></p>
+</div>
+</div></main>
+
+<footer class="footer-v2">
+  <div class="fv-grid">
+    <div>
+      <div class="fv-brand"><img class="brand-logo" src="../assets/icons/logo-lt.png" alt="Lumitek" width="28" height="28"><span class="brand-word">Lumitek</span></div>
+      <p data-i18n="footer.tag">همه ابزارها و بازی‌های مورد نیازت، سریع و ساده — همه‌جا با هم.</p>
+      <span class="vip-badge" style="display:inline-flex">v0.7 · PWA</span>
+    </div>
+    <div>
+      <h4 data-i18n="footer.explore">کاوش</h4>
+      <ul>
+        <li><a href="../pages/technology.html" data-i18n="nav.tech">فناوری</a></li>
+        <li><a href="../pages/articles.html" data-i18n="nav.articles">مقالات</a></li>
+        <li><a href="../pages/announcements.html" data-i18n="nav.updates">تغییرات</a></li>
+        <li><a href="../pages/about.html" data-i18n="nav.about">درباره ما</a></li>
+        <li><a href="../pages/contact.html" data-i18n="nav.contact">تماس</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-i18n="footer.services">خدمات</h4>
+      <ul>
+        <li><a href="../pages/store.html" data-i18n="nav.store">فروشگاه</a></li>
+        <li><a href="../pages/store.html#coins" data-i18n="nav.coins">شارژ سکه</a></li>
+        <li><a href="../pages/ai.html" data-i18n="nav.ai">لومیتک ای‌آی</a></li>
+        <li><a href="../pages/account.html" data-i18n="nav.account">حساب کاربری</a></li>
+        <li><a href="../pages/donate.html" style="color:var(--a)" data-i18n="nav.donate">حمایت مالی</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-i18n="footer.newsletter">خبرنامه Lumitek</h4>
+      <p data-i18n="footer.newsText">از امکانات جدید زودتر باخبر شو.</p>
+      <form class="news-row" id="newsletterForm">
+        <input type="email" required data-i18n-ph="footer.newsPh" placeholder="ایمیل شما" aria-label="email">
+        <button type="submit" data-i18n="footer.newsBtn">عضویت</button>
+      </form>
+    </div>
+  </div>
+  <div class="fv-bottom">
+    <span data-i18n="footer.rights">© 2026 Lumitek — همه حقوق محفوظ است.</span>
+    <span data-i18n="footer.made">ساخته‌شده با ❤ و بدون فریم‌ورک</span>
+  </div>
+</footer>
+
+<script src="../js/i18n.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/auth.js"></script>
+<script>
+/* ============================================================
+   Night Rally — رالی شبانه (v0.7)
+   ============================================================ */
+(function(){
+  var canvas = document.getElementById("rlCanvas");
+  var ctx = canvas.getContext("2d");
+  var W = canvas.width, H = canvas.height;
+  var LANES = 3, laneW = W / LANES;
+  var running = false;
+  var dist = 0, nitro = 100, boosting = false, myLane = 1, lanePos = 1;
+  var speed = 300;
+  var cars = [], stars = [], marks = [];
+  var lastT = 0, spawnT = 1;
+
+  function L(fa,en){ return getLang()==="fa"?fa:en; }
+  var bestEl = document.getElementById("rlBest");
+  function paintBest() {
+    var p = getProfile();
+    bestEl.textContent = (p.bests.rally != null) ? p.bests.rally : "—";
+  }
+  paintBest();
+  for (var i = 0; i < 46; i++) stars.push({ x: Math.random() * W, y: Math.random() * H * .45, s: Math.random() * 1.7 + .4 });
+
+  var keys = { left: false, right: false };
+  function setLane(dir) { if (!running) return; var n = myLane + dir; if (n >= 0 && n < LANES) myLane = n; }
+
+  function reset() {
+    dist = 0; nitro = 100; myLane = 1; lanePos = 1; speed = 300;
+    cars = []; marks = []; spawnT = 1;
+  }
+
+  function spawnCar() {
+    var lane = Math.floor(Math.random() * LANES);
+    /* جلوی پلیر تنگ نکن */
+    if (lane === myLane && Math.random() < .5) lane = (lane + 1 + Math.floor(Math.random() * 2)) % LANES;
+    var colors = ["#7ca7ff","#ff7e91","#b18cff","#ffc861","#50d68a"];
+    cars.push({ lane: lane, y: -90, c: colors[Math.floor(Math.random() * colors.length)], sp: 120 + Math.random() * 160 });
+  }
+
+  function loop(ts) {
+    if (!running) return;
+    var dt = Math.min(.04, (ts - lastT) / 1000 || .016);
+    lastT = ts;
+    boosting = (keys.up || touchBoost) && nitro > 0;
+    if (boosting) nitro = Math.max(0, nitro - 26 * dt);
+    else nitro = Math.min(100, nitro + 7 * dt);
+    speed = (300 + dist / 18) * (boosting ? 1.65 : 1);
+    dist += speed * dt / 8;
+    document.getElementById("rlDist").textContent = Math.floor(dist);
+    document.getElementById("rlNitro").textContent = Math.round(nitro);
+    document.getElementById("rlSpeed").textContent = Math.round(speed / 4);
+
+    if (keys.left) setLane(-1);
+    if (keys.right) setLane(1);
+    keys.left = keys.right = false;
+    lanePos += (myLane - lanePos) * Math.min(1, dt * 10);
+
+    spawnT -= dt;
+    if (spawnT <= 0) { spawnT = Math.max(.45, 1.1 - dist / 2400) + Math.random() * .35; spawnCar(); }
+    cars.forEach(function(c) { c.y += (speed - c.sp) * dt; });
+    cars = cars.filter(function(c) { return c.y < H + 100; });
+
+    /* برخورد */
+    var px = lanePos * laneW + laneW / 2;
+    for (var i = 0; i < cars.length; i++) {
+      var c = cars[i];
+      var cx = c.lane * laneW + laneW / 2;
+      if (Math.abs(c.y - (H - 92)) < 62 && Math.abs(cx - px) < laneW * .62) { end(); return; }
+    }
+
+    /* ---- draw: night mountain road ---- */
+    var sky = ctx.createLinearGradient(0, 0, 0, H * .5);
+    sky.addColorStop(0, "#060a16"); sky.addColorStop(1, "#101a36");
+    ctx.fillStyle = sky; ctx.fillRect(0, 0, W, H * .55);
+    stars.forEach(function(s) {
+      ctx.fillStyle = "rgba(210,225,255," + (.2 + s.s / 3) + ")";
+      ctx.fillRect(s.x, s.y, s.s, s.s);
+    });
+    ctx.fillStyle = "#e8ecf7"; ctx.beginPath(); ctx.arc(W - 56, 58, 20, 0, 7); ctx.fill();
+    ctx.fillStyle = "#0b1226"; ctx.beginPath(); ctx.arc(W - 49, 52, 17, 0, 7); ctx.fill();
+    /* mountains */
+    ctx.fillStyle = "#131f3e";
+    ctx.beginPath(); ctx.moveTo(0, H * .5);
+    for (var m = 0; m <= 4; m++) {
+      var mx = m * W / 4, mh = 60 + ((m * 53) % 80);
+      ctx.lineTo(mx - W / 8, H * .5); ctx.lineTo(mx, H * .5 - mh);
+    }
+    ctx.lineTo(W, H * .5); ctx.closePath(); ctx.fill();
+
+    /* road */
+    ctx.fillStyle = "#141a2b"; ctx.fillRect(0, H * .5, W, H * .5);
+    ctx.fillStyle = "#1d2740";
+    for (var s2 = 0; s2 < 16; s2++) {
+      var yy = ((s2 * 44) + (dist * 3) % 44);
+      ctx.fillRect(0, H * .5 + yy, W, 22);
+    }
+    /* lane dividers */
+    ctx.fillStyle = "rgba(255,220,130,.75)";
+    for (var d = 0; d < 14; d++) {
+      var yd = ((d * 56) + (dist * 3.4) % 56);
+      ctx.fillRect(laneW - 2.5, H * .5 + yd, 5, 30);
+      ctx.fillRect(laneW * 2 - 2.5, H * .5 + yd, 5, 30);
+    }
+    /* road edges */
+    ctx.fillStyle = "rgba(255,255,255,.5)";
+    ctx.fillRect(2, H * .5, 4, H * .5); ctx.fillRect(W - 6, H * .5, 4, H * .5);
+
+    /* traffic */
+    cars.forEach(function(c) {
+      var cx = c.lane * laneW + laneW / 2;
+      ctx.save(); ctx.translate(cx, c.y);
+      ctx.fillStyle = "rgba(255,240,190,.25)"; /* headlight beam */
+      ctx.beginPath(); ctx.moveTo(-14, -26); ctx.lineTo(-26, -78); ctx.lineTo(26, -78); ctx.lineTo(14, -26); ctx.closePath(); ctx.fill();
+      ctx.fillStyle = c.c;
+      ctx.fillRect(-17, -30, 34, 60);
+      ctx.fillStyle = "rgba(10,16,32,.55)";
+      ctx.fillRect(-13, -18, 26, 16);
+      ctx.fillRect(-13, 8, 26, 14);
+      ctx.fillStyle = "#ff5c5c";
+      ctx.fillRect(-15, 28, 8, 5); ctx.fillRect(7, 28, 8, 5);
+      ctx.restore();
+    });
+
+    /* player car */
+    var py = H - 92;
+    ctx.save(); ctx.translate(px, py);
+    if (boosting) {
+      ctx.fillStyle = "rgba(124,167,255,.5)";
+      ctx.beginPath(); ctx.moveTo(-8, 36); ctx.lineTo(0, 62 + Math.random() * 16); ctx.lineTo(8, 36); ctx.closePath(); ctx.fill();
+    }
+    ctx.fillStyle = "#76e6c3";
+    ctx.fillRect(-18, -32, 36, 64);
+    ctx.fillStyle = "rgba(8,14,28,.6)";
+    ctx.fillRect(-14, -20, 28, 15);
+    ctx.fillRect(-14, 10, 28, 14);
+    ctx.fillStyle = "#fff7d6";
+    ctx.fillRect(-16, -38, 9, 6); ctx.fillRect(7, -38, 9, 6);
+    ctx.restore();
+
+    requestAnimationFrame(loop);
+  }
+
+  var keys = { left: false, right: false, up: false };
+  var touchBoost = false;
+  document.addEventListener("keydown", function(e) {
+    if (!running) { if (e.key === "Enter") start(); return; }
+    if (e.key === "ArrowLeft" || e.key === "a" || e.key === "A") keys.left = true;
+    if (e.key === "ArrowRight" || e.key === "d" || e.key === "D") keys.right = true;
+    if (e.key === "ArrowUp" || e.key === "w" || e.key === "W") { keys.up = true; e.preventDefault(); }
+  });
+  document.addEventListener("keyup", function(e) {
+    if (e.key === "ArrowUp" || e.key === "w" || e.key === "W") keys.up = false;
+  });
+  canvas.addEventListener("touchstart", function(e) {
+    e.preventDefault();
+    if (!running) { start(); return; }
+    var r = canvas.getBoundingClientRect();
+    var x = (e.touches[0].clientX - r.left) / r.width;
+    var y = (e.touches[0].clientY - r.top) / r.height;
+    if (y > .72) touchBoost = true;
+    else setLane(x < .5 ? -1 : 1);
+  }, { passive: false });
+  canvas.addEventListener("touchend", function() { touchBoost = false; }, { passive: true });
+  canvas.addEventListener("mousedown", function(e) {
+    if (!running) { start(); return; }
+    var r = canvas.getBoundingClientRect();
+    setLane((e.clientX - r.left) < r.width / 2 ? -1 : 1);
+  });
+  document.getElementById("rlStart").onclick = start;
+
+  function start() {
+    reset();
+    running = true;
+    document.getElementById("rlStart").textContent = L("در حال رانندگی...", "Driving...");
+    document.getElementById("rlHint").style.display = "none";
+    document.getElementById("rlReward").textContent = "";
+    lastT = 0;
+    requestAnimationFrame(loop);
+  }
+  function end() {
+    running = false;
+    document.getElementById("rlStart").textContent = L("دوباره بران!", "Rally again!");
+    document.getElementById("rlHint").style.display = "";
+    var m = Math.floor(dist);
+    var xp = Math.min(240, Math.floor(m / 3));
+    var cn = Math.min(44, Math.floor(m / 11));
+    Lumitek.reward({ xp: xp, coins: cn, game: "rally", score: m });
+    document.getElementById("rlReward").textContent = L(
+      "🎉 مسافت " + m + " متر! +" + xp + " XP و +" + cn + " سکه",
+      "🎉 Distance " + m + " m! +" + xp + " XP and +" + cn + " coins");
+    paintBest();
+  }
+  document.addEventListener("lumitek:langchange", paintBest);
+})();
+</script>
+<script>
+/* Lumitek v0.7 — هنگام بازی صفحه جابه‌جا نشود */
+(function(){
+  function isGameKey(k){ return k==="ArrowUp"||k==="ArrowDown"||k==="ArrowLeft"||k==="ArrowRight"||k===" "||k==="Spacebar"; }
+  document.addEventListener("keydown", function(e){
+    if (!isGameKey(e.key)) return;
+    var t = e.target && e.target.tagName;
+    if (t === "INPUT" || t === "TEXTAREA" || t === "SELECT") return;
+    e.preventDefault();
+  }, { passive:false });
+  document.addEventListener("touchmove", function(e){
+    if (e.target && e.target.closest && e.target.closest("canvas,.snake-pad,.touch-pad,.game-pad,.dpad")) e.preventDefault();
+  }, { passive:false });
+})();
+</script>
+</body>
+
+</html>

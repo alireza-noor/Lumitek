@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>❌ دوز | بازی‌های Lumitek</title>
+<meta name="description" content="دوز آنلاین مقابل هوش مصنوعی — حالت سخت شکست‌ناپذیر با الگوریتم minimax.">
+<meta name="keywords" content="لومیتک, lumitek, ابزار آنلاین, بازی آنلاین, اخبار ورزش, پشتیبانی هوش مصنوعی, خرید سکه, وب اپلیکیشن">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#070b15">
+<link rel="canonical" href="https://lumitek.netlify.app/pages/tictactoe.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Lumitek">
+<meta property="og:title" content="❌ دوز | بازی‌های Lumitek">
+<meta property="og:description" content="دوز آنلاین مقابل هوش مصنوعی — حالت سخت شکست‌ناپذیر با الگوریتم minimax.">
+<meta property="og:url" content="https://lumitek.netlify.app/pages/tictactoe.html">
+<meta property="og:image" content="https://lumitek.netlify.app/assets/icons/og-cover.png">
+<meta property="og:locale" content="fa_IR">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="❌ دوز | بازی‌های Lumitek">
+<meta name="twitter:description" content="دوز آنلاین مقابل هوش مصنوعی — حالت سخت شکست‌ناپذیر با الگوریتم minimax.">
+<meta name="twitter:image" content="https://lumitek.netlify.app/assets/icons/og-cover.png">
+<link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+<link rel="apple-touch-icon" href="../assets/icons/icon-192.png">
+<link rel="manifest" href="../manifest.json">
+<link rel="preconnect" href="https://fontnegar.ir/" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fontnegar.ir/css2?family=shabnam:wght@100;300;400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="../css/style.css">
+<script>try{var t=localStorage.getItem("lumitek_theme");if(t==="light")document.documentElement.classList.add("light");var l=localStorage.getItem("lumitek_lang");if(l==="en"){document.documentElement.lang="en";document.documentElement.dir="ltr"}else{document.documentElement.lang="fa";document.documentElement.dir="rtl"}}catch(e){}</script>
+</head>
+<body data-game="1">
+<div id="offlineBanner" class="offline-banner" data-i18n="offline.banner">🔌 حالت آفلاین — صفحه‌ها و بازی‌ها از حافظه اجرا می‌شوند و اخبار از آخرین نسخه ذخیره‌شده نمایش داده می‌شوند.</div>
+<!--LT5-CHROME-->
+<header class="site-header">
+  <a class="brand" href="../index.html"><img class="brand-logo" src="../assets/icons/logo-lt.png" alt="Lumitek" width="34" height="34"><span class="brand-word">Lumitek</span></a>
+  <nav class="main-nav" id="mainNav">
+    <a href="../index.html" data-i18n="nav.home">nav.home</a>
+    <a href="../pages/tools.html" data-i18n="nav.tools">nav.tools</a>
+    <a href="../pages/games.html" data-i18n="nav.games">nav.games</a>
+    <a href="../pages/store.html" data-i18n="nav.store">nav.store</a>
+    <a href="../pages/sports.html" data-i18n="nav.sports">nav.sports</a>
+    <a href="../pages/ai.html" data-i18n="nav.ai">لومیتک ای‌آی ✨</a>
+    <a href="../pages/download.html" data-i18n="nav.download">nav.download</a>
+    <a href="../pages/support.html" data-i18n="nav.supportE">nav.supportE</a>
+    <a href="../pages/technology.html" class="nav-extra" data-i18n="nav.tech">nav.tech</a>
+    <a href="../pages/articles.html" class="nav-extra" data-i18n="nav.articles">nav.articles</a>
+    <a href="../pages/announcements.html" class="nav-extra" data-i18n="nav.updates">nav.updates</a>
+    <a href="../pages/about.html" class="nav-extra" data-i18n="nav.about">nav.about</a>
+    <a href="../pages/contact.html" class="nav-extra" data-i18n="nav.contact">nav.contact</a>
+    <a href="../pages/account.html" class="nav-extra" data-i18n="nav.account">nav.account</a>
+    <a href="../pages/donate.html" class="nav-extra" data-i18n="nav.donate">nav.donate</a>
+  </nav>
+  <div class="header-actions">
+    <button id="languageToggle" class="icon-btn" data-i18n-title="nav.home" title="Language">EN</button>
+    <button id="themeToggle" class="icon-btn" aria-label="Theme">☀️</button>
+    <button id="notificationButton" class="icon-btn notification-btn">🔔<span id="notificationCount">0</span></button>
+    <button id="changelogButton" class="icon-btn" aria-label="Changelog" title="تغییرات">🕒</button>
+    <button id="profileButton" class="profile-btn"><span data-profile-avatar>🙂</span> <span data-profile-name>Lumitek User</span></button>
+    <button id="menuToggle" class="icon-btn menu-toggle" aria-label="Menu">☰</button>
+  </div>
+</header>
+<div id="notificationPanel" class="notification-panel">
+  <div class="panel-title" data-i18n="notif.title">اعلان‌ها</div>
+  <div id="notificationList"></div>
+</div>
+<div id="changelogPanel" class="notification-panel changelog-panel">
+  <div class="panel-title" data-i18n="ch.title">🕒 تغییرات نسخه‌ها</div>
+  <div id="changelogList"></div>
+  <a class="cl-all" href="../pages/announcements.html" data-i18n="ch.all">مشاهده همه تغییرات →</a>
+</div>
+<div id="profileModal" class="modal">
+  <div class="modal-card">
+    <button id="profileClose" class="modal-close">×</button>
+    <div class="pm-head"><span class="pm-avatar" data-profile-avatar>🙂</span><div><h2 data-i18n="pm.title">پروفایل کاربر</h2><span class="pm-title" data-profile-title>تازه‌کار</span></div></div>
+    <label data-i18n="pm.nameLabel">نام نمایشی</label>
+    <input id="profileNameInput" maxlength="24" data-i18n-ph="pm.namePh" placeholder="نام شما">
+    <div class="xpbar"><div class="xpbar-fill" data-profile-xpbar style="width:0%"></div></div>
+    <p class="muted" style="font-size:.75rem;margin:0 0 10px" data-profile-xptext>0 / 100 XP</p>
+    <div class="profile-stats">
+      <div><span data-i18n="coins.level">سطح</span><strong data-profile-level>1</strong></div>
+      <div><span data-i18n="acc.xp">XP</span><strong data-profile-xp>0</strong></div>
+      <div><span data-i18n="coins.unit">سکه</span><strong data-profile-coins>0</strong></div>
+      <div><span data-i18n="pm.games">بازی‌ها</span><strong data-games-played>0</strong></div>
+    </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <button id="profileSave" class="primary-btn" data-i18n="pm.save" style="flex:1">ذخیره</button>
+      <a class="ghost-btn" href="../pages/account.html" data-i18n="pm.fullAccount">حساب کامل</a>
+    </div>
+    <div class="pm-auth-row" id="pmAuthArea">
+      <button id="pmAuthButton" class="primary-btn" data-i18n="pm.signIn" data-auth-open>🔓 ورود / ثبت‌نام</button>
+      <span class="auth-email" id="pmAuthEmail" style="display:none"></span>
+      <button id="pmLogout" class="ghost-btn" style="display:none" data-i18n="pm.signOut">خروج</button>
+    </div>
+  </div>
+</div>
+
+<main class="page"><div class="game">
+<p class="eyebrow">LUMITEK GAME · NEW</p>
+<h1 data-i18n="g.tictactoe.n">❌ دوز</h1>
+<p class="muted" data-i18n="g.tictactoe.d">مقابل هوش مصنوعی! در حالت سخت شکست‌ناپذیر است.</p>
+
+<div class="gamebox mt" style="display:flex;flex-direction:column;align-items:center;gap:12px">
+  <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center">
+    <button class="ghost-btn active" data-diff="easy" id="tttEasy">🙂 آسان</button>
+    <button class="ghost-btn" data-diff="hard" id="tttHard">🔥 سخت</button>
+  </div>
+  <div style="display:flex;gap:14px;flex-wrap:wrap;justify-content:center">
+    <span class="coin-pill">🏆 <span data-i18n="unit.win">برد</span>: <b id="tttWins">0</b></span>
+    <span class="coin-pill">🤖 <span id="tttLossLbl">باخت</span>: <b id="tttLoss">0</b></span>
+    <span class="coin-pill">🤝 <span id="tttDrawLbl">مساوی</span>: <b id="tttDraw">0</b></span>
+  </div>
+  <div class="ttt-grid" id="tttGrid"></div>
+  <button class="gamebutton" id="tttNew" data-i18n="games.play">شروع بازی</button>
+  <p id="tttMsg" class="muted" style="margin:0;min-height:1.5em"></p>
+</div>
+</div></main>
+
+
+
+<script src="../js/i18n.js"></script>
+<script src="../js/auth.js"></script>
+
+
+
+
+<footer class="footer-v2">
+  <div class="fv-grid">
+    <div>
+      <div class="fv-brand"><img class="brand-logo" src="../assets/icons/logo-lt.png" alt="Lumitek" width="28" height="28"><span class="brand-word">Lumitek</span></div>
+      <p data-i18n="footer.tag">همه ابزارها و بازی‌های مورد نیازت، سریع و ساده — همه‌جا با هم.</p>
+      <span class="vip-badge" style="display:inline-flex">v0.7 · PWA</span>
+    </div>
+    <div>
+      <h4 data-i18n="footer.explore">کاوش</h4>
+      <ul>
+        <li><a href="../pages/technology.html" data-i18n="nav.tech">فناوری</a></li>
+        <li><a href="../pages/articles.html" data-i18n="nav.articles">مقالات</a></li>
+        <li><a href="../pages/announcements.html" data-i18n="nav.updates">تغییرات</a></li>
+        <li><a href="../pages/about.html" data-i18n="nav.about">درباره ما</a></li>
+        <li><a href="../pages/contact.html" data-i18n="nav.contact">تماس</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-i18n="footer.services">خدمات</h4>
+      <ul>
+        <li><a href="../pages/store.html" data-i18n="nav.store">استور</a></li>
+        <li><a href="../pages/store.html#coins" data-i18n="nav.coins">خرید سکه</a></li>
+        <li><a href="../pages/account.html" data-i18n="nav.account">حساب کاربری</a></li>
+        <li><a href="../pages/download.html" data-i18n="nav.download">دانلود اپ</a></li>
+        <li><a href="../pages/donate.html" style="color:var(--a)" data-i18n="nav.donate">حمایت مالی</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-i18n="footer.newsletter">خبرنامه Lumitek</h4>
+      <p data-i18n="footer.newsText">از امکانات جدید زودتر باخبر شو.</p>
+      <form class="news-row" id="newsletterForm">
+        <input type="email" required data-i18n-ph="footer.newsPh" placeholder="ایمیل شما" aria-label="email">
+        <button type="submit" data-i18n="footer.newsBtn">عضویت</button>
+      </form>
+    </div>
+  </div>
+  <div class="fv-bottom">
+    <span data-i18n="footer.rights">© 2026 Lumitek — همه حقوق محفوظ است.</span>
+    <span data-i18n="footer.made">ساخته‌شده با ❤ و بدون فریم‌ورک</span>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script>
+(function(){
+  var LSK = "lumitek_ttt_stats_v1";
+  var gridEl = document.getElementById("tttGrid");
+  var msgEl = document.getElementById("tttMsg");
+  var winsEl = document.getElementById("tttWins");
+  var lossEl = document.getElementById("tttLoss");
+  var drawEl = document.getElementById("tttDraw");
+
+  var diff = "easy", board, over, human = "X", ai = "O";
+
+  function stats(){
+    try { return JSON.parse(localStorage.getItem(LSK)) || { w: 0, l: 0, d: 0 }; } catch (e) { return { w: 0, l: 0, d: 0 }; }
+  }
+  function paintStats(){
+    var s = stats();
+    winsEl.textContent = s.w; lossEl.textContent = s.l; drawEl.textContent = s.d;
+  }
+  paintStats();
+
+  var WINS = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+  function winner(b){
+    for (var i = 0; i < WINS.length; i++) {
+      var w = WINS[i];
+      if (b[w[0]] && b[w[0]] === b[w[1]] && b[w[1]] === b[w[2]]) return b[w[0]];
+    }
+    return b.every(function(x){ return x; }) ? "draw" : null;
+  }
+
+  function minimax(b, player){
+    var w = winner(b);
+    if (w === ai) return { score: 10 };
+    if (w === human) return { score: -10 };
+    if (w === "draw") return { score: 0 };
+    var moves = [];
+    for (var i = 0; i < 9; i++) {
+      if (b[i]) continue;
+      b[i] = player;
+      var m = { i: i, score: minimax(b, player === ai ? human : ai).score };
+      b[i] = "";
+      moves.push(m);
+    }
+    var best = moves[0];
+    moves.forEach(function(m){
+      if (player === ai ? m.score > best.score : m.score < best.score) best = m;
+    });
+    return best;
+  }
+
+  function aiMove(){
+    var free = [];
+    for (var i = 0; i < 9; i++) if (!board[i]) free.push(i);
+    var pick;
+    if (diff === "easy") {
+      pick = Math.random() < 0.75 ? free[Math.floor(Math.random() * free.length)] : minimax(board.slice(), ai).i;
+    } else {
+      pick = minimax(board.slice(), ai).i;
+    }
+    board[pick] = ai;
+    render();
+    checkEnd();
+  }
+
+  function render(){
+    gridEl.querySelectorAll("button").forEach(function(b, i){
+      b.textContent = board[i];
+    });
+  }
+
+  function checkEnd(){
+    var w = winner(board);
+    if (!w) return false;
+    over = true;
+    var s = stats();
+    if (w === human) {
+      s.w++;
+      msgEl.textContent = getLang() === "fa" ? "🎉 بردی! +30 XP · +8 سکه" : "🎉 You win! +30 XP · +8 coins";
+      Lumitek.reward({ xp: 30, coins: 8, game: "tttWins", score: s.w });
+    } else if (w === ai) {
+      s.l++;
+      msgEl.textContent = getLang() === "fa" ? "🤖 کامپیوتر برد! دوباره تلاش کن." : "🤖 The AI won! Try again.";
+      Lumitek.reward({ xp: 5, coins: 1 });
+    } else {
+      s.d++;
+      msgEl.textContent = getLang() === "fa" ? "🤝 مساوی شد!" : "🤝 It's a draw!";
+      Lumitek.reward({ xp: 12, coins: 3 });
+    }
+    localStorage.setItem(LSK, JSON.stringify(s));
+    paintStats();
+    return true;
+  }
+
+  function build(){
+    gridEl.innerHTML = "";
+    board = ["","","","","","","","",""];
+    over = false;
+    msgEl.textContent = "";
+    for (var i = 0; i < 9; i++) {
+      (function(i){
+        var b = document.createElement("button");
+        b.onclick = function(){
+          if (over || board[i]) return;
+          board[i] = human;
+          render();
+          if (checkEnd()) return;
+          setTimeout(function(){ if (!over) { aiMove(); } }, 350);
+        };
+        gridEl.appendChild(b);
+      })(i);
+    }
+  }
+
+  document.getElementById("tttNew").onclick = build;
+  document.querySelectorAll("[data-diff]").forEach(function(b){
+    b.onclick = function(){
+      diff = b.getAttribute("data-diff");
+      document.querySelectorAll("[data-diff]").forEach(function(x){ x.classList.toggle("active", x === b); });
+      build();
+    };
+  });
+
+  function localize(){
+    var fa = getLang() === "fa";
+    document.getElementById("tttEasy").textContent = fa ? "🙂 آسان" : "🙂 Easy";
+    document.getElementById("tttHard").textContent = fa ? "🔥 سخت" : "🔥 Hard";
+    document.getElementById("tttLossLbl").textContent = fa ? "باخت" : "Losses";
+    document.getElementById("tttDrawLbl").textContent = fa ? "مساوی" : "Draws";
+  }
+  document.addEventListener("lumitek:langchange", localize);
+  localize();
+  build();
+})();
+</script>
+<script>
+/* Lumitek v0.7 — هنگام بازی صفحه جابه‌جا نشود (قفل اسکرول + WASD) */
+(function(){
+  function isGameKey(k){ return k==="ArrowUp"||k==="ArrowDown"||k==="ArrowLeft"||k==="ArrowRight"||k===" "||k==="Spacebar"; }
+  document.addEventListener("keydown", function(e){
+    if (!isGameKey(e.key)) return;
+    var t = e.target && e.target.tagName;
+    if (t === "INPUT" || t === "TEXTAREA" || t === "SELECT") return;
+    e.preventDefault();
+  }, { passive:false });
+  document.addEventListener("touchmove", function(e){
+    if (e.target && e.target.closest && e.target.closest("canvas,.snake-pad,.touch-pad,.game-pad,.dpad")) e.preventDefault();
+  }, { passive:false });
+})();
+</script>
+</body>
+</html>

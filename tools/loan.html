@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>🏦 محاسبه وام | ابزارهای Lumitek</title>
+<meta name="description" content="محاسبه قسط ماهانه وام آنلاین با سود و مدت دلخواه + جدول اقساط — آفلاین.">
+<meta name="keywords" content="لومیتک, lumitek, ابزار آنلاین, بازی آنلاین, اخبار ورزش, پشتیبانی هوش مصنوعی, خرید سکه, وب اپلیکیشن">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#070b15">
+<link rel="canonical" href="https://lumitek.netlify.app/tools/loan.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Lumitek">
+<meta property="og:title" content="🏦 محاسبه وام | ابزارهای Lumitek">
+<meta property="og:description" content="محاسبه قسط ماهانه وام آنلاین با سود و مدت دلخواه + جدول اقساط — آفلاین.">
+<meta property="og:url" content="https://lumitek.netlify.app/tools/loan.html">
+<meta property="og:image" content="https://lumitek.netlify.app/assets/icons/og-cover.png">
+<meta property="og:locale" content="fa_IR">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="🏦 محاسبه وام | ابزارهای Lumitek">
+<meta name="twitter:description" content="محاسبه قسط ماهانه وام آنلاین با سود و مدت دلخواه + جدول اقساط — آفلاین.">
+<meta name="twitter:image" content="https://lumitek.netlify.app/assets/icons/og-cover.png">
+<link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+<link rel="apple-touch-icon" href="../assets/icons/icon-192.png">
+<link rel="manifest" href="../manifest.json">
+<link rel="preconnect" href="https://fontnegar.ir/" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fontnegar.ir/css2?family=shabnam:wght@100;300;400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="../css/style.css">
+<script>try{var t=localStorage.getItem("lumitek_theme");if(t==="light")document.documentElement.classList.add("light");var l=localStorage.getItem("lumitek_lang");if(l==="en"){document.documentElement.lang="en";document.documentElement.dir="ltr"}else{document.documentElement.lang="fa";document.documentElement.dir="rtl"}}catch(e){}</script>
+</head>
+<body>
+<div id="offlineBanner" class="offline-banner" data-i18n="offline.banner">🔌 حالت آفلاین — صفحه‌ها و بازی‌ها از حافظه اجرا می‌شوند و اخبار از آخرین نسخه ذخیره‌شده نمایش داده می‌شوند.</div>
+<!--LT5-CHROME-->
+<header class="site-header">
+  <a class="brand" href="../index.html"><img class="brand-logo" src="../assets/icons/logo-lt.png" alt="Lumitek" width="34" height="34"><span class="brand-word">Lumitek</span></a>
+  <nav class="main-nav" id="mainNav">
+    <a href="../index.html" data-i18n="nav.home">nav.home</a>
+    <a href="../pages/tools.html" data-i18n="nav.tools">nav.tools</a>
+    <a href="../pages/games.html" data-i18n="nav.games">nav.games</a>
+    <a href="../pages/store.html" data-i18n="nav.store">nav.store</a>
+    <a href="../pages/sports.html" data-i18n="nav.sports">nav.sports</a>
+    <a href="../pages/ai.html" data-i18n="nav.ai">لومیتک ای‌آی ✨</a>
+    <a href="../pages/download.html" data-i18n="nav.download">nav.download</a>
+    <a href="../pages/support.html" data-i18n="nav.supportE">nav.supportE</a>
+    <a href="../pages/technology.html" class="nav-extra" data-i18n="nav.tech">nav.tech</a>
+    <a href="../pages/articles.html" class="nav-extra" data-i18n="nav.articles">nav.articles</a>
+    <a href="../pages/announcements.html" class="nav-extra" data-i18n="nav.updates">nav.updates</a>
+    <a href="../pages/about.html" class="nav-extra" data-i18n="nav.about">nav.about</a>
+    <a href="../pages/contact.html" class="nav-extra" data-i18n="nav.contact">nav.contact</a>
+    <a href="../pages/account.html" class="nav-extra" data-i18n="nav.account">nav.account</a>
+    <a href="../pages/donate.html" class="nav-extra" data-i18n="nav.donate">nav.donate</a>
+  </nav>
+  <div class="header-actions">
+    <button id="languageToggle" class="icon-btn" data-i18n-title="nav.home" title="Language">EN</button>
+    <button id="themeToggle" class="icon-btn" aria-label="Theme">☀️</button>
+    <button id="notificationButton" class="icon-btn notification-btn">🔔<span id="notificationCount">0</span></button>
+    <button id="changelogButton" class="icon-btn" aria-label="Changelog" title="تغییرات">🕒</button>
+    <button id="profileButton" class="profile-btn"><span data-profile-avatar>🙂</span> <span data-profile-name>Lumitek User</span></button>
+    <button id="menuToggle" class="icon-btn menu-toggle" aria-label="Menu">☰</button>
+  </div>
+</header>
+<div id="notificationPanel" class="notification-panel">
+  <div class="panel-title" data-i18n="notif.title">اعلان‌ها</div>
+  <div id="notificationList"></div>
+</div>
+<div id="changelogPanel" class="notification-panel changelog-panel">
+  <div class="panel-title" data-i18n="ch.title">🕒 تغییرات نسخه‌ها</div>
+  <div id="changelogList"></div>
+  <a class="cl-all" href="../pages/announcements.html" data-i18n="ch.all">مشاهده همه تغییرات →</a>
+</div>
+<div id="profileModal" class="modal">
+  <div class="modal-card">
+    <button id="profileClose" class="modal-close">×</button>
+    <div class="pm-head"><span class="pm-avatar" data-profile-avatar>🙂</span><div><h2 data-i18n="pm.title">پروفایل کاربر</h2><span class="pm-title" data-profile-title>تازه‌کار</span></div></div>
+    <label data-i18n="pm.nameLabel">نام نمایشی</label>
+    <input id="profileNameInput" maxlength="24" data-i18n-ph="pm.namePh" placeholder="نام شما">
+    <div class="xpbar"><div class="xpbar-fill" data-profile-xpbar style="width:0%"></div></div>
+    <p class="muted" style="font-size:.75rem;margin:0 0 10px" data-profile-xptext>0 / 100 XP</p>
+    <div class="profile-stats">
+      <div><span data-i18n="coins.level">سطح</span><strong data-profile-level>1</strong></div>
+      <div><span data-i18n="acc.xp">XP</span><strong data-profile-xp>0</strong></div>
+      <div><span data-i18n="coins.unit">سکه</span><strong data-profile-coins>0</strong></div>
+      <div><span data-i18n="pm.games">بازی‌ها</span><strong data-games-played>0</strong></div>
+    </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <button id="profileSave" class="primary-btn" data-i18n="pm.save" style="flex:1">ذخیره</button>
+      <a class="ghost-btn" href="../pages/account.html" data-i18n="pm.fullAccount">حساب کامل</a>
+    </div>
+    <div class="pm-auth-row" id="pmAuthArea">
+      <button id="pmAuthButton" class="primary-btn" data-i18n="pm.signIn" data-auth-open>🔓 ورود / ثبت‌نام</button>
+      <span class="auth-email" id="pmAuthEmail" style="display:none"></span>
+      <button id="pmLogout" class="ghost-btn" style="display:none" data-i18n="pm.signOut">خروج</button>
+    </div>
+  </div>
+</div>
+
+<main class="page">
+<p class="eyebrow">LUMITEK TOOL</p>
+<h1 id="t-title">🏦 محاسبه وام</h1>
+<p class="muted" id="t-lead">قسط ماهانه وام با فرمول استاندارد، سود کل و خلاصه اقساط.</p>
+
+<div class="grid mt2" style="grid-template-columns:1fr 1fr">
+  <div class="card">
+    <h3 id="fT">مشخصات وام</h3>
+    <label id="l-amount">مبلغ وام (تومان)</label>
+    <input id="amount" class="input" type="number" value="100000000" min="1">
+    <label id="l-rate">نرخ سود سالانه (٪)</label>
+    <input id="rate" class="input" type="number" value="23" min="0" max="100" step="0.1">
+    <label id="l-months">مدت بازپرداخت (ماه)</label>
+    <input id="months" class="input" type="number" value="36" min="1" max="360">
+    <div class="result mt"><h2 id="payVal">—</h2><p class="muted" style="margin:0" id="payLbl">قسط ماهانه</p></div>
+  </div>
+  <div class="card">
+    <h3 id="rT">خلاصه پرداخت</h3>
+    <div class="stat-tiles">
+      <div class="stat-tile"><b id="totalVal">—</b><span id="l-total">کل بازپرداخت</span></div>
+      <div class="stat-tile"><b id="interestVal">—</b><span id="l-interest">کل سود</span></div>
+      <div class="stat-tile"><b id="countVal">—</b><span id="l-count">تعداد اقساط</span></div>
+      <div class="stat-tile"><b id="ratioVal">—</b><span id="l-ratio">نسبت سود</span></div>
+    </div>
+    <div class="mt">
+      <h4 style="margin:0 0 8px" id="schedT">جدول اقساط (۶ قسط اول)</h4>
+      <div style="overflow-x:auto">
+        <table class="best-table" id="schedTable">
+          <thead><tr><th id="th-n">#</th><th id="th-pay">قسط</th><th id="th-pr">اصل</th><th id="th-in">سود</th><th id="th-re">مانده</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card mt" style="__V07_UPG__">
+  <div style="display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap">
+    <h3 style="margin:0" id="loanFullT">📋 جدول کامل اقساط</h3>
+    <button class="ghost-btn" id="loanFullBtn">📄 نمایش همه اقساط</button>
+  </div>
+  <p class="muted" style="font-size:.78rem;margin:6px 0 12px" id="loanFullHint">با این دکمه، جدول اقساط همه ماه‌ها (با جمع ستون‌ها) نمایش داده می‌شود.</p>
+  <div style="overflow-x:auto">
+    <table class="best-table" id="loanFullTable" style="display:none">
+      <thead><tr><th>#</th><th>قسط</th><th>اصل</th><th>سود</th><th>مانده</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</div>
+</main>
+
+
+
+<script src="../js/i18n.js"></script>
+<script src="../js/auth.js"></script>
+
+<footer class="footer-v2">
+  <div class="fv-grid">
+    <div>
+      <div class="fv-brand"><img class="brand-logo" src="../assets/icons/logo-lt.png" alt="Lumitek" width="28" height="28"><span class="brand-word">Lumitek</span></div>
+      <p data-i18n="footer.tag">همه ابزارها و بازی‌های مورد نیازت، سریع و ساده — همه‌جا با هم.</p>
+      <span class="vip-badge" style="display:inline-flex">v0.7 · PWA</span>
+    </div>
+    <div>
+      <h4 data-i18n="footer.explore">کاوش</h4>
+      <ul>
+        <li><a href="../pages/technology.html" data-i18n="nav.tech">فناوری</a></li>
+        <li><a href="../pages/articles.html" data-i18n="nav.articles">مقالات</a></li>
+        <li><a href="../pages/announcements.html" data-i18n="nav.updates">تغییرات</a></li>
+        <li><a href="../pages/about.html" data-i18n="nav.about">درباره ما</a></li>
+        <li><a href="../pages/contact.html" data-i18n="nav.contact">تماس</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-i18n="footer.services">خدمات</h4>
+      <ul>
+        <li><a href="../pages/store.html" data-i18n="nav.store">استور</a></li>
+        <li><a href="../pages/store.html#coins" data-i18n="nav.coins">خرید سکه</a></li>
+        <li><a href="../pages/account.html" data-i18n="nav.account">حساب کاربری</a></li>
+        <li><a href="../pages/download.html" data-i18n="nav.download">دانلود اپ</a></li>
+        <li><a href="../pages/donate.html" style="color:var(--a)" data-i18n="nav.donate">حمایت مالی</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-i18n="footer.newsletter">خبرنامه Lumitek</h4>
+      <p data-i18n="footer.newsText">از امکانات جدید زودتر باخبر شو.</p>
+      <form class="news-row" id="newsletterForm">
+        <input type="email" required data-i18n-ph="footer.newsPh" placeholder="ایمیل شما" aria-label="email">
+        <button type="submit" data-i18n="footer.newsBtn">عضویت</button>
+      </form>
+    </div>
+  </div>
+  <div class="fv-bottom">
+    <span data-i18n="footer.rights">© 2026 Lumitek — همه حقوق محفوظ است.</span>
+    <span data-i18n="footer.made">ساخته‌شده با ❤ و بدون فریم‌ورک</span>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script>
+(function(){
+  var fa = {
+    "t-title": "🏦 محاسبه وام", "t-lead": "قسط ماهانه وام با فرمول استاندارد، سود کل و خلاصه اقساط.",
+    "fT": "مشخصات وام", "rT": "خلاصه پرداخت", "l-amount": "مبلغ وام (تومان)", "l-rate": "نرخ سود سالانه (٪)",
+    "l-months": "مدت بازپرداخت (ماه)", "payLbl": "قسط ماهانه", "l-total": "کل بازپرداخت", "l-interest": "کل سود",
+    "l-count": "تعداد اقساط", "l-ratio": "نسبت سود", "schedT": "جدول اقساط (۶ قسط اول)",
+    "th-n": "#", "th-pay": "قسط", "th-pr": "اصل", "th-in": "سود", "th-re": "مانده"
+  };
+  var en = {
+    "t-title": "🏦 Loan Calculator", "t-lead": "Standard monthly payment, total interest and a schedule summary.",
+    "fT": "Loan details", "rT": "Payment summary", "l-amount": "Loan amount", "l-rate": "Annual interest rate (%)",
+    "l-months": "Term (months)", "payLbl": "Monthly payment", "l-total": "Total repayment", "l-interest": "Total interest",
+    "l-count": "Number of payments", "l-ratio": "Interest ratio", "schedT": "Schedule (first 6 payments)",
+    "th-n": "#", "th-pay": "Payment", "th-pr": "Principal", "th-in": "Interest", "th-re": "Remaining"
+  };
+  function fmt(n){ return Number(n).toLocaleString(getLang() === "fa" ? "fa-IR" : "en-US"); }
+
+  function apply(){
+    var d = getLang() === "fa" ? fa : en;
+    for (var k in d) {
+      var el = document.getElementById(k);
+      if (el) el.textContent = d[k];
+    }
+    calc();
+  }
+
+  function calc(){
+    var P = +document.getElementById("amount").value;
+    var annual = +document.getElementById("rate").value;
+    var n = Math.round(+document.getElementById("months").value);
+    if (!P || !n || n < 1) return;
+    var i = annual / 100 / 12;
+    var pay = i > 0 ? P * i * Math.pow(1 + i, n) / (Math.pow(1 + i, n) - 1) : P / n;
+    var total = pay * n;
+    document.getElementById("payVal").textContent = fmt(Math.round(pay));
+    document.getElementById("totalVal").textContent = fmt(Math.round(total));
+    document.getElementById("interestVal").textContent = fmt(Math.round(total - P));
+    document.getElementById("countVal").textContent = fmt(n);
+    document.getElementById("ratioVal").textContent = ((total - P) / P * 100).toFixed(1) + "٪";
+    // schedule
+    var tbody = document.querySelector("#schedTable tbody");
+    tbody.innerHTML = "";
+    var bal = P;
+    for (var m = 1; m <= Math.min(6, n); m++) {
+      var int_ = bal * i;
+      var pr = pay - int_;
+      bal = Math.max(0, bal - pr);
+      var tr = document.createElement("tr");
+      [m, Math.round(pay), Math.round(pr), Math.round(int_), Math.round(bal)].forEach(function(v){
+        var td = document.createElement("td");
+        td.textContent = fmt(v);
+        tr.appendChild(td);
+      });
+      tbody.appendChild(tr);
+    }
+  }
+
+  ["amount","rate","months"].forEach(function(id){
+    document.getElementById(id).addEventListener("input", calc);
+  });
+  document.addEventListener("lumitek:langchange", apply);
+  apply();
+})();
+</script>
+
+<script>/* loan: full schedule */
+(function(){
+  var lbl = function(){ return getLang()==="fa" ? {show:"📄 نمایش همه اقساط",hide:"🙈 بستن جدول",t:"📋 جدول کامل اقساط",h:"با این دکمه، جدول اقساط همه ماه‌ها (با جمع ستون‌ها) نمایش داده می‌شود."} : {show:"📄 Show full schedule",hide:"🙈 Hide schedule",t:"📋 Full payment schedule",h:"Show every installment with column totals."}; };
+  document.getElementById("loanFullBtn").onclick = function(){
+    var tbl = document.getElementById("loanFullTable");
+    var open = tbl.style.display !== "none";
+    if (open) { tbl.style.display = "none"; this.textContent = lbl().show; return; }
+    var A = parseFloat(document.getElementById("amount").value) || 0;
+    var annual = parseFloat(document.getElementById("rate").value) || 0;
+    var n = parseInt(document.getElementById("months").value) || 1;
+    var i = annual / 100 / 12;
+    var pay = i > 0 ? A * i * Math.pow(1 + i, n) / (Math.pow(1 + i, n) - 1) : A / n;
+    var bal = A, tp = 0, ti = 0, body = "";
+    for (var m = 1; m <= n; m++) {
+      var int_ = bal * i, pr = pay - int_;
+      bal = Math.max(0, bal - pr); tp += pay; ti += int_;
+      body += "<tr><td>" + m + "</td><td>" + Math.round(pay).toLocaleString() + "</td><td>" + Math.round(pr).toLocaleString() + "</td><td>" + Math.round(int_).toLocaleString() + "</td><td>" + Math.round(bal).toLocaleString() + "</td></tr>";
+    }
+    body += "<tr style=\"font-weight:900;color:var(--a)\"><td>Σ</td><td>" + Math.round(tp).toLocaleString() + "</td><td>" + Math.round(tp - ti).toLocaleString() + "</td><td>" + Math.round(ti).toLocaleString() + "</td><td>—</td></tr>";
+    tbl.querySelector("tbody").innerHTML = body;
+    tbl.style.display = "";
+    this.textContent = lbl().hide;
+  };
+  document.addEventListener("lumitek:langchange", function(){
+    document.getElementById("loanFullBtn").textContent = lbl().show;
+    document.getElementById("loanFullT").textContent = lbl().t;
+    document.getElementById("loanFullHint").textContent = lbl().h;
+  });
+})();
+</script>
+</body>
+</html>

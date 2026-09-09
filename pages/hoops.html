@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>🏀 بسکتبال | بازی‌های Lumitek</title>
+<meta name="description" content="بازی ماشین‌رانی بزرگراه — لاین عوض کن، از ترافیک رد شو و رکورد مسافت بزن.">
+<meta name="keywords" content="لومیتک, lumitek, بازی آنلاین, ابزار آنلاین, هوش مصنوعی, خرید سکه, وب اپلیکیشن">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#070b15">
+<link rel="canonical" href="https://lumitek.netlify.app/pages/drive.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Lumitek">
+<meta property="og:title" content="🏎️ بزرگراه | بازی‌های Lumitek">
+<meta property="og:description" content="بازی ماشین‌رانی بزرگراه — لاین عوض کن، از ترافیک رد شو و رکورد مسافت بزن.">
+<meta property="og:url" content="https://lumitek.netlify.app/pages/drive.html">
+<meta property="og:image" content="https://lumitek.netlify.app/assets/icons/og-cover.png">
+<meta property="og:locale" content="fa_IR">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="🏎️ بزرگراه | بازی‌های Lumitek">
+<meta name="twitter:description" content="بازی ماشین‌رانی بزرگراه — لاین عوض کن، از ترافیک رد شو و رکورد مسافت بزن.">
+<meta name="twitter:image" content="https://lumitek.netlify.app/assets/icons/og-cover.png">
+<link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+<link rel="apple-touch-icon" href="../assets/icons/icon-192.png">
+<link rel="manifest" href="../manifest.json">
+<link rel="preconnect" href="https://fontnegar.ir/" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fontnegar.ir/css2?family=shabnam:wght@100;300;400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="../css/style.css">
+<script>try{var t=localStorage.getItem("lumitek_theme");if(t==="light")document.documentElement.classList.add("light");var l=localStorage.getItem("lumitek_lang");if(l==="en"){document.documentElement.lang="en";document.documentElement.dir="ltr"}else{document.documentElement.lang="fa";document.documentElement.dir="rtl"}}catch(e){}</script>
+</head>
+<body data-game="1">
+<div id="offlineBanner" class="offline-banner" data-i18n="offline.banner">🔌 حالت آفلاین — صفحه‌ها و بازی‌ها از حافظه اجرا می‌شوند و اخبار از آخرین نسخه ذخیره‌شده نمایش داده می‌شوند.</div>
+<!--LT5-CHROME-->
+<header class="site-header">
+  <a class="brand" href="../index.html"><img class="brand-logo" src="../assets/icons/logo-lt.png" alt="Lumitek" width="34" height="34"><span class="brand-word">Lumitek</span></a>
+  <nav class="main-nav" id="mainNav">
+    <a href="../index.html" data-i18n="nav.home">nav.home</a>
+    <a href="../pages/tools.html" data-i18n="nav.tools">nav.tools</a>
+    <a href="../pages/games.html" data-i18n="nav.games">nav.games</a>
+    <a href="../pages/store.html" data-i18n="nav.store">nav.store</a>
+    <a href="../pages/sports.html" data-i18n="nav.sports">nav.sports</a>
+    <a href="../pages/ai.html" data-i18n="nav.ai">لومیتک ای‌آی ✨</a>
+    <a href="../pages/download.html" data-i18n="nav.download">nav.download</a>
+    <a href="../pages/support.html" data-i18n="nav.supportE">nav.supportE</a>
+    <a href="../pages/technology.html" class="nav-extra" data-i18n="nav.tech">nav.tech</a>
+    <a href="../pages/articles.html" class="nav-extra" data-i18n="nav.articles">nav.articles</a>
+    <a href="../pages/announcements.html" class="nav-extra" data-i18n="nav.updates">nav.updates</a>
+    <a href="../pages/about.html" class="nav-extra" data-i18n="nav.about">nav.about</a>
+    <a href="../pages/contact.html" class="nav-extra" data-i18n="nav.contact">nav.contact</a>
+    <a href="../pages/account.html" class="nav-extra" data-i18n="nav.account">nav.account</a>
+    <a href="../pages/donate.html" class="nav-extra" data-i18n="nav.donate">nav.donate</a>
+  </nav>
+  <div class="header-actions">
+    <button id="languageToggle" class="icon-btn" data-i18n-title="nav.home" title="Language">EN</button>
+    <button id="themeToggle" class="icon-btn" aria-label="Theme">☀️</button>
+    <button id="notificationButton" class="icon-btn notification-btn">🔔<span id="notificationCount">0</span></button>
+    <button id="changelogButton" class="icon-btn" aria-label="Changelog" title="تغییرات">🕒</button>
+    <button id="profileButton" class="profile-btn"><span data-profile-avatar>🙂</span> <span data-profile-name>Lumitek User</span></button>
+    <button id="menuToggle" class="icon-btn menu-toggle" aria-label="Menu">☰</button>
+  </div>
+</header>
+<div id="notificationPanel" class="notification-panel">
+  <div class="panel-title" data-i18n="notif.title">اعلان‌ها</div>
+  <div id="notificationList"></div>
+</div>
+<div id="changelogPanel" class="notification-panel changelog-panel">
+  <div class="panel-title" data-i18n="ch.title">🕒 تغییرات نسخه‌ها</div>
+  <div id="changelogList"></div>
+  <a class="cl-all" href="../pages/announcements.html" data-i18n="ch.all">مشاهده همه تغییرات →</a>
+</div>
+<div id="profileModal" class="modal">
+  <div class="modal-card">
+    <button id="profileClose" class="modal-close">×</button>
+    <div class="pm-head"><span class="pm-avatar" data-profile-avatar>🙂</span><div><h2 data-i18n="pm.title">پروفایل کاربر</h2><span class="pm-title" data-profile-title>تازه‌کار</span></div></div>
+    <label data-i18n="pm.nameLabel">نام نمایشی</label>
+    <input id="profileNameInput" maxlength="24" data-i18n-ph="pm.namePh" placeholder="نام شما">
+    <div class="xpbar"><div class="xpbar-fill" data-profile-xpbar style="width:0%"></div></div>
+    <p class="muted" style="font-size:.75rem;margin:0 0 10px" data-profile-xptext>0 / 100 XP</p>
+    <div class="profile-stats">
+      <div><span data-i18n="coins.level">سطح</span><strong data-profile-level>1</strong></div>
+      <div><span data-i18n="acc.xp">XP</span><strong data-profile-xp>0</strong></div>
+      <div><span data-i18n="coins.unit">سکه</span><strong data-profile-coins>0</strong></div>
+      <div><span data-i18n="pm.games">بازی‌ها</span><strong data-games-played>0</strong></div>
+    </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <button id="profileSave" class="primary-btn" data-i18n="pm.save" style="flex:1">ذخیره</button>
+      <a class="ghost-btn" href="../pages/account.html" data-i18n="pm.fullAccount">حساب کامل</a>
+    </div>
+    <div class="pm-auth-row" id="pmAuthArea">
+      <button id="pmAuthButton" class="primary-btn" data-i18n="pm.signIn" data-auth-open>🔓 ورود / ثبت‌نام</button>
+      <span class="auth-email" id="pmAuthEmail" style="display:none"></span>
+      <button id="pmLogout" class="ghost-btn" style="display:none" data-i18n="pm.signOut">خروج</button>
+    </div>
+  </div>
+</div>
+
+<div class="search-wrap">
+<input id="globalSearchInput" type="search" data-i18n-ph="head.searchPh" placeholder="جستجو..." aria-label="Search">
+<div id="searchResults" class="search-results"></div>
+</div>
+<main class="page"><div class="game">
+<p class="eyebrow">LUMITEK GAME · NEW</p>
+<h1 data-i18n="g.hoops.n">🏀 بسکتبال</h1>
+<p class="muted" data-i18n="g.hoops.d">زاویه و قدرت پرتاب را تنظیم کن و در ۶۰ ثانیه بیشترین سبکت را بزن!</p>
+
+<div class="gamebox mt">
+  <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
+    <span class="coin-pill">🏀 <b id="hpScore">0</b></span>
+    <span class="coin-pill">⏱️ <b id="hpTime">60</b>s</span>
+    <span class="coin-pill">🔥 <b id="hpStreak">0</b></span>
+    <span class="coin-pill">🏆 <span data-i18n="games.yourBest">رکورد شما</span>: <b id="hpBest">—</b></span>
+  </div>
+  <canvas id="hpCanvas" width="640" height="460" style="max-width:100%;border-radius:16px;touch-action:none;margin-top:12px"></canvas>
+  <div class="sh-hint" id="hpHint">⬅️➡️ زاویه | ⬆️⬇️ قدرت | Space/W پرتاب — یا با موس/لمس بکش و رها کن</div>
+  <button class="gamebutton" id="hpStart" style="margin-top:12px">شروع بازی</button>
+  <p id="hpReward" class="muted" style="margin:8px 0 0"></p>
+</div>
+</div></main>
+
+<footer class="footer-v2">
+  <div class="fv-grid">
+    <div>
+      <div class="fv-brand"><img class="brand-logo" src="../assets/icons/logo-lt.png" alt="Lumitek" width="28" height="28"><span class="brand-word">Lumitek</span></div>
+      <p data-i18n="footer.tag">همه ابزارها و بازی‌های مورد نیازت، سریع و ساده — همه‌جا با هم.</p>
+      <span class="vip-badge" style="display:inline-flex">v0.7 · PWA</span>
+    </div>
+    <div>
+      <h4 data-i18n="footer.explore">کاوش</h4>
+      <ul>
+        <li><a href="../pages/technology.html" data-i18n="nav.tech">فناوری</a></li>
+        <li><a href="../pages/articles.html" data-i18n="nav.articles">مقالات</a></li>
+        <li><a href="../pages/announcements.html" data-i18n="nav.updates">تغییرات</a></li>
+        <li><a href="../pages/about.html" data-i18n="nav.about">درباره ما</a></li>
+        <li><a href="../pages/contact.html" data-i18n="nav.contact">تماس</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-i18n="footer.services">خدمات</h4>
+      <ul>
+        <li><a href="../pages/store.html" data-i18n="nav.store">فروشگاه</a></li>
+        <li><a href="../pages/store.html#coins" data-i18n="nav.coins">شارژ سکه</a></li>
+        <li><a href="../pages/ai.html" data-i18n="nav.ai">لومیتک ای‌آی</a></li>
+        <li><a href="../pages/account.html" data-i18n="nav.account">حساب کاربری</a></li>
+        <li><a href="../pages/donate.html" style="color:var(--a)" data-i18n="nav.donate">حمایت مالی</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-i18n="footer.newsletter">خبرنامه Lumitek</h4>
+      <p data-i18n="footer.newsText">از امکانات جدید زودتر باخبر شو.</p>
+      <form class="news-row" id="newsletterForm">
+        <input type="email" required data-i18n-ph="footer.newsPh" placeholder="ایمیل شما" aria-label="email">
+        <button type="submit" data-i18n="footer.newsBtn">عضویت</button>
+      </form>
+    </div>
+  </div>
+  <div class="fv-bottom">
+    <span data-i18n="footer.rights">© 2026 Lumitek — همه حقوق محفوظ است.</span>
+    <span data-i18n="footer.made">ساخته‌شده با ❤ و بدون فریم‌ورک</span>
+  </div>
+</footer>
+
+<script src="../js/i18n.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/auth.js"></script>
+<script>
+/* ============================================================
+   Hoops Shot — بسکتبال (v0.7)
+   ============================================================ */
+(function(){
+  var canvas = document.getElementById("hpCanvas");
+  var ctx = canvas.getContext("2d");
+  var W = canvas.width, H = canvas.height;
+  var GROUND = H - 34;
+  var running = false, timeLeft = 60;
+  var score = 0, streak = 0;
+  var angle = -58, power = 62; /* زاویه درجه، قدرت 0..100 */
+  var ball = null;
+  var hoop = { x: W - 110, dir: -1, w: 66 };
+  var particles = [], floaters = [];
+  var lastT = 0, aiming = false, aimStart = null;
+
+  function L(fa,en){ return getLang()==="fa"?fa:en; }
+  var bestEl = document.getElementById("hpBest");
+  function paintBest() {
+    var p = getProfile();
+    bestEl.textContent = (p.bests.hoops != null) ? p.bests.hoops : "—";
+  }
+  paintBest();
+
+  function shoot() {
+    if (!running || ball) return;
+    var a = angle * Math.PI / 180;
+    var v = 360 + power * 5.6;
+    ball = {
+      x: 90, y: GROUND - 46,
+      vx: Math.cos(a) * v, vy: Math.sin(a) * v,
+      r: 13, spin: 0, scored: false, fromFar: false
+    };
+  }
+
+  function reset() {
+    score = 0; streak = 0; timeLeft = 60; ball = null; particles = []; floaters = [];
+    document.getElementById("hpScore").textContent = "0";
+    document.getElementById("hpTime").textContent = "60";
+    document.getElementById("hpStreak").textContent = "0";
+  }
+
+  function addScore(n, x, y, txt) {
+    score += n;
+    document.getElementById("hpScore").textContent = score;
+    floaters.push({ x: x, y: y, t: 0, txt: txt });
+    for (var i = 0; i < 12; i++) {
+      particles.push({ x: x, y: y, vx: (Math.random()-.5)*260, vy: (Math.random()-.8)*220, t: 0 });
+    }
+  }
+
+  function loop(ts) {
+    if (!running) return;
+    var dt = Math.min(.04, (ts - lastT) / 1000 || .016);
+    lastT = ts;
+    timeLeft -= dt;
+    if (timeLeft <= 0) { timeLeft = 0; end(); return; }
+    document.getElementById("hpTime").textContent = Math.ceil(timeLeft);
+
+    hoop.x += hoop.dir * (60 + (60 - timeLeft) * 1.1) * dt;
+    if (hoop.x < W * .48) { hoop.x = W * .48; hoop.dir = 1; }
+    if (hoop.x > W - 70) { hoop.x = W - 70; hoop.dir = -1; }
+
+    if (ball) {
+      ball.vy += 980 * dt;
+      ball.x += ball.vx * dt;
+      ball.y += ball.vy * dt;
+      ball.spin += ball.vx * dt * .05;
+      /* rim collision */
+      var rimY = H - 176, rimL = hoop.x - hoop.w / 2, rimR = hoop.x + hoop.w / 2;
+      if (ball.vy > 0 && ball.y + ball.r > rimY && ball.y < rimY + 14) {
+        if (Math.abs(ball.x - rimL) < 10 || Math.abs(ball.x - rimR) < 10) {
+          ball.vx *= -.55; ball.vy *= -.4;
+        }
+      }
+      /* score check: از بالای حلقه پایین بیاید */
+      if (!ball.scored && ball.vy > 0 && ball.y > rimY && ball.y < rimY + 22 && ball.x > rimL + 4 && ball.x < rimR - 4) {
+        ball.scored = true;
+        streak++;
+        var pts = ball.fromFar ? 3 : 2;
+        addScore(pts + (streak >= 3 ? 1 : 0), ball.x, ball.y - 20, "+" + (pts + (streak >= 3 ? 1 : 0)));
+        document.getElementById("hpStreak").textContent = streak;
+        setTimeout(function() { if (running) ball = null; }, 420);
+      }
+      if (ball.y > GROUND - ball.r) {
+        ball.y = GROUND - ball.r;
+        ball.vy *= -.5; ball.vx *= .72;
+        if (Math.abs(ball.vy) < 40) { if (!ball.scored) streak = 0; setTimeout(function() { if (running) ball = null; }, 240); }
+      }
+      if (ball.x > W + 30 || ball.x < -30) { if (!ball.scored) streak = 0; ball = null; }
+    }
+    particles.forEach(function(p) { p.x += p.vx * dt; p.y += p.vy * dt; p.vy += 300 * dt; p.t += dt; });
+    particles = particles.filter(function(p) { return p.t < .7; });
+    floaters.forEach(function(f) { f.t += dt; f.y -= 40 * dt; });
+    floaters = floaters.filter(function(f) { return f.t < 1; });
+
+    /* ---- draw: court ---- */
+    var g = ctx.createLinearGradient(0, 0, 0, H);
+    g.addColorStop(0, "#131b30"); g.addColorStop(1, "#1b2a4c");
+    ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+    /* crowd dots */
+    for (var c = 0; c < 30; c++) {
+      ctx.fillStyle = "rgba(255,255,255," + (.03 + (c % 5) * .012) + ")";
+      ctx.beginPath(); ctx.arc((c * 71 + 20) % W, 22 + (c % 3) * 16, 5, 0, 7); ctx.fill();
+    }
+    /* floor */
+    ctx.fillStyle = "#8a5a2b"; ctx.fillRect(0, GROUND, W, H - GROUND);
+    ctx.strokeStyle = "rgba(255,255,255,.25)"; ctx.lineWidth = 2;
+    ctx.strokeRect(40, GROUND - 2, W - 80, 3);
+    /* backboard + hoop */
+    var rimY = H - 176, rimL = hoop.x - hoop.w / 2, rimR = hoop.x + hoop.w / 2;
+    ctx.fillStyle = "rgba(255,255,255,.16)";
+    ctx.fillRect(hoop.x - 4, rimY - 92, 7, 92);
+    ctx.strokeStyle = "rgba(255,255,255,.5)"; ctx.lineWidth = 3;
+    ctx.strokeRect(hoop.x + 3, rimY - 88, 5, 62);
+    /* net */
+    ctx.strokeStyle = "rgba(255,255,255,.35)"; ctx.lineWidth = 1;
+    for (var n = 0; n <= 6; n++) {
+      var nx = rimL + (hoop.w / 6) * n;
+      ctx.beginPath(); ctx.moveTo(nx, rimY); ctx.lineTo(rimL + hoop.w / 2 + (nx - rimL - hoop.w / 2) * .45, rimY + 30); ctx.stroke();
+    }
+    for (var ny = 0; ny <= 3; ny++) {
+      var shrink = 1 - ny * .18;
+      var l = rimL + hoop.w * (1 - shrink) / 2, r = rimR - hoop.w * (1 - shrink) / 2;
+      ctx.beginPath(); ctx.moveTo(l, rimY + ny * 10); ctx.lineTo(r, rimY + ny * 10); ctx.stroke();
+    }
+    /* rim */
+    ctx.strokeStyle = "#ff6b4a"; ctx.lineWidth = 5;
+    ctx.beginPath(); ctx.moveTo(rimL, rimY); ctx.lineTo(rimR, rimY); ctx.stroke();
+
+    /* aim guide */
+    if (!ball) {
+      var a = angle * Math.PI / 180;
+      var v = 360 + power * 5.6;
+      var sx = 90, sy = GROUND - 46;
+      var px2 = sx, py2 = sy, vx = Math.cos(a) * v, vy = Math.sin(a) * v;
+      ctx.strokeStyle = "rgba(118,230,195,.5)"; ctx.setLineDash([4, 7]); ctx.lineWidth = 2;
+      ctx.beginPath(); ctx.moveTo(sx, sy);
+      for (var s = 0; s < 26; s++) {
+        vy += 980 * .024; px2 += vx * .024; py2 += vy * .024;
+        if (py2 > GROUND || px2 > W) break;
+        ctx.lineTo(px2, py2);
+      }
+      ctx.stroke(); ctx.setLineDash([]);
+      /* power bar */
+      ctx.fillStyle = "rgba(255,255,255,.14)";
+      ctx.fillRect(70, GROUND - 8, 110, 8);
+      ctx.fillStyle = power > 84 ? "#ff7e91" : "#76e6c3";
+      ctx.fillRect(70, GROUND - 8, 110 * power / 100, 8);
+    }
+    /* ball */
+    if (ball) {
+      ctx.save(); ctx.translate(ball.x, ball.y); ctx.rotate(ball.spin);
+      ctx.fillStyle = "#f28a30";
+      ctx.beginPath(); ctx.arc(0, 0, ball.r, 0, 7); ctx.fill();
+      ctx.strokeStyle = "#7a3c0e"; ctx.lineWidth = 1.6;
+      ctx.beginPath(); ctx.arc(0, 0, ball.r, 0, 7);
+      ctx.moveTo(-ball.r, 0); ctx.lineTo(ball.r, 0);
+      ctx.moveTo(0, -ball.r); ctx.lineTo(0, ball.r);
+      ctx.stroke();
+      ctx.restore();
+    } else {
+      /* ball on tee */
+      ctx.fillStyle = "#f28a30";
+      ctx.beginPath(); ctx.arc(90, GROUND - 46, 13, 0, 7); ctx.fill();
+      ctx.strokeStyle = "#7a3c0e"; ctx.lineWidth = 1.6;
+      ctx.beginPath(); ctx.arc(90, GROUND - 46, 13, 0, 7); ctx.stroke();
+    }
+    particles.forEach(function(p) {
+      ctx.globalAlpha = Math.max(0, 1 - p.t / .7);
+      ctx.fillStyle = "#ffc861";
+      ctx.beginPath(); ctx.arc(p.x, p.y, 2.8, 0, 7); ctx.fill();
+    });
+    ctx.globalAlpha = 1;
+    floaters.forEach(function(f) {
+      ctx.globalAlpha = Math.max(0, 1 - f.t);
+      ctx.fillStyle = "#76e6c3"; ctx.font = "900 22px Inter,sans-serif";
+      ctx.fillText(f.txt, f.x - 12, f.y);
+    });
+    ctx.globalAlpha = 1;
+
+    requestAnimationFrame(loop);
+  }
+
+  /* keyboard: WASD + arrows */
+  document.addEventListener("keydown", function(e) {
+    if (!running) { if (e.key === "Enter") start(); return; }
+    if (e.key === "ArrowLeft" || e.key === "a" || e.key === "A") { angle = Math.min(-15, angle - 2); }
+    if (e.key === "ArrowRight" || e.key === "d" || e.key === "D") { angle = Math.max(-85, angle + 2); }
+    if (e.key === "ArrowUp" || e.key === "w" || e.key === "W") { if (e.repeat) shoot(); else { power = Math.min(100, power + 4); } e.preventDefault(); }
+    if (e.key === "ArrowDown" || e.key === "s" || e.key === "S") { power = Math.max(12, power - 4); }
+    if (e.key === " " || e.key === "Spacebar") { e.preventDefault(); shoot(); }
+  });
+
+  /* drag to aim (slingshot) */
+  function pos(e) {
+    var r = canvas.getBoundingClientRect();
+    var t = e.touches ? e.touches[0] : e;
+    return { x: (t.clientX - r.left) * (W / r.width), y: (t.clientY - r.top) * (H / r.height) };
+  }
+  function aimDown(e) {
+    if (!running) { start(); return; }
+    aiming = true; aimStart = pos(e);
+  }
+  function aimMove(e) {
+    if (!aiming) return;
+    var p2 = pos(e);
+    var dx = p2.x - 90, dy = p2.y - (GROUND - 46);
+    var ang = Math.atan2(dy, dx) * 180 / Math.PI;
+    angle = Math.max(-85, Math.min(-8, ang));
+    var d = Math.hypot(dx, dy);
+    power = Math.max(12, Math.min(100, Math.round(d / 2.6)));
+    if (e.touches) e.preventDefault();
+  }
+  function aimUp() { if (aiming) { aiming = false; shoot(); } }
+  canvas.addEventListener("mousedown", aimDown);
+  canvas.addEventListener("mousemove", aimMove);
+  window.addEventListener("mouseup", aimUp);
+  canvas.addEventListener("touchstart", aimDown, { passive: false });
+  canvas.addEventListener("touchmove", aimMove, { passive: false });
+  window.addEventListener("touchend", aimUp);
+
+  function start() {
+    reset();
+    running = true;
+    document.getElementById("hpStart").textContent = L("در حال بازی...", "Playing...");
+    document.getElementById("hpHint").style.display = "none";
+    document.getElementById("hpReward").textContent = "";
+    lastT = 0;
+    requestAnimationFrame(loop);
+  }
+  function end() {
+    running = false;
+    ball = null;
+    document.getElementById("hpStart").textContent = L("دوباره بازی کن!", "Play again!");
+    document.getElementById("hpHint").style.display = "";
+    var xp = Math.min(230, score * 9);
+    var cn = Math.min(46, score * 2);
+    Lumitek.reward({ xp: xp, coins: cn, game: "hoops", score: score });
+    document.getElementById("hpReward").textContent = L(
+      "🎉 " + score + " امتیاز! +" + xp + " XP و +" + cn + " سکه",
+      "🎉 " + score + " points! +" + xp + " XP and +" + cn + " coins");
+    paintBest();
+  }
+  document.getElementById("hpStart").onclick = start;
+  document.addEventListener("lumitek:langchange", paintBest);
+})();
+</script>
+<script>
+/* Lumitek v0.7 — هنگام بازی صفحه جابه‌جا نشود */
+(function(){
+  function isGameKey(k){ return k==="ArrowUp"||k==="ArrowDown"||k==="ArrowLeft"||k==="ArrowRight"||k===" "||k==="Spacebar"; }
+  document.addEventListener("keydown", function(e){
+    if (!isGameKey(e.key)) return;
+    var t = e.target && e.target.tagName;
+    if (t === "INPUT" || t === "TEXTAREA" || t === "SELECT") return;
+    e.preventDefault();
+  }, { passive:false });
+  document.addEventListener("touchmove", function(e){
+    if (e.target && e.target.closest && e.target.closest("canvas,.snake-pad,.touch-pad,.game-pad,.dpad")) e.preventDefault();
+  }, { passive:false });
+})();
+</script>
+</body>
+
+</html>

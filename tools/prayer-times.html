@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>🕌 اوقات شرعی | ابزارهای Lumitek</title>
+<meta name="description" content="اوقات شرعی ۲۰ شهر ایران — اذان صبح، ظهر، مغرب، طلوع و غروب با محاسبه دقیق آفلاین.">
+<meta name="keywords" content="لومیتک, lumitek, بازی آنلاین, ابزار آنلاین, هوش مصنوعی, خرید سکه, وب اپلیکیشن">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#070b15">
+<link rel="canonical" href="https://lumitek.netlify.app/tools/prayer-times.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Lumitek">
+<meta property="og:title" content="🕌 اوقات شرعی | ابزارهای Lumitek">
+<meta property="og:description" content="اوقات شرعی ۲۰ شهر ایران — اذان صبح، ظهر، مغرب، طلوع و غروب با محاسبه دقیق آفلاین.">
+<meta property="og:url" content="https://lumitek.netlify.app/tools/prayer-times.html">
+<meta property="og:image" content="https://lumitek.netlify.app/assets/icons/og-cover.png">
+<meta property="og:locale" content="fa_IR">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="🕌 اوقات شرعی | ابزارهای Lumitek">
+<meta name="twitter:description" content="اوقات شرعی ۲۰ شهر ایران — اذان صبح، ظهر، مغرب، طلوع و غروب با محاسبه دقیق آفلاین.">
+<meta name="twitter:image" content="https://lumitek.netlify.app/assets/icons/og-cover.png">
+<link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+<link rel="apple-touch-icon" href="../assets/icons/icon-192.png">
+<link rel="manifest" href="../manifest.json">
+<link rel="preconnect" href="https://fontnegar.ir/" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fontnegar.ir/css2?family=shabnam:wght@100;300;400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="../css/style.css">
+<script>try{var t=localStorage.getItem("lumitek_theme");if(t==="light")document.documentElement.classList.add("light");var l=localStorage.getItem("lumitek_lang");if(l==="en"){document.documentElement.lang="en";document.documentElement.dir="ltr"}else{document.documentElement.lang="fa";document.documentElement.dir="rtl"}}catch(e){}</script>
+</head>
+<body>
+<div id="offlineBanner" class="offline-banner" data-i18n="offline.banner">🔌 حالت آفلاین — صفحه‌ها و بازی‌ها از حافظه اجرا می‌شوند و اخبار از آخرین نسخه ذخیره‌شده نمایش داده می‌شوند.</div>
+<!--LT5-CHROME-->
+<header class="site-header">
+  <a class="brand" href="../index.html"><img class="brand-logo" src="../assets/icons/logo-lt.png" alt="Lumitek" width="34" height="34"><span class="brand-word">Lumitek</span></a>
+  <nav class="main-nav" id="mainNav">
+    <a href="../index.html" data-i18n="nav.home">nav.home</a>
+    <a href="../pages/tools.html" data-i18n="nav.tools">nav.tools</a>
+    <a href="../pages/games.html" data-i18n="nav.games">nav.games</a>
+    <a href="../pages/store.html" data-i18n="nav.store">nav.store</a>
+    <a href="../pages/sports.html" data-i18n="nav.sports">nav.sports</a>
+    <a href="../pages/ai.html" data-i18n="nav.ai">لومیتک ای‌آی ✨</a>
+    <a href="../pages/download.html" data-i18n="nav.download">nav.download</a>
+    <a href="../pages/support.html" data-i18n="nav.supportE">nav.supportE</a>
+    <a href="../pages/technology.html" class="nav-extra" data-i18n="nav.tech">nav.tech</a>
+    <a href="../pages/articles.html" class="nav-extra" data-i18n="nav.articles">nav.articles</a>
+    <a href="../pages/announcements.html" class="nav-extra" data-i18n="nav.updates">nav.updates</a>
+    <a href="../pages/about.html" class="nav-extra" data-i18n="nav.about">nav.about</a>
+    <a href="../pages/contact.html" class="nav-extra" data-i18n="nav.contact">nav.contact</a>
+    <a href="../pages/account.html" class="nav-extra" data-i18n="nav.account">nav.account</a>
+    <a href="../pages/donate.html" class="nav-extra" data-i18n="nav.donate">nav.donate</a>
+  </nav>
+  <div class="header-actions">
+    <button id="languageToggle" class="icon-btn" data-i18n-title="nav.home" title="Language">EN</button>
+    <button id="themeToggle" class="icon-btn" aria-label="Theme">☀️</button>
+    <button id="notificationButton" class="icon-btn notification-btn">🔔<span id="notificationCount">0</span></button>
+    <button id="changelogButton" class="icon-btn" aria-label="Changelog" title="تغییرات">🕒</button>
+    <button id="profileButton" class="profile-btn"><span data-profile-avatar>🙂</span> <span data-profile-name>Lumitek User</span></button>
+    <button id="menuToggle" class="icon-btn menu-toggle" aria-label="Menu">☰</button>
+  </div>
+</header>
+<div id="notificationPanel" class="notification-panel">
+  <div class="panel-title" data-i18n="notif.title">اعلان‌ها</div>
+  <div id="notificationList"></div>
+</div>
+<div id="changelogPanel" class="notification-panel changelog-panel">
+  <div class="panel-title" data-i18n="ch.title">🕒 تغییرات نسخه‌ها</div>
+  <div id="changelogList"></div>
+  <a class="cl-all" href="../pages/announcements.html" data-i18n="ch.all">مشاهده همه تغییرات →</a>
+</div>
+<div id="profileModal" class="modal">
+  <div class="modal-card">
+    <button id="profileClose" class="modal-close">×</button>
+    <div class="pm-head"><span class="pm-avatar" data-profile-avatar>🙂</span><div><h2 data-i18n="pm.title">پروفایل کاربر</h2><span class="pm-title" data-profile-title>تازه‌کار</span></div></div>
+    <label data-i18n="pm.nameLabel">نام نمایشی</label>
+    <input id="profileNameInput" maxlength="24" data-i18n-ph="pm.namePh" placeholder="نام شما">
+    <div class="xpbar"><div class="xpbar-fill" data-profile-xpbar style="width:0%"></div></div>
+    <p class="muted" style="font-size:.75rem;margin:0 0 10px" data-profile-xptext>0 / 100 XP</p>
+    <div class="profile-stats">
+      <div><span data-i18n="coins.level">سطح</span><strong data-profile-level>1</strong></div>
+      <div><span data-i18n="acc.xp">XP</span><strong data-profile-xp>0</strong></div>
+      <div><span data-i18n="coins.unit">سکه</span><strong data-profile-coins>0</strong></div>
+      <div><span data-i18n="pm.games">بازی‌ها</span><strong data-games-played>0</strong></div>
+    </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <button id="profileSave" class="primary-btn" data-i18n="pm.save" style="flex:1">ذخیره</button>
+      <a class="ghost-btn" href="../pages/account.html" data-i18n="pm.fullAccount">حساب کامل</a>
+    </div>
+    <div class="pm-auth-row" id="pmAuthArea">
+      <button id="pmAuthButton" class="primary-btn" data-i18n="pm.signIn" data-auth-open>🔓 ورود / ثبت‌نام</button>
+      <span class="auth-email" id="pmAuthEmail" style="display:none"></span>
+      <button id="pmLogout" class="ghost-btn" style="display:none" data-i18n="pm.signOut">خروج</button>
+    </div>
+  </div>
+</div>
+
+<div class="search-wrap">
+<input id="globalSearchInput" type="search" data-i18n-ph="head.searchPh" placeholder="جستجو..." aria-label="Search">
+<div id="searchResults" class="search-results"></div>
+</div>
+<main class="page">
+<p class="eyebrow">LUMITEK TOOLS</p>
+<h1 data-i18n="tools.pray.t">🕌 اوقات شرعی</h1>
+<p class="muted" data-i18n="tools.pray.d">اوقات نماز ۲۰ شهر ایران — محاسبه دقیق آفلاین بر اساس روش مؤسسه ژئوفیزیک تهران.</p>
+
+<div class="card mt2" style="max-width:640px">
+  <label>شهر را انتخاب کن</label>
+  <select id="ptCity" class="select" style="width:100%"></select>
+  <div style="display:flex;gap:8px;align-items:center;margin-top:10px;flex-wrap:wrap">
+    <input id="ptDate" class="amount-input" type="date" style="flex:1">
+    <button class="primary-btn" id="ptCalc" style="min-width:130px">محاسبه اوقات</button>
+  </div>
+</div>
+
+<div class="pt-grid" id="ptGrid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;max-width:860px;margin-top:20px"></div>
+
+<div class="api-note mt2">ℹ️ محاسبات بر اساس زاویه ۱۷.۷ درجه برای اذان صبح و ۱۴ درجه برای عشا (روش مؤسسه ژئوفیزیک دانشگاه تهران) است. چند دقیقه احتیاط (تقریباً ۲ تا ۳ دقیقه) در نظر بگیر.</div>
+
+<div class="card mt2" style="__V07_UPG__;max-width:640px;display:flex;gap:20px;align-items:center;flex-wrap:wrap">
+  <svg id="qbCompass" width="150" height="150" viewBox="0 0 150 150" style="flex-shrink:0">
+    <circle cx="75" cy="75" r="66" fill="none" stroke="rgba(255,255,255,.15)" stroke-width="2"/>
+    <circle cx="75" cy="75" r="52" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="1"/>
+    <text x="75" y="18" text-anchor="middle" fill="#9aa8c1" font-size="11">N</text>
+    <text x="75" y="142" text-anchor="middle" fill="#9aa8c1" font-size="11">S</text>
+    <text x="138" y="79" text-anchor="middle" fill="#9aa8c1" font-size="11">E</text>
+    <text x="12" y="79" text-anchor="middle" fill="#9aa8c1" font-size="11">W</text>
+    <g id="qbArrow" transform="rotate(0 75 75)">
+      <polygon points="75,20 81,80 69,80" fill="#ffc861"/>
+      <circle cx="75" cy="75" r="6" fill="#76e6c3"/>
+    </g>
+  </svg>
+  <div style="flex:1;min-width:200px">
+    <h3 style="margin:0 0 8px" id="qbT">🧭 جهت قبله</h3>
+    <p class="muted" style="margin:0 0 6px;font-size:.85rem" id="qbCity">—</p>
+    <div style="font-weight:900;font-size:1.3rem;color:var(--a)"><span id="qbDeg">—</span>°</div>
+    <p class="muted" style="font-size:.72rem;margin:8px 0 0" id="qbHint">زاویه از شمال جغرافیایی، ساعت‌گرد — بر اساس مختصات شهر انتخابی و کعبه.</p>
+  </div>
+</div>
+</main>
+
+<footer class="footer-v2">
+  <div class="fv-grid">
+    <div>
+      <div class="fv-brand"><img class="brand-logo" src="../assets/icons/logo-lt.png" alt="Lumitek" width="28" height="28"><span class="brand-word">Lumitek</span></div>
+      <p data-i18n="footer.tag">همه ابزارها و بازی‌های مورد نیازت، سریع و ساده — همه‌جا با هم.</p>
+      <span class="vip-badge" style="display:inline-flex">v0.7 · PWA</span>
+    </div>
+    <div>
+      <h4 data-i18n="footer.explore">کاوش</h4>
+      <ul>
+        <li><a href="../pages/technology.html" data-i18n="nav.tech">فناوری</a></li>
+        <li><a href="../pages/articles.html" data-i18n="nav.articles">مقالات</a></li>
+        <li><a href="../pages/announcements.html" data-i18n="nav.updates">تغییرات</a></li>
+        <li><a href="../pages/about.html" data-i18n="nav.about">درباره ما</a></li>
+        <li><a href="../pages/contact.html" data-i18n="nav.contact">تماس</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-i18n="footer.services">خدمات</h4>
+      <ul>
+        <li><a href="../pages/store.html" data-i18n="nav.store">فروشگاه</a></li>
+        <li><a href="../pages/store.html#coins" data-i18n="nav.coins">شارژ سکه</a></li>
+        <li><a href="../pages/ai.html" data-i18n="nav.ai">لومیتک ای‌آی</a></li>
+        <li><a href="../pages/account.html" data-i18n="nav.account">حساب کاربری</a></li>
+        <li><a href="../pages/donate.html" style="color:var(--a)" data-i18n="nav.donate">حمایت مالی</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-i18n="footer.newsletter">خبرنامه Lumitek</h4>
+      <p data-i18n="footer.newsText">از امکانات جدید زودتر باخبر شو.</p>
+      <form class="news-row" id="newsletterForm">
+        <input type="email" required data-i18n-ph="footer.newsPh" placeholder="ایمیل شما" aria-label="email">
+        <button type="submit" data-i18n="footer.newsBtn">عضویت</button>
+      </form>
+    </div>
+  </div>
+  <div class="fv-bottom">
+    <span data-i18n="footer.rights">© 2026 Lumitek — همه حقوق محفوظ است.</span>
+    <span data-i18n="footer.made">ساخته‌شده با ❤ و بدون فریم‌ورک</span>
+  </div>
+</footer>
+
+<script src="../js/i18n.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/auth.js"></script>
+
+<script>
+(function(){
+  var CITIES = [
+    ["تهران", 35.6892, 51.3890, 3.5], ["مشهد", 36.2605, 59.6168, 3.5],
+    ["اصفهان", 32.6539, 51.6660, 3.5], ["تبریز", 38.0800, 46.2919, 3.5],
+    ["شیراز", 29.5918, 52.5837, 3.5], ["اهواز", 31.3183, 48.6706, 3.5],
+    ["قم", 34.6416, 50.8746, 3.5], ["کرج", 35.8355, 50.9915, 3.5],
+    ["رشت", 37.2808, 49.5832, 3.5], ["یزد", 31.8974, 54.3569, 3.5],
+    ["کرمان", 30.2839, 57.0834, 3.5], ["بندرعباس", 27.1865, 56.2808, 3.5],
+    ["ارومیه", 37.5527, 45.0761, 3.5], ["همدان", 34.7992, 48.5146, 3.5],
+    ["سنندج", 35.3219, 46.9862, 3.5], ["کرمانشاه", 34.3142, 47.0650, 3.5],
+    ["زاهدان", 29.4963, 60.8629, 3.5], ["گرگان", 36.8456, 54.4393, 3.5],
+    ["سمنان", 35.5729, 53.3971, 3.5], ["اردبیل", 38.2498, 48.2933, 3.5]
+  ];
+  var sel = document.getElementById("ptCity");
+  CITIES.forEach(function(c, i) {
+    var o = document.createElement("option");
+    o.value = i; o.textContent = c[0];
+    sel.appendChild(o);
+  });
+  document.getElementById("ptDate").value = new Date().toISOString().slice(0,10);
+
+  function dsin(d){ return Math.sin(d*Math.PI/180); }
+  function dcos(d){ return Math.cos(d*Math.PI/180); }
+  function dtan(d){ return Math.tan(d*Math.PI/180); }
+  function darccot(x){ return Math.atan(1/x)*180/Math.PI; }
+  function darcsin(x){ return Math.asin(x)*180/Math.PI; }
+  function fix(a,b){ a = a - b*Math.floor(a/b); return a < 0 ? a + b : a; }
+
+  function sunPosition(jd) {
+    var D = jd - 2451545.0;
+    var g = fix(357.529 + 0.98560028*D, 360);
+    var q = fix(280.459 + 0.98564736*D, 360);
+    var L = fix(q + 1.915*dsin(g) + 0.020*dsin(2*g), 360);
+    var e = 23.439 - 0.00000036*D;
+    var RA = fix(Math.atan2(dcos(e)*dsin(L), dcos(L))*180/Math.PI/15, 24);
+    var decl = darcsin(dsin(e)*dsin(L));
+    var eqt = q/15 - RA;
+    return { decl: decl, eqt: eqt };
+  }
+
+  function times(dateStr, lat, lng, tz) {
+    var parts = dateStr.split("-");
+    var gy = +parts[0], gm = +parts[1], gd = +parts[2];
+    var jd = Math.floor((Date.UTC(gy, gm-1, gd) / 86400000)) + 2451545 + 0.5 - 2451545 + 2451545; /* julian day */
+    jd = Date.UTC(gy, gm-1, gd)/86400000 + 2440587.5;
+    var s = sunPosition(jd);
+    var zuhr = 12 + tz - lng/15 - s.eqt;
+    function T(angle) {
+      return (1/15) * darccot( ( -dsin(angle) - dsin(lat)*dsin(s.decl) ) / ( dcos(lat)*dcos(s.decl) ) );
+    }
+    function asrT() {
+      var angle = -darccot(1 + dtan(Math.abs(lat - s.decl)));
+      return (1/15) * darccot( ( -dsin(angle) - dsin(lat)*dsin(s.decl) ) / ( dcos(lat)*dcos(s.decl) ) );
+    }
+    var sunrise = zuhr - T(0.833);
+    var sunset = zuhr + T(0.833);
+    var fajr = zuhr - T(17.7);
+    var isha = zuhr + T(14);
+    var asr = zuhr + asrT();
+    var maghrib = sunset + 15/60;
+    var midnight = fajr + 24 - zuhr; /* تقریبی */
+    return { fajr: fajr, sunrise: sunrise, zuhr: zuhr, asr: asr, sunset: sunset, maghrib: maghrib, isha: isha, midnight: (zuhr + fajr + 24)/2 % 24 };
+  }
+
+  function fmtTime(h) {
+    if (isNaN(h)) return "—";
+    var hh = Math.floor(h), mm = Math.round((h - hh)*60);
+    if (mm === 60) { hh++; mm = 0; }
+    var fa = getLang() === "fa";
+    var s = ("0"+hh).slice(-2) + ":" + ("0"+mm).slice(-2);
+    if (fa) s = s.replace(/\d/g, function(d){ return "۰۱۲۳۴۵۶۷۸۹"[d]; });
+    return s;
+  }
+
+  function calc() {
+    var c = CITIES[+sel.value];
+    var d = document.getElementById("ptDate").value || new Date().toISOString().slice(0,10);
+    var t = times(d, c[1], c[2], c[3]);
+    var rows = [
+      ["🌅 اذان صبح", t.fajr], ["☀️ طلوع آفتاب", t.sunrise], ["🌇 اذان ظهر", t.zuhr],
+      ["🕶️ اذان عصر", t.asr], ["🌆 غروب آفتاب", t.sunset], ["🌃 اذان مغرب", t.maghrib],
+      ["🌙 اذان عشا", t.isha], ["🌌 نیمه‌شب شرعی", t.midnight]
+    ];
+    var grid = document.getElementById("ptGrid");
+    grid.innerHTML = "";
+    rows.forEach(function(r) {
+      var d2 = document.createElement("div");
+      d2.className = "stat-tile";
+      d2.innerHTML = "<span></span><b></b>";
+      d2.querySelector("span").textContent = r[0];
+      d2.querySelector("b").textContent = fmtTime(r[1]);
+      d2.style.fontSize = "1.05rem";
+      grid.appendChild(d2);
+    });
+  }
+
+  document.getElementById("ptCalc").onclick = calc;
+  sel.onchange = calc;
+  calc();
+})();
+</script>
+
+
+<script>/* prayer-times: qibla direction */
+(function(){
+  var KAABA = { lat: 21.4225, lng: 39.8262 };
+  function bearing(lat1, lng1) {
+    var φ1 = lat1 * Math.PI / 180, φ2 = KAABA.lat * Math.PI / 180;
+    var Δλ = (KAABA.lng - lng1) * Math.PI / 180;
+    var y = Math.sin(Δλ) * Math.cos(φ2);
+    var x = Math.cos(φ1) * Math.sin(φ2) - Math.sin(φ1) * Math.cos(φ2) * Math.cos(Δλ);
+    return (Math.atan2(y, x) * 180 / Math.PI + 360) % 360;
+  }
+  function findCity() {
+    var sel = document.getElementById("ptCity");
+    return sel.options[sel.selectedIndex] ? sel.options[sel.selectedIndex].textContent : "";
+  }
+  var COORDS = [[35.6892,51.3890],[36.2605,59.6168],[32.6539,51.6660],[38.0800,46.2919],[29.5918,52.5837],[31.3183,48.6706],[34.6416,50.8746],[35.8355,50.9915],[37.2808,49.5832],[31.8974,54.3569],[30.2839,57.0834],[27.1865,56.2808],[37.5527,45.0761],[34.7992,48.5146],[35.3219,46.9862],[34.3142,47.0650],[29.4963,60.8629],[36.8456,54.4393],[35.5729,53.3971],[38.2498,48.2933]];
+  function update() {
+    var sel = document.getElementById("ptCity");
+    var c = COORDS[sel.selectedIndex];
+    if (!c) return;
+    var lat = c[0], lng = c[1];
+    var b = bearing(lat, lng);
+    document.getElementById("qbDeg").textContent = b.toFixed(1);
+    document.getElementById("qbArrow").setAttribute("transform", "rotate(" + b.toFixed(1) + " 75 75)");
+    document.getElementById("qbCity").textContent = findCity() || "—";
+  }
+  document.getElementById("ptCity").addEventListener("change", update);
+  document.addEventListener("lumitek:langchange", function(){ setTimeout(update, 50); });
+  setTimeout(update, 400);
+})();
+</script>
+</body>
+</html>

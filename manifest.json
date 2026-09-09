@@ -1,0 +1,85 @@
+{
+  "name": "Lumitek — Digital Hub",
+  "short_name": "Lumitek",
+  "description": "هوش مصنوعی لومیتک، ۲۰ ابزار، ۱۹ بازی آنلاین با سکه، فروشگاه کامل و اخبار ورزشی — همه یکجا. Lumitek AI, 20 tools, 19 games, full store and live sports — all in one.",
+  "lang": "fa",
+  "dir": "rtl",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#070b15",
+  "theme_color": "#070b15",
+  "icons": [
+    {
+      "src": "assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icons/maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "هوش مصنوعی لومیتک / Lumitek AI",
+      "url": "./pages/ai.html",
+      "icons": [
+        {
+          "src": "assets/icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "بازی‌ها / Games",
+      "url": "./pages/games.html",
+      "icons": [
+        {
+          "src": "assets/icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "فروشگاه / Store",
+      "url": "./pages/store.html",
+      "icons": [
+        {
+          "src": "assets/icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "ابزارها / Tools",
+      "url": "./pages/tools.html",
+      "icons": [
+        {
+          "src": "assets/icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "اسپورتک / Sportek",
+      "url": "./pages/sports.html",
+      "icons": [
+        {
+          "src": "assets/icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ]
+}
