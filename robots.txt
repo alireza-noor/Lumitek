@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://lumitek.netlify.app/sitemap.xml
+Sitemap: https://lumitek.alirezanoor-1389.workers.dev/sitemap.xml

@@ -45,10 +45,10 @@
     <a href="../pages/sports.html" data-i18n="nav.sports">nav.sports</a>
     <a href="../pages/digital-news.html" data-i18n="nav.digitalnews">اخبار دیجیتال 📰</a>
     <a href="../pages/ai.html" data-i18n="nav.ai">لومیتک ای‌آی ✨</a>
-    <a href="../pages/download.html" data-i18n="nav.download">nav.download</a>
+    <a href="../pages/download.html" class="nav-mid2" data-i18n="nav.download">nav.download</a>
     <a href="../pages/technology.html" class="nav-extra" data-i18n="nav.tech">nav.tech</a>
-    <a href="../pages/articles.html" data-i18n="nav.articles">nav.articles</a>
-    <a href="../pages/announcements.html" data-i18n="nav.updates">nav.updates</a>
+    <a href="../pages/articles.html" class="nav-mid" data-i18n="nav.articles">nav.articles</a>
+    <a href="../pages/announcements.html" class="nav-mid" data-i18n="nav.updates">nav.updates</a>
     <a href="../pages/about.html" class="nav-extra" data-i18n="nav.about">nav.about</a>
     <a href="../pages/contact.html" class="nav-extra" data-i18n="nav.contact">nav.contact</a>
     <a href="../pages/account.html" class="nav-extra" data-i18n="nav.account">nav.account</a>
@@ -181,14 +181,14 @@
     <div>
       <div class="fv-brand"><img class="brand-logo" src="../assets/icons/logo-lt.png" alt="Lumitek" width="34" height="34"><span class="brand-word">Lumitek</span></div>
       <p data-i18n="footer.tag">همه ابزارها و بازی‌های مورد نیازت، سریع و ساده — همه‌جا با هم.</p>
-      <span class="vip-badge" style="display:inline-flex">v1.1 · PWA</span>
+      <span class="vip-badge" style="display:inline-flex">v0.1.3 · PWA</span>
     </div>
     <div>
       <h4 data-i18n="footer.explore">کاوش</h4>
       <ul>
         <li><a href="../pages/digital-news.html" data-i18n="nav.digitalnews">اخبار دیجیتال</a></li><li><a href="../pages/technology.html" data-i18n="nav.tech">فناوری</a></li>
-        <li><a href="../pages/articles.html" data-i18n="nav.articles">مقالات</a></li>
-        <li><a href="../pages/announcements.html" data-i18n="nav.updates">تغییرات</a></li>
+        <li><a href="../pages/articles.html" class="nav-mid" data-i18n="nav.articles">مقالات</a></li>
+        <li><a href="../pages/announcements.html" class="nav-mid" data-i18n="nav.updates">تغییرات</a></li>
         <li><a href="../pages/about.html" data-i18n="nav.about">درباره ما</a></li>
         <li><a href="../pages/contact.html" data-i18n="nav.contact">تماس</a></li>
       </ul>
@@ -366,6 +366,7 @@
   function addMsg(role, text, save, asHtml) {
     var div = document.createElement("div");
     div.className = "msg " + role;
+    div.setAttribute("dir", "auto");
     if (asHtml) div.innerHTML = fmtMd(text);
     else div.textContent = text;
     chatBox.appendChild(div);
@@ -403,6 +404,7 @@
   function addTyping() {
     var div = document.createElement("div");
     div.className = "msg bot typing";
+      div.setAttribute("dir", "auto");
     div.id = "aiTyping";
     div.innerHTML = "<i></i><i></i><i></i>";
     chatBox.appendChild(div);
@@ -419,6 +421,7 @@
     if (!h.length) {
       var div = document.createElement("div");
       div.className = "msg bot";
+      div.setAttribute("dir", "auto");
       div.textContent = T("ai.welcome");
       chatBox.appendChild(div);
     } else {
@@ -440,13 +443,13 @@
       fa: "🪙 سکه از این راه‌ها به دست میاد: بازی کردن (هر بازی XP و سکه داره)، پاداش روزانه ۱۰ سکه‌ای از تب «شارژ سکه» فروشگاه، و خرید بسته از فروشگاه.",
       en: "🪙 You earn coins by playing games, the 10-coin daily reward (Store → Top up coins), and by buying packs in the Store." },
     { keys: ["لومیتک", "lumitek", "سایت"],
-      fa: "✨ لومیتک یک گروه دیجیتاله: ۳۲ ابزار، ۲۹ بازی در ۷ دسته، اسپورتک مردان با جدول ۲۴ لیگ، اخبار دیجیتال منابع ایرانی، فروشگاه کامل، هوش مصنوعی لومیتک (من!) و نصب به‌صورت اپ.",
-      en: "✨ Lumitek is a digital group: 32 tools, 29 games in 7 categories, men's Sportek with 24 league tables, Iranian-source Digital News, a full store, Lumitek AI (me!) and an installable app." },
+      fa: "✨ لومیتک یک گروه دیجیتاله: ۳۲ ابزار، ۳۰ بازی در ۷ دسته، اسپورتک با جدول ۲۴ لیگ، اخبار دیجیتال منابع ایرانی، فروشگاه کامل، هوش مصنوعی لومیتک (من!) و نصب به‌صورت اپ.",
+      en: "✨ Lumitek is a digital group: 32 tools, 30 games in 7 categories, Sportek with 24 league tables, Iranian-source Digital News, a full store, Lumitek AI (me!) and an installable app." },
     { keys: ["بازی", "game"],
       fa: "🎮 بازی‌ها اینجان: تیراندازی کیهانی، تیراندازی دقیق، ماز، چهار در یک ردیف، بزرگراه، تپه‌نورد، شکار گنج، دونده ماجراجویی، پنالتی، بسکتبال و ۱۲ بازی دیگه — با XP، سکه و رکورد!",
       en: "🎮 Our games: Space Shooter, Precision Range, Maze, Connect Four, Highway, Hill Climb, Treasure Hunt, Cave Runner, Penalty, Hoops Shot and 12 more — with XP, coins and records!" },
     { keys: ["هوش مصنوعی", "ai", "سوال", "اعتبار"],
-      fa: "✨ من هوش مصنوعی لومیتک هستم! اشتراک لازم نیست — هر سوال فقط ۲ سکه از سکه‌های خودت محاسبه می‌شود. سکه نداری؟ از فروشگاه شارژ کن!",
+      fa: "✨ من هوش مصنوعی لومیتک هستم! هر سوال فقط ۲ سکه. سکه‌ت رو شارژ کن و بدون محدودیت بپرس. کافیه!",
       en: "✨ I'm Lumitek AI! No subscription needed — each question costs just 2 coins from your balance. Need coins? Top up in the Store!" },
     { keys: ["سلام", "درود", "hi", "hello"],
       fa: "سلام! 👋 چطور می‌تونم کمکت کنم؟",
@@ -465,8 +468,8 @@
   }
 
   /* ---------- Online AI engines (1.1: استریم زنده + سریع‌تر) ---------- */
-  var SYSTEM_FA = "تو «هوش مصنوعی لومیتک» هستی؛ دستیار هوشمند، دقیق و دوست‌داشتنی سایت لومیتک (Lumitek). پاسخ‌ها را به زبان کاربر، کامل و ساختارمند بده؛ از تیتر، لیست و بولد استفاده کن. اگر حالت سریع فعال بود، کوتاه و سرراست جواب بده. اگر درباره لومیتک پرسیدند: سایت شامل ۳۲ ابزار (تقویم ایران، اوقات شرعی، ساعت جهانی، ماشین‌حساب مهندسی، آمار، فیزیک، چرخ شانس، فشرده‌ساز عکس، تست سرعت اینترنت و...)، ۲۹ بازی در ۷ دسته از جمله بازی جدید کشورگشایی، اسپورتک (اخبار زنده ورزش مردان از منابع ایرانی، جدول بیش از ۲۰ لیگ)، بخش اخبار دیجیتال از منابع ایرانی (دیجیاتو، زومیت، نارنجی، مهر)، فروشگاه سکه/آواتار/اسلحه/اسکین بازی‌ها، ۲۸ مقاله آموزشی، نصب PWA و پشتیبانی است. هر سوال AI برای کاربر ۲ سکه هزینه دارد (با کلید اختصاصی کاربر رایگان است).";
-  var SYSTEM_EN = "You are Lumitek AI, the friendly, precise assistant of the Lumitek website. Answer fully and well-structured in the user's language using headings, lists and bold. If fast mode is on, be brief and direct. If asked about Lumitek: it offers 32 tools (Iranian calendar, prayer times, world clock, engineering calculator, statistics, physics, lucky wheel, image compressor, speed test...), 29 games in 7 categories including the new Conquest game, Sportek (live men's sports news from Iranian sources, 20+ league tables), a Digital News section with tech news from Iranian media (Digiato, Zoomit, Narenji, Mehr), a store (coins/avatars/weapons/game skins), 28 tutorial articles, installable PWA and support. Each AI question costs the user 2 coins (free with the user's own API key).";
+  var SYSTEM_FA = "تو «هوش مصنوعی لومیتک» هستی؛ دستیار هوشمند، دقیق و دوست‌داشتنی سایت لومیتک (Lumitek). پاسخ‌ها را به زبان کاربر، کامل و ساختارمند بده؛ از تیتر، لیست و بولد استفاده کن. اگر حالت سریع فعال بود، کوتاه و سرراست جواب بده. اگر درباره لومیتک پرسیدند: سایت شامل ۳۷ ابزار (تقویم ایران، اوقات شرعی، ساعت جهانی، ماشین‌حساب مهندسی، آمار، فیزیک، چرخ شانس، فشرده‌ساز عکس، تست سرعت اینترنت، فرمت‌کننده JSON، مترجم هوشمند و...)، ۲۹ بازی در ۷ دسته از جمله هدبال محبوب، اسپورتک (اخبار زنده ۲۱ رشته ورزش مردان از منابع ایرانی، جدول بیش از ۲۰ لیگ)، بخش اخبار دیجیتال از منابع ایرانی (دیجیاتو، زومیت، نارنجی، مهر)، فروشگاه سکه/آواتار/اسلحه/اسکین بازی‌ها، ۴۴ مقاله آموزشی مفصل، نصب PWA و پشتیبانی است. هر سوال AI برای کاربر ۲ سکه هزینه دارد (با کلید اختصاصی کاربر رایگان است).";
+  var SYSTEM_EN = "You are Lumitek AI, the friendly, precise assistant of the Lumitek website. Answer fully and well-structured in the user's language using headings, lists and bold. If fast mode is on, be brief and direct. If asked about Lumitek: it offers 32 tools (Iranian calendar, prayer times, world clock, engineering calculator, statistics, physics, lucky wheel, image compressor, speed test...), 29 games in 7 categories including the new Conquest game, Sportek (live men's sports news from Iranian sources, 20+ league tables), a Digital News section with tech news from Iranian media (Digiato, Zoomit, Narenji, Mehr), a store (coins/avatars/weapons/game skins), 44 tutorial articles, installable PWA and support. Each AI question costs the user 2 coins (free with the user's own API key).";
   var FAST_SUFFIX_FA = " حالت سریع فعال است: پاسخ را در حداکثر ۴ تا ۵ جمله‌ی کوتاه و مفید بده.";
   var FAST_SUFFIX_EN = " Fast mode is on: answer in at most 4-5 short, useful sentences.";
 

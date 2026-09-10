@@ -1,0 +1,632 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>⚽ هدبال | بازی‌های Lumitek</title>
+<meta name="description" content="بازی هدبال لومیتک — فوتبال تک‌به‌تک آنلاین با پرش و شوت؛ ۵ گل بزن و حریف هوشمند را شکست بده. با XP و سکه و رکورد!">
+<meta name="keywords" content="لومیتک, lumitek, بازی فوتبال, هدبال, بازی ورزشی آنلاین, head ball, خرید سکه, وب اپلیکیشن">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#070b15">
+<link rel="canonical" href="https://lumitek.netlify.app/pages/headball.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Lumitek">
+<meta property="og:title" content="⚽ هدبال | بازی‌های Lumitek">
+<meta property="og:description" content="فوتبال تک‌به‌تک با پرش و شوت — ۵ گل بزن و حریف هوشمند را شکست بده!">
+<meta property="og:url" content="https://lumitek.netlify.app/pages/headball.html">
+<meta property="og:image" content="https://lumitek.netlify.app/assets/icons/og-cover.png">
+<meta property="og:locale" content="fa_IR">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="⚽ هدبال | بازی‌های Lumitek">
+<meta name="twitter:description" content="فوتبال تک‌به‌تک با پرش و شوت — ۵ گل بزن و حریف هوشمند را شکست بده!">
+<meta name="twitter:image" content="https://lumitek.netlify.app/assets/icons/og-cover.png">
+<link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+<link rel="apple-touch-icon" href="../assets/icons/icon-192.png">
+<link rel="manifest" href="../manifest.json">
+<link rel="preconnect" href="https://fontnegar.ir/" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fontnegar.ir/css2?family=shabnam:wght@100;300;400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="../css/style.css">
+<script>try{var t=localStorage.getItem("lumitek_theme");if(t==="light")document.documentElement.classList.add("light");var l=localStorage.getItem("lumitek_lang");if(l==="en"){document.documentElement.lang="en";document.documentElement.dir="ltr"}else{document.documentElement.lang="fa";document.documentElement.dir="rtl"}}catch(e){}</script>
+<style>
+  .hb-hud { display: flex; gap: 10px; justify-content: center; align-items: center; flex-wrap: wrap; }
+  .hb-score { display: inline-flex; align-items: center; gap: 8px; padding: 8px 18px; border-radius: 14px; font-weight: 900; font-size: 1.05rem; background: rgba(8,13,24,.6); border: 1px solid rgba(255,255,255,.12); }
+  .hb-score.me b { color: var(--a); }
+  .hb-score.ai b { color: #ff9e8a; }
+</style>
+</head>
+<body data-game="headball">
+<div id="offlineBanner" class="offline-banner" data-i18n="offline.banner">🔌 حالت آفلاین — صفحه‌ها و بازی‌ها از حافظه اجرا می‌شوند و اخبار از آخرین نسخه ذخیره‌شده نمایش داده می‌شوند.</div>
+<!--LT5-CHROME-->
+<header class="site-header">
+  <a class="brand" href="../index.html"><img class="brand-logo" src="../assets/icons/logo-lt.png" alt="Lumitek" width="46" height="46"><span class="brand-word">Lumitek</span></a>
+  <nav class="main-nav" id="mainNav">
+    <a href="../index.html" data-i18n="nav.home">nav.home</a>
+    <a href="../pages/tools.html" data-i18n="nav.tools">nav.tools</a>
+    <a href="../pages/games.html" data-i18n="nav.games">nav.games</a>
+    <a href="../pages/store.html" data-i18n="nav.store">nav.store</a>
+    <a href="../pages/sports.html" data-i18n="nav.sports">nav.sports</a>
+    <a href="../pages/digital-news.html" data-i18n="nav.digitalnews">اخبار دیجیتال 📰</a>
+    <a href="../pages/ai.html" data-i18n="nav.ai">لومیتک ای‌آی ✨</a>
+    <a href="../pages/download.html" class="nav-mid2" data-i18n="nav.download">nav.download</a>
+    <a href="../pages/technology.html" class="nav-extra" data-i18n="nav.tech">nav.tech</a>
+    <a href="../pages/articles.html" class="nav-mid" data-i18n="nav.articles">nav.articles</a>
+    <a href="../pages/announcements.html" class="nav-mid" data-i18n="nav.updates">nav.updates</a>
+    <a href="../pages/about.html" class="nav-extra" data-i18n="nav.about">nav.about</a>
+    <a href="../pages/contact.html" class="nav-extra" data-i18n="nav.contact">nav.contact</a>
+    <a href="../pages/account.html" class="nav-extra" data-i18n="nav.account">nav.account</a>
+    <a href="../pages/donate.html" class="nav-extra" data-i18n="nav.donate">nav.donate</a>
+    <a href="../pages/support.html" data-i18n="nav.supportE">nav.supportE</a>
+  </nav>
+  <div class="header-actions">
+    <button id="languageToggle" class="icon-btn" data-i18n-title="nav.home" title="Language">EN</button>
+    <button id="themeToggle" class="icon-btn" aria-label="Theme">☀️</button>
+    <button id="notificationButton" class="icon-btn notification-btn">🔔<span id="notificationCount">0</span></button>
+    <button id="changelogButton" class="icon-btn" aria-label="Changelog" title="تغییرات">🕒</button>
+    <button id="profileButton" class="profile-btn"><span data-profile-avatar>🙂</span> <span data-profile-name>Lumitek User</span></button>
+    <button id="menuToggle" class="icon-btn menu-toggle" aria-label="Menu">☰</button>
+  </div>
+</header>
+<div id="notificationPanel" class="notification-panel">
+  <div class="panel-title" data-i18n="notif.title">اعلان‌ها</div>
+  <div id="notificationList"></div>
+</div>
+<div id="changelogPanel" class="notification-panel changelog-panel">
+  <div class="panel-title" data-i18n="ch.title">🕒 تغییرات نسخه‌ها</div>
+  <div id="changelogList"></div>
+  <a class="cl-all" href="../pages/announcements.html" data-i18n="ch.all">مشاهده همه تغییرات →</a>
+</div>
+<div id="profileModal" class="modal">
+  <div class="modal-card">
+    <button id="profileClose" class="modal-close">×</button>
+    <div class="pm-head"><span class="pm-avatar" data-profile-avatar>🙂</span><div><h2 data-i18n="pm.title">پروفایل کاربر</h2><span class="pm-title" data-profile-title>تازه‌کار</span></div></div>
+    <label data-i18n="pm.nameLabel">نام نمایشی</label>
+    <input id="profileNameInput" maxlength="24" data-i18n-ph="pm.namePh" placeholder="نام شما">
+    <div class="xpbar"><div class="xpbar-fill" data-profile-xpbar style="width:0%"></div></div>
+    <p class="muted" style="font-size:.75rem;margin:0 0 10px" data-profile-xptext>0 / 100 XP</p>
+    <div class="profile-stats">
+      <div><span data-i18n="coins.level">سطح</span><strong data-profile-level>1</strong></div>
+      <div><span data-i18n="acc.xp">XP</span><strong data-profile-xp>0</strong></div>
+      <div><span data-i18n="coins.unit">سکه</span><strong data-profile-coins>0</strong></div>
+      <div><span data-i18n="pm.games">بازی‌ها</span><strong data-games-played>0</strong></div>
+    </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <button id="profileSave" class="primary-btn" data-i18n="pm.save" style="flex:1">ذخیره</button>
+      <a class="ghost-btn" href="../pages/account.html" data-i18n="pm.fullAccount">حساب کامل</a>
+    </div>
+    <div class="pm-auth-row" id="pmAuthArea">
+      <button id="pmAuthButton" class="primary-btn" data-i18n="pm.signIn" data-auth-open>🔓 ورود / ثبت‌نام</button>
+      <span class="auth-email" id="pmAuthEmail" style="display:none"></span>
+      <button id="pmLogout" class="ghost-btn" style="display:none" data-i18n="pm.signOut">خروج</button>
+    </div>
+  </div>
+</div>
+
+<main class="page"><div class="game">
+<p class="eyebrow">LUMITEK GAME · NEW</p>
+<h1 data-i18n="g.headball.n">⚽ هدبال</h1>
+<p class="muted" data-i18n="g.headball.d">فوتبال تک‌به‌تک پر هیجان! بپر، شوت کن، ۵ گل بزن و حریف هوشمند را شکست بده.</p>
+
+<div class="gamebox mt hb-wrap">
+  <div class="hb-hud">
+    <span class="hb-score me">🧑 شما <b id="hbMe">۰</b></span>
+    <span class="hb-score ai">🤖 حریف <b id="hbAi">۰</b></span>
+    <span class="coin-pill">🏆 <span data-i18n="games.yourBest">رکورد شما</span>: <b id="hbBest">—</b></span>
+  </div>
+  <div class="hb-stage"><canvas id="hbCanvas" width="760" height="430"></canvas></div>
+  <button class="gamebutton" id="hbStart" data-i18n="games.play">شروع بازی</button>
+  <p id="hbMsg" class="muted" style="min-height:1.6em;margin:0"></p>
+  <div class="hb-pad">
+    <span class="hb-group">
+      <button id="hbLeft" aria-label="چپ">◀</button>
+      <button id="hbRight" aria-label="راست">▶</button>
+    </span>
+    <span class="hb-group">
+      <button id="hbJump" aria-label="پرش">⤒</button>
+      <button id="hbKick" class="hb-kick" aria-label="شوت">⚽</button>
+    </span>
+  </div>
+  <p id="hbReward" class="muted" style="margin:0"></p>
+</div>
+</div></main>
+
+<footer class="footer-v2">
+  <div class="fv-grid">
+    <div>
+      <div class="fv-brand"><img class="brand-logo" src="../assets/icons/logo-lt.png" alt="Lumitek" width="34" height="34"><span class="brand-word">Lumitek</span></div>
+      <p data-i18n="footer.tag">همه ابزارها و بازی‌های مورد نیازت، سریع و ساده — همه‌جا با هم.</p>
+      <span class="vip-badge" style="display:inline-flex">v0.1.3 · PWA</span>
+    </div>
+    <div>
+      <h4 data-i18n="footer.explore">کاوش</h4>
+      <ul>
+        <li><a href="../pages/digital-news.html" data-i18n="nav.digitalnews">اخبار دیجیتال</a></li><li><a href="../pages/technology.html" data-i18n="nav.tech">فناوری</a></li>
+        <li><a href="../pages/articles.html" class="nav-mid" data-i18n="nav.articles">مقالات</a></li>
+        <li><a href="../pages/announcements.html" class="nav-mid" data-i18n="nav.updates">تغییرات</a></li>
+        <li><a href="../pages/about.html" data-i18n="nav.about">درباره ما</a></li>
+        <li><a href="../pages/contact.html" data-i18n="nav.contact">تماس</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-i18n="footer.services">خدمات</h4>
+      <ul>
+        <li><a href="../pages/store.html" data-i18n="nav.store">فروشگاه</a></li>
+        <li><a href="../pages/store.html#coins" data-i18n="nav.coins">خرید سکه</a></li>
+        <li><a href="../pages/account.html" data-i18n="nav.account">حساب کاربری</a></li>
+        <li><a href="../pages/download.html" class="nav-mid2" data-i18n="nav.download">دانلود اپ</a></li>
+        <li><a href="../pages/donate.html" style="color:var(--a)" data-i18n="nav.donate">حمایت مالی</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-i18n="footer.newsletter">خبرنامه Lumitek</h4>
+      <p data-i18n="footer.newsText">از امکانات جدید زودتر باخبر شو.</p>
+      <form class="news-row" id="newsletterForm">
+        <input type="email" required data-i18n-ph="footer.newsPh" placeholder="ایمیل شما" aria-label="email">
+        <button type="submit" data-i18n="footer.newsBtn">عضویت</button>
+      </form>
+    </div>
+  </div>
+  <div class="fv-social">
+    <div class="fv-social-title" data-i18n="footer.socialT">ما را در شبکه‌های اجتماعی دنبال کنید</div>
+    <div class="fv-social-row">
+      <a href="https://www.aparat.com/lumitek" target="_blank" rel="noopener" title="آپارات" aria-label="Aparat">
+        <svg width="26" height="26" viewBox="0 0 32 32"><rect x="1" y="1" width="30" height="30" rx="9" fill="#DF0F38"/><path d="M11 9.5l13 6.5-13 6.5v-13z" fill="#fff"/></svg>
+        <span>آپارات</span></a>
+      <a href="https://bale.ai/lumitek" target="_blank" rel="noopener" title="بله" aria-label="Bale">
+        <svg width="26" height="26" viewBox="0 0 32 32"><rect x="1" y="1" width="30" height="30" rx="9" fill="#00A693"/><path d="M8 22V10h5.2c2.6 0 4.3 1.3 4.3 3.4 0 1.5-.8 2.6-2.1 3.1l3.3 5.5h-3.4l-2.8-5h-1.4v5H8zm3.1-7.4h1.9c1 0 1.6-.5 1.6-1.3s-.6-1.3-1.6-1.3h-1.9v2.6z" fill="#fff"/><circle cx="22.5" cy="11.5" r="2.5" fill="#fff"/></svg>
+        <span>بله</span></a>
+      <a href="https://eitaa.com/lumitek" target="_blank" rel="noopener" title="ایتا" aria-label="Eitaa">
+        <svg width="26" height="26" viewBox="0 0 32 32"><rect x="1" y="1" width="30" height="30" rx="9" fill="#F5793B"/><path d="M25 8.5L6.5 15.7c-.7.3-.6 1.3.1 1.4l4.6 1.2 1.7 5.2c.2.7 1.1.8 1.5.2l2.3-3 4.6 3.4c.6.4 1.4.1 1.6-.6L26.4 9.6c.2-.8-.6-1.4-1.4-1.1zm-9.8 10.6l-.4 3 1.6-2.4-1.2-.6z" fill="#fff"/></svg>
+        <span>ایتا</span></a>
+      <a href="https://rubika.ir/lumitek" target="_blank" rel="noopener" title="روبیکا" aria-label="Rubika">
+        <svg width="26" height="26" viewBox="0 0 32 32"><rect x="1" y="1" width="30" height="30" rx="9" fill="#8E24AA"/><path d="M9 24V8h6.5c3.4 0 5.5 1.7 5.5 4.5 0 2-.9 3.4-2.6 4.1l4 7.4h-4.2l-3.4-6.6h-1.9V24H9zm3.9-9.6h2.4c1.4 0 2.2-.7 2.2-1.9s-.8-1.9-2.2-1.9h-2.4v3.8z" fill="#fff"/></svg>
+        <span>روبیکا</span></a>
+    </div>
+  </div>
+  <div class="fv-bottom">
+    <span data-i18n="footer.rights">© 2026 Lumitek — همه حقوق محفوظ است.</span>
+    <span data-i18n="footer.made">ساخته‌شده با ❤ و بدون فریم‌ورک</span>
+  </div>
+</footer>
+
+<script src="../js/i18n.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/main.js"></script>
+<script>
+/* ============================================================
+   Lumitek 1.2 — هدبال (HeadBall) | فوتبال تک‌به‌تک
+   زمین استادیوم + فیزیک توپ + حریف هوشمند + جشن گل
+   ============================================================ */
+(function () {
+  function L(fa, en) { return getLang() === "fa" ? fa : en; }
+  function faNum(n) { return getLang() === "fa" ? String(n).replace(/\d/g, function (d) { return "۰۱۲۳۴۵۶۷۸۹"[+d]; }) : String(n); }
+  function $(id) { return document.getElementById(id); }
+
+  var cv = $("hbCanvas"), ctx = cv.getContext("2d");
+  var W = cv.width, H = cv.height;
+  var GROUND = H - 42, GOAL_W = 52, GOAL_H = 122;
+  var WIN_GOALS = 5;
+
+  var startBtn = $("hbStart"), msgEl = $("hbMsg"), rewardEl = $("hbReward");
+  var meEl = $("hbMe"), aiEl = $("hbAi"), bestEl = $("hbBest");
+
+  var p0 = getProfile();
+  if (p0.bests.headballGoals != null) bestEl.textContent = faNum(p0.bests.headballGoals);
+
+  /* ---------- state ---------- */
+  var me, ai, ball, running = false, over = false;
+  var scoreMe = 0, scoreAi = 0, goals = 0;
+  var crowd = [], confetti = [], shake = 0, bannerT = 0;
+  var keys = { left: false, right: false, jump: false, kick: false };
+  var roundFreeze = 0; /* مکث کوتاه بعد از گل */
+
+  for (var ci = 0; ci < 90; ci++) {
+    crowd.push({ x: Math.random() * W, y: 34 + Math.random() * 66, c: "hsl(" + (Math.random() * 360 | 0) + ",55%,60%)", ph: Math.random() * 6.28 });
+  }
+
+  function resetRound(dir) {
+    ball = { x: W / 2, y: 120, vx: dir * 2.2, vy: 0, r: 13, rot: 0 };
+    me.x = 130; me.y = GROUND - 30; me.vx = 0; me.vy = 0; me.kick = 0; me.onGround = true;
+    ai.x = W - 130; ai.y = GROUND - 30; ai.vx = 0; ai.vy = 0; ai.kick = 0; ai.onGround = true;
+    roundFreeze = 42;
+  }
+  function newMatch() {
+    scoreMe = 0; scoreAi = 0; goals = 0; over = false;
+    me = { x: 130, y: GROUND - 30, vx: 0, vy: 0, r: 24, kick: 0, onGround: true, face: 1 };
+    ai = { x: W - 130, y: GROUND - 30, vx: 0, vy: 0, r: 24, kick: 0, onGround: true, face: -1 };
+    resetRound(1);
+    updScore();
+    rewardEl.textContent = "";
+    msgEl.textContent = L("اولین نفری که " + faNum(WIN_GOALS) + " گل بزند برنده است! ⚽", "First to " + WIN_GOALS + " goals wins! ⚽");
+  }
+
+  function updScore() { meEl.textContent = faNum(scoreMe); aiEl.textContent = faNum(scoreAi); }
+
+  /* ---------- صدا (WebAudio کوچک) ---------- */
+  var AC = null;
+  function beep(f, dur, type, vol) {
+    try {
+      if (!AC) AC = new (window.AudioContext || window.webkitAudioContext)();
+      var o = AC.createOscillator(), g = AC.createGain();
+      o.type = type || "triangle"; o.frequency.value = f;
+      g.gain.value = vol || 0.06;
+      o.connect(g); g.connect(AC.destination);
+      var t = AC.currentTime;
+      g.gain.setValueAtTime(g.gain.value, t);
+      g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+      o.start(t); o.stop(t + dur + 0.02);
+    } catch (e) {}
+  }
+
+  /* ---------- منطق ---------- */
+  function step() {
+    if (!running) return;
+    if (shake > 0) shake *= 0.86;
+    if (bannerT > 0) bannerT--;
+
+    if (roundFreeze > 0) {
+      roundFreeze--;
+    } else {
+      /* بازیکن */
+      var SPD = 4.4;
+      if (keys.left) me.vx = -SPD;
+      else if (keys.right) me.vx = SPD;
+      else me.vx *= 0.6;
+      me.x += me.vx;
+      if (keys.jump && me.onGround) { me.vy = -12.2; me.onGround = false; beep(300, 0.1, "sine", 0.03); }
+      me.vy += 0.62; me.y += me.vy;
+      if (me.y >= GROUND - 30) { me.y = GROUND - 30; me.vy = 0; me.onGround = true; }
+      me.x = Math.max(me.r + 8, Math.min(W / 2 - 26, me.x));
+      if (me.face !== 1) me.face = 1;
+      if (keys.kick && me.kick <= 0) { me.kick = 14; }
+      if (me.kick > 0) me.kick--;
+
+      /* حریف هوشمند — با هر گل تو کمی سریع‌تر می‌شود */
+      var lvl = Math.min(4, scoreMe); /* هر چه جلو بیفتی، حریف جدی‌تر */
+      var aiSpd = 3.1 + lvl * 0.35;
+      var home = W - 150;
+      var targetX = (ball.x > W / 2 - 30) ? (ball.x + 42) : home;
+      if (Math.abs(ball.x - ai.x) < 90 && ball.y < GROUND - 150) { if (Math.random() < 0.07 + lvl * 0.015) ai.vy = -11.6; }
+      if (ball.x > ai.x - 6 && ball.x < ai.x + 70 && ball.y > GROUND - 190 && Math.random() < 0.1 + lvl * 0.02) ai.kick = 14;
+      var dx = targetX - ai.x;
+      ai.vx = Math.abs(dx) > 6 ? Math.sign(dx) * aiSpd : ai.vx * 0.6;
+      ai.x += ai.vx;
+      ai.vy += 0.62; ai.y += ai.vy;
+      if (ai.y >= GROUND - 30) { ai.y = GROUND - 30; ai.vy = 0; ai.onGround = true; }
+      ai.x = Math.max(W / 2 + 26, Math.min(W - ai.r - 8, ai.x));
+      if (ai.kick > 0) ai.kick--;
+
+      /* توپ */
+      ball.vy += 0.44; ball.vx *= 0.996;
+      ball.x += ball.vx; ball.y += ball.vy;
+      ball.rot += ball.vx * 0.05;
+      if (ball.y + ball.r > GROUND) { ball.y = GROUND - ball.r; ball.vy *= -0.72; if (Math.abs(ball.vy) < 1.2) ball.vy = 0; }
+      if (ball.y - ball.r < 12) { ball.y = 12 + ball.r; ball.vy *= -0.6; }
+      /* دیوارهای بالای دروازه‌ها */
+      if (ball.y <= GROUND - GOAL_H) {
+        if (ball.x - ball.r < GOAL_W) { ball.x = GOAL_W + ball.r; ball.vx = Math.abs(ball.vx) * 0.7; }
+        if (ball.x + ball.r > W - GOAL_W) { ball.x = W - GOAL_W - ball.r; ball.vx = -Math.abs(ball.vx) * 0.7; }
+      }
+      /* داخل دروازه؟ */
+      if (ball.y > GROUND - GOAL_H) {
+        if (ball.x < 14) { goal("ai"); return; }
+        if (ball.x > W - 14) { goal("me"); return; }
+      }
+
+      /* برخورد سر بازیکن‌ها */
+      hitHead(me, 1); hitHead(ai, -1);
+      /* برخورد لگد */
+      if (me.kick > 6) kickBall(me, 1);
+      if (ai.kick > 6) kickBall(ai, -1);
+    }
+
+    /* کانفتی */
+    for (var i = confetti.length - 1; i >= 0; i--) {
+      var c = confetti[i];
+      c.vy += 0.16; c.x += c.vx; c.y += c.vy; c.life--;
+      if (c.life <= 0) confetti.splice(i, 1);
+    }
+
+    draw();
+    requestAnimationFrame(step);
+  }
+
+  function hitHead(p, side) {
+    var dx = ball.x - p.x, dy = ball.y - p.y;
+    var d = Math.sqrt(dx * dx + dy * dy);
+    var min = ball.r + p.r;
+    if (d < min && d > 0.01) {
+      var nx = dx / d, ny = dy / d;
+      ball.x = p.x + nx * min; ball.y = p.y + ny * min;
+      var pv = (side === 1 ? p.vx : -p.vx) * 0.55;
+      ball.vx = nx * 8.4 + pv;
+      ball.vy = ny * 8.4 - 3.2;
+      if (ball.vy > -2) ball.vy = -2 - Math.random() * 2;
+      beep(210 + Math.random() * 40, 0.07, "square", 0.045);
+    }
+  }
+  function kickBall(p, side) {
+    var fx = p.x + side * 30, fy = p.y + 22;
+    var dx = ball.x - fx, dy = ball.y - fy;
+    var d = Math.sqrt(dx * dx + dy * dy);
+    if (d < ball.r + 15) {
+      ball.vx = side * (13.5 + Math.random() * 2.5);
+      ball.vy = -7.6 - Math.random() * 1.6;
+      beep(520, 0.09, "triangle", 0.06);
+      p.kick = 6;
+    }
+  }
+
+  function goal(who) {
+    if (who === "me") { scoreMe++; goals++; beep(660, 0.16, "sine", 0.07); setTimeout(function () { beep(880, 0.22, "sine", 0.07); }, 130); }
+    else { scoreAi++; beep(220, 0.24, "sawtooth", 0.05); }
+    updScore();
+    shake = 14; bannerT = 80;
+    msgEl.textContent = who === "me" ? L("⚽ گُُُل! آفرین!", "⚽ GOOOAL! Well played!") : L("😬 گل خوردی — دفاع رو محکم‌تر کن!", "😬 Conceded — defend harder!");
+    for (var i = 0; i < 60; i++) {
+      confetti.push({ x: W / 2 + (Math.random() - 0.5) * 200, y: H * 0.3, vx: (Math.random() - 0.5) * 7, vy: -Math.random() * 6 - 1, c: "hsl(" + (Math.random() * 360 | 0) + ",90%,62%)", life: 46 + Math.random() * 26, s: 3 + Math.random() * 4 });
+    }
+    try { window.GameScrollLock && GameScrollLock.lock(); } catch (e) {}
+    if (scoreMe >= WIN_GOALS || scoreAi >= WIN_GOALS) { endMatch(scoreMe >= WIN_GOALS); return; }
+    resetRound(who === "me" ? 1 : -1);
+  }
+
+  function endMatch(win) {
+    running = false; over = true;
+    startBtn.textContent = L("بازی مجدد", "Play again");
+    var xp, coins;
+    if (win) {
+      xp = Math.min(150, 90 + goals * 8);
+      coins = Math.min(40, 22 + goals * 2);
+      msgEl.textContent = L("🏆 بردی! " + faNum(scoreMe) + " به " + faNum(scoreAi) + " — تیم تو قهرمان شد!", "🏆 You win " + scoreMe + "-" + scoreAi + " — champion!");
+      beep(660, 0.14, "sine", 0.07); setTimeout(function () { beep(880, 0.2, "sine", 0.07); }, 150);
+    } else {
+      xp = Math.min(60, goals * 7);
+      coins = Math.min(18, goals * 2);
+      msgEl.textContent = L("😅 باختی " + faNum(scoreAi) + " به " + faNum(scoreMe) + " — دفعه بعد می‌بری!", "😅 Lost " + scoreAi + "-" + scoreMe + " — next time!");
+      beep(200, 0.3, "sawtooth", 0.05);
+    }
+    try { updateBest("headballGoals", goals, false); } catch (e) {}
+    try {
+      var r = Lumitek.reward({ game: "headball", score: goals, xp: xp, coins: coins });
+      bestEl.textContent = faNum(getProfile().bests.headballGoals);
+      rewardEl.textContent = (win || goals > 0)
+        ? L("+" + faNum(r.xp) + " XP · +" + faNum(r.coins) + " سکه 🎮", "+" + r.xp + " XP · +" + r.coins + " coins 🎮")
+        : L("این بار بیشتر تلاش کن 💪", "Try harder this time 💪");
+    } catch (e) {}
+    try { window.GameScrollLock && GameScrollLock.unlock(); } catch (e) {}
+    LumitekGameOver.show({
+      win: !!win,
+      title: win ? L("🏆 Champion!", "🏆 قهرمان شدی!") : L("😅 Not this time", "😅 این بار نشد"),
+      sub: win ? L("The crowd is chanting your name!", "استادیوم اسم تو را فریاد می‌زند!") : L("Train and come back stronger!", "تمرین کن و قوی‌تر برگرد!"),
+      stats: [["⚽ " + fa("You","تو"), faNum(scoreMe)], ["🥅 " + fa("Rival","حریف"), faNum(scoreAi)]],
+      reward: rewardEl.textContent
+    });
+    draw();
+  }
+
+  /* ---------- رسم ---------- */
+  function draw() {
+    ctx.save();
+    if (shake > 0.4) ctx.translate((Math.random() - 0.5) * shake, (Math.random() - 0.5) * shake);
+
+    /* آسمان استادیوم */
+    var sky = ctx.createLinearGradient(0, 0, 0, GROUND);
+    sky.addColorStop(0, "#101a33"); sky.addColorStop(0.55, "#182949"); sky.addColorStop(1, "#1d3358");
+    ctx.fillStyle = sky; ctx.fillRect(-20, -20, W + 40, H + 40);
+
+    /* نورافکن‌ها */
+    [[110, 0], [W - 110, 0]].forEach(function (p) {
+      var g = ctx.createRadialGradient(p[0], 8, 6, p[0], 8, 190);
+      g.addColorStop(0, "rgba(255,244,200,.5)"); g.addColorStop(1, "transparent");
+      ctx.fillStyle = g; ctx.beginPath(); ctx.arc(p[0], 8, 190, 0, 6.3); ctx.fill();
+      ctx.fillStyle = "#0b1226"; ctx.fillRect(p[0] - 26, 0, 52, 14);
+      ctx.fillStyle = "#ffe9a8"; ctx.fillRect(p[0] - 18, 2, 36, 6);
+    });
+
+    /* تماشاگران */
+    var t = performance.now() * 0.003;
+    crowd.forEach(function (c) {
+      var yy = c.y + Math.sin(t + c.ph) * 3;
+      ctx.globalAlpha = 0.55;
+      ctx.fillStyle = c.c;
+      ctx.beginPath(); ctx.arc(c.x, yy, 3.1, 0, 6.3); ctx.fill();
+    });
+    ctx.globalAlpha = 1;
+    /* تابلو تبلیغاتی */
+    ctx.fillStyle = "#0d1730"; ctx.fillRect(0, 100, W, 22);
+    ctx.strokeStyle = "rgba(124,167,255,.35)"; ctx.strokeRect(0.5, 100.5, W - 1, 21);
+    ctx.fillStyle = "rgba(118,230,195,.8)"; ctx.font = "bold 12px Inter,sans-serif"; ctx.textAlign = "center";
+    ctx.fillText("L U M I T E K   ⚽   S P O R T E K", W / 2, 115);
+
+    /* چمن */
+    var grass = ctx.createLinearGradient(0, 122, 0, H);
+    grass.addColorStop(0, "#1f7a44"); grass.addColorStop(1, "#155c33");
+    ctx.fillStyle = grass; ctx.fillRect(0, 122, W, H - 122);
+    for (var s = 0; s < 8; s++) {
+      ctx.fillStyle = s % 2 ? "rgba(255,255,255,.045)" : "transparent";
+      ctx.fillRect((W / 8) * s, 122, W / 8, H - 122);
+    }
+    /* خط وسط و دایره */
+    ctx.strokeStyle = "rgba(255,255,255,.35)"; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.moveTo(W / 2, 122); ctx.lineTo(W / 2, H); ctx.stroke();
+    ctx.beginPath(); ctx.arc(W / 2, GROUND - 8, 64, Math.PI, 0, false); ctx.stroke();
+
+    /* دروازه‌ها */
+    drawGoal(0, 1); drawGoal(W - GOAL_W, -1);
+
+    /* سایه توپ */
+    var sh = Math.max(0.25, 1 - (GROUND - ball.y) / 260);
+    ctx.fillStyle = "rgba(0,0,0," + (0.3 * sh) + ")";
+    ctx.beginPath(); ctx.ellipse(ball.x, GROUND + 4, ball.r * (0.6 + sh * 0.6), 4.5, 0, 0, 6.3); ctx.fill();
+
+    /* بازیکن‌ها */
+    drawPlayer(me, "#76e6c3", "#0e8f74", "۱۰", true);
+    drawPlayer(ai, "#ff9e8a", "#c2543f", "۹", false);
+
+    /* توپ */
+    ctx.save();
+    ctx.translate(ball.x, ball.y); ctx.rotate(ball.rot);
+    var bg = ctx.createRadialGradient(-4, -5, 2, 0, 0, ball.r);
+    var skHb = (window.Lumitek && Lumitek.skin) ? GAME_SKINS[Lumitek.skin("headball")] : null;
+    bg.addColorStop(0, skHb && skHb.ball ? skHb.ball : "#ffffff"); bg.addColorStop(1, skHb && skHb.ball ? skHb.ball : "#cfd6e4");
+    ctx.fillStyle = bg;
+    ctx.beginPath(); ctx.arc(0, 0, ball.r, 0, 6.3); ctx.fill();
+    ctx.fillStyle = "#17233c";
+    ctx.beginPath(); ctx.arc(0, 0, 3.4, 0, 6.3); ctx.fill();
+    for (var k = 0; k < 5; k++) {
+      var a = k * 1.256;
+      ctx.beginPath(); ctx.arc(Math.cos(a) * 8, Math.sin(a) * 8, 2.6, 0, 6.3); ctx.fill();
+    }
+    ctx.restore();
+
+    /* کانفتی */
+    confetti.forEach(function (c) {
+      ctx.fillStyle = c.c; ctx.globalAlpha = Math.min(1, c.life / 22);
+      ctx.fillRect(c.x, c.y, c.s, c.s);
+    });
+    ctx.globalAlpha = 1;
+
+    /* بنر گل */
+    if (bannerT > 0) {
+      var sc = 1 + Math.max(0, (bannerT - 60)) * 0.04;
+      ctx.save();
+      ctx.translate(W / 2, H * 0.34); ctx.scale(sc, sc);
+      ctx.font = "900 54px Inter,sans-serif";
+      ctx.textAlign = "center"; ctx.textBaseline = "middle";
+      ctx.shadowColor = "rgba(118,230,195,.9)"; ctx.shadowBlur = 26;
+      ctx.fillStyle = "#ffffff";
+      ctx.fillText(getLang() === "fa" ? "گُُُل!" : "GOAL!", 0, 0);
+      ctx.restore();
+    }
+
+    ctx.restore();
+  }
+
+  function drawGoal(x0, dir) {
+    var top = GROUND - GOAL_H;
+    /* تور */
+    ctx.save();
+    ctx.strokeStyle = "rgba(255,255,255,.28)"; ctx.lineWidth = 1;
+    for (var i = 1; i < 6; i++) {
+      ctx.beginPath(); ctx.moveTo(x0 + (GOAL_W / 6) * i * dir, top); ctx.lineTo(x0 + (GOAL_W / 6) * i * dir, GROUND); ctx.stroke();
+    }
+    for (var j = 1; j < 8; j++) {
+      ctx.beginPath(); ctx.moveTo(x0, top + (GOAL_H / 8) * j); ctx.lineTo(x0 + GOAL_W * dir, top + (GOAL_H / 8) * j); ctx.stroke();
+    }
+    ctx.restore();
+    /* تیرها */
+    ctx.strokeStyle = "#f4f7ff"; ctx.lineWidth = 5; ctx.lineCap = "round";
+    ctx.beginPath(); ctx.moveTo(x0, GROUND); ctx.lineTo(x0, top); ctx.lineTo(x0 + GOAL_W * dir, top); ctx.stroke();
+  }
+
+  function drawPlayer(p, c1, c2, num, isMe) {
+    /* بدن (سر بزرگ = سبک هدبال) */
+    ctx.save();
+    var bob = p.onGround ? 0 : Math.sin(performance.now() * 0.02) * 1.2;
+    ctx.translate(p.x, p.y + bob);
+    /* پاها */
+    ctx.strokeStyle = "#2a3a5c"; ctx.lineWidth = 6; ctx.lineCap = "round";
+    ctx.beginPath(); ctx.moveTo(-7, 18); ctx.lineTo(-8, 30); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(7, 18); ctx.lineTo(8, 30); ctx.stroke();
+    /* لگد */
+    if (p.kick > 0) {
+      var dir = isMe ? 1 : -1;
+      var ext = p.kick > 7 ? (14 - p.kick) : p.kick;
+      ctx.strokeStyle = "#ffd9b8"; ctx.lineWidth = 7;
+      ctx.beginPath(); ctx.moveTo(0, 14); ctx.lineTo(dir * (12 + ext * 1.8), 22 + ext * 0.4); ctx.stroke();
+      ctx.fillStyle = "#111";
+      ctx.beginPath(); ctx.arc(dir * (12 + ext * 1.8), 22 + ext * 0.4, 5.5, 0, 6.3); ctx.fill();
+    }
+    /* سر */
+    var g = ctx.createRadialGradient(-6, -8, 3, 0, 0, p.r);
+    g.addColorStop(0, "#ffd9b8"); g.addColorStop(1, "#f0b28c");
+    ctx.fillStyle = g;
+    ctx.beginPath(); ctx.arc(0, 0, p.r, 0, 6.3); ctx.fill();
+    /* مو */
+    ctx.fillStyle = isMe ? "#20242e" : "#5a2d1c";
+    ctx.beginPath(); ctx.arc(0, -4, p.r, Math.PI * 1.05, Math.PI * 1.95); ctx.fill();
+    /* پیراهن (نیم‌دایره پایین) */
+    ctx.fillStyle = c1;
+    ctx.beginPath(); ctx.arc(0, 2, p.r - 1.5, 0.45, Math.PI - 0.45); ctx.fill();
+    ctx.fillStyle = c2;
+    ctx.fillRect(-p.r + 2, 10, p.r * 2 - 4, 5);
+    /* شماره */
+    ctx.fillStyle = "#08121f"; ctx.font = "900 12px Inter,sans-serif"; ctx.textAlign = "center";
+    ctx.fillText(num, 0, 18);
+    /* چشم‌ها */
+    var look = isMe ? 5 : -5;
+    ctx.fillStyle = "#101828";
+    ctx.beginPath(); ctx.arc(look - 4, -4, 2.4, 0, 6.3); ctx.fill();
+    ctx.beginPath(); ctx.arc(look + 5, -4, 2.4, 0, 6.3); ctx.fill();
+    ctx.restore();
+  }
+
+  /* ---------- کنترل‌ها ---------- */
+  function start() {
+    if (running) return;
+    newMatch();
+    running = true;
+    startBtn.textContent = L("در حال بازی...", "Playing...");
+    try { window.GameScrollLock && GameScrollLock.lock(); } catch (e) {}
+    requestAnimationFrame(step);
+  }
+  startBtn.onclick = start;
+
+  document.addEventListener("keydown", function (e) {
+    var k = e.key.toLowerCase();
+    if (["arrowleft", "a"].indexOf(k) !== -1) { keys.left = true; e.preventDefault(); }
+    if (["arrowright", "d"].indexOf(k) !== -1) { keys.right = true; e.preventDefault(); }
+    if (["arrowup", "w"].indexOf(k) !== -1) { keys.jump = true; e.preventDefault(); }
+    if (k === " ") { if (!running) start(); else keys.kick = true; e.preventDefault(); }
+  });
+  document.addEventListener("keyup", function (e) {
+    var k = e.key.toLowerCase();
+    if (["arrowleft", "a"].indexOf(k) !== -1) keys.left = false;
+    if (["arrowright", "d"].indexOf(k) !== -1) keys.right = false;
+    if (["arrowup", "w"].indexOf(k) !== -1) keys.jump = false;
+    if (k === " ") keys.kick = false;
+  });
+  function bindHold(id, on, off) {
+    var el = $(id);
+    el.addEventListener("touchstart", function (e) { e.preventDefault(); if (!running) start(); on(); }, { passive: false });
+    el.addEventListener("touchend", function (e) { e.preventDefault(); off(); }, { passive: false });
+    el.addEventListener("mousedown", function () { if (!running) start(); on(); });
+    el.addEventListener("mouseup", off);
+    el.addEventListener("mouseleave", off);
+  }
+  bindHold("hbLeft", function () { keys.left = true; }, function () { keys.left = false; });
+  bindHold("hbRight", function () { keys.right = true; }, function () { keys.right = false; });
+  bindHold("hbJump", function () { keys.jump = true; }, function () { keys.jump = false; });
+  bindHold("hbKick", function () { if (!running) { start(); return; } keys.kick = true; }, function () { keys.kick = false; });
+
+  document.addEventListener("lumitek:langchange", function () {
+    if (over) startBtn.textContent = L("بازی مجدد", "Play again");
+    else if (!running) startBtn.textContent = L("شروع بازی", "Play");
+  });
+
+  newMatch();
+  running = false;
+  draw();
+})();
+</script>
+<script>
+/* Lumitek — هنگام بازی صفحه جابه‌جا نشود */
+(function(){
+  function isGameKey(k){ return k==="ArrowUp"||k==="ArrowDown"||k==="ArrowLeft"||k==="ArrowRight"||k===" "||k==="Spacebar"; }
+  document.addEventListener("keydown", function(e){
+    if (!isGameKey(e.key)) return;
+    var t = e.target && e.target.tagName;
+    if (t === "INPUT" || t === "TEXTAREA" || t === "SELECT") return;
+    e.preventDefault();
+  }, { passive:false });
+  document.addEventListener("touchmove", function(e){
+    if (e.target && e.target.closest && e.target.closest("canvas,.hb-pad,.snake-pad,.touch-pad,.game-pad,.dpad")) e.preventDefault();
+  }, { passive:false });
+})();
+</script>
+</body>
+</html>

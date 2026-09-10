@@ -3,23 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>🔢 مبدل مبنا و هش | ابزارهای Lumitek</title>
-<meta name="description" content="تبدیل مبنا دودویی/هشت/دهدهی/شانزده، Base64 و هش SHA-256 — آفلاین و امن.">
+<title>🔤 شمارشگر واژه‌ها | Lumitek</title>
+<meta name="description" content="شمارشگر کلمات و حروف لومیتک — شمارش زنده واژه، حروف، جمله، پاراگراف، زمان مطالعه و واژه‌های پرتکرار.">
 <meta name="keywords" content="لومیتک, lumitek, ابزار آنلاین, بازی آنلاین, اخبار ورزش, پشتیبانی هوش مصنوعی, خرید سکه, وب اپلیکیشن">
 <meta name="robots" content="index,follow">
 <meta name="theme-color" content="#070b15">
-<link rel="canonical" href="https://lumitek.netlify.app/tools/basehash.html">
+<link rel="canonical" href="https://lumitek.netlify.app/tools/stopwatch.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Lumitek">
-<meta property="og:title" content="🔢 مبدل مبنا و هش | ابزارهای Lumitek">
-<meta property="og:description" content="تبدیل مبنا دودویی/هشت/دهدهی/شانزده، Base64 و هش SHA-256 — آفلاین و امن.">
+<meta property="og:title" content="🔤 شمارشگر واژه‌ها | Lumitek">
+<meta property="og:description" content="شمارشگر کلمات و حروف لومیتک — شمارش زنده واژه، حروف، جمله، پاراگراف، زمان مطالعه و واژه‌های پرتکرار.">
 <meta property="og:url" content="https://lumitek.netlify.app/tools/stopwatch.html">
 <meta property="og:image" content="https://lumitek.netlify.app/assets/icons/og-cover.png">
 <meta property="og:locale" content="fa_IR">
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="🔢 مبدل مبنا و هش | ابزارهای Lumitek">
-<meta name="twitter:description" content="تبدیل مبنا دودویی/هشت/دهدهی/شانزده، Base64 و هش SHA-256 — آفلاین و امن.">
+<meta name="twitter:title" content="🔤 شمارشگر واژه‌ها | Lumitek">
+<meta name="twitter:description" content="شمارشگر کلمات و حروف لومیتک — شمارش زنده واژه، حروف، جمله، پاراگراف، زمان مطالعه و واژه‌های پرتکرار.">
 <meta name="twitter:image" content="https://lumitek.netlify.app/assets/icons/og-cover.png">
 <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
 <link rel="apple-touch-icon" href="../assets/icons/icon-192.png">
@@ -100,49 +100,23 @@
 </div>
 
 <main class="page">
-<p class="eyebrow">LUMITEK TOOL · NEW</p>
-<h1 data-i18n="tl.baseT">🔢 مبدل مبنا و هش</h1>
-<p class="muted" data-i18n="tl.baseL">تبدیل دودویی/هشت‌دهی/دهدهی/شانزده‌شانزدهی، کد Base64 و هش SHA — آفلاین و امن در مرورگر خودت.</p>
-
-<div class="card mt">
-  <h3>🔢 تبدیل مبنا</h3>
-  <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:10px">
-    <label style="flex:2;min-width:200px"><span class="muted" data-i18n="tl.bhIn">عدد ورودی</span>
-      <input id="bhIn" class="amount-input" dir="ltr" style="width:100%" placeholder="255">
-    </label>
-    <label style="flex:1;min-width:140px"><span class="muted" data-i18n="tl.bhBase">مبنا</span>
-      <select id="bhBase" class="amount-input" style="width:100%">
-        <option value="10" selected>دهدهی (10)</option>
-        <option value="2">دودویی (2)</option>
-        <option value="8">هشت‌دهی (8)</option>
-        <option value="16">شانزده‌دهی (16)</option>
-      </select>
-    </label>
+<p class="eyebrow">LUMITEK TOOL</p>
+<h1 id="t-title">🔤 شمارشگر واژه‌ها</h1>
+<p class="muted" id="t-lead">شمارش زنده‌ی کلمه‌ها، حروف، جمله‌ها و زمان مطالعه — همراه با پرتکرارترین واژه‌ها.</p>
+<div class="card mt2" style="max-width:760px;margin-inline:auto">
+  <textarea id="wcInput" class="textarea" rows="7" placeholder="متن خودت را اینجا بنویس یا بچسبان..."></textarea>
+  <div class="profile-stats" style="margin-top:14px;grid-template-columns:repeat(auto-fit,minmax(100px,1fr))">
+    <div><span id="wcWordsL">واژه</span><strong id="wcWords">0</strong></div>
+    <div><span id="wcCharsL">حرف</span><strong id="wcChars">0</strong></div>
+    <div><span id="wcNoSpL">بدون فاصله</span><strong id="wcNoSp">0</strong></div>
+    <div><span id="wcSentL">جمله</span><strong id="wcSent">0</strong></div>
+    <div><span id="wcParaL">پاراگراف</span><strong id="wcPara">0</strong></div>
+    <div><span id="wcReadL">زمان مطالعه</span><strong id="wcRead">0د</strong></div>
   </div>
-  <div class="grid mt" style="grid-template-columns:repeat(auto-fit,minmax(140px,1fr))">
-    <div class="card" style="margin:0"><span class="muted" style="font-size:.75rem">BIN</span><b id="bhBin" class="mono" dir="ltr" style="display:block;word-break:break-all">—</b></div>
-    <div class="card" style="margin:0"><span class="muted" style="font-size:.75rem">OCT</span><b id="bhOct" class="mono" dir="ltr" style="display:block">—</b></div>
-    <div class="card" style="margin:0"><span class="muted" style="font-size:.75rem">DEC</span><b id="bhDec" class="mono" dir="ltr" style="display:block">—</b></div>
-    <div class="card" style="margin:0"><span class="muted" style="font-size:.75rem">HEX</span><b id="bhHex" class="mono" dir="ltr" style="display:block">—</b></div>
+  <div class="result" style="margin-top:14px">
+    <b id="wcTopL">🏆 پرتکرارترین واژه‌ها</b>
+    <div id="wcTop" class="muted" style="margin-top:8px;font-size:.88rem;line-height:2">—</div>
   </div>
-  <p class="muted mt">ASCII: <b id="bhAscii" class="mono">—</b> · <span id="bhStatus" style="color:#e55"></span></p>
-</div>
-
-<div class="card mt">
-  <h3>🔐 هش و Base64</h3>
-  <textarea id="bhText" class="amount-input" rows="3" style="width:100%;margin-top:10px" placeholder="متن را وارد کن..."></textarea>
-  <div style="display:grid;gap:10px;margin-top:12px">
-    <div><span class="muted" style="font-size:.75rem">SHA-256</span><code id="bhSha256" class="mono" style="display:block;background:var(--card2);padding:9px;border-radius:10px;font-size:.68rem;direction:ltr;word-break:break-all">—</code></div>
-    <div><span class="muted" style="font-size:.75rem">SHA-1</span><code id="bhSha1" class="mono" style="display:block;background:var(--card2);padding:9px;border-radius:10px;font-size:.68rem;direction:ltr;word-break:break-all">—</code></div>
-    <div><span class="muted" style="font-size:.75rem">Base64</span><code id="bhB64" class="mono" style="display:block;background:var(--card2);padding:9px;border-radius:10px;font-size:.68rem;direction:ltr;word-break:break-all">—</code></div>
-  </div>
-  <button id="bhB64Btn" class="ghost-btn mt" style="width:100%">Base64 رمزگشایی متن بالا</button>
-</div>
-
-<div class="grid mt" style="grid-template-columns:repeat(auto-fit,minmax(230px,1fr))">
-  <div class="card"><h3>🎓 مبنا چیست؟</h3><p class="muted">کامپیوتر همه‌چیز را با ۰ و ۱ (دودویی) می‌فهمد؛ HEX برای رنگ‌ها و حافظه به کار می‌رود چون کوتاه‌تر است — مثل 255 = FF.</p></div>
-  <div class="card"><h3>🔒 هش برای چیست؟</h3><p class="muted">هش SHA اثر انگشت متن است؛ برای ذخیره امن رمز عبور و بررسی سلامت فایل‌ها استفاده می‌شود — یک‌طرفه و غیرقابل بازگشت.</p></div>
-  <div class="card"><h3>⚡ کاملاً آفلاین</h3><p class="muted">همه محاسبات با Web Crypto در مرورگر خودت انجام می‌شود؛ هیچ متنی به سرور ارسال نمی‌شود.</p></div>
 </div>
 </main>
 
@@ -214,83 +188,59 @@
 </footer>
 
 <script src="../js/main.js"></script>
-<script>
 
+<script>
 (function(){
   var fa = {
-    "t-title": "🔢 مبدل مبنا و هش", "t-lead": "تبدیل دودویی/هشت/دهدهی/شانزده، Base64 و هش SHA — آفلاین و امن.",
-    "numIn": "عدد ورودی", "fromBase": "مبنا", "ascii": "کاراکتر ASCII",
-    "hashT": "هش متن", "textIn": "متن را وارد کن...", "b64e": "Base64 رمز", "b64d": "Base64 رمزگشایی",
-    "err": "ورودی نامعتبر برای این مبناست."
+    "t-title": "🔤 شمارشگر واژه‌ها", "t-lead": "شمارش زنده‌ی کلمه‌ها، حروف، جمله‌ها و زمان مطالعه — همراه با پرتکرارترین واژه‌ها.",
+    "wcWordsL": "واژه", "wcCharsL": "حرف", "wcNoSpL": "بدون فاصله", "wcSentL": "جمله", "wcParaL": "پاراگراف",
+    "wcReadL": "زمان مطالعه", "wcTopL": "🏆 پرتکرارترین واژه‌ها", "wcTopEmpty": "—"
   };
   var en = {
-    "t-title": "🔢 Base & Hash Converter", "t-lead": "Binary/octal/decimal/hex, Base64 and SHA hashes — offline and secure.",
-    "numIn": "Input number", "fromBase": "Base", "ascii": "ASCII char",
-    "hashT": "Hash text", "textIn": "Enter text...", "b64e": "Base64 encode", "b64d": "Base64 decode",
-    "err": "Invalid input for this base."
+    "t-title": "🔤 Word Counter", "t-lead": "Live word, character, sentence and reading-time counting — plus the most frequent words.",
+    "wcWordsL": "Words", "wcCharsL": "Chars", "wcNoSpL": "No spaces", "wcSentL": "Sentences", "wcParaL": "Paragraphs",
+    "wcReadL": "Reading time", "wcTopL": "🏆 Most frequent words", "wcTopEmpty": "—"
   };
   function d(){ return getLang() === "fa" ? fa : en; }
-  var el = function(id){ return document.getElementById(id); };
-  function copyText(txt, btn) {
-    try { navigator.clipboard.writeText(txt); } catch(e) {}
-    if (btn) { var o = btn.textContent; btn.textContent = "✓"; setTimeout(function(){ btn.textContent = o; }, 800); }
-  }
-  function convert() {
-    var v = el("bhIn").value.trim();
-    var base = parseInt(el("bhBase").value, 10);
-    var outs = ["bhBin", "bhOct", "bhDec", "bhHex"];
-    outs.forEach(function(id){ el(id).textContent = "—"; });
-    el("bhAscii").textContent = "—";
-    if (!v) return;
-    var re = base === 2 ? /^[01]+$/ : base === 8 ? /^[0-7]+$/ : base === 16 ? /^[0-9a-fA-F]+$/ : /^[0-9]+$/;
-    if (!re.test(v)) { el("bhStatus").textContent = d().err; return; }
-    el("bhStatus").textContent = "";
-    var n = parseInt(v, base);
-    if (!isFinite(n) || n < 0) { el("bhStatus").textContent = d().err; return; }
-    el("bhBin").textContent = n.toString(2);
-    el("bhOct").textContent = n.toString(8);
-    el("bhDec").textContent = n.toString(10);
-    el("bhHex").textContent = n.toString(16).toUpperCase();
-    if (n < 1114112) {
-      try { el("bhAscii").textContent = n >= 32 ? String.fromCodePoint(n) : "(ctrl)"; } catch(e) {}
-    }
-  }
-  el("bhIn").addEventListener("input", convert);
-  el("bhBase").addEventListener("change", convert);
-  [["bhBin"],["bhOct"],["bhDec"],["bhHex"]].forEach(function(pair) {
-    var id = pair[0];
-    el(id).style.cursor = "pointer";
-    el(id).title = "click to copy";
-    el(id).onclick = function(){ copyText(this.textContent, null); };
-  });
-  function hash(algo, outId) {
-    var t = el("bhText").value;
-    if (!t) { el(outId).textContent = "—"; return; }
-    if (!(window.crypto && crypto.subtle && crypto.subtle.digest)) { el(outId).textContent = "⚠️"; return; }
-    crypto.subtle.digest(algo, new TextEncoder().encode(t)).then(function(buf) {
-      el(outId).textContent = Array.from(new Uint8Array(buf)).map(function(b){ return b.toString(16).padStart(2, "0"); }).join("");
+  function paint(){
+    var t = d();
+    ["t-title","t-lead","wcWordsL","wcCharsL","wcNoSpL","wcSentL","wcParaL","wcReadL","wcTopL"].forEach(function(k){
+      var el = document.getElementById(k); if (el) el.textContent = t[k];
     });
   }
-  el("bhText").addEventListener("input", function() {
-    hash("SHA-256", "bhSha256");
-    hash("SHA-1", "bhSha1");
-    var t = this.value;
-    try {
-      el("bhB64").textContent = t ? btoa(unescape(encodeURIComponent(t))) : "—";
-    } catch(e) { el("bhB64").textContent = "—"; }
-  });
-  el("bhB64Btn").onclick = function() {
-    try {
-      var dec = decodeURIComponent(escape(atob(el("bhText").value.trim())));
-      el("bhText").value = dec;
-      el("bhText").dispatchEvent(new Event("input"));
-    } catch(e) { el("bhStatus").textContent = d().err; }
-  };
-  convert();
+  document.addEventListener("lumitek:langchange", paint); paint();
+
+  var input = document.getElementById("wcInput");
+  var STOP = {"و":"1","در":"1","به":"1","از":"1","که":"1","این":"1","با":"1","است":"1","را":"1","the":"1","and":"1","a":"1","of":"1","to":"1","in":"1","is":"1","for":"1","on":"1"};
+  function fmtTime(sec){
+    var m = Math.floor(sec / 60), s = Math.round(sec % 60);
+    return getLang() === "fa" ? (m ? m + " دقیقه" + (s ? " و " + s + " ثانیه" : "") : s + " ثانیه")
+                              : (m ? m + "m" + (s ? " " + s + "s" : "") : s + "s");
+  }
+  function run(){
+    var txt = input.value;
+    var words = (txt.trim().match(/[\u0600-\u06FF\w'\u200c]+/g) || []);
+    document.getElementById("wcWords").textContent = words.length.toLocaleString(getLang() === "fa" ? "fa-IR" : "en-US");
+    document.getElementById("wcChars").textContent = txt.length.toLocaleString(getLang() === "fa" ? "fa-IR" : "en-US");
+    document.getElementById("wcNoSp").textContent = txt.replace(/\s/g, "").length.toLocaleString(getLang() === "fa" ? "fa-IR" : "en-US");
+    var sents = (txt.match(/[^.!?۔\n]+[.!?۔]+/g) || (txt.trim() ? [1] : [])).length;
+    document.getElementById("wcSent").textContent = sents.toLocaleString(getLang() === "fa" ? "fa-IR" : "en-US");
+    var paras = txt.split(/\n{2,}/).filter(function(p){ return p.trim(); }).length;
+    document.getElementById("wcPara").textContent = paras.toLocaleString(getLang() === "fa" ? "fa-IR" : "en-US");
+    document.getElementById("wcRead").textContent = fmtTime(words.length / 200 * 60);
+    var freq = {};
+    words.forEach(function(w){
+      var k = w.toLowerCase().replace(/[\u200c]/g, "");
+      if (k.length < 3 || STOP[k]) return;
+      freq[k] = (freq[k] || 0) + 1;
+    });
+    var top = Object.keys(freq).sort(function(a, b){ return freq[b] - freq[a]; }).slice(0, 6);
+    document.getElementById("wcTop").textContent = top.length
+      ? top.map(function(w){ return w + " (" + freq[w] + "×)"; }).join("  ·  ")
+      : d().wcTopEmpty;
+  }
+  input.addEventListener("input", run); run();
 })();
-
 </script>
-
 </body>
-
 </html>

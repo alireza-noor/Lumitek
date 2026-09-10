@@ -45,10 +45,10 @@
     <a href="../pages/sports.html" data-i18n="nav.sports">nav.sports</a>
     <a href="../pages/digital-news.html" data-i18n="nav.digitalnews">اخبار دیجیتال 📰</a>
     <a href="../pages/ai.html" data-i18n="nav.ai">لومیتک ای‌آی ✨</a>
-    <a href="../pages/download.html" data-i18n="nav.download">nav.download</a>
+    <a href="../pages/download.html" class="nav-mid2" data-i18n="nav.download">nav.download</a>
     <a href="../pages/technology.html" class="nav-extra" data-i18n="nav.tech">nav.tech</a>
-    <a href="../pages/articles.html" data-i18n="nav.articles">nav.articles</a>
-    <a href="../pages/announcements.html" data-i18n="nav.updates">nav.updates</a>
+    <a href="../pages/articles.html" class="nav-mid" data-i18n="nav.articles">nav.articles</a>
+    <a href="../pages/announcements.html" class="nav-mid" data-i18n="nav.updates">nav.updates</a>
     <a href="../pages/about.html" class="nav-extra" data-i18n="nav.about">nav.about</a>
     <a href="../pages/contact.html" class="nav-extra" data-i18n="nav.contact">nav.contact</a>
     <a href="../pages/account.html" class="nav-extra" data-i18n="nav.account">nav.account</a>
@@ -124,14 +124,14 @@
     <div>
       <div class="fv-brand"><img class="brand-logo" src="../assets/icons/logo-lt.png" alt="Lumitek" width="34" height="34"><span class="brand-word">Lumitek</span></div>
       <p data-i18n="footer.tag">همه ابزارها و بازی‌های مورد نیازت، سریع و ساده — همه‌جا با هم.</p>
-      <span class="vip-badge" style="display:inline-flex">v1.1 · PWA</span>
+      <span class="vip-badge" style="display:inline-flex">v0.1.3 · PWA</span>
     </div>
     <div>
       <h4 data-i18n="footer.explore">کاوش</h4>
       <ul>
         <li><a href="../pages/digital-news.html" data-i18n="nav.digitalnews">اخبار دیجیتال</a></li><li><a href="../pages/technology.html" data-i18n="nav.tech">فناوری</a></li>
-        <li><a href="../pages/articles.html" data-i18n="nav.articles">مقالات</a></li>
-        <li><a href="../pages/announcements.html" data-i18n="nav.updates">تغییرات</a></li>
+        <li><a href="../pages/articles.html" class="nav-mid" data-i18n="nav.articles">مقالات</a></li>
+        <li><a href="../pages/announcements.html" class="nav-mid" data-i18n="nav.updates">تغییرات</a></li>
         <li><a href="../pages/about.html" data-i18n="nav.about">درباره ما</a></li>
         <li><a href="../pages/contact.html" data-i18n="nav.contact">تماس</a></li>
       </ul>
@@ -219,7 +219,8 @@
       var v = board[y][x];
       var cx = x*CELL + CELL/2 + 1, cy = y*CELL + CELL/2 + 1;
       ctx.beginPath(); ctx.arc(cx, cy, 24, 0, 7);
-      ctx.fillStyle = v === 1 ? "#ff5c7a" : v === 2 ? "#ffc861" : "rgba(255,255,255,.07)";
+      var skC4 = (window.Lumitek && Lumitek.skin) ? GAME_SKINS[Lumitek.skin("connect4")] : null;
+      ctx.fillStyle = v === 1 ? (skC4 && skC4.p1 ? skC4.p1 : "#ff5c7a") : v === 2 ? (skC4 && skC4.p2 ? skC4.p2 : "#ffc861") : "rgba(255,255,255,.07)";
       ctx.fill();
       if (v) {
         ctx.strokeStyle = v === 1 ? "rgba(255,92,122,.5)" : "rgba(255,200,97,.5)";

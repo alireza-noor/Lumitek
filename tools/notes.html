@@ -45,10 +45,10 @@
     <a href="../pages/sports.html" data-i18n="nav.sports">nav.sports</a>
     <a href="../pages/digital-news.html" data-i18n="nav.digitalnews">اخبار دیجیتال 📰</a>
     <a href="../pages/ai.html" data-i18n="nav.ai">لومیتک ای‌آی ✨</a>
-    <a href="../pages/download.html" data-i18n="nav.download">nav.download</a>
+    <a href="../pages/download.html" class="nav-mid2" data-i18n="nav.download">nav.download</a>
     <a href="../pages/technology.html" class="nav-extra" data-i18n="nav.tech">nav.tech</a>
-    <a href="../pages/articles.html" data-i18n="nav.articles">nav.articles</a>
-    <a href="../pages/announcements.html" data-i18n="nav.updates">nav.updates</a>
+    <a href="../pages/articles.html" class="nav-mid" data-i18n="nav.articles">nav.articles</a>
+    <a href="../pages/announcements.html" class="nav-mid" data-i18n="nav.updates">nav.updates</a>
     <a href="../pages/about.html" class="nav-extra" data-i18n="nav.about">nav.about</a>
     <a href="../pages/contact.html" class="nav-extra" data-i18n="nav.contact">nav.contact</a>
     <a href="../pages/account.html" class="nav-extra" data-i18n="nav.account">nav.account</a>
@@ -108,6 +108,7 @@
   <textarea id="ntInput" class="textarea" rows="4" placeholder="یادداشت جدید بنویس..."></textarea>
   <div class="data-row" style="margin-top:10px">
     <button class="primary-btn" id="ntAdd">➕ افزودن یادداشت</button>
+    <button class="ghost-btn" id="ntExport">⬇️ خروجی متنی</button>
     <span class="muted" style="font-size:.78rem" id="ntHint"></span>
   </div>
 </div>
@@ -127,14 +128,14 @@
     <div>
       <div class="fv-brand"><img class="brand-logo" src="../assets/icons/logo-lt.png" alt="Lumitek" width="34" height="34"><span class="brand-word">Lumitek</span></div>
       <p data-i18n="footer.tag">همه ابزارها و بازی‌های مورد نیازت، سریع و ساده — همه‌جا با هم.</p>
-      <span class="vip-badge" style="display:inline-flex">v1.1 · PWA</span>
+      <span class="vip-badge" style="display:inline-flex">v0.1.3 · PWA</span>
     </div>
     <div>
       <h4 data-i18n="footer.explore">کاوش</h4>
       <ul>
         <li><a href="../pages/digital-news.html" data-i18n="nav.digitalnews">اخبار دیجیتال</a></li><li><a href="../pages/technology.html" data-i18n="nav.tech">فناوری</a></li>
-        <li><a href="../pages/articles.html" data-i18n="nav.articles">مقالات</a></li>
-        <li><a href="../pages/announcements.html" data-i18n="nav.updates">تغییرات</a></li>
+        <li><a href="../pages/articles.html" class="nav-mid" data-i18n="nav.articles">مقالات</a></li>
+        <li><a href="../pages/announcements.html" class="nav-mid" data-i18n="nav.updates">تغییرات</a></li>
         <li><a href="../pages/about.html" data-i18n="nav.about">درباره ما</a></li>
         <li><a href="../pages/contact.html" data-i18n="nav.contact">تماس</a></li>
       </ul>
@@ -145,7 +146,7 @@
         <li><a href="../pages/store.html" data-i18n="nav.store">استور</a></li>
         <li><a href="../pages/store.html#coins" data-i18n="nav.coins">خرید سکه</a></li>
         <li><a href="../pages/account.html" data-i18n="nav.account">حساب کاربری</a></li>
-        <li><a href="../pages/download.html" data-i18n="nav.download">دانلود اپ</a></li>
+        <li><a href="../pages/download.html" class="nav-mid2" data-i18n="nav.download">دانلود اپ</a></li>
         <li><a href="../pages/donate.html" style="color:var(--a)" data-i18n="nav.donate">حمایت مالی</a></li>
       </ul>
     </div>
@@ -187,12 +188,12 @@
   var fa = {
     "t-title": "🗒️ یادداشت سریع", "t-lead": "یادداشت‌هایت را بنویس و نگه‌دار — همه‌چیز خودکار روی مرورگر خودت ذخیره می‌شود، بدون سرور.",
     "ntAdd": "➕ افزودن یادداشت", "ntEmpty": "هنوز یادداشتی نداری — اولین یادداشتت را بنویس!",
-    "ntDel": "حذف", "ntSaved": "ذخیره شد ✓", "ntNeed": "متن یادداشت را بنویس"
+    "ntDel": "حذف", "ntSaved": "ذخیره شد ✓", "ntNeed": "متن یادداشت را بنویس", "ntExport": "⬇️ خروجی متنی", "ntExportDone": "فایل یادداشت‌ها دانلود شد ✓", "ntExportEmpty": "یادداشتی برای خروجی نیست"
   };
   var en = {
     "t-title": "🗒️ Quick Notes", "t-lead": "Write and keep your notes — everything saves automatically in your browser, no server.",
     "ntAdd": "➕ Add note", "ntEmpty": "No notes yet — write your first one!",
-    "ntDel": "Delete", "ntSaved": "Saved ✓", "ntNeed": "Write the note text"
+    "ntDel": "Delete", "ntSaved": "Saved ✓", "ntNeed": "Write the note text", "ntExport": "⬇️ Export as text", "ntExportDone": "Notes file downloaded ✓", "ntExportEmpty": "No notes to export"
   };
   function d(){ return getLang() === "fa" ? fa : en; }
   function fmt(n){ return Number(n).toLocaleString(getLang() === "fa" ? "fa-IR" : "en-US"); }

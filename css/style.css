@@ -1015,3 +1015,335 @@ html, body { overflow-x: hidden; overflow-x: clip; }
 
 /* دکمه فعال حالت سریع AI */
 .ghost-btn.active { border-color: var(--a); color: var(--a); background: rgba(118,230,195,.08); }
+
+/* ============================================================
+   Lumitek 1.2 — universal game bar, graphics uplift, leaderboard,
+   headball, full-page article reader, auth buttons fix
+   ============================================================ */
+
+/* ---------- ۱) دکمه گوگل و مایکروسافت هماهنگ (رفع سفید روی سفید) ---------- */
+.google-btn {
+  display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%;
+  padding: 11px 14px; border-radius: 12px; border: 1px solid var(--line);
+  background: var(--card2, #1a2438); color: var(--text); font-weight: 700; font-family: inherit;
+  font-size: .86rem; cursor: pointer; transition: border-color .2s, transform .15s;
+}
+.google-btn:hover { border-color: #4285F4; transform: translateY(-1px); }
+.google-btn:active { transform: scale(.98); }
+.google-btn:disabled { opacity: .55; cursor: wait; }
+.google-btn svg { background: #fff; border-radius: 50%; padding: 2px; }
+html.light .google-btn, html.light .ms-btn { background: #fff; }
+html.light .google-btn:hover { border-color: #4285F4; }
+
+/* ---------- ۲) نوار کنترل بازی‌ها (همه بازی‌ها) ---------- */
+.lt-gamebar {
+  position: fixed; bottom: 16px; left: 50%; transform: translateX(-50%); z-index: 70;
+  display: flex; gap: 4px; padding: 6px; border-radius: 99px;
+  background: rgba(13, 20, 35, .88); border: 1px solid rgba(255,255,255,.12);
+  backdrop-filter: blur(14px); box-shadow: 0 14px 44px rgba(0,0,0,.5);
+}
+.lt-gb-btn {
+  display: inline-flex; align-items: center; gap: 6px; padding: 9px 14px; border: 0; border-radius: 99px;
+  background: transparent; color: var(--text); font-family: inherit; font-weight: 800; font-size: .85rem;
+  cursor: pointer; transition: background .15s, color .15s, transform .1s;
+}
+.lt-gb-btn:hover { background: rgba(118,230,195,.12); color: var(--a); }
+.lt-gb-btn:active { transform: scale(.94); }
+.lt-gb-ico { font-size: 1rem; line-height: 1; }
+.lt-gamebar.hinting { animation: ltGlow 1.6s ease-in-out 4; }
+.lt-gamebar.hinting::after {
+  content: "⬆ توقف، راهنما و تمام‌صفحه از این‌جا!"; position: absolute; bottom: calc(100% + 8px);
+  left: 50%; transform: translateX(-50%); white-space: nowrap; padding: 7px 14px; border-radius: 12px;
+  background: var(--a); color: #061018; font-size: .78rem; font-weight: 900;
+}
+@keyframes ltGlow { 0%,100% { box-shadow: 0 14px 44px rgba(0,0,0,.5); } 50% { box-shadow: 0 0 0 4px rgba(118,230,195,.35), 0 14px 44px rgba(0,0,0,.5); } }
+@media (max-width: 560px) { .lt-gb-lbl { display: none; } .lt-gb-btn { padding: 11px 13px; font-size: 1rem; } }
+
+.lt-pause-veil {
+  position: fixed; inset: 0; z-index: 90; display: none; place-items: center;
+  background: rgba(5, 8, 16, .72); backdrop-filter: blur(6px);
+}
+.lt-pause-veil.show { display: grid; }
+.lt-pause-card { text-align: center; padding: 38px 44px; border-radius: 24px; background: rgba(15,23,40,.97); border: 1px solid rgba(255,255,255,.14); box-shadow: 0 30px 90px rgba(0,0,0,.6); }
+.lt-pause-ico { font-size: 52px; animation: ltPulse 1.4s ease-in-out infinite; }
+@keyframes ltPulse { 0%,100% { transform: scale(1); opacity: .9; } 50% { transform: scale(1.12); opacity: 1; } }
+.lt-pause-card h3 { margin: 10px 0 4px; font-size: 1.4rem; }
+.lt-pause-card .primary-btn { display: block; width: 100%; margin-top: 14px; }
+.lt-pause-card .ghost-btn { display: inline-flex; width: 100%; margin-top: 8px; justify-content: center; }
+html.lt-paused canvas { filter: saturate(.55) brightness(.8); }
+
+/* ---------- راهنمای بازی ---------- */
+.lt-help-modal .modal-card { max-width: 460px; }
+.lt-help-head { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+.lt-help-emoji { font-size: 30px; }
+.lt-help-head h3 { margin: 0; }
+.lt-help-sec { padding: 11px 14px; border-radius: 13px; background: rgba(255,255,255,.045); border: 1px solid rgba(255,255,255,.07); margin-bottom: 8px; }
+.lt-help-sec b { color: var(--a); font-size: .8rem; display: block; margin-bottom: 4px; }
+.lt-help-sec p { margin: 0; font-size: .86rem; line-height: 1.9; }
+.lt-help-note { font-size: .74rem; line-height: 1.9; }
+
+/* ---------- ۳) ارتقای گرافیک همه بازی‌ها ---------- */
+body[data-game], body:has(.gamebox) {
+  background:
+    radial-gradient(ellipse 60% 42% at 12% -6%, rgba(124,167,255,.16), transparent),
+    radial-gradient(ellipse 55% 40% at 88% 8%, rgba(118,230,195,.13), transparent),
+    radial-gradient(ellipse 70% 50% at 50% 115%, rgba(177,140,255,.1), transparent),
+    var(--bg);
+}
+.gamebox { position: relative; overflow: visible; background: linear-gradient(160deg, rgba(255,255,255,.045), rgba(255,255,255,.012) 38%), linear-gradient(150deg, #131c30, #0d1524); border: 1px solid rgba(124,167,255,.22); border-radius: 24px; box-shadow: 0 24px 70px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.09), 0 0 90px rgba(124,167,255,.07); }
+.gamebox::before { content: ""; position: absolute; inset: -1px; border-radius: 25px; padding: 1px; background: linear-gradient(140deg, rgba(118,230,195,.5), rgba(124,167,255,.16) 34%, transparent 60%, rgba(118,230,195,.24)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; }
+.gamebox canvas { border-radius: 16px; box-shadow: 0 10px 34px rgba(0,0,0,.4), 0 0 0 1px rgba(255,255,255,.06), 0 0 44px rgba(118,230,195,.06); max-width: 100%; height: auto; }
+.gamebutton { padding: 15px 30px; border: 0; border-radius: 15px; background: linear-gradient(135deg, var(--a), var(--b)); color: #061018; font-weight: 900; font-size: 1.02rem; font-family: inherit; cursor: pointer; box-shadow: 0 10px 26px rgba(118,230,195,.24), inset 0 1px 0 rgba(255,255,255,.35); transition: transform .15s, box-shadow .2s, filter .2s; }
+.gamebutton:hover { transform: translateY(-2px); box-shadow: 0 16px 38px rgba(118,230,195,.36), inset 0 1px 0 rgba(255,255,255,.35); filter: brightness(1.05); }
+.gamebutton:active { transform: translateY(0) scale(.97); }
+.coin-pill { display: inline-flex; align-items: center; gap: 6px; padding: 8px 15px; border-radius: 99px; background: rgba(8,13,24,.65); border: 1px solid rgba(255,255,255,.1); backdrop-filter: blur(8px); font-weight: 800; font-size: .84rem; }
+.coin-pill b { color: var(--a); }
+.gamebox .ghost-btn { transition: transform .15s, border-color .2s; }
+.gamebox .ghost-btn:hover { transform: translateY(-1px); }
+
+/* تمام‌صفحه بازی */
+.gamebox:fullscreen { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; border-radius: 0; background: #0a101d; padding: 22px; overflow: auto; }
+.gamebox:fullscreen canvas { max-height: 78vh; width: auto; }
+
+/* ---------- ۴) لیدربرد ---------- */
+.lb-podium { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; align-items: end; margin: 22px 0 18px; }
+.lb-pod { position: relative; padding: 20px 14px 16px; border-radius: 20px; border: 1px solid var(--line); background: linear-gradient(160deg, var(--surface), #0c1322); text-align: center; transition: transform .2s, box-shadow .2s; }
+.lb-pod:hover { transform: translateY(-4px); }
+.lb-pod.p1 { order: 2; padding-bottom: 34px; border-color: rgba(255,200,97,.55); background: linear-gradient(160deg, rgba(255,200,97,.14), var(--surface) 55%); box-shadow: 0 0 44px rgba(255,200,97,.12); }
+.lb-pod.p2 { order: 1; border-color: rgba(190,205,225,.4); }
+.lb-pod.p3 { order: 3; border-color: rgba(205,127,50,.4); }
+.lb-pod .lb-medal { font-size: 38px; }
+.lb-pod .lb-av { font-size: 40px; margin-top: 4px; }
+.lb-pod .lb-nm { font-weight: 900; margin-top: 4px; font-size: .95rem; }
+.lb-pod .lb-xp { color: var(--a); font-weight: 900; font-size: 1.1rem; }
+.lb-pod .lb-tier { font-size: .72rem; color: var(--muted); font-weight: 800; }
+.lb-pod .lb-lvl { position: absolute; top: 10px; inset-inline-end: 12px; padding: 3px 10px; border-radius: 99px; font-size: .68rem; font-weight: 900; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12); }
+.lb-rows { display: grid; gap: 9px; }
+.lb-row { display: flex; align-items: center; gap: 13px; padding: 13px 16px; border-radius: 16px; border: 1px solid var(--line); background: linear-gradient(150deg, rgba(255,255,255,.03), transparent); transition: transform .15s, border-color .2s; }
+.lb-row:hover { transform: translateX(-3px); border-color: var(--a); }
+html[dir="ltr"] .lb-row:hover { transform: translateX(3px); }
+.lb-row.me { border-color: var(--a); background: linear-gradient(150deg, rgba(118,230,195,.1), transparent); box-shadow: 0 0 26px rgba(118,230,195,.08); }
+.lb-row .lb-pos { width: 34px; height: 34px; display: grid; place-items: center; border-radius: 11px; background: rgba(255,255,255,.06); font-weight: 900; font-size: .9rem; flex: none; }
+.lb-row .lb-av2 { font-size: 24px; flex: none; }
+.lb-row .lb-info { flex: 1; min-width: 0; text-align: start; }
+.lb-row .lb-nm2 { font-weight: 800; font-size: .92rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.lb-row .lb-meta { font-size: .72rem; color: var(--muted); }
+.lb-row .lb-xpbar2 { margin-top: 5px; height: 5px; border-radius: 3px; background: rgba(124,167,255,.14); overflow: hidden; }
+.lb-row .lb-xpbar2 i { display: block; height: 100%; border-radius: 3px; background: linear-gradient(90deg, var(--a), var(--b)); }
+.lb-row .lb-side { text-align: end; flex: none; }
+.lb-row .lb-xpv { font-weight: 900; color: var(--a); }
+.lb-row .lb-tier2 { display: inline-block; margin-top: 3px; padding: 2px 9px; border-radius: 99px; font-size: .64rem; font-weight: 900; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); }
+.lb-chip-me { padding: 2px 8px; border-radius: 99px; background: var(--a); color: #061018; font-size: .62rem; font-weight: 900; margin-inline-start: 6px; }
+.lb-note { font-size: .74rem; color: var(--muted); margin-top: 12px; }
+
+/* ---------- ۵) هدبال ---------- */
+.hb-wrap { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.hb-stage { position: relative; border-radius: 18px; overflow: hidden; box-shadow: 0 14px 40px rgba(0,0,0,.4), 0 0 0 1px rgba(255,255,255,.07); }
+.hb-stage canvas { display: block; max-width: 100%; height: auto; touch-action: none; }
+.hb-pad { display: flex; gap: 26px; justify-content: space-between; width: 100%; max-width: 560px; }
+.hb-pad .hb-group { display: flex; gap: 8px; }
+.hb-pad button { width: 62px; height: 62px; border-radius: 18px; border: 1px solid rgba(255,255,255,.14); background: linear-gradient(160deg, rgba(255,255,255,.09), rgba(255,255,255,.03)); color: var(--text); font-size: 1.3rem; font-weight: 900; cursor: pointer; touch-action: manipulation; user-select: none; -webkit-user-select: none; transition: transform .1s, background .15s; }
+.hb-pad button:active { transform: scale(.92); background: rgba(118,230,195,.2); border-color: var(--a); }
+.hb-kick { width: 74px !important; background: linear-gradient(160deg, rgba(118,230,195,.22), rgba(118,230,195,.06)) !important; border-color: var(--a) !important; }
+
+/* ---------- ۶) صفحه کامل مقاله ---------- */
+.ar-hero { position: relative; border-radius: 26px; padding: 38px 34px; border: 1px solid rgba(124,167,255,.2); background: radial-gradient(ellipse 70% 100% at 85% 0%, rgba(118,230,195,.1), transparent), linear-gradient(150deg, #131c30, #0d1524); overflow: hidden; }
+.ar-hero .tag { position: static; font-size: .72rem; }
+.ar-hero h1 { font-size: clamp(1.5rem, 3.4vw, 2.2rem); line-height: 1.55; letter-spacing: -.5px; margin: 12px 0 8px; }
+.ar-hero .ar-lead2 { color: var(--muted); font-size: 1rem; margin: 0; }
+.ar-meta-row { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 16px; font-size: .78rem; color: var(--muted); }
+.ar-meta-row b { color: var(--a); }
+.ar-progress-wrap { position: sticky; top: 0; z-index: 30; height: 4px; background: rgba(255,255,255,.06); border-radius: 0 0 6px 6px; overflow: hidden; margin: 0 -18px; }
+.ar-progress-wrap i { display: block; height: 100%; width: 0; background: linear-gradient(90deg, var(--a), var(--b)); transition: width .1s linear; }
+.ar-toc { margin: 18px 0; padding: 18px 22px; border-radius: 18px; border: 1px solid var(--line); background: var(--surface); }
+.ar-toc b { color: var(--a); font-size: .85rem; }
+.ar-toc ol { margin: 8px 0 0; padding-inline-start: 18px; }
+.ar-toc a { color: var(--muted); font-size: .84rem; line-height: 2.1; }
+.ar-toc a:hover { color: var(--a); }
+.ar-page-body { font-size: 1rem; line-height: 2.15; }
+.ar-page-body h4 { margin: 30px 0 10px; font-size: 1.2rem; color: var(--a); scroll-margin-top: 70px; }
+.ar-page-body p { margin: 10px 0; }
+.ar-page-body ul, .ar-page-body ol { padding-inline-start: 22px; margin: 10px 0; }
+.ar-page-body li { margin: 6px 0; }
+.ar-page-body pre { background: rgba(0,0,0,.4); border: 1px solid rgba(255,255,255,.1); border-radius: 14px; padding: 16px 18px; overflow-x: auto; font-size: .82rem; direction: ltr; text-align: left; margin: 14px 0; font-family: ui-monospace, monospace; line-height: 1.85; }
+html.light .ar-page-body pre { background: #eef3fa; border-color: rgba(20,30,50,.12); }
+.ar-page-body code { background: rgba(118,230,195,.13); color: var(--a); border-radius: 6px; padding: 2px 7px; font-size: .85em; }
+.ar-page-body blockquote { margin: 14px 0; padding: 12px 18px; border-inline-start: 3px solid var(--a); background: rgba(118,230,195,.06); border-radius: 0 12px 12px 0; }
+.ar-actions { display: flex; gap: 10px; flex-wrap: wrap; margin: 26px 0 8px; }
+.ar-nav-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 20px; }
+.ar-nav-card { padding: 15px 18px; border-radius: 16px; border: 1px solid var(--line); background: var(--surface); transition: border-color .2s, transform .15s; min-width: 0; }
+.ar-nav-card:hover { border-color: var(--a); transform: translateY(-2px); }
+.ar-nav-card small { color: var(--muted); font-size: .7rem; }
+.ar-nav-card b { display: block; font-size: .86rem; margin-top: 3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ar-rel-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 12px; margin-top: 14px; }
+.ar-rel-card { padding: 16px; border-radius: 16px; border: 1px solid var(--line); background: var(--surface); transition: border-color .2s, transform .15s; cursor: pointer; }
+.ar-rel-card:hover { border-color: var(--a); transform: translateY(-3px); }
+.ar-rel-card .r-emoji { font-size: 24px; }
+.ar-rel-card b { display: block; font-size: .85rem; margin-top: 6px; line-height: 1.8; }
+.ar-rel-card small { color: var(--muted); font-size: .7rem; }
+@media (max-width: 640px) { .ar-nav-row { grid-template-columns: 1fr; } .ar-hero { padding: 26px 20px; } }
+
+/* ---------- ۷) اسکلت لودینگ اسپورتک ---------- */
+.skel-card { border-radius: 16px; border: 1px solid var(--line); padding: 16px; background: var(--surface); }
+.skel-line { height: 12px; border-radius: 6px; margin-bottom: 10px; background: linear-gradient(90deg, rgba(255,255,255,.06) 25%, rgba(255,255,255,.13) 50%, rgba(255,255,255,.06) 75%); background-size: 200% 100%; animation: ltShimmer 1.3s infinite; }
+.skel-line.s2 { width: 55%; } .skel-line.s3 { width: 78%; }
+@keyframes ltShimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+
+/* ---------- ۸) ارتقای گرافیک کلی سایت ---------- */
+.card { position: relative; }
+.card:hover { border-color: rgba(118,230,195,.5); box-shadow: 0 18px 50px rgba(0,0,0,.35), 0 0 34px rgba(118,230,195,.09); transform: translateY(-5px); }
+.primary-btn { position: relative; overflow: hidden; }
+.primary-btn:hover { filter: brightness(1.07); box-shadow: 0 10px 30px rgba(118,230,195,.25); }
+.site-header { box-shadow: 0 8px 30px rgba(0,0,0,.18); }
+::-webkit-scrollbar { width: 11px; height: 11px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(124,167,255,.22); border-radius: 8px; border: 2px solid var(--bg); }
+::-webkit-scrollbar-thumb:hover { background: rgba(118,230,195,.4); }
+:focus-visible { outline: 2px solid var(--a); outline-offset: 2px; border-radius: 6px; }
+html.light ::-webkit-scrollbar-thumb { background: rgba(80,110,160,.3); }
+html.light .gamebox { background: linear-gradient(150deg, #ffffff, #f2f6fc); border-color: rgba(60,90,140,.22); box-shadow: 0 24px 70px rgba(30,50,90,.14); }
+html.light .lt-gamebar { background: rgba(255,255,255,.94); border-color: rgba(20,30,50,.14); }
+html.light .lt-pause-card { background: #fff; }
+html.light .lt-help-sec { background: rgba(20,30,50,.035); border-color: rgba(20,30,50,.08); }
+html.light .lb-pod, html.light .lb-row, html.light .ar-hero, html.light .ar-toc, html.light .ar-nav-card, html.light .ar-rel-card { background: #fff; }
+html.light .ar-page-body pre { color: #172033; }
+html.light .lb-row.me { background: linear-gradient(150deg, rgba(15,160,120,.08), #fff); }
+
+/* کشورگشایی v1.2 — راهنمای شروع + ردیف سختی */
+.cq-hint { position: absolute; inset: 0; z-index: 8; display: grid; place-content: center; justify-items: center; text-align: center; padding: 22px; background: rgba(7, 11, 21, .88); backdrop-filter: blur(7px); border-radius: 12px; }
+.cq-hint p { max-width: 430px; }
+.cq-hint b { color: var(--a); }
+#cqDiff button { font-size: .74rem; }
+#cqDiff button.active { background: linear-gradient(135deg, var(--a), var(--b)); color: #061018; border-color: transparent; }
+
+/* ============================================================
+   Lumitek 0.1.3 — header alignment, flicker fix, game-over UI,
+   store sections, popular tag, search upgrade
+   ============================================================ */
+
+/* ---------- ۱. هدر یک‌خطی: همه بخش‌ها در یک راستا ---------- */
+@media (min-width: 901px) {
+  .main-nav { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none; }
+  .main-nav::-webkit-scrollbar { display: none; }
+  .main-nav a { white-space: nowrap; flex: 0 0 auto; }
+  .main-nav a.nav-extra { display: none; }
+}
+@media (min-width: 901px) and (max-width: 1330px) {
+  .site-header { gap: 12px; padding: 12px 14px; }
+  .main-nav { gap: 5px; }
+  .main-nav a { padding: 7px 8px; font-size: 12px; }
+  .header-actions { gap: 5px; }
+  .icon-btn { padding: 8px 9px; }
+}
+@media (min-width: 901px) and (max-width: 1120px) {
+  .main-nav a { padding: 7px 6.5px; font-size: 11.3px; }
+  .profile-btn { max-width: 130px; }
+}
+@media (min-width: 901px) and (max-width: 1010px) {
+  .brand-word { display: none; }
+}
+
+/* ---------- ۲. رفع سرخی/چشمک ناخواسته با حرکت تند ماوس ---------- */
+* { -webkit-tap-highlight-color: transparent; }
+.header, .main-nav, .header-actions, .footer-v2, .card, .game-card, .item-card,
+.store-tabs, .btn, .icon-btn, .profile-btn, .primary-btn, .ghost-btn, button,
+.notice, .stat-tile, .src-chips, .sp-sport-chip, .ar-item, .ar-rel-card {
+  -webkit-user-select: none; user-select: none;
+}
+.ar-body, .ar-page-body, article p, .lead, .muted, p, input, textarea,
+.search-results, .faq-item, .cl-body {
+  -webkit-user-select: text; user-select: text;
+}
+::selection { background: rgba(118, 230, 195, .35); color: inherit; }
+html.light ::selection { background: rgba(20, 160, 125, .25); }
+.site-header { transform: translateZ(0); will-change: transform; }
+.main-nav a, .icon-btn, .profile-btn { transition: background .18s ease, border-color .18s ease, color .18s ease; }
+img { -webkit-user-drag: none; user-drag: none; }
+
+/* ---------- ۳. صفحه پایان بازی (LumitekGameOver) ---------- */
+.lt-go {
+  position: fixed; inset: 0; z-index: 300; display: none; place-items: center;
+  background: rgba(4, 8, 16, .78); backdrop-filter: blur(10px); padding: 20px;
+}
+.lt-go.show { display: grid; animation: ltGoIn .25s ease; }
+@keyframes ltGoIn { from { opacity: 0; } to { opacity: 1; } }
+.lt-go-card {
+  position: relative; width: min(430px, 100%); text-align: center; overflow: hidden;
+  padding: 34px 26px 26px; border-radius: 26px; border: 1px solid rgba(255,255,255,.12);
+  background: linear-gradient(160deg, #131e33, #0b1322);
+  box-shadow: 0 30px 90px rgba(0,0,0,.6);
+  animation: ltGoPop .32s cubic-bezier(.2, 1.4, .4, 1);
+}
+@keyframes ltGoPop { from { transform: scale(.82) translateY(18px); opacity: 0; } to { transform: none; opacity: 1; } }
+.lt-go.win .lt-go-card { border-color: rgba(118, 230, 195, .45); box-shadow: 0 30px 90px rgba(0,0,0,.6), 0 0 60px rgba(118,230,195,.15); }
+.lt-go.lose .lt-go-card { border-color: rgba(255, 126, 145, .3); }
+.lt-go-emoji { font-size: 64px; line-height: 1; margin-bottom: 8px; animation: ltGoFloat 2.4s ease-in-out infinite; }
+@keyframes ltGoFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+.lt-go-title { margin: 0 0 6px; font-size: 1.55rem; font-weight: 900; letter-spacing: -.5px; }
+.lt-go.win .lt-go-title { color: #7cf7c4; }
+.lt-go.lose .lt-go-title { color: #ffb3c0; }
+.lt-go-sub { font-size: .88rem; margin: 0 0 14px; }
+.lt-go-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(96px, 1fr)); gap: 8px; margin: 0 0 14px; }
+.lt-go-stats div { padding: 10px 8px; border-radius: 13px; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.07); }
+.lt-go-stats span { display: block; font-size: .68rem; opacity: .65; }
+.lt-go-stats b { display: block; font-size: 1.06rem; font-weight: 900; margin-top: 3px; }
+.lt-go-reward { min-height: 1.2em; font-size: .84rem; font-weight: 800; color: #ffc861; margin: 0 0 16px; }
+.lt-go-actions { display: flex; gap: 9px; justify-content: center; flex-wrap: wrap; }
+.lt-go-confetti {
+  position: absolute; top: -12px; width: 9px; height: 14px; border-radius: 3px; opacity: .95;
+  animation: ltGoFall 2.1s ease-in forwards; pointer-events: none;
+}
+@keyframes ltGoFall { to { transform: translateY(480px) rotate(540deg); opacity: 0; } }
+html.light .lt-go-card { background: linear-gradient(160deg, #ffffff, #eef3fa); border-color: rgba(15,25,50,.12); }
+html.light .lt-go-stats div { background: rgba(15,25,50,.05); border-color: rgba(15,25,50,.08); }
+
+/* ---------- ۴. سرفصل دسته‌ها در فروشگاه ---------- */
+.store-group-title {
+  grid-column: 1 / -1; margin: 14px 0 2px; padding-inline-start: 4px;
+  font-size: 1rem; font-weight: 900; color: var(--a); display: flex; align-items: center; gap: 8px;
+}
+.store-group-title::after { content: ""; flex: 1; height: 1px; background: linear-gradient(90deg, rgba(118,230,195,.4), transparent); }
+html.light .store-group-title { color: #0d8f72; }
+
+/* ---------- ۵. نشان «محبوب» ---------- */
+.popular-chip {
+  position: absolute; top: 12px; inset-inline-start: 12px; z-index: 2;
+  padding: 4px 11px; border-radius: 99px; font-size: .68rem; font-weight: 900; letter-spacing: .3px;
+  background: linear-gradient(135deg, #ff9350, #ff5c8a); color: #fff;
+  box-shadow: 0 4px 14px rgba(255, 110, 100, .35);
+  animation: popGlow 2.2s ease-in-out infinite;
+}
+@keyframes popGlow { 0%, 100% { box-shadow: 0 4px 14px rgba(255,110,100,.35); } 50% { box-shadow: 0 4px 22px rgba(255,110,100,.6); } }
+.game-card { position: relative; }
+
+/* ---------- ۶. ارتقای جستجو ---------- */
+.search-results { max-height: 60vh; overflow-y: auto; }
+.search-results a { align-items: center; padding: 11px 12px; border-radius: 12px; }
+.search-results a:hover, .search-results a.sel { background: rgba(118, 230, 195, .1); }
+.search-results .sr-tag {
+  flex: 0 0 auto; opacity: .8; font-size: .7rem; font-weight: 800;
+  padding: 3px 9px; border-radius: 99px; background: rgba(118, 230, 195, .12); color: var(--a);
+}
+.search-hint { padding: 10px 12px 6px; font-size: .78rem; color: var(--muted); }
+.search-hint a { color: var(--a); font-weight: 800; }
+
+/* ---------- ۷. متن به گفتار: چینش خودکار ---------- */
+#ttsText { transition: none; }
+#ttsText[dir="ltr"] { direction: ltr; text-align: left; font-family: Inter, Tahoma, sans-serif; }
+#ttsText[dir="rtl"] { direction: rtl; text-align: right; font-family: 'Shabnam', Tahoma, sans-serif; }
+.tts-preview { min-height: 44px; padding: 12px 14px; border-radius: 12px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); font-size: .92rem; }
+.tts-preview[dir="ltr"] { direction: ltr; text-align: left; }
+.tts-preview[dir="rtl"] { direction: rtl; text-align: right; }
+
+/* ---------- هدر فشرده: همه بخش‌ها همیشه در یک سطر ---------- */
+@media (min-width: 901px) and (max-width: 1440px) {
+  .brand-word { display: none; }
+  .header-actions .profile-btn span[data-profile-name] { display: none; }
+}
+@media (min-width: 901px) and (max-width: 1120px) {
+  .main-nav a.nav-mid { display: none; }
+}
+@media (min-width: 901px) and (max-width: 1010px) {
+  .main-nav a.nav-mid2 { display: none; }
+  .menu-toggle { display: inline-flex; }
+}

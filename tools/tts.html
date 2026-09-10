@@ -45,10 +45,10 @@
     <a href="../pages/sports.html" data-i18n="nav.sports">nav.sports</a>
     <a href="../pages/digital-news.html" data-i18n="nav.digitalnews">اخبار دیجیتال 📰</a>
     <a href="../pages/ai.html" data-i18n="nav.ai">لومیتک ای‌آی ✨</a>
-    <a href="../pages/download.html" data-i18n="nav.download">nav.download</a>
+    <a href="../pages/download.html" class="nav-mid2" data-i18n="nav.download">nav.download</a>
     <a href="../pages/technology.html" class="nav-extra" data-i18n="nav.tech">nav.tech</a>
-    <a href="../pages/articles.html" data-i18n="nav.articles">nav.articles</a>
-    <a href="../pages/announcements.html" data-i18n="nav.updates">nav.updates</a>
+    <a href="../pages/articles.html" class="nav-mid" data-i18n="nav.articles">nav.articles</a>
+    <a href="../pages/announcements.html" class="nav-mid" data-i18n="nav.updates">nav.updates</a>
     <a href="../pages/about.html" class="nav-extra" data-i18n="nav.about">nav.about</a>
     <a href="../pages/contact.html" class="nav-extra" data-i18n="nav.contact">nav.contact</a>
     <a href="../pages/account.html" class="nav-extra" data-i18n="nav.account">nav.account</a>
@@ -105,6 +105,16 @@
 <p class="muted" id="t-lead">متنت را بنویس و بگذار مرورگر برایت بخواند — صداهای نصب‌شده روی دستگاهت را می‌بینی؛ فارسی یا انگلیسی.</p>
 <div class="card mt2" style="max-width:680px;margin-inline:auto">
   <textarea id="ttsText" class="textarea" rows="5" placeholder="سلام! من دستیار صدای لومیتک هستم..."></textarea>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px">
+    <button type="button" class="ghost-btn" id="ttsSampleFa">🇮🇷 نمونه فارسی</button>
+    <button type="button" class="ghost-btn" id="ttsSampleEn">🇬🇧 English sample</button>
+  </div>
+  <label style="display:block;margin-top:12px"><span id="ttsLangL">زبان خوانش</span>
+    <select id="ttsLang" class="amount-input" style="width:100%">
+      <option value="auto" id="ttsLangAuto">خودکار (تشخیص از متن)</option>
+      <option value="fa">🇮🇷 فارسی</option>
+      <option value="en">🇬🇧 English</option>
+    </select></label>
   <label style="display:block;margin-top:12px"><span id="ttsL1">صدا</span>
     <select id="ttsVoice" class="amount-input" style="width:100%"></select></label>
   <div class="data-row" style="margin-top:10px;flex-wrap:wrap;gap:14px">
@@ -118,6 +128,7 @@
     <button class="ghost-btn" id="ttsStop">⏹ توقف</button>
   </div>
   <p class="muted" id="ttsMsg" style="font-size:.85rem;margin:10px 0 0;min-height:1.4em"></p>
+  <div class="tts-preview" id="ttsPreview" dir="rtl" style="margin-top:12px;font-size:.9rem"></div>
 </div>
 </main>
 
@@ -133,14 +144,14 @@
     <div>
       <div class="fv-brand"><img class="brand-logo" src="../assets/icons/logo-lt.png" alt="Lumitek" width="34" height="34"><span class="brand-word">Lumitek</span></div>
       <p data-i18n="footer.tag">همه ابزارها و بازی‌های مورد نیازت، سریع و ساده — همه‌جا با هم.</p>
-      <span class="vip-badge" style="display:inline-flex">v1.1 · PWA</span>
+      <span class="vip-badge" style="display:inline-flex">v0.1.3 · PWA</span>
     </div>
     <div>
       <h4 data-i18n="footer.explore">کاوش</h4>
       <ul>
         <li><a href="../pages/digital-news.html" data-i18n="nav.digitalnews">اخبار دیجیتال</a></li><li><a href="../pages/technology.html" data-i18n="nav.tech">فناوری</a></li>
-        <li><a href="../pages/articles.html" data-i18n="nav.articles">مقالات</a></li>
-        <li><a href="../pages/announcements.html" data-i18n="nav.updates">تغییرات</a></li>
+        <li><a href="../pages/articles.html" class="nav-mid" data-i18n="nav.articles">مقالات</a></li>
+        <li><a href="../pages/announcements.html" class="nav-mid" data-i18n="nav.updates">تغییرات</a></li>
         <li><a href="../pages/about.html" data-i18n="nav.about">درباره ما</a></li>
         <li><a href="../pages/contact.html" data-i18n="nav.contact">تماس</a></li>
       </ul>
@@ -151,7 +162,7 @@
         <li><a href="../pages/store.html" data-i18n="nav.store">استور</a></li>
         <li><a href="../pages/store.html#coins" data-i18n="nav.coins">خرید سکه</a></li>
         <li><a href="../pages/account.html" data-i18n="nav.account">حساب کاربری</a></li>
-        <li><a href="../pages/download.html" data-i18n="nav.download">دانلود اپ</a></li>
+        <li><a href="../pages/download.html" class="nav-mid2" data-i18n="nav.download">دانلود اپ</a></li>
         <li><a href="../pages/donate.html" style="color:var(--a)" data-i18n="nav.donate">حمایت مالی</a></li>
       </ul>
     </div>
@@ -197,7 +208,10 @@
     "ttsPlay": "▶️ خواندن", "ttsStop": "⏹ توقف",
     "ttsNeed": "اول متنی بنویس!", "ttsNoVoice": "صدایی روی این دستگاه پیدا نشد یا مرورگر پشتیبانی نمی‌کند.",
     "ttsPlaying": "در حال خواندن... 🔊", "ttsDone": "خواندن تمام شد ✓",
-    "ttsFav": "فارسی"
+    "ttsFav": "فارسی",
+    "ttsLangL": "زبان خوانش", "ttsLangAuto": "خودکار (تشخیص از متن)",
+    "ttsSampleFa": "🇮🇷 نمونه فارسی", "ttsSampleEn": "🇬🇧 English sample",
+    "ttsPrev": "پیش‌نمایش جهت متن", "ttsLangNote": "اگر صدای فارسی روی دستگاهت نصب نیست، مرورگر نزدیک‌ترین صدا را انتخاب می‌کند؛ برای بهترین نتیجه صدای فارسی را از سیستم نصب کن."
   };
   var en = {
     "t-title": "🔊 Text to Speech", "t-lead": "Write your text and let the browser read it aloud — voices installed on your device, Persian or English.",
@@ -205,7 +219,10 @@
     "ttsPlay": "▶️ Read aloud", "ttsStop": "⏹ Stop",
     "ttsNeed": "Write some text first!", "ttsNoVoice": "No voices found on this device or the browser does not support it.",
     "ttsPlaying": "Reading... 🔊", "ttsDone": "Finished ✓",
-    "ttsFav": "Persian"
+    "ttsFav": "Persian",
+    "ttsLangL": "Reading language", "ttsLangAuto": "Auto (detect from text)",
+    "ttsSampleFa": "🇮🇷 نمونه فارسی", "ttsSampleEn": "🇬🇧 English sample",
+    "ttsPrev": "Text direction preview", "ttsLangNote": "If no Persian voice is installed, the browser picks the closest one; install a Persian voice on your system for the best result."
   };
   function d(){ return getLang() === "fa" ? fa : en; }
   function paint(){
@@ -217,6 +234,10 @@
     document.getElementById("ttsL3").textContent = t.ttsL3.replace("{x}", (document.getElementById("ttsPitch").value / 10).toLocaleString());
     document.getElementById("ttsPlay").textContent = t.ttsPlay;
     document.getElementById("ttsStop").textContent = t.ttsStop;
+    document.getElementById("ttsLangL").textContent = t.ttsLangL;
+    document.getElementById("ttsLangAuto").textContent = t.ttsLangAuto;
+    document.getElementById("ttsSampleFa").textContent = t.ttsSampleFa;
+    document.getElementById("ttsSampleEn").textContent = t.ttsSampleEn;
   }
   document.addEventListener("lumitek:langchange", paint);
   document.getElementById("ttsRate").addEventListener("input", paint);
@@ -225,37 +246,81 @@
     document.getElementById("ttsMsg").textContent = "❌ " + d().ttsNoVoice;
   } else {
     var filled = false;
-    function fillVoices(){
+    function fillVoices(force){
       var vs = speechSynthesis.getVoices();
-      if (!vs.length || filled) return;
+      if (!vs.length) return;
+      if (filled && !force) return;
       filled = true;
       var sel = document.getElementById("ttsVoice");
+      var cur = sel.value;
       sel.innerHTML = "";
-      var fa2 = d().ttsFav;
-      vs.slice().sort(function(a, b){
-        var af = a.lang.toLowerCase().indexOf("fa") === 0 ? 0 : 1;
-        var bf = b.lang.toLowerCase().indexOf("fa") === 0 ? 0 : 1;
+      var langSel = document.getElementById("ttsLang").value;
+      var pref = langSel === "fa" ? "fa" : langSel === "en" ? "en" : "fa"; /* پیش‌فرض: فارسی اول */
+      var sorted = vs.slice().sort(function(a, b){
+        var af = a.lang.toLowerCase().indexOf(pref) === 0 ? 0 : 1;
+        var bf = b.lang.toLowerCase().indexOf(pref) === 0 ? 0 : 1;
         return af - bf;
-      }).forEach(function(v){
+      });
+      sorted.forEach(function(v){
         var o = document.createElement("option");
         o.value = v.name;
-        o.textContent = v.name + " — " + v.lang + (v.lang.toLowerCase().indexOf("fa") === 0 ? " ⭐" : "");
+        o.textContent = v.name + " — " + v.lang + (v.lang.toLowerCase().indexOf(pref) === 0 ? " ⭐" : "");
         sel.appendChild(o);
       });
+      if (cur) {
+        for (var k = 0; k < sel.options.length; k++) if (sel.options[k].value === cur) { sel.value = cur; break; }
+      }
     }
-    speechSynthesis.addEventListener("voiceschanged", fillVoices);
-    fillVoices();
-    setTimeout(fillVoices, 600);
+    speechSynthesis.addEventListener("voiceschanged", function(){ fillVoices(true); });
+    fillVoices(true);
+    setTimeout(function(){ fillVoices(true); }, 600);
+    applyDir();
   }
+  /* تشخیص زبان متن: فارسی → راست‌چین، انگلیسی → چپ‌چین */
+  function detectFa(txt) {
+    var faChars = (txt.match(/[\u0600-\u06FF]/g) || []).length;
+    var enChars = (txt.match(/[A-Za-z]/g) || []).length;
+    return faChars >= enChars;
+  }
+  function applyDir() {
+    var txt = document.getElementById("ttsText").value.trim();
+    var langSel = document.getElementById("ttsLang").value;
+    var isFa = langSel === "fa" ? true : langSel === "en" ? false : (txt ? detectFa(txt) : getLang() === "fa");
+    var dir = isFa ? "rtl" : "ltr";
+    document.getElementById("ttsText").setAttribute("dir", dir);
+    var pv = document.getElementById("ttsPreview");
+    pv.setAttribute("dir", dir);
+    pv.textContent = txt ? txt : (getLang() === "fa" ? "چینش متن خودکار است — فارسی راست‌چین و انگلیسی چپ‌چین می‌شود." : "Direction is automatic — Persian becomes RTL and English LTR.");
+  }
+  document.getElementById("ttsText").addEventListener("input", applyDir);
+  document.getElementById("ttsLang").addEventListener("change", function(){ fillVoices(true); applyDir(); });
+  document.getElementById("ttsSampleFa").addEventListener("click", function(){
+    document.getElementById("ttsText").value = "سلام! من دستیار صدای لومیتک هستم. امیدوارم روز خوبی داشته باشی!";
+    applyDir(); fillVoices(true);
+  });
+  document.getElementById("ttsSampleEn").addEventListener("click", function(){
+    document.getElementById("ttsText").value = "Hello! I am the Lumitek voice assistant. Have a wonderful day!";
+    applyDir(); fillVoices(true);
+  });
+
   document.getElementById("ttsPlay").addEventListener("click", function(){
     if (!("speechSynthesis" in window)) return;
     var t = d(), txt = document.getElementById("ttsText").value.trim();
     if (!txt) { document.getElementById("ttsMsg").textContent = "⚠️ " + t.ttsNeed; return; }
     speechSynthesis.cancel();
     var u = new SpeechSynthesisUtterance(txt);
+    var langSel = document.getElementById("ttsLang").value;
+    var isFa = langSel === "fa" ? true : langSel === "en" ? false : detectFa(txt);
+    u.lang = isFa ? "fa-IR" : "en-US";
     var name = document.getElementById("ttsVoice").value;
     var vs = speechSynthesis.getVoices();
-    for (var i = 0; i < vs.length; i++) if (vs[i].name === name) { u.voice = vs[i]; break; }
+    var picked = false;
+    for (var i = 0; i < vs.length; i++) if (vs[i].name === name) { u.voice = vs[i]; picked = true; break; }
+    if (!picked) {
+      /* صدای هم‌زبان را خودکار پیدا کن */
+      var pref = isFa ? "fa" : "en";
+      for (var j = 0; j < vs.length; j++) if (vs[j].lang.toLowerCase().indexOf(pref) === 0) { u.voice = vs[j]; break; }
+    }
     u.rate = parseInt(document.getElementById("ttsRate").value, 10) / 10;
     u.pitch = parseInt(document.getElementById("ttsPitch").value, 10) / 10;
     u.onstart = function(){ document.getElementById("ttsMsg").textContent = t.ttsPlaying; };

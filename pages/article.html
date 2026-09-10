@@ -3,24 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>🔢 مبدل مبنا و هش | ابزارهای Lumitek</title>
-<meta name="description" content="تبدیل مبنا دودویی/هشت/دهدهی/شانزده، Base64 و هش SHA-256 — آفلاین و امن.">
-<meta name="keywords" content="لومیتک, lumitek, ابزار آنلاین, بازی آنلاین, اخبار ورزش, پشتیبانی هوش مصنوعی, خرید سکه, وب اپلیکیشن">
+<title>📚 مقاله | Lumitek</title>
+<meta name="description" content="مقالات آموزشی مفصل لومیتک — هر مبحث از صفر تا صد در یک صفحه کامل.">
 <meta name="robots" content="index,follow">
 <meta name="theme-color" content="#070b15">
-<link rel="canonical" href="https://lumitek.netlify.app/tools/basehash.html">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Lumitek">
-<meta property="og:title" content="🔢 مبدل مبنا و هش | ابزارهای Lumitek">
-<meta property="og:description" content="تبدیل مبنا دودویی/هشت/دهدهی/شانزده، Base64 و هش SHA-256 — آفلاین و امن.">
-<meta property="og:url" content="https://lumitek.netlify.app/tools/stopwatch.html">
-<meta property="og:image" content="https://lumitek.netlify.app/assets/icons/og-cover.png">
-<meta property="og:locale" content="fa_IR">
-<meta property="og:locale:alternate" content="en_US">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="🔢 مبدل مبنا و هش | ابزارهای Lumitek">
-<meta name="twitter:description" content="تبدیل مبنا دودویی/هشت/دهدهی/شانزده، Base64 و هش SHA-256 — آفلاین و امن.">
-<meta name="twitter:image" content="https://lumitek.netlify.app/assets/icons/og-cover.png">
 <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
 <link rel="apple-touch-icon" href="../assets/icons/icon-192.png">
 <link rel="manifest" href="../manifest.json">
@@ -99,60 +85,49 @@
   </div>
 </div>
 
-<main class="page">
-<p class="eyebrow">LUMITEK TOOL · NEW</p>
-<h1 data-i18n="tl.baseT">🔢 مبدل مبنا و هش</h1>
-<p class="muted" data-i18n="tl.baseL">تبدیل دودویی/هشت‌دهی/دهدهی/شانزده‌شانزدهی، کد Base64 و هش SHA — آفلاین و امن در مرورگر خودت.</p>
+<div class="ar-progress-wrap"><i id="arProgressBar"></i></div>
 
-<div class="card mt">
-  <h3>🔢 تبدیل مبنا</h3>
-  <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:10px">
-    <label style="flex:2;min-width:200px"><span class="muted" data-i18n="tl.bhIn">عدد ورودی</span>
-      <input id="bhIn" class="amount-input" dir="ltr" style="width:100%" placeholder="255">
-    </label>
-    <label style="flex:1;min-width:140px"><span class="muted" data-i18n="tl.bhBase">مبنا</span>
-      <select id="bhBase" class="amount-input" style="width:100%">
-        <option value="10" selected>دهدهی (10)</option>
-        <option value="2">دودویی (2)</option>
-        <option value="8">هشت‌دهی (8)</option>
-        <option value="16">شانزده‌دهی (16)</option>
-      </select>
-    </label>
-  </div>
-  <div class="grid mt" style="grid-template-columns:repeat(auto-fit,minmax(140px,1fr))">
-    <div class="card" style="margin:0"><span class="muted" style="font-size:.75rem">BIN</span><b id="bhBin" class="mono" dir="ltr" style="display:block;word-break:break-all">—</b></div>
-    <div class="card" style="margin:0"><span class="muted" style="font-size:.75rem">OCT</span><b id="bhOct" class="mono" dir="ltr" style="display:block">—</b></div>
-    <div class="card" style="margin:0"><span class="muted" style="font-size:.75rem">DEC</span><b id="bhDec" class="mono" dir="ltr" style="display:block">—</b></div>
-    <div class="card" style="margin:0"><span class="muted" style="font-size:.75rem">HEX</span><b id="bhHex" class="mono" dir="ltr" style="display:block">—</b></div>
-  </div>
-  <p class="muted mt">ASCII: <b id="bhAscii" class="mono">—</b> · <span id="bhStatus" style="color:#e55"></span></p>
-</div>
+<main class="page" style="max-width:860px">
+  <a class="ghost-btn" href="articles.html" style="display:inline-flex;margin-bottom:16px">→ <span data-i18n="ar.back">بازگشت به مقالات</span></a>
 
-<div class="card mt">
-  <h3>🔐 هش و Base64</h3>
-  <textarea id="bhText" class="amount-input" rows="3" style="width:100%;margin-top:10px" placeholder="متن را وارد کن..."></textarea>
-  <div style="display:grid;gap:10px;margin-top:12px">
-    <div><span class="muted" style="font-size:.75rem">SHA-256</span><code id="bhSha256" class="mono" style="display:block;background:var(--card2);padding:9px;border-radius:10px;font-size:.68rem;direction:ltr;word-break:break-all">—</code></div>
-    <div><span class="muted" style="font-size:.75rem">SHA-1</span><code id="bhSha1" class="mono" style="display:block;background:var(--card2);padding:9px;border-radius:10px;font-size:.68rem;direction:ltr;word-break:break-all">—</code></div>
-    <div><span class="muted" style="font-size:.75rem">Base64</span><code id="bhB64" class="mono" style="display:block;background:var(--card2);padding:9px;border-radius:10px;font-size:.68rem;direction:ltr;word-break:break-all">—</code></div>
+  <div id="arNotFound" class="card" style="display:none;text-align:center;padding:50px 20px">
+    <div style="font-size:44px">🔍</div>
+    <h2>مقاله پیدا نشد!</h2>
+    <p class="muted">این مقاله وجود ندارد یا حذف شده — از فهرست مقالات یکی را انتخاب کن.</p>
+    <a class="primary-btn" style="display:inline-flex" href="articles.html" data-i18n="ar.back">بازگشت به مقالات</a>
   </div>
-  <button id="bhB64Btn" class="ghost-btn mt" style="width:100%">Base64 رمزگشایی متن بالا</button>
-</div>
 
-<div class="grid mt" style="grid-template-columns:repeat(auto-fit,minmax(230px,1fr))">
-  <div class="card"><h3>🎓 مبنا چیست؟</h3><p class="muted">کامپیوتر همه‌چیز را با ۰ و ۱ (دودویی) می‌فهمد؛ HEX برای رنگ‌ها و حافظه به کار می‌رود چون کوتاه‌تر است — مثل 255 = FF.</p></div>
-  <div class="card"><h3>🔒 هش برای چیست؟</h3><p class="muted">هش SHA اثر انگشت متن است؛ برای ذخیره امن رمز عبور و بررسی سلامت فایل‌ها استفاده می‌شود — یک‌طرفه و غیرقابل بازگشت.</p></div>
-  <div class="card"><h3>⚡ کاملاً آفلاین</h3><p class="muted">همه محاسبات با Web Crypto در مرورگر خودت انجام می‌شود؛ هیچ متنی به سرور ارسال نمی‌شود.</p></div>
-</div>
+  <article id="arWrap" style="display:none">
+    <div class="ar-hero">
+      <span class="tag" id="pdTag">آموزش</span>
+      <h1 id="pdTitle">—</h1>
+      <p class="ar-lead2" id="pdLead">—</p>
+      <div class="ar-meta-row">
+        <span>🕒 <b id="pdMin">—</b> <span data-i18n="ar.minutes">دقیقه مطالعه</span></span>
+        <span>📁 <b id="pdCat">—</b></span>
+        <span>📅 <b id="pdDate">—</b></span>
+      </div>
+    </div>
+
+    <div class="ar-toc" id="pdTocBox">
+      <b data-i18n="ar.toc">فهرست مطالب</b>
+      <ol id="pdToc"></ol>
+    </div>
+
+    <div class="ar-body ar-page-body" id="pdBody"></div>
+
+    <div class="ar-actions">
+      <button class="primary-btn" id="pdReadBtn">✅ <span data-i18n="ar.readCta">خواندم و یاد گرفتم — ۵ سکه بگیر!</span></button>
+      <button class="ghost-btn" id="pdShare">🔗 <span data-i18n="ar.share">کپی لینک</span></button>
+    </div>
+    <p class="muted" id="pdReadDone" style="display:none;font-size:.82rem" data-i18n="ar.readDone">خوانده‌شده ✓ جایزه‌ات قبلاً واریز شده است</p>
+
+    <div class="ar-nav-row" id="pdNavRow"></div>
+
+    <h3 style="margin-top:30px" data-i18n="ar.related">مقاله‌های مرتبط</h3>
+    <div class="ar-rel-grid" id="pdRelated"></div>
+  </article>
 </main>
-
-
-
-<script src="../js/i18n.js"></script>
-<script src="../js/auth.js"></script>
-
-
-
 
 <footer class="footer-v2">
   <div class="fv-grid">
@@ -174,7 +149,7 @@
     <div>
       <h4 data-i18n="footer.services">خدمات</h4>
       <ul>
-        <li><a href="../pages/store.html" data-i18n="nav.store">استور</a></li>
+        <li><a href="../pages/store.html" data-i18n="nav.store">فروشگاه</a></li>
         <li><a href="../pages/store.html#coins" data-i18n="nav.coins">خرید سکه</a></li>
         <li><a href="../pages/account.html" data-i18n="nav.account">حساب کاربری</a></li>
         <li><a href="../pages/download.html" class="nav-mid2" data-i18n="nav.download">دانلود اپ</a></li>
@@ -190,7 +165,7 @@
       </form>
     </div>
   </div>
-    <div class="fv-social">
+  <div class="fv-social">
     <div class="fv-social-title" data-i18n="footer.socialT">ما را در شبکه‌های اجتماعی دنبال کنید</div>
     <div class="fv-social-row">
       <a href="https://www.aparat.com/lumitek" target="_blank" rel="noopener" title="آپارات" aria-label="Aparat">
@@ -213,84 +188,139 @@
   </div>
 </footer>
 
+<script src="../js/i18n.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/articles-data.js"></script>
 <script src="../js/main.js"></script>
 <script>
+/* ============================================================
+   Lumitek 1.2 — خواندن کامل مقاله (صفحه اختصاصی)
+   فهرست مطالب + نوار پیشرفت + مقاله بعدی/قبلی + مرتبط‌ها + جایزه
+   ============================================================ */
+(function () {
+  function faNum(n) { return getLang() === "fa" ? String(n).replace(/\d/g, function (d) { return "۰۱۲۳۴۵۶۷۸۹"[+d]; }) : String(n); }
+  function T2(k, fb) { var v = T(k); return v === k ? fb : v; }
+  var ARTICLES = (window.LUMITEK_ARTICLES || []);
+  var idx = -1;
+  try {
+    var qid = decodeURIComponent((location.search.match(/[?&]id=([^&]+)/) || [])[1] || "");
+    for (var i = 0; i < ARTICLES.length; i++) if (ARTICLES[i].id === qid) { idx = i; break; }
+  } catch (e) {}
 
-(function(){
-  var fa = {
-    "t-title": "🔢 مبدل مبنا و هش", "t-lead": "تبدیل دودویی/هشت/دهدهی/شانزده، Base64 و هش SHA — آفلاین و امن.",
-    "numIn": "عدد ورودی", "fromBase": "مبنا", "ascii": "کاراکتر ASCII",
-    "hashT": "هش متن", "textIn": "متن را وارد کن...", "b64e": "Base64 رمز", "b64d": "Base64 رمزگشایی",
-    "err": "ورودی نامعتبر برای این مبناست."
-  };
-  var en = {
-    "t-title": "🔢 Base & Hash Converter", "t-lead": "Binary/octal/decimal/hex, Base64 and SHA hashes — offline and secure.",
-    "numIn": "Input number", "fromBase": "Base", "ascii": "ASCII char",
-    "hashT": "Hash text", "textIn": "Enter text...", "b64e": "Base64 encode", "b64d": "Base64 decode",
-    "err": "Invalid input for this base."
-  };
-  function d(){ return getLang() === "fa" ? fa : en; }
-  var el = function(id){ return document.getElementById(id); };
-  function copyText(txt, btn) {
-    try { navigator.clipboard.writeText(txt); } catch(e) {}
-    if (btn) { var o = btn.textContent; btn.textContent = "✓"; setTimeout(function(){ btn.textContent = o; }, 800); }
+  if (idx < 0) {
+    document.getElementById("arNotFound").style.display = "block";
+    return;
   }
-  function convert() {
-    var v = el("bhIn").value.trim();
-    var base = parseInt(el("bhBase").value, 10);
-    var outs = ["bhBin", "bhOct", "bhDec", "bhHex"];
-    outs.forEach(function(id){ el(id).textContent = "—"; });
-    el("bhAscii").textContent = "—";
-    if (!v) return;
-    var re = base === 2 ? /^[01]+$/ : base === 8 ? /^[0-7]+$/ : base === 16 ? /^[0-9a-fA-F]+$/ : /^[0-9]+$/;
-    if (!re.test(v)) { el("bhStatus").textContent = d().err; return; }
-    el("bhStatus").textContent = "";
-    var n = parseInt(v, base);
-    if (!isFinite(n) || n < 0) { el("bhStatus").textContent = d().err; return; }
-    el("bhBin").textContent = n.toString(2);
-    el("bhOct").textContent = n.toString(8);
-    el("bhDec").textContent = n.toString(10);
-    el("bhHex").textContent = n.toString(16).toUpperCase();
-    if (n < 1114112) {
-      try { el("bhAscii").textContent = n >= 32 ? String.fromCodePoint(n) : "(ctrl)"; } catch(e) {}
-    }
-  }
-  el("bhIn").addEventListener("input", convert);
-  el("bhBase").addEventListener("change", convert);
-  [["bhBin"],["bhOct"],["bhDec"],["bhHex"]].forEach(function(pair) {
-    var id = pair[0];
-    el(id).style.cursor = "pointer";
-    el(id).title = "click to copy";
-    el(id).onclick = function(){ copyText(this.textContent, null); };
+  var a = ARTICLES[idx];
+  document.getElementById("arWrap").style.display = "block";
+  document.title = a.emoji + " " + a.title + " | Lumitek";
+
+  var CAT_NAMES = { programming: { fa: "💻 برنامه‌نویسی", en: "💻 Programming" }, computer: { fa: "🖥️ کامپیوتر", en: "🖥️ Computer" }, security: { fa: "🔐 امنیت", en: "🔐 Security" }, mobile: { fa: "📱 موبایل و اینترنت", en: "📱 Mobile & Web" }, ai: { fa: "🤖 هوش مصنوعی", en: "🤖 AI" }, productivity: { fa: "🚀 بهره‌وری", en: "🚀 Productivity" } };
+
+  document.getElementById("pdTag").textContent = a.emoji + " " + a.tag;
+  document.getElementById("pdTitle").textContent = a.title;
+  document.getElementById("pdLead").textContent = a.lead;
+  document.getElementById("pdMin").textContent = faNum(a.min);
+  var catName = (CAT_NAMES[a.cat] || {})[(getLang() === "fa" ? "fa" : "en")] || a.cat;
+  document.getElementById("pdCat").textContent = catName;
+  document.getElementById("pdDate").textContent = "Lumitek v0.1.3";
+
+  /* بدنه + شناسه برای فهرست */
+  var bodyEl = document.getElementById("pdBody");
+  bodyEl.innerHTML = a.body;
+  var heads = bodyEl.querySelectorAll("h4");
+  heads.forEach(function (h, i) { h.id = "sec" + i; });
+  var toc = document.getElementById("pdToc");
+  toc.innerHTML = "";
+  heads.forEach(function (h, i) {
+    var li = document.createElement("li");
+    var link = document.createElement("a");
+    link.href = "#sec" + i;
+    link.textContent = h.textContent;
+    li.appendChild(link);
+    toc.appendChild(li);
   });
-  function hash(algo, outId) {
-    var t = el("bhText").value;
-    if (!t) { el(outId).textContent = "—"; return; }
-    if (!(window.crypto && crypto.subtle && crypto.subtle.digest)) { el(outId).textContent = "⚠️"; return; }
-    crypto.subtle.digest(algo, new TextEncoder().encode(t)).then(function(buf) {
-      el(outId).textContent = Array.from(new Uint8Array(buf)).map(function(b){ return b.toString(16).padStart(2, "0"); }).join("");
-    });
-  }
-  el("bhText").addEventListener("input", function() {
-    hash("SHA-256", "bhSha256");
-    hash("SHA-1", "bhSha1");
-    var t = this.value;
-    try {
-      el("bhB64").textContent = t ? btoa(unescape(encodeURIComponent(t))) : "—";
-    } catch(e) { el("bhB64").textContent = "—"; }
+  document.getElementById("pdTocBox").style.display = heads.length ? "" : "none";
+
+  /* قبلی/بعدی */
+  var navRow = document.getElementById("pdNavRow");
+  var prev = ARTICLES[idx - 1], next = ARTICLES[idx + 1];
+  var navHtml = "";
+  if (prev) navHtml += '<a class="ar-nav-card" href="article.html?id=' + prev.id + '"><small>→ ' + T2("ar.prev", "قبلی") + '</small><b>' + prev.emoji + " " + prev.title + '</b></a>';
+  else navHtml += '<span></span>';
+  if (next) navHtml += '<a class="ar-nav-card" style="text-align:end" href="article.html?id=' + next.id + '"><small>' + T2("ar.next", "بعدی") + ' ←</small><b>' + next.emoji + " " + next.title + '</b></a>';
+  else navHtml += '<span></span>';
+  navRow.innerHTML = navHtml;
+
+  /* مرتبط‌ها (همان دسته) */
+  var rel = ARTICLES.filter(function (x) { return x.cat === a.cat && x.id !== a.id; }).slice(0, 4);
+  var relBox = document.getElementById("pdRelated");
+  relBox.innerHTML = "";
+  rel.forEach(function (r) {
+    var c = document.createElement("a");
+    c.className = "ar-rel-card";
+    c.href = "article.html?id=" + encodeURIComponent(r.id);
+    c.innerHTML = '<span class="r-emoji"></span><b></b><small></small>';
+    c.querySelector(".r-emoji").textContent = r.emoji;
+    c.querySelector("b").textContent = r.title;
+    c.querySelector("small").textContent = r.tag + " · " + faNum(r.min) + " " + T2("ar.minutes", "دقیقه");
+    relBox.appendChild(c);
   });
-  el("bhB64Btn").onclick = function() {
-    try {
-      var dec = decodeURIComponent(escape(atob(el("bhText").value.trim())));
-      el("bhText").value = dec;
-      el("bhText").dispatchEvent(new Event("input"));
-    } catch(e) { el("bhStatus").textContent = d().err; }
+  if (!rel.length) relBox.innerHTML = '<p class="muted" style="font-size:.82rem">—</p>';
+
+  /* جایزه مطالعه */
+  function isRead() {
+    try { var p = getProfile(); return (p.readArticles || []).indexOf(a.id) !== -1; } catch (e) { return false; }
+  }
+  function paintRead() {
+    var done = isRead();
+    document.getElementById("pdReadBtn").style.display = done ? "none" : "";
+    document.getElementById("pdReadDone").style.display = done ? "block" : "none";
+  }
+  document.getElementById("pdReadBtn").onclick = function () {
+    var p = getProfile();
+    p.readArticles = Array.isArray(p.readArticles) ? p.readArticles : [];
+    if (p.readArticles.indexOf(a.id) !== -1) { paintRead(); return; }
+    p.readArticles.push(a.id);
+    saveProfile(p);
+    var r = addReward(10, 5);
+    addNotification("🎓", T("m.articleReward") + " (" + r.coins + " 🪙)");
+    paintRead();
   };
-  convert();
+  paintRead();
+
+  /* کپی لینک */
+  document.getElementById("pdShare").onclick = function () {
+    var url = location.href;
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(function () { addNotification("🔗", T2("ar.copied", "لینک کپی شد ✓")); });
+        return;
+      }
+    } catch (e) {}
+    var inp = document.createElement("input");
+    inp.value = url; document.body.appendChild(inp); inp.select();
+    try { document.execCommand("copy"); addNotification("🔗", T2("ar.copied", "لینک کپی شد ✓")); } catch (e) {}
+    inp.remove();
+  };
+
+  /* نوار پیشرفت مطالعه */
+  var bar = document.getElementById("arProgressBar");
+  function onScroll() {
+    var doc = document.documentElement;
+    var total = doc.scrollHeight - window.innerHeight;
+    var pct = total > 0 ? Math.min(100, Math.max(0, (window.scrollY / total) * 100)) : 0;
+    bar.style.width = pct + "%";
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+
+  document.addEventListener("lumitek:langchange", function () {
+    var catName2 = (CAT_NAMES[a.cat] || {})[(getLang() === "fa" ? "fa" : "en")] || a.cat;
+    document.getElementById("pdCat").textContent = catName2;
+    paintRead();
+  });
 })();
-
 </script>
-
 </body>
-
 </html>

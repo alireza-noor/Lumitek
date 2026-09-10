@@ -1,14 +1,26 @@
-# 🚀 راهنمای انتشار Lumitek 1.1 روی اینترنت (دامنه + سئو)
+# 🚀 راهنمای انتشار Lumitek 0.1.3 روی اینترنت (دامنه + سئو)
 
 این راهنما دقیقاً مراحل انتشار سایت نسخه ۱.۱ روی یک دامنه + ثبت در گوگل را توضیح می‌دهد تا همه بتوانند با جستجوی «لومیتک» سایتت را پیدا کنند — بدون این که تو کاری بکنی.
 
 ---
 
-## گزینه ۱: Netlify (پیشنهادی — ساده‌ترین، دامنه رایگان: `lumitek.netlify.app`)
+## گزینه ۰: Cloudflare Workers (میزبان فعلی سایت — `lumitek.alirezanoor-1389.workers.dev`)
+
+سایت در حال حاضر روی Cloudflare Workers اجرا می‌شود و آدرس اصلی و Canonical آن این است:
+
+### `https://lumitek.alirezanoor-1389.workers.dev`
+
+- فایل‌های `robots.txt` و `sitemap.xml` همین نسخه، دقیقاً به همین دامنه اشاره می‌کنند.
+- برای انتشار نسخه‌ی جدید، پروژه را با Wrangler مستقر کن: `npx wrangler deploy` (اساتیک‌سایت = آپلود پوشه به‌صورت Assets).
+- بعد از هر انتشار، آدرس `https://lumitek.alirezanoor-1389.workers.dev/sitemap.xml` را در [Google Search Console](https://search.google.com/search-console) دوباره ثبت (Submit) کن تا ایندکس تازه شود.
+
+---
+
+## گزینه ۱: Netlify (دامنه رایگان: `lumitek.netlify.app`)
 
 1. به [netlify.com](https://netlify.com) برو و با ایمیل/گیت‌هاب ثبت‌نام کن.
 2. از داشبورد **Add new site → Deploy manually** را بزن.
-3. فایل `Lumitek_1.1.zip` را (بدون باز کردن!) داخل صفحه بکش و رها کن.
+3. فایل `Lumitek_0.1.3.zip` را (بدون باز کردن!) داخل صفحه بکش و رها کن.
 4. از **Site configuration → Change site name** اسم را به `lumitek` تغییر بده → دامنه می‌شود:
    ### `https://lumitek.netlify.app` ✨
 5. PWA و Service Worker روی HTTPS نت‌لیفای بلافاصله کار می‌کند.

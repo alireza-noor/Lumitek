@@ -3,23 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>🔢 مبدل مبنا و هش | ابزارهای Lumitek</title>
-<meta name="description" content="تبدیل مبنا دودویی/هشت/دهدهی/شانزده، Base64 و هش SHA-256 — آفلاین و امن.">
+<title>🌍 مترجم هوشمند | Lumitek</title>
+<meta name="description" content="مترجم هوشمند لومیتک — ترجمه روان فارسی، انگلیسی، عربی و ترکی با موتور هوش مصنوعی و تشخیص خودکار جهت.">
 <meta name="keywords" content="لومیتک, lumitek, ابزار آنلاین, بازی آنلاین, اخبار ورزش, پشتیبانی هوش مصنوعی, خرید سکه, وب اپلیکیشن">
 <meta name="robots" content="index,follow">
 <meta name="theme-color" content="#070b15">
-<link rel="canonical" href="https://lumitek.netlify.app/tools/basehash.html">
+<link rel="canonical" href="https://lumitek.netlify.app/tools/stopwatch.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Lumitek">
-<meta property="og:title" content="🔢 مبدل مبنا و هش | ابزارهای Lumitek">
-<meta property="og:description" content="تبدیل مبنا دودویی/هشت/دهدهی/شانزده، Base64 و هش SHA-256 — آفلاین و امن.">
+<meta property="og:title" content="🌍 مترجم هوشمند | Lumitek">
+<meta property="og:description" content="مترجم هوشمند لومیتک — ترجمه روان فارسی، انگلیسی، عربی و ترکی با موتور هوش مصنوعی و تشخیص خودکار جهت.">
 <meta property="og:url" content="https://lumitek.netlify.app/tools/stopwatch.html">
 <meta property="og:image" content="https://lumitek.netlify.app/assets/icons/og-cover.png">
 <meta property="og:locale" content="fa_IR">
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="🔢 مبدل مبنا و هش | ابزارهای Lumitek">
-<meta name="twitter:description" content="تبدیل مبنا دودویی/هشت/دهدهی/شانزده، Base64 و هش SHA-256 — آفلاین و امن.">
+<meta name="twitter:title" content="🌍 مترجم هوشمند | Lumitek">
+<meta name="twitter:description" content="مترجم هوشمند لومیتک — ترجمه روان فارسی، انگلیسی، عربی و ترکی با موتور هوش مصنوعی و تشخیص خودکار جهت.">
 <meta name="twitter:image" content="https://lumitek.netlify.app/assets/icons/og-cover.png">
 <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
 <link rel="apple-touch-icon" href="../assets/icons/icon-192.png">
@@ -100,49 +100,31 @@
 </div>
 
 <main class="page">
-<p class="eyebrow">LUMITEK TOOL · NEW</p>
-<h1 data-i18n="tl.baseT">🔢 مبدل مبنا و هش</h1>
-<p class="muted" data-i18n="tl.baseL">تبدیل دودویی/هشت‌دهی/دهدهی/شانزده‌شانزدهی، کد Base64 و هش SHA — آفلاین و امن در مرورگر خودت.</p>
-
-<div class="card mt">
-  <h3>🔢 تبدیل مبنا</h3>
-  <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:10px">
-    <label style="flex:2;min-width:200px"><span class="muted" data-i18n="tl.bhIn">عدد ورودی</span>
-      <input id="bhIn" class="amount-input" dir="ltr" style="width:100%" placeholder="255">
-    </label>
-    <label style="flex:1;min-width:140px"><span class="muted" data-i18n="tl.bhBase">مبنا</span>
-      <select id="bhBase" class="amount-input" style="width:100%">
-        <option value="10" selected>دهدهی (10)</option>
-        <option value="2">دودویی (2)</option>
-        <option value="8">هشت‌دهی (8)</option>
-        <option value="16">شانزده‌دهی (16)</option>
-      </select>
-    </label>
+<p class="eyebrow">LUMITEK TOOL</p>
+<h1 id="t-title">🌍 مترجم هوشمند</h1>
+<p class="muted" id="t-lead">ترجمه‌ی روان بین فارسی، انگلیسی، عربی و ترکی با موتور هوش مصنوعی — با تشخیص خودکار جهت متن.</p>
+<div class="card mt2" style="max-width:820px;margin-inline:auto">
+  <div class="data-row" style="gap:10px;flex-wrap:wrap">
+    <label style="flex:1;min-width:150px"><span id="trFromL">از زبان</span>
+      <select id="trFrom" class="amount-input" style="width:100%">
+        <option value="auto" id="trAuto">تشخیص خودکار</option>
+        <option value="Persian">فارسی</option><option value="English">انگلیسی</option>
+        <option value="Arabic">عربی</option><option value="Turkish">ترکی</option>
+      </select></label>
+    <button class="ghost-btn" id="trSwap" style="align-self:end">🔄</button>
+    <label style="flex:1;min-width:150px"><span id="trToL">به زبان</span>
+      <select id="trTo" class="amount-input" style="width:100%">
+        <option value="English">انگلیسی</option><option value="Persian">فارسی</option>
+        <option value="Arabic">عربی</option><option value="Turkish">ترکی</option>
+      </select></label>
   </div>
-  <div class="grid mt" style="grid-template-columns:repeat(auto-fit,minmax(140px,1fr))">
-    <div class="card" style="margin:0"><span class="muted" style="font-size:.75rem">BIN</span><b id="bhBin" class="mono" dir="ltr" style="display:block;word-break:break-all">—</b></div>
-    <div class="card" style="margin:0"><span class="muted" style="font-size:.75rem">OCT</span><b id="bhOct" class="mono" dir="ltr" style="display:block">—</b></div>
-    <div class="card" style="margin:0"><span class="muted" style="font-size:.75rem">DEC</span><b id="bhDec" class="mono" dir="ltr" style="display:block">—</b></div>
-    <div class="card" style="margin:0"><span class="muted" style="font-size:.75rem">HEX</span><b id="bhHex" class="mono" dir="ltr" style="display:block">—</b></div>
+  <textarea id="trInput" class="textarea" rows="5" style="margin-top:12px" placeholder="متن را اینجا بنویس..."></textarea>
+  <div class="data-row" style="margin-top:10px;gap:8px">
+    <button class="primary-btn" id="trGo">🌍 ترجمه کن</button>
+    <button class="ghost-btn" id="trCopy">📋 کپی ترجمه</button>
+    <span class="muted" id="trMsg" style="font-size:.82rem;align-self:center"></span>
   </div>
-  <p class="muted mt">ASCII: <b id="bhAscii" class="mono">—</b> · <span id="bhStatus" style="color:#e55"></span></p>
-</div>
-
-<div class="card mt">
-  <h3>🔐 هش و Base64</h3>
-  <textarea id="bhText" class="amount-input" rows="3" style="width:100%;margin-top:10px" placeholder="متن را وارد کن..."></textarea>
-  <div style="display:grid;gap:10px;margin-top:12px">
-    <div><span class="muted" style="font-size:.75rem">SHA-256</span><code id="bhSha256" class="mono" style="display:block;background:var(--card2);padding:9px;border-radius:10px;font-size:.68rem;direction:ltr;word-break:break-all">—</code></div>
-    <div><span class="muted" style="font-size:.75rem">SHA-1</span><code id="bhSha1" class="mono" style="display:block;background:var(--card2);padding:9px;border-radius:10px;font-size:.68rem;direction:ltr;word-break:break-all">—</code></div>
-    <div><span class="muted" style="font-size:.75rem">Base64</span><code id="bhB64" class="mono" style="display:block;background:var(--card2);padding:9px;border-radius:10px;font-size:.68rem;direction:ltr;word-break:break-all">—</code></div>
-  </div>
-  <button id="bhB64Btn" class="ghost-btn mt" style="width:100%">Base64 رمزگشایی متن بالا</button>
-</div>
-
-<div class="grid mt" style="grid-template-columns:repeat(auto-fit,minmax(230px,1fr))">
-  <div class="card"><h3>🎓 مبنا چیست؟</h3><p class="muted">کامپیوتر همه‌چیز را با ۰ و ۱ (دودویی) می‌فهمد؛ HEX برای رنگ‌ها و حافظه به کار می‌رود چون کوتاه‌تر است — مثل 255 = FF.</p></div>
-  <div class="card"><h3>🔒 هش برای چیست؟</h3><p class="muted">هش SHA اثر انگشت متن است؛ برای ذخیره امن رمز عبور و بررسی سلامت فایل‌ها استفاده می‌شود — یک‌طرفه و غیرقابل بازگشت.</p></div>
-  <div class="card"><h3>⚡ کاملاً آفلاین</h3><p class="muted">همه محاسبات با Web Crypto در مرورگر خودت انجام می‌شود؛ هیچ متنی به سرور ارسال نمی‌شود.</p></div>
+  <div class="tts-preview" id="trOutput" dir="ltr" style="margin-top:12px;min-height:70px">—</div>
 </div>
 </main>
 
@@ -214,83 +196,73 @@
 </footer>
 
 <script src="../js/main.js"></script>
-<script>
 
+<script>
 (function(){
   var fa = {
-    "t-title": "🔢 مبدل مبنا و هش", "t-lead": "تبدیل دودویی/هشت/دهدهی/شانزده، Base64 و هش SHA — آفلاین و امن.",
-    "numIn": "عدد ورودی", "fromBase": "مبنا", "ascii": "کاراکتر ASCII",
-    "hashT": "هش متن", "textIn": "متن را وارد کن...", "b64e": "Base64 رمز", "b64d": "Base64 رمزگشایی",
-    "err": "ورودی نامعتبر برای این مبناست."
+    "t-title": "🌍 مترجم هوشمند", "t-lead": "ترجمه‌ی روان بین فارسی، انگلیسی، عربی و ترکی با موتور هوش مصنوعی — با تشخیص خودکار جهت متن.",
+    "trFromL": "از زبان", "trToL": "به زبان", "trAuto": "تشخیص خودکار",
+    "trGo": "🌍 ترجمه کن", "trCopy": "📋 کپی ترجمه",
+    "trNeed": "اول متنی بنویس", "trBusy": "در حال ترجمه... 🌍", "trFail": "ترجمه ناموفق بود — دوباره امتحان کن.", "trCopied": "کپی شد ✓"
   };
   var en = {
-    "t-title": "🔢 Base & Hash Converter", "t-lead": "Binary/octal/decimal/hex, Base64 and SHA hashes — offline and secure.",
-    "numIn": "Input number", "fromBase": "Base", "ascii": "ASCII char",
-    "hashT": "Hash text", "textIn": "Enter text...", "b64e": "Base64 encode", "b64d": "Base64 decode",
-    "err": "Invalid input for this base."
+    "t-title": "🌍 Smart Translator", "t-lead": "Fluent translation between Persian, English, Arabic and Turkish with an AI engine — with automatic text direction.",
+    "trFromL": "From", "trToL": "To", "trAuto": "Auto-detect",
+    "trGo": "🌍 Translate", "trCopy": "📋 Copy translation",
+    "trNeed": "Write some text first", "trBusy": "Translating... 🌍", "trFail": "Translation failed — please try again.", "trCopied": "Copied ✓"
   };
   function d(){ return getLang() === "fa" ? fa : en; }
-  var el = function(id){ return document.getElementById(id); };
-  function copyText(txt, btn) {
-    try { navigator.clipboard.writeText(txt); } catch(e) {}
-    if (btn) { var o = btn.textContent; btn.textContent = "✓"; setTimeout(function(){ btn.textContent = o; }, 800); }
-  }
-  function convert() {
-    var v = el("bhIn").value.trim();
-    var base = parseInt(el("bhBase").value, 10);
-    var outs = ["bhBin", "bhOct", "bhDec", "bhHex"];
-    outs.forEach(function(id){ el(id).textContent = "—"; });
-    el("bhAscii").textContent = "—";
-    if (!v) return;
-    var re = base === 2 ? /^[01]+$/ : base === 8 ? /^[0-7]+$/ : base === 16 ? /^[0-9a-fA-F]+$/ : /^[0-9]+$/;
-    if (!re.test(v)) { el("bhStatus").textContent = d().err; return; }
-    el("bhStatus").textContent = "";
-    var n = parseInt(v, base);
-    if (!isFinite(n) || n < 0) { el("bhStatus").textContent = d().err; return; }
-    el("bhBin").textContent = n.toString(2);
-    el("bhOct").textContent = n.toString(8);
-    el("bhDec").textContent = n.toString(10);
-    el("bhHex").textContent = n.toString(16).toUpperCase();
-    if (n < 1114112) {
-      try { el("bhAscii").textContent = n >= 32 ? String.fromCodePoint(n) : "(ctrl)"; } catch(e) {}
-    }
-  }
-  el("bhIn").addEventListener("input", convert);
-  el("bhBase").addEventListener("change", convert);
-  [["bhBin"],["bhOct"],["bhDec"],["bhHex"]].forEach(function(pair) {
-    var id = pair[0];
-    el(id).style.cursor = "pointer";
-    el(id).title = "click to copy";
-    el(id).onclick = function(){ copyText(this.textContent, null); };
-  });
-  function hash(algo, outId) {
-    var t = el("bhText").value;
-    if (!t) { el(outId).textContent = "—"; return; }
-    if (!(window.crypto && crypto.subtle && crypto.subtle.digest)) { el(outId).textContent = "⚠️"; return; }
-    crypto.subtle.digest(algo, new TextEncoder().encode(t)).then(function(buf) {
-      el(outId).textContent = Array.from(new Uint8Array(buf)).map(function(b){ return b.toString(16).padStart(2, "0"); }).join("");
+  function paint(){
+    var t = d();
+    ["t-title","t-lead","trFromL","trToL","trGo","trCopy","trAuto"].forEach(function(k){
+      var el = document.getElementById(k); if (el) el.textContent = t[k];
     });
   }
-  el("bhText").addEventListener("input", function() {
-    hash("SHA-256", "bhSha256");
-    hash("SHA-1", "bhSha1");
-    var t = this.value;
-    try {
-      el("bhB64").textContent = t ? btoa(unescape(encodeURIComponent(t))) : "—";
-    } catch(e) { el("bhB64").textContent = "—"; }
+  document.addEventListener("lumitek:langchange", paint); paint();
+
+  var input = document.getElementById("trInput");
+  input.addEventListener("input", function(){
+    var faChars = (input.value.match(/[\u0600-\u06FF]/g) || []).length;
+    var enChars = (input.value.match(/[A-Za-z]/g) || []).length;
+    input.setAttribute("dir", faChars >= enChars ? "rtl" : "ltr");
   });
-  el("bhB64Btn").onclick = function() {
-    try {
-      var dec = decodeURIComponent(escape(atob(el("bhText").value.trim())));
-      el("bhText").value = dec;
-      el("bhText").dispatchEvent(new Event("input"));
-    } catch(e) { el("bhStatus").textContent = d().err; }
+  document.getElementById("trSwap").onclick = function(){
+    var f = document.getElementById("trFrom"), t = document.getElementById("trTo");
+    if (f.value === "auto") f.value = t.value;
+    var tmp = f.value; f.value = t.value === "auto" ? "English" : t.value; t.value = tmp;
+    var out = document.getElementById("trOutput").textContent;
+    if (out && out !== "—") input.value = out;
   };
-  convert();
+  document.getElementById("trGo").onclick = function(){
+    var t = d(), txt = input.value.trim();
+    var msg = document.getElementById("trMsg");
+    if (!txt) { msg.textContent = "⚠️ " + t.trNeed; return; }
+    msg.textContent = t.trBusy;
+    var from = document.getElementById("trFrom").value;
+    var to = document.getElementById("trTo").value;
+    var fromTxt = from === "auto" ? "detect the source language" : "from " + from;
+    var sys = "You are a professional translator. Translate the user text " + fromTxt + " to " + to + ". Reply ONLY with the translation, no explanations, no quotes.";
+    fetch("https://text.pollinations.ai/" + encodeURIComponent(txt) + "?model=openai-fast&referrer=lumitek&system=" + encodeURIComponent(sys))
+      .then(function(r){ if (!r.ok) throw 0; return r.text(); })
+      .then(function(out){
+        msg.textContent = "";
+        var box = document.getElementById("trOutput");
+        box.textContent = out.trim() || t.trFail;
+        var faChars = (box.textContent.match(/[\u0600-\u06FF]/g) || []).length;
+        var enChars = (box.textContent.match(/[A-Za-z]/g) || []).length;
+        box.setAttribute("dir", faChars >= enChars ? "rtl" : "ltr");
+      })
+      .catch(function(){ msg.textContent = "⚠️ " + t.trFail; });
+  };
+  document.getElementById("trCopy").onclick = function(){
+    var v = document.getElementById("trOutput").textContent;
+    if (!v || v === "—") return;
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(v).then(function(){
+      document.getElementById("trMsg").textContent = "✓ " + d().trCopied;
+      setTimeout(function(){ document.getElementById("trMsg").textContent = ""; }, 1600);
+    });
+  };
 })();
-
 </script>
-
 </body>
-
 </html>
