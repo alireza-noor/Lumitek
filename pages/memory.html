@@ -3,23 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>⚽ ضربات پنالتی | بازی‌های Lumitek</title>
-<meta name="description" content="بازی پنالتی آنلاین — زاویه و قدرت شوت را تنظیم کن و دروازه‌بان را مچ‌گیر کن.">
-<meta name="keywords" content="لومیتک, lumitek, بازی آنلاین, ابزار آنلاین, هوش مصنوعی, خرید سکه, وب اپلیکیشن">
+<title>🧠 بازی حافظه | Lumitek</title>
+<meta name="description" content="بازی حافظه Lumitek — جفت کارت‌های همسان را پیدا کن، با حرکت کمتر رکورد بزن و XP و سکه بگیر.">
+<meta name="keywords" content="لومیتک, lumitek, ابزار آنلاین, بازی آنلاین, اخبار ورزش, پشتیبانی هوش مصنوعی, خرید سکه, وب اپلیکیشن">
 <meta name="robots" content="index,follow">
 <meta name="theme-color" content="#070b15">
-<link rel="canonical" href="https://lumitek.netlify.app/pages/penalty.html">
+<link rel="canonical" href="https://lumitek.netlify.app/pages/color-tap.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Lumitek">
-<meta property="og:title" content="⚽ ضربات پنالتی | بازی‌های Lumitek">
-<meta property="og:description" content="بازی پنالتی آنلاین — زاویه و قدرت شوت را تنظیم کن و دروازه‌بان را مچ‌گیر کن.">
-<meta property="og:url" content="https://lumitek.netlify.app/pages/penalty.html">
+<meta property="og:title" content="🧠 بازی حافظه | Lumitek">
+<meta property="og:description" content="بازی حافظه Lumitek — جفت کارت‌های همسان را پیدا کن، با حرکت کمتر رکورد بزن و XP و سکه بگیر.">
+<meta property="og:url" content="https://lumitek.netlify.app/pages/color-tap.html">
 <meta property="og:image" content="https://lumitek.netlify.app/assets/icons/og-cover.png">
 <meta property="og:locale" content="fa_IR">
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="⚽ ضربات پنالتی | بازی‌های Lumitek">
-<meta name="twitter:description" content="بازی پنالتی آنلاین — زاویه و قدرت شوت را تنظیم کن و دروازه‌بان را مچ‌گیر کن.">
+<meta name="twitter:title" content="🧠 بازی حافظه | Lumitek">
+<meta name="twitter:description" content="بازی حافظه Lumitek — جفت کارت‌های همسان را پیدا کن، با حرکت کمتر رکورد بزن و XP و سکه بگیر.">
 <meta name="twitter:image" content="https://lumitek.netlify.app/assets/icons/og-cover.png">
 <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
 <link rel="apple-touch-icon" href="../assets/icons/icon-192.png">
@@ -99,26 +99,27 @@
   </div>
 </div>
 
-<div class="search-wrap">
-<input id="globalSearchInput" type="search" data-i18n-ph="head.searchPh" placeholder="جستجو..." aria-label="Search">
-<div id="searchResults" class="search-results"></div>
-</div>
 <main class="page"><div class="game">
-<p class="eyebrow">LUMITEK GAME · NEW</p>
-<h1 data-i18n="g.penalty.n">⚽ ضربات پنالتی</h1>
-<p class="muted" data-i18n="g.penalty.d">زاویه و قدرت شوت را تنظیم کن و دروازه‌بان را مچ‌گیر کن!</p>
-
-<div class="gamebox mt">
-  <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
-    <span class="coin-pill">⚽ <b id="pnGoals">0</b> <span data-i18n="games.yourBest">رکورد</span></span>
-    <span class="coin-pill">🎯 <span data-i18n="unit.of10">از ۱۰</span>: <b id="pnShots">0</b></span>
+<p class="eyebrow">LUMITEK GAME</p>
+<h1 data-i18n="g.memory.n">🧠 حافظه</h1>
+<p class="muted" data-i18n="g.memory.d">جفت کارت‌های همسان را پیدا کن؛ با حرکت کمتر رکورد بزن!</p>
+<div class="gamebox mt" style="display:flex;flex-direction:column;align-items:center;gap:12px">
+  <div class="data-row" style="gap:16px;flex-wrap:wrap;justify-content:center;font-weight:800;font-size:.9rem">
+    <span id="meMoves">—</span><span id="meTimer">—</span><span id="meBest">—</span>
   </div>
-  <canvas id="pnCanvas" width="440" height="330" style="max-width:100%;border-radius:16px;margin-top:12px;touch-action:manipulation;cursor:pointer"></canvas>
-  <div class="sh-hint" id="pnHint">روی دروازه کلیک/لمس کن تا شوت بزنی — دروازه‌بان حرکت می‌کند!</div>
-  <button class="gamebutton" id="pnStart" style="margin-top:12px">شروع ضربات</button>
-  <p id="pnReward" class="muted" style="margin:8px 0 0"></p>
+  <div id="meGrid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:9px;width:100%;max-width:430px"></div>
+  <button class="gamebutton" id="meStart">شروع بازی</button>
+  <p id="meMsg" class="muted" style="min-height:1.5em">—</p>
 </div>
 </div></main>
+
+
+
+<script src="../js/i18n.js"></script>
+<script src="../js/auth.js"></script>
+
+
+
 
 <footer class="footer-v2">
   <div class="fv-grid">
@@ -140,10 +141,10 @@
     <div>
       <h4 data-i18n="footer.services">خدمات</h4>
       <ul>
-        <li><a href="../pages/store.html" data-i18n="nav.store">فروشگاه</a></li>
-        <li><a href="../pages/store.html#coins" data-i18n="nav.coins">شارژ سکه</a></li>
-        <li><a href="../pages/ai.html" data-i18n="nav.ai">لومیتک ای‌آی</a></li>
+        <li><a href="../pages/store.html" data-i18n="nav.store">استور</a></li>
+        <li><a href="../pages/store.html#coins" data-i18n="nav.coins">خرید سکه</a></li>
         <li><a href="../pages/account.html" data-i18n="nav.account">حساب کاربری</a></li>
+        <li><a href="../pages/download.html" data-i18n="nav.download">دانلود اپ</a></li>
         <li><a href="../pages/donate.html" style="color:var(--a)" data-i18n="nav.donate">حمایت مالی</a></li>
       </ul>
     </div>
@@ -179,165 +180,92 @@
   </div>
 </footer>
 
-<script src="../js/i18n.js"></script>
 <script src="../js/main.js"></script>
-<script src="../js/auth.js"></script>
-
 <script>
+/* Lumitek 1.0 — بازی حافظه: جفت کارت‌های همسان (4x4) با تایمر، حرکت و رکورد */
 (function(){
-  var canvas = document.getElementById("pnCanvas");
-  var ctx = canvas.getContext("2d");
-  var W = canvas.width, H = canvas.height;
-  var goalsEl = document.getElementById("pnGoals");
-  var shotsEl = document.getElementById("pnShots");
-  var rewardEl = document.getElementById("pnReward");
-  var startBtn = document.getElementById("pnStart");
-  var hintEl = document.getElementById("pnHint");
+  var EMOJIS = ["🚀","🎯","🧩","⚽","🐍","🌟","🎲","🎧"];
+  var grid = document.getElementById("meGrid");
+  var movesEl = document.getElementById("meMoves");
+  var timerEl = document.getElementById("meTimer");
+  var bestEl = document.getElementById("meBest");
+  var msgEl = document.getElementById("meMsg");
+  var startBtn = document.getElementById("meStart");
   function L(fa,en){ return getLang()==="fa"?fa:en; }
+  var first = null, second = null, lock = false, moves = 0, matched = 0, playing = false, t0 = 0, timerInt = null;
 
-  var GK_Y = 118, GOAL_L = 92, GOAL_R = 348, GOAL_T = 60, GOAL_B = 190;
-
-  var p0 = getProfile();
-  var bestGoals = p0.bests.penaltyGoals || 0;
-  goalsEl.textContent = bestGoals;
-
-  var goals, shots, ball, gk, phase, resultMsg, shotsTotal, running;
-
-  function reset() {
-    goals = 0; shots = 0; shotsTotal = 10;
-    goalsEl.textContent = bestGoals;
-    shotsEl.textContent = "0";
-    rewardEl.textContent = "";
-    hintEl.style.display = "";
-    phase = "aim";
-    ball = { x: W/2, y: 268, tx: W/2, ty: 268, sp: 0 };
-    gk = { x: (GOAL_L+GOAL_R)/2, target: (GOAL_L+GOAL_R)/2, sp: 0 };
-    resultMsg = "";
-    draw();
+  function faNum(n){ return getLang()==="fa" ? String(n).replace(/\d/g, function(d){ return "۰۱۲۳۴۵۶۷۸۹"[+d]; }) : String(n); }
+  function fmtTime(ms){
+    var s = Math.floor(ms/1000);
+    return faNum(Math.floor(s/60)) + ":" + faNum(("0"+(s%60)).slice(-2));
   }
-
-  function cssVar(n){ return getComputedStyle(document.documentElement).getPropertyValue(n).trim() || "#76e6c3"; }
-
-  function draw() {
-    ctx.clearRect(0,0,W,H);
-    /* sky + pitch */
-    var g = ctx.createLinearGradient(0,0,0,H);
-    g.addColorStop(0,"#0a1226"); g.addColorStop(1,"#12351f");
-    ctx.fillStyle = g; ctx.fillRect(0,0,W,H);
-    ctx.strokeStyle = "rgba(255,255,255,.14)";
-    ctx.lineWidth = 2;
-    for (var y = 210; y < H; y += 22) {
-      ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(W,y); ctx.stroke();
-    }
-    /* goal frame */
-    ctx.fillStyle = "rgba(255,255,255,.06)";
-    ctx.fillRect(GOAL_L, GOAL_T, GOAL_R-GOAL_L, GOAL_B-GOAL_T);
-    ctx.strokeStyle = "#e8f0ff"; ctx.lineWidth = 5;
-    ctx.beginPath();
-    ctx.moveTo(GOAL_L, GOAL_B); ctx.lineTo(GOAL_L, GOAL_T); ctx.lineTo(GOAL_R, GOAL_T); ctx.lineTo(GOAL_R, GOAL_B);
-    ctx.stroke();
-    /* net */
-    ctx.strokeStyle = "rgba(255,255,255,.12)"; ctx.lineWidth = 1;
-    for (var nx = GOAL_L; nx <= GOAL_R; nx += 16) { ctx.beginPath(); ctx.moveTo(nx, GOAL_T); ctx.lineTo(nx, GOAL_B); ctx.stroke(); }
-    for (var ny = GOAL_T; ny <= GOAL_B; ny += 16) { ctx.beginPath(); ctx.moveTo(GOAL_L, ny); ctx.lineTo(GOAL_R, ny); ctx.stroke(); }
-    /* keeper */
-    ctx.fillStyle = "#ffc861";
-    ctx.beginPath(); if (ctx.roundRect) ctx.roundRect(gk.x-20, GK_Y, 40, 52, 12); else ctx.rect(gk.x-20, GK_Y, 40, 52); ctx.fill();
-    ctx.fillStyle = "#101828";
-    ctx.beginPath(); ctx.arc(gk.x, GK_Y+14, 4, 0, 7); ctx.fill();
-    /* ball */
-    ctx.font = "26px serif"; ctx.textAlign = "center"; ctx.textBaseline = "middle";
-    ctx.fillText("⚽", ball.x, ball.y);
-    /* aim crosshair */
-    if (phase === "aim") {
-      ctx.strokeStyle = cssVar("--a"); ctx.lineWidth = 2;
-      ctx.beginPath(); ctx.arc(ball.tx, ball.ty, 14, 0, 7); ctx.stroke();
-      ctx.beginPath(); ctx.moveTo(ball.tx-20, ball.ty); ctx.lineTo(ball.tx+20, ball.ty); ctx.stroke();
-      ctx.beginPath(); ctx.moveTo(ball.tx, ball.ty-20); ctx.lineTo(ball.tx, ball.ty+20); ctx.stroke();
-    }
-    if (resultMsg) {
-      ctx.fillStyle = "rgba(7,11,21,.72)"; ctx.fillRect(0, H/2-38, W, 66);
-      ctx.fillStyle = "#fff"; ctx.font = "bold 24px Tahoma";
-      ctx.fillText(resultMsg, W/2, H/2 - 2);
-    }
+  function refreshBest(){
+    var b = getProfile().bests.memory;
+    bestEl.textContent = "🏆 " + L("رکورد","Best") + ": " + (b != null ? L("حرکت","moves") + " " + faNum(b) : L("نداری","—"));
   }
-
-  function tick() {
-    if (!running) return;
-    requestAnimationFrame(tick);
-    /* keeper wander */
-    if (phase === "aim") {
-      if (Math.abs(gk.x - gk.target) < 3) {
-        gk.target = GOAL_L + 30 + Math.random()*(GOAL_R-GOAL_L-60);
-        gk.sp = 1.4 + Math.random()*2.2;
-      }
-      gk.x += Math.max(-gk.sp, Math.min(gk.sp, gk.target - gk.x));
-    }
-    /* ball flight */
-    if (phase === "fly") {
-      ball.x += (ball.tx - ball.x) * 0.16;
-      ball.y += (ball.ty - ball.y) * 0.16;
-      if (Math.abs(ball.tx-ball.x) < 5) resolve();
-    }
-    draw();
+  function refreshStats(){
+    movesEl.textContent = L("حرکت","Moves") + ": " + faNum(moves);
+    refreshBest();
   }
+  function shuffle(a){ for(var i=a.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)); var t=a[i]; a[i]=a[j]; a[j]=t; } return a; }
 
-  function resolve() {
-    shots++;
-    shotsEl.textContent = Math.min(shots, shotsTotal);
-    var scored = ball.x > GOAL_L + 8 && ball.x < GOAL_R - 8 && ball.y > GOAL_T + 6 && ball.y < GOAL_B;
-    var saved = ball.x > gk.x - 26 && ball.x < gk.x + 26 && ball.y > GOAL_T && ball.y < GOAL_B + 10;
-    if (scored && !saved) {
-      goals++;
-      resultMsg = L("⚽ گوووول!", "⚽ GOOOAL!");
-      try { addNotification("⚽", T("unit.score") + ": ⚽"); } catch(e) {}
-    } else if (saved) {
-      resultMsg = L("🧤 دروازه‌بان گرفت!", "🧤 Saved!");
+  function build(){
+    var deck = shuffle(EMOJIS.concat(EMOJIS));
+    grid.innerHTML = "";
+    first = second = null; lock = false; moves = 0; matched = 0;
+    deck.forEach(function(em){
+      var b = document.createElement("button");
+      b.className = "ghost-btn";
+      b.style.cssText = "height:84px;font-size:30px;justify-content:center;user-select:none";
+      b.dataset.emoji = em;
+      b.textContent = "❓";
+      b.onclick = function(){ flip(b); };
+      grid.appendChild(b);
+    });
+    refreshStats();
+  }
+  function flip(b){
+    if (!playing || lock || b === first || b.dataset.done) return;
+    b.textContent = b.dataset.emoji;
+    if (!first) { first = b; return; }
+    second = b; lock = true; moves++;
+    refreshStats();
+    if (first.dataset.emoji === second.dataset.emoji) {
+      first.dataset.done = "1"; second.dataset.done = "1";
+      first.style.opacity = ".45"; second.style.opacity = ".45";
+      first = second = null; lock = false; matched++;
+      addReward(1, 0);
+      if (matched === EMOJIS.length) win();
     } else {
-      resultMsg = L("😖 از دست رفت!", "😖 Missed!");
+      setTimeout(function(){
+        if (first) first.textContent = "❓";
+        if (second) second.textContent = "❓";
+        first = second = null; lock = false;
+      }, 650);
     }
-    phase = "wait";
-    setTimeout(function() {
-      resultMsg = "";
-      if (shots >= shotsTotal) return finish();
-      ball = { x: W/2, y: 268, tx: W/2, ty: 268 };
-      phase = "aim";
-      hintEl.style.display = "";
-    }, 1100);
   }
-
-  function finish() {
-    running = false;
-    startBtn.textContent = L("دوباره بازی کن", "Play again");
-    var xp = 30 + goals*22;
-    var cn = goals*4;
-    Lumitek.reward({ xp: xp, coins: cn, game: "penaltyGoals", score: goals });
-    rewardEl.textContent = L(
-      "🎉 "+goals+" گل از ۱۰ شوت! +"+xp+" XP و +"+cn+" سکه",
-      "🎉 "+goals+" goals out of 10! +"+xp+" XP and +"+cn+" coins");
+  function win(){
+    playing = false;
+    clearInterval(timerInt);
+    GameScrollLock.unlock();
+    msgEl.textContent = L("تمام! امتیاز دریافت شد 🎉","Done! Reward sent 🎉");
+    var r = gameReward({ game: "memory", score: moves, lowerBetter: true, xp: 18, coins: 6 });
+    addNotification("🧠", L("بازی حافظه تمام شد!","Memory finished!") + " (+" + r.coins + " 🪙)");
+    refreshBest();
+    startBtn.disabled = false;
   }
-
-  function shoot(e) {
-    if (!running || phase !== "aim") return;
-    var rect = canvas.getBoundingClientRect();
-    var cx = (e.clientX - rect.left) * (W/rect.width);
-    var cy = (e.clientY - rect.top) * (H/rect.height);
-    ball.tx = Math.max(20, Math.min(W-20, cx));
-    ball.ty = Math.max(40, Math.min(GOAL_B + 26, cy));
-    hintEl.style.display = "none";
-    phase = "fly";
-  }
-  canvas.addEventListener("click", shoot);
-  canvas.addEventListener("touchstart", function(e){ e.preventDefault(); shoot(e.touches[0]); }, { passive: false });
-
-  startBtn.addEventListener("click", function() {
-    if (running) return;
-    reset(); running = true;
-    startBtn.textContent = L("در حال بازی...", "Playing...");
-    requestAnimationFrame(tick);
-  });
-
-  reset();
+  startBtn.onclick = function(){
+    build();
+    playing = true; t0 = Date.now();
+    msgEl.textContent = L("جفت‌ها را پیدا کن!","Find the pairs!");
+    startBtn.disabled = true;
+    GameScrollLock.lock();
+    clearInterval(timerInt);
+    timerInt = setInterval(function(){ timerEl.textContent = "⏱ " + fmtTime(Date.now() - t0); }, 500);
+  };
+  document.addEventListener("lumitek:langchange", function(){ refreshStats(); });
+  build();
+  refreshStats();
 })();
 </script>
 

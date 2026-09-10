@@ -1,5 +1,5 @@
 /* ============================================================
-   Lumitek 0.8 — Core (profile v5, coins economy, VIP, game skins,
+   Lumitek 1.0 — Core (profile v5, coins economy, VIP, game skins,
    PWA/offline engine, auth hooks, store+weapons, achievements,
    checkout gateway, changelog, game scroll-lock)
    ============================================================ */
@@ -156,9 +156,17 @@ const catalog = [
   ["جدول سوپرلیگ ترکیه", "Turkish League Table", "pages/sports.html", "جدول"],
   ["بازی‌های پیش رو", "Upcoming Matches", "pages/sports.html", "بخش"],
   ["هوش مصنوعی لومیتک", "Lumitek AI", "pages/ai.html", "هوش مصنوعی"],
+  ["اخبار دیجیتال", "Digital News", "pages/digital-news.html", "بخش"],
+  ["اخبار فناوری", "Tech News", "pages/digital-news.html", "بخش"],
   ["فناوری", "Technology", "pages/technology.html", "بخش"],
   ["مقالات", "Articles", "pages/articles.html", "بخش"],
   ["پشتیبانی هوشمند", "AI Support", "pages/support.html", "بخش"],
+  ["چرخ شانس و قرعه‌کشی", "Lucky Wheel", "tools/wheel.html", "ابزار"],
+  ["قرعه‌کشی", "Raffle", "tools/wheel.html", "ابزار"],
+  ["شمارش معکوس", "Countdown", "tools/countdown.html", "ابزار"],
+  ["یادداشت سریع", "Quick Notes", "tools/notes.html", "ابزار"],
+  ["بازی حافظه", "Memory Game", "pages/memory.html", "بازی"],
+  ["ضربه‌گیر", "Whack-a-Mole", "pages/whack.html", "بازی"],
   ["حمایت مالی", "Donate", "pages/donate.html", "بخش"],
   ["دونیشن", "Donation", "pages/donate.html", "بخش"],
   ["تغییرات", "Announcements", "pages/announcements.html", "بخش"],
@@ -217,6 +225,18 @@ const catalog = [
   ["ضربات پنالتی", "Penalty Shootout", "pages/penalty.html", "بازی"],
   ["بازی فوتبال", "Football Game", "pages/penalty.html", "بازی"],
   ["بسکتبال", "Hoops Shot", "pages/hoops.html", "بازی"],
+  ["بازی کشورگشایی", "Conquest Game", "pages/conquest.html", "بازی"],
+  ["کشورگشایی", "Conquest", "pages/conquest.html", "بازی"],
+  ["بازی آنلاین فتح نقشه", "Map Conquest", "pages/conquest.html", "بازی"],
+  ["فشرده‌ساز عکس", "Image Compressor", "tools/image-compress.html", "ابزار"],
+  ["کم کردن حجم عکس", "Compress Photo", "tools/image-compress.html", "ابزار"],
+  ["عکس به Base64", "Image to Base64", "tools/imgbase64.html", "ابزار"],
+  ["تست سرعت اینترنت", "Internet Speed Test", "tools/speedtest.html", "ابزار"],
+  ["سرعت اینترنت", "Speed Test", "tools/speedtest.html", "ابزار"],
+  ["سازنده QR کد", "QR Code Maker", "tools/qr.html", "ابزار"],
+  ["بارکد QR", "QR Code", "tools/qr.html", "ابزار"],
+  ["متن به گفتار", "Text to Speech", "tools/tts.html", "ابزار"],
+  ["روخوانی متن", "Read Text Aloud", "tools/tts.html", "ابزار"],
   ["آواتار استور", "Store Avatars", "pages/store.html", "فروشگاه"],
   ["عنوان پروفایل", "Profile Titles", "pages/store.html", "فروشگاه"],
   ["اسلحه و اسکین", "Weapons & Skins", "pages/store.html", "فروشگاه"],
@@ -295,6 +315,21 @@ const STORE_ITEMS = [
   { id: "tower_magma",  type: "tower",  label: { fa: "برج مذاب", en: "Magma Tower" },          price: 450, rarity: "rare" },
   { id: "tower_toxic",  type: "tower",  label: { fa: "برج زهرآلود", en: "Toxic Tower" },       price: 700, rarity: "epic" },
   { id: "tower_frost",  type: "tower",  label: { fa: "برج یخی", en: "Frost Tower" },           price: 1000, rarity: "legendary" },
+  { id: "av_monkey", type: "avatar", emoji: "🐵", price: 90,  rarity: "common" },
+  { id: "av_octopus",type: "avatar", emoji: "🐙", price: 140, rarity: "common" },
+  { id: "av_astronaut", type: "avatar", emoji: "🧑‍🚀", price: 260, rarity: "rare" },
+  { id: "ti_conquer", type: "title", label: { fa: "فتاح سرزمین‌ها", en: "Land Conqueror" }, price: 550, rarity: "epic" },
+  { id: "snake_ember",  type: "snake",    label: { fa: "مار آتشین", en: "Ember Snake" },       price: 350, rarity: "rare" },
+  { id: "snake_neon",   type: "snake",    label: { fa: "مار نئون", en: "Neon Serpent" },       price: 700, rarity: "epic" },
+  { id: "snake_gold",   type: "snake",    label: { fa: "اژدهای طلایی", en: "Golden Dragon" },  price: 1000, rarity: "legendary" },
+  { id: "g2048_frost",  type: "g2048",    label: { fa: "۲۰۴۸ یخی", en: "Frost 2048" },         price: 350, rarity: "rare" },
+  { id: "g2048_candy",  type: "g2048",    label: { fa: "۲۰۴۸ آب‌نباتی", en: "Candy 2048" },    price: 700, rarity: "epic" },
+  { id: "mines_sand",   type: "mines",    label: { fa: "مین‌یاب کویری", en: "Desert Mines" },  price: 350, rarity: "rare" },
+  { id: "mines_galaxy", type: "mines",    label: { fa: "مین‌یاب کهکشانی", en: "Galaxy Mines" }, price: 700, rarity: "epic" },
+  { id: "breakout_retro", type: "breakout", label: { fa: "آجرشکن رترو", en: "Retro Breaker" },   price: 350, rarity: "rare" },
+  { id: "breakout_neon",  type: "breakout", label: { fa: "آجرشکن نئون", en: "Neon Breaker" },    price: 700, rarity: "epic" },
+  { id: "hoops_fire",   type: "hoops",    label: { fa: "توپ آتشین", en: "Fireball" },          price: 400, rarity: "rare" },
+  { id: "hoops_gold",   type: "hoops",    label: { fa: "توپ طلایی", en: "Golden Ball" },       price: 1000, rarity: "legendary" },
   { id: "boost_5",  type: "boost", games: 5,  label: { fa: "بوست ۲× XP (۵ بازی)", en: "2× XP Boost (5 games)" }, price: 100, rarity: "common" },
   { id: "boost_10", type: "boost", games: 10, label: { fa: "بوست ۲× XP (۱۰ بازی)", en: "2× XP Boost (10 games)" }, price: 180, rarity: "rare" }
 ];
@@ -326,9 +361,26 @@ const GAME_SKINS = {
   tower_default:  { color: "#7ca7ff", shot: "rgba(124,167,255,.9)" },
   tower_magma:    { color: "#ff7a45", shot: "rgba(255,122,69,.9)" },
   tower_toxic:    { color: "#9dff5c", shot: "rgba(157,255,92,.85)" },
-  tower_frost:    { color: "#7cd5ff", shot: "rgba(124,213,255,.9)" }
+  tower_frost:    { color: "#7cd5ff", shot: "rgba(124,213,255,.9)" },
+  /* اسکین‌های ۱.۱: مار، ۲۰۴۸، مین‌یاب، آجرشکن، بسکتبال */
+  snake_default:   { head: "#76e6c3", body: "#3ecfae", glow: "rgba(118,230,195,.55)" },
+  snake_ember:     { head: "#ff8a5c", body: "#ff5c3c", glow: "rgba(255,138,92,.6)" },
+  snake_neon:      { head: "#22e5a5", body: "#b44cff", glow: "rgba(180,76,255,.65)" },
+  snake_gold:      { head: "#ffd166", body: "#f0a83c", glow: "rgba(255,209,102,.7)" },
+  g2048_default:   { bg: "#3b5163", tile: "#ffd166", high: "#ff8a5c" },
+  g2048_frost:     { bg: "#274b63", tile: "#7cd5ff", high: "#c98bff" },
+  g2048_candy:     { bg: "#5c3a63", tile: "#ff9ed2", high: "#7cf7c4" },
+  mines_default:   { bg: "#2b3a4a", safe: "#35485c", flag: "#ff5c5c" },
+  mines_sand:      { bg: "#5c4a33", safe: "#6e5a3f", flag: "#22e5a5" },
+  mines_galaxy:    { bg: "#2e2a5c", safe: "#3d3880", flag: "#7cf7c4" },
+  breakout_default:{ paddle: "#76e6c3", brick: "#ff8a5c", ball: "#ffffff" },
+  breakout_retro:  { paddle: "#f2d16b", brick: "#e05c7c", ball: "#f2f2f2" },
+  breakout_neon:   { paddle: "#22e5a5", brick: "#b44cff", ball: "#7cd5ff" },
+  hoops_default:   { ball: "#ff9350", trail: "rgba(255,147,80,.7)" },
+  hoops_fire:      { ball: "#ff5c3c", trail: "rgba(255,92,60,.8)" },
+  hoops_gold:      { ball: "#ffd166", trail: "rgba(255,209,102,.85)" }
 };
-const GAME_SKIN_DEFAULTS = { sniper: "sniper_default", car: "car_default", hero: "hero_default", tower: "tower_default" };
+const GAME_SKIN_DEFAULTS = { sniper: "sniper_default", car: "car_default", hero: "hero_default", tower: "tower_default", snake: "snake_default", g2048: "g2048_default", mines: "mines_default", breakout: "breakout_default", hoops: "hoops_default" };
 function migrateAiLegacy() {
   try {
     const raw = JSON.parse(localStorage.getItem("lumitek_profile_v5") || "null");
@@ -517,6 +569,8 @@ const GAME_NAMES_FA = {
   shooter: "تیراندازی کیهانی", maze: "ماز", connect4: "چهار در یک ردیف",
   drive: "بزرگراه", adventure: "شکار گنج", penalty: "ضربات پنالتی",
   range: "تیراندازی دقیق", runner: "دونده ماجراجویی", hill: "تپه‌نورد", hoops: "بسکتبال",
+  memory: "حافظه", whack: "ضربه‌گیر",
+  conquest: "کشورگشایی", conquestWins: "کشورگشایی (بردها)",
   c4Wins: "چهار در یک ردیف (بردها)", mazeSolves: "ماز (حل‌شده)", penaltyGoals: "پنالتی (گل‌ها)"
 };
 
@@ -548,7 +602,7 @@ function gameReward(opts) {
 
 /* ---------------- Compatibility bridge (old game code) ---------------- */
 window.Lumitek = {
-  version: "0.9",
+  version: "1.1",
   AI_COST: AI_QUESTION_COST,
   get profile() { return _liveProfile; },
   save: function() {
@@ -597,6 +651,24 @@ window.GameScrollLock = (function () {
     }
   };
 })();
+
+/* ---------------- Game start centering (بازی موقع شروع دقیقا وسط صفحه) ----------------
+   با زدن دکمه «شروع بازی» در هر بازی، صفحه به‌سمت بوم بازی اسکرول می‌شود تا
+   بازی دقیقا وسط دید قرار بگیرد (آماده برای حالت تمام‌صفحه/قفل صفحه). */
+document.addEventListener("click", function (e) {
+  const gbtn = e.target.closest && e.target.closest("button.gamebutton, button[id$='Start'], button[id$='start']");
+  if (!gbtn) return;
+  const target = document.querySelector("canvas") || document.querySelector(".gamebox") || document.querySelector(".game");
+  if (!target) return;
+  setTimeout(function () {
+    try {
+      target.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
+    } catch (err) {
+      target.scrollIntoView(true);
+      window.scrollBy(0, (window.innerHeight - target.getBoundingClientRect().height) / 3);
+    }
+  }, 60);
+}, true);
 
 /* ---------------- Store engine ---------------- */
 function buyItem(id) {
@@ -1011,6 +1083,70 @@ function setupNotifications() {
 /* ---------------- Changelog (تغییرات نسخه‌ها در هدر) ---------------- */
 const LUMITEK_VERSIONS = [
   {
+    v: "1.1",
+    fa: "بازی کشورگشایی، هوش مصنوعی سریع‌تر، ابزارها و اسکین‌های جدید",
+    en: "Conquest game, faster AI, new tools & game skins",
+    items: {
+      fa: [
+        "بازی جدید و خفن «کشورگشایی» — فتح نقشه آنلاین با ربات‌های زنده، لابی و چت",
+        "هوش مصنوعی خیلی سریع‌تر شد: پاسخ‌ها لحظه‌به‌لحظه تایپ می‌شوند + دکمه توقف و حالت سریع",
+        "پشتیبانی هوشمندتر: سوال‌های سخت به موتور AI واقعی سپرده می‌شود",
+        "ربات ناز پشتیبانی گوشه سایت — جای آیکون پیام نشست 🤖",
+        "۵ ابزار جدید: فشرده‌ساز عکس، عکس به Base64، تست سرعت اینترنت، سازنده QR و متن به گفتار",
+        "اسکین‌های جدید برای مار، ۲۰۴۸، مین‌یاب، آجرشکن و بسکتبال در فروشگاه",
+        "مقالات دسته‌بندی شد + ۶ مقاله آموزشی جدید (۲۸ مقاله)",
+        "اسپورتک ۵ رشته جدید: کشتی، وزنه‌برداری، شنا، دو و میدانی و کبدی",
+        "حساب کاربری قوی‌تر: سنجش قدرت رمز، محافظت از تلاش‌های ناموفق و تغییر رمز"
+      ],
+      en: [
+        "New epic game “Conquest” — online-style map domination with live bots, lobby & chat",
+        "AI is much faster: answers stream word-by-word + stop button and fast mode",
+        "Smarter support: hard questions go to the real AI engine",
+        "Cute support robot in the corner — replaces the message icon 🤖",
+        "5 new tools: Image Compressor, Image→Base64, Internet Speed Test, QR Maker & Text-to-Speech",
+        "New skins for Snake, 2048, Minesweeper, Breakout & Hoops in the Store",
+        "Articles are now categorized + 6 new tutorials (28 total)",
+        "Sportek adds 5 sports: Wrestling, Weightlifting, Swimming, Athletics & Kabaddi",
+        "Stronger account: password strength meter, failed-attempt lockout & password change"
+      ]
+    }
+  },
+  {
+    v: "1.0",
+    fa: "اخبار دیجیتال، اتصال OpenAI، منابع ایرانی و بازی‌ها و ابزارهای جدید",
+    en: "Digital News, OpenAI connection, Iranian-only sources & new games/tools",
+    items: {
+      fa: [
+        "بخش جدید «اخبار دیجیتال» با اخبار زنده — لینکش به هدر همه صفحات اضافه شد",
+        "اخبار فقط از سایت‌های ایرانی: دیجیاتو، زومیت، نارنجی، مهر و... (هم اسپورتک، هم اخبار دیجیتال)",
+        "نام منبع واقعی هر خبر نمایش داده می‌شود — دیگر «گوگل نیوز فارسی» نمی‌بینید",
+        "اسپورتک مخصوص ورزش مردان است — اخبار بانوان خودکار فیلتر می‌شود",
+        "در بازی‌ها با زدن «شروع بازی»، بازی دقیقا وسط صفحه قرار می‌گیرد",
+        "هوش مصنوعی به APIهای اوپن‌ای‌آی متصل شد + پنل تنظیم مدل، انتخاب مدل و تست اتصال",
+        "۲ بازی جدید: حافظه و ضربه‌گیر",
+        "۳ ابزار جدید: چرخ شانس و قرعه‌کشی، شمارش معکوس، یادداشت سریع",
+        "۶ مقاله فناوری جدید: گیت و گیت‌هاب، کروم، هوش مصنوعی مولد، امنیت گوشی، رایانش ابری و بلاکچین",
+        "عنوان صفحات بازی‌ها، هوش مصنوعی و پشتیبانی هم‌سبک بقیه صفحات شد",
+        "پشتیبانی به آخر هدر منتقل شد + «دیجیتال گروپ» جایگزین «دیجیتال هاب» شد",
+        "تیتر «همه چیز یکجا» صفحه اصلی کوچک‌تر و موزون‌تر شد"
+      ],
+      en: [
+        "New “Digital News” section with live news — its link is now in the header of every page",
+        "News comes only from Iranian sites: Digiato, Zoomit, Narenji, Mehr and more (both Sportek & Digital News)",
+        "The real source name is shown for every news item — no more “Google News Persian”",
+        "Sportek is men's sports only — women's sports news is filtered out automatically",
+        "In games, pressing “Start” now centers the game exactly on screen",
+        "Lumitek AI connects to OpenAI APIs + a settings panel with model picker and connection test",
+        "2 new games: Memory and Whack-a-Mole",
+        "3 new tools: Lucky Wheel, Countdown and Quick Notes",
+        "6 new tech articles: Git & GitHub, Chrome, Generative AI, phone security, cloud computing and blockchain",
+        "Games / AI / Support page titles now match the unified page-head style",
+        "Support moved to the end of the header + “Digital Group” replaces “Digital Hub”",
+        "The homepage “All in one place” headline is now smaller and better balanced"
+      ]
+    }
+  },
+  {
     v: "0.9",
     fa: "تپه‌نورد، سوالات متداول، پشتیبانی شناور، عنوان‌های یکدست و مقالات بیشتر",
     en: "Hill Climb, FAQ, floating support, unified titles & more articles",
@@ -1172,8 +1308,8 @@ const LUMITEK_VERSIONS = [
     fa: "نسخه اولیه با ابزارها، بازی‌ها، XP و سکه",
     en: "Initial release with tools, games, XP and coins",
     items: {
-      fa: ["هاب ابزارها، ورزش و فناوری", "بازی‌های اولیه", "سیستم XP و سکه", "صفحه حمایت"],
-      en: ["Tools, sports & technology hub", "First games", "XP & coins system", "Donation page"]
+      fa: ["گروه ابزارها، ورزش و فناوری", "بازی‌های اولیه", "سیستم XP و سکه", "صفحه حمایت"],
+      en: ["Tools, sports & technology group", "First games", "XP & coins system", "Donation page"]
     }
   }
 ];
@@ -1516,9 +1652,9 @@ const SUP_KB = [
   { keys: ["استور", "store", "اسکین", "skin", "خرید", "آواتار", "shop"],
     fa: "🛍️ در فروشگاه آواتار، اسلحه، اسکین بازی‌ها، رنگ سایت، عنوان اختصاصی و بوست XP هست. اسکین را بخر، از همان‌جا تجهیز کن و بازی کن — ظاهر بازی خودکار عوض می‌شود!",
     en: "🛍️ The Store has avatars, weapons, game skins, site colors, custom titles and XP boosts. Buy a skin, equip it there and play — the game's look updates automatically!" },
-  { keys: ["بازی", "game", "تیراندازی", "رانندگی", "تپه", "ماجراجویی"],
-    fa: "🎮 لومیتک ۲۶ بازی در ۷ دسته دارد — از تیراندازی کیهانی و تپه‌نورد تا ۲۰۴۸ و مین‌یاب؛ همه با XP، سکه، رکورد و دستاورد. صفحه بازی‌ها را باز کن!",
-    en: "🎮 Lumitek has 26 games in 7 categories — from Space Shooter and Hill Climb to 2048 and Minesweeper; all with XP, coins, records and achievements. Open the Games page!" },
+  { keys: ["بازی", "game", "تیراندازی", "رانندگی", "تپه", "ماجراجویی", "کشورگشایی", "فتح"],
+    fa: "🎮 لومیتک ۲۹ بازی در ۷ دسته دارد — از تیراندازی کیهانی و تپه‌نورد تا بازی جدید «کشورگشایی» (فتح نقشه آنلاین!) و مین‌یاب؛ همه با XP، سکه، رکورد و دستاورد. صفحه بازی‌ها را باز کن!",
+    en: "🎮 Lumitek has 29 games in 7 categories — from Space Shooter and Hill Climb to the new “Conquest” (online-style map domination!) and Minesweeper; all with XP, coins, records and achievements. Open the Games page!" },
   { keys: ["ورود", "ثبت نام", "ثبت‌نام", "حساب", "account", "login", "sign", "مهمان", "رمز", "گوگل", "مایکروسافت"],
     fa: "👤 می‌توانی با گوگل، مایکروسافت، ایمیل یا حتی مهمان وارد شوی. همه‌چیز (سکه، XP، رکوردها و خریدها) به‌صورت خودکار روی همین دستگاه ذخیره می‌شود — هیچ کار اضافه‌ای لازم نیست!",
     en: "👤 You can sign in with Google, Microsoft, email or as a guest. Everything (coins, XP, records and purchases) is saved automatically on this device — nothing extra needed!" },
@@ -1554,6 +1690,24 @@ function supAnswer(q) {
   return fa ? best.fa : best.en;
 }
 
+/* ربات ناز پشتیبانی — SVG دستیار گوشه صفحه (جای آیکون پیام، نسخه ۱.۱) */
+function robotFaceSvg(size) {
+  size = size || 30;
+  return '<svg width="' + size + '" height="' + size + '" viewBox="0 0 48 48" fill="none" aria-hidden="true">' +
+    '<line x1="24" y1="3" x2="24" y2="8" stroke="#76e6c3" stroke-width="2.6" stroke-linecap="round"/>' +
+    '<circle cx="24" cy="3.4" r="2.4" fill="#76e6c3">' +
+      '<animate attributeName="opacity" values="1;.25;1" dur="1.6s" repeatCount="indefinite"/></circle>' +
+    '<rect x="7" y="9" width="34" height="28" rx="10" fill="#16233a" stroke="#76e6c3" stroke-width="2.4"/>' +
+    '<rect x="2.6" y="17" width="4.4" height="10" rx="2.2" fill="#76e6c3"/>' +
+    '<rect x="41" y="17" width="4.4" height="10" rx="2.2" fill="#76e6c3"/>' +
+    '<circle class="rb-eye" cx="17.5" cy="21.5" r="3.1" fill="#7cf7c4">' +
+      '<animate attributeName="ry" values="3.1;3.1;.5;3.1" keyTimes="0;.9;.94;1" dur="3.4s" repeatCount="indefinite"/></circle>' +
+    '<circle class="rb-eye" cx="30.5" cy="21.5" r="3.1" fill="#7cf7c4">' +
+      '<animate attributeName="ry" values="3.1;3.1;.5;3.1" keyTimes="0;.9;.94;1" dur="3.4s" repeatCount="indefinite"/></circle>' +
+    '<path d="M17.5 29.5q6.5 4.6 13 0" stroke="#7cf7c4" stroke-width="2.4" stroke-linecap="round" fill="none"/>' +
+    '</svg>';
+}
+
 function setupSupportWidget() {
   if (/support\.html|ai\.html/.test(location.pathname)) return;
   if (document.querySelector(".sup-fab")) return;
@@ -1562,7 +1716,7 @@ function setupSupportWidget() {
   fab.className = "sup-fab";
   fab.type = "button";
   fab.setAttribute("aria-label", T("wgt.open"));
-  fab.innerHTML = '<span class="sup-i">💬</span><span class="sup-x">✕</span>';
+  fab.innerHTML = '<span class="sup-i">' + robotFaceSvg(30) + '</span><span class="sup-x">✕</span>';
   document.body.appendChild(fab);
 
   const panel = document.createElement("div");
@@ -1618,10 +1772,37 @@ function setupSupportWidget() {
     t.innerHTML = "<i></i><i></i><i></i>";
     msgs.appendChild(t);
     msgs.scrollTop = msgs.scrollHeight;
-    setTimeout(function () {
-      t.remove();
-      addMsg(supAnswer(q), "bot");
-    }, 550);
+    /* ۱.۱ — اگر جواب دقیق در دانش داخلی بود، همان لحظه؛ وگرنه به موتور AI واقعی می‌سپاریم */
+    const fa = getLang() === "fa";
+    const text = q.toLowerCase();
+    let best = null, bestScore = 0;
+    SUP_KB.forEach(function (item) {
+      let score = 0;
+      item.keys.forEach(function (k) { if (text.indexOf(k.toLowerCase()) !== -1) score += k.length; });
+      if (score > bestScore) { bestScore = score; best = item; }
+    });
+    if (best && bestScore >= 6) {
+      setTimeout(function () { t.remove(); addMsg(fa ? best.fa : best.en, "bot"); }, 420);
+      return;
+    }
+    /* موتور AI آنلاین (پاسخ باز، سریع) */
+    const ctrl = typeof AbortController !== "undefined" ? new AbortController() : null;
+    const timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 14000);
+    const sys = fa
+      ? "تو دستیار شاد و کوتاه‌گوی وب‌سایت لومیتک هستی — یک گروه دیجیتال با ۲۹ بازی، ۳۲ ابزار، فروشگاه سکه و اسکین، اسپورتک مردان، اخبار دیجیتال ایرانی و هوش مصنوعی. به فارسی خلاص و دوستانه جواب بده (حداکثر ۳ جمله). اگر سوال درباره لومیتک نبود هم مفید جواب بده."
+      : "You are the cheerful, concise assistant of Lumitek — a digital group with 29 games, 32 tools, a coin & skins store, men's Sportek, Iranian digital news and AI. Reply briefly and friendly in English (max 3 sentences). Be helpful even if the question is not about Lumitek.";
+    fetch("https://text.pollinations.ai/" + encodeURIComponent(q) + "?model=openai-fast&referrer=lumitek&system=" + encodeURIComponent(sys), ctrl ? { signal: ctrl.signal } : {})
+      .then(function (r) { if (!r.ok) throw new Error("s"); return r.text(); })
+      .then(function (txt) {
+        clearTimeout(timer);
+        t.remove();
+        addMsg((txt && txt.trim().length > 2) ? txt.trim() : supAnswer(q), "bot");
+      })
+      .catch(function () {
+        clearTimeout(timer);
+        t.remove();
+        addMsg(supAnswer(q), "bot");
+      });
   }
   function greet() {
     if (greeted) return;
@@ -1680,11 +1861,11 @@ document.addEventListener("DOMContentLoaded", function() {
     window.LumiAuth.onChange(function() { renderProfile(); });
   }
 
-  const notifyFirst = localStorage.getItem("lumitek_first_notice_v9");
+  const notifyFirst = localStorage.getItem("lumitek_first_notice_v11");
   if (!notifyFirst) {
     addNotification("🚀", getLang() === "fa"
-      ? "Lumitek 0.9 منتشر شد: بازی جدید تپه‌نورد، سوالات متداول، پشتیبانی شناور، عنوان‌های یکدست و ۶ مقاله جدید!"
-      : "Lumitek 0.9 is out: new Hill Climb game, FAQ, floating support, unified page titles and 6 new articles!");
-    localStorage.setItem("lumitek_first_notice_v9", "1");
+      ? "Lumitek 1.1 منتشر شد: بازی کشورگشایی، هوش مصنوعی سریع‌تر، ۵ ابزار جدید و ربات ناز پشتیبانی! 🤖"
+      : "Lumitek 1.1 is out: Conquest game, faster AI, 5 new tools & the cute support robot! 🤖");
+    localStorage.setItem("lumitek_first_notice_v11", "1");
   }
 });

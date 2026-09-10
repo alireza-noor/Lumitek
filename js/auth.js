@@ -26,12 +26,49 @@ window.LumiAuth = (function () {
 
   var USERS_KEY = "lumitek_auth_users_v1";
   var SESSION_KEY = "lumitek_auth_session_v1";
+  var LOCK_KEY = "lumitek_auth_lock_v1";
+  var MAX_FAILS = 5, LOCK_MS = 60000;
   var _listeners = [];
 
   function users() {
     try { return JSON.parse(localStorage.getItem(USERS_KEY)) || {}; } catch (e) { return {}; }
   }
   function saveUsers(u) { localStorage.setItem(USERS_KEY, JSON.stringify(u)); }
+
+  /* ---- ۱.۱: قفل بعد از تلاش‌های ناموفق ---- */
+  function lockState(email) {
+    try { return JSON.parse(localStorage.getItem(LOCK_KEY) || "{}")[email] || { fails: 0, until: 0 }; } catch (e) { return { fails: 0, until: 0 }; }
+  }
+  function setLock(email, st) {
+    try {
+      var all = JSON.parse(localStorage.getItem(LOCK_KEY) || "{}");
+      all[email] = st;
+      localStorage.setItem(LOCK_KEY, JSON.stringify(all));
+    } catch (e) {}
+  }
+  function checkLock(email) {
+    var st = lockState(email);
+    if (st.until > Date.now()) return Math.ceil((st.until - Date.now()) / 1000);
+    return 0;
+  }
+  function registerFail(email) {
+    var st = lockState(email);
+    st.fails = (st.fails || 0) + 1;
+    if (st.fails >= MAX_FAILS) { st.until = Date.now() + LOCK_MS; st.fails = 0; }
+    setLock(email, st);
+  }
+  function clearFails(email) { setLock(email, { fails: 0, until: 0 }); }
+
+  /* ---- ۱.۱: سنجش قدرت رمز (۰ تا ۴) ---- */
+  function passScore(pw) {
+    if (!pw) return 0;
+    var s = 0;
+    if (pw.length >= 6) s++;
+    if (pw.length >= 10) s++;
+    if (/[a-zA-Z]/.test(pw) && /\d/.test(pw)) s++;
+    if (/[^a-zA-Z0-9]/.test(pw) || (/[A-Z]/.test(pw) && /[a-z]/.test(pw))) s++;
+    return s;
+  }
 
   function emit() {
     var cur = currentUser();
@@ -48,7 +85,14 @@ window.LumiAuth = (function () {
   }
 
   function setSession(u) {
-    if (u) localStorage.setItem(SESSION_KEY, JSON.stringify({ email: u.email, name: u.name, provider: u.provider, at: Date.now() }));
+    if (u) {
+      /* ۱.۱: ثبت آخرین ورود */
+      try {
+        var all = users();
+        if (all[u.email]) { all[u.email].lastLogin = Date.now(); saveUsers(all); }
+      } catch (e) {}
+      localStorage.setItem(SESSION_KEY, JSON.stringify({ email: u.email, name: u.name, provider: u.provider, at: Date.now() }));
+    }
     else localStorage.removeItem(SESSION_KEY);
     syncProfile(u);
     emit();
@@ -97,13 +141,55 @@ window.LumiAuth = (function () {
     if (AUTH_CONFIG.provider === "firebase") return fbSignIn(email, pass);
     email = (email || "").trim().toLowerCase();
     if (!validEmail(email)) return Promise.reject({ code: "errEmail" });
+    var lockSec = checkLock(email);
+    if (lockSec > 0) return Promise.reject({ code: "errLocked", secs: lockSec });
     var all = users();
     var u = all[email];
     if (!u) return Promise.reject({ code: "errNoUser" });
     return hash(pass || "", u.salt).then(function (h) {
-      if (h !== u.hash) return Promise.reject({ code: "errWrong" });
+      if (h !== u.hash) { registerFail(email); return Promise.reject({ code: "errWrong" }); }
+      clearFails(email);
       setSession(u);
       return u;
+    });
+  }
+
+  /* ---- ۱.۱: تغییر رمز عبور با تأیید رمز قبلی ---- */
+  function changePassword(email, oldPass, newPass) {
+    email = (email || "").trim().toLowerCase();
+    if (AUTH_CONFIG.provider === "firebase") return Promise.reject({ code: "errWrong" });
+    var all = users();
+    var u = all[email];
+    if (!u) return Promise.reject({ code: "errNoUser" });
+    if (!newPass || newPass.length < 6) return Promise.reject({ code: "errPass" });
+    return hash(oldPass || "", u.salt).then(function (h) {
+      if (h !== u.hash) return Promise.reject({ code: "errWrong" });
+      var salt = Math.random().toString(36).slice(2, 10);
+      return hash(newPass, salt).then(function (h2) {
+        all[email].salt = salt;
+        all[email].hash = h2;
+        saveUsers(all);
+        return true;
+      });
+    });
+  }
+
+  /* ---- ۱.۱: حذف کامل حساب با تأیید رمز ---- */
+  function deleteAccount(email, pass) {
+    email = (email || "").trim().toLowerCase();
+    var all = users();
+    var u = all[email];
+    if (!u) return Promise.reject({ code: "errNoUser" });
+    if (u.provider === "microsoft" || u.provider === "google") {
+      delete all[email]; saveUsers(all); setSession(null); return Promise.resolve(true);
+    }
+    return hash(pass || "", u.salt).then(function (h) {
+      if (h !== u.hash) return Promise.reject({ code: "errWrong" });
+      delete all[email];
+      saveUsers(all);
+      clearFails(email);
+      setSession(null);
+      return true;
     });
   }
 
@@ -215,6 +301,10 @@ window.LumiAuth = (function () {
       '<input data-auth-name type="text" maxlength="24" placeholder="نام نمایشی">' +
       '<input data-auth-email2 type="email" autocomplete="email" placeholder="ایمیل">' +
       '<div class="auth-pass-wrap"><input data-auth-pass2 type="password" autocomplete="new-password" placeholder="رمز عبور (حداقل ۶ کاراکتر)"><button type="button" class="auth-eye" data-auth-eye tabindex="-1">👁</button></div>' +
+      '<div class="auth-strength" data-auth-strength style="display:none">' +
+      '<div class="auth-strength-track"><i data-auth-strength-fill></i></div>' +
+      '<span data-auth-strength-label></span>' +
+      '</div>' +
       '</div>' +
       '<div class="auth-error" data-auth-error style="display:none"></div>' +
       '<button class="primary-btn" style="width:100%" data-auth-submit>ورود</button>' +
@@ -260,7 +350,31 @@ window.LumiAuth = (function () {
 
   var mode = "in";
 
+  function strengthLabel(score) {
+    if (score <= 1) return T("auth.stWeak") || "ضعیف";
+    if (score === 2) return T("auth.stMed") || "متوسط";
+    if (score === 3) return T("auth.stGood") || "خوب";
+    return T("auth.stStrong") || "عالی! 💪";
+  }
+
+  function paintStrength(m) {
+    var wrap = m.querySelector("[data-auth-strength]");
+    var pass = m.querySelector("[data-auth-pass2]");
+    if (!wrap || !pass) return;
+    if (!pass.value) { wrap.style.display = "none"; return; }
+    var score = passScore(pass.value);
+    wrap.style.display = "";
+    var fill = m.querySelector("[data-auth-strength-fill]");
+    var colors = ["#ff5c7c", "#ff9e5c", "#ffd166", "#22e5a5", "#76e6c3"];
+    fill.style.width = (score / 4 * 100) + "%";
+    fill.style.background = colors[score];
+    m.querySelector("[data-auth-strength-label]").textContent = strengthLabel(score);
+  }
+
   function wireModal(m) {
+    m.addEventListener("input", function (e) {
+      if (e.target && e.target.hasAttribute && e.target.hasAttribute("data-auth-pass2")) paintStrength(m);
+    });
     m.addEventListener("click", function (e) {
       if (e.target === m || e.target.hasAttribute("data-auth-close")) { m.classList.remove("show"); showMsStep(m, false); return; }
       var g = e.target.closest("[data-auth-google]");
@@ -323,7 +437,7 @@ window.LumiAuth = (function () {
     var btn = m.querySelector("[data-auth-submit]");
     setLoading(btn, true);
     var p = mode === "in" ? signIn(email, pass) : signUp(email, pass, name);
-    p.then(function () { ok(); }).catch(function (err) { showErr(err && err.code); })
+    p.then(function () { ok(); }).catch(function (err) { showErr(err && err.code, err && err.secs); })
      .finally(function () { setLoading(btn, false); });
   }
 
@@ -333,11 +447,15 @@ window.LumiAuth = (function () {
     addNotification("✅", T("auth.welcome") + " " + (currentUser() || {}).name + " 👋");
   }
 
-  function showErr(code) {
+  function showErr(code, extra) {
     var m = document.querySelector("#authModal");
     if (!m) return;
     var el = m.querySelector("[data-auth-error]");
-    el.textContent = code ? T("auth." + code) : T("auth.errWrong");
+    var txt = code ? T("auth." + code) : T("auth.errWrong");
+    if (code === "errLocked" && extra) {
+      txt = (T("auth.errLocked") || "تلاش‌های ناموفق زیاد بود — لطفاً بعداً دوباره امتحان کن.") + " ⏳ " + extra + "s";
+    }
+    el.textContent = txt;
     el.style.display = "block";
   }
   function hideErr() {
@@ -380,6 +498,14 @@ window.LumiAuth = (function () {
     signInGoogle: signInGoogle,
     signOut: signOut,
     onChange: onChange,
-    openModal: openModal
+    openModal: openModal,
+    /* ۱.۱ */
+    changePassword: changePassword,
+    deleteAccount: deleteAccount,
+    passScore: passScore,
+    lastLoginOf: function (email) {
+      var all = users();
+      return all[(email || "").toLowerCase()] ? all[(email || "").toLowerCase()].lastLogin || 0 : 0;
+    }
   };
 })();

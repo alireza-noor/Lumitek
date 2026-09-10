@@ -3,23 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>⚽ ضربات پنالتی | بازی‌های Lumitek</title>
-<meta name="description" content="بازی پنالتی آنلاین — زاویه و قدرت شوت را تنظیم کن و دروازه‌بان را مچ‌گیر کن.">
-<meta name="keywords" content="لومیتک, lumitek, بازی آنلاین, ابزار آنلاین, هوش مصنوعی, خرید سکه, وب اپلیکیشن">
+<title>🎡 چرخ شانس و قرعه‌کشی | Lumitek</title>
+<meta name="description" content="چرخ شانس و قرعه‌کشی لومیتک — گزینه‌ها را وارد کن، بچرخان و برنده انتخاب شود؛ کاملاً آفلاین.">
+<meta name="keywords" content="لومیتک, lumitek, ابزار آنلاین, بازی آنلاین, اخبار ورزش, پشتیبانی هوش مصنوعی, خرید سکه, وب اپلیکیشن">
 <meta name="robots" content="index,follow">
 <meta name="theme-color" content="#070b15">
-<link rel="canonical" href="https://lumitek.netlify.app/pages/penalty.html">
+<link rel="canonical" href="https://lumitek.netlify.app/tools/stopwatch.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Lumitek">
-<meta property="og:title" content="⚽ ضربات پنالتی | بازی‌های Lumitek">
-<meta property="og:description" content="بازی پنالتی آنلاین — زاویه و قدرت شوت را تنظیم کن و دروازه‌بان را مچ‌گیر کن.">
-<meta property="og:url" content="https://lumitek.netlify.app/pages/penalty.html">
+<meta property="og:title" content="🎡 چرخ شانس و قرعه‌کشی | Lumitek">
+<meta property="og:description" content="چرخ شانس و قرعه‌کشی لومیتک — گزینه‌ها را وارد کن، بچرخان و برنده انتخاب شود؛ کاملاً آفلاین.">
+<meta property="og:url" content="https://lumitek.netlify.app/tools/stopwatch.html">
 <meta property="og:image" content="https://lumitek.netlify.app/assets/icons/og-cover.png">
 <meta property="og:locale" content="fa_IR">
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="⚽ ضربات پنالتی | بازی‌های Lumitek">
-<meta name="twitter:description" content="بازی پنالتی آنلاین — زاویه و قدرت شوت را تنظیم کن و دروازه‌بان را مچ‌گیر کن.">
+<meta name="twitter:title" content="🎡 چرخ شانس و قرعه‌کشی | Lumitek">
+<meta name="twitter:description" content="چرخ شانس و قرعه‌کشی لومیتک — گزینه‌ها را وارد کن، بچرخان و برنده انتخاب شود؛ کاملاً آفلاین.">
 <meta name="twitter:image" content="https://lumitek.netlify.app/assets/icons/og-cover.png">
 <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
 <link rel="apple-touch-icon" href="../assets/icons/icon-192.png">
@@ -32,7 +32,7 @@
 <link rel="stylesheet" href="../css/style.css">
 <script>try{var t=localStorage.getItem("lumitek_theme");if(t==="light")document.documentElement.classList.add("light");var l=localStorage.getItem("lumitek_lang");if(l==="en"){document.documentElement.lang="en";document.documentElement.dir="ltr"}else{document.documentElement.lang="fa";document.documentElement.dir="rtl"}}catch(e){}</script>
 </head>
-<body data-game="1">
+<body>
 <div id="offlineBanner" class="offline-banner" data-i18n="offline.banner">🔌 حالت آفلاین — صفحه‌ها و بازی‌ها از حافظه اجرا می‌شوند و اخبار از آخرین نسخه ذخیره‌شده نمایش داده می‌شوند.</div>
 <!--LT5-CHROME-->
 <header class="site-header">
@@ -99,26 +99,40 @@
   </div>
 </div>
 
-<div class="search-wrap">
-<input id="globalSearchInput" type="search" data-i18n-ph="head.searchPh" placeholder="جستجو..." aria-label="Search">
-<div id="searchResults" class="search-results"></div>
-</div>
-<main class="page"><div class="game">
-<p class="eyebrow">LUMITEK GAME · NEW</p>
-<h1 data-i18n="g.penalty.n">⚽ ضربات پنالتی</h1>
-<p class="muted" data-i18n="g.penalty.d">زاویه و قدرت شوت را تنظیم کن و دروازه‌بان را مچ‌گیر کن!</p>
+<main class="page">
+<p class="eyebrow">LUMITEK TOOL</p>
+<h1 id="t-title">🎡 چرخ شانس و قرعه‌کشی</h1>
+<p class="muted" id="t-lead">گزینه‌ها را وارد کن، چرخ بچرخد و برنده انتخاب شود — برای قرعه‌کشی، انتخاب سوال یا هر تصمیمی!</p>
 
-<div class="gamebox mt">
-  <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
-    <span class="coin-pill">⚽ <b id="pnGoals">0</b> <span data-i18n="games.yourBest">رکورد</span></span>
-    <span class="coin-pill">🎯 <span data-i18n="unit.of10">از ۱۰</span>: <b id="pnShots">0</b></span>
+<div class="grid mt2" style="grid-template-columns:1fr 1fr">
+  <div class="card" style="text-align:center">
+    <canvas id="wlCanvas" width="340" height="340" style="max-width:100%;touch-action:none"></canvas>
+    <div class="data-row" style="justify-content:center;margin-top:12px">
+      <button class="primary-btn" id="wlSpin" style="padding:14px 34px;font-size:1rem">🎡 بچرخان!</button>
+    </div>
+    <p id="wlResult" style="font-weight:900;font-size:1.15rem;min-height:1.8em;margin:12px 0 0"></p>
   </div>
-  <canvas id="pnCanvas" width="440" height="330" style="max-width:100%;border-radius:16px;margin-top:12px;touch-action:manipulation;cursor:pointer"></canvas>
-  <div class="sh-hint" id="pnHint">روی دروازه کلیک/لمس کن تا شوت بزنی — دروازه‌بان حرکت می‌کند!</div>
-  <button class="gamebutton" id="pnStart" style="margin-top:12px">شروع ضربات</button>
-  <p id="pnReward" class="muted" style="margin:8px 0 0"></p>
+  <div class="card">
+    <h3 id="wlOptsT">گزینه‌ها (هر خط یک گزینه)</h3>
+    <textarea id="wlInput" class="textarea" rows="7" dir="auto"></textarea>
+    <label style="display:flex;align-items:center;gap:8px;margin:8px 0;font-size:.86rem"><input type="checkbox" id="wlRemove"> <span id="wlRemoveL">بعد از انتخاب، برنده را از چرخ حذف کن</span></label>
+    <div class="data-row" style="margin-top:6px">
+      <button class="ghost-btn" id="wlShuffle">🔀 بُر بزن</button>
+      <button class="danger-btn" id="wlClear">🗑️ پاک کردن همه</button>
+    </div>
+    <h3 id="wlHistT" style="margin-top:14px">🏆 برنده‌ها</h3>
+    <div id="wlHist" class="lap-list" style="max-height:150px;overflow:auto"></div>
+  </div>
 </div>
-</div></main>
+</main>
+
+
+
+<script src="../js/i18n.js"></script>
+<script src="../js/auth.js"></script>
+
+
+
 
 <footer class="footer-v2">
   <div class="fv-grid">
@@ -140,10 +154,10 @@
     <div>
       <h4 data-i18n="footer.services">خدمات</h4>
       <ul>
-        <li><a href="../pages/store.html" data-i18n="nav.store">فروشگاه</a></li>
-        <li><a href="../pages/store.html#coins" data-i18n="nav.coins">شارژ سکه</a></li>
-        <li><a href="../pages/ai.html" data-i18n="nav.ai">لومیتک ای‌آی</a></li>
+        <li><a href="../pages/store.html" data-i18n="nav.store">استور</a></li>
+        <li><a href="../pages/store.html#coins" data-i18n="nav.coins">خرید سکه</a></li>
         <li><a href="../pages/account.html" data-i18n="nav.account">حساب کاربری</a></li>
+        <li><a href="../pages/download.html" data-i18n="nav.download">دانلود اپ</a></li>
         <li><a href="../pages/donate.html" style="color:var(--a)" data-i18n="nav.donate">حمایت مالی</a></li>
       </ul>
     </div>
@@ -179,182 +193,151 @@
   </div>
 </footer>
 
-<script src="../js/i18n.js"></script>
 <script src="../js/main.js"></script>
-<script src="../js/auth.js"></script>
-
 <script>
 (function(){
-  var canvas = document.getElementById("pnCanvas");
-  var ctx = canvas.getContext("2d");
-  var W = canvas.width, H = canvas.height;
-  var goalsEl = document.getElementById("pnGoals");
-  var shotsEl = document.getElementById("pnShots");
-  var rewardEl = document.getElementById("pnReward");
-  var startBtn = document.getElementById("pnStart");
-  var hintEl = document.getElementById("pnHint");
-  function L(fa,en){ return getLang()==="fa"?fa:en; }
+  var fa = {
+    "t-title": "🎡 چرخ شانس و قرعه‌کشی", "t-lead": "گزینه‌ها را وارد کن، چرخ بچرخد و برنده انتخاب شود — برای قرعه‌کشی، انتخاب سوال یا هر تصمیمی!",
+    "wlOptsT": "گزینه‌ها (هر خط یک گزینه)", "wlRemoveL": "بعد از انتخاب، برنده را از چرخ حذف کن",
+    "wlHistT": "🏆 برنده‌ها", "wlSpin": "🎡 بچرخان!", "wlShuffle": "🔀 بُر بزن", "wlClear": "🗑️ پاک کردن همه",
+    "wlNeed": "حداقل ۲ گزینه وارد کن!", "wlWinner": "برنده:", "wlSpinNow": "در حال چرخش...",
+    "wlHistEmpty": "هنوز برنده‌ای نداری", "wlClearHist": "لیست برنده‌ها پاک شد"
+  };
+  var en = {
+    "t-title": "🎡 Lucky Wheel & Raffle", "t-lead": "Enter options, spin the wheel and pick a winner — great for raffles, picking questions or any decision!",
+    "wlOptsT": "Options (one per line)", "wlRemoveL": "Remove the winner from the wheel after picking",
+    "wlHistT": "🏆 Winners", "wlSpin": "🎡 Spin!", "wlShuffle": "🔀 Shuffle", "wlClear": "🗑️ Clear all",
+    "wlNeed": "Enter at least 2 options!", "wlWinner": "Winner:", "wlSpinNow": "Spinning...",
+    "wlHistEmpty": "No winners yet", "wlClearHist": "Winners list cleared"
+  };
+  function d(){ return getLang() === "fa" ? fa : en; }
+  function fmt(n){ return Number(n).toLocaleString(getLang() === "fa" ? "fa-IR" : "en-US"); }
 
-  var GK_Y = 118, GOAL_L = 92, GOAL_R = 348, GOAL_T = 60, GOAL_B = 190;
+  var COLORS = ["#3896ff","#76e6c3","#ffc861","#ff7e91","#b18cff","#5eead4","#f9a8d4","#fde68a","#93c5fd","#86efac"];
+  var cv = document.getElementById("wlCanvas"), ctx = cv.getContext("2d");
+  var W = cv.width, H = cv.height, CX = W/2, CY = H/2, R = W/2 - 8;
+  var curAngle = -Math.PI/2, spinning = false;
+  var KEY = "lumitek_wheel_opts_v1";
 
-  var p0 = getProfile();
-  var bestGoals = p0.bests.penaltyGoals || 0;
-  goalsEl.textContent = bestGoals;
-
-  var goals, shots, ball, gk, phase, resultMsg, shotsTotal, running;
-
-  function reset() {
-    goals = 0; shots = 0; shotsTotal = 10;
-    goalsEl.textContent = bestGoals;
-    shotsEl.textContent = "0";
-    rewardEl.textContent = "";
-    hintEl.style.display = "";
-    phase = "aim";
-    ball = { x: W/2, y: 268, tx: W/2, ty: 268, sp: 0 };
-    gk = { x: (GOAL_L+GOAL_R)/2, target: (GOAL_L+GOAL_R)/2, sp: 0 };
-    resultMsg = "";
-    draw();
+  function options(){
+    var raw = document.getElementById("wlInput").value.split(/\n+/).map(function(s){ return s.trim(); }).filter(Boolean);
+    return raw.slice(0, 14);
   }
+  function saveOpts(){ try { localStorage.setItem(KEY, document.getElementById("wlInput").value); } catch(e){} }
+  function loadOpts(){ try { var v = localStorage.getItem(KEY); if (v != null) document.getElementById("wlInput").value = v; } catch(e){} }
 
-  function cssVar(n){ return getComputedStyle(document.documentElement).getPropertyValue(n).trim() || "#76e6c3"; }
-
-  function draw() {
-    ctx.clearRect(0,0,W,H);
-    /* sky + pitch */
-    var g = ctx.createLinearGradient(0,0,0,H);
-    g.addColorStop(0,"#0a1226"); g.addColorStop(1,"#12351f");
-    ctx.fillStyle = g; ctx.fillRect(0,0,W,H);
-    ctx.strokeStyle = "rgba(255,255,255,.14)";
-    ctx.lineWidth = 2;
-    for (var y = 210; y < H; y += 22) {
-      ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(W,y); ctx.stroke();
+  function draw(){
+    var opts = options(), n = opts.length;
+    ctx.clearRect(0, 0, W, H);
+    if (!n) {
+      ctx.beginPath(); ctx.arc(CX, CY, R, 0, Math.PI*2);
+      ctx.fillStyle = "rgba(124,167,255,.12)"; ctx.fill();
+      ctx.fillStyle = "#9aa8c1"; ctx.font = "16px Tahoma"; ctx.textAlign = "center";
+      ctx.fillText(getLang()==="fa" ? "گزینه‌ها را وارد کن" : "Add options", CX, CY);
+      return;
     }
-    /* goal frame */
-    ctx.fillStyle = "rgba(255,255,255,.06)";
-    ctx.fillRect(GOAL_L, GOAL_T, GOAL_R-GOAL_L, GOAL_B-GOAL_T);
-    ctx.strokeStyle = "#e8f0ff"; ctx.lineWidth = 5;
+    var step = Math.PI*2/n;
+    for (var i = 0; i < n; i++) {
+      var a0 = curAngle + i*step, a1 = a0 + step;
+      ctx.beginPath(); ctx.moveTo(CX, CY); ctx.arc(CX, CY, R, a0, a1); ctx.closePath();
+      ctx.fillStyle = COLORS[i % COLORS.length]; ctx.fill();
+      ctx.strokeStyle = "rgba(7,11,21,.85)"; ctx.lineWidth = 2; ctx.stroke();
+      ctx.save();
+      ctx.translate(CX, CY); ctx.rotate(a0 + step/2);
+      ctx.textAlign = "right"; ctx.fillStyle = "#061018"; ctx.font = "bold 14px Tahoma";
+      ctx.fillText(opts[i].slice(0, 16), R - 14, 5);
+      ctx.restore();
+    }
+    /* pointer */
     ctx.beginPath();
-    ctx.moveTo(GOAL_L, GOAL_B); ctx.lineTo(GOAL_L, GOAL_T); ctx.lineTo(GOAL_R, GOAL_T); ctx.lineTo(GOAL_R, GOAL_B);
-    ctx.stroke();
-    /* net */
-    ctx.strokeStyle = "rgba(255,255,255,.12)"; ctx.lineWidth = 1;
-    for (var nx = GOAL_L; nx <= GOAL_R; nx += 16) { ctx.beginPath(); ctx.moveTo(nx, GOAL_T); ctx.lineTo(nx, GOAL_B); ctx.stroke(); }
-    for (var ny = GOAL_T; ny <= GOAL_B; ny += 16) { ctx.beginPath(); ctx.moveTo(GOAL_L, ny); ctx.lineTo(GOAL_R, ny); ctx.stroke(); }
-    /* keeper */
-    ctx.fillStyle = "#ffc861";
-    ctx.beginPath(); if (ctx.roundRect) ctx.roundRect(gk.x-20, GK_Y, 40, 52, 12); else ctx.rect(gk.x-20, GK_Y, 40, 52); ctx.fill();
-    ctx.fillStyle = "#101828";
-    ctx.beginPath(); ctx.arc(gk.x, GK_Y+14, 4, 0, 7); ctx.fill();
-    /* ball */
-    ctx.font = "26px serif"; ctx.textAlign = "center"; ctx.textBaseline = "middle";
-    ctx.fillText("⚽", ball.x, ball.y);
-    /* aim crosshair */
-    if (phase === "aim") {
-      ctx.strokeStyle = cssVar("--a"); ctx.lineWidth = 2;
-      ctx.beginPath(); ctx.arc(ball.tx, ball.ty, 14, 0, 7); ctx.stroke();
-      ctx.beginPath(); ctx.moveTo(ball.tx-20, ball.ty); ctx.lineTo(ball.tx+20, ball.ty); ctx.stroke();
-      ctx.beginPath(); ctx.moveTo(ball.tx, ball.ty-20); ctx.lineTo(ball.tx, ball.ty+20); ctx.stroke();
-    }
-    if (resultMsg) {
-      ctx.fillStyle = "rgba(7,11,21,.72)"; ctx.fillRect(0, H/2-38, W, 66);
-      ctx.fillStyle = "#fff"; ctx.font = "bold 24px Tahoma";
-      ctx.fillText(resultMsg, W/2, H/2 - 2);
-    }
+    ctx.moveTo(CX, CY - R - 2); ctx.lineTo(CX - 12, CY - R + 18); ctx.lineTo(CX + 12, CY - R + 18); ctx.closePath();
+    ctx.fillStyle = "#f5f7ff"; ctx.fill();
+    ctx.beginPath(); ctx.arc(CX, CY, 22, 0, Math.PI*2);
+    ctx.fillStyle = "#0f1728"; ctx.fill();
+    ctx.strokeStyle = "#25324a"; ctx.stroke();
+    ctx.fillStyle = "#f5f7ff"; ctx.font = "18px Tahoma"; ctx.textAlign = "center"; ctx.textBaseline = "middle";
+    ctx.fillText("🎯", CX, CY + 1);
+    ctx.textBaseline = "alphabetic";
   }
 
-  function tick() {
-    if (!running) return;
-    requestAnimationFrame(tick);
-    /* keeper wander */
-    if (phase === "aim") {
-      if (Math.abs(gk.x - gk.target) < 3) {
-        gk.target = GOAL_L + 30 + Math.random()*(GOAL_R-GOAL_L-60);
-        gk.sp = 1.4 + Math.random()*2.2;
-      }
-      gk.x += Math.max(-gk.sp, Math.min(gk.sp, gk.target - gk.x));
+  function spin(){
+    if (spinning) return;
+    var opts = options();
+    if (opts.length < 2) { document.getElementById("wlResult").textContent = d().wlNeed; return; }
+    spinning = true;
+    document.getElementById("wlResult").textContent = d().wlSpinNow;
+    var start = performance.now(), dur = 3600;
+    var from = curAngle, delta = (Math.PI*2) * (4 + Math.random()*3) + Math.random()*Math.PI*2;
+    function frame(now){
+      var t = Math.min(1, (now - start)/dur);
+      var ease = 1 - Math.pow(1 - t, 3);
+      curAngle = from + delta*ease;
+      draw();
+      if (t < 1) requestAnimationFrame(frame);
+      else finish(opts);
     }
-    /* ball flight */
-    if (phase === "fly") {
-      ball.x += (ball.tx - ball.x) * 0.16;
-      ball.y += (ball.ty - ball.y) * 0.16;
-      if (Math.abs(ball.tx-ball.x) < 5) resolve();
+    requestAnimationFrame(frame);
+  }
+  function finish(opts){
+    spinning = false;
+    var n = opts.length, step = Math.PI*2/n;
+    var pointer = -Math.PI/2;
+    var norm = ((pointer - curAngle) % (Math.PI*2) + Math.PI*2) % (Math.PI*2);
+    var idx = Math.floor(norm / step) % n;
+    var winner = opts[idx];
+    document.getElementById("wlResult").textContent = "🎉 " + d().wlWinner + " " + winner;
+    addNotification("🎡", d().wlWinner + " " + winner);
+    try { if (navigator.vibrate) navigator.vibrate([120, 60, 120]); } catch(e){}
+    addHistory(winner);
+    if (document.getElementById("wlRemove").checked) {
+      var lines = document.getElementById("wlInput").value.split(/\n/).filter(function(l){ return l.trim() && l.trim() !== winner; });
+      document.getElementById("wlInput").value = lines.join("\n");
+      saveOpts();
     }
     draw();
   }
-
-  function resolve() {
-    shots++;
-    shotsEl.textContent = Math.min(shots, shotsTotal);
-    var scored = ball.x > GOAL_L + 8 && ball.x < GOAL_R - 8 && ball.y > GOAL_T + 6 && ball.y < GOAL_B;
-    var saved = ball.x > gk.x - 26 && ball.x < gk.x + 26 && ball.y > GOAL_T && ball.y < GOAL_B + 10;
-    if (scored && !saved) {
-      goals++;
-      resultMsg = L("⚽ گوووول!", "⚽ GOOOAL!");
-      try { addNotification("⚽", T("unit.score") + ": ⚽"); } catch(e) {}
-    } else if (saved) {
-      resultMsg = L("🧤 دروازه‌بان گرفت!", "🧤 Saved!");
-    } else {
-      resultMsg = L("😖 از دست رفت!", "😖 Missed!");
-    }
-    phase = "wait";
-    setTimeout(function() {
-      resultMsg = "";
-      if (shots >= shotsTotal) return finish();
-      ball = { x: W/2, y: 268, tx: W/2, ty: 268 };
-      phase = "aim";
-      hintEl.style.display = "";
-    }, 1100);
+  function addHistory(w){
+    var box = document.getElementById("wlHist");
+    if (box.querySelector(".muted")) box.innerHTML = "";
+    var row = document.createElement("div");
+    row.textContent = "🏆 " + w;
+    box.insertBefore(row, box.firstChild);
+  }
+  function emptyHist(){
+    var box = document.getElementById("wlHist");
+    var el = document.createElement("div");
+    el.className = "muted"; el.style.fontSize = ".8rem";
+    el.textContent = d().wlHistEmpty;
+    box.appendChild(el);
   }
 
-  function finish() {
-    running = false;
-    startBtn.textContent = L("دوباره بازی کن", "Play again");
-    var xp = 30 + goals*22;
-    var cn = goals*4;
-    Lumitek.reward({ xp: xp, coins: cn, game: "penaltyGoals", score: goals });
-    rewardEl.textContent = L(
-      "🎉 "+goals+" گل از ۱۰ شوت! +"+xp+" XP و +"+cn+" سکه",
-      "🎉 "+goals+" goals out of 10! +"+xp+" XP and +"+cn+" coins");
+  document.getElementById("wlSpin").onclick = spin;
+  document.getElementById("wlShuffle").onclick = function(){
+    var o = options(); for (var i=o.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)); var t=o[i]; o[i]=o[j]; o[j]=t; }
+    document.getElementById("wlInput").value = o.join("\n"); saveOpts(); draw();
+  };
+  document.getElementById("wlClear").onclick = function(){
+    document.getElementById("wlInput").value = ""; saveOpts(); draw();
+    document.getElementById("wlResult").textContent = "";
+  };
+  document.getElementById("wlInput").addEventListener("input", function(){ saveOpts(); draw(); });
+
+  function apply(){
+    var dd = d();
+    for (var k in dd) { var el = document.getElementById(k); if (el) el.textContent = dd[k]; }
+    document.getElementById("wlSpin").textContent = dd.wlSpin;
+    draw();
   }
-
-  function shoot(e) {
-    if (!running || phase !== "aim") return;
-    var rect = canvas.getBoundingClientRect();
-    var cx = (e.clientX - rect.left) * (W/rect.width);
-    var cy = (e.clientY - rect.top) * (H/rect.height);
-    ball.tx = Math.max(20, Math.min(W-20, cx));
-    ball.ty = Math.max(40, Math.min(GOAL_B + 26, cy));
-    hintEl.style.display = "none";
-    phase = "fly";
+  document.addEventListener("lumitek:langchange", function(){ apply(); emptyHist2(); });
+  function emptyHist2(){
+    var box = document.getElementById("wlHist");
+    if (!box.children.length) emptyHist();
   }
-  canvas.addEventListener("click", shoot);
-  canvas.addEventListener("touchstart", function(e){ e.preventDefault(); shoot(e.touches[0]); }, { passive: false });
-
-  startBtn.addEventListener("click", function() {
-    if (running) return;
-    reset(); running = true;
-    startBtn.textContent = L("در حال بازی...", "Playing...");
-    requestAnimationFrame(tick);
-  });
-
-  reset();
+  loadOpts();
+  apply();
+  emptyHist();
 })();
 </script>
 
-<script>
-/* Lumitek v0.7 — هنگام بازی صفحه جابه‌جا نشود (قفل اسکرول + WASD) */
-(function(){
-  function isGameKey(k){ return k==="ArrowUp"||k==="ArrowDown"||k==="ArrowLeft"||k==="ArrowRight"||k===" "||k==="Spacebar"; }
-  document.addEventListener("keydown", function(e){
-    if (!isGameKey(e.key)) return;
-    var t = e.target && e.target.tagName;
-    if (t === "INPUT" || t === "TEXTAREA" || t === "SELECT") return;
-    e.preventDefault();
-  }, { passive:false });
-  document.addEventListener("touchmove", function(e){
-    if (e.target && e.target.closest && e.target.closest("canvas,.snake-pad,.touch-pad,.game-pad,.dpad")) e.preventDefault();
-  }, { passive:false });
-})();
-</script>
 </body>
 </html>

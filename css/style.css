@@ -966,3 +966,52 @@ html, body { overflow-x: hidden; overflow-x: clip; }
   .hero h1 { font-size: clamp(30px, 8.5vw, 46px); letter-spacing: -1.5px; }
   .hero .lead { font-size: 15px; }
 }
+
+/* ============================================================
+   Lumitek 1.0 additions
+   ============================================================ */
+
+/* ---- تیتر «همه چیز یکجا» کمی کوچک‌تر و موزون‌تر ---- */
+.hero h1 { font-size: clamp(36px, 4.7vw, 60px); line-height: 1.12; }
+@media (max-width: 820px) {
+  .hero h1 { font-size: clamp(28px, 8vw, 42px); }
+}
+
+/* ---- چیپ شناور جدید: اخبار دیجیتال ---- */
+.float.f4 { top: 300px; right: 22px; }
+@media (max-width: 1080px) { .float.f4 { display: none; } }
+
+/* ---- هدر شلوغ‌تر شد: فشرده‌سازی هوشمند ناوبری دسکتاپ ---- */
+@media (min-width: 801px) and (max-width: 1220px) {
+  .main-nav { gap: 14px; }
+  .main-nav a { font-size: 12.5px; }
+}
+@media (min-width: 801px) and (max-width: 980px) {
+  .main-nav { gap: 9px; }
+  .main-nav a { font-size: 11.5px; letter-spacing: 0; }
+}
+
+/* ---- چرخ شانس: ظاهر دکمه اسپین ---- */
+#wlSpin { min-width: 180px; }
+.wk-hole-anim { animation: wkPop .18s ease; }
+@keyframes wkPop { from { transform: scale(.86); } to { transform: scale(1); } }
+
+/* ---- یادداشت سریع ---- */
+#ntGrid .card p { overflow-wrap: anywhere; }
+
+/* ============ Lumitek 1.1 ============ */
+/* ربات ناز پشتیبانی — SVG داخل دکمه شناور */
+.sup-fab .sup-i { display: flex; align-items: center; justify-content: center; }
+.sup-fab .sup-i svg { display: block; }
+.sup-fab:not(.on) .sup-i { animation: supBob 2.6s ease-in-out infinite; }
+.sup-fab:hover:not(.on) .sup-i { animation-play-state: paused; }
+@keyframes supBob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+
+/* سنجش قدرت رمز عبور در ثبت‌نام */
+.auth-strength { margin-top: 8px; }
+.auth-strength-track { height: 6px; border-radius: 4px; background: rgba(124,167,255,.18); overflow: hidden; }
+.auth-strength-track i { display: block; height: 100%; width: 0; border-radius: 4px; background: #ff5c7c; transition: width .25s, background .25s; }
+.auth-strength span { display: block; margin-top: 5px; font-size: .72rem; font-weight: 800; opacity: .85; }
+
+/* دکمه فعال حالت سریع AI */
+.ghost-btn.active { border-color: var(--a); color: var(--a); background: rgba(118,230,195,.08); }

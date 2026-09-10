@@ -3,23 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>⚽ ضربات پنالتی | بازی‌های Lumitek</title>
-<meta name="description" content="بازی پنالتی آنلاین — زاویه و قدرت شوت را تنظیم کن و دروازه‌بان را مچ‌گیر کن.">
-<meta name="keywords" content="لومیتک, lumitek, بازی آنلاین, ابزار آنلاین, هوش مصنوعی, خرید سکه, وب اپلیکیشن">
+<title>⏳ شمارش معکوس | Lumitek</title>
+<meta name="description" content="شمارش معکوس لومیتک — تا هر تاریخ و ساعتی شمارش کن: عید، کنکور، تولد یا پروژه بعدی.">
+<meta name="keywords" content="لومیتک, lumitek, ابزار آنلاین, بازی آنلاین, اخبار ورزش, پشتیبانی هوش مصنوعی, خرید سکه, وب اپلیکیشن">
 <meta name="robots" content="index,follow">
 <meta name="theme-color" content="#070b15">
-<link rel="canonical" href="https://lumitek.netlify.app/pages/penalty.html">
+<link rel="canonical" href="https://lumitek.netlify.app/tools/stopwatch.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Lumitek">
-<meta property="og:title" content="⚽ ضربات پنالتی | بازی‌های Lumitek">
-<meta property="og:description" content="بازی پنالتی آنلاین — زاویه و قدرت شوت را تنظیم کن و دروازه‌بان را مچ‌گیر کن.">
-<meta property="og:url" content="https://lumitek.netlify.app/pages/penalty.html">
+<meta property="og:title" content="⏳ شمارش معکوس | Lumitek">
+<meta property="og:description" content="شمارش معکوس لومیتک — تا هر تاریخ و ساعتی شمارش کن: عید، کنکور، تولد یا پروژه بعدی.">
+<meta property="og:url" content="https://lumitek.netlify.app/tools/stopwatch.html">
 <meta property="og:image" content="https://lumitek.netlify.app/assets/icons/og-cover.png">
 <meta property="og:locale" content="fa_IR">
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="⚽ ضربات پنالتی | بازی‌های Lumitek">
-<meta name="twitter:description" content="بازی پنالتی آنلاین — زاویه و قدرت شوت را تنظیم کن و دروازه‌بان را مچ‌گیر کن.">
+<meta name="twitter:title" content="⏳ شمارش معکوس | Lumitek">
+<meta name="twitter:description" content="شمارش معکوس لومیتک — تا هر تاریخ و ساعتی شمارش کن: عید، کنکور، تولد یا پروژه بعدی.">
 <meta name="twitter:image" content="https://lumitek.netlify.app/assets/icons/og-cover.png">
 <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
 <link rel="apple-touch-icon" href="../assets/icons/icon-192.png">
@@ -32,7 +32,7 @@
 <link rel="stylesheet" href="../css/style.css">
 <script>try{var t=localStorage.getItem("lumitek_theme");if(t==="light")document.documentElement.classList.add("light");var l=localStorage.getItem("lumitek_lang");if(l==="en"){document.documentElement.lang="en";document.documentElement.dir="ltr"}else{document.documentElement.lang="fa";document.documentElement.dir="rtl"}}catch(e){}</script>
 </head>
-<body data-game="1">
+<body>
 <div id="offlineBanner" class="offline-banner" data-i18n="offline.banner">🔌 حالت آفلاین — صفحه‌ها و بازی‌ها از حافظه اجرا می‌شوند و اخبار از آخرین نسخه ذخیره‌شده نمایش داده می‌شوند.</div>
 <!--LT5-CHROME-->
 <header class="site-header">
@@ -99,26 +99,35 @@
   </div>
 </div>
 
-<div class="search-wrap">
-<input id="globalSearchInput" type="search" data-i18n-ph="head.searchPh" placeholder="جستجو..." aria-label="Search">
-<div id="searchResults" class="search-results"></div>
-</div>
-<main class="page"><div class="game">
-<p class="eyebrow">LUMITEK GAME · NEW</p>
-<h1 data-i18n="g.penalty.n">⚽ ضربات پنالتی</h1>
-<p class="muted" data-i18n="g.penalty.d">زاویه و قدرت شوت را تنظیم کن و دروازه‌بان را مچ‌گیر کن!</p>
+<main class="page">
+<p class="eyebrow">LUMITEK TOOL</p>
+<h1 id="t-title">⏳ شمارش معکوس</h1>
+<p class="muted" id="t-lead">تا هر تاریخ و ساعتی که بخواهی شمارش کن: عید، کنکور، تولد یا پروژه بعدی!</p>
 
-<div class="gamebox mt">
-  <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
-    <span class="coin-pill">⚽ <b id="pnGoals">0</b> <span data-i18n="games.yourBest">رکورد</span></span>
-    <span class="coin-pill">🎯 <span data-i18n="unit.of10">از ۱۰</span>: <b id="pnShots">0</b></span>
+<div class="card mt2" style="max-width:640px;margin-inline:auto;text-align:center">
+  <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;align-items:flex-end">
+    <div style="text-align:start"><label id="cdDateL">تاریخ و ساعت هدف</label><input id="cdDate" class="input" type="datetime-local" dir="ltr"></div>
+    <button class="primary-btn" id="cdSet">شروع شمارش</button>
   </div>
-  <canvas id="pnCanvas" width="440" height="330" style="max-width:100%;border-radius:16px;margin-top:12px;touch-action:manipulation;cursor:pointer"></canvas>
-  <div class="sh-hint" id="pnHint">روی دروازه کلیک/لمس کن تا شوت بزنی — دروازه‌بان حرکت می‌کند!</div>
-  <button class="gamebutton" id="pnStart" style="margin-top:12px">شروع ضربات</button>
-  <p id="pnReward" class="muted" style="margin:8px 0 0"></p>
+  <div class="data-row" style="justify-content:center;margin-top:12px;flex-wrap:wrap">
+    <button class="ghost-btn" data-quick="600">۱۰ دقیقه</button>
+    <button class="ghost-btn" data-quick="3600">۱ ساعت</button>
+    <button class="ghost-btn" data-quick="86400">فردا</button>
+    <button class="ghost-btn" data-quick="nextweek">هفته بعد</button>
+  </div>
+  <div id="cdBig" style="display:flex;gap:10px;justify-content:center;margin:22px 0 10px;flex-wrap:wrap" dir="ltr"></div>
+  <div class="xpbar" style="max-width:420px;margin:0 auto"><div id="cdBar" class="xpbar-fill" style="width:100%"></div></div>
+  <p id="cdStatus" class="muted mt" style="min-height:1.6em"></p>
 </div>
-</div></main>
+</main>
+
+
+
+<script src="../js/i18n.js"></script>
+<script src="../js/auth.js"></script>
+
+
+
 
 <footer class="footer-v2">
   <div class="fv-grid">
@@ -140,10 +149,10 @@
     <div>
       <h4 data-i18n="footer.services">خدمات</h4>
       <ul>
-        <li><a href="../pages/store.html" data-i18n="nav.store">فروشگاه</a></li>
-        <li><a href="../pages/store.html#coins" data-i18n="nav.coins">شارژ سکه</a></li>
-        <li><a href="../pages/ai.html" data-i18n="nav.ai">لومیتک ای‌آی</a></li>
+        <li><a href="../pages/store.html" data-i18n="nav.store">استور</a></li>
+        <li><a href="../pages/store.html#coins" data-i18n="nav.coins">خرید سکه</a></li>
         <li><a href="../pages/account.html" data-i18n="nav.account">حساب کاربری</a></li>
+        <li><a href="../pages/download.html" data-i18n="nav.download">دانلود اپ</a></li>
         <li><a href="../pages/donate.html" style="color:var(--a)" data-i18n="nav.donate">حمایت مالی</a></li>
       </ul>
     </div>
@@ -179,182 +188,75 @@
   </div>
 </footer>
 
-<script src="../js/i18n.js"></script>
 <script src="../js/main.js"></script>
-<script src="../js/auth.js"></script>
-
 <script>
 (function(){
-  var canvas = document.getElementById("pnCanvas");
-  var ctx = canvas.getContext("2d");
-  var W = canvas.width, H = canvas.height;
-  var goalsEl = document.getElementById("pnGoals");
-  var shotsEl = document.getElementById("pnShots");
-  var rewardEl = document.getElementById("pnReward");
-  var startBtn = document.getElementById("pnStart");
-  var hintEl = document.getElementById("pnHint");
-  function L(fa,en){ return getLang()==="fa"?fa:en; }
+  var fa = {
+    "t-title": "⏳ شمارش معکوس", "t-lead": "تا هر تاریخ و ساعتی که بخواهی شمارش کن: عید، کنکور، تولد یا پروژه بعدی!",
+    "cdDateL": "تاریخ و ساعت هدف", "cdSet": "شروع شمارش",
+    "cdDone": "🎉 زمان رسید!", "cdNeed": "یک تاریخ در آینده انتخاب کن", "cdPick": "تاریخ هدف را انتخاب و شروع شمارش را بزن",
+    "cdLeft": "باقی‌مانده", "d": "روز", "h": "ساعت", "m": "دقیقه", "s": "ثانیه"
+  };
+  var en = {
+    "t-title": "⏳ Countdown", "t-lead": "Count down to any date and time: Nowruz, an exam, a birthday or your next project!",
+    "cdDateL": "Target date & time", "cdSet": "Start countdown",
+    "cdDone": "🎉 Time is up!", "cdNeed": "Pick a future date", "cdPick": "Pick a target date and press Start",
+    "cdLeft": "remaining", "d": "days", "h": "hours", "m": "min", "s": "sec"
+  };
+  function d(){ return getLang() === "fa" ? fa : en; }
+  function fmt(n){ return Number(n).toLocaleString(getLang() === "fa" ? "fa-IR" : "en-US"); }
 
-  var GK_Y = 118, GOAL_L = 92, GOAL_R = 348, GOAL_T = 60, GOAL_B = 190;
+  var target = 0, iv = null, total = 0;
+  var big = document.getElementById("cdBig"), bar = document.getElementById("cdBar"), status = document.getElementById("cdStatus");
 
-  var p0 = getProfile();
-  var bestGoals = p0.bests.penaltyGoals || 0;
-  goalsEl.textContent = bestGoals;
-
-  var goals, shots, ball, gk, phase, resultMsg, shotsTotal, running;
-
-  function reset() {
-    goals = 0; shots = 0; shotsTotal = 10;
-    goalsEl.textContent = bestGoals;
-    shotsEl.textContent = "0";
-    rewardEl.textContent = "";
-    hintEl.style.display = "";
-    phase = "aim";
-    ball = { x: W/2, y: 268, tx: W/2, ty: 268, sp: 0 };
-    gk = { x: (GOAL_L+GOAL_R)/2, target: (GOAL_L+GOAL_R)/2, sp: 0 };
-    resultMsg = "";
-    draw();
+  function cell(v, l){
+    return '<div style="background:var(--surface2);border:1px solid var(--line);border-radius:14px;min-width:84px;padding:12px 8px"><div style="font-size:1.7rem;font-weight:900;font-variant-numeric:tabular-nums">' + fmt(v) + '</div><div class="muted" style="font-size:.72rem">' + l + '</div></div>';
   }
-
-  function cssVar(n){ return getComputedStyle(document.documentElement).getPropertyValue(n).trim() || "#76e6c3"; }
-
-  function draw() {
-    ctx.clearRect(0,0,W,H);
-    /* sky + pitch */
-    var g = ctx.createLinearGradient(0,0,0,H);
-    g.addColorStop(0,"#0a1226"); g.addColorStop(1,"#12351f");
-    ctx.fillStyle = g; ctx.fillRect(0,0,W,H);
-    ctx.strokeStyle = "rgba(255,255,255,.14)";
-    ctx.lineWidth = 2;
-    for (var y = 210; y < H; y += 22) {
-      ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(W,y); ctx.stroke();
-    }
-    /* goal frame */
-    ctx.fillStyle = "rgba(255,255,255,.06)";
-    ctx.fillRect(GOAL_L, GOAL_T, GOAL_R-GOAL_L, GOAL_B-GOAL_T);
-    ctx.strokeStyle = "#e8f0ff"; ctx.lineWidth = 5;
-    ctx.beginPath();
-    ctx.moveTo(GOAL_L, GOAL_B); ctx.lineTo(GOAL_L, GOAL_T); ctx.lineTo(GOAL_R, GOAL_T); ctx.lineTo(GOAL_R, GOAL_B);
-    ctx.stroke();
-    /* net */
-    ctx.strokeStyle = "rgba(255,255,255,.12)"; ctx.lineWidth = 1;
-    for (var nx = GOAL_L; nx <= GOAL_R; nx += 16) { ctx.beginPath(); ctx.moveTo(nx, GOAL_T); ctx.lineTo(nx, GOAL_B); ctx.stroke(); }
-    for (var ny = GOAL_T; ny <= GOAL_B; ny += 16) { ctx.beginPath(); ctx.moveTo(GOAL_L, ny); ctx.lineTo(GOAL_R, ny); ctx.stroke(); }
-    /* keeper */
-    ctx.fillStyle = "#ffc861";
-    ctx.beginPath(); if (ctx.roundRect) ctx.roundRect(gk.x-20, GK_Y, 40, 52, 12); else ctx.rect(gk.x-20, GK_Y, 40, 52); ctx.fill();
-    ctx.fillStyle = "#101828";
-    ctx.beginPath(); ctx.arc(gk.x, GK_Y+14, 4, 0, 7); ctx.fill();
-    /* ball */
-    ctx.font = "26px serif"; ctx.textAlign = "center"; ctx.textBaseline = "middle";
-    ctx.fillText("⚽", ball.x, ball.y);
-    /* aim crosshair */
-    if (phase === "aim") {
-      ctx.strokeStyle = cssVar("--a"); ctx.lineWidth = 2;
-      ctx.beginPath(); ctx.arc(ball.tx, ball.ty, 14, 0, 7); ctx.stroke();
-      ctx.beginPath(); ctx.moveTo(ball.tx-20, ball.ty); ctx.lineTo(ball.tx+20, ball.ty); ctx.stroke();
-      ctx.beginPath(); ctx.moveTo(ball.tx, ball.ty-20); ctx.lineTo(ball.tx, ball.ty+20); ctx.stroke();
-    }
-    if (resultMsg) {
-      ctx.fillStyle = "rgba(7,11,21,.72)"; ctx.fillRect(0, H/2-38, W, 66);
-      ctx.fillStyle = "#fff"; ctx.font = "bold 24px Tahoma";
-      ctx.fillText(resultMsg, W/2, H/2 - 2);
+  function paint(){
+    if (!target) return;
+    var left = Math.max(0, target - Date.now());
+    var s = Math.floor(left/1000);
+    big.innerHTML = cell(Math.floor(s/86400), d().d) + cell(Math.floor(s/3600)%24, d().h) + cell(Math.floor(s/60)%60, d().m) + cell(s%60, d().s);
+    var pct = total > 0 ? Math.max(0, Math.min(100, (left/total)*100)) : 0;
+    bar.style.width = pct + "%";
+    if (left <= 0) {
+      clearInterval(iv); iv = null;
+      status.textContent = d().cdDone;
+      addNotification("⏳", d().cdDone);
+      try { if (navigator.vibrate) navigator.vibrate([300, 100, 300]); } catch(e){}
     }
   }
-
-  function tick() {
-    if (!running) return;
-    requestAnimationFrame(tick);
-    /* keeper wander */
-    if (phase === "aim") {
-      if (Math.abs(gk.x - gk.target) < 3) {
-        gk.target = GOAL_L + 30 + Math.random()*(GOAL_R-GOAL_L-60);
-        gk.sp = 1.4 + Math.random()*2.2;
-      }
-      gk.x += Math.max(-gk.sp, Math.min(gk.sp, gk.target - gk.x));
-    }
-    /* ball flight */
-    if (phase === "fly") {
-      ball.x += (ball.tx - ball.x) * 0.16;
-      ball.y += (ball.ty - ball.y) * 0.16;
-      if (Math.abs(ball.tx-ball.x) < 5) resolve();
-    }
-    draw();
+  function setTarget(ms){
+    target = ms; total = Math.max(1, target - Date.now());
+    clearInterval(iv); iv = setInterval(paint, 250); paint();
   }
-
-  function resolve() {
-    shots++;
-    shotsEl.textContent = Math.min(shots, shotsTotal);
-    var scored = ball.x > GOAL_L + 8 && ball.x < GOAL_R - 8 && ball.y > GOAL_T + 6 && ball.y < GOAL_B;
-    var saved = ball.x > gk.x - 26 && ball.x < gk.x + 26 && ball.y > GOAL_T && ball.y < GOAL_B + 10;
-    if (scored && !saved) {
-      goals++;
-      resultMsg = L("⚽ گوووول!", "⚽ GOOOAL!");
-      try { addNotification("⚽", T("unit.score") + ": ⚽"); } catch(e) {}
-    } else if (saved) {
-      resultMsg = L("🧤 دروازه‌بان گرفت!", "🧤 Saved!");
-    } else {
-      resultMsg = L("😖 از دست رفت!", "😖 Missed!");
-    }
-    phase = "wait";
-    setTimeout(function() {
-      resultMsg = "";
-      if (shots >= shotsTotal) return finish();
-      ball = { x: W/2, y: 268, tx: W/2, ty: 268 };
-      phase = "aim";
-      hintEl.style.display = "";
-    }, 1100);
-  }
-
-  function finish() {
-    running = false;
-    startBtn.textContent = L("دوباره بازی کن", "Play again");
-    var xp = 30 + goals*22;
-    var cn = goals*4;
-    Lumitek.reward({ xp: xp, coins: cn, game: "penaltyGoals", score: goals });
-    rewardEl.textContent = L(
-      "🎉 "+goals+" گل از ۱۰ شوت! +"+xp+" XP و +"+cn+" سکه",
-      "🎉 "+goals+" goals out of 10! +"+xp+" XP and +"+cn+" coins");
-  }
-
-  function shoot(e) {
-    if (!running || phase !== "aim") return;
-    var rect = canvas.getBoundingClientRect();
-    var cx = (e.clientX - rect.left) * (W/rect.width);
-    var cy = (e.clientY - rect.top) * (H/rect.height);
-    ball.tx = Math.max(20, Math.min(W-20, cx));
-    ball.ty = Math.max(40, Math.min(GOAL_B + 26, cy));
-    hintEl.style.display = "none";
-    phase = "fly";
-  }
-  canvas.addEventListener("click", shoot);
-  canvas.addEventListener("touchstart", function(e){ e.preventDefault(); shoot(e.touches[0]); }, { passive: false });
-
-  startBtn.addEventListener("click", function() {
-    if (running) return;
-    reset(); running = true;
-    startBtn.textContent = L("در حال بازی...", "Playing...");
-    requestAnimationFrame(tick);
+  document.getElementById("cdSet").onclick = function(){
+    var v = document.getElementById("cdDate").value;
+    if (!v) { status.textContent = d().cdNeed; return; }
+    var ms = new Date(v).getTime();
+    if (!ms || ms <= Date.now()) { status.textContent = d().cdNeed; return; }
+    status.textContent = "";
+    setTarget(ms);
+  };
+  document.querySelectorAll("[data-quick]").forEach(function(b){
+    b.onclick = function(){
+      var q = b.getAttribute("data-quick"), ms;
+      if (q === "nextweek") { var dt = new Date(); dt.setDate(dt.getDate() + 7); ms = dt.getTime(); }
+      else ms = Date.now() + (+q) * 1000;
+      var dt2 = new Date(ms - new Date().getTimezoneOffset()*60000);
+      document.getElementById("cdDate").value = dt2.toISOString().slice(0, 16);
+      setTarget(ms);
+    };
   });
-
-  reset();
+  function apply(){
+    var dd = d();
+    for (var k in dd) { var el = document.getElementById(k); if (el) el.textContent = dd[k]; }
+    if (!target && !iv) status.textContent = dd.cdPick;
+  }
+  document.addEventListener("lumitek:langchange", apply);
+  apply();
 })();
 </script>
 
-<script>
-/* Lumitek v0.7 — هنگام بازی صفحه جابه‌جا نشود (قفل اسکرول + WASD) */
-(function(){
-  function isGameKey(k){ return k==="ArrowUp"||k==="ArrowDown"||k==="ArrowLeft"||k==="ArrowRight"||k===" "||k==="Spacebar"; }
-  document.addEventListener("keydown", function(e){
-    if (!isGameKey(e.key)) return;
-    var t = e.target && e.target.tagName;
-    if (t === "INPUT" || t === "TEXTAREA" || t === "SELECT") return;
-    e.preventDefault();
-  }, { passive:false });
-  document.addEventListener("touchmove", function(e){
-    if (e.target && e.target.closest && e.target.closest("canvas,.snake-pad,.touch-pad,.game-pad,.dpad")) e.preventDefault();
-  }, { passive:false });
-})();
-</script>
 </body>
 </html>

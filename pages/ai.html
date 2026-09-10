@@ -43,9 +43,9 @@
     <a href="../pages/games.html" data-i18n="nav.games">nav.games</a>
     <a href="../pages/store.html" data-i18n="nav.store">nav.store</a>
     <a href="../pages/sports.html" data-i18n="nav.sports">nav.sports</a>
+    <a href="../pages/digital-news.html" data-i18n="nav.digitalnews">اخبار دیجیتال 📰</a>
     <a href="../pages/ai.html" data-i18n="nav.ai">لومیتک ای‌آی ✨</a>
     <a href="../pages/download.html" data-i18n="nav.download">nav.download</a>
-    <a href="../pages/support.html" data-i18n="nav.supportE">nav.supportE</a>
     <a href="../pages/technology.html" class="nav-extra" data-i18n="nav.tech">nav.tech</a>
     <a href="../pages/articles.html" data-i18n="nav.articles">nav.articles</a>
     <a href="../pages/announcements.html" data-i18n="nav.updates">nav.updates</a>
@@ -53,6 +53,7 @@
     <a href="../pages/contact.html" class="nav-extra" data-i18n="nav.contact">nav.contact</a>
     <a href="../pages/account.html" class="nav-extra" data-i18n="nav.account">nav.account</a>
     <a href="../pages/donate.html" class="nav-extra" data-i18n="nav.donate">nav.donate</a>
+    <a href="../pages/support.html" data-i18n="nav.supportE">nav.supportE</a>
   </nav>
   <div class="header-actions">
     <button id="languageToggle" class="icon-btn" data-i18n-title="nav.home" title="Language">EN</button>
@@ -103,33 +104,50 @@
 <div id="searchResults" class="search-results"></div>
 </div>
 <main class="page">
-<div class="chat-shell">
-<p class="eyebrow">LUMITEK AI · POWERED BY LUMITEK</p>
+<p class="eyebrow">LUMITEK AI · POWERED BY OPENAI & LUMITEK</p>
 <h1 style="margin-top:0" data-i18n="ai.h1">✨ هوش مصنوعی لومیتک</h1>
-<p class="muted" data-i18n="ai.lead">دستیار هوشمند، آنلاین و ۲۴ ساعته — هر سوالی داری بپرس. هر سوال فقط ۲ سکه!</p>
+<p class="muted" data-i18n="ai.lead">دستیار هوشمند، آنلاین و ۲۴ ساعته — هر سوالی داری بپرس. هر سوال فقط ۲ سکه؛ یا مدل OpenAI خودت را وصل کن و رایگان بپرس!</p>
 
+<div class="chat-shell">
 <div class="chat-toolbar mt">
   <span id="aiStatus">✨ <span data-i18n="ai.online">متصل به AI آنلاین</span></span>
-  <span class="coin-pill">🪙 <span data-i18n="ai.balance">موجودی</span>: <b data-profile-coins>0</b></span>
+  <span class="coin-pill">🪙 <b data-profile-coins>0</b></span>
+  <span class="coin-pill" id="aiSpeedPill" style="display:none">⏱ <b id="aiSpeedVal">0.0</b></span>
+  <span class="coin-pill" id="aiFastPill" style="display:none" title="Fast mode">⚡ <span data-i18n="ai.fastOn">حالت سریع</span></span>
   <span style="display:flex;gap:8px">
+    <button class="ghost-btn" style="padding:7px 13px;font-size:.78rem" id="aiFastToggle">⚡</button>
     <button class="ghost-btn" style="padding:7px 13px;font-size:.78rem" id="aiApiToggle">⚙️ API</button>
     <button class="ghost-btn" style="padding:7px 13px;font-size:.78rem" id="aiClear">🧹</button>
   </span>
 </div>
 
 <div id="aiApiPanel" style="display:none" class="card">
-  <h3 class="mb0" style="font-size:1rem" data-i18n="ai.apiTitle">⚙️ اتصال مدل اختصاصی (اختیاری)</h3>
-  <p class="muted" style="font-size:.8rem;margin:8px 0 12px" data-i18n="ai.apiDesc">کلید OpenAI / OpenRouter / GLM داری؟ وصلش کن تا پاسخ‌ها با مدل خودت داده شود. کلید فقط در مرورگر خودت ذخیره می‌شود.</p>
+  <h3 class="mb0" style="font-size:1rem" data-i18n="ai.apiTitle">⚙️ اتصال به API اوپن‌ای‌آی و مدل‌های سازگار</h3>
+  <p class="muted" style="font-size:.8rem;margin:8px 0 12px" data-i18n="ai.apiDesc">کلید OpenAI / OpenRouter / GLM داری؟ وصلش کن تا پاسخ‌ها با مدل خودت داده شود و سوال‌هایت رایگان شود. کلید فقط در مرورگر خودت ذخیره می‌شود.</p>
+  <label data-i18n="ai.apiProvider">ارائه‌دهنده</label>
+  <div class="store-tabs" id="aiApiPresets" style="margin:4px 0 10px">
+    <button type="button" data-preset="openai" class="active">OpenAI</button>
+    <button type="button" data-preset="openrouter">OpenRouter</button>
+    <button type="button" data-preset="glm">GLM · Z.ai</button>
+    <button type="button" data-preset="custom" data-i18n="ai.apiCustom">سفارشی</button>
+  </div>
   <label>Base URL</label>
   <input id="aiApiBase" class="amount-input" placeholder="https://api.openai.com/v1" dir="ltr">
   <label>API Key</label>
   <input id="aiApiKey" class="amount-input" type="password" placeholder="sk-..." dir="ltr">
   <label>Model</label>
   <input id="aiApiModel" class="amount-input" placeholder="gpt-4o-mini" dir="ltr">
+  <div class="muted" style="font-size:.72rem;margin-top:6px" data-i18n="ai.modelQuick">مدل‌های پیشنهادی OpenAI:</div>
+  <div class="src-chips" id="aiModelChips" style="margin-top:6px">
+    <span>gpt-4o-mini</span><span>gpt-4.1-nano</span><span>gpt-4.1-mini</span><span>gpt-4o</span>
+  </div>
   <div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap">
     <button class="primary-btn" id="aiApiSave" data-i18n="ai.apiSave">ذخیره و اتصال</button>
+    <button class="ghost-btn" id="aiApiTest" data-i18n="ai.apiTest">🔌 تست اتصال</button>
     <button class="ghost-btn" id="aiApiRemove" data-i18n="ai.apiRemove">قطع اتصال</button>
   </div>
+  <p class="muted" id="aiApiTestOut" style="font-size:.78rem;margin:10px 0 0;min-height:1.4em"></p>
+  <p class="muted" style="font-size:.74rem;margin:8px 0 0" data-i18n="ai.apiFreeNote">وقتی مدل اختصاصی خودت وصل باشد، سوال‌هایت رایگان است — هزینه با کلید خودت حساب می‌شود، نه سکه‌های لومیتک.</p>
 </div>
 
 <div id="aiNoCoins" class="api-note" style="display:none;border-color:rgba(255,126,145,.5)">
@@ -150,6 +168,8 @@
   <button data-i18n="ai.q3">برنامه مطالعه برای کنکور بچین</button>
   <button data-i18n="ai.q4">یه شعر کوتاه درباره لومیتک بگو</button>
   <button data-i18n="ai.q5">چطور سکه جمع کنم؟</button>
+  <button data-i18n="ai.q6">این را به انگلیسی ترجمه کن: سلام، حالت چطوره؟</button>
+  <button data-i18n="ai.q7">یک تابع پایتون برای فیبوناچی بنویس</button>
 </div>
 
 <div class="api-note"><b data-i18n="ai.cost">هر سوال: ۲ سکه 🪙</b> — <span data-i18n="ai.hint">پاسخ‌های AI ممکن است اشتباه باشند؛ اطلاعات مهم را دوباره بررسی کن.</span></div>
@@ -161,12 +181,12 @@
     <div>
       <div class="fv-brand"><img class="brand-logo" src="../assets/icons/logo-lt.png" alt="Lumitek" width="34" height="34"><span class="brand-word">Lumitek</span></div>
       <p data-i18n="footer.tag">همه ابزارها و بازی‌های مورد نیازت، سریع و ساده — همه‌جا با هم.</p>
-      <span class="vip-badge" style="display:inline-flex">v0.9 · PWA</span>
+      <span class="vip-badge" style="display:inline-flex">v1.1 · PWA</span>
     </div>
     <div>
       <h4 data-i18n="footer.explore">کاوش</h4>
       <ul>
-        <li><a href="../pages/technology.html" data-i18n="nav.tech">فناوری</a></li>
+        <li><a href="../pages/digital-news.html" data-i18n="nav.digitalnews">اخبار دیجیتال</a></li><li><a href="../pages/technology.html" data-i18n="nav.tech">فناوری</a></li>
         <li><a href="../pages/articles.html" data-i18n="nav.articles">مقالات</a></li>
         <li><a href="../pages/announcements.html" data-i18n="nav.updates">تغییرات</a></li>
         <li><a href="../pages/about.html" data-i18n="nav.about">درباره ما</a></li>
@@ -221,8 +241,8 @@
 
 <script>
 /* ============================================================
-   Lumitek AI 0.7 — strong online chat with context, model chain,
-   formatted answers, copy/regenerate, coins/credit/unlimited
+   Lumitek AI 1.1 — streaming engine, faster models, stop button,
+   fast mode, response timer, free model chain, coins/credit/unlimited
    ============================================================ */
 (function(){
   var KEY_API = "lumitek_ai_api_v1";
@@ -266,15 +286,55 @@
       document.getElementById("aiApiModel").value = api.model || "";
     }
   };
+  /* --- presets: OpenAI / OpenRouter / GLM / custom --- */
+  var PRESETS = {
+    openai:     { base: "https://api.openai.com/v1",     model: "gpt-4o-mini" },
+    openrouter: { base: "https://openrouter.ai/api/v1",  model: "openai/gpt-4o-mini" },
+    glm:        { base: "https://api.z.ai/api/paas/v4",  model: "glm-4-flash" },
+    custom:     { base: "", model: "" }
+  };
+  document.getElementById("aiApiPresets").addEventListener("click", function(e) {
+    var b = e.target.closest("button");
+    if (!b) return;
+    this.querySelectorAll("button").forEach(function(x) { x.classList.toggle("active", x === b); });
+    var pr = PRESETS[b.getAttribute("data-preset")] || PRESETS.openai;
+    if (pr.base) document.getElementById("aiApiBase").value = pr.base;
+    if (pr.model) document.getElementById("aiApiModel").value = pr.model;
+  });
+  document.getElementById("aiModelChips").addEventListener("click", function(e) {
+    if (e.target.tagName !== "SPAN") return;
+    document.getElementById("aiApiModel").value = e.target.textContent.trim();
+  });
   document.getElementById("aiApiSave").onclick = function() {
     var base = document.getElementById("aiApiBase").value.trim();
     var key = document.getElementById("aiApiKey").value.trim();
     var model = document.getElementById("aiApiModel").value.trim() || "gpt-4o-mini";
     if (!key) { addNotification("⚠️", L("کلید API را وارد کن.", "Enter the API key.")); return; }
     localStorage.setItem(KEY_API, JSON.stringify({ base: base || "https://api.openai.com/v1", key: key, model: model }));
-    addNotification("⚙️", L("مدل اختصاصی وصل شد.", "Custom model connected."));
+    addNotification("⚙️", L("مدل اختصاصی وصل شد — سوال‌هایت رایگان شد!", "Custom model connected — your questions are free now!"));
     updateStatus();
     document.getElementById("aiApiPanel").style.display = "none";
+  };
+  document.getElementById("aiApiTest").onclick = function() {
+    var out = document.getElementById("aiApiTestOut");
+    var base = document.getElementById("aiApiBase").value.trim() || "https://api.openai.com/v1";
+    var key = document.getElementById("aiApiKey").value.trim();
+    var model = document.getElementById("aiApiModel").value.trim() || "gpt-4o-mini";
+    if (!key) { out.textContent = "❌ " + L("اول کلید API را وارد کن.", "Enter the API key first."); return; }
+    out.textContent = "⏳ " + L("در حال تست اتصال...", "Testing connection...");
+    fetchTimeout(base.replace(/\/$/, "") + "/chat/completions", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "Authorization": "Bearer " + key },
+      body: JSON.stringify({ model: model, messages: [{ role: "user", content: "ping" }], max_tokens: 5 })
+    }, 20000).then(function(r) {
+      if (!r.ok) throw new Error("status " + r.status);
+      return r.json();
+    }).then(function(d) {
+      if (!d || !d.choices || !d.choices.length) throw new Error("bad");
+      out.textContent = "✅ " + L("اتصال موفق بود! حالا «ذخیره و اتصال» را بزن.", "Connection OK! Now press “Save & connect”.");
+    }).catch(function(err) {
+      out.textContent = "❌ " + L("اتصال ناموفق بود (" + (err && err.message ? err.message : "خطا") + ") — کلید، Base URL و مدل را بررسی کن.", "Connection failed (" + (err && err.message ? err.message : "error") + ") — check key, Base URL and model.");
+    });
   };
   document.getElementById("aiApiRemove").onclick = function() {
     localStorage.removeItem(KEY_API);
@@ -380,8 +440,8 @@
       fa: "🪙 سکه از این راه‌ها به دست میاد: بازی کردن (هر بازی XP و سکه داره)، پاداش روزانه ۱۰ سکه‌ای از تب «شارژ سکه» فروشگاه، و خرید بسته از فروشگاه.",
       en: "🪙 You earn coins by playing games, the 10-coin daily reward (Store → Top up coins), and by buying packs in the Store." },
     { keys: ["لومیتک", "lumitek", "سایت"],
-      fa: "✨ لومیتک یک هاب دیجیتاله: ۲۰ ابزار، ۲۲ بازی در ۷ دسته، اسپورتک با جدول ۱۴ لیگ، فروشگاه کامل، هوش مصنوعی لومیتک (من!) و نصب به‌صورت اپ.",
-      en: "✨ Lumitek is a digital hub: 20 tools, 22 games in 7 categories, Sportek with 14 league tables, a full store, Lumitek AI (me!) and an installable app." },
+      fa: "✨ لومیتک یک گروه دیجیتاله: ۳۲ ابزار، ۲۹ بازی در ۷ دسته، اسپورتک مردان با جدول ۲۴ لیگ، اخبار دیجیتال منابع ایرانی، فروشگاه کامل، هوش مصنوعی لومیتک (من!) و نصب به‌صورت اپ.",
+      en: "✨ Lumitek is a digital group: 32 tools, 29 games in 7 categories, men's Sportek with 24 league tables, Iranian-source Digital News, a full store, Lumitek AI (me!) and an installable app." },
     { keys: ["بازی", "game"],
       fa: "🎮 بازی‌ها اینجان: تیراندازی کیهانی، تیراندازی دقیق، ماز، چهار در یک ردیف، بزرگراه، تپه‌نورد، شکار گنج، دونده ماجراجویی، پنالتی، بسکتبال و ۱۲ بازی دیگه — با XP، سکه و رکورد!",
       en: "🎮 Our games: Space Shooter, Precision Range, Maze, Connect Four, Highway, Hill Climb, Treasure Hunt, Cave Runner, Penalty, Hoops Shot and 12 more — with XP, coins and records!" },
@@ -404,13 +464,18 @@
       : "🔌 You seem offline or the online service is unreachable. Try again when connected — or ask on the Support page.";
   }
 
-  /* ---------- Online AI engines ---------- */
-  var SYSTEM_FA = "تو «هوش مصنوعی لومیتک» هستی؛ دستیار هوشمند، دقیق و دوست‌داشتنی سایت لومیتک (Lumitek). پاسخ‌ها را به زبان کاربر، کامل و ساختارمند بده؛ از تیتر، لیست و بولد استفاده کن. اگر درباره لومیتک پرسیدند: سایت شامل ۲۴ ابزار (تقویم ایران، اوقات شرعی، ساعت جهانی، ماشین‌حساب مهندسی، آمار، فیزیک، تایپ‌سنجی و...)، ۲۶ بازی در ۷ دسته، اسپورتک (اخبار زنده هر رشته، جدول بیش از ۲۰ لیگ، بازی‌های پیش رو)، فروشگاه سکه/آواتار/اسلحه/اسکین بازی‌ها، مقالات آموزشی، نصب PWA و پشتیبانی است. هر سوال AI برای کاربر ۲ سکه هزینه دارد.";
-  var SYSTEM_EN = "You are Lumitek AI, the friendly, precise assistant of the Lumitek website. Answer fully and well-structured in the user's language using headings, lists and bold. If asked about Lumitek: it offers 24 tools (Iranian calendar, prayer times, world clock, engineering calculator, statistics, physics, typing test...), 26 games in 7 categories, Sportek (live per-sport news, 20+ league tables, upcoming fixtures), a store (coins/avatars/weapons/game skins), tutorial articles, installable PWA and support. Each AI question costs the user 2 coins.";
+  /* ---------- Online AI engines (1.1: استریم زنده + سریع‌تر) ---------- */
+  var SYSTEM_FA = "تو «هوش مصنوعی لومیتک» هستی؛ دستیار هوشمند، دقیق و دوست‌داشتنی سایت لومیتک (Lumitek). پاسخ‌ها را به زبان کاربر، کامل و ساختارمند بده؛ از تیتر، لیست و بولد استفاده کن. اگر حالت سریع فعال بود، کوتاه و سرراست جواب بده. اگر درباره لومیتک پرسیدند: سایت شامل ۳۲ ابزار (تقویم ایران، اوقات شرعی، ساعت جهانی، ماشین‌حساب مهندسی، آمار، فیزیک، چرخ شانس، فشرده‌ساز عکس، تست سرعت اینترنت و...)، ۲۹ بازی در ۷ دسته از جمله بازی جدید کشورگشایی، اسپورتک (اخبار زنده ورزش مردان از منابع ایرانی، جدول بیش از ۲۰ لیگ)، بخش اخبار دیجیتال از منابع ایرانی (دیجیاتو، زومیت، نارنجی، مهر)، فروشگاه سکه/آواتار/اسلحه/اسکین بازی‌ها، ۲۸ مقاله آموزشی، نصب PWA و پشتیبانی است. هر سوال AI برای کاربر ۲ سکه هزینه دارد (با کلید اختصاصی کاربر رایگان است).";
+  var SYSTEM_EN = "You are Lumitek AI, the friendly, precise assistant of the Lumitek website. Answer fully and well-structured in the user's language using headings, lists and bold. If fast mode is on, be brief and direct. If asked about Lumitek: it offers 32 tools (Iranian calendar, prayer times, world clock, engineering calculator, statistics, physics, lucky wheel, image compressor, speed test...), 29 games in 7 categories including the new Conquest game, Sportek (live men's sports news from Iranian sources, 20+ league tables), a Digital News section with tech news from Iranian media (Digiato, Zoomit, Narenji, Mehr), a store (coins/avatars/weapons/game skins), 28 tutorial articles, installable PWA and support. Each AI question costs the user 2 coins (free with the user's own API key).";
+  var FAST_SUFFIX_FA = " حالت سریع فعال است: پاسخ را در حداکثر ۴ تا ۵ جمله‌ی کوتاه و مفید بده.";
+  var FAST_SUFFIX_EN = " Fast mode is on: answer in at most 4-5 short, useful sentences.";
+
+  function fastMode() { try { return localStorage.getItem("lumitek_ai_fast") === "1"; } catch(e) { return false; } }
 
   function contextMessages() {
-    var sys = { role: "system", content: getLang() === "fa" ? SYSTEM_FA : SYSTEM_EN };
-    var h = getHistory().slice(-8).map(function(m) { return { role: m.role === "bot" ? "assistant" : "user", content: m.text }; });
+    var fa = getLang() === "fa";
+    var sys = { role: "system", content: (fa ? SYSTEM_FA : SYSTEM_EN) + (fastMode() ? (fa ? FAST_SUFFIX_FA : FAST_SUFFIX_EN) : "") };
+    var h = getHistory().slice(-10).map(function(m) { return { role: m.role === "bot" ? "assistant" : "user", content: m.text }; });
     return [sys].concat(h);
   }
 
@@ -420,66 +485,131 @@
     return fetch(url, Object.assign({}, opts, ctrl ? { signal: ctrl.signal } : {})).finally(function() { clearTimeout(timer); });
   }
 
-  function askApi(api, msgs) {
-    return fetchTimeout((api.base || "https://api.openai.com/v1").replace(/\/$/, "") + "/chat/completions", {
+  /* خواندن SSE — پاسخ زنده کلمه‌به‌کلمه */
+  function readSSE(res, onDelta) {
+    var reader = res.body && res.body.getReader ? res.body.getReader() : null;
+    if (!reader) return Promise.resolve("");
+    var dec = new TextDecoder(), buf = "", full = "";
+    function pump() {
+      return reader.read().then(function(r) {
+        if (r.done) return full;
+        buf += dec.decode(r.value, { stream: true });
+        var lines = buf.split("\n");
+        buf = lines.pop();
+        for (var i = 0; i < lines.length; i++) {
+          var line = lines[i].trim();
+          if (!line || line.indexOf("data:") !== 0) continue;
+          var payload = line.slice(5).trim();
+          if (payload === "[DONE]") return full;
+          try {
+            var j = JSON.parse(payload);
+            var d = j && j.choices && j.choices[0];
+            var delta = d && ((d.delta && d.delta.content) || (d.message && d.message.content));
+            if (delta) { full += delta; onDelta(full); }
+          } catch (e) {}
+        }
+        return pump();
+      });
+    }
+    return pump();
+  }
+
+  var currentAbort = null;
+
+  /* API اختصاصی کاربر — با استریم */
+  function askApi(api, msgs, onDelta) {
+    var ctrl = typeof AbortController !== "undefined" ? new AbortController() : null;
+    currentAbort = ctrl;
+    var timer = setTimeout(function() { if (ctrl) ctrl.abort(); }, 45000);
+    return fetch((api.base || "https://api.openai.com/v1").replace(/\/$/, "") + "/chat/completions", {
       method: "POST",
       headers: { "Content-Type": "application/json", "Authorization": "Bearer " + api.key },
-      body: JSON.stringify({ model: api.model || "gpt-4o-mini", messages: msgs, temperature: 0.7, max_tokens: 1400 })
-    }, 35000).then(function(r) {
+      body: JSON.stringify({ model: api.model || "gpt-4o-mini", messages: msgs, temperature: 0.7, max_tokens: 1600, stream: true }),
+      signal: ctrl ? ctrl.signal : undefined
+    }).then(function(r) {
       if (!r.ok) throw new Error("api " + r.status);
-      return r.json();
-    }).then(function(d) {
-      var txt = d && d.choices && d.choices[0] && d.choices[0].message && d.choices[0].message.content;
-      if (!txt) throw new Error("empty");
-      return txt.trim();
-    });
+      if (!r.body || !r.body.getReader) return r.json().then(function(d) {
+        var txt = d && d.choices && d.choices[0] && d.choices[0].message && d.choices[0].message.content;
+        if (!txt) throw new Error("empty");
+        onDelta(txt);
+        return txt.trim();
+      });
+      return readSSE(r, onDelta).then(function(txt) {
+        if (!txt || !txt.trim()) throw new Error("empty");
+        return txt.trim();
+      });
+    }).finally(function() { clearTimeout(timer); currentAbort = null; });
   }
 
-  /* زنجیره مدل‌های رایگان — اگر یکی خطا داد بعدی امتحان می‌شود */
-  var FREE_MODELS = ["openai-large", "openai", "mistral"];
-  function askFree(question) {
+  /* زنجیره مدل‌های رایگان — openai-fast اول برای سرعت */
+  var FREE_MODELS = ["openai-fast", "openai", "openai-large", "mistral", "deepseek"];
+  function askFree(question, onDelta) {
     var attempt = function(idx) {
       if (idx >= FREE_MODELS.length) throw new Error("all-models-failed");
-      var body = { model: FREE_MODELS[idx], referrer: "lumitek", messages: contextMessages() };
-      return fetchTimeout("https://text.pollinations.ai/", {
+      var ctrl = typeof AbortController !== "undefined" ? new AbortController() : null;
+      currentAbort = ctrl;
+      var body = { model: FREE_MODELS[idx], referrer: "lumitek", messages: contextMessages(), stream: true };
+      var timer = setTimeout(function() { if (ctrl) ctrl.abort(); }, 38000);
+      return fetch("https://text.pollinations.ai/openai", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(body)
-      }, 34000).then(function(r) {
+        body: JSON.stringify(body),
+        signal: ctrl ? ctrl.signal : undefined
+      }).then(function(r) {
+        clearTimeout(timer);
         if (!r.ok) throw new Error("m" + idx + " " + r.status);
-        return r.text();
-      }).then(function(txt) {
-        if (!txt || !txt.trim() || txt.length < 2) throw new Error("empty");
-        return txt.trim();
-      }).catch(function() { return attempt(idx + 1); });
+        if (!r.body || !r.body.getReader) return r.text().then(function(t) {
+          if (!t || !t.trim() || t.length < 2) throw new Error("empty");
+          onDelta(t.trim());
+          return t.trim();
+        });
+        return readSSE(r, onDelta).then(function(txt) {
+          if (!txt || !txt.trim() || txt.length < 2) throw new Error("empty");
+          return txt.trim();
+        });
+      }).catch(function(err) {
+        clearTimeout(timer);
+        if (err && err.name === "AbortError" && stopped) throw err;
+        return attempt(idx + 1);
+      });
     };
-    return attempt(0).catch(function() {
+    return attempt(0).catch(function(err) {
+      if (stopped) throw err;
       /* GET fallback */
       var q = encodeURIComponent(question);
-      var sys = encodeURIComponent(getLang() === "fa" ? SYSTEM_FA : SYSTEM_EN);
-      return fetchTimeout("https://text.pollinations.ai/" + q + "?model=openai&referrer=lumitek&system=" + sys, {}, 30000)
+      var sys = encodeURIComponent((getLang() === "fa" ? SYSTEM_FA : SYSTEM_EN) + (fastMode() ? (getLang() === "fa" ? FAST_SUFFIX_FA : FAST_SUFFIX_EN) : ""));
+      return fetchTimeout("https://text.pollinations.ai/" + q + "?model=openai-fast&referrer=lumitek&system=" + sys, {}, 30000)
         .then(function(r) { if (!r.ok) throw new Error("online2 " + r.status); return r.text(); })
-        .then(function(t) { if (!t || !t.trim()) throw new Error("empty"); return t.trim(); });
+        .then(function(t) { if (!t || !t.trim()) throw new Error("empty"); onDelta(t.trim()); return t.trim(); });
     });
   }
 
-  function askOnline(question) {
-    var api = getApi();
-    if (api && api.key) return askApi(api, contextMessages());
-    return askFree(question);
+  var stopped = false;
+  function stopGeneration() {
+    stopped = true;
+    if (currentAbort) { try { currentAbort.abort(); } catch(e) {} }
   }
 
-  /* ---------- Ask flow (2 سکه / اعتبار / نامحدود) ---------- */
+  function askOnline(question, onDelta) {
+    var api = getApi();
+    if (api && api.key) return askApi(api, contextMessages(), onDelta);
+    return askFree(question, onDelta);
+  }
+
+  /* ---------- Ask flow (۲ سکه — رایگان با کلید اختصاصی؛ ۱.۱ استریم زنده) ---------- */
   var busy = false;
+  var lastMsgEl = null;
   function ask(q, isRegen) {
     if (busy || !q.trim()) return;
-    if (!aiCanAsk()) {
+    var api = getApi();
+    var ownKey = !!(api && api.key);
+    if (!ownKey && !aiCanAsk()) {
       noCoinsBox.style.display = "";
-      addNotification("⚠️", L("سکه یا اعتبار کافی نداری — هر سوال ۲ سکه است.", "Not enough coins or credits — each question costs 2."));
+      addNotification("⚠️", L("سکه کافی نداری — هر سوال ۲ سکه است.", "Not enough coins — each question costs 2."));
       return;
     }
     noCoinsBox.style.display = "none";
-    var consume = aiConsumeQuestion();
+    var consume = ownKey ? { ok: true, mode: "free" } : aiConsumeQuestion();
     if (!consume.ok) return;
     lastQuestion = q;
     var p = getProfile();
@@ -488,26 +618,82 @@
     saveProfile(p);
 
     busy = true;
+    stopped = false;
     sendBtn.disabled = true;
+    sendBtn.innerHTML = L("⏹ توقف", "⏹ Stop");
+    sendBtn.onclick = function() { stopGeneration(); };
     if (!isRegen) addMsg("user", q);
     else chatBox.appendChild(Object.assign(document.createElement("div"), { className: "msg user", textContent: q }));
     var typing = addTyping();
 
-    askOnline(q).then(function(answer) {
-      removeTyping();
-      var msgEl = addMsg("bot", answer, true, true);
-      addActions(answer, msgEl);
-      var costNote = T("ai.spent");
-      addNotification("✨", costNote);
+    /* پیام زنده: همان حباب از همان لحظه اول آپدیت می‌شود */
+    var liveEl = document.createElement("div");
+    liveEl.className = "msg bot";
+    liveEl.style.display = "none";
+    var shown = "";
+    var t0 = performance.now();
+    var speedTimer = setInterval(function() {
+      var el = document.getElementById("aiSpeedVal");
+      if (el) el.textContent = ((performance.now() - t0) / 1000).toFixed(1) + "s";
+    }, 100);
+
+    function onDelta(full) {
+      if (!full || !full.trim()) return;
+      if (typing.parentNode) typing.remove();
+      if (liveEl.style.display === "none") {
+        liveEl.style.display = "";
+        chatBox.appendChild(liveEl);
+        var pill = document.getElementById("aiSpeedPill");
+        if (pill) pill.style.display = "";
+      }
+      /* برای سرعت: هر ۶۴ کاراکتر یا آخر جمله رندر کن */
+      if (full.length - shown.length >= 64 || /[.!؟?\n]$/.test(full)) {
+        shown = full;
+        liveEl.innerHTML = fmtMd(full);
+        chatBox.scrollTop = chatBox.scrollHeight;
+      }
+    }
+
+    askOnline(q, onDelta).then(function(answer) {
+      typing.remove();
+      clearInterval(speedTimer);
+      var dt = ((performance.now() - t0) / 1000).toFixed(1);
+      var el = document.getElementById("aiSpeedVal");
+      if (el) el.textContent = dt + "s";
+      lastMsgEl = liveEl;
+      lastAnswerEl = liveEl;
+      liveEl.innerHTML = fmtMd(answer);
+      if (!liveEl.parentNode) chatBox.appendChild(liveEl);
+      var h = getHistory();
+      h.push({ role: "bot", text: answer });
+      setHistory(h);
+      addActions(answer, liveEl);
+      addNotification("✨", ownKey ? L("پاسخ با مدل اختصاصی شما داده شد — رایگان!", "Answered with your own model — free!") : T("ai.spent"));
       updateStatus();
     }).catch(function() {
-      removeTyping();
-      addMsg("bot", offlineAnswer(q), false, true);
-      aiRefund(consume.mode);
-      addNotification("↩️", L("چون پاسخ آنلاین ممکن نشد، هزینه برگشت داده شد.", "Online answer failed — cost refunded."));
+      clearInterval(speedTimer);
+      typing.remove();
+      if (stopped && liveEl.parentNode) {
+        /* کاربر متوقف کرد — همان نیمه‌جواب بماند */
+        var partial = liveEl.textContent || "";
+        if (partial.trim()) {
+          var h2 = getHistory();
+          h2.push({ role: "bot", text: partial });
+          setHistory(h2);
+        }
+      } else if (stopped) {
+        liveEl.innerHTML = fmtMd(L("⏹ تولید پاسخ متوقف شد.", "⏹ Generation stopped."));
+        chatBox.appendChild(liveEl);
+      } else {
+        addMsg("bot", offlineAnswer(q), false, true);
+        aiRefund(consume.mode);
+        addNotification("↩️", L("چون پاسخ آنلاین ممکن نشد، هزینه برگشت داده شد.", "Online answer failed — cost refunded."));
+      }
     }).then(function() {
       busy = false;
       sendBtn.disabled = false;
+      sendBtn.innerHTML = T("ai.send");
+      sendBtn.onclick = tryAsk;
     });
   }
 
@@ -522,6 +708,20 @@
   document.querySelectorAll("#aiQuick button").forEach(function(b) {
     b.addEventListener("click", function() { ask(b.textContent.trim()); });
   });
+
+  /* حالت سریع ۱.۱ */
+  var fastBtn = document.getElementById("aiFastToggle");
+  var fastPill = document.getElementById("aiFastPill");
+  function paintFast() {
+    fastBtn.classList.toggle("active", fastMode());
+    fastPill.style.display = fastMode() ? "" : "none";
+  }
+  fastBtn.onclick = function() {
+    localStorage.setItem("lumitek_ai_fast", fastMode() ? "0" : "1");
+    paintFast();
+    addNotification("⚡", fastMode() ? L("حالت سریع روشن شد — پاسخ‌های کوتاه و سریع.", "Fast mode on — short, quick answers.") : L("حالت سریع خاموش شد — پاسخ‌های کامل.", "Fast mode off — full answers."));
+  };
+  paintFast();
 })();
 </script>
 

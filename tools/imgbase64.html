@@ -3,23 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>⚽ ضربات پنالتی | بازی‌های Lumitek</title>
-<meta name="description" content="بازی پنالتی آنلاین — زاویه و قدرت شوت را تنظیم کن و دروازه‌بان را مچ‌گیر کن.">
-<meta name="keywords" content="لومیتک, lumitek, بازی آنلاین, ابزار آنلاین, هوش مصنوعی, خرید سکه, وب اپلیکیشن">
+<title>🔁 عکس به Base64 | Lumitek</title>
+<meta name="description" content="مبدل عکس به Base64 لومیتک — Data URL بساز، در CSS/HTML استفاده کن یا از Base64 عکس بساز؛ کاملاً آفلاین.">
+<meta name="keywords" content="لومیتک, lumitek, ابزار آنلاین, بازی آنلاین, اخبار ورزش, پشتیبانی هوش مصنوعی, خرید سکه, وب اپلیکیشن">
 <meta name="robots" content="index,follow">
 <meta name="theme-color" content="#070b15">
-<link rel="canonical" href="https://lumitek.netlify.app/pages/penalty.html">
+<link rel="canonical" href="https://lumitek.netlify.app/tools/imgbase64.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Lumitek">
-<meta property="og:title" content="⚽ ضربات پنالتی | بازی‌های Lumitek">
-<meta property="og:description" content="بازی پنالتی آنلاین — زاویه و قدرت شوت را تنظیم کن و دروازه‌بان را مچ‌گیر کن.">
-<meta property="og:url" content="https://lumitek.netlify.app/pages/penalty.html">
+<meta property="og:title" content="🗒️ یادداشت سریع | Lumitek">
+<meta property="og:description" content="مبدل عکس به Base64 لومیتک — Data URL بساز، در CSS/HTML استفاده کن یا از Base64 عکس بساز؛ کاملاً آفلاین.">
+<meta property="og:url" content="https://lumitek.netlify.app/tools/imgbase64.html">
 <meta property="og:image" content="https://lumitek.netlify.app/assets/icons/og-cover.png">
 <meta property="og:locale" content="fa_IR">
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="⚽ ضربات پنالتی | بازی‌های Lumitek">
-<meta name="twitter:description" content="بازی پنالتی آنلاین — زاویه و قدرت شوت را تنظیم کن و دروازه‌بان را مچ‌گیر کن.">
+<meta name="twitter:title" content="🗒️ یادداشت سریع | Lumitek">
+<meta name="twitter:description" content="مبدل عکس به Base64 لومیتک — Data URL بساز، در CSS/HTML استفاده کن یا از Base64 عکس بساز؛ کاملاً آفلاین.">
 <meta name="twitter:image" content="https://lumitek.netlify.app/assets/icons/og-cover.png">
 <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
 <link rel="apple-touch-icon" href="../assets/icons/icon-192.png">
@@ -32,7 +32,7 @@
 <link rel="stylesheet" href="../css/style.css">
 <script>try{var t=localStorage.getItem("lumitek_theme");if(t==="light")document.documentElement.classList.add("light");var l=localStorage.getItem("lumitek_lang");if(l==="en"){document.documentElement.lang="en";document.documentElement.dir="ltr"}else{document.documentElement.lang="fa";document.documentElement.dir="rtl"}}catch(e){}</script>
 </head>
-<body data-game="1">
+<body>
 <div id="offlineBanner" class="offline-banner" data-i18n="offline.banner">🔌 حالت آفلاین — صفحه‌ها و بازی‌ها از حافظه اجرا می‌شوند و اخبار از آخرین نسخه ذخیره‌شده نمایش داده می‌شوند.</div>
 <!--LT5-CHROME-->
 <header class="site-header">
@@ -99,26 +99,34 @@
   </div>
 </div>
 
-<div class="search-wrap">
-<input id="globalSearchInput" type="search" data-i18n-ph="head.searchPh" placeholder="جستجو..." aria-label="Search">
-<div id="searchResults" class="search-results"></div>
-</div>
-<main class="page"><div class="game">
-<p class="eyebrow">LUMITEK GAME · NEW</p>
-<h1 data-i18n="g.penalty.n">⚽ ضربات پنالتی</h1>
-<p class="muted" data-i18n="g.penalty.d">زاویه و قدرت شوت را تنظیم کن و دروازه‌بان را مچ‌گیر کن!</p>
-
-<div class="gamebox mt">
-  <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
-    <span class="coin-pill">⚽ <b id="pnGoals">0</b> <span data-i18n="games.yourBest">رکورد</span></span>
-    <span class="coin-pill">🎯 <span data-i18n="unit.of10">از ۱۰</span>: <b id="pnShots">0</b></span>
+<main class="page">
+<p class="eyebrow">LUMITEK TOOL</p>
+<h1 id="t-title">🔁 عکس به Base64</h1>
+<p class="muted" id="t-lead">عکس را رها کن یا انتخاب کن تا کد Base64 بگیری — یا برعکس، کد را بده تا عکسش را ببینی. هیچ داده‌ای ارسال نمی‌شود.</p>
+<div class="card mt2" style="max-width:720px;margin-inline:auto">
+  <input type="file" id="b64File" accept="image/*" style="width:100%">
+  <label class="data-row" style="margin-top:12px;flex-direction:column;align-items:stretch">
+    <span id="b64L1">یا کد Base64 / Data URL را اینجا بچسبان:</span>
+    <textarea id="b64In" class="textarea" rows="4" dir="ltr" placeholder="data:image/png;base64,..." style="font-size:.72rem"></textarea>
+  </label>
+  <div class="data-row" style="margin-top:10px">
+    <button class="primary-btn" id="b64To">🔁 به Base64</button>
+    <button class="ghost-btn" id="b64From">👁 پیش‌نمایش کد</button>
+    <button class="ghost-btn" id="b64Copy">📋 کپی کد</button>
   </div>
-  <canvas id="pnCanvas" width="440" height="330" style="max-width:100%;border-radius:16px;margin-top:12px;touch-action:manipulation;cursor:pointer"></canvas>
-  <div class="sh-hint" id="pnHint">روی دروازه کلیک/لمس کن تا شوت بزنی — دروازه‌بان حرکت می‌کند!</div>
-  <button class="gamebutton" id="pnStart" style="margin-top:12px">شروع ضربات</button>
-  <p id="pnReward" class="muted" style="margin:8px 0 0"></p>
+  <p class="muted" id="b64Out" style="font-size:.85rem;margin:10px 0 0;min-height:1.4em"></p>
+  <div id="b64PrevWrap" style="display:none;margin-top:12px">
+    <img id="b64Prev" style="max-width:100%;max-height:340px;border-radius:12px;border:1px solid rgba(124,167,255,.25)">
+  </div>
 </div>
-</div></main>
+</main>
+
+
+<script src="../js/i18n.js"></script>
+<script src="../js/auth.js"></script>
+
+
+
 
 <footer class="footer-v2">
   <div class="fv-grid">
@@ -140,10 +148,10 @@
     <div>
       <h4 data-i18n="footer.services">خدمات</h4>
       <ul>
-        <li><a href="../pages/store.html" data-i18n="nav.store">فروشگاه</a></li>
-        <li><a href="../pages/store.html#coins" data-i18n="nav.coins">شارژ سکه</a></li>
-        <li><a href="../pages/ai.html" data-i18n="nav.ai">لومیتک ای‌آی</a></li>
+        <li><a href="../pages/store.html" data-i18n="nav.store">استور</a></li>
+        <li><a href="../pages/store.html#coins" data-i18n="nav.coins">خرید سکه</a></li>
         <li><a href="../pages/account.html" data-i18n="nav.account">حساب کاربری</a></li>
+        <li><a href="../pages/download.html" data-i18n="nav.download">دانلود اپ</a></li>
         <li><a href="../pages/donate.html" style="color:var(--a)" data-i18n="nav.donate">حمایت مالی</a></li>
       </ul>
     </div>
@@ -179,181 +187,75 @@
   </div>
 </footer>
 
-<script src="../js/i18n.js"></script>
 <script src="../js/main.js"></script>
-<script src="../js/auth.js"></script>
 
 <script>
 (function(){
-  var canvas = document.getElementById("pnCanvas");
-  var ctx = canvas.getContext("2d");
-  var W = canvas.width, H = canvas.height;
-  var goalsEl = document.getElementById("pnGoals");
-  var shotsEl = document.getElementById("pnShots");
-  var rewardEl = document.getElementById("pnReward");
-  var startBtn = document.getElementById("pnStart");
-  var hintEl = document.getElementById("pnHint");
-  function L(fa,en){ return getLang()==="fa"?fa:en; }
-
-  var GK_Y = 118, GOAL_L = 92, GOAL_R = 348, GOAL_T = 60, GOAL_B = 190;
-
-  var p0 = getProfile();
-  var bestGoals = p0.bests.penaltyGoals || 0;
-  goalsEl.textContent = bestGoals;
-
-  var goals, shots, ball, gk, phase, resultMsg, shotsTotal, running;
-
-  function reset() {
-    goals = 0; shots = 0; shotsTotal = 10;
-    goalsEl.textContent = bestGoals;
-    shotsEl.textContent = "0";
-    rewardEl.textContent = "";
-    hintEl.style.display = "";
-    phase = "aim";
-    ball = { x: W/2, y: 268, tx: W/2, ty: 268, sp: 0 };
-    gk = { x: (GOAL_L+GOAL_R)/2, target: (GOAL_L+GOAL_R)/2, sp: 0 };
-    resultMsg = "";
-    draw();
+  var fa = {
+    "t-title": "🔁 عکس به Base64", "t-lead": "عکس را رها کن یا انتخاب کن تا کد Base64 بگیری — یا برعکس، کد را بده تا عکسش را ببینی. هیچ داده‌ای ارسال نمی‌شود.",
+    "b64L1": "یا کد Base64 / Data URL را اینجا بچسبان:",
+    "b64To": "🔁 به Base64", "b64From": "👁 پیش‌نمایش کد", "b64Copy": "📋 کپی کد",
+    "b64Pick": "اول یک عکس انتخاب کن.", "b64Done": "کد آماده شد ({n} کاراکتر) — می‌توانی کپی کنی!",
+    "b64Show": "پیش‌نمایش از روی کد انجام شد ✓", "b64Bad": "این کد Base64 معتبر نبود.",
+    "b64CopyOk": "کپی شد ✓", "b64CopyNo": "کپی ممکن نشد."
+  };
+  var en = {
+    "t-title": "🔁 Image ↔ Base64", "t-lead": "Drop or pick an image to get its Base64 code — or paste a code to preview the image. Nothing leaves your browser.",
+    "b64L1": "Or paste a Base64 / Data URL here:",
+    "b64To": "🔁 To Base64", "b64From": "👁 Preview code", "b64Copy": "📋 Copy code",
+    "b64Pick": "Choose an image first.", "b64Done": "Code ready ({n} chars) — copy it!",
+    "b64Show": "Previewed from code ✓", "b64Bad": "That Base64 code was not valid.",
+    "b64CopyOk": "Copied ✓", "b64CopyNo": "Copy failed."
+  };
+  function d(){ return getLang() === "fa" ? fa : en; }
+  function paint(){
+    var t = d();
+    document.getElementById("t-title").textContent = t["t-title"];
+    document.getElementById("t-lead").textContent = t["t-lead"];
+    document.getElementById("b64L1").textContent = t["b64L1"];
+    document.getElementById("b64To").textContent = t["b64To"];
+    document.getElementById("b64From").textContent = t["b64From"];
+    document.getElementById("b64Copy").textContent = t["b64Copy"];
   }
-
-  function cssVar(n){ return getComputedStyle(document.documentElement).getPropertyValue(n).trim() || "#76e6c3"; }
-
-  function draw() {
-    ctx.clearRect(0,0,W,H);
-    /* sky + pitch */
-    var g = ctx.createLinearGradient(0,0,0,H);
-    g.addColorStop(0,"#0a1226"); g.addColorStop(1,"#12351f");
-    ctx.fillStyle = g; ctx.fillRect(0,0,W,H);
-    ctx.strokeStyle = "rgba(255,255,255,.14)";
-    ctx.lineWidth = 2;
-    for (var y = 210; y < H; y += 22) {
-      ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(W,y); ctx.stroke();
-    }
-    /* goal frame */
-    ctx.fillStyle = "rgba(255,255,255,.06)";
-    ctx.fillRect(GOAL_L, GOAL_T, GOAL_R-GOAL_L, GOAL_B-GOAL_T);
-    ctx.strokeStyle = "#e8f0ff"; ctx.lineWidth = 5;
-    ctx.beginPath();
-    ctx.moveTo(GOAL_L, GOAL_B); ctx.lineTo(GOAL_L, GOAL_T); ctx.lineTo(GOAL_R, GOAL_T); ctx.lineTo(GOAL_R, GOAL_B);
-    ctx.stroke();
-    /* net */
-    ctx.strokeStyle = "rgba(255,255,255,.12)"; ctx.lineWidth = 1;
-    for (var nx = GOAL_L; nx <= GOAL_R; nx += 16) { ctx.beginPath(); ctx.moveTo(nx, GOAL_T); ctx.lineTo(nx, GOAL_B); ctx.stroke(); }
-    for (var ny = GOAL_T; ny <= GOAL_B; ny += 16) { ctx.beginPath(); ctx.moveTo(GOAL_L, ny); ctx.lineTo(GOAL_R, ny); ctx.stroke(); }
-    /* keeper */
-    ctx.fillStyle = "#ffc861";
-    ctx.beginPath(); if (ctx.roundRect) ctx.roundRect(gk.x-20, GK_Y, 40, 52, 12); else ctx.rect(gk.x-20, GK_Y, 40, 52); ctx.fill();
-    ctx.fillStyle = "#101828";
-    ctx.beginPath(); ctx.arc(gk.x, GK_Y+14, 4, 0, 7); ctx.fill();
-    /* ball */
-    ctx.font = "26px serif"; ctx.textAlign = "center"; ctx.textBaseline = "middle";
-    ctx.fillText("⚽", ball.x, ball.y);
-    /* aim crosshair */
-    if (phase === "aim") {
-      ctx.strokeStyle = cssVar("--a"); ctx.lineWidth = 2;
-      ctx.beginPath(); ctx.arc(ball.tx, ball.ty, 14, 0, 7); ctx.stroke();
-      ctx.beginPath(); ctx.moveTo(ball.tx-20, ball.ty); ctx.lineTo(ball.tx+20, ball.ty); ctx.stroke();
-      ctx.beginPath(); ctx.moveTo(ball.tx, ball.ty-20); ctx.lineTo(ball.tx, ball.ty+20); ctx.stroke();
-    }
-    if (resultMsg) {
-      ctx.fillStyle = "rgba(7,11,21,.72)"; ctx.fillRect(0, H/2-38, W, 66);
-      ctx.fillStyle = "#fff"; ctx.font = "bold 24px Tahoma";
-      ctx.fillText(resultMsg, W/2, H/2 - 2);
-    }
+  document.addEventListener("lumitek:langchange", paint);
+  var lastCode = "";
+  function toB64(file){
+    var out = document.getElementById("b64Out"), t = d();
+    if (!file) { out.textContent = "⚠️ " + t.b64Pick; return; }
+    var r = new FileReader();
+    r.onload = function(){
+      lastCode = r.result;
+      out.textContent = "✅ " + t.b64Done.replace("{n}", lastCode.length.toLocaleString());
+      document.getElementById("b64In").value = lastCode;
+      document.getElementById("b64Prev").src = lastCode;
+      document.getElementById("b64PrevWrap").style.display = "";
+    };
+    r.readAsDataURL(file);
   }
-
-  function tick() {
-    if (!running) return;
-    requestAnimationFrame(tick);
-    /* keeper wander */
-    if (phase === "aim") {
-      if (Math.abs(gk.x - gk.target) < 3) {
-        gk.target = GOAL_L + 30 + Math.random()*(GOAL_R-GOAL_L-60);
-        gk.sp = 1.4 + Math.random()*2.2;
-      }
-      gk.x += Math.max(-gk.sp, Math.min(gk.sp, gk.target - gk.x));
-    }
-    /* ball flight */
-    if (phase === "fly") {
-      ball.x += (ball.tx - ball.x) * 0.16;
-      ball.y += (ball.ty - ball.y) * 0.16;
-      if (Math.abs(ball.tx-ball.x) < 5) resolve();
-    }
-    draw();
-  }
-
-  function resolve() {
-    shots++;
-    shotsEl.textContent = Math.min(shots, shotsTotal);
-    var scored = ball.x > GOAL_L + 8 && ball.x < GOAL_R - 8 && ball.y > GOAL_T + 6 && ball.y < GOAL_B;
-    var saved = ball.x > gk.x - 26 && ball.x < gk.x + 26 && ball.y > GOAL_T && ball.y < GOAL_B + 10;
-    if (scored && !saved) {
-      goals++;
-      resultMsg = L("⚽ گوووول!", "⚽ GOOOAL!");
-      try { addNotification("⚽", T("unit.score") + ": ⚽"); } catch(e) {}
-    } else if (saved) {
-      resultMsg = L("🧤 دروازه‌بان گرفت!", "🧤 Saved!");
-    } else {
-      resultMsg = L("😖 از دست رفت!", "😖 Missed!");
-    }
-    phase = "wait";
-    setTimeout(function() {
-      resultMsg = "";
-      if (shots >= shotsTotal) return finish();
-      ball = { x: W/2, y: 268, tx: W/2, ty: 268 };
-      phase = "aim";
-      hintEl.style.display = "";
-    }, 1100);
-  }
-
-  function finish() {
-    running = false;
-    startBtn.textContent = L("دوباره بازی کن", "Play again");
-    var xp = 30 + goals*22;
-    var cn = goals*4;
-    Lumitek.reward({ xp: xp, coins: cn, game: "penaltyGoals", score: goals });
-    rewardEl.textContent = L(
-      "🎉 "+goals+" گل از ۱۰ شوت! +"+xp+" XP و +"+cn+" سکه",
-      "🎉 "+goals+" goals out of 10! +"+xp+" XP and +"+cn+" coins");
-  }
-
-  function shoot(e) {
-    if (!running || phase !== "aim") return;
-    var rect = canvas.getBoundingClientRect();
-    var cx = (e.clientX - rect.left) * (W/rect.width);
-    var cy = (e.clientY - rect.top) * (H/rect.height);
-    ball.tx = Math.max(20, Math.min(W-20, cx));
-    ball.ty = Math.max(40, Math.min(GOAL_B + 26, cy));
-    hintEl.style.display = "none";
-    phase = "fly";
-  }
-  canvas.addEventListener("click", shoot);
-  canvas.addEventListener("touchstart", function(e){ e.preventDefault(); shoot(e.touches[0]); }, { passive: false });
-
-  startBtn.addEventListener("click", function() {
-    if (running) return;
-    reset(); running = true;
-    startBtn.textContent = L("در حال بازی...", "Playing...");
-    requestAnimationFrame(tick);
+  document.getElementById("b64File").addEventListener("change", function(){ toB64(this.files[0]); });
+  ["dragover", "drop"].forEach(function(ev){
+    document.getElementById("b64File").addEventListener(ev, function(e){ if (ev === "drop") toB64(e.dataTransfer.files[0]); });
   });
-
-  reset();
-})();
-</script>
-
-<script>
-/* Lumitek v0.7 — هنگام بازی صفحه جابه‌جا نشود (قفل اسکرول + WASD) */
-(function(){
-  function isGameKey(k){ return k==="ArrowUp"||k==="ArrowDown"||k==="ArrowLeft"||k==="ArrowRight"||k===" "||k==="Spacebar"; }
-  document.addEventListener("keydown", function(e){
-    if (!isGameKey(e.key)) return;
-    var t = e.target && e.target.tagName;
-    if (t === "INPUT" || t === "TEXTAREA" || t === "SELECT") return;
-    e.preventDefault();
-  }, { passive:false });
-  document.addEventListener("touchmove", function(e){
-    if (e.target && e.target.closest && e.target.closest("canvas,.snake-pad,.touch-pad,.game-pad,.dpad")) e.preventDefault();
-  }, { passive:false });
+  document.body.addEventListener("dragover", function(e){ e.preventDefault(); });
+  document.body.addEventListener("drop", function(e){ e.preventDefault(); if (e.dataTransfer.files[0]) toB64(e.dataTransfer.files[0]); });
+  document.getElementById("b64From").addEventListener("click", function(){
+    var out = document.getElementById("b64Out"), t = d();
+    var code = document.getElementById("b64In").value.trim();
+    var prev = document.getElementById("b64Prev");
+    var test = new Image();
+    test.onload = function(){ prev.src = code; document.getElementById("b64PrevWrap").style.display = ""; out.textContent = "✅ " + t.b64Show; };
+    test.onerror = function(){ out.textContent = "❌ " + t.b64Bad; };
+    test.src = code;
+  });
+  document.getElementById("b64Copy").addEventListener("click", function(){
+    var out = document.getElementById("b64Out"), t = d();
+    var code = lastCode || document.getElementById("b64In").value.trim();
+    if (!code) { out.textContent = "⚠️ " + t.b64Pick; return; }
+    (navigator.clipboard ? navigator.clipboard.writeText(code) : Promise.reject())
+      .then(function(){ out.textContent = "✅ " + t.b64CopyOk; })
+      .catch(function(){ out.textContent = "❌ " + t.b64CopyNo; });
+  });
+  paint();
 })();
 </script>
 </body>

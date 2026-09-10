@@ -43,9 +43,9 @@
     <a href="../pages/games.html" data-i18n="nav.games">nav.games</a>
     <a href="../pages/store.html" data-i18n="nav.store">nav.store</a>
     <a href="../pages/sports.html" data-i18n="nav.sports">nav.sports</a>
+    <a href="../pages/digital-news.html" data-i18n="nav.digitalnews">اخبار دیجیتال 📰</a>
     <a href="../pages/ai.html" data-i18n="nav.ai">لومیتک ای‌آی ✨</a>
     <a href="../pages/download.html" data-i18n="nav.download">nav.download</a>
-    <a href="../pages/support.html" data-i18n="nav.supportE">nav.supportE</a>
     <a href="../pages/technology.html" class="nav-extra" data-i18n="nav.tech">nav.tech</a>
     <a href="../pages/articles.html" data-i18n="nav.articles">nav.articles</a>
     <a href="../pages/announcements.html" data-i18n="nav.updates">nav.updates</a>
@@ -53,6 +53,7 @@
     <a href="../pages/contact.html" class="nav-extra" data-i18n="nav.contact">nav.contact</a>
     <a href="../pages/account.html" class="nav-extra" data-i18n="nav.account">nav.account</a>
     <a href="../pages/donate.html" class="nav-extra" data-i18n="nav.donate">nav.donate</a>
+    <a href="../pages/support.html" data-i18n="nav.supportE">nav.supportE</a>
   </nav>
   <div class="header-actions">
     <button id="languageToggle" class="icon-btn" data-i18n-title="nav.home" title="Language">EN</button>
@@ -158,6 +159,30 @@
   </div>
 </div>
 
+<div class="card mt2" id="securityCard">
+  <h3 class="mb0" data-i18n="acc.secT">🔒 امنیت حساب</h3>
+  <p class="muted" style="font-size:.85rem;margin:8px 0 12px" data-i18n="acc.secD">رمزت رو عوض کن، آخرین ورودت رو ببین یا اگه خواستی حساب رو کلاً حذف کن. بعد از ۵ تلاش ناموفق ورود، حساب ۶۰ ثانیه قفل می‌شه.</p>
+  <p class="muted" style="font-size:.78rem;margin:0 0 12px" id="secLastLogin"></p>
+  <div class="data-row" style="flex-wrap:wrap">
+    <button class="ghost-btn" id="chgPassBtn" data-i18n="acc.chgPass">🔑 تغییر رمز عبور</button>
+    <button class="danger-btn" id="delAccBtn" data-i18n="acc.delAcc">🗑️ حذف حساب کاربری</button>
+  </div>
+  <div id="chgPassForm" style="display:none;margin-top:12px">
+    <label data-i18n="acc.oldPass">رمز فعلی</label>
+    <input type="password" id="secOldPass" autocomplete="current-password" style="width:100%">
+    <label data-i18n="acc.newPass" style="margin-top:8px;display:block">رمز جدید (حداقل ۶ کاراکتر)</label>
+    <input type="password" id="secNewPass" autocomplete="new-password" style="width:100%">
+    <div class="auth-strength" id="secStrength" style="display:none">
+      <div class="auth-strength-track"><i id="secStrengthFill"></i></div>
+      <span id="secStrengthLabel"></span>
+    </div>
+    <div class="data-row" style="margin-top:10px">
+      <button class="primary-btn" id="secSavePass" data-i18n="acc.savePass">💾 ذخیره رمز جدید</button>
+      <button class="ghost-btn" id="secCancelPass" data-i18n="pm.close">انصراف</button>
+    </div>
+    <p class="muted" id="secMsg" style="font-size:.8rem;margin:10px 0 0;min-height:1.4em"></p>
+  </div>
+</div>
 <div class="card mt2">
   <h3 class="mb0" data-i18n="acc.dataT">🗄️ مدیریت داده‌ها</h3>
   <p class="muted" style="font-size:.85rem;margin:8px 0 0" data-i18n="acc.dataD">اطلاعات حساب شما فقط روی همین مرورگر ذخیره می‌شه (localStorage). می‌تونی ازش بکاپ بگیری یا به مرورگر دیگه منتقلش کنی.</p>
@@ -183,12 +208,12 @@
     <div>
       <div class="fv-brand"><img class="brand-logo" src="../assets/icons/logo-lt.png" alt="Lumitek" width="34" height="34"><span class="brand-word">Lumitek</span></div>
       <p data-i18n="footer.tag">همه ابزارها و بازی‌های مورد نیازت، سریع و ساده — همه‌جا با هم.</p>
-      <span class="vip-badge" style="display:inline-flex">v0.9 · PWA</span>
+      <span class="vip-badge" style="display:inline-flex">v1.1 · PWA</span>
     </div>
     <div>
       <h4 data-i18n="footer.explore">کاوش</h4>
       <ul>
-        <li><a href="../pages/technology.html" data-i18n="nav.tech">فناوری</a></li>
+        <li><a href="../pages/digital-news.html" data-i18n="nav.digitalnews">اخبار دیجیتال</a></li><li><a href="../pages/technology.html" data-i18n="nav.tech">فناوری</a></li>
         <li><a href="../pages/articles.html" data-i18n="nav.articles">مقالات</a></li>
         <li><a href="../pages/announcements.html" data-i18n="nav.updates">تغییرات</a></li>
         <li><a href="../pages/about.html" data-i18n="nav.about">درباره ما</a></li>
@@ -405,6 +430,82 @@
   document.addEventListener("lumitek:langchange", renderAll);
   document.addEventListener("lumitek:profilechange", renderAll);
   if (window.LumiAuth) LumiAuth.onChange(renderAll);
+
+  /* ---------- ۱.۱: امنیت حساب — تغییر رمز / حذف حساب / آخرین ورود ---------- */
+  var secMsg = document.getElementById("secMsg");
+  function L2(fa, en) { return getLang() === "fa" ? fa : en; }
+  function paintLastLogin() {
+    var el = document.getElementById("secLastLogin");
+    var u = window.LumiAuth ? LumiAuth.currentUser() : null;
+    if (!u) { el.textContent = L2("برای مدیریت امنیت، اول وارد شو.", "Sign in first to manage security."); return; }
+    var ll = LumiAuth.lastLoginOf(u.email);
+    el.textContent = ll ? L2("🕒 آخرین ورود: ", "🕒 Last login: ") + new Date(ll).toLocaleString(getLang() === "fa" ? "fa-IR" : "en-US") : L2("🕒 آخرین ورود ثبت نشده.", "🕒 No last login recorded.");
+  }
+  paintLastLogin();
+  document.getElementById("chgPassBtn").onclick = function() {
+    var u = window.LumiAuth ? LumiAuth.currentUser() : null;
+    if (!u) { addNotification("⚠️", L2("اول وارد حسابت شو.", "Sign in first.")); return; }
+    if (u.provider !== "email" && u.provider !== "password") {
+      addNotification("ℹ️", L2("حساب تو با گوگل/مایکروسافت است — رمز جداگانه ندارد.", "Your account uses Google/Microsoft — no separate password."));
+      return;
+    }
+    var f = document.getElementById("chgPassForm");
+    f.style.display = f.style.display === "none" ? "" : "none";
+  };
+  document.getElementById("secCancelPass").onclick = function() {
+    document.getElementById("chgPassForm").style.display = "none";
+  };
+  document.getElementById("secNewPass").addEventListener("input", function() {
+    var wrap = document.getElementById("secStrength");
+    if (!this.value) { wrap.style.display = "none"; return; }
+    var sc = window.LumiAuth ? LumiAuth.passScore(this.value) : 0;
+    wrap.style.display = "";
+    var fill = document.getElementById("secStrengthFill");
+    var colors = ["#ff5c7c", "#ff9e5c", "#ffd166", "#22e5a5", "#76e6c3"];
+    fill.style.width = (sc / 4 * 100) + "%";
+    fill.style.background = colors[sc];
+    document.getElementById("secStrengthLabel").textContent =
+      sc <= 1 ? L2("ضعیف", "Weak") : sc === 2 ? L2("متوسط", "Fair") : sc === 3 ? L2("خوب", "Good") : L2("عالی! 💪", "Strong! 💪");
+  });
+  document.getElementById("secSavePass").onclick = function() {
+    if (!window.LumiAuth) return;
+    var u = LumiAuth.currentUser();
+    if (!u) return;
+    var oldP = document.getElementById("secOldPass").value;
+    var newP = document.getElementById("secNewPass").value;
+    var btn = this;
+    btn.disabled = true;
+    LumiAuth.changePassword(u.email, oldP, newP).then(function() {
+      secMsg.textContent = "✅ " + L2("رمز عبور با موفقیت عوض شد!", "Password changed successfully!");
+      document.getElementById("secOldPass").value = "";
+      document.getElementById("secNewPass").value = "";
+      document.getElementById("secStrength").style.display = "none";
+      addNotification("🔒", L2("رمز عبور تغییر کرد.", "Password changed."));
+    }).catch(function(err) {
+      var code = err && err.code;
+      secMsg.textContent = "❌ " + (code === "errWrong" ? L2("رمز فعلی درست نیست.", "Current password is wrong.")
+        : code === "errPass" ? L2("رمز جدید حداقل ۶ کاراکتر باشد.", "New password must be 6+ chars.")
+        : L2("تغییر رمز ممکن نشد.", "Password change failed."));
+    }).then(function() { btn.disabled = false; });
+  };
+  document.getElementById("delAccBtn").onclick = function() {
+    if (!window.LumiAuth) return;
+    var u = LumiAuth.currentUser();
+    if (!u) { addNotification("⚠️", L2("حسابی وارد نشده.", "No account signed in.")); return; }
+    var ok = confirm(L2("مطمئنی؟ حساب و همه داده‌های حسابت از این مرورگر حذف می‌شود! این کار برگشت‌پذیر نیست.",
+                        "Are you sure? Your account and its data will be deleted from this browser! This cannot be undone."));
+    if (!ok) return;
+    var pass = u.provider === "email" ? prompt(L2("برای تأیید، رمز عبورت را وارد کن:", "Enter your password to confirm:")) : "";
+    if (u.provider === "email" && pass === null) return;
+    LumiAuth.deleteAccount(u.email, pass || "").then(function() {
+      addNotification("🗑️", L2("حساب حذف شد. خداحافظ!", "Account deleted. Bye!"));
+      renderAll();
+      paintLastLogin();
+    }).catch(function(err) {
+      addNotification("⚠️", err && err.code === "errWrong" ? L2("رمز درست نیست.", "Wrong password.") : L2("حذف ممکن نشد.", "Delete failed."));
+    });
+  };
+
   renderAll();
 })();
 </script>

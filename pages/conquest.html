@@ -1,0 +1,887 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>🗺️ کشورگشایی | Lumitek</title>
+<meta name="description" content="بازی کشورگشایی Lumitek — فتح نقشه آنلاین در سبک OpenFront! قلمروت را گسترش بده، با ۹ بازیکن زنده رقابت کن و کل نقشه را فتح کن. XP و سکه بگیر!">
+<meta name="keywords" content="لومیتک, lumitek, بازی کشورگشایی, openfront فارسی, بازی آنلاین استراتژی, فتح نقشه, خرید سکه, وب اپلیکیشن">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#070b15">
+<link rel="canonical" href="https://lumitek.netlify.app/pages/conquest.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Lumitek">
+<meta property="og:title" content="🗺️ کشورگشایی | Lumitek">
+<meta property="og:description" content="بازی کشورگشایی Lumitek — فتح نقشه آنلاین در سبک OpenFront! قلمروت را گسترش بده و کل نقشه را فتح کن.">
+<meta property="og:url" content="https://lumitek.netlify.app/pages/conquest.html">
+<meta property="og:image" content="https://lumitek.netlify.app/assets/icons/og-cover.png">
+<meta property="og:locale" content="fa_IR">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="🗺️ کشورگشایی | Lumitek">
+<meta name="twitter:description" content="بازی کشورگشایی Lumitek — فتح نقشه آنلاین در سبک OpenFront! قلمروت را گسترش بده و کل نقشه را فتح کن.">
+<meta name="twitter:image" content="https://lumitek.netlify.app/assets/icons/og-cover.png">
+<link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+<link rel="apple-touch-icon" href="../assets/icons/icon-192.png">
+<link rel="manifest" href="../manifest.json">
+<link rel="preconnect" href="https://fontnegar.ir/" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fontnegar.ir/css2?family=shabnam:wght@100;300;400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="../css/style.css">
+<script>try{var t=localStorage.getItem("lumitek_theme");if(t==="light")document.documentElement.classList.add("light");var l=localStorage.getItem("lumitek_lang");if(l==="en"){document.documentElement.lang="en";document.documentElement.dir="ltr"}else{document.documentElement.lang="fa";document.documentElement.dir="rtl"}}catch(e){}</script>
+<style>
+  .cq-wrap { position: relative; width: 100%; max-width: 760px; margin: 0 auto; }
+  .cq-stage { position: relative; border-radius: 14px; overflow: hidden; border: 1px solid rgba(124,167,255,.22); background:#0a1322; }
+  .cq-stage canvas.base { display:block; width:100%; height:auto; image-rendering: pixelated; image-rendering: crisp-edges; }
+  .cq-stage canvas.fx { position:absolute; inset:0; width:100%; height:100%; cursor: crosshair; }
+  .cq-hud { display:flex; flex-wrap:wrap; gap:8px; align-items:center; justify-content:center; margin:12px 0 0; }
+  .cq-pill { display:inline-flex; align-items:center; gap:6px; background:rgba(124,167,255,.1); border:1px solid rgba(124,167,255,.25); padding:6px 12px; border-radius:999px; font-weight:800; font-size:.82rem; }
+  .cq-ratios { display:flex; gap:6px; }
+  .cq-ratios button { border:1px solid rgba(124,167,255,.3); background:transparent; color:inherit; border-radius:9px; padding:6px 10px; font-weight:800; font-size:.78rem; cursor:pointer; }
+  .cq-ratios button.active { background:linear-gradient(135deg,var(--a),var(--b)); color:#061018; border-color:transparent; }
+  .cq-feed { position:absolute; top:8px; inset-inline-start:8px; display:flex; flex-direction:column; gap:4px; pointer-events:none; max-width:62%; }
+  .cq-feed div { background:rgba(6,14,26,.78); border:1px solid rgba(124,167,255,.2); color:#e8f0ff; font-size:.68rem; padding:4px 9px; border-radius:8px; animation:cqFade .4s; backdrop-filter:blur(3px); }
+  @keyframes cqFade { from { opacity:0; transform:translateY(-5px);} to { opacity:1; transform:none;} }
+  .cq-board { margin-top:12px; background:rgba(124,167,255,.07); border:1px solid rgba(124,167,255,.18); border-radius:12px; padding:10px 12px; }
+  .cq-board h4 { margin:0 0 8px; font-size:.85rem; display:flex; justify-content:space-between; align-items:center; }
+  .cq-row { display:flex; align-items:center; gap:7px; font-size:.76rem; padding:3px 0; }
+  .cq-row .dot { width:10px; height:10px; border-radius:3px; flex:0 0 10px; }
+  .cq-row .nm { flex:1; font-weight:700; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .cq-row .pc { font-weight:800; font-variant-numeric:tabular-nums; }
+  .cq-row.dead { opacity:.38; text-decoration:line-through; }
+  .cq-row.me { outline:1px dashed rgba(124,167,255,.5); border-radius:6px; padding-inline:4px; }
+  .cq-lobby { position:absolute; inset:0; background:rgba(5,10,20,.92); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; text-align:center; padding:18px; z-index:5; }
+  .cq-lobby.hidden { display:none; }
+  .cq-lobby h3 { margin:0; font-size:1.15rem; }
+  .cq-spin { width:38px; height:38px; border-radius:50%; border:3px solid rgba(124,167,255,.25); border-top-color:#76e6c3; animation: cqSpin 1s linear infinite; }
+  @keyframes cqSpin { to { transform: rotate(360deg);} }
+  .cq-lobby-list { display:flex; flex-wrap:wrap; gap:6px; justify-content:center; max-width:430px; }
+  .cq-lobby-list span { display:inline-flex; align-items:center; gap:5px; background:rgba(124,167,255,.12); border:1px solid rgba(124,167,255,.25); padding:4px 10px; border-radius:999px; font-size:.72rem; font-weight:700; animation:cqFade .3s; }
+  .cq-lobby-list span i { font-style:normal; opacity:.6; font-size:.62rem; }
+  .cq-over { position:absolute; inset:0; background:rgba(5,10,20,.9); display:none; flex-direction:column; align-items:center; justify-content:center; gap:10px; text-align:center; z-index:6; padding:18px; }
+  .cq-over.show { display:flex; }
+  .cq-over .big { font-size:2rem; }
+  .cq-chat { position:absolute; bottom:8px; inset-inline-end:8px; display:flex; flex-direction:column; gap:4px; align-items:flex-end; pointer-events:none; max-width:60%; }
+  .cq-chat div { background:rgba(6,14,26,.8); border:1px solid rgba(255,200,97,.35); color:#ffe9b8; font-size:.68rem; padding:4px 9px; border-radius:10px 10px 2px 10px; animation:cqFade .4s; }
+  .cq-bar { height:6px; border-radius:3px; background:rgba(124,167,255,.15); overflow:hidden; margin-top:8px; }
+  .cq-bar > i { display:block; height:100%; background:linear-gradient(90deg,#76e6c3,#3f8cff); width:0%; transition:width .5s; }
+  @media (max-width:640px){ .cq-feed div, .cq-chat div { font-size:.6rem; } }
+</style>
+</head>
+<body data-game="1">
+<div id="offlineBanner" class="offline-banner" data-i18n="offline.banner">🔌 حالت آفلاین — صفحه‌ها و بازی‌ها از حافظه اجرا می‌شوند و اخبار از آخرین نسخه ذخیره‌شده نمایش داده می‌شوند.</div>
+<!--LT5-CHROME-->
+<header class="site-header">
+  <a class="brand" href="../index.html"><img class="brand-logo" src="../assets/icons/logo-lt.png" alt="Lumitek" width="46" height="46"><span class="brand-word">Lumitek</span></a>
+  <nav class="main-nav" id="mainNav">
+    <a href="../index.html" data-i18n="nav.home">nav.home</a>
+    <a href="../pages/tools.html" data-i18n="nav.tools">nav.tools</a>
+    <a href="../pages/games.html" data-i18n="nav.games">nav.games</a>
+    <a href="../pages/store.html" data-i18n="nav.store">nav.store</a>
+    <a href="../pages/sports.html" data-i18n="nav.sports">nav.sports</a>
+    <a href="../pages/digital-news.html" data-i18n="nav.digitalnews">اخبار دیجیتال 📰</a>
+    <a href="../pages/ai.html" data-i18n="nav.ai">لومیتک ای‌آی ✨</a>
+    <a href="../pages/download.html" data-i18n="nav.download">nav.download</a>
+    <a href="../pages/technology.html" class="nav-extra" data-i18n="nav.tech">nav.tech</a>
+    <a href="../pages/articles.html" data-i18n="nav.articles">nav.articles</a>
+    <a href="../pages/announcements.html" data-i18n="nav.updates">nav.updates</a>
+    <a href="../pages/about.html" class="nav-extra" data-i18n="nav.about">nav.about</a>
+    <a href="../pages/contact.html" class="nav-extra" data-i18n="nav.contact">nav.contact</a>
+    <a href="../pages/account.html" class="nav-extra" data-i18n="nav.account">nav.account</a>
+    <a href="../pages/donate.html" class="nav-extra" data-i18n="nav.donate">nav.donate</a>
+    <a href="../pages/support.html" data-i18n="nav.supportE">nav.supportE</a>
+  </nav>
+  <div class="header-actions">
+    <button id="languageToggle" class="icon-btn" data-i18n-title="nav.home" title="Language">EN</button>
+    <button id="themeToggle" class="icon-btn" aria-label="Theme">☀️</button>
+    <button id="notificationButton" class="icon-btn notification-btn">🔔<span id="notificationCount">0</span></button>
+    <button id="changelogButton" class="icon-btn" aria-label="Changelog" title="تغییرات">🕒</button>
+    <button id="profileButton" class="profile-btn"><span data-profile-avatar>🙂</span> <span data-profile-name>Lumitek User</span></button>
+    <button id="menuToggle" class="icon-btn menu-toggle" aria-label="Menu">☰</button>
+  </div>
+</header>
+<div id="notificationPanel" class="notification-panel">
+  <div class="panel-title" data-i18n="notif.title">اعلان‌ها</div>
+  <div id="notificationList"></div>
+</div>
+<div id="changelogPanel" class="notification-panel changelog-panel">
+  <div class="panel-title" data-i18n="ch.title">🕒 تغییرات نسخه‌ها</div>
+  <div id="changelogList"></div>
+  <a class="cl-all" href="../pages/announcements.html" data-i18n="ch.all">مشاهده همه تغییرات →</a>
+</div>
+<div id="profileModal" class="modal">
+  <div class="modal-card">
+    <button id="profileClose" class="modal-close">×</button>
+    <div class="pm-head"><span class="pm-avatar" data-profile-avatar>🙂</span><div><h2 data-i18n="pm.title">پروفایل کاربر</h2><span class="pm-title" data-profile-title>تازه‌کار</span></div></div>
+    <label data-i18n="pm.nameLabel">نام نمایشی</label>
+    <input id="profileNameInput" maxlength="24" data-i18n-ph="pm.namePh" placeholder="نام شما">
+    <div class="xpbar"><div class="xpbar-fill" data-profile-xpbar style="width:0%"></div></div>
+    <p class="muted" style="font-size:.75rem;margin:0 0 10px" data-profile-xptext>0 / 100 XP</p>
+    <div class="profile-stats">
+      <div><span data-i18n="coins.level">سطح</span><strong data-profile-level>1</strong></div>
+      <div><span data-i18n="acc.xp">XP</span><strong data-profile-xp>0</strong></div>
+      <div><span data-i18n="coins.unit">سکه</span><strong data-profile-coins>0</strong></div>
+      <div><span data-i18n="pm.games">بازی‌ها</span><strong data-games-played>0</strong></div>
+    </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <button id="profileSave" class="primary-btn" data-i18n="pm.save" style="flex:1">ذخیره</button>
+      <a class="ghost-btn" href="../pages/account.html" data-i18n="pm.fullAccount">حساب کامل</a>
+    </div>
+    <div class="pm-auth-row" id="pmAuthArea">
+      <button id="pmAuthButton" class="primary-btn" data-i18n="pm.signIn" data-auth-open>🔓 ورود / ثبت‌نام</button>
+      <span class="auth-email" id="pmAuthEmail" style="display:none"></span>
+      <button id="pmLogout" class="ghost-btn" style="display:none" data-i18n="pm.signOut">خروج</button>
+    </div>
+  </div>
+</div>
+
+<main class="page"><div class="game">
+<p class="eyebrow">LUMITEK GAME</p>
+<h1 data-i18n="g.conquest.n">🗺️ کشورگشایی</h1>
+<p class="muted" data-i18n="g.conquest.d">نقشه آنلاین فتح کن — قلمرو بساز، به همسایه‌ها حمله کن و بیش از ۵۵٪ نقشه را بگیر!</p>
+<div class="gamebox mt" style="display:flex;flex-direction:column;align-items:center">
+  <div class="cq-hud">
+    <span class="cq-pill">🏰 <span id="cqTroops">0</span></span>
+    <span class="cq-pill">📊 <span id="cqPct">0%</span></span>
+    <span class="cq-pill">⏱ <span id="cqTime">0:00</span></span>
+    <span class="cq-ratios" id="cqRatio">
+      <button data-r="0.25">۲۵٪</button>
+      <button data-r="0.5" class="active">۵۰٪</button>
+      <button data-r="0.75">۷۵٪</button>
+      <button data-r="1">همه</button>
+    </span>
+  </div>
+  <div class="cq-wrap mt" style="width:100%">
+    <div class="cq-stage" id="cqStage">
+      <canvas class="base" id="cqBase" width="140" height="80"></canvas>
+      <canvas class="fx" id="cqFx"></canvas>
+      <div class="cq-feed" id="cqFeed"></div>
+      <div class="cq-chat" id="cqChat"></div>
+      <div class="cq-lobby" id="cqLobby">
+        <div class="cq-spin"></div>
+        <h3 id="cqLobbyTitle">🌐 در حال اتصال به سرور Tehran-1 ...</h3>
+        <div class="cq-lobby-list" id="cqLobbyList"></div>
+        <p class="muted" id="cqLobbySub" style="margin:0;font-size:.78rem">۹ بازیکن دیگر در حال ورود هستند...</p>
+      </div>
+      <div class="cq-over" id="cqOver">
+        <div class="big" id="cqOverIcon">🏆</div>
+        <h3 id="cqOverTitle">فتح کامل شد!</h3>
+        <p class="muted" id="cqOverText" style="margin:0;font-size:.85rem"></p>
+        <div style="display:flex;gap:8px;margin-top:6px;flex-wrap:wrap;justify-content:center">
+          <button class="gamebutton" id="cqAgain">دوباره بازی کن</button>
+          <a class="ghost-btn" style="display:inline-flex;align-items:center" href="../pages/games.html">بازی‌های دیگر</a>
+        </div>
+      </div>
+    </div>
+    <div class="cq-hud" style="justify-content:space-between">
+      <span style="display:flex;gap:6px">
+        <button class="gamebutton" id="cqStart">شروع بازی</button>
+        <button class="ghost-btn" id="cqPause" style="padding:8px 14px">⏸</button>
+      </span>
+      <span style="display:flex;gap:6px">
+        <button class="ghost-btn cq-speed active" data-s="1" style="padding:8px 12px">×۱</button>
+        <button class="ghost-btn cq-speed" data-s="2" style="padding:8px 12px">×۲</button>
+        <button class="ghost-btn cq-speed" data-s="4" style="padding:8px 12px">×۴</button>
+      </span>
+    </div>
+    <div class="cq-board">
+      <h4><span id="cqBoardTitle">🏆 جدول زنده بازیکنان</span><span class="muted" id="cqLandInfo" style="font-size:.7rem"></span></h4>
+      <div id="cqRows"></div>
+      <div class="cq-bar"><i id="cqGoalBar"></i></div>
+      <p class="muted" style="font-size:.68rem;margin:6px 0 0" id="cqGoalText">هدف: تصاحب ۵۵٪ خشکی‌ها</p>
+    </div>
+  </div>
+  <p id="cqMsg" class="muted" style="min-height:1.5em;text-align:center">—</p>
+</div>
+</div></main>
+
+<footer class="footer-v2">
+  <div class="fv-grid">
+    <div>
+      <div class="fv-brand"><img class="brand-logo" src="../assets/icons/logo-lt.png" alt="Lumitek" width="34" height="34"><span class="brand-word">Lumitek</span></div>
+      <p data-i18n="footer.tag">همه ابزارها و بازی‌های مورد نیازت، سریع و ساده — همه‌جا با هم.</p>
+      <span class="vip-badge" style="display:inline-flex">v1.1 · PWA</span>
+    </div>
+    <div>
+      <h4 data-i18n="footer.explore">کاوش</h4>
+      <ul>
+        <li><a href="../pages/digital-news.html" data-i18n="nav.digitalnews">اخبار دیجیتال</a></li><li><a href="../pages/technology.html" data-i18n="nav.tech">فناوری</a></li>
+        <li><a href="../pages/articles.html" data-i18n="nav.articles">مقالات</a></li>
+        <li><a href="../pages/announcements.html" data-i18n="nav.updates">تغییرات</a></li>
+        <li><a href="../pages/about.html" data-i18n="nav.about">درباره ما</a></li>
+        <li><a href="../pages/contact.html" data-i18n="nav.contact">تماس</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-i18n="footer.services">خدمات</h4>
+      <ul>
+        <li><a href="../pages/store.html" data-i18n="nav.store">استور</a></li>
+        <li><a href="../pages/store.html#coins" data-i18n="nav.coins">خرید سکه</a></li>
+        <li><a href="../pages/account.html" data-i18n="nav.account">حساب کاربری</a></li>
+        <li><a href="../pages/download.html" data-i18n="nav.download">دانلود اپ</a></li>
+        <li><a href="../pages/donate.html" style="color:var(--a)" data-i18n="nav.donate">حمایت مالی</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-i18n="footer.newsletter">خبرنامه Lumitek</h4>
+      <p data-i18n="footer.newsText">از امکانات جدید زودتر باخبر شو.</p>
+      <form class="news-row" id="newsletterForm">
+        <input type="email" required data-i18n-ph="footer.newsPh" placeholder="ایمیل شما" aria-label="email">
+        <button type="submit" data-i18n="footer.newsBtn">عضویت</button>
+      </form>
+    </div>
+  </div>
+    <div class="fv-social">
+    <div class="fv-social-title" data-i18n="footer.socialT">ما را در شبکه‌های اجتماعی دنبال کنید</div>
+    <div class="fv-social-row">
+      <a href="https://www.aparat.com/lumitek" target="_blank" rel="noopener" title="آپارات" aria-label="Aparat">
+        <svg width="26" height="26" viewBox="0 0 32 32"><rect x="1" y="1" width="30" height="30" rx="9" fill="#DF0F38"/><path d="M11 9.5l13 6.5-13 6.5v-13z" fill="#fff"/></svg>
+        <span>آپارات</span></a>
+      <a href="https://bale.ai/lumitek" target="_blank" rel="noopener" title="بله" aria-label="Bale">
+        <svg width="26" height="26" viewBox="0 0 32 32"><rect x="1" y="1" width="30" height="30" rx="9" fill="#00A693"/><path d="M8 22V10h5.2c2.6 0 4.3 1.3 4.3 3.4 0 1.5-.8 2.6-2.1 3.1l3.3 5.5h-3.4l-2.8-5h-1.4v5H8zm3.1-7.4h1.9c1 0 1.6-.5 1.6-1.3s-.6-1.3-1.6-1.3h-1.9v2.6z" fill="#fff"/><circle cx="22.5" cy="11.5" r="2.5" fill="#fff"/></svg>
+        <span>بله</span></a>
+      <a href="https://eitaa.com/lumitek" target="_blank" rel="noopener" title="ایتا" aria-label="Eitaa">
+        <svg width="26" height="26" viewBox="0 0 32 32"><rect x="1" y="1" width="30" height="30" rx="9" fill="#F5793B"/><path d="M25 8.5L6.5 15.7c-.7.3-.6 1.3.1 1.4l4.6 1.2 1.7 5.2c.2.7 1.1.8 1.5.2l2.3-3 4.6 3.4c.6.4 1.4.1 1.6-.6L26.4 9.6c.2-.8-.6-1.4-1.4-1.1zm-9.8 10.6l-.4 3 1.6-2.4-1.2-.6z" fill="#fff"/></svg>
+        <span>ایتا</span></a>
+      <a href="https://rubika.ir/lumitek" target="_blank" rel="noopener" title="روبیکا" aria-label="Rubika">
+        <svg width="26" height="26" viewBox="0 0 32 32"><rect x="1" y="1" width="30" height="30" rx="9" fill="#8E24AA"/><path d="M9 24V8h6.5c3.4 0 5.5 1.7 5.5 4.5 0 2-.9 3.4-2.6 4.1l4 7.4h-4.2l-3.4-6.6h-1.9V24H9zm3.9-9.6h2.4c1.4 0 2.2-.7 2.2-1.9s-.8-1.9-2.2-1.9h-2.4v3.8z" fill="#fff"/></svg>
+        <span>روبیکا</span></a>
+    </div>
+  </div>
+  <div class="fv-bottom">
+    <span data-i18n="footer.rights">© 2026 Lumitek — همه حقوق محفوظ است.</span>
+    <span data-i18n="footer.made">ساخته‌شده با ❤ و بدون فریم‌ورک</span>
+  </div>
+</footer>
+
+<script src="../js/i18n.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/auth.js"></script>
+<script>
+/* ============================================================
+   Lumitek 1.1 — کشورگشایی (Conquest) | سبک OpenFront
+   نقشه فتح آنلاین‌نما: لابی زنده + ۹ ربات هوشمند + چت و کیل‌فید
+   مکانیک: رشد جمعیت، حمله با نسبت سرباز، کوه = دفاع بیشتر
+   ============================================================ */
+(function(){
+  var COLS = 140, ROWS = 80;
+  var WIN_PCT = 0.55, DOMINATE_PCT = 0.85;
+  function L(fa,en){ return getLang()==="fa"?fa:en; }
+  function faNum(n){ return getLang()==="fa" ? String(n).replace(/\d/g, function(d){ return "۰۱۲۳۴۵۶۷۸۹"[+d]; }) : String(n); }
+  function $(id){ return document.getElementById(id); }
+
+  var base = $("cqBase"), fx = $("cqFx");
+  var bctx = base.getContext("2d"), fctx = fx.getContext("2d");
+  var cellW = 0, cellH = 0;
+
+  /* ---------- players ---------- */
+  var HUES = [216, 0, 140, 48, 276, 330, 192, 24, 96, 300];
+  var BOT_DEFS = [
+    { fa: "آرش تیرانداز", en: "Arash", em: "🏹" }, { fa: "کوروش بزرگ", en: "Cyrus", em: "🦁" },
+    { fa: "بابک پارس", en: "Babak", em: "⚔️" }, { fa: "سام کمانگیر", en: "Sam", em: "🎯" },
+    { fa: "مانی سپهدار", en: "Mani", em: "🛡️" }, { fa: "رادین شیر", en: "Radin", em: "🐺" },
+    { fa: "بهرام گور", en: "Bahram", em: "🐉" }, { fa: "آرتین طوفان", en: "Artin", em: "⚡" },
+    { fa: "داریوش شاه", en: "Darius", em: "👑" }
+  ];
+  var CHATS = [
+    { fa: "خوش بگذره رفقا! 🎮", en: "Have fun all! 🎮" },
+    { fa: "کسی حمله نکنه اول خودم می‌زنم 😄", en: "Nobody attack or I go first 😄" },
+    { fa: "این نقشه مال منه 😎", en: "This map is mine 😎" },
+    { fa: "ببخشید همسایه، باید بخورمت! 🤝", en: "Sorry neighbour, I must eat you! 🤝" },
+    { fa: "وای چقدر سریع بزرگ شدی!", en: "Wow you grew fast!" },
+    { fa: "اتحاد موقت؟ بعدش جنگ 🤝⚔️", en: "Temporary alliance? War after 🤝⚔️" },
+    { fa: "سرورم پینگ داد، برگشتم!", en: "My ping spiked, I'm back!" },
+    { fa: "تله‌گذاشتم اون گوشه 😅", en: "I set a trap over there 😅" }
+  ];
+  var players = [];   /* {id,name,fa,en,em,hue,color,isBot,alive,troops,cells,aggr,ping} */
+  var human = 0;
+
+  /* ---------- map state ---------- */
+  var owner = new Int8Array(COLS * ROWS);   /* -1 آب، 0 بی‌صاحب، 1..9 بازیکن */
+  var elev  = new Float32Array(COLS * ROWS);/* 0..1 برای کوه‌ها */
+  var landCount = 0;
+  var atks = [];      /* حمله‌های در راه */
+  var flashCells = [];/* فلش لحظهcapture */
+  var running = false, paused = false, speed = 1;
+  var ratio = 0.5;
+  var t0 = 0, elapsed = 0, timerInt = null;
+  var maxPct = 0, wins = 0;
+  var econAcc = 0, botAcc = 0, chatAcc = 0;
+
+  /* ---------- terrain: value noise ---------- */
+  function mulberry(seed){ return function(){ seed|=0; seed=seed+0x6D2B79F5|0; var t=Math.imul(seed^seed>>>15,1|seed); t=t+Math.imul(t^t>>>7,61|t)^t; return ((t^t>>>14)>>>0)/4294967296; }; }
+  function genTerrain(){
+    var rnd = mulberry((Math.random()*1e9)|0);
+    var G = 16, grid = [];
+    for (var y=0;y<=G;y++){ grid[y]=[]; for (var x=0;x<=G;x++) grid[y][x]=rnd(); }
+    function smooth(t){ return t*t*(3-2*t); }
+    function noise(nx, ny){
+      var gx = nx*G, gy = ny*G;
+      var x0 = Math.floor(gx), y0 = Math.floor(gy);
+      var fx0 = smooth(gx-x0), fy0 = smooth(gy-y0);
+      var a = grid[y0][x0], b = grid[y0][x0+1], c = grid[y0+1][x0], d = grid[y0+1][x0+1];
+      return a+(b-a)*fx0+(c-a)*fy0+(a-b-c+d)*fx0*fy0;
+    }
+    landCount = 0;
+    for (var y=0;y<ROWS;y++) for (var x=0;x<COLS;x++){
+      var i = y*COLS+x;
+      var nx = x/COLS, ny = y/ROWS;
+      /* دامنه کروی تا لبه‌ها آب شود (جزیره‌ای مثل openfront) */
+      var dx = (nx-0.5)*2, dy = (ny-0.5)*2;
+      var edge = 1 - Math.min(1, Math.sqrt(dx*dx+dy*dy)*1.08);
+      var v = noise(nx,ny)*0.72 + noise(nx*2.3%1,ny*2.3%1)*0.28;
+      v = v*0.82 + edge*0.34 - 0.10;
+      elev[i] = v;
+      if (v > 0.34) { owner[i] = 0; landCount++; }
+      else owner[i] = -1;
+    }
+  }
+  function spawnPlayers(){
+    players = [{ id: 1, isBot: false, alive: true, troops: 60, cells: 0, aggr: 1, hue: HUES[0] }];
+    players[0].name = (getProfile().name || "Player").slice(0, 14);
+    players[0].em = "🎮"; players[0].ping = 12;
+    var used = [];
+    for (var b=0;b<9;b++){
+      var d = BOT_DEFS[b];
+      players.push({ id: b+2, isBot: true, alive: true, troops: 60, cells: 0, aggr: 0.72 + Math.random()*0.85,
+        hue: HUES[b+1], name: L(d.fa,d.en), em: d.em, ping: 18 + Math.floor(Math.random()*80) });
+    }
+    /* اسپاون: نقاط خشکی با فاصله از هم */
+    var tries = 0;
+    var pts = [];
+    while (pts.length < 10 && tries < 4000) {
+      tries++;
+      var x = 8 + Math.floor(Math.random()*(COLS-16));
+      var y = 6 + Math.floor(Math.random()*(ROWS-12));
+      if (owner[y*COLS+x] !== 0) continue;
+      var ok = true;
+      for (var k=0;k<pts.length;k++){
+        var ddx = pts[k][0]-x, ddy = pts[k][1]-y;
+        if (ddx*ddx+ddy*ddy < 26*26) { ok = false; break; }
+      }
+      if (ok) pts.push([x,y]);
+    }
+    /* اگر نقشه جا نداد، سخت‌گیرانه‌تر نگیر */
+    while (pts.length < 10) {
+      var x2 = 6 + Math.floor(Math.random()*(COLS-12)), y2 = 6 + Math.floor(Math.random()*(ROWS-12));
+      if (owner[y2*COLS+x2] === 0) pts.push([x2,y2]);
+    }
+    players.forEach(function(p, idx){
+      var cx = pts[idx][0], cy = pts[idx][1];
+      for (var dy=-2; dy<=2; dy++) for (var dx=-2; dx<=2; dx++){
+        if (Math.abs(dx)+Math.abs(dy) > 3) continue;
+        var x = cx+dx, y = cy+dy;
+        if (x<0||y<0||x>=COLS||y>=ROWS) continue;
+        var i = y*COLS+x;
+        if (owner[i] === 0) { owner[i] = p.id; p.cells++; }
+      }
+      if (p.cells === 0) { /* آخرین تلاش */
+        for (var dy2=-2; dy2<=2; dy2++) for (var dx2=-2; dx2<=2; dx2++){
+          var x3 = cx+dx2, y3 = cy+dy2;
+          if (x3<0||y3<0||x3>=COLS||y3>=ROWS) continue;
+          var i3 = y3*COLS+x3;
+          if (owner[i3] >= 0) { owner[i3] = p.id; p.cells++; }
+        }
+      }
+      p.troops = 60;
+    });
+  }
+
+  /* ---------- rendering ---------- */
+  function hsl(h,s,l){ return "hsl(" + h + "," + s + "%," + l + "%)"; }
+  var baseImg = null;
+  function paintBase(){
+    if (!baseImg) baseImg = bctx.createImageData(COLS, ROWS);
+    var d = baseImg.data;
+    for (var y=0;y<ROWS;y++) for (var x=0;x<COLS;x++){
+      var i = y*COLS+x, o = i*4;
+      var own = owner[i];
+      if (own === -1) { /* آب با موج ملایم */
+        var w = 148 + Math.floor(9*Math.sin(x*0.32 + y*0.18 + elapsed*0.0014) + 5*Math.sin(x*0.11 - y*0.07 - elapsed*0.0008));
+        d[o]=w-88; d[o+1]=w-38; d[o+2]=w; d[o+3]=255;
+      } else if (own === 0) { /* خشکی آزاد: سبز، کوه خاکستری */
+        var e = elev[i];
+        if (e > 0.62) { var g2 = 120 + Math.floor((e-0.62)*190); d[o]=g2; d[o+1]=g2; d[o+2]=g2+6; }
+        else { d[o]=62+Math.floor(e*36); d[o+1]=120+Math.floor(e*46); d[o+2]=66; }
+      } else {
+        var p = players[own-1];
+        var isBorder = isBorderCell(x, y, own);
+        var l = isBorder ? 30 : 46;
+        var c = hsl2rgb(p.hue, 62, l);
+        d[o]=c[0]; d[o+1]=c[1]; d[o+2]=c[2]; d[o+3]=255;
+      }
+    }
+    bctx.putImageData(baseImg, 0, 0);
+  }
+  function isBorderCell(x, y, ownv){
+    if (x>0 && owner[y*COLS+x-1] !== ownv) return true;
+    if (x<COLS-1 && owner[y*COLS+x+1] !== ownv) return true;
+    if (y>0 && owner[(y-1)*COLS+x] !== ownv) return true;
+    if (y<ROWS-1 && owner[(y+1)*COLS+x] !== ownv) return true;
+    return false;
+  }
+  function hsl2rgb(h, s, l){
+    s/=100; l/=100;
+    var k = function(n){ return (n + h/30) % 12; };
+    var a = s*Math.min(l, 1-l);
+    var f = function(n){ return l - a*Math.max(-1, Math.min(Math.min(k(n)-3, 9-k(n)), 1)); };
+    return [Math.round(f(0)*255), Math.round(f(8)*255), Math.round(f(4)*255)];
+  }
+  function paintFx(){
+    /* ۱) حمله‌هایی که به مقصد رسیدند — همین‌جا نتیجه‌گیری می‌شوند */
+    var now = performance.now();
+    for (var ri = atks.length - 1; ri >= 0; ri--) {
+      if (now - atks[ri].t0 >= atks[ri].dur) {
+        var done = atks.splice(ri, 1)[0];
+        resolveAttack(done);
+      }
+    }
+    fctx.clearRect(0,0,fx.width,fx.height);
+    /* فلش سلول‌های تازه‌اشغال */
+    for (var f=flashCells.length-1; f>=0; f--){
+      var c = flashCells[f];
+      c.t -= 1;
+      if (c.t <= 0) { flashCells.splice(f,1); continue; }
+      fctx.fillStyle = "rgba(255,255,255," + (c.t/14) + ")";
+      fctx.fillRect(c.x*cellW, c.y*cellH, cellW, cellH);
+    }
+    /* پیکان حمله‌ها */
+    atks.forEach(function(a){
+      var now = performance.now();
+      var t = Math.min(1, (now - a.t0) / a.dur);
+      var x = a.x0 + (a.x1-a.x0)*t, y = a.y0 + (a.y1-a.y0)*t;
+      /* خط نقطه‌چین مسیر */
+      fctx.strokeStyle = "rgba(255,255,255,.28)";
+      fctx.setLineDash([4,5]);
+      fctx.beginPath(); fctx.moveTo(a.x0,a.y0); fctx.lineTo(a.x1,a.y1); fctx.stroke();
+      fctx.setLineDash([]);
+      /* سر پیکان = دایره سربازها */
+      fctx.beginPath();
+      fctx.arc(x, y, 5.5, 0, Math.PI*2);
+      fctx.fillStyle = "hsl(" + a.hue + ",70%,55%)";
+      fctx.fill();
+      fctx.lineWidth = 2; fctx.strokeStyle = "#fff";
+      fctx.stroke();
+      fctx.fillStyle = "#fff";
+      fctx.font = "bold 8px Inter,sans-serif";
+      fctx.textAlign = "center"; fctx.textBaseline = "middle";
+      fctx.fillText(String(Math.round(a.sent)), x, y+0.5);
+    });
+  }
+  function resizeFx(){
+    var r = base.getBoundingClientRect();
+    fx.width = Math.round(r.width); fx.height = Math.round(r.width * ROWS/COLS);
+    cellW = fx.width / COLS; cellH = fx.height / ROWS;
+  }
+  window.addEventListener("resize", function(){ resizeFx(); paintBase(); });
+
+  /* ---------- feed / chat / board ---------- */
+  function feed(html){
+    var el = document.createElement("div");
+    el.innerHTML = html;
+    var f = $("cqFeed");
+    f.appendChild(el);
+    while (f.children.length > 5) f.removeChild(f.firstChild);
+    setTimeout(function(){ el.style.opacity = ".55"; }, 2600);
+    setTimeout(function(){ el.remove(); }, 7000);
+  }
+  function chat(){
+    var c = CHATS[Math.floor(Math.random()*CHATS.length)];
+    var alive = players.filter(function(p){ return p.isBot && p.alive; });
+    if (!alive.length) return;
+    var p = alive[Math.floor(Math.random()*alive.length)];
+    var el = document.createElement("div");
+    el.textContent = p.em + " " + p.name + ": " + (getLang()==="fa"?c.fa:c.en);
+    var box = $("cqChat");
+    box.appendChild(el);
+    while (box.children.length > 3) box.removeChild(box.firstChild);
+    setTimeout(function(){ el.remove(); }, 6000);
+  }
+  function pname(p){ return p.isBot ? (p.em + " " + p.name) : ("🎮 " + p.name); }
+  function renderBoard(){
+    var rows = players.slice().sort(function(a,b){ return b.cells - a.cells; });
+    var total = Math.max(1, landCount);
+    var html = "";
+    rows.forEach(function(p){
+      var pct = (p.cells/total*100);
+      html += '<div class="cq-row' + (p.alive?"":" dead") + (p.isBot?"":" me") + '">' +
+        '<span class="dot" style="background:hsl(' + p.hue + ',70%,50%)"></span>' +
+        '<span class="nm">' + pname(p) + '</span>' +
+        '<span class="pc">' + faNum(pct.toFixed(1)) + '% · ' + faNum(Math.round(p.troops)) + '</span></div>';
+    });
+    $("cqRows").innerHTML = html;
+    $("cqLandInfo").textContent = L("خشکی: " + faNum(total), "Land: " + faNum(total));
+    var me = players[human];
+    var pct2 = me.cells/total;
+    $("cqGoalBar").style.width = Math.min(100, pct2/WIN_PCT*100) + "%";
+    $("cqGoalText").textContent = L("هدف: تصاحب ۵۵٪ خشکی‌ها — الان " + faNum((pct2*100).toFixed(1)) + "%",
+                                    "Goal: own 55% of land — now " + (pct2*100).toFixed(1) + "%");
+  }
+  function updHud(){
+    var me = players[human];
+    $("cqTroops").textContent = faNum(Math.round(me.troops));
+    $("cqPct").textContent = faNum((me.cells/Math.max(1,landCount)*100).toFixed(1)) + "%";
+  }
+  /* ---------- لابی آنلاین‌نما: اتصال + ورود بازیکنان + شمارش ---------- */
+  function lobbyJoin(cb){
+    var lobby = $("cqLobby"), list = $("cqLobbyList"), sub = $("cqLobbySub"), title = $("cqLobbyTitle");
+    lobby.classList.remove("hidden");
+    list.innerHTML = "";
+    title.innerHTML = L("🌐 در حال اتصال به سرور Tehran-1 ...", "🌐 Connecting to Tehran-1 server ...");
+    sub.textContent = L("۹ بازیکن دیگر در حال ورود هستند...", "9 more players joining...");
+    var step = 0;
+    var iv = setInterval(function(){
+      step++;
+      if (step === 1) {
+        title.innerHTML = L("✅ متصل شد — پینگ: ۱۲ms", "✅ Connected — ping: 12ms");
+        var me = document.createElement("span");
+        me.innerHTML = "🎮 " + players[human].name + ' <i>12ms</i>';
+        list.appendChild(me);
+      } else if (step <= 10) {
+        var p = players[step-2]; /* bots join in order */
+        if (!p) return;
+        var s = document.createElement("span");
+        s.innerHTML = p.em + " " + p.name + ' <i>' + faNum(p.ping) + 'ms</i>';
+        list.appendChild(s);
+        if (step === 10) {
+          sub.textContent = L("همه وارد شدند! آماده‌ای؟ ⚔️", "Everyone is in! Ready? ⚔️");
+          title.innerHTML = L("🗺️ نقشه ساخته شد — شروع تا ۳ ثانیه دیگر", "🗺️ Map generated — starting in 3s");
+        }
+      } else {
+        clearInterval(iv);
+        lobby.classList.add("hidden");
+        cb();
+      }
+    }, step === 1 ? 700 : 320);
+  }
+
+  /* ---------- مکانیک حمله ---------- */
+  function neighbors4(i){
+    var x = i % COLS, y = (i / COLS) | 0, out = [];
+    if (x > 0) out.push(i-1);
+    if (x < COLS-1) out.push(i+1);
+    if (y > 0) out.push(i-COLS);
+    if (y < ROWS-1) out.push(i+COLS);
+    return out;
+  }
+  /* ناحیه هم‌مالک محدود از یک سلول (BFS) */
+  function regionFrom(startCell, ownv, cap){
+    var seen = {}, q = [startCell], out = [];
+    seen[startCell] = 1;
+    while (q.length && out.length < (cap || 500)) {
+      var c = q.shift();
+      out.push(c);
+      var ns = neighbors4(c);
+      for (var k=0;k<ns.length;k++){
+        var n = ns[k];
+        if (!seen[n] && owner[n] === ownv) { seen[n] = 1; q.push(n); }
+      }
+    }
+    return out;
+  }
+  /* آیا مهاجم به این ناحیه مرز دارد؟ */
+  function touchesRegion(attId, cells){
+    for (var i=0;i<cells.length;i++){
+      var ns = neighbors4(cells[i]);
+      for (var k=0;k<ns.length;k++) if (owner[ns[k]] === attId) return true;
+    }
+    return false;
+  }
+  function centroid(cells){
+    var sx = 0, sy = 0;
+    for (var i=0;i<cells.length;i++){ sx += cells[i] % COLS; sy += (cells[i] / COLS) | 0; }
+    return [sx/cells.length, sy/cells.length];
+  }
+  function borderCellsOf(attId, cells){
+    var out = [];
+    for (var i=0;i<cells.length;i++){
+      var ns = neighbors4(cells[i]);
+      for (var k=0;k<ns.length;k++) if (owner[ns[k]] === attId) { out.push(cells[i]); break; }
+    }
+    return out;
+  }
+  function launchAttack(att, targetOwner, seedCell){
+    var ownv = owner[seedCell];
+    if (ownv < 0 || ownv === att.id) return false;
+    if (att.troops < 12) { if (!att.isBot) msg(L("سرباز کافی نداری (حداقل ۱۲)!", "Not enough troops (min 12)!")); return false; }
+    var region = regionFrom(seedCell, ownv, 400);
+    if (!touchesRegion(att.id, region)) { if (!att.isBot) msg(L("قلمرو شما به این ناحیه نمی‌رسد!", "Your land doesn't touch this region!")); return false; }
+    var sent = Math.floor(att.troops * ratio);
+    if (sent < 10) { if (!att.isBot) msg(L("سرباز کافی برای این نسبت نیست!", "Not enough troops for this ratio!")); return false; }
+    att.troops -= sent;
+    var c0 = centroid(borderCellsOf(att.id, region).length ? borderCellsOf(att.id, region) : region);
+    var c1 = centroid(region);
+    var dist = Math.sqrt(Math.pow(c1[0]-c0[0],2) + Math.pow(c1[1]-c0[1],2));
+    var dur = Math.max(380, Math.min(950, dist * 26)) / speed;
+    atks.push({ att: att, targetOwner: ownv, region: region, sent: sent,
+      x0: c0[0]*cellW, y0: c0[1]*cellH, x1: c1[0]*cellW, y1: c1[1]*cellH,
+      t0: performance.now(), dur: dur, hue: att.hue });
+    if (!att.isBot) updHud();
+    return true;
+  }
+  function resolveAttack(a){
+    if (!a.att.alive) return;
+    var defOwner = a.targetOwner;
+    /* فقط سلول‌هایی که هنوز از آنِ مدافع‌اند */
+    var cells = a.region.filter(function(c){ return owner[c] === defOwner; });
+    if (!cells.length) { a.att.troops += Math.floor(a.sent * 0.9); return; }
+    var defP = defOwner > 0 ? players[defOwner-1] : null;
+    var density = defP ? Math.max(0.6, defP.troops / Math.max(1, defP.cells)) : 0.8;
+    var captured = 0, loss = 0;
+    /* مرتب‌سازی: سلول‌های مرزی اول فتح می‌شوند */
+    var border = borderCellsOf(a.att.id, cells);
+    var order = border.length ? border.concat(cells.filter(function(c){ return border.indexOf(c) === -1; })) : cells;
+    for (var i=0;i<order.length;i++){
+      var c = order[i];
+      var cost = (defOwner === 0 ? 2.3 : 1.9 + density * 2.1) * (elev[c] > 0.62 ? 1.8 : 1);
+      if (a.sent - loss < cost) break;
+      loss += cost;
+      owner[c] = a.att.id;
+      a.att.cells++; flashCells.push({ x: c % COLS, y: (c / COLS) | 0, t: 14 });
+      if (defP) defP.cells--;
+      captured++;
+      if (captured >= 220) break;
+    }
+    a.att.troops += Math.max(0, a.sent - loss);
+    if (defP) {
+      defP.troops = Math.max(0, defP.troops - captured * 1.4 - (captured > 0 ? 2 : 0));
+      if (captured > 0) feed('<b style="color:hsl(' + a.att.hue + ',75%,62%)">' + pname(a.att) + '</b> ' +
+        L("به", "attacked") + ' <b style="color:hsl(' + defP.hue + ',75%,62%)">' + pname(defP) + '</b> ' +
+        L("حمله کرد — " + faNum(captured) + " خانه فتح شد", "— " + captured + " tiles taken"));
+    } else if (captured > 0) {
+      feed('<b style="color:hsl(' + a.att.hue + ',75%,62%)">' + pname(a.att) + '</b> ' + L("سرزمین آزاد را گسترش داد (+" + faNum(captured) + ")", "expanded into free land (+" + captured + ")"));
+    }
+    /* حذف بازیکن */
+    players.forEach(function(p){
+      if (p.alive && p.cells <= 0 && p.id !== 0) {
+        p.alive = false;
+        feed("💀 <b>" + pname(p) + "</b> " + L("حذف شد!", "was eliminated!"));
+        if (p.id === 1) endGame(false, "eliminated");
+      }
+    });
+    if (!a.att.isBot) { updHud(); renderBoard(); }
+  }
+
+  /* ---------- AI ربات‌ها ---------- */
+  function botAct(p){
+    if (!p.alive || !running || paused) return;
+    /* سلول مرزی خودش که همسایه‌اش مالکیت‌پذیر است */
+    var targets = { free: null, enemy: null };
+    var scan = 0;
+    for (var i=0;i<owner.length && scan < 9000;i++){
+      if (owner[i] !== p.id) continue;
+      scan++;
+      var ns = neighbors4(i);
+      for (var k=0;k<ns.length;k++){
+        var o = owner[ns[k]];
+        if (o === 0 && !targets.free) targets.free = ns[k];
+        if (o > 0 && o !== p.id && players[o-1] && players[o-1].alive && !targets.enemy) targets.enemy = ns[k];
+      }
+      if (targets.free && targets.enemy) break;
+    }
+    var r = Math.random() * p.aggr;
+    if (targets.free && (r < 0.75 || !targets.enemy)) {
+      ratio = 0.32 + Math.random()*0.22;
+      launchAttack(p, 0, targets.free);
+    } else if (targets.enemy) {
+      var tp = players[owner[targets.enemy]-1];
+      var myPower = p.troops * (0.8 + Math.random()*0.4);
+      if (myPower > tp.troops * 1.05) {
+        ratio = myPower > tp.troops * 2.2 ? 0.7 : 0.45;
+        launchAttack(p, owner[targets.enemy], targets.enemy);
+      }
+    }
+    ratio = 0.5; /* بازگشت به پیش‌فرض انسان */
+  }
+
+  /* ---------- حلقه اصلی ---------- */
+  var rafId = 0, lastFrame = 0;
+  function frame(now){
+    rafId = requestAnimationFrame(frame);
+    /* پایه هر ~۱۵۰ms یا وقتی حمله هست هر فریم */
+    if (now - lastFrame > 140 || atks.length) {
+      lastFrame = now;
+      if (!paused && running) elapsed += now - (frame._p || now);
+      frame._p = now;
+      paintBase();
+      paintFx();
+    }
+  }
+  function tick(){
+    if (!running || paused) return;
+    var dt = 1; /* هر تیک = یک واحد */
+    /* اقتصاد */
+    players.forEach(function(p){
+      if (!p.alive) return;
+      var cap = 90 + p.cells * 38;
+      var grow = 2 + p.cells * 0.052 + p.troops * 0.007;
+      p.troops = Math.min(cap, p.troops + grow);
+    });
+    updHud();
+    /* ربات‌ها با تاخیر تصادفی */
+    botAcc += speed;
+    if (botAcc >= 1) {
+      botAcc = 0;
+      players.forEach(function(p){ if (p.isBot && Math.random() < 0.5 * p.aggr) botAct(p); });
+    }
+    /* چت تصادفی */
+    chatAcc += speed;
+    if (chatAcc >= 7) { chatAcc = 0; chat(); }
+    /* برد/باخت */
+    var me = players[human];
+    var pct = me.cells / Math.max(1, landCount);
+    if (pct > maxPct) maxPct = pct;
+    if (pct >= WIN_PCT) { endGame(true, "win"); return; }
+    players.forEach(function(p){
+      if (p.isBot && p.alive && p.cells / Math.max(1,landCount) >= DOMINATE_PCT) endGame(false, "dominated");
+    });
+    renderBoard();
+  }
+
+  /* ---------- پایان بازی ---------- */
+  function endGame(win, why){
+    if (!running) return;
+    running = false;
+    clearInterval(timerInt);
+    var me = players[human];
+    var rank = players.slice().sort(function(a,b){ return b.cells - a.cells; }).indexOf(me) + 1;
+    var icon = $("cqOverIcon"), title = $("cqOverTitle"), text = $("cqOverText");
+    if (win) {
+      icon.textContent = "🏆";
+      title.textContent = L("🗺️ فتح کامل شد!", "🗺️ Map Conquered!");
+      text.textContent = L("آفرین " + me.name + "! با " + faNum((maxPct*100).toFixed(1)) + "٪ خشکی برنده شدی — ۱۵۰ XP و ۶۰ سکه گرفتی!",
+                           "Bravo " + me.name + "! You won with " + (maxPct*100).toFixed(1) + "% of land — 150 XP & 60 coins earned!");
+      wins++;
+      try { updateBest("conquestWins", wins, false); } catch(e){}
+      try { gameReward({ game: "conquest", score: Math.round(maxPct*100), xp: 150, coins: 60 }); } catch(e){}
+    } else {
+      icon.textContent = why === "dominated" ? "👑" : "💀";
+      title.textContent = why === "dominated" ? L("یک بازیکن حاکم مطلق شد!", "A player dominated the map!") : L("حذف شدی!", "You were eliminated!");
+      text.textContent = L("رتبهت: " + faNum(rank) + " — بیشترین خاک: " + faNum((maxPct*100).toFixed(1)) + "٪ — ۲۰ XP گرفتی. دوباره تلاش کن!",
+                           "Your rank: " + rank + " — peak land: " + (maxPct*100).toFixed(1) + "% — earned 20 XP. Try again!");
+      try { gameReward({ game: "conquest", score: Math.round(maxPct*100), xp: 20, coins: 4 }); } catch(e){}
+    }
+    $("cqOver").classList.add("show");
+    try { window.GameScrollLock && GameScrollLock.unlock(); } catch(e){}
+  }
+
+  /* ---------- شروع / تایمر / کنترل‌ها ---------- */
+  function msg(t){ $("cqMsg").textContent = t; }
+  function startGame(){
+    $("cqOver").classList.remove("show");
+    genTerrain();
+    spawnPlayers();
+    atks = []; flashCells = []; elapsed = 0; maxPct = 0;
+    running = false; paused = false;
+    frame._p = performance.now();
+    resizeFx();
+    paintBase();
+    updHud(); renderBoard();
+    msg("—");
+    lobbyJoin(function(){
+      running = true;
+      paused = false;
+      t0 = Date.now();
+      if (timerInt) clearInterval(timerInt);
+      timerInt = setInterval(function(){
+        var s = Math.floor((Date.now() - t0) / 1000);
+        $("cqTime").textContent = faNum(Math.floor(s/60)) + ":" + faNum(("0"+(s%60)).slice(-2));
+      }, 1000);
+      msg(L("روی خشکی همسایه بزن تا با " + faNum(Math.round(ratio*100)) + "٪ سربازها حمله کنی!", "Click a neighbouring land to attack with " + Math.round(ratio*100) + "% of troops!"));
+      try { window.GameScrollLock && GameScrollLock.lock(); } catch(e){}
+    });
+  }
+  /* تیک اصلی: اقتصاد هر ۹۰۰ms / سرعت */
+  setInterval(function(){
+    if (!running || paused) return;
+    econAcc += speed;
+    if (econAcc >= 1) {
+      econAcc = 0;
+      players.forEach(function(p){
+        if (!p.alive) return;
+        var cap = 90 + p.cells * 38;
+        p.troops = Math.min(cap, p.troops + 2 + p.cells * 0.052 + p.troops * 0.007);
+      });
+      updHud();
+      var me = players[human];
+      var pct = me.cells / Math.max(1, landCount);
+      if (pct > maxPct) maxPct = pct;
+      if (pct >= WIN_PCT) { endGame(true, "win"); return; }
+      for (var i=0;i<players.length;i++){
+        var p = players[i];
+        if (p.isBot && p.alive && p.cells / Math.max(1, landCount) >= DOMINATE_PCT) { endGame(false, "dominated"); return; }
+      }
+      botAcc++;
+      if (botAcc >= 1) { botAcc = 0; players.forEach(function(p){ if (p.isBot && Math.random() < 0.5 * p.aggr) botAct(p); }); }
+      chatAcc++;
+      if (chatAcc >= 7) { chatAcc = 0; chat(); }
+      renderBoard();
+    }
+  }, 900);
+  /* حلقه رندر */
+  rafId = requestAnimationFrame(frame);
+
+  /* کلیک روی نقشه */
+  fx.addEventListener("click", function(e){
+    if (!running || paused) { msg(running ? L("بازی متوقف است ⏸", "Game is paused ⏸") : L("اول «شروع بازی» را بزن!", "Press Start first!")); return; }
+    var r = fx.getBoundingClientRect();
+    var x = Math.floor((e.clientX - r.left) / r.width * COLS);
+    var y = Math.floor((e.clientY - r.top) / r.height * ROWS);
+    if (x < 0 || y < 0 || x >= COLS || y >= ROWS) return;
+    var i = y * COLS + x;
+    if (owner[i] === players[human].id) { msg(L("این خاک خودت است 😄", "That's your own land 😄")); return; }
+    if (owner[i] < 0) { msg(L("آب است! فقط خشکی قابل فتح است 🌊", "That's water! Only land can be taken 🌊")); return; }
+    if (launchAttack(players[human], owner[i], i)) {
+      msg(L("⚔️ حمله پرتاب شد با " + faNum(Math.round(ratio*100)) + "٪ سربازها!", "⚔️ Attack launched with " + Math.round(ratio*100) + "% of troops!"));
+    }
+  });
+
+  /* کنترل‌ها */
+  $("cqRatio").addEventListener("click", function(e){
+    var b = e.target.closest("button");
+    if (!b) return;
+    this.querySelectorAll("button").forEach(function(x){ x.classList.toggle("active", x === b); });
+    ratio = parseFloat(b.getAttribute("data-r"));
+    msg(L("نسبت حمله: " + faNum(Math.round(ratio*100)) + "٪ سربازها", "Attack ratio: " + Math.round(ratio*100) + "% of troops"));
+  });
+  document.querySelectorAll(".cq-speed").forEach(function(b){
+    b.addEventListener("click", function(){
+      document.querySelectorAll(".cq-speed").forEach(function(x){ x.classList.toggle("active", x === b); });
+      speed = parseInt(b.getAttribute("data-s"), 10);
+    });
+  });
+  $("cqStart").addEventListener("click", startGame);
+  $("cqAgain").addEventListener("click", startGame);
+  $("cqPause").addEventListener("click", function(){
+    if (!running) return;
+    paused = !paused;
+    this.textContent = paused ? "▶️" : "⏸";
+    frame._p = performance.now();
+    msg(paused ? L("بازی متوقف شد ⏸", "Paused ⏸") : L("ادامه! ⚔️", "Go! ⚔️"));
+  });
+  document.addEventListener("lumitek:langchange", function(){
+    players.forEach(function(p, idx){
+      if (p.isBot) p.name = L(BOT_DEFS[idx-1].fa, BOT_DEFS[idx-1].en);
+    });
+    if (players.length) { renderBoard(); updHud(); }
+    document.querySelectorAll("#cqRatio button").forEach(function(b){
+      b.textContent = b.getAttribute("data-r") === "1" ? L("همه","All") : faNum(Math.round(parseFloat(b.getAttribute("data-r"))*100)) + "٪";
+    });
+  });
+
+  /* صفحه آماده */
+  document.addEventListener("DOMContentLoaded", function(){
+    genTerrain();
+    players = [{ id: 1, isBot: false, alive: true, troops: 60, cells: 0, aggr: 1, hue: HUES[0], name: "Player", em: "🎮", ping: 12 }];
+    resizeFx();
+    paintBase();
+  });
+  if (document.readyState !== "loading") { genTerrain(); resizeFx(); paintBase(); }
+})();
+
+
+</script>
+</body>
+</html>

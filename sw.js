@@ -1,5 +1,5 @@
 /* ============================================================
-   Lumitek 0.9 — Service Worker (موتور آفلاین)
+   Lumitek 1.1 — Service Worker (موتور آفلاین)
    ------------------------------------------------------------
    استراتژی:
    • App shell (صفحات/CSS/JS/آیکون‌ها): stale-while-revalidate
@@ -9,8 +9,8 @@
    • درخواست‌های خبری و AI: network-first با کش runtime
      → آخرین پاسخ موفق همیشه برای حالت آفلاین می‌ماند.
    ============================================================ */
-var CACHE = "lumitek-v0.9.0";
-var RUNTIME = "lumitek-runtime-v0.9.0";
+var CACHE = "lumitek-v1.1.0";
+var RUNTIME = "lumitek-runtime-v1.1.0";
 
 var CORE = [
   "./",
@@ -28,6 +28,7 @@ var CORE = [
   "./pages/ai.html",
   "./pages/tools.html",
   "./pages/games.html",
+  "./pages/digital-news.html",
   "./pages/store.html",
   "./pages/download.html",
   "./pages/sports.html",
@@ -65,6 +66,9 @@ var CORE = [
   "./pages/breakout.html",
   "./pages/puzzle15.html",
   "./pages/wordguess.html",
+  "./pages/memory.html",
+  "./pages/whack.html",
+  "./pages/conquest.html",
   "./tools/calculator.html",
   "./tools/converter.html",
   "./tools/date-time.html",
@@ -88,7 +92,15 @@ var CORE = [
   "./tools/stopwatch.html",
   "./tools/todo.html",
   "./tools/bmi.html",
-  "./tools/loan.html"
+  "./tools/loan.html",
+  "./tools/wheel.html",
+  "./tools/countdown.html",
+  "./tools/notes.html",
+  "./tools/image-compress.html",
+  "./tools/imgbase64.html",
+  "./tools/speedtest.html",
+  "./tools/qr.html",
+  "./tools/tts.html"
 ];
 
 self.addEventListener("install", function (e) {
