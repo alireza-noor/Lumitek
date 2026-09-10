@@ -187,13 +187,16 @@ window.LumiAuth = (function () {
   }
   function ensureModal() {
     if (document.querySelector("#authModal")) return;
+    var logoSrc = "assets/icons/logo-lt.png";
+    var sc = document.querySelector('script[src*="auth.js"]');
+    if (sc && sc.src) logoSrc = sc.src.replace(/js\/auth\.js.*$/, "") + "assets/icons/logo-lt.png";
     var m = document.createElement("div");
     m.id = "authModal";
     m.className = "modal";
     m.innerHTML =
       '<div class="modal-card modal-small">' +
       '<button class="modal-close" data-auth-close>×</button>' +
-      '<div class="auth-brand"><span class="auth-brand-logo">⚡</span><h3 class="auth-title">ورود به Lumitek</h3></div>' +
+      '<div class="auth-brand"><img class="auth-brand-logo" src="' + logoSrc + '" alt="Lumitek" width="44" height="44"><h3 class="auth-title">ورود به Lumitek</h3></div>' +
       '<div data-auth-main>' +
       '<div class="auth-oauth-row">' +
       '<button class="google-btn" data-auth-google>' +
@@ -223,7 +226,7 @@ window.LumiAuth = (function () {
       '<button class="ms-btn ms-solid" style="width:100%;justify-content:center" data-auth-msgo>' + msLogo() + '<span>ادامه با مایکروسافت</span></button>' +
       '<button class="ghost-btn" style="width:100%;margin-top:8px" data-auth-msback>بازگشت</button>' +
       '</div>' +
-      '<p class="auth-note">حالت نمایشی: حساب‌ها روی همین مرورگر ذخیره می‌شوند. برای ورود واقعی گوگل/مایکروسافت/ایمیل، Firebase را در فایل js/auth.js وصل کن.</p>' +
+      '<p class="auth-note">🔒 اطلاعاتت به‌صورت خودکار روی همین دستگاه ذخیره می‌شود — لازم نیست کار دیگری انجام دهی.</p>' +
       '</div>';
     document.body.appendChild(m);
     translateModal(m);

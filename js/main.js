@@ -210,7 +210,7 @@ const catalog = [
   ["چهار در یک ردیف", "Connect Four", "pages/connect4.html", "بازی"],
   ["بزرگراه", "Highway Racer", "pages/drive.html", "بازی"],
   ["بازی ماشین", "Driving Game", "pages/drive.html", "بازی"],
-  ["رالی شبانه", "Night Rally", "pages/rally.html", "بازی"],
+  ["تپه‌نورد", "Hill Climb", "pages/hill.html", "بازی"],
   ["شکار گنج", "Treasure Hunt", "pages/adventure.html", "بازی"],
   ["بازی ماجراجویی", "Adventure Game", "pages/adventure.html", "بازی"],
   ["دونده ماجراجویی", "Cave Runner", "pages/runner.html", "بازی"],
@@ -233,7 +233,13 @@ const catalog = [
   ["پرامپت‌نویسی", "Prompt Writing", "pages/articles.html", "مقاله"],
   ["فیشینگ و امنیت اینترنت", "Phishing & Security", "pages/articles.html", "مقاله"],
   ["سریع‌تر کردن گوشی اندروید", "Speed Up Android", "pages/articles.html", "مقاله"],
-  ["مقالات آموزشی کامپیوتر", "Computer Tutorials", "pages/articles.html", "مقاله"]
+  ["مقالات آموزشی کامپیوتر", "Computer Tutorials", "pages/articles.html", "مقاله"],
+  ["آموزش CMD و خط فرمان", "CMD Tutorial", "pages/articles.html", "مقاله"],
+  ["جستجوی حرفه‌ای در گوگل", "Google Search Tips", "pages/articles.html", "مقاله"],
+  ["آموزش ایمیل و جیمیل", "Email & Gmail Guide", "pages/articles.html", "مقاله"],
+  ["آموزش ورد", "Word Tutorial", "pages/articles.html", "مقاله"],
+  ["بکاپ‌گیری از گوشی و کامپیوتر", "Backup Guide", "pages/articles.html", "مقاله"],
+  ["راه‌اندازی وای‌فای و مودم", "Wi-Fi Setup Guide", "pages/articles.html", "مقاله"]
 ];
 
 /* ---------------- Store catalog ---------------- */
@@ -403,7 +409,7 @@ const ACHIEVEMENTS = [
   { id: "reaction_pro",icon: "⚡", fa: "برق‌آسا",           en: "Lightning",      faDesc: "واکنش زیر ۲۵۰ میلی‌ثانیه",          enDesc: "Reaction under 250 ms",       check: p => p.bests.reaction != null && p.bests.reaction <= 250 },
   { id: "range_15",    icon: "🎯", fa: "تک‌تیرانداز دقیق",   en: "Sharpshooter",   faDesc: "۱۵ هدف در تیراندازی دقیق بزن",      enDesc: "Hit 15 targets in Range",     check: p => (p.bests.range || 0) >= 15 },
   { id: "runner_500",  icon: "🏃", fa: "دونده ماجراجو",     en: "Cave Runner",    faDesc: "۵۰۰ متر در دونده ماجراجویی بدو",    enDesc: "Run 500m in Cave Runner",      check: p => (p.bests.runner || 0) >= 500 },
-  { id: "rally_1500",  icon: "🏁", fa: "راننده رالی",       en: "Rally Driver",   faDesc: "۱۵۰۰ متر در رالی شبانه بران",       enDesc: "Drive 1500m in Night Rally",   check: p => (p.bests.rally || 0) >= 1500 },
+  { id: "hill_1000",   icon: "⛰️", fa: "تپه‌نورد",           en: "Hill Climber",   faDesc: "۱۰۰۰ متر در تپه‌نورد رانندگی کن",   enDesc: "Drive 1000m in Hill Climb",    check: p => (p.bests.hill || 0) >= 1000 },
   { id: "hoops_10",    icon: "🏀", fa: "سه‌امتیازی",         en: "Three-Pointer",  faDesc: "۱۰ سبکت در بسکتبال بزن",            enDesc: "Score 10 baskets in Hoops",   check: p => (p.bests.hoops || 0) >= 10 },
   { id: "snake_30",    icon: "🐍", fa: "مار افسانه‌ای",     en: "Snake Legend",   faDesc: "امتیاز ۳۰ در بازی مار",             enDesc: "Score 30 in Snake",           check: p => (p.bests.snake || 0) >= 30 },
   { id: "ttt_5",       icon: "❌", fa: "استراتژیست",        en: "Strategist",     faDesc: "۵ بار کامپیوتر را شکست بده",        enDesc: "Beat the AI 5 times",         check: p => (p.bests.tttWins || 0) >= 5 },
@@ -510,7 +516,7 @@ const GAME_NAMES_FA = {
   puzzle15: "پازل ۱۵", wordguess: "حدس کلمه",
   shooter: "تیراندازی کیهانی", maze: "ماز", connect4: "چهار در یک ردیف",
   drive: "بزرگراه", adventure: "شکار گنج", penalty: "ضربات پنالتی",
-  range: "تیراندازی دقیق", runner: "دونده ماجراجویی", rally: "رالی شبانه", hoops: "بسکتبال",
+  range: "تیراندازی دقیق", runner: "دونده ماجراجویی", hill: "تپه‌نورد", hoops: "بسکتبال",
   c4Wins: "چهار در یک ردیف (بردها)", mazeSolves: "ماز (حل‌شده)", penaltyGoals: "پنالتی (گل‌ها)"
 };
 
@@ -542,7 +548,7 @@ function gameReward(opts) {
 
 /* ---------------- Compatibility bridge (old game code) ---------------- */
 window.Lumitek = {
-  version: "0.8",
+  version: "0.9",
   AI_COST: AI_QUESTION_COST,
   get profile() { return _liveProfile; },
   save: function() {
@@ -719,24 +725,6 @@ function buyVip() {
     successText: fa ? "اشتراک VIP شما فعال شد." : "Your VIP subscription is active.",
     onSuccess: function () {
       applyVipPurchase();
-      if (typeof renderCoins === "function") renderCoins();
-    }
-  });
-  return { ok: true };
-}
-
-function buyAiPlan(id) {
-  const plan = AI_PLANS.filter(function(x){ return x.id === id; })[0];
-  if (!plan) return { ok: false };
-  const fa = getLang() === "fa";
-  openCheckout({
-    icon: plan.icon,
-    title: fa ? plan.name.fa : plan.name.en,
-    desc: fa ? "هوش مصنوعی لومیتک" : "Lumitek AI plan",
-    amount: plan.price,
-    successText: fa ? "بسته هوش مصنوعی شما فعال شد." : "Your AI plan is active.",
-    onSuccess: function () {
-      applyAiPlanPurchase(id);
       if (typeof renderCoins === "function") renderCoins();
     }
   });
@@ -1022,31 +1010,225 @@ function setupNotifications() {
 
 /* ---------------- Changelog (تغییرات نسخه‌ها در هدر) ---------------- */
 const LUMITEK_VERSIONS = [
-  { v: "0.8", fa: "۴ بازی جدید با اسکین اختصاصی در فروشگاه، ۴ ابزار جدید، ۱۰ مقاله آموزشی، اسپورتک با رشته‌ها و لیگ‌های بیشتر و اخبار تخصصی هر رشته، ورود مهمان و ورود با مایکروسافت، فوتر شبکه‌های اجتماعی ایرانی و ظاهر بهتر", en: "4 new games with store skins, 4 new tools, 10 tutorial articles, Sportek with more sports/leagues & per-sport news, guest + Microsoft sign-in, Iranian social footer and UI polish" },
-  { v: "0.7", fa: "لوگوی جدید در هدر، اسپورتک با جدول لیگ‌ها و بازی‌های پیش رو، ۴ بازی جدید، ماشین‌حساب مهندسی کامل، درگاه پرداخت فروشگاه، ارتقای ابزارها و هوش مصنوعی قوی‌تر", en: "New header logo, Sportek with league tables & fixtures, 4 new games, full engineering calculator, store checkout, upgraded tools and stronger AI" },
-  { v: "0.6", fa: "فروشگاه کامل (سکه، اسلحه، اسکین)، ۶ بازی و ۹ ابزار جدید، هوش مصنوعی لومیتک با هزینه ۲ سکه", en: "Full store (coins, guns, skins), 6 new games & 9 new tools, Lumitek AI at 2 coins per question" },
-  { v: "0.5", fa: "موتور آفلاین، نصب PWA، فروشگاه سکه و VIP، ورود با گوگل", en: "Offline engine, PWA install, coin store & VIP, Google sign-in" },
-  { v: "0.4", fa: "استور، حساب کاربری، اخبار زنده ورزشی، پشتیبانی هوشمند", en: "Store, user account, live sports news, AI support" },
-  { v: "0.3", fa: "طراحی مجدد، جستجوی سراسری، اعلان‌ها، تم روز/شب", en: "Redesign, global search, notifications, day/night theme" },
-  { v: "0.2", fa: "نسخه اولیه با ابزارها، بازی‌ها، XP و سکه", en: "Initial release with tools, games, XP and coins" }
+  {
+    v: "0.9",
+    fa: "تپه‌نورد، سوالات متداول، پشتیبانی شناور، عنوان‌های یکدست و مقالات بیشتر",
+    en: "Hill Climb, FAQ, floating support, unified titles & more articles",
+    items: {
+      fa: [
+        "بازی جدید «تپه‌نورد» به‌جای رالی شبانه — رانندگی فیزیکی روی تپه‌ها با مدیریت سوخت",
+        "بخش «سوالات متداول» با پاسخ کامل به صفحه اصلی اضافه شد",
+        "پشتیبانی شناور در گوشه سایت — جواب سریع بدون خروج از صفحه",
+        "عنوان همه صفحات یکدست و زیبا شد (مثل صفحه بازی‌ها)",
+        "لینک «تغییرات» و «مقالات» به منوی هدر همه صفحات اضافه شد",
+        "ترجمه انگلیسی بخش‌های باقی‌مانده + اعداد انگلیسی در حالت EN",
+        "لوگوی لومیتک داخل پنجره ورود و ثبت‌نام",
+        "ذخیره خودکار حساب کاربری — پیام‌های راهنمای دستی حذف شد",
+        "۶ مقاله آموزشی جدید: CMD، جستجوی گوگل، ایمیل، Word، بکاپ‌گیری و وای‌فای",
+        "حذف بخش فناوری از صفحه اصلی (صفحه فناوری سر جایش است)",
+        "طراحی جدید و زیباتر برای شبکه‌های اجتماعی در فوتر",
+        "بهبود ریسپانسیو برای موبایل و تبلت + رفع باگ‌های ریز"
+      ],
+      en: [
+        "New game \u201cHill Climb\u201d replaces Night Rally — physics driving over hills with fuel management",
+        "New \u201cFAQ\u201d section with full answers on the homepage",
+        "Floating support bubble in the corner — quick answers without leaving the page",
+        "Unified, beautiful page titles on every page (like the Games page)",
+        "\u201cChanges\u201d and \u201cArticles\u201d links added to the header menu on all pages",
+        "English translation of remaining parts + English digits in EN mode",
+        "Lumitek logo inside the sign-in dialog",
+        "Automatic account saving — manual setup hints removed",
+        "6 new tutorial articles: CMD, Google search, email, Word, backups and Wi-Fi",
+        "Technology card removed from the homepage (the page itself stays)",
+        "Fresh new design for the social networks footer",
+        "Better mobile & tablet responsiveness + minor bug fixes"
+      ]
+    }
+  },
+  {
+    v: "0.8",
+    fa: "۴ بازی و ۴ ابزار و ۱۰ مقاله جدید، اسکین بازی‌ها، ورود مهمان و مایکروسافت و اسپورتک بزرگ‌تر",
+    en: "4 new games/tools/10 articles, game skins, guest & Microsoft sign-in, bigger Sportek",
+    items: {
+      fa: [
+        "۴ بازی جدید: تک‌تیرانداز حرفه‌ای، گنج جزیره، دژبان و درگ‌ریس",
+        "اسکین اختصاصی بازی‌ها در فروشگاه (اسنایپر، ماشین، قهرمان، برج)",
+        "۴ ابزار جدید: تایپ‌سنجی، تایمر پومودورو، رنگ‌ساز و پالت، مبدل مبنا و هش",
+        "۱۰ مقاله آموزشی کامل با خواندن داخل سایت و ۵ سکه جایزه",
+        "اسپورتک: ۴ رشته جدید، ۸ جدول لیگ جدید و اخبار تخصصی هر رشته",
+        "ورود مهمان + ورود با مایکروسافت + بهبود کامل صفحه ورود",
+        "شبکه‌های اجتماعی ایرانی در فوتر همه صفحات",
+        "لوگوی بزرگ‌تر در هدر و صفحه اصلی",
+        "حذف اشتراک هوش مصنوعی — هر سوال فقط ۲ سکه"
+      ],
+      en: [
+        "4 new games: Pro Sniper, Treasure Island, Tower Defense and Drag Race",
+        "Dedicated game skins in the Store (sniper, car, hero, tower)",
+        "4 new tools: Typing test, Pomodoro timer, Color studio, Base & hash converter",
+        "10 full in-site tutorials with a 5-coin reward for reading",
+        "Sportek: 4 new sports, 8 new league tables and per-sport news",
+        "Guest sign-in + Microsoft sign-in + a fully improved login page",
+        "Iranian social networks in the footer of all pages",
+        "Bigger logo in the header and homepage",
+        "AI subscription removed — only 2 coins per question"
+      ]
+    }
+  },
+  {
+    v: "0.7",
+    fa: "لوگوی جدید، اسپورتک کامل، درگاه پرداخت و ماشین‌حساب مهندسی",
+    en: "New logo, full Sportek, payment gateway and engineering calculator",
+    items: {
+      fa: [
+        "لوگوی جدید Lumitek در هدر همه صفحات",
+        "بازطراحی کامل بخش ورزش به اسپورتک با انتخاب رشته",
+        "جدول ۱۴ لیگ و بازی‌های پیش رو با دکمه «بروزرسانی همه»",
+        "۴ بازی جدید: تیراندازی دقیق، دونده ماجراجویی، رالی شبانه، بسکتبال",
+        "ماشین‌حساب مهندسی کامل تک‌حالته با چیدمان عمودی عملگرها",
+        "درگاه پرداخت فروشگاه برای سکه و VIP",
+        "دکمه تغییرات نسخه‌ها در هدر + اعلان‌های خوانده‌شده",
+        "جلوگیری از جابه‌جایی صفحه هنگام بازی + پشتیبانی WASD",
+        "حذف بخش سکه از هدر"
+      ],
+      en: [
+        "New Lumitek logo in every page header",
+        "Sports section fully rebuilt as Sportek with a sport picker",
+        "14 league tables & upcoming fixtures with a \u201cRefresh all\u201d button",
+        "4 new games: Precision Range, Cave Runner, Night Rally, Hoops Shot",
+        "Full single-mode engineering calculator with vertical operator layout",
+        "Store checkout gateway for coins and VIP",
+        "Header changelog button + read-state notifications",
+        "Page-scroll lock while gaming + WASD support",
+        "Coins section removed from the header"
+      ]
+    }
+  },
+  {
+    v: "0.6",
+    fa: "هوش مصنوعی لومیتک، فروشگاه کامل و ۶ بازی و ۹ ابزار جدید",
+    en: "Lumitek AI, full store, 6 new games & 9 new tools",
+    items: {
+      fa: [
+        "هوش مصنوعی لومیتک — آنلاین و قوی، هر سوال ۲ سکه",
+        "فروشگاه کامل با تب شارژ سکه، اسلحه و اسکین",
+        "۶ بازی جدید + دسته‌بندی ۷گانه بازی‌ها",
+        "۹ ابزار جدید: تقویم ایران، اوقات شرعی، ساعت جهانی، آمار و...",
+        "شروع با ۱۰ سکه و پاداش روزانه ۱۰ سکه‌ای",
+        "جستجوی تقویت‌شده و انیمیشن‌های جدید در کل سایت"
+      ],
+      en: [
+        "Lumitek AI — online & strong, only 2 coins per question",
+        "Full store with coin top-up, weapons and skins tabs",
+        "6 new games + 7-category game sorting",
+        "9 new tools: Iranian calendar, prayer times, world clock, statistics...",
+        "Start with 10 coins and a 10-coin daily reward",
+        "Upgraded search and brand-new animations across the site"
+      ]
+    }
+  },
+  {
+    v: "0.5",
+    fa: "موتور آفلاین، نصب PWA، فروشگاه سکه و VIP و ورود با گوگل",
+    en: "Offline engine, PWA install, coin store & VIP, Google sign-in",
+    items: {
+      fa: [
+        "موتور آفلاین با Service Worker — اجرای سایت بدون اینترنت",
+        "نصب به‌صورت اپلیکیشن (PWA) + صفحه دانلود",
+        "فروشگاه سکه با ۴ پلن و اشتراک VIP",
+        "ورود با گوگل یا ایمیل + رمز",
+        "۵ بازی و ۸ ابزار جدید",
+        "ترجمه کامل انگلیسی + فیکس تم روز/شب و لینک‌های خانه"
+      ],
+      en: [
+        "Offline engine with Service Worker — the site runs without internet",
+        "Installable app (PWA) + a Download page",
+        "Coin store with 4 packages and a VIP subscription",
+        "Google or email + password sign-in",
+        "5 new games and 8 new tools",
+        "Complete English translation + day/night theme & home-link fixes"
+      ]
+    }
+  },
+  {
+    v: "0.4",
+    fa: "استور، حساب کاربری، اخبار زنده ورزشی و پشتیبانی هوشمند",
+    en: "Store, user account, live sports news and AI support",
+    items: {
+      fa: ["استور با آواتار و عنوان اختصاصی", "حساب کاربری کامل با دستاوردها", "اخبار زنده ورزشی", "پشتیبانی هوشمند", "بازی مار و دوز"],
+      en: ["Store with avatars & custom titles", "Full account with achievements", "Live sports news", "AI support assistant", "Snake and Tic-Tac-Toe games"]
+    }
+  },
+  {
+    v: "0.3",
+    fa: "طراحی مجدد، جستجوی سراسری، اعلان‌ها و تم روز/شب",
+    en: "Redesign, global search, notifications and day/night theme",
+    items: {
+      fa: ["طراحی مجدد کامل رابط", "جستجوی سراسری", "سیستم اعلان‌ها و پروفایل", "تم روشن/تیره"],
+      en: ["Complete UI redesign", "Global search", "Notifications & profile system", "Light/dark theme"]
+    }
+  },
+  {
+    v: "0.2",
+    fa: "نسخه اولیه با ابزارها، بازی‌ها، XP و سکه",
+    en: "Initial release with tools, games, XP and coins",
+    items: {
+      fa: ["هاب ابزارها، ورزش و فناوری", "بازی‌های اولیه", "سیستم XP و سکه", "صفحه حمایت"],
+      en: ["Tools, sports & technology hub", "First games", "XP & coins system", "Donation page"]
+    }
+  }
 ];
+
+/* ساخت آکاردئون مشترک برای پنل هدر و صفحه تغییرات */
+function buildVersionAccordion(container, latestOpen) {
+  container.innerHTML = "";
+  const fa = getLang() === "fa";
+  LUMITEK_VERSIONS.forEach(function (v, i) {
+    const item = document.createElement("div");
+    item.className = "cl-item" + (i === 0 ? " latest" : "");
+    if (i === 0 && latestOpen) item.classList.add("open");
+    const top = document.createElement("button");
+    top.className = "cl-top";
+    top.type = "button";
+    top.innerHTML = '<span class="cl-v">v' + v.v + '</span>' +
+      (i === 0 ? '<span class="cl-new">' + (fa ? "جدید" : "New") + '</span>' : '') +
+      '<span class="cl-sum"></span>' +
+      '<span class="cl-chev" aria-hidden="true">▾</span>';
+    top.querySelector(".cl-sum").textContent = fa ? v.fa : v.en;
+    top.addEventListener("click", function () { item.classList.toggle("open"); });
+
+    const body = document.createElement("div");
+    body.className = "cl-body";
+    const items = (v.items && (fa ? v.items.fa : v.items.en)) || [];
+    if (items.length) {
+      body.innerHTML = '<div class="cl-listT">' + T("ch.listTitle") + '</div><ul class="cl-list">' +
+        items.map(function () { return "<li></li>"; }).join("") + '</ul>';
+      const lis = body.querySelectorAll(".cl-list li");
+      lis.forEach(function (li, k) { li.textContent = items[k]; });
+    } else {
+      const p = document.createElement("p");
+      p.className = "cl-desc";
+      p.textContent = fa ? v.fa : v.en;
+      body.appendChild(p);
+    }
+    item.appendChild(top);
+    item.appendChild(body);
+    container.appendChild(item);
+  });
+}
 
 function renderChangelog() {
   const box = document.querySelector("#changelogList");
   if (!box) return;
-  box.innerHTML = "";
-  LUMITEK_VERSIONS.forEach(function (v, i) {
-    const item = document.createElement("div");
-    item.className = "cl-item";
-    const fa = getLang() === "fa";
-    item.innerHTML = '<div class="cl-top"><span class="cl-v">v' + v.v + '</span>' +
-      (i === 0 ? '<span class="cl-new">' + (fa ? "جدید" : "New") + '</span>' : '') + '</div>' +
-      '<p class="cl-desc"></p>';
-    item.querySelector(".cl-desc").textContent = fa ? v.fa : v.en;
-    box.appendChild(item);
-  });
+  buildVersionAccordion(box, true);
   const link = box.parentElement.querySelector(".cl-all");
   if (link) link.href = resolveSearchHref("pages/announcements.html");
+}
+
+/* صفحه کامل تغییرات (announcements.html) */
+function renderVersionsPage() {
+  const box = document.querySelector("#versionsPage");
+  if (!box) return;
+  buildVersionAccordion(box, true);
 }
 
 function setupChangelog() {
@@ -1296,6 +1478,177 @@ function setupReveal() {
   window.LumiReveal.counters(document);
 }
 
+/* ---------------- Page head unifier (عنوان همه صفحات مثل صفحه بازی‌ها) ---------------- */
+function setupPageHeads() {
+  document.querySelectorAll("main.page").forEach(function (main) {
+    if (main.querySelector(":scope > .page-head")) return;
+    const first = main.firstElementChild;
+    if (!first || !first.classList.contains("eyebrow")) return;
+    const parts = [first];
+    let next = first.nextElementSibling;
+    if (next && (next.tagName === "H1" || next.classList.contains("store-top"))) {
+      parts.push(next);
+      next = next.nextElementSibling;
+      if (next && next.tagName === "P" && (next.classList.contains("muted") || next.hasAttribute("data-i18n"))) parts.push(next);
+    }
+    if (parts.length < 2) return;
+    const wrap = document.createElement("section");
+    wrap.className = "page-head reveal in";
+    main.insertBefore(wrap, first);
+    parts.forEach(function (el) { wrap.appendChild(el); });
+  });
+}
+
+/* ---------------- Support widget (پشتیبانی شناور گوشه صفحه) ---------------- */
+function logoUrl() {
+  const s = document.querySelector('script[src*="main.js"]');
+  if (s && s.src) return s.src.replace(/js\/main\.js.*$/, "") + "assets/icons/logo-lt.png";
+  return "assets/icons/logo-lt.png";
+}
+
+const SUP_KB = [
+  { keys: ["سلام", "درود", "hi", "hello", "hey"],
+    fa: "سلام! 👋 من دستیار لومیتک هستم. درباره سکه، فروشگاه، بازی‌ها، حساب کاربری یا نصب اپ هر سوال داری بپرس!",
+    en: "Hi! 👋 I'm the Lumitek assistant. Ask me anything about coins, the store, games, your account or installing the app!" },
+  { keys: ["سکه", "coin", "پول", "پاداش", "روزانه"],
+    fa: "🪙 سکه از سه راه می‌گیری:\n۱) بازی کن — هر بازی XP و سکه دارد و رکورد زدن جایزه بیشتری می‌دهد.\n۲) پاداش روزانه: هر ۲۴ ساعت ۱۰ سکه از تب «شارژ سکه» فروشگاه.\n۳) شارژ فوری از پلن‌های استارتر تا ویژه در همان تب.",
+    en: "🪙 You earn coins in three ways:\n1) Play — every game gives XP & coins; records pay more.\n2) Daily reward: 10 coins every 24h from the Store's Top-up tab.\n3) Instant top-ups from Starter to Mega packs in the same tab." },
+  { keys: ["استور", "store", "اسکین", "skin", "خرید", "آواتار", "shop"],
+    fa: "🛍️ در فروشگاه آواتار، اسلحه، اسکین بازی‌ها، رنگ سایت، عنوان اختصاصی و بوست XP هست. اسکین را بخر، از همان‌جا تجهیز کن و بازی کن — ظاهر بازی خودکار عوض می‌شود!",
+    en: "🛍️ The Store has avatars, weapons, game skins, site colors, custom titles and XP boosts. Buy a skin, equip it there and play — the game's look updates automatically!" },
+  { keys: ["بازی", "game", "تیراندازی", "رانندگی", "تپه", "ماجراجویی"],
+    fa: "🎮 لومیتک ۲۶ بازی در ۷ دسته دارد — از تیراندازی کیهانی و تپه‌نورد تا ۲۰۴۸ و مین‌یاب؛ همه با XP، سکه، رکورد و دستاورد. صفحه بازی‌ها را باز کن!",
+    en: "🎮 Lumitek has 26 games in 7 categories — from Space Shooter and Hill Climb to 2048 and Minesweeper; all with XP, coins, records and achievements. Open the Games page!" },
+  { keys: ["ورود", "ثبت نام", "ثبت‌نام", "حساب", "account", "login", "sign", "مهمان", "رمز", "گوگل", "مایکروسافت"],
+    fa: "👤 می‌توانی با گوگل، مایکروسافت، ایمیل یا حتی مهمان وارد شوی. همه‌چیز (سکه، XP، رکوردها و خریدها) به‌صورت خودکار روی همین دستگاه ذخیره می‌شود — هیچ کار اضافه‌ای لازم نیست!",
+    en: "👤 You can sign in with Google, Microsoft, email or as a guest. Everything (coins, XP, records and purchases) is saved automatically on this device — nothing extra needed!" },
+  { keys: ["نصب", "دانلود", "اپ", "install", "download", "pwa", "آفلاین", "offline"],
+    fa: "⬇️ از صفحه «دانلود» می‌توانی لومیتک را مثل یک اپ واقعی روی گوشی و کامپیوتر نصب کنی؛ بعد از نصب حتی بدون اینترنت هم کار می‌کند.",
+    en: "⬇️ From the Download page you can install Lumitek like a real app on your phone or computer; once installed it even works offline." },
+  { keys: ["ورزش", "اسپورتک", "sport", "لیگ", "اخبار", "news", "فوتبال"],
+    fa: "🏆 اسپورتک اخبار زنده‌ی مرتبط با هر رشته، جدول ۲۴ لیگ (خلیج فارس، پرمیرلیگ، لالیگا، NBA و...) و بازی‌های پیش رو را با یک دکمه «بروزرسانی همه» نشان می‌دهد.",
+    en: "🏆 Sportek shows live news per sport, 24 league tables (PGPL, Premier League, La Liga, NBA...) and upcoming matches — with one \u201cRefresh everything\u201d button." },
+  { keys: ["هوش مصنوعی", "ai", "چت", "سوال از"],
+    fa: "✨ هوش مصنوعی لومیتک بدون اشتراک است — هر سوال فقط ۲ سکه! اگر سکه نداری از بازی‌ها یا پاداش روزانه شارژ کن.",
+    en: "✨ Lumitek AI needs no subscription — each question is just 2 coins! Out of coins? Earn them by playing or claim the daily reward." },
+  { keys: ["حمایت", "donate", "پرداخت", "vip"],
+    fa: "❤️ حمایت مالی کاملاً اختیاری است و با درگاه بانکی یا رمزارز از صفحه حمایت ممکن است. اشتراک VIP هم در فروشگاه است: سکه بیشتر و ۱۰٪ پاداش اضافه.",
+    en: "❤️ Donations are fully optional, paid via bank gateway or crypto on the Donate page. VIP is in the Store too: more coins and a 10% reward bonus." },
+  { keys: ["تم", "شب", "روشن", "theme", "زبان", "انگلیسی", "english", "فارسی", "language"],
+    fa: "🎨 با دکمه ☀️/🌙 تم را عوض کن و با دکمه EN کل سایت دوزبانه می‌شود؛ فونت، جهت و اعداد خودکار تنظیم می‌شوند.",
+    en: "🎨 Use ☀️/🌙 to switch themes and the EN button to make the whole site bilingual; fonts, direction and digits adapt automatically." }
+];
+
+function supAnswer(q) {
+  const fa = getLang() === "fa";
+  const text = (q || "").toLowerCase();
+  let best = null, bestScore = 0;
+  SUP_KB.forEach(function (item) {
+    let score = 0;
+    item.keys.forEach(function (k) { if (text.indexOf(k.toLowerCase()) !== -1) score += k.length; });
+    if (score > bestScore) { bestScore = score; best = item; }
+  });
+  if (!best) return fa
+    ? "🤔 جواب دقیقش را اینجا ندارم! دستیار کامل پشتیبانی ۲۴ ساعته جوابت را می‌دهد — دکمه «صفحه کامل پشتیبانی» را بالای همین پنجره بزن یا سوالت را واضح‌تر بنویس."
+    : "🤔 I don't have that exact answer here! The full 24/7 support assistant can help — tap \u201cFull support page\u201d at the top of this panel, or rephrase your question.";
+  return fa ? best.fa : best.en;
+}
+
+function setupSupportWidget() {
+  if (/support\.html|ai\.html/.test(location.pathname)) return;
+  if (document.querySelector(".sup-fab")) return;
+
+  const fab = document.createElement("button");
+  fab.className = "sup-fab";
+  fab.type = "button";
+  fab.setAttribute("aria-label", T("wgt.open"));
+  fab.innerHTML = '<span class="sup-i">💬</span><span class="sup-x">✕</span>';
+  document.body.appendChild(fab);
+
+  const panel = document.createElement("div");
+  panel.className = "sup-panel";
+  panel.setAttribute("role", "dialog");
+  panel.innerHTML =
+    '<div class="sup-head">' +
+    '<img class="sup-logo" alt="Lumitek" src="' + logoUrl() + '">' +
+    '<div class="sup-head-t"><b>' + T("wgt.title") + '</b><small>' + T("wgt.min") + '</small></div>' +
+    '<a class="sup-full" data-sup-full href="#" title="' + T("wgt.full") + '">↗</a>' +
+    '</div>' +
+    '<div class="sup-msgs"></div>' +
+    '<div class="sup-chips"></div>' +
+    '<div class="sup-input"><input type="text" maxlength="300"><button type="button" class="primary-btn">' + T("wgt.send") + '</button></div>';
+  document.body.appendChild(panel);
+
+  const msgs = panel.querySelector(".sup-msgs");
+  const input = panel.querySelector(".sup-input input");
+  const sendBtn = panel.querySelector(".sup-input button");
+  const chips = panel.querySelector(".sup-chips");
+  const fullLink = panel.querySelector("[data-sup-full]");
+  fullLink.href = resolveSearchHref("pages/support.html");
+  let greeted = false;
+
+  function chipLabels() {
+    return getLang() === "fa"
+      ? ["🪙 سکه چطور بگیرم؟", "🛍️ فروشگاه و اسکین‌ها", "🎮 بازی‌ها", "👤 ورود و حساب", "⬇️ نصب اپ"]
+      : ["🪙 How to earn coins?", "🛍️ Store & skins", "🎮 Games", "👤 Sign-in & account", "⬇️ Install the app"];
+  }
+  function renderChips() {
+    chips.innerHTML = "";
+    chipLabels().forEach(function (label) {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.textContent = label;
+      chips.appendChild(b);
+    });
+  }
+  function addMsg(text, role) {
+    const d = document.createElement("div");
+    d.className = "sup-msg " + (role === "user" ? "user" : "bot");
+    d.textContent = text;
+    msgs.appendChild(d);
+    msgs.scrollTop = msgs.scrollHeight;
+  }
+  function ask(q) {
+    q = (q || "").trim();
+    if (!q) return;
+    addMsg(q, "user");
+    input.value = "";
+    const t = document.createElement("div");
+    t.className = "sup-msg bot typing";
+    t.innerHTML = "<i></i><i></i><i></i>";
+    msgs.appendChild(t);
+    msgs.scrollTop = msgs.scrollHeight;
+    setTimeout(function () {
+      t.remove();
+      addMsg(supAnswer(q), "bot");
+    }, 550);
+  }
+  function greet() {
+    if (greeted) return;
+    greeted = true;
+    addMsg(T("wgt.hello"), "bot");
+    renderChips();
+  }
+  function setOpen(on) {
+    panel.classList.toggle("show", on);
+    fab.classList.toggle("on", on);
+    if (on) { greet(); setTimeout(function () { input.focus(); }, 150); }
+  }
+
+  fab.addEventListener("click", function () { setOpen(!panel.classList.contains("show")); });
+  sendBtn.addEventListener("click", function () { ask(input.value); });
+  input.addEventListener("keydown", function (e) { if (e.key === "Enter") ask(input.value); });
+  chips.addEventListener("click", function (e) { if (e.target.tagName === "BUTTON") ask(e.target.textContent); });
+  document.addEventListener("lumitek:langchange", function () {
+    panel.querySelector(".sup-head-t b").textContent = T("wgt.title");
+    panel.querySelector(".sup-head-t small").textContent = T("wgt.min");
+    panel.querySelector(".sup-input button").textContent = T("wgt.send");
+    input.placeholder = T("wgt.ph");
+    fab.setAttribute("aria-label", T("wgt.open"));
+    renderChips();
+  });
+}
+
 /* ---------------- Boot ---------------- */
 document.addEventListener("DOMContentLoaded", function() {
   _liveProfile = getProfile();
@@ -1315,6 +1668,8 @@ document.addEventListener("DOMContentLoaded", function() {
   setupNewsletter();
   setupReveal();
   setupChangelog();
+  setupPageHeads();
+  setupSupportWidget();
 
   const languageToggle = document.querySelector("#languageToggle");
   if (languageToggle) languageToggle.addEventListener("click", function() {
@@ -1325,11 +1680,11 @@ document.addEventListener("DOMContentLoaded", function() {
     window.LumiAuth.onChange(function() { renderProfile(); });
   }
 
-  const notifyFirst = localStorage.getItem("lumitek_first_notice_v8");
+  const notifyFirst = localStorage.getItem("lumitek_first_notice_v9");
   if (!notifyFirst) {
     addNotification("🚀", getLang() === "fa"
-      ? "Lumitek 0.8 منتشر شد: ۱۰ مقاله آموزشی با خواندن داخل سایت، اسکین بازی‌ها، ورود مهمان و مایکروسافت، ۴ رشته ورزشی جدید و فوتر اجتماعی ایرانی!"
-      : "Lumitek 0.8 is out: 10 in-site tutorials, game skins, guest & Microsoft sign-in, 4 new sports and Iranian social footer!");
-    localStorage.setItem("lumitek_first_notice_v8", "1");
+      ? "Lumitek 0.9 منتشر شد: بازی جدید تپه‌نورد، سوالات متداول، پشتیبانی شناور، عنوان‌های یکدست و ۶ مقاله جدید!"
+      : "Lumitek 0.9 is out: new Hill Climb game, FAQ, floating support, unified page titles and 6 new articles!");
+    localStorage.setItem("lumitek_first_notice_v9", "1");
   }
 });

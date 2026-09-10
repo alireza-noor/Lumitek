@@ -25,7 +25,7 @@ window.LumiI18n = (function () {
     "auth.email": "ایمیل", "auth.pass": "رمز عبور", "auth.name": "نام نمایشی",
     "auth.signinTab": "ورود", "auth.signupTab": "ثبت‌نام",
     "auth.signinBtn": "ورود", "auth.signupBtn": "ساخت حساب",
-    "auth.demoNote": "حالت نمایشی: حساب‌ها روی همین مرورگر ذخیره می‌شوند. برای ورود واقعی گوگل/ایمیل، Firebase را در فایل js/auth.js وصل کن (راهنما داخل فایل هست).",
+    "auth.demoNote": "🔒 اطلاعاتت به‌صورت خودکار روی همین دستگاه ذخیره می‌شود — لازم نیست کار دیگری انجام دهی.",
     "auth.welcome": "خوش آمدی",
     "auth.logout": "از حساب خارج شدی.",
     "auth.errEmail": "ایمیل معتبر وارد کن.",
@@ -44,24 +44,24 @@ window.LumiI18n = (function () {
 
     /* ---------- index ---------- */
     "idx.h1a": "همه چیز یکجا،", "idx.h1b": "سریع و ساده.",
-    "idx.lead": "۲۴ ابزار کاربردی، ۲۶ بازی در ۷ دسته، ۱۶ مقاله آموزشی با خواندن داخل سایت، فروشگاه کامل با سکه و اسلحه و اسکین، هوش مصنوعی لومیتک، اسپورتک با جدول لیگ‌ها و نصب به‌صورت اپ — همه در یک تجربه سریع و زیبا.",
+    "idx.lead": "۲۴ ابزار کاربردی، ۲۶ بازی در ۷ دسته، ۲۲ مقاله آموزشی با خواندن داخل سایت، فروشگاه کامل با سکه و اسلحه و اسکین، هوش مصنوعی لومیتک، اسپورتک با جدول لیگ‌ها و نصب به‌صورت اپ — همه در یک تجربه سریع و زیبا.",
     "idx.ctaGames": "🎮 بازی کن", "idx.ctaStore": "🛍️ فروشگاه", "idx.ctaCoins": "🪙 شارژ سکه", "idx.ctaDownload": "⬇️ نصب اپ", "idx.ctaAI": "✨ هوش مصنوعی لومیتک",
     "idx.statTools": "ابزار کاربردی", "idx.statGames": "بازی آنلاین", "idx.statItems": "آیتم فروشگاه", "idx.statAI": "ساعته AI آنلاین", "idx.statLeagues": "لیگ در اسپورتک",
     "idx.card.ai.t": "هوش مصنوعی لومیتک", "idx.card.ai.d": "دستیار AI آنلاین و قوی برای هر سوالی — هر سوال فقط ۲ سکه!",
     "idx.exploreEyebrow": "کاوش در Lumitek", "idx.exploreH2": "برای بیش از یک چیز ساخته شده.",
     "idx.card.tools.t": "ابزارها", "idx.card.tools.d": "ماشین‌حساب، تقویم ایران، اوقات شرعی، ساعت جهانی، آمار و احتمال، رسم نمودار، حل معادله، ماتریس، فیزیک و... — ۲۰ ابزار.",
-    "idx.card.games.t": "بازی‌ها", "idx.card.games.d": "۲۲ بازی در ۷ دسته: تیراندازی، ماجراجویی، استراتژی، رانندگی، پازل، ورزشی و آرکید — با XP، سکه، رکورد و دستاورد.",
+    "idx.card.games.t": "بازی‌ها", "idx.card.games.d": "۲۶ بازی در ۷ دسته: تیراندازی، ماجراجویی، استراتژی، رانندگی، پازل، ورزشی و آرکید — با XP، سکه، رکورد و دستاورد.",
     "idx.card.store.t": "فروشگاه", "idx.card.store.d": "سکه، آواتار، اسلحه‌های تیراندازی، اسکین، عنوان اختصاصی و بوست XP — همه یکجا.",
     "idx.card.coins.t": "سکه و VIP", "idx.card.coins.d": "شارژ سکه، پاداش روزانه ۱۰ سکه‌ای و اشتراک VIP — همه داخل فروشگاه.",
     "idx.card.sports.t": "اسپورتک 🏆", "idx.card.sports.d": "اخبار زنده، جدول لیگ‌های ایران و دنیا (خلیج فارس، پرمیرلیگ، لالیگا، سری آ، بوندسلیگا، NBA و...) و بازی‌های پیش رو.",
     "idx.card.tech.t": "فناوری", "idx.card.tech.d": "هوش مصنوعی، نرم‌افزار، سخت‌افزار و راهنماهای برنامه‌نویسی.",
-    "idx.card.articles.t": "مقالات", "idx.card.articles.d": "۱۶ مقاله: ۱۰ آموزش گام‌به‌گام کامپیوتر (پایتون، HTML، امنیت و...) + علم، تاریخ و فناوری — با خواندن کامل داخل سایت.",
+    "idx.card.articles.t": "مقالات", "idx.card.articles.d": "۲۲ مقاله: ۱۶ آموزش گام‌به‌گام کامپیوتر (پایتون، HTML، ویندوز، CMD، وای‌فای و...) + علم، تاریخ و فناوری — با خواندن کامل داخل سایت.",
     "idx.card.download.t": "دانلود اپ", "idx.card.download.d": "Lumitek را مثل یک اپلیکیشن واقعی روی گوشی و کامپیوتر نصب کن — حتی آفلاین کار می‌کند.",
     "idx.card.account.t": "حساب کاربری", "idx.card.account.d": "ورود با گوگل، مایکروسافت، ایمیل یا مهمان — آواتار، سطح، دستاوردها، رکوردها و بکاپ‌گیری.",
     "idx.card.support.t": "پشتیبانی هوشمند", "idx.card.support.d": "دستیار AI که به سوالاتت درباره Lumitek جواب می‌دهد.",
-    "idx.noticeTitle": "جدیدترین: Lumitek 0.8",
-    "idx.noticeText": "۱۰ مقاله آموزشی با خواندن داخل سایت، اسکین بازی‌ها در فروشگاه، ورود مهمان و مایکروسافت، ۴ رشته ورزشی جدید و ۸ جدول لیگ و فوتر اجتماعی ایرانی!",
-    "idx.noticeText2": "۱۰ مقاله آموزشی کامپیوتر با خواندن داخل سایت، اسکین اختصاصی بازی‌ها در فروشگاه، ورود مهمان و ورود با مایکروسافت، ۴ رشته ورزشی جدید و ۸ جدول لیگ، شبکه‌های اجتماعی ایرانی در فوتر و لوگوی بزرگ‌تر!",
+    "idx.noticeTitle": "جدیدترین: Lumitek 0.9",
+    "idx.noticeText": "بازی جدید تپه‌نورد، سوالات متداول، پشتیبانی شناور گوشه سایت، عنوان‌های یکدست صفحات، ۶ مقاله جدید و منوی هدر کامل‌تر!",
+    "idx.noticeText2": "بازی جدید «تپه‌نورد»، بخش سوالات متداول، پشتیبانی شناور در گوشه سایت، عنوان یکدست همه صفحات، ۶ مقاله آموزشی جدید، لینک تغییرات و مقالات در هدر و اعداد انگلیسی در حالت EN!",
     "idx.noticeLink": "مشاهده تغییرات →",
     "idx.supportTitle": "به رشد Lumitek کمک کن.",
     "idx.supportText": "اگه Lumitek برات مفیده، یه حمایت اختیاری به هزینه‌های هاست، توسعه و امکانات جدید کمک می‌کنه.",
@@ -69,7 +69,7 @@ window.LumiI18n = (function () {
 
     /* ---------- games hub ---------- */
     "games.h1": "بازی‌های Lumitek",
-    "games.lead": "۲۲ بازی در ۷ دسته برای موبایل و کامپیوتر. با هر بازی XP و سکه می‌گیری، رکورد بزن و دستاورد باز کن — بعد سکه‌هات رو تو فروشگاه خرج کن!",
+    "games.lead": "۲۶ بازی در ۷ دسته برای موبایل و کامپیوتر. با هر بازی XP و سکه می‌گیری، رکورد بزن و دستاورد باز کن — بعد سکه‌هات رو تو فروشگاه خرج کن!",
     "games.play": "شروع بازی", "games.noRecord": "هنوز رکوردی نداری", "games.yourBest": "رکورد شما",
     "games.new": "جدید",
     "games.spendTitle": "🪙 سکه‌هات رو خرج کن!",
@@ -78,7 +78,7 @@ window.LumiI18n = (function () {
     "g.reaction.n": "آزمون واکنش", "g.reaction.d": "در سریع‌ترین زمان ممکن روی دکمه بزن. زیر ۲۵۰ms یعنی حرفه‌ای!",
     "g.range.n": "تیراندازی دقیق", "g.range.d": "اهداف متحرک را در ۴۵ ثانیه شکار کن؛ دقت و کمبو امتیازت را بالا می‌برد!",
     "g.runner.n": "دونده ماجراجویی", "g.runner.d": "در غار بدو، از موانع بپر و سکه‌های گنج را جمع کن — سرعت هر لحظه بیشتر می‌شود!",
-    "g.rally.n": "رالی شبانه", "g.rally.d": "شبانه در جاده کوهستانی رانندگی کن، با نیترو از ترافیک رد شو و رکورد مسافت بزن!",
+    "g.hill.n": "تپه‌نورد", "g.hill.d": "با گاز و ترمز از تپه‌های سخت عبور کن، سوخت را مدیریت کن و سکه‌های مسیر را جمع کن!",
     "g.sniper.n": "تک‌تیرانداز حرفه‌ای", "g.sniper.d": "زوم کن، باد را حساب کن و اهداف متحرک را بزن — با اسنایپرهای فروشگاه اسکین اختصاصی بگیر!",
     "g.island.n": "گنج جزیره", "g.island.d": "کاوشگر جزیره باش: ۳ کلید پیدا کن، صندوق گنج را باز کن و از راهزن‌ها فرار کن!",
     "g.td.n": "دژبان", "g.td.d": "برج‌های خودت را کنار مسیر بچین، ۱۰ موج دشمن را دفع کن و دژ را نگه دار!",
@@ -286,7 +286,7 @@ window.LumiI18n = (function () {
     "ct.idea": "ایده‌ای برای بازی، ابزار یا بخش جدید داری؟ خوشحال می‌شویم بشنویم!",
     "ct.name": "نام", "ct.msg": "پیام", "ct.send": "ارسال پیام",
     "ct.err": "نام و پیام را وارد کن.", "ct.ok": "پیامت ثبت شد — به‌زودی جواب می‌دهیم!",
-    "ar.h1": "مقالات", "ar.lead": "بخوان، یاد بگیر، کشف کن — ۱۶ مقاله علمی، آموزشی و فناوری با خواندن کامل داخل سایت. با خواندن هر آموزش هم ۵ سکه جایزه بگیر!", "ar.tutTitle": "🎓 آموزش‌های گام‌به‌گام کامپیوتر — برای شروع کلیک کن", "ar.sciTitle": "🔬 مقالات علمی و فناوری", "ar.minutes": "دقیقه مطالعه", "ar.readCta": "✅ خواندم و یاد گرفتم — ۵ سکه بگیر!", "ar.readDone": "خوانده‌شده ✓ جایزه‌ات قبلاً واریز شده است", "m.articleReward": "🎉 ۵ سکه بابت خواندن آموزش اضافه شد! ادامه بده!",
+    "ar.h1": "مقالات", "ar.lead": "بخوان، یاد بگیر، کشف کن — ۲۲ مقاله علمی، آموزشی و فناوری با خواندن کامل داخل سایت. با خواندن هر آموزش هم ۵ سکه جایزه بگیر!", "ar.tutTitle": "🎓 آموزش‌های گام‌به‌گام کامپیوتر — برای شروع کلیک کن", "ar.sciTitle": "🔬 مقالات علمی و فناوری", "ar.minutes": "دقیقه مطالعه", "ar.readCta": "✅ خواندم و یاد گرفتم — ۵ سکه بگیر!", "ar.readDone": "خوانده‌شده ✓ جایزه‌ات قبلاً واریز شده است", "m.articleReward": "🎉 ۵ سکه بابت خواندن آموزش اضافه شد! ادامه بده!",
     "ar.t1": "علم", "ar.t2": "فناوری", "ar.t3": "آموزش", "ar.t4": "تاریخ", "ar.t5": "ورزش", "ar.t6": "عمومی",
     "ar.a1t": "اینترنت چطور کار می‌کند؟", "ar.a1d": "نگاهی ساده به سیستم‌های پشت وب برای مبتدی‌ها.",
     "ar.a2t": "هوش مصنوعی چیست؟", "ar.a2d": "معرفی ساده‌ای از هوش مصنوعی و کاربردهایش.",
@@ -314,6 +314,7 @@ window.LumiI18n = (function () {
     "up.lead": "تاریخچه نسخه‌ها و قابلیت‌های اضافه‌شده.",
     "up.offline": "Service Worker + کش کامل + نوار وضعیت آفلاین",
     "up.v2d": "هاب ابزارها، ورزش و فناوری، بازی‌های اولیه، XP و سکه، صفحه حمایت.",
+    "up.leadT": "تاریخچه نسخه‌ها و قابلیت‌های اضافه‌شده — روی هر نسخه بزن تا فهرست تغییراتش باز شود.",
     "up.next": "برنامه نسخه بعد",
     "up.nextd": "حساب آنلاین واقعی با Firebase، رتبه‌بندی با سرور، نتایج زنده مسابقات و بازی‌های چندنفره.",
 
@@ -341,7 +342,7 @@ window.LumiI18n = (function () {
     "gn.puzzle15": "پازل ۱۵", "gn.wordguess": "حدس کلمه",
     "gn.shooter": "تیراندازی کیهانی", "gn.maze": "ماز", "gn.connect4": "چهار در یک ردیف",
     "gn.drive": "بزرگراه", "gn.adventure": "شکار گنج", "gn.penalty": "ضربات پنالتی",
-    "gn.range": "تیراندازی دقیق", "gn.runner": "دونده ماجراجویی", "gn.rally": "رالی شبانه", "gn.hoops": "بسکتبال",
+    "gn.range": "تیراندازی دقیق", "gn.runner": "دونده ماجراجویی", "gn.hill": "تپه‌نورد", "gn.hoops": "بسکتبال",
     "gn.mazeSolves": "ماز (حل‌شده)", "gn.penaltyGoals": "پنالتی (گل‌ها)",
 
     /* ---------- v0.6: nav + categories ---------- */
@@ -443,7 +444,41 @@ window.LumiI18n = (function () {
     /* ---------- v0.7: announcements v0.7 entry ---------- */
     "up.v8t": "نسخه 0.8 — بازی‌ها، ابزارها، مقالات و اسپورتک بزرگ‌تر شد! 🚀", "up.v8d": "۴ بازی و ۴ ابزار و ۱۰ مقاله جدید، اسپورتک با رشته‌ها و لیگ‌های بیشتر + اخبار تخصصی، ورود مهمان و مایکروسافت، فوتر شبکه‌های اجتماعی ایرانی، لوگوی بزرگ‌تر، حذف اشتراک هوش مصنوعی و ظاهر بهتر.",
 "up.v7t": "نسخه 0.7 — لوگوی جدید، اسپورتک و درگاه پرداخت 🏆",
-    "up.v7d": "لوگوی جدید Lumitek در هدر همه صفحات (بدون پس‌زمینه، سازگار با تم روز و شب)، بازطراحی کامل بخش ورزش به اسپورتک Sportek با انتخاب رشته، جدول ۱۴ لیگ (خلیج فارس، پرمیرلیگ، لالیگا، سری آ، بوندسلیگا، لیگ ۱، NBA و...) و بازی‌های پیش رو با دکمه بروزرسانی همه، ۴ بازی جدید (تیراندازی دقیق، دونده ماجراجویی، رالی شبانه، بسکتبال)، حذف بازی حافظه، ماشین‌حساب مهندسی کامل تک‌حالته با چیدمان عمودی عملگرها، درگاه پرداخت فروشگاه برای سکه، VIP و بسته‌های هوش مصنوعی، دکمه تغییرات نسخه‌ها در هدر، اعلان‌های خوانده‌شده، جلوگیری از جابه‌جایی صفحه هنگام بازی + پشتیبانی WASD، حذف بخش سکه از هدر، ارتقای ابزارها و هوش مصنوعی قوی‌تر."
+    "up.v7d": "لوگوی جدید Lumitek در هدر همه صفحات (بدون پس‌زمینه، سازگار با تم روز و شب)، بازطراحی کامل بخش ورزش به اسپورتک Sportek با انتخاب رشته، جدول ۱۴ لیگ (خلیج فارس، پرمیرلیگ، لالیگا، سری آ، بوندسلیگا، لیگ ۱، NBA و...) و بازی‌های پیش رو با دکمه بروزرسانی همه، ۴ بازی جدید (تیراندازی دقیق، دونده ماجراجویی، بسکتبال)، حذف بازی حافظه، ماشین‌حساب مهندسی کامل تک‌حالته با چیدمان عمودی عملگرها، درگاه پرداخت فروشگاه برای سکه، VIP و بسته‌های هوش مصنوعی، دکمه تغییرات نسخه‌ها در هدر، اعلان‌های خوانده‌شده، جلوگیری از جابه‌جایی صفحه هنگام بازی + پشتیبانی WASD، حذف بخش سکه از هدر، ارتقای ابزارها و هوش مصنوعی قوی‌تر.",
+
+    /* ---------- v0.9: hero badge + floats + FAQ + widget ---------- */
+    "idx.badge": "🚀 نسخه ۰.۹ — تپه‌نورد، سوالات متداول، پشتیبانی شناور و مقالات بیشتر",
+    "idx.float.store": "🛍️ فروشگاه", "idx.float.sport": "🏆 اسپورتک", "idx.float.ai": "✨ لومیتک AI", "idx.float.coins": "🪙 سکه و XP",
+    "faq.eyebrow": "سوالات متداول",
+    "faq.title": "سوالات متداول",
+    "faq.lead": "پاسخ سریع سوال‌های رایج درباره لومیتک — اگر جوابت اینجا نبود، از پشتیبانی شناور گوشه صفحه یا پشتیبانی هوشمند بپرس.",
+    "faq.q1": "چطور با بازی‌ها سکه و XP بگیرم؟",
+    "faq.a1": "کافیست وارد بخش بازی‌ها شوی و بازی کنی؛ هر بازی XP و سکه دارد و رکورد زدن جایزه بیشتری می‌دهد. پاداش روزانه (هر ۲۴ ساعت ۱۰ سکه از تب شارژ سکه فروشگاه) هم موجودی‌ات را بالا می‌برد.",
+    "faq.q2": "سکه‌ها را کجا خرج کنم؟",
+    "faq.a2": "در فروشگاه: آواتار، اسلحه و اسکین بازی‌ها، رنگ سایت، عنوان اختصاصی و بوست دوبرابر XP. برای شارژ سریع هم تب «شارژ سکه» در همان صفحه هست.",
+    "faq.q3": "اسکین بازی‌ها چطور کار می‌کند؟",
+    "faq.a3": "اسکین‌های تیراندازی کیهانی، تک‌تیرانداز، رانندگی، ماجراجویی و دژبان را از فروشگاه بخر و از همان‌جا تجهیز کن؛ ظاهر بازی به‌صورت خودکار عوض می‌شود.",
+    "faq.q4": "ورود مهمان چیست و اطلاعاتم کجا ذخیره می‌شود؟",
+    "faq.a4": "با «ورود مهمان» بدون ایمیل وارد می‌شوی و همه‌چیز (سکه، XP، رکوردها و خریدها) به‌صورت خودکار روی همین مرورگر ذخیره می‌شود — نیازی به کار دیگری نیست.",
+    "faq.q5": "هوش مصنوعی لومیتک چطور کار می‌کند؟",
+    "faq.a5": "بدون اشتراک! هر سوال فقط ۲ سکه دارد؛ سوالت را در صفحه هوش مصنوعی بنویس و جواب بگیر. اگر سکه نداری، از بازی‌ها یا پاداش روزانه شارژ کن.",
+    "faq.q6": "اسپورتک چه بخش‌هایی دارد؟",
+    "faq.a6": "اخبار زنده‌ی مرتبط با هر رشته، جدول ۲۴ لیگ (خلیج فارس، پرمیرلیگ، لالیگا، سری آ، بوندسلیگا، NBA و...) و بازی‌های پیش رو — همه با یک دکمه «بروزرسانی همه».",
+    "faq.q7": "چطور لومیتک را مثل اپ نصب کنم؟",
+    "faq.a7": "از صفحه «دانلود» دکمه نصب را بزن یا در منوی مرورگر گزینه «Add to Home screen / Install» را انتخاب کن. بعد از نصب حتی بدون اینترنت هم کار می‌کند.",
+    "faq.q8": "سایت به زبان انگلیسی هم هست؟",
+    "faq.a8": "بله! با دکمه EN بالای سایت، کل لومیتک فارسی و انگلیسی می‌شود؛ جهت صفحه، فونت و اعداد هم خودکار عوض می‌شوند.",
+    "wgt.title": "پشتیبانی لومیتک",
+    "wgt.hello": "سلام 👋 من دستیار لومیتک هستم. سوالت را بنویس یا یکی از موضوعات زیر را انتخاب کن!",
+    "wgt.ph": "سوالت را بنویس...",
+    "wgt.send": "ارسال ➤",
+    "wgt.open": "پشتیبانی آنلاین لومیتک",
+    "wgt.full": "🤖 صفحه کامل پشتیبانی",
+    "wgt.min": "موتور داخلی — آفلاین و رایگان",
+    "ch.listTitle": "تغییرات این نسخه:",
+    "store.faqT": "💡 سوالات پرتکرار فروشگاه",
+    "store.faq4q": "اسلحه‌ها کجا استفاده می‌شن؟",
+    "store.faq4a": "در بازی «تیراندازی کیهانی»! بعد از خرید، دکمه «تجهیز» را بزن؛ رنگ و افکت شلیکت در بازی عوض می‌شه. اسنایپرها هم مال بازی تک‌تیرانداز هستن و اسکین ماشین/قهرمان/برج هم بازی خودشون."
   };
 
   dict.en = {
@@ -466,7 +501,7 @@ window.LumiI18n = (function () {
     "auth.email": "Email", "auth.pass": "Password", "auth.name": "Display name",
     "auth.signinTab": "Sign in", "auth.signupTab": "Sign up",
     "auth.signinBtn": "Sign in", "auth.signupBtn": "Create account",
-    "auth.demoNote": "Demo mode: accounts are stored on this browser only. To enable real Google/email sign-in, connect Firebase in js/auth.js (guide included in the file).",
+    "auth.demoNote": "🔒 Your account is saved automatically on this device — nothing else is needed.",
     "auth.welcome": "Welcome",
     "auth.logout": "You signed out.",
     "auth.errEmail": "Enter a valid email address.",
@@ -485,18 +520,18 @@ window.LumiI18n = (function () {
 
     /* ---------- index ---------- */
     "idx.h1a": "Everything in one place,", "idx.h1b": "fast and simple.",
-    "idx.lead": "24 practical tools, 26 games in 7 categories, 16 in-site tutorial articles, a full store with coins, weapons & skins, Lumitek AI, Sportek with league standings, and an installable app — all in one fast, beautiful experience.",
+    "idx.lead": "24 practical tools, 26 games in 7 categories, 22 in-site articles, a full store with coins, weapons & skins, Lumitek AI, Sportek with league standings, and an installable app — all in one fast, beautiful experience.",
     "idx.ctaGames": "🎮 Play now", "idx.ctaStore": "🛍️ Store", "idx.ctaCoins": "🪙 Buy coins", "idx.ctaDownload": "⬇️ Install app", "idx.ctaAI": "✨ Lumitek AI",
     "idx.statTools": "practical tools", "idx.statGames": "online games", "idx.statItems": "store items", "idx.statAI": "/7 online AI", "idx.statLeagues": "sports leagues",
     "idx.card.ai.t": "Lumitek AI", "idx.card.ai.d": "A powerful online assistant for anything — only 2 coins per question!",
     "idx.exploreEyebrow": "EXPLORE LUMITEK", "idx.exploreH2": "Built for more than one thing.",
     "idx.card.tools.t": "Tools", "idx.card.tools.d": "Calculator, Iranian calendar, prayer times, world clock, statistics, function plotter, equations, matrices, physics & more — 20 tools.",
-    "idx.card.games.t": "Games", "idx.card.games.d": "22 games in 7 categories: shooting, adventure, strategy, driving, puzzle, sports and arcade — with XP, coins, records and achievements.",
+    "idx.card.games.t": "Games", "idx.card.games.d": "26 games in 7 categories: shooting, adventure, strategy, driving, puzzle, sports and arcade — with XP, coins, records and achievements.",
     "idx.card.store.t": "Store", "idx.card.store.d": "Coins, avatars, shooter weapons, skins, custom titles and XP boosts — all in one place.",
     "idx.card.coins.t": "Coins & VIP", "idx.card.coins.d": "Coin top-ups, the 10-coin daily reward and VIP subscription — all inside the Store.",
     "idx.card.sports.t": "Sportek 🏆", "idx.card.sports.d": "Live news, standings of Iran & world leagues (PGPL, Premier League, La Liga, Serie A, Bundesliga, NBA and more) and upcoming matches.",
     "idx.card.tech.t": "Technology", "idx.card.tech.d": "AI, software, hardware and programming guides.",
-    "idx.card.articles.t": "Articles", "idx.card.articles.d": "16 articles: 10 step-by-step computer tutorials (Python, HTML, security...) plus science, history and technology — fully readable in-site.",
+    "idx.card.articles.t": "Articles", "idx.card.articles.d": "22 articles: 16 step-by-step computer tutorials (Python, HTML, Windows, CMD, Wi-Fi and more) plus science, history and technology — fully readable in-site.",
     "idx.card.download.t": "Get the app", "idx.card.download.d": "Install Lumitek like a real app on your phone or computer — works even offline.",
     "idx.card.account.t": "Account", "idx.card.account.d": "Sign in with Google, Microsoft, email or as guest — avatars, levels, achievements, records and backups.",
     "idx.card.support.t": "AI support", "idx.card.support.d": "An AI assistant that answers your Lumitek questions.",
@@ -510,7 +545,7 @@ window.LumiI18n = (function () {
 
     /* ---------- games hub ---------- */
     "games.h1": "Lumitek Games",
-    "games.lead": "22 games in 7 categories for mobile and desktop. Earn XP and coins from every game, set records, unlock achievements — then spend your coins in the Store!",
+    "games.lead": "26 games in 7 categories for mobile and desktop. Earn XP and coins from every game, set records, unlock achievements — then spend your coins in the Store!",
     "games.play": "Play", "games.noRecord": "No record yet", "games.yourBest": "Your best",
     "games.new": "New",
     "games.spendTitle": "🪙 Spend your coins!",
@@ -519,7 +554,7 @@ window.LumiI18n = (function () {
     "g.reaction.n": "Reaction Test", "g.reaction.d": "Tap as fast as you can. Under 250 ms means pro!",
     "g.range.n": "Precision Range", "g.range.d": "Hit moving targets in 45 seconds — accuracy and combos boost your score!",
     "g.runner.n": "Cave Runner", "g.runner.d": "Run through the cave, jump over obstacles and collect treasure coins — speed keeps rising!",
-    "g.rally.n": "Night Rally", "g.rally.d": "Drive a mountain road at night, dodge traffic with nitro and set the distance record!",
+    "g.hill.n": "Hill Climb", "g.hill.d": "Master gas and brake over tough hills, manage your fuel and grab the coins on the way!",
     "g.sniper.n": "Pro Sniper", "g.sniper.d": "Zoom, read the wind and hit moving targets — style them with store snipers!",
     "g.island.n": "Treasure Island", "g.island.d": "Be the island explorer: find 3 keys, open the chest and dodge pirates!",
     "g.td.n": "Tower Defense", "g.td.d": "Place towers along the path, repel 10 waves and hold the fort!",
@@ -755,6 +790,7 @@ window.LumiI18n = (function () {
     "up.lead": "Version history and shipped features.",
     "up.offline": "Service Worker + full cache + offline status bar",
     "up.v2d": "Tools hub, sports & technology, first games, XP & coins, donate page.",
+    "up.leadT": "The history of versions and added features — tap any version to open its change list.",
     "up.next": "Next version roadmap",
     "up.nextd": "Real online accounts with Firebase, server leaderboards, live match results and multiplayer games.",
 
@@ -782,7 +818,7 @@ window.LumiI18n = (function () {
     "gn.puzzle15": "15-Puzzle", "gn.wordguess": "Word Guess",
     "gn.shooter": "Space Shooter", "gn.maze": "Maze", "gn.connect4": "Connect Four",
     "gn.drive": "Highway", "gn.adventure": "Treasure Hunt", "gn.penalty": "Penalty Shootout",
-    "gn.range": "Precision Range", "gn.runner": "Cave Runner", "gn.rally": "Night Rally", "gn.hoops": "Hoops Shot",
+    "gn.range": "Precision Range", "gn.runner": "Cave Runner", "gn.hill": "Hill Climb", "gn.hoops": "Hoops Shot",
     "gn.mazeSolves": "Maze (solved)", "gn.penaltyGoals": "Penalty (goals)",
 
     /* ---------- v0.6: nav + categories ---------- */
@@ -884,7 +920,41 @@ window.LumiI18n = (function () {
     /* ---------- v0.7: announcements v0.7 entry ---------- */
     "up.v8t": "Version 0.8 — Bigger games, tools, articles & Sportek! 🚀", "up.v8d": "4 new games & 4 new tools & 10 new articles, Sportek with more sports/leagues + per-sport news, guest & Microsoft sign-in, Iranian social footer, bigger logo, AI subscription removed and UI polish.",
 "up.v7t": "Version 0.7 — New logo, Sportek & checkout 🏆",
-    "up.v7d": "New transparent Lumitek logo in every header (day/night friendly), sports section rebuilt as Sportek with sport picker, 14 league tables (PGPL, Premier League, La Liga, Serie A, Bundesliga, Ligue 1, NBA and more), upcoming fixtures + a refresh-all button, 4 new games (Precision Range, Cave Runner, Night Rally, Hoops Shot), memory game removed, single full engineering calculator with vertical operator layout, store checkout for coins, VIP and AI packs, header changelog button, read-state notifications, page-scroll lock while gaming + WASD support, coins section removed from header, upgraded tools and a stronger AI."
+    "up.v7d": "New transparent Lumitek logo in every header (day/night friendly), sports section rebuilt as Sportek with sport picker, 14 league tables (PGPL, Premier League, La Liga, Serie A, Bundesliga, Ligue 1, NBA and more), upcoming fixtures + a refresh-all button, 4 new games (Precision Range, Cave Runner, Night Rally, Hoops Shot), memory game removed, single full engineering calculator with vertical operator layout, store checkout for coins, VIP and AI packs, header changelog button, read-state notifications, page-scroll lock while gaming + WASD support, coins section removed from header, upgraded tools and a stronger AI.",
+
+    /* ---------- v0.9: hero badge + floats + FAQ + widget ---------- */
+    "idx.badge": "🚀 v0.9 — Hill Climb, FAQ, floating support & more articles",
+    "idx.float.store": "🛍️ Store", "idx.float.sport": "🏆 Sportek", "idx.float.ai": "✨ Lumitek AI", "idx.float.coins": "🪙 Coins & XP",
+    "faq.eyebrow": "FAQ",
+    "faq.title": "Frequently Asked Questions",
+    "faq.lead": "Quick answers to the most common questions about Lumitek — if your answer isn't here, ask the floating support bubble in the corner or the AI support page.",
+    "faq.q1": "How do I earn coins and XP with games?",
+    "faq.a1": "Just open the Games section and play! Every game gives XP and coins, and setting a record pays even more. The daily reward (10 coins every 24h from the Store's Top-up tab) boosts your balance too.",
+    "faq.q2": "Where do I spend my coins?",
+    "faq.a2": "In the Store: avatars, weapons & game skins, site colors, custom titles and double-XP boosts. The \"Top-up\" tab is right there for a quick recharge.",
+    "faq.q3": "How do game skins work?",
+    "faq.a3": "Buy skins for Space Shooter, Sniper, driving, adventure and Tower Defense from the Store and equip them there — the game's look changes automatically.",
+    "faq.q4": "What is guest sign-in and where is my data kept?",
+    "faq.a4": "With \"Guest sign-in\" you get in without an email, and everything (coins, XP, records and purchases) is saved automatically in this browser — nothing else is needed.",
+    "faq.q5": "How does Lumitek AI work?",
+    "faq.a5": "No subscription! Each question costs only 2 coins — type your question on the AI page and get an answer. Out of coins? Earn more by playing or claim the daily reward.",
+    "faq.q6": "What does Sportek include?",
+    "faq.a6": "Live news for every sport, 24 league tables (PGPL, Premier League, La Liga, Serie A, Bundesliga, NBA and more) and upcoming matches — all with one \"Refresh everything\" button.",
+    "faq.q7": "How do I install Lumitek as an app?",
+    "faq.a7": "Hit the install button on the Download page, or pick \"Add to Home screen / Install\" from your browser menu. Once installed it even works offline.",
+    "faq.q8": "Is the site available in English?",
+    "faq.a8": "Yes! The EN button at the top switches the whole site between Persian and English — direction, fonts and numbers adapt automatically.",
+    "wgt.title": "Lumitek Support",
+    "wgt.hello": "Hi 👋 I'm the Lumitek assistant. Type your question or pick one of the topics below!",
+    "wgt.ph": "Type your question...",
+    "wgt.send": "Send ➤",
+    "wgt.open": "Lumitek online support",
+    "wgt.full": "🤖 Full support page",
+    "wgt.min": "Local engine — offline & free",
+    "ch.listTitle": "Changes in this version:",
+    "store.faqT": "💡 Store FAQ",
+    "store.faq4q": "Where are weapons used?",
+    "store.faq4a": "In Space Shooter! After buying, hit \u201cEquip\u201d — your bullet color and effects change in-game. Snipers go to Pro Sniper, and car/hero/tower skins style their own games."
   };
 
   dict.ready = true;
@@ -910,7 +980,34 @@ window.LumiI18n = (function () {
     root.querySelectorAll("[data-i18n-title]").forEach(function (el) {
       el.setAttribute("title", T(el.getAttribute("data-i18n-title")));
     });
+    fixDigits(root);
   }
 
-  return { dict: dict, T: T, apply: apply };
+  /* ---- v0.9: اعداد فارسی در حالت انگلیسی به عدد انگلیسی تبدیل می‌شوند ---- */
+  function toEnDigits(s) {
+    return s.replace(/[\u06F0-\u06F9\u0660-\u0669]/g, function (d) {
+      var c = d.charCodeAt(0);
+      return String.fromCharCode(c <= 0x0669 ? c - 0x0660 + 48 : c - 0x06F0 + 48);
+    });
+  }
+  function fixDigits(root) {
+    if ((window.getLang ? getLang() : "fa") !== "en") return;
+    root = root === document ? document.body : (root || document.body);
+    if (!root) return;
+    try {
+      var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+        acceptNode: function (n) {
+          if (!n.nodeValue || !/[\u06F0-\u06F9\u0660-\u0669]/.test(n.nodeValue)) return NodeFilter.FILTER_REJECT;
+          var tag = n.parentNode && n.parentNode.nodeName;
+          if (tag === "SCRIPT" || tag === "STYLE" || tag === "CODE" || tag === "PRE") return NodeFilter.FILTER_REJECT;
+          return NodeFilter.FILTER_ACCEPT;
+        }
+      });
+      var nodes = [];
+      while (walker.nextNode()) nodes.push(walker.currentNode);
+      nodes.forEach(function (n) { n.nodeValue = toEnDigits(n.nodeValue); });
+    } catch (e) {}
+  }
+
+  return { dict: dict, T: T, apply: apply, fixDigits: fixDigits, toEnDigits: toEnDigits };
 })();
