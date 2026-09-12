@@ -121,6 +121,15 @@ window.LumiAuth = (function () {
   function validEmail(e) { return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(e); }
 
   function signUp(email, pass, name) {
+    if (window.LumiBackend && LumiBackend.enabled()) {
+      return LumiBackend.signUp(email, pass, name).then(function(u) {
+        setSession(u);
+        return u;
+      }).catch(function(err) {
+        if (err && err.code) return Promise.reject(err);
+        return Promise.reject({ code: "errWrong" });
+      });
+    }
     if (AUTH_CONFIG.provider === "firebase") return fbSignUp(email, pass, name);
     email = (email || "").trim().toLowerCase();
     name = (name || "").trim() || email.split("@")[0];
@@ -138,6 +147,15 @@ window.LumiAuth = (function () {
   }
 
   function signIn(email, pass) {
+    if (window.LumiBackend && LumiBackend.enabled()) {
+      return LumiBackend.signIn(email, pass).then(function(u) {
+        setSession(u);
+        return u;
+      }).catch(function(err) {
+        if (err && err.code) return Promise.reject(err);
+        return Promise.reject({ code: "errWrong" });
+      });
+    }
     if (AUTH_CONFIG.provider === "firebase") return fbSignIn(email, pass);
     email = (email || "").trim().toLowerCase();
     if (!validEmail(email)) return Promise.reject({ code: "errEmail" });
@@ -246,6 +264,9 @@ window.LumiAuth = (function () {
   }
 
   function signOut() {
+    if (window.LumiBackend && LumiBackend.enabled()) {
+      return LumiBackend.signOut().then(function(){ setSession(null); return true; });
+    }
     if (AUTH_CONFIG.provider === "firebase" && window.firebase) firebase.auth().signOut();
     setSession(null);
     return Promise.resolve();

@@ -1,0 +1,45 @@
+# Lumitek 0.3.0 — Online Backend Edition
+
+این نسخه، Lumitek را برای تبدیل شدن از یک سایت استاتیک به یک وب‌اپ آنلاین آماده می‌کند.
+
+## اضافه شده
+- Cloudflare Pages Functions در مسیر `functions/api/`
+- Cloudflare D1 schema در `backend/schema.sql`
+- احراز هویت واقعی ایمیل/رمز با session سمت سرور
+- نقش `admin` برای مالک سایت
+- API پنل مدیریت: کاربران، آمار، سفارش‌ها، نقش و Coins
+- API امن برای Gemini؛ کلید Gemini هرگز داخل فرانت‌اند قرار نمی‌گیرد
+- زیرساخت سفارش و Donation با وضعیت `pending`
+- زیرساخت Score/Notifications در D1
+- PWA قبلی حفظ شده و برای نصب روی گوشی/کامپیوتر آماده است
+- پرداخت عمداً «موفق» اعلام نمی‌شود تا درگاه واقعی متصل و verify سمت سرور پیاده شود.
+
+## راه‌اندازی Cloudflare
+1. پروژه فعلی Lumitek را در Cloudflare Pages نگه دار.
+2. یک D1 Database بساز و نام آن را `lumitek-db` بگذار.
+3. فایل `backend/schema.sql` را روی D1 اجرا کن.
+4. در Pages > Settings > Functions، binding دیتابیس را با نام `DB` وصل کن.
+5. متغیرهای محیطی/Secrets:
+   - `GEMINI_API_KEY` = کلید Gemini
+   - `ADMIN_EMAIL` = ایمیلی که باید حساب مالک باشد
+   - اختیاری: `GEMINI_MODEL` و `GEMINI_FAST_MODEL`
+6. Deploy کن.
+7. آدرس `/api/health` را باز کن؛ باید JSON با `ok:true` ببینی.
+8. با ایمیل `ADMIN_EMAIL` ثبت‌نام کن؛ حساب با نقش `admin` ساخته می‌شود.
+
+## پرداخت
+در این نسخه پرداخت واقعی هنوز به یک provider خاص قفل نشده است. دلیلش این است که merchant/API credentials و قوانین درگاه باید روی سرور تنظیم شوند. مسیر:
+`POST /api/payments/create`
+و callback/verify:
+`POST /api/payments/verify`
+
+بعد از انتخاب درگاه، فقط adapter سمت `functions/api/[[path]].js` تکمیل می‌شود؛ کلید درگاه داخل JS سایت قرار نمی‌گیرد.
+
+## Gemini
+صفحه AI می‌تواند در نسخه بعدی/با patch فرانت‌اند از `/api/ai` استفاده کند. کلید فقط در Secret سرور است.
+
+## تست محلی
+بدون D1 و Secrets، APIهای آنلاین طبیعی است که 503 بدهند. این نسخه همچنان فایل‌های استاتیک/PWA را حفظ می‌کند.
+
+## مهم
+`wrangler.toml` دارای placeholder برای `database_id` است. آن مقدار را از Cloudflare واقعی خودت بگیر؛ مقدار ساختگی را deploy نکن.

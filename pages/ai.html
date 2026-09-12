@@ -223,6 +223,8 @@
   </div>
 </footer>
 
+<script src="../js/backend-config.js"></script>
+<script src="../js/backend.js"></script>
 <script src="../js/i18n.js"></script>
 <script src="../js/main.js"></script>
 <script src="../js/auth.js"></script>
@@ -686,6 +688,13 @@
   function askOnline(question, onDelta) {
     var api = getApi();
     if (api && api.key) return askApi(api, contextMessages(), onDelta);
+    if (window.LumiBackend && LumiBackend.enabled()) {
+      return LumiBackend.ai(contextMessages(), fastMode()).then(function(d) {
+        if (!d || !d.text) throw new Error("empty");
+        onDelta(d.text);
+        return d.text.trim();
+      });
+    }
     return askFree(question, onDelta);
   }
 

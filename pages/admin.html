@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>پنل مدیریت Lumitek</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" type="image/png" href="../assets/icons/logo-lt.png">
+<link rel="manifest" href="../manifest.json">
+<link rel="stylesheet" href="../css/style.css">
+<script>try{var t=localStorage.getItem("lumitek_theme");if(t==="light")document.documentElement.classList.add("light");var l=localStorage.getItem("lumitek_lang");if(l==="en"){document.documentElement.lang="en";document.documentElement.dir="ltr"}}catch(e){}</script>
+<script src="../js/backend-config.js"></script>
+<script src="../js/backend.js"></script>
+<script src="../js/i18n.js"></script>
+<script src="../js/auth.js"></script>
+<style>
+.admin-wrap{max-width:1200px;margin:32px auto;padding:0 18px}.admin-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.admin-card{padding:18px;border:1px solid var(--border,#24304a);border-radius:18px;background:var(--card,#0d1424)}.admin-card b{font-size:1.7rem}.admin-table{width:100%;border-collapse:collapse;margin-top:16px}.admin-table th,.admin-table td{padding:10px;border-bottom:1px solid var(--border,#24304a);text-align:right;font-size:.85rem}.admin-scroll{overflow:auto}.admin-actions{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}.admin-msg{padding:12px;border-radius:12px;background:rgba(118,230,195,.08);margin:12px 0}.danger{color:#ff8c8c}@media(max-width:800px){.admin-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:480px){.admin-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="site-header">
+<a class="brand" href="../index.html"><img class="brand-logo" src="../assets/icons/logo-lt.png" alt="Lumitek" width="46" height="46"><span class="brand-word">Lumitek</span></a>
+<nav class="main-nav"><a href="../index.html">خانه</a><a href="account.html">حساب</a><a href="store.html">فروشگاه</a><a href="games.html">بازی‌ها</a></nav>
+</header>
+<main class="admin-wrap">
+<h1>👑 پنل مدیریت Lumitek</h1>
+<p class="muted">این صفحه فقط با نقش <b>admin</b> از سمت Backend قابل استفاده است.</p>
+<div id="adminMsg" class="admin-msg">در حال بررسی دسترسی...</div>
+<section class="admin-grid" id="stats"></section>
+<div class="admin-actions">
+<button class="primary-btn" id="refreshBtn">به‌روزرسانی</button>
+<button class="ghost-btn" id="usersBtn">کاربران</button>
+<button class="ghost-btn" id="ordersBtn">سفارش‌ها</button>
+<a class="ghost-btn" href="../index.html">بازگشت</a>
+</div>
+<section class="admin-card"><div id="tableTitle">داده‌ها</div><div class="admin-scroll"><div id="table"></div></div></section>
+</main>
+<script>
+(function(){
+var msg=document.getElementById("adminMsg"), stats=document.getElementById("stats"), table=document.getElementById("table"), title=document.getElementById("tableTitle");
+function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
+function showStats(d){stats.innerHTML='<div class="admin-card">👥<br><b>'+esc(d.users)+'</b><br>کاربر</div><div class="admin-card">🛒<br><b>'+esc(d.paidOrders)+'</b><br>سفارش پرداخت‌شده</div><div class="admin-card">❤️<br><b>'+esc(d.paidDonations)+'</b><br>حمایت موفق</div><div class="admin-card">💰<br><b>'+Number(d.donationTotal||0).toLocaleString("fa-IR")+'</b><br>مجموع حمایت</div>'}
+function load(){if(!window.LumiBackend){msg.textContent="Backend client missing";return} LumiBackend.me().then(function(r){if(!r.user||r.user.role!=="admin")throw new Error("دسترسی مدیر ندارید.");return LumiBackend.adminStats()}).then(function(d){msg.textContent="✅ دسترسی مدیر تأیید شد.";showStats(d);loadUsers()}).catch(function(e){msg.innerHTML='<span class="danger">❌ '+esc(e.message||"دسترسی غیرمجاز")+'</span>'})}
+function loadUsers(){title.textContent="کاربران";LumiBackend.adminUsers().then(function(d){var h='<table class="admin-table"><tr><th>نام</th><th>ایمیل</th><th>نقش</th><th>Level</th><th>Coins</th><th>عملیات</th></tr>';(d.users||[]).forEach(function(u){h+='<tr><td>'+esc(u.name)+'</td><td dir="ltr">'+esc(u.email)+'</td><td>'+esc(u.role)+'</td><td>'+esc(u.level)+'</td><td>'+esc(u.coins)+'</td><td><button class="ghost-btn" data-role="'+esc(u.id)+'">'+(u.role==="admin"?"کاربر":"مدیر")+'</button></td></tr>'});table.innerHTML=h+"</table>";table.querySelectorAll("[data-role]").forEach(function(b){b.onclick=function(){var role=b.textContent.indexOf("کاربر")>=0?"user":"admin";LumiBackend.adminSetRole(b.getAttribute("data-role"),role).then(loadUsers)}})}).catch(function(e){table.textContent=e.message})}
+function loadOrders(){title.textContent="سفارش‌ها";LumiBackend.adminOrders().then(function(d){var h='<table class="admin-table"><tr><th>ID</th><th>کاربر</th><th>نوع</th><th>مبلغ</th><th>وضعیت</th><th>تاریخ</th></tr>';(d.orders||[]).forEach(function(o){h+='<tr><td dir="ltr">'+esc(o.id)+'</td><td>'+esc(o.name||o.email)+'</td><td>'+esc(o.type)+'</td><td>'+Number(o.amount||0).toLocaleString("fa-IR")+'</td><td>'+esc(o.status)+'</td><td>'+new Date(o.created_at).toLocaleString("fa-IR")+'</td></tr>'});table.innerHTML=h+"</table>"})}
+document.getElementById("refreshBtn").onclick=load;document.getElementById("usersBtn").onclick=loadUsers;document.getElementById("ordersBtn").onclick=loadOrders;load();
+})();
+</script>
+</body>
+</html>

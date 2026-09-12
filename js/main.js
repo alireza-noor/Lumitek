@@ -1405,6 +1405,7 @@ function buyPackage(id) {
     title: fa ? pkg.name.fa : pkg.name.en,
     desc: (fa ? "شارژ " : "Top-up: ") + pkg.coins.toLocaleString(fa ? "fa-IR" : "en-US") + " 🪙",
     amount: pkg.price,
+    productId: pkg.id,
     successText: fa ? "سکه‌ها به حساب شما اضافه شد." : "Coins added to your account.",
     onSuccess: function () {
       applyPackagePurchase(id);
@@ -1421,6 +1422,7 @@ function buyVip() {
     title: fa ? "اشتراک VIP لومیتک" : "Lumitek VIP",
     desc: fa ? "۳۰ روز عضویت ویژه" : "30 days of VIP perks",
     amount: VIP_PLAN.price,
+    productId: "vip-30",
     successText: fa ? "اشتراک VIP شما فعال شد." : "Your VIP subscription is active.",
     onSuccess: function () {
       applyVipPurchase();
@@ -2496,6 +2498,28 @@ function setupNewsletter() {
    درگاه نمایشی کامل با رسید و کد پیگیری. برای اتصال واقعی:
    LUMITEK_PAY_CONFIG را در بالای همین فایل با merchant زرین‌پال/آیدی‌پی ست کن. */
 function openCheckout(opts) {
+  if (window.LumiBackend && LumiBackend.enabled()) {
+    var isDonation = !!(opts && opts.type === "donation");
+    var current = window.LumiAuth && LumiAuth.currentUser ? LumiAuth.currentUser() : null;
+    LumiBackend.paymentCreate({
+      type: isDonation ? "donation" : "purchase",
+      productId: opts && opts.productId ? opts.productId : "",
+      amount: opts && opts.amount ? opts.amount : 0,
+      currency: "IRR",
+      supporterName: opts && opts.supporterName ? opts.supporterName : ""
+    }).then(function(res) {
+      if (res && res.paymentUrl) {
+        window.location.href = res.paymentUrl;
+        return;
+      }
+      alert(getLang() === "fa"
+        ? "پرداخت آنلاین هنوز درگاه واقعی ندارد. ابتدا درگاه را در Backend تنظیم کن."
+        : "Online payment is not connected yet. Configure the payment gateway in the backend first.");
+    }).catch(function(err) {
+      alert((err && err.message) || (getLang() === "fa" ? "شروع پرداخت ممکن نشد." : "Could not start payment."));
+    });
+    return;
+  }
   const old = document.getElementById("lumiCheckout");
   if (old) old.remove();
   const fa = getLang() === "fa";
@@ -2873,8 +2897,8 @@ document.addEventListener("DOMContentLoaded", function() {
   const notifyFirst = localStorage.getItem("lumitek_first_notice_v21");
   if (!notifyFirst) {
     addNotification("🛠️", getLang() === "fa"
-      ? "Lumitek 0.2.1 نصب شد: چرخش بی‌وقفه و یک‌ردیفی بازی‌های محبوب، موج‌های پیوسته و درخشان، جست‌وجو فقط در صفحه اصلی و پانوشت تمیزتر."
-      : "Lumitek 0.2.1 is out: a single seamless row of rotating popular games, solid glowing waves, search on the homepage only and a cleaner footer.");
+      ? "Lumitek 0.3.0 نصب شد: چرخش بی‌وقفه و یک‌ردیفی بازی‌های محبوب، موج‌های پیوسته و درخشان، جست‌وجو فقط در صفحه اصلی و پانوشت تمیزتر."
+      : "Lumitek 0.3.0 is out: a single seamless row of rotating popular games, solid glowing waves, search on the homepage only and a cleaner footer.");
     localStorage.setItem("lumitek_first_notice_v21", "1");
   }
 });

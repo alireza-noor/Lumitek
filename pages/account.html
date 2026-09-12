@@ -97,6 +97,7 @@
   </div>
 </div>
 
+<div id="adminShortcut" style="max-width:1100px;margin:16px auto 0;padding:0 18px;display:none"><a class="ghost-btn" href="admin.html">👑 پنل مدیریت</a></div>
 <main class="page">
 <p class="eyebrow">LUMITEK ACCOUNT</p>
 <h1 style="margin-top:0" data-i18n="acc.h1">👤 حساب کاربری من</h1>
@@ -195,6 +196,8 @@
 
 
 
+<script src="../js/backend-config.js"></script>
+<script src="../js/backend.js"></script>
 <script src="../js/i18n.js"></script>
 <script src="../js/auth.js"></script>
 
@@ -507,5 +510,10 @@
 <span class="dw-text"><b>حمایت</b><small>اختیاری</small></span>
 </a>
 </div>
+<script>
+document.addEventListener("DOMContentLoaded",function(){
+  try{var u=window.LumiAuth&&LumiAuth.currentUser&&LumiAuth.currentUser();if(u&&u.role==="admin")document.getElementById("adminShortcut").style.display="block"}catch(e){}
+});
+</script>
 </body>
 </html>
