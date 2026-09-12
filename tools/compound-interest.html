@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>📈 محاسبه سود مرکب | ابزارهای Lumitek</title>
+<meta name="description" content="محاسبه سود مرکب سپرده با دوره‌های سالانه، ماهانه و روزانه + نمودار رشد سالانه — آفلاین.">
+<meta name="keywords" content="لومیتک, lumitek, ابزار آنلاین, بازی آنلاین, اخبار ورزش, پشتیبانی هوش مصنوعی, خرید سکه, وب اپلیکیشن">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#070b15">
+<link rel="canonical" href="https://lumitek.netlify.app/tools/compound-interest.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Lumitek">
+<meta property="og:title" content="📈 محاسبه سود مرکب | ابزارهای Lumitek">
+<meta property="og:description" content="محاسبه سود مرکب سپرده با دوره‌های سالانه، ماهانه و روزانه + نمودار رشد سالانه — آفلاین.">
+<meta property="og:url" content="https://lumitek.netlify.app/tools/compound-interest.html">
+<meta property="og:image" content="https://lumitek.netlify.app/assets/icons/og-cover.png">
+<meta property="og:locale" content="fa_IR">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="📈 محاسبه سود مرکب | ابزارهای Lumitek">
+<meta name="twitter:description" content="محاسبه سود مرکب سپرده با دوره‌های سالانه، ماهانه و روزانه + نمودار رشد سالانه — آفلاین.">
+<meta name="twitter:image" content="https://lumitek.netlify.app/assets/icons/og-cover.png">
+<link rel="icon" type="image/png" href="../assets/icons/logo-lt.png">
+<link rel="apple-touch-icon" href="../assets/icons/logo-lt.png">
+<link rel="manifest" href="../manifest.json">
+<link rel="preconnect" href="https://fontnegar.ir/" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fontnegar.ir/css2?family=shabnam:wght@100;300;400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="../css/style.css">
+<script>try{var t=localStorage.getItem("lumitek_theme");if(t==="light")document.documentElement.classList.add("light");var l=localStorage.getItem("lumitek_lang");if(l==="en"){document.documentElement.lang="en";document.documentElement.dir="ltr"}else{document.documentElement.lang="fa";document.documentElement.dir="rtl"}}catch(e){}</script>
+</head>
+<body>
+<div id="offlineBanner" class="offline-banner" data-i18n="offline.banner">🔌 حالت آفلاین — صفحه‌ها و بازی‌ها از حافظه اجرا می‌شوند و اخبار از آخرین نسخه ذخیره‌شده نمایش داده می‌شوند.</div>
+<!--LT5-CHROME-->
+<header class="site-header">
+  <a class="brand" href="../index.html"><img class="brand-logo" src="../assets/icons/logo-lt.png" alt="Lumitek" width="46" height="46"><span class="brand-word">Lumitek</span></a>
+  <nav class="main-nav" id="mainNav">
+    <a href="../index.html" data-i18n="nav.home">خانه</a>
+    <a href="../pages/tools.html" data-i18n="nav.tools">ابزار</a>
+    <a href="../pages/games.html" data-i18n="nav.games">بازی‌ها</a>
+    <a href="../pages/store.html" data-i18n="nav.store">فروشگاه</a>
+    <a href="../pages/sports.html" data-i18n="nav.sports">اسپورتک</a>
+    <a href="../pages/digital-news.html" data-i18n="nav.digitalnews">اخبار دیجیتال</a>
+    <a href="../pages/ai.html" data-i18n="nav.ai">لومیتک ای‌آی</a>
+    <a href="../pages/download.html" data-i18n="nav.download">دانلود</a>
+    <a href="../pages/articles.html" data-i18n="nav.articles">مقالات</a>
+    <a href="../pages/announcements.html" data-i18n="nav.updates">تغییرات</a>
+    <a href="../pages/about.html" data-i18n="nav.about">درباره ما</a>
+    <a href="../pages/contact.html" data-i18n="nav.contact">تماس با ما</a>
+    <a href="../pages/donate.html" class="nav-donate-link" data-i18n="nav.donate">حمایت مالی</a>
+    <a href="../pages/support.html" data-i18n="nav.supportE">پشتیبانی</a>
+  </nav>
+  <div class="header-actions">
+    <button id="languageToggle" class="icon-btn" data-i18n-title="nav.home" title="Language">EN</button>
+    <button id="themeToggle" class="icon-btn" aria-label="Theme">☀️</button>
+    <button id="notificationButton" class="icon-btn notification-btn">🔔<span id="notificationCount">0</span></button>
+    <button id="changelogButton" class="icon-btn" aria-label="Changelog" title="تغییرات">🕒</button>
+    <button id="profileButton" class="profile-btn"><span data-profile-avatar>🙂</span> <span data-profile-name>Lumitek User</span></button>
+    <button id="menuToggle" class="icon-btn menu-toggle" aria-label="Menu">☰</button>
+  </div>
+</header>
+<div id="notificationPanel" class="notification-panel">
+  <div class="panel-title" data-i18n="notif.title">اعلان‌ها</div>
+  <div id="notificationList"></div>
+</div>
+<div id="changelogPanel" class="notification-panel changelog-panel">
+  <div class="panel-title" data-i18n="ch.title">🕒 تغییرات نسخه‌ها</div>
+  <div id="changelogList"></div>
+  <a class="cl-all" href="../pages/announcements.html" data-i18n="ch.all">مشاهده همه تغییرات →</a>
+</div>
+<div id="profileModal" class="modal">
+  <div class="modal-card">
+    <button id="profileClose" class="modal-close">×</button>
+    <div class="pm-head"><span class="pm-avatar" data-profile-avatar>🙂</span><div><h2 data-i18n="pm.title">پروفایل کاربر</h2><span class="pm-title" data-profile-title>تازه‌کار</span></div></div>
+    <label data-i18n="pm.nameLabel">نام نمایشی</label>
+    <input id="profileNameInput" maxlength="24" data-i18n-ph="pm.namePh" placeholder="نام شما">
+    <div class="xpbar"><div class="xpbar-fill" data-profile-xpbar style="width:0%"></div></div>
+    <p class="muted" style="font-size:.75rem;margin:0 0 10px" data-profile-xptext>0 / 100 XP</p>
+    <div class="profile-stats">
+      <div><span data-i18n="coins.level">سطح</span><strong data-profile-level>1</strong></div>
+      <div><span data-i18n="acc.xp">XP</span><strong data-profile-xp>0</strong></div>
+      <div><span data-i18n="coins.unit">سکه</span><strong data-profile-coins>0</strong></div>
+      <div><span data-i18n="pm.games">بازی‌ها</span><strong data-games-played>0</strong></div>
+    </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <button id="profileSave" class="primary-btn" data-i18n="pm.save" style="flex:1">ذخیره</button>
+      <a class="ghost-btn" href="../pages/account.html" data-i18n="pm.fullAccount">حساب کامل</a>
+    </div>
+    <div class="pm-auth-row" id="pmAuthArea">
+      <button id="pmAuthButton" class="primary-btn" data-i18n="pm.signIn" data-auth-open>🔓 ورود / ثبت‌نام</button>
+      <span class="auth-email" id="pmAuthEmail" style="display:none"></span>
+      <button id="pmLogout" class="ghost-btn" style="display:none" data-i18n="pm.signOut">خروج</button>
+    </div>
+  </div>
+</div>
+
+<main class="page">
+<p class="eyebrow">LUMITEK TOOL</p>
+<h1 id="t-title">📈 محاسبه سود مرکب</h1>
+<p class="muted" id="t-lead">سپرده اولیه، نرخ سالانه و دوره‌های مرکب — با ورود ماهانه اختیاری و نمودار رشد سالانه.</p>
+
+<div class="grid mt2" style="grid-template-columns:1fr 1.3fr">
+  <div class="card">
+    <h3 id="fT">پارامترها</h3>
+    <label id="l-p">سرمایه اولیه</label>
+    <input id="p" class="input" type="number" value="10000000" min="0" step="100000">
+    <label id="l-r">نرخ سالانه (٪)</label>
+    <input id="r" class="input" type="number" value="22" min="0" max="500" step="0.1">
+    <label id="l-n">دوره‌های مرکب در سال</label>
+    <select id="n" class="select">
+      <option value="1" id="n1">سالانه (۱)</option>
+      <option value="2" id="n2">نیم‌سالانه (۲)</option>
+      <option value="4" id="n4">فصلی (۴)</option>
+      <option value="12" id="n12" selected>ماهانه (۱۲)</option>
+      <option value="365" id="n365">روزانه (۳۶۵)</option>
+    </select>
+    <label id="l-t">مدت (سال)</label>
+    <input id="t" class="input" type="number" value="5" min="1" max="60" step="1">
+    <label id="l-pmt">ورود ماهانه (اختیاری)</label>
+    <input id="pmt" class="input" type="number" value="0" min="0" step="10000">
+  </div>
+  <div class="card">
+    <h3 id="rT">نتیجه نهایی</h3>
+    <div class="result mt"><h2 id="final" style="margin:0">—</h2><p class="muted" id="finalL" style="margin:0;font-size:.78rem">مجموع نهایی</p></div>
+    <div class="stat-tiles mt">
+      <div class="stat-tile"><b id="sPrincipal">—</b><span id="l-prin">سرمایه اولیه</span></div>
+      <div class="stat-tile"><b id="sInterest">—</b><span id="l-int">سود کسب‌شده</span></div>
+      <div class="stat-tile"><b id="sContrib">—</b><span id="l-contrib">مجموع ورودی‌ها</span></div>
+      <div class="stat-tile"><b id="sMul">—</b><span id="l-mul">ضریب رشد</span></div>
+    </div>
+    <div class="data-row" style="margin-top:10px"><span id="l-apr">نرخ موثر سالانه (APR)</span><b id="apr">—</b></div>
+    <div class="data-row"><span id="l-avg">سود متوسط سالانه</span><b id="avg">—</b></div>
+    <p class="muted" style="font-size:.72rem;margin:10px 0 0" id="l-note">⚠️ این محاسبه فرضی است و مالیات و تورم را لحاظ نمی‌کند.</p>
+  </div>
+</div>
+
+<div class="card mt">
+  <h3 id="chartT" style="margin-top:0">📊 نمودار رشد سالانه</h3>
+  <canvas id="chart" width="800" height="280" style="width:100%;height:auto;display:block"></canvas>
+</div>
+
+<div class="card mt">
+  <h3 id="tblT" style="margin-top:0">📋 جدول رشد سال‌به‌سال</h3>
+  <div style="overflow-x:auto">
+    <table style="width:100%;font-size:.82rem;border-collapse:collapse" id="table">
+      <thead><tr>
+        <th style="text-align:right;padding:6px;border-bottom:1px solid var(--bd)" id="th-y">سال</th>
+        <th style="text-align:left;padding:6px;border-bottom:1px solid var(--bd)" id="th-bal">موجودی</th>
+        <th style="text-align:left;padding:6px;border-bottom:1px solid var(--bd)" id="th-int">سود سال</th>
+        <th style="text-align:left;padding:6px;border-bottom:1px solid var(--bd)" id="th-cont">ورودی‌ها</th>
+      </tr></thead>
+      <tbody id="tbody"></tbody>
+    </table>
+  </div>
+</div>
+</main>
+
+
+
+<script src="../js/i18n.js"></script>
+<script src="../js/auth.js"></script>
+
+
+
+
+<footer class="footer-v2">
+  <div class="fv-grid">
+    <div>
+      <div class="fv-brand"><img class="brand-logo" src="../assets/icons/logo-lt.png" alt="Lumitek" width="34" height="34"><span class="brand-word">Lumitek</span></div>
+      <p data-i18n="footer.tag">همه ابزارها و بازی‌های مورد نیازت، سریع و ساده — همه‌جا با هم.</p>
+      <span class="vip-badge" style="display:inline-flex">v0.2.1 · PWA</span>
+    </div>
+    <div>
+      <h4 data-i18n="footer.explore">کاوش</h4>
+      <ul>
+        <li><a href="../pages/digital-news.html" data-i18n="footer.newsLink">اخبار دیجیتال</a></li>
+        <li><a href="../pages/articles.html" class="nav-mid" data-i18n="nav.articles">مقالات</a></li>
+        <li><a href="../pages/announcements.html" class="nav-mid" data-i18n="nav.updates">تغییرات</a></li>
+        <li><a href="../pages/about.html" data-i18n="nav.about">درباره ما</a></li>
+        <li><a href="../pages/contact.html" data-i18n="nav.contact">تماس با ما</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-i18n="footer.services">خدمات</h4>
+      <ul>
+        <li><a href="../pages/store.html" data-i18n="nav.store">فروشگاه</a></li>
+        <li><a href="../pages/store.html#coins" data-i18n="nav.coins">خرید سکه</a></li>
+        <li><a href="../pages/account.html" data-i18n="nav.account">حساب کاربری</a></li>
+        <li><a href="../pages/download.html" class="nav-mid2" data-i18n="nav.download">دانلود اپ</a></li>
+        <li><a href="../pages/donate.html" style="color:var(--a)" data-i18n="nav.donate">حمایت مالی</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-i18n="footer.newsletter">خبرنامه Lumitek</h4>
+      <p data-i18n="footer.newsText">از امکانات جدید زودتر باخبر شو.</p>
+      <form class="news-row" id="newsletterForm">
+        <input type="email" required data-i18n-ph="footer.newsPh" placeholder="ایمیل شما" aria-label="email">
+        <button type="submit" data-i18n="footer.newsBtn">عضویت</button>
+      </form>
+    </div>
+  </div>
+    <div class="fv-social">
+    <div class="fv-social-title" data-i18n="footer.socialT">ما را در شبکه‌های اجتماعی دنبال کنید</div>
+    <div class="fv-social-row">
+      <a href="https://ble.ir/lumitek" target="_blank" rel="noopener" title="بله" aria-label="Bale">
+        <img src="../assets/icons/bale.svg" width="30" height="30" alt="بله" loading="lazy">
+        </a>
+      <a href="https://eitaa.com/lumitek" target="_blank" rel="noopener" title="ایتا" aria-label="Eitaa">
+        <img src="../assets/icons/eitaa.svg" width="30" height="30" alt="ایتا" loading="lazy">
+        </a>
+    </div>
+  </div>
+  <div class="fv-bottom">
+    <span data-i18n="footer.rights">© 2026 Lumitek — همه حقوق محفوظ است.</span>
+    <span data-i18n="footer.made">ساخته‌شده با ❤ و بدون فریم‌ورک</span>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script>
+(function(){
+  var fa = {
+    "t-title": "📈 محاسبه سود مرکب", "t-lead": "سپرده اولیه، نرخ سالانه و دوره‌های مرکب — با ورود ماهانه اختیاری و نمودار رشد سالانه.",
+    "fT": "پارامترها", "rT": "نتیجه نهایی",
+    "l-p": "سرمایه اولیه", "l-r": "نرخ سالانه (٪)", "l-n": "دوره‌های مرکب در سال",
+    "l-t": "مدت (سال)", "l-pmt": "ورود ماهانه (اختیاری)",
+    "n1": "سالانه (۱)", "n2": "نیم‌سالانه (۲)", "n4": "فصلی (۴)", "n12": "ماهانه (۱۲)", "n365": "روزانه (۳۶۵)",
+    "finalL": "مجموع نهایی",
+    "l-prin": "سرمایه اولیه", "l-int": "سود کسب‌شده", "l-contrib": "مجموع ورودی‌ها", "l-mul": "ضریب رشد",
+    "l-apr": "نرخ موثر سالانه (APR)", "l-avg": "سود متوسط سالانه",
+    "l-note": "⚠️ این محاسبه فرضی است و مالیات و تورم را لحاظ نمی‌کند.",
+    "chartT": "📊 نمودار رشد سالانه",
+    "tblT": "📋 جدول رشد سال‌به‌سال",
+    "th-y": "سال", "th-bal": "موجودی", "th-int": "سود سال", "th-cont": "ورودی‌ها"
+  };
+  var en = {
+    "t-title": "📈 Compound Interest Calculator", "t-lead": "Initial principal, annual rate and compounding periods — with optional monthly contributions and growth chart.",
+    "fT": "Parameters", "rT": "Final result",
+    "l-p": "Initial principal", "l-r": "Annual rate (%)", "l-n": "Compounding periods / year",
+    "l-t": "Duration (years)", "l-pmt": "Monthly contribution (optional)",
+    "n1": "Annual (1)", "n2": "Semi-annual (2)", "n4": "Quarterly (4)", "n12": "Monthly (12)", "n365": "Daily (365)",
+    "finalL": "Final amount",
+    "l-prin": "Initial principal", "l-int": "Interest earned", "l-contrib": "Total contributions", "l-mul": "Growth multiple",
+    "l-apr": "Effective annual rate (APR)", "l-avg": "Avg. annual interest",
+    "l-note": "⚠️ This is a hypothetical calculation; tax and inflation are not included.",
+    "chartT": "📊 Yearly growth chart",
+    "tblT": "📋 Year-by-year table",
+    "th-y": "Year", "th-bal": "Balance", "th-int": "Year interest", "th-cont": "Contributions"
+  };
+
+  function fmt(n){ return Number(n).toLocaleString(getLang() === "fa" ? "fa-IR" : "en-US"); }
+  function num(id){ var v = parseFloat(document.getElementById(id).value); return isNaN(v) ? 0 : v; }
+
+  function apply() {
+    var d = getLang() === "fa" ? fa : en;
+    for (var k in d) {
+      var el = document.getElementById(k);
+      if (el) el.textContent = d[k];
+    }
+    calc();
+  }
+
+  function computeYearByYear(P, r, n, t, monthlyPmt) {
+    var years = [];
+    var balance = P;
+    var totalContrib = 0;
+    var prevBalance = P;
+    var i = r / 100 / n;
+    for (var y = 1; y <= t; y++) {
+      var yearInterest = 0;
+      var yearContrib = 0;
+      for (var m = 0; m < 12; m++) {
+        /* apply monthly contribution at start of month */
+        if (monthlyPmt > 0) {
+          balance += monthlyPmt;
+          yearContrib += monthlyPmt;
+          totalContrib += monthlyPmt;
+        }
+        /* compound n/12 times per month */
+        var periodsPerMonth = n / 12;
+        for (var k = 0; k < periodsPerMonth; k++) {
+          var before = balance;
+          balance = balance * (1 + i);
+          yearInterest += balance - before;
+        }
+      }
+      years.push({
+        year: y,
+        balance: balance,
+        yearInterest: yearInterest,
+        yearContrib: yearContrib
+      });
+      prevBalance = balance;
+    }
+    return { years: years, totalContrib: totalContrib, final: balance };
+  }
+
+  function calc() {
+    var P = Math.max(0, num("p"));
+    var r = num("r");
+    var n = parseInt(document.getElementById("n").value, 10) || 1;
+    var t = Math.max(1, Math.min(60, Math.floor(num("t"))));
+    var pmt = Math.max(0, num("pmt"));
+    if (P <= 0 && pmt <= 0) {
+      document.getElementById("final").textContent = "—";
+      return;
+    }
+    var res = computeYearByYear(P, r, n, t, pmt);
+    var finalBal = res.final;
+    var totalContrib = P + res.totalContrib;
+    var interest = finalBal - totalContrib;
+    var apr = (Math.pow(1 + r / 100 / n, n) - 1) * 100;
+    document.getElementById("final").textContent = fmt(Math.round(finalBal));
+    document.getElementById("sPrincipal").textContent = fmt(Math.round(P));
+    document.getElementById("sInterest").textContent = fmt(Math.round(interest));
+    document.getElementById("sContrib").textContent = fmt(Math.round(totalContrib));
+    document.getElementById("sMul").textContent = totalContrib ? "×" + (finalBal / totalContrib).toFixed(2) : "—";
+    document.getElementById("apr").textContent = apr.toFixed(2) + "٪";
+    document.getElementById("avg").textContent = fmt(Math.round(interest / t)) + "/سال";
+
+    /* table */
+    var tbody = document.getElementById("tbody");
+    tbody.innerHTML = "";
+    res.years.forEach(function(yr) {
+      var tr = document.createElement("tr");
+      tr.innerHTML = "<td style='text-align:right;padding:6px;border-bottom:1px solid var(--bd)'>" + yr.year + "</td>"
+        + "<td style='text-align:left;padding:6px;border-bottom:1px solid var(--bd)'>" + fmt(Math.round(yr.balance)) + "</td>"
+        + "<td style='text-align:left;padding:6px;border-bottom:1px solid var(--bd)'>" + fmt(Math.round(yr.yearInterest)) + "</td>"
+        + "<td style='text-align:left;padding:6px;border-bottom:1px solid var(--bd)'>" + fmt(Math.round(yr.yearContrib)) + "</td>";
+      tbody.appendChild(tr);
+    });
+    drawChart(res.years, P);
+  }
+
+  function drawChart(years, P) {
+    var canvas = document.getElementById("chart");
+    var ctx = canvas.getContext("2d");
+    var w = canvas.width, h = canvas.height;
+    ctx.clearRect(0, 0, w, h);
+    /* theme aware: get css var */
+    var cs = getComputedStyle(document.documentElement);
+    var fg = cs.getPropertyValue("--fg") || "#e6edf3";
+    var bd = cs.getPropertyValue("--bd") || "#1c2435";
+    var accent = cs.getPropertyValue("--a") || "#1EC8C4";
+    var accent2 = "#ffc861";
+    var pad = { l: 50, r: 20, t: 16, b: 30 };
+    var W = w - pad.l - pad.r;
+    var H = h - pad.t - pad.b;
+    var maxV = Math.max(P, years[years.length - 1].balance);
+    if (!maxV) maxV = 1;
+    /* axis lines */
+    ctx.strokeStyle = bd;
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(pad.l, pad.t);
+    ctx.lineTo(pad.l, pad.t + H);
+    ctx.lineTo(pad.l + W, pad.t + H);
+    ctx.stroke();
+    /* y labels */
+    ctx.fillStyle = fg;
+    ctx.font = "11px Inter, sans-serif";
+    ctx.textAlign = "right";
+    for (var i = 0; i <= 4; i++) {
+      var v = maxV * i / 4;
+      var y = pad.t + H - (H * i / 4);
+      ctx.fillText(Math.round(v).toLocaleString("en-US"), pad.l - 6, y + 3);
+      ctx.strokeStyle = bd;
+      ctx.globalAlpha = 0.3;
+      ctx.beginPath();
+      ctx.moveTo(pad.l, y);
+      ctx.lineTo(pad.l + W, y);
+      ctx.stroke();
+      ctx.globalAlpha = 1;
+    }
+    /* x labels */
+    ctx.textAlign = "center";
+    var stepX = W / Math.max(1, years.length - 1);
+    years.forEach(function(yr, idx) {
+      var x = pad.l + stepX * idx;
+      ctx.fillText(yr.year, x, pad.t + H + 16);
+    });
+    /* balance line + area */
+    ctx.beginPath();
+    years.forEach(function(yr, idx) {
+      var x = pad.l + stepX * idx;
+      var y = pad.t + H - (H * yr.balance / maxV);
+      if (idx === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+    });
+    /* area fill */
+    ctx.lineTo(pad.l + stepX * (years.length - 1), pad.t + H);
+    ctx.lineTo(pad.l, pad.t + H);
+    ctx.closePath();
+    ctx.fillStyle = accent;
+    ctx.globalAlpha = 0.18;
+    ctx.fill();
+    ctx.globalAlpha = 1;
+    /* line */
+    ctx.beginPath();
+    years.forEach(function(yr, idx) {
+      var x = pad.l + stepX * idx;
+      var y = pad.t + H - (H * yr.balance / maxV);
+      if (idx === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+    });
+    ctx.strokeStyle = accent;
+    ctx.lineWidth = 2.5;
+    ctx.stroke();
+    /* points */
+    years.forEach(function(yr, idx) {
+      var x = pad.l + stepX * idx;
+      var y = pad.t + H - (H * yr.balance / maxV);
+      ctx.beginPath();
+      ctx.arc(x, y, 3, 0, Math.PI * 2);
+      ctx.fillStyle = accent2;
+      ctx.fill();
+    });
+  }
+
+  ["p","r","n","t","pmt"].forEach(function(id){
+    var el = document.getElementById(id);
+    if (el) { el.addEventListener("input", calc); el.addEventListener("change", calc); }
+  });
+  document.addEventListener("lumitek:langchange", function(){ apply(); });
+  /* redraw chart on theme change (after css vars update) */
+  var themeObs = new MutationObserver(function(){
+    calc();
+  });
+  themeObs.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
+  apply();
+})();
+</script>
+<div class="donate-widget" id="donateWidget">
+<a class="donate-card" href="../pages/donate.html" title="حمایت از لومیتک" aria-label="حمایت مالی">
+<span class="dw-icon">❤️</span>
+<span class="dw-text"><b>حمایت</b><small>اختیاری</small></span>
+</a>
+</div>
+</body>
+</html>

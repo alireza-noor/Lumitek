@@ -21,8 +21,8 @@
 <meta name="twitter:title" content="🧰 ابزارهای Lumitek | ماشین‌حساب، تبدیل واحد، درصد، رمز عبور و...">
 <meta name="twitter:description" content="۱۱ ابزار آنلاین و آفلاین Lumitek: ماشین‌حساب مهندسی، تبدیل واحد، تاریخ و زمان، درصد، محاسبه سن، ابزار متن، تولید رمز عبور، کرنومتر، لیست کارها، BMI و محاسبه وام.">
 <meta name="twitter:image" content="https://lumitek.netlify.app/assets/icons/og-cover.png">
-<link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
-<link rel="apple-touch-icon" href="../assets/icons/icon-192.png">
+<link rel="icon" type="image/png" href="../assets/icons/logo-lt.png">
+<link rel="apple-touch-icon" href="../assets/icons/logo-lt.png">
 <link rel="manifest" href="../manifest.json">
 <link rel="preconnect" href="https://fontnegar.ir/" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,22 +38,20 @@
 <header class="site-header">
   <a class="brand" href="../index.html"><img class="brand-logo" src="../assets/icons/logo-lt.png" alt="Lumitek" width="46" height="46"><span class="brand-word">Lumitek</span></a>
   <nav class="main-nav" id="mainNav">
-    <a href="../index.html" data-i18n="nav.home">nav.home</a>
-    <a href="../pages/tools.html" data-i18n="nav.tools">nav.tools</a>
-    <a href="../pages/games.html" data-i18n="nav.games">nav.games</a>
-    <a href="../pages/store.html" data-i18n="nav.store">nav.store</a>
-    <a href="../pages/sports.html" data-i18n="nav.sports">nav.sports</a>
-    <a href="../pages/digital-news.html" data-i18n="nav.digitalnews">اخبار دیجیتال 📰</a>
-    <a href="../pages/ai.html" data-i18n="nav.ai">لومیتک ای‌آی ✨</a>
-    <a href="../pages/download.html" class="nav-mid2" data-i18n="nav.download">nav.download</a>
-    <a href="../pages/technology.html" class="nav-extra" data-i18n="nav.tech">nav.tech</a>
-    <a href="../pages/articles.html" class="nav-mid" data-i18n="nav.articles">nav.articles</a>
-    <a href="../pages/announcements.html" class="nav-mid" data-i18n="nav.updates">nav.updates</a>
-    <a href="../pages/about.html" class="nav-extra" data-i18n="nav.about">nav.about</a>
-    <a href="../pages/contact.html" class="nav-extra" data-i18n="nav.contact">nav.contact</a>
-    <a href="../pages/account.html" class="nav-extra" data-i18n="nav.account">nav.account</a>
-    <a href="../pages/donate.html" class="nav-extra" data-i18n="nav.donate">nav.donate</a>
-    <a href="../pages/support.html" data-i18n="nav.supportE">nav.supportE</a>
+    <a href="../index.html" data-i18n="nav.home">خانه</a>
+    <a href="../pages/tools.html" data-i18n="nav.tools">ابزار</a>
+    <a href="../pages/games.html" data-i18n="nav.games">بازی‌ها</a>
+    <a href="../pages/store.html" data-i18n="nav.store">فروشگاه</a>
+    <a href="../pages/sports.html" data-i18n="nav.sports">اسپورتک</a>
+    <a href="../pages/digital-news.html" data-i18n="nav.digitalnews">اخبار دیجیتال</a>
+    <a href="../pages/ai.html" data-i18n="nav.ai">لومیتک ای‌آی</a>
+    <a href="../pages/download.html" data-i18n="nav.download">دانلود</a>
+    <a href="../pages/articles.html" data-i18n="nav.articles">مقالات</a>
+    <a href="../pages/announcements.html" data-i18n="nav.updates">تغییرات</a>
+    <a href="../pages/about.html" data-i18n="nav.about">درباره ما</a>
+    <a href="../pages/contact.html" data-i18n="nav.contact">تماس با ما</a>
+    <a href="../pages/donate.html" class="nav-donate-link" data-i18n="nav.donate">حمایت مالی</a>
+    <a href="../pages/support.html" data-i18n="nav.supportE">پشتیبانی</a>
   </nav>
   <div class="header-actions">
     <button id="languageToggle" class="icon-btn" data-i18n-title="nav.home" title="Language">EN</button>
@@ -99,11 +97,177 @@
   </div>
 </div>
 
-<div class="search-wrap">
-<input id="globalSearchInput" type="search" data-i18n-ph="head.searchPh" placeholder="جستجو..." aria-label="Search">
-<div id="searchResults" class="search-results"></div>
+<main class="page"><p class="eyebrow">LUMITEK TOOLS</p><h1 data-i18n="tools.h1">ابزارهایی که کار را انجام می‌دهند.</h1><p class="muted" data-i18n="tools.lead">۳۷ ابزار کاربردی، سریع و کاملاً آفلاین — بدون ارسال داده به هیچ سروری.</p>
+
+<div class="tool-cat-tabs" id="toolCatTabs">
+  <button data-cat="all" class="active">🗂️ همه</button>
+  <button data-cat="math">🧮 ریاضی</button>
+  <button data-cat="physics">⚛️ فیزیک</button>
+  <button data-cat="text">✍️ زبان و متن</button>
+  <button data-cat="time">🕒 زمان و تاریخ</button>
+  <button data-cat="finance">💰 مالی و اقتصادی</button>
+  <button data-cat="health">⚖️ سلامت</button>
+  <button data-cat="dev">⚙️ توسعه‌دهنده</button>
+  <button data-cat="media">🎨 رنگ و رسانه</button>
+  <button data-cat="productivity">📋 بهره‌وری</button>
+  <button data-cat="fun">🎲 سرگرمی</button>
 </div>
-<main class="page"><p class="eyebrow">LUMITEK TOOLS</p><h1 data-i18n="tools.h1">ابزارهایی که کار را انجام می‌دهند.</h1><p class="muted" data-i18n="tools.lead">۳۷ ابزار کاربردی، سریع و کاملاً آفلاین — بدون ارسال داده به هیچ سروری.</p><div class="grid" style="margin-top:35px"><a class="card" href="../tools/calculator.html"><span class="tag" data-i18n="tools.tagReady">آماده</span><h3 data-i18n="tools.calc.t">🧮 ماشین‌حساب پیشرفته</h3><p class="muted" data-i18n="tools.calc.d">حالت‌های مهندسی، علمی، آمار و عبارت.</p></a><a class="card" href="../tools/converter.html"><span class="tag" data-i18n="tools.tagReady">آماده</span><h3 data-i18n="tools.conv.t">📏 تبدیل واحد</h3><p class="muted" data-i18n="tools.conv.d">طول، جرم، دما، مساحت و سرعت.</p></a><a class="card" href="../tools/date-time.html"><span class="tag" data-i18n="tools.tagReady">آماده</span><h3 data-i18n="tools.date.t">🕒 تاریخ و زمان</h3><p class="muted" data-i18n="tools.date.d">زمان زنده، تاریخ شمسی/میلادی و ابزارهای زمانی.</p></a><a class="card" href="../tools/percent.html"><span class="tag" style="background:linear-gradient(135deg,var(--a),var(--b));color:#061018" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.pct.t">％ درصد و تخفیف</h3><p class="muted" data-i18n="tools.pct.d">درصد، تخفیف، افزایش و کاهش.</p></a><a class="card" href="../tools/age.html"><span class="tag" style="background:linear-gradient(135deg,var(--a),var(--b));color:#061018" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.age.t">🎂 محاسبه سن</h3><p class="muted" data-i18n="tools.age.d">سن دقیق، روزهای زندگی و فاصله دو تاریخ.</p></a><a class="card" href="../tools/text-tools.html"><span class="tag" style="background:linear-gradient(135deg,var(--a),var(--b));color:#061018" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.text.t">✍️ ابزار متن</h3><p class="muted" data-i18n="tools.text.d">شمارش کلمه/کاراکتر، تبدیل حروف و ابزارهای متن.</p></a><a class="card" href="../tools/password.html"><span class="tag" style="background:linear-gradient(135deg,var(--a),var(--b));color:#061018" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.pass.t">🔐 تولید رمز عبور</h3><p class="muted" data-i18n="tools.pass.d">رمز امن با طول و کاراکتر دلخواه + سنجش قدرت.</p></a><a class="card" href="../tools/stopwatch.html"><span class="tag" style="background:linear-gradient(135deg,var(--a),var(--b));color:#061018" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.stop.t">⏱️ کرنومتر و تایمر</h3><p class="muted" data-i18n="tools.stop.d">کرنومتر با دورها، تایمر معکوس و هشدار.</p></a><a class="card" href="../tools/todo.html"><span class="tag" style="background:linear-gradient(135deg,var(--a),var(--b));color:#061018" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.todo.t">📝 لیست کارها</h3><p class="muted" data-i18n="tools.todo.d">کارهایت را مدیریت کن — ذخیره خودکار روی مرورگر.</p></a><a class="card" href="../tools/bmi.html"><span class="tag" style="background:linear-gradient(135deg,var(--a),var(--b));color:#061018" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.bmi.t">⚖️ BMI و سلامت</h3><p class="muted" data-i18n="tools.bmi.d">شاخص توده بدنی، کالری پایه و وضعیت سلامت.</p></a><a class="card" href="../tools/calendar.html"><span class="tag" style="background:linear-gradient(135deg,var(--a),var(--b));color:#061018" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.cal.t">📅 تقویم ایران</h3><p class="muted" data-i18n="tools.cal.d">تقویم شمسی با پیمایش ماه، امروز و تبدیل سه‌گانه تاریخ.</p></a><a class="card" href="../tools/prayer-times.html"><span class="tag" style="background:linear-gradient(135deg,var(--a),var(--b));color:#061018" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.pray.t">🕌 اوقات شرعی</h3><p class="muted" data-i18n="tools.pray.d">اوقات نماز ۲۰ شهر ایران — محاسبه دقیق آفلاین.</p></a><a class="card" href="../tools/world-clock.html"><span class="tag" style="background:linear-gradient(135deg,var(--a),var(--b));color:#061018" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.world.t">🌍 ساعت جهانی</h3><p class="muted" data-i18n="tools.world.d">ساعت زنده ۲۰ شهر مهم دنیا با تاریخ محلی.</p></a><a class="card" href="../tools/statistics.html"><span class="tag" style="background:linear-gradient(135deg,var(--a),var(--b));color:#061018" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.stat.t">📊 آمار و احتمال</h3><p class="muted" data-i18n="tools.stat.d">میانگین، میانه، واریانس، انحراف معیار، ترکیب و جایگشت.</p></a><a class="card" href="../tools/function-plot.html"><span class="tag" style="background:linear-gradient(135deg,var(--a),var(--b));color:#061018" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.plot.t">📈 رسم نمودار</h3><p class="muted" data-i18n="tools.plot.d">نمودار توابع ریاضی روی صفحه با زوم و جابه‌جایی.</p></a><a class="card" href="../tools/equations.html"><span class="tag" style="background:linear-gradient(135deg,var(--a),var(--b));color:#061018" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.eq.t">🧩 حل معادله</h3><p class="muted" data-i18n="tools.eq.d">معادله خطی، درجه دوم و دستگاه ۲ و ۳ معادله.</p></a><a class="card" href="../tools/matrix.html"><span class="tag" style="background:linear-gradient(135deg,var(--a),var(--b));color:#061018" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.mat.t">🔢 ماتریس و بردار</h3><p class="muted" data-i18n="tools.mat.d">دترمینان، معکوس، ضرب، ترانهاده و عملیات بردار.</p></a><a class="card" href="../tools/deposit.html"><span class="tag" style="background:linear-gradient(135deg,var(--a),var(--b));color:#061018" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.dep.t">🏦 سود سپرده</h3><p class="muted" data-i18n="tools.dep.d">سود ساده و مرکب سپرده بانکی با دوره دلخواه.</p></a><a class="card" href="../tools/physics.html"><span class="tag" style="background:linear-gradient(135deg,var(--a),var(--b));color:#061018" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.phy.t">⚛️ فیزیک و حل مسئله</h3><p class="muted" data-i18n="tools.phy.d">حرکت، نیرو، انرژی، برق، چگالی و پرتابه — حل‌گر گام‌به‌گام.</p></a><a class="card" href="../tools/loan.html"><span class="tag" style="background:linear-gradient(135deg,var(--a),var(--b));color:#061018" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.loan.t">🏦 محاسبه وام</h3><p class="muted" data-i18n="tools.loan.d">قسط ماهانه وام، سود کل و جدول اقساط.</p></a><a class="card" href="../tools/typing.html"><span class="tag" style="background:linear-gradient(135deg,var(--a),var(--b));color:#061018" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.typing.t">⌨️ تایپ‌سنجی</h3><p class="muted" data-i18n="tools.typing.d">آزمون سرعت تایپ با WPM، دقت و رکورد.</p></a><a class="card" href="../tools/pomodoro.html"><span class="tag" style="background:linear-gradient(135deg,var(--a),var(--b));color:#061018" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.pomo.t">🍅 تایمر پومودورو</h3><p class="muted" data-i18n="tools.pomo.d">تمرکز ۲۵ دقیقه‌ای با استراحت — حلقه پیشرفت و زنگ.</p></a><a class="card" href="../tools/colors.html"><span class="tag" style="background:linear-gradient(135deg,var(--a),var(--b));color:#061018" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.color.t">🎨 رنگ‌ساز و پالت</h3><p class="muted" data-i18n="tools.color.d">HEX/RGB/HSL، سایه‌ها، هارمونی و گرادیان.</p></a><a class="card" href="../tools/basehash.html"><span class="tag" style="background:linear-gradient(135deg,var(--a),var(--b));color:#061018" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.base.t">🔢 مبدل مبنا و هش</h3><p class="muted" data-i18n="tools.base.d">دودویی/شانزده‌شانزدهی، Base64 و هش SHA-256.</p></a><a class="card" href="../tools/wheel.html"><span class="tag" style="background:linear-gradient(135deg,var(--a),var(--b));color:#061018" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.wheel.t">🎡 چرخ شانس و قرعه‌کشی</h3><p class="muted" data-i18n="tools.wheel.d">گزینه‌ها را بده، چرخ بچرخد و برنده را انتخاب کن.</p></a><a class="card" href="../tools/countdown.html"><span class="tag" style="background:linear-gradient(135deg,var(--a),var(--b));color:#061018" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.countd.t">⏳ شمارش معکوس</h3><p class="muted" data-i18n="tools.countd.d">تایمر معکوس تا تاریخ و ساعت دلخواه با پیش‌نمایش زنده.</p></a><a class="card" href="../tools/notes.html"><span class="tag" style="background:linear-gradient(135deg,var(--a),var(--b));color:#061018" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.notes.t">🗒️ یادداشت سریع</h3><p class="muted" data-i18n="tools.notes.d">یادداشت‌های چندگانه با ذخیره خودکار روی مرورگر.</p></a><a class="card" href="../tools/image-compress.html"><span class="tag" style="background:linear-gradient(135deg,var(--a),var(--b));color:#061018" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.imgc.t">🖼️ فشرده‌ساز عکس</h3><p class="muted" data-i18n="tools.imgc.d">حجم عکس را کم کن — کیفیت و سایز دلخواه، کاملاً داخل مرورگر.</p></a><a class="card" href="../tools/imgbase64.html"><span class="tag" style="background:linear-gradient(135deg,var(--a),var(--b));color:#061018" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.b64.t">🔁 عکس به Base64</h3><p class="muted" data-i18n="tools.b64.d">کد Data URL عکس بگیر یا از کد، عکس را ببین.</p></a><a class="card" href="../tools/speedtest.html"><span class="tag" style="background:linear-gradient(135deg,var(--a),var(--b));color:#061018" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.speed.t">📶 تست سرعت اینترنت</h3><p class="muted" data-i18n="tools.speed.d">پینگ، سرعت دانلود و آپلودت را در چند ثانیه بسنج.</p></a><a class="card" href="../tools/qr.html"><span class="tag" style="background:linear-gradient(135deg,var(--a),var(--b));color:#061018" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.qr.t">🔳 سازنده QR کد</h3><p class="muted" data-i18n="tools.qr.d">برای لینک و متن QR بساز، رنگ بده و PNG بگیر.</p></a><a class="card" href="../tools/tts.html"><span class="tag" style="background:linear-gradient(135deg,var(--a),var(--b));color:#061018" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.tts.t">🔊 متن به گفتار</h3><p class="muted" data-i18n="tools.tts.d">متن فارسی و انگلیسی را با صدای دستگاهت بخوان.</p></a><a class="card" href="../tools/json.html"><span class="tag" style="background:linear-gradient(135deg,var(--a),var(--b));color:#061018" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.json.t">🧾 فرمت‌کننده JSON</h3><p class="muted" data-i18n="tools.json.d">زیباسازی، فشرده‌سازی و اعتبارسنجی JSON — آفلاین.</p></a><a class="card" href="../tools/wordcount.html"><span class="tag" style="background:linear-gradient(135deg,var(--a),var(--b));color:#061018" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.wcnt.t">🔤 شمارشگر واژه‌ها</h3><p class="muted" data-i18n="tools.wcnt.d">واژه، حرف، جمله، زمان مطالعه و واژه‌های پرتکرار.</p></a><a class="card" href="../tools/regex.html"><span class="tag" style="background:linear-gradient(135deg,var(--a),var(--b));color:#061018" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.regex.t">🔍 آزمایشگر Regex</h3><p class="muted" data-i18n="tools.regex.d">تست زنده عبارات باقاعده با الگوهای آماده.</p></a><a class="card" href="../tools/gpa.html"><span class="tag" style="background:linear-gradient(135deg,var(--a),var(--b));color:#061018" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.gpa.t">🎓 محاسبه‌گر معدل</h3><p class="muted" data-i18n="tools.gpa.d">معدل وزنی با مقیاس ۲۰، ۱۰۰ و ۴٫۰ — ذخیره خودکار.</p></a><a class="card" href="../tools/translate.html"><span class="tag" style="background:linear-gradient(135deg,var(--a),var(--b));color:#061018" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.trans.t">🌍 مترجم هوشمند</h3><p class="muted" data-i18n="tools.trans.d">ترجمه روان فارسی، انگلیسی، عربی و ترکی.</p></a></div></main>
+
+<div class="tool-cat-section active" data-cat="all">
+  <div class="grid">
+    <a class="card" href="../tools/calculator.html"><span class="tag" data-i18n="tools.tagReady">آماده</span><h3 data-i18n="tools.calc.t">🧮 ماشین‌حساب پیشرفته</h3><p class="muted" data-i18n="tools.calc.d">حالت‌های مهندسی، علمی، آمار و عبارت.</p></a>
+    <a class="card" href="../tools/converter.html"><span class="tag" data-i18n="tools.tagReady">آماده</span><h3 data-i18n="tools.conv.t">📏 تبدیل واحد</h3><p class="muted" data-i18n="tools.conv.d">طول، جرم، دما، مساحت و سرعت.</p></a>
+    <a class="card" href="../tools/date-time.html"><span class="tag" data-i18n="tools.tagReady">آماده</span><h3 data-i18n="tools.date.t">🕒 تاریخ و زمان</h3><p class="muted" data-i18n="tools.date.d">زمان زنده، تاریخ شمسی/میلادی و ابزارهای زمانی.</p></a>
+    <a class="card" href="../tools/percent.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.pct.t">％ درصد و تخفیف</h3><p class="muted" data-i18n="tools.pct.d">درصد، تخفیف، افزایش و کاهش.</p></a>
+    <a class="card" href="../tools/age.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.age.t">🎂 محاسبه سن</h3><p class="muted" data-i18n="tools.age.d">سن دقیق، روزهای زندگی و فاصله دو تاریخ.</p></a>
+    <a class="card" href="../tools/text-tools.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.text.t">✍️ ابزار متن</h3><p class="muted" data-i18n="tools.text.d">شمارش کلمه/کاراکتر، تبدیل حروف و ابزارهای متن.</p></a>
+    <a class="card" href="../tools/password.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.pass.t">🔐 تولید رمز عبور</h3><p class="muted" data-i18n="tools.pass.d">رمز امن با طول و کاراکتر دلخواه + سنجش قدرت.</p></a>
+    <a class="card" href="../tools/stopwatch.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.stop.t">⏱️ کرنومتر و تایمر</h3><p class="muted" data-i18n="tools.stop.d">کرنومتر با دورها، تایمر معکوس و هشدار.</p></a>
+    <a class="card" href="../tools/todo.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.todo.t">📝 لیست کارها</h3><p class="muted" data-i18n="tools.todo.d">کارهایت را مدیریت کن — ذخیره خودکار روی مرورگر.</p></a>
+    <a class="card" href="../tools/bmi.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.bmi.t">⚖️ BMI و سلامت</h3><p class="muted" data-i18n="tools.bmi.d">شاخص توده بدنی، کالری پایه و وضعیت سلامت.</p></a>
+    <a class="card" href="../tools/calendar.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.cal.t">📅 تقویم ایران</h3><p class="muted" data-i18n="tools.cal.d">تقویم شمسی با پیمایش ماه، امروز و تبدیل سه‌گانه تاریخ.</p></a>
+    <a class="card" href="../tools/world-clock.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.world.t">🌍 ساعت جهانی</h3><p class="muted" data-i18n="tools.world.d">ساعت زنده ۲۰ شهر مهم دنیا با تاریخ محلی.</p></a>
+    <a class="card" href="../tools/statistics.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.stat.t">📊 آمار و احتمال</h3><p class="muted" data-i18n="tools.stat.d">میانگین، میانه، واریانس، انحراف معیار، ترکیب و جایگشت.</p></a>
+    <a class="card" href="../tools/function-plot.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.plot.t">📈 رسم نمودار</h3><p class="muted" data-i18n="tools.plot.d">نمودار توابع ریاضی روی صفحه با زوم و جابه‌جایی.</p></a>
+    <a class="card" href="../tools/equations.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.eq.t">🧩 حل معادله</h3><p class="muted" data-i18n="tools.eq.d">معادله خطی، درجه دوم و دستگاه ۲ و ۳ معادله.</p></a>
+    <a class="card" href="../tools/matrix.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.mat.t">🔢 ماتریس و بردار</h3><p class="muted" data-i18n="tools.mat.d">دترمینان، معکوس، ضرب، ترانهاده و عملیات بردار.</p></a>
+    <a class="card" href="../tools/deposit.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.dep.t">🏦 سود سپرده</h3><p class="muted" data-i18n="tools.dep.d">سود ساده و مرکب سپرده بانکی با دوره دلخواه.</p></a>
+    <a class="card" href="../tools/physics.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.phy.t">⚛️ فیزیک و حل مسئله</h3><p class="muted" data-i18n="tools.phy.d">حرکت، نیرو، انرژی، برق، چگالی و پرتابه — حل‌گر گام‌به‌گام.</p></a>
+    <a class="card" href="../tools/loan.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.loan.t">🏦 محاسبه وام</h3><p class="muted" data-i18n="tools.loan.d">قسط ماهانه وام، سود کل و جدول اقساط.</p></a>
+    <a class="card" href="../tools/typing.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.typing.t">⌨️ تایپ‌سنجی</h3><p class="muted" data-i18n="tools.typing.d">آزمون سرعت تایپ با WPM، دقت و رکورد.</p></a>
+    <a class="card" href="../tools/pomodoro.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.pomo.t">🍅 تایمر پومودورو</h3><p class="muted" data-i18n="tools.pomo.d">تمرکز ۲۵ دقیقه‌ای با استراحت — حلقه پیشرفت و زنگ.</p></a>
+    <a class="card" href="../tools/colors.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.color.t">🎨 رنگ‌ساز و پالت</h3><p class="muted" data-i18n="tools.color.d">HEX/RGB/HSL، سایه‌ها، هارمونی و گرادیان.</p></a>
+    <a class="card" href="../tools/basehash.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.base.t">🔢 مبدل مبنا و هش</h3><p class="muted" data-i18n="tools.base.d">دودویی/شانزده‌شانزدهی، Base64 و هش SHA-256.</p></a>
+    <a class="card" href="../tools/wheel.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.wheel.t">🎡 چرخ شانس و قرعه‌کشی</h3><p class="muted" data-i18n="tools.wheel.d">گزینه‌ها را بده، چرخ بچرخد و برنده را انتخاب کن.</p></a>
+    <a class="card" href="../tools/countdown.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.countd.t">⏳ شمارش معکوس</h3><p class="muted" data-i18n="tools.countd.d">تایمر معکوس تا تاریخ و ساعت دلخواه با پیش‌نمایش زنده.</p></a>
+    <a class="card" href="../tools/notes.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.notes.t">🗒️ یادداشت سریع</h3><p class="muted" data-i18n="tools.notes.d">یادداشت‌های چندگانه با ذخیره خودکار روی مرورگر.</p></a>
+    <a class="card" href="../tools/image-compress.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.imgc.t">🖼️ فشرده‌ساز عکس</h3><p class="muted" data-i18n="tools.imgc.d">حجم عکس را کم کن — کیفیت و سایز دلخواه، کاملاً داخل مرورگر.</p></a>
+    <a class="card" href="../tools/imgbase64.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.b64.t">🔁 عکس به Base64</h3><p class="muted" data-i18n="tools.b64.d">کد Data URL عکس بگیر یا از کد، عکس را ببین.</p></a>
+    <a class="card" href="../tools/speedtest.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.speed.t">📶 تست سرعت اینترنت</h3><p class="muted" data-i18n="tools.speed.d">پینگ، سرعت دانلود و آپلودت را در چند ثانیه بسنج.</p></a>
+    <a class="card" href="../tools/qr.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.qr.t">🔳 سازنده QR کد</h3><p class="muted" data-i18n="tools.qr.d">برای لینک و متن QR بساز، رنگ بده و PNG بگیر.</p></a>
+    <a class="card" href="../tools/tts.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.tts.t">🔊 متن به گفتار</h3><p class="muted" data-i18n="tools.tts.d">متن فارسی و انگلیسی را با صدای دستگاهت بخوان.</p></a>
+    <a class="card" href="../tools/json.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.json.t">🧾 فرمت‌کننده JSON</h3><p class="muted" data-i18n="tools.json.d">زیباسازی، فشرده‌سازی و اعتبارسنجی JSON — آفلاین.</p></a>
+    <a class="card" href="../tools/wordcount.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.wcnt.t">🔤 شمارشگر واژه‌ها</h3><p class="muted" data-i18n="tools.wcnt.d">واژه، حرف، جمله، زمان مطالعه و واژه‌های پرتکرار.</p></a>
+    <a class="card" href="../tools/regex.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.regex.t">🔍 آزمایشگر Regex</h3><p class="muted" data-i18n="tools.regex.d">تست زنده عبارات باقاعده با الگوهای آماده.</p></a>
+    <a class="card" href="../tools/gpa.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.gpa.t">🎓 محاسبه‌گر معدل</h3><p class="muted" data-i18n="tools.gpa.d">معدل وزنی با مقیاس ۲۰، ۱۰۰ و ۴٫۰ — ذخیره خودکار.</p></a>
+    <a class="card" href="../tools/translate.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.trans.t">🌍 مترجم هوشمند</h3><p class="muted" data-i18n="tools.trans.d">ترجمه روان فارسی، انگلیسی، عربی و ترکی.</p></a>
+    <a class="card" href="../tools/roman.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.roman.t">🏛️ مبدل اعداد رومی</h3><p class="muted" data-i18n="tools.roman.d">تبدیل اعداد به رومی و برعکس — ۱ تا ۳۹۹۹.</p></a>
+    <a class="card" href="../tools/tip.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.tip.t">💸 محاسبه انعام و صورت‌حساب</h3><p class="muted" data-i18n="tools.tip.d">انعام رستوران، تقسیم بین افراد و مالیات.</p></a>
+    <a class="card" href="../tools/dice.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.dice.t">🎲 تاس مجازی</h3><p class="muted" data-i18n="tools.dice.d">تاس واقعی با تعداد و روی دلخواه (D6، D20، ...).</p></a>
+    <a class="card" href="../tools/compound-interest.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.ci.t">📈 محاسبه سود مرکب</h3><p class="muted" data-i18n="tools.ci.d">سپرده با مرکب‌سازی و ورود ماهانه + نمودار رشد.</p></a>
+    <a class="card" href="../tools/blood-pressure.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.bp.t">🩺 بررسی فشار خون</h3><p class="muted" data-i18n="tools.bp.d">دسته‌بندی فشار خون بر اساس راهنمای AHA.</p></a>
+    <a class="card" href="../tools/water-intake.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.water.t">💧 محاسبه آب روزانه</h3><p class="muted" data-i18n="tools.water.d">آب مورد نیاز بدن بر اساس وزن، فعالیت و اقلیم.</p></a>
+    <a class="card" href="../tools/password-strength.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.psc.t">🔒 سنجش قدرت رمز عبور</h3><p class="muted" data-i18n="tools.psc.d">بررسی قدرت رمز موجود + زمان شکستن + پیشنهاد.</p></a>
+  </div>
+</div>
+
+<div class="tool-cat-section" data-cat="math">
+  <div class="grid">
+    <a class="card" href="../tools/calculator.html"><span class="tag" data-i18n="tools.tagReady">آماده</span><h3 data-i18n="tools.calc.t">🧮 ماشین‌حساب پیشرفته</h3><p class="muted" data-i18n="tools.calc.d">حالت‌های مهندسی، علمی، آمار و عبارت.</p></a>
+    <a class="card" href="../tools/percent.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.pct.t">％ درصد و تخفیف</h3><p class="muted" data-i18n="tools.pct.d">درصد، تخفیف، افزایش و کاهش.</p></a>
+    <a class="card" href="../tools/statistics.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.stat.t">📊 آمار و احتمال</h3><p class="muted" data-i18n="tools.stat.d">میانگین، میانه، واریانس، انحراف معیار، ترکیب و جایگشت.</p></a>
+    <a class="card" href="../tools/function-plot.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.plot.t">📈 رسم نمودار</h3><p class="muted" data-i18n="tools.plot.d">نمودار توابع ریاضی روی صفحه با زوم و جابه‌جایی.</p></a>
+    <a class="card" href="../tools/equations.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.eq.t">🧩 حل معادله</h3><p class="muted" data-i18n="tools.eq.d">معادله خطی، درجه دوم و دستگاه ۲ و ۳ معادله.</p></a>
+    <a class="card" href="../tools/matrix.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.mat.t">🔢 ماتریس و بردار</h3><p class="muted" data-i18n="tools.mat.d">دترمینان، معکوس، ضرب، ترانهاده و عملیات بردار.</p></a>
+    <a class="card" href="../tools/basehash.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.base.t">🔢 مبدل مبنا و هش</h3><p class="muted" data-i18n="tools.base.d">دودویی/شانزده‌شانزدهی، Base64 و هش SHA-256.</p></a>
+    <a class="card" href="../tools/gpa.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.gpa.t">🎓 محاسبه‌گر معدل</h3><p class="muted" data-i18n="tools.gpa.d">معدل وزنی با مقیاس ۲۰، ۱۰۰ و ۴٫۰ — ذخیره خودکار.</p></a>
+    <a class="card" href="../tools/roman.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.roman.t">🏛️ مبدل اعداد رومی</h3><p class="muted" data-i18n="tools.roman.d">تبدیل اعداد به رومی و برعکس — ۱ تا ۳۹۹۹.</p></a>
+  </div>
+</div>
+
+<div class="tool-cat-section" data-cat="physics">
+  <div class="grid">
+    <a class="card" href="../tools/physics.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.phy.t">⚛️ فیزیک و حل مسئله</h3><p class="muted" data-i18n="tools.phy.d">حرکت، نیرو، انرژی، برق، چگالی و پرتابه — حل‌گر گام‌به‌گام.</p></a>
+    <a class="card" href="../tools/converter.html"><span class="tag" data-i18n="tools.tagReady">آماده</span><h3 data-i18n="tools.conv.t">📏 تبدیل واحد</h3><p class="muted" data-i18n="tools.conv.d">طول، جرم، دما، مساحت و سرعت.</p></a>
+  </div>
+</div>
+
+<div class="tool-cat-section" data-cat="text">
+  <div class="grid">
+    <a class="card" href="../tools/text-tools.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.text.t">✍️ ابزار متن</h3><p class="muted" data-i18n="tools.text.d">شمارش کلمه/کاراکتر، تبدیل حروف و ابزارهای متن.</p></a>
+    <a class="card" href="../tools/wordcount.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.wcnt.t">🔤 شمارشگر واژه‌ها</h3><p class="muted" data-i18n="tools.wcnt.d">واژه، حرف، جمله، زمان مطالعه و واژه‌های پرتکرار.</p></a>
+    <a class="card" href="../tools/typing.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.typing.t">⌨️ تایپ‌سنجی</h3><p class="muted" data-i18n="tools.typing.d">آزمون سرعت تایپ با WPM، دقت و رکورد.</p></a>
+    <a class="card" href="../tools/tts.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.tts.t">🔊 متن به گفتار</h3><p class="muted" data-i18n="tools.tts.d">متن فارسی و انگلیسی را با صدای دستگاهت بخوان.</p></a>
+    <a class="card" href="../tools/translate.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.trans.t">🌍 مترجم هوشمند</h3><p class="muted" data-i18n="tools.trans.d">ترجمه روان فارسی، انگلیسی، عربی و ترکی.</p></a>
+    <a class="card" href="../tools/regex.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.regex.t">🔍 آزمایشگر Regex</h3><p class="muted" data-i18n="tools.regex.d">تست زنده عبارات باقاعده با الگوهای آماده.</p></a>
+  </div>
+</div>
+
+<div class="tool-cat-section" data-cat="time">
+  <div class="grid">
+    <a class="card" href="../tools/date-time.html"><span class="tag" data-i18n="tools.tagReady">آماده</span><h3 data-i18n="tools.date.t">🕒 تاریخ و زمان</h3><p class="muted" data-i18n="tools.date.d">زمان زنده، تاریخ شمسی/میلادی و ابزارهای زمانی.</p></a>
+    <a class="card" href="../tools/calendar.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.cal.t">📅 تقویم ایران</h3><p class="muted" data-i18n="tools.cal.d">تقویم شمسی با پیمایش ماه، امروز و تبدیل سه‌گانه تاریخ.</p></a>
+    <a class="card" href="../tools/world-clock.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.world.t">🌍 ساعت جهانی</h3><p class="muted" data-i18n="tools.world.d">ساعت زنده ۲۰ شهر مهم دنیا با تاریخ محلی.</p></a>
+    <a class="card" href="../tools/stopwatch.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.stop.t">⏱️ کرنومتر و تایمر</h3><p class="muted" data-i18n="tools.stop.d">کرنومتر با دورها، تایمر معکوس و هشدار.</p></a>
+    <a class="card" href="../tools/countdown.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.countd.t">⏳ شمارش معکوس</h3><p class="muted" data-i18n="tools.countd.d">تایمر معکوس تا تاریخ و ساعت دلخواه با پیش‌نمایش زنده.</p></a>
+    <a class="card" href="../tools/pomodoro.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.pomo.t">🍅 تایمر پومودورو</h3><p class="muted" data-i18n="tools.pomo.d">تمرکز ۲۵ دقیقه‌ای با استراحت — حلقه پیشرفت و زنگ.</p></a>
+    <a class="card" href="../tools/age.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.age.t">🎂 محاسبه سن</h3><p class="muted" data-i18n="tools.age.d">سن دقیق، روزهای زندگی و فاصله دو تاریخ.</p></a>
+  </div>
+</div>
+
+<div class="tool-cat-section" data-cat="finance">
+  <div class="grid">
+    <a class="card" href="../tools/deposit.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.dep.t">🏦 سود سپرده</h3><p class="muted" data-i18n="tools.dep.d">سود ساده و مرکب سپرده بانکی با دوره دلخواه.</p></a>
+    <a class="card" href="../tools/loan.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.loan.t">🏦 محاسبه وام</h3><p class="muted" data-i18n="tools.loan.d">قسط ماهانه وام، سود کل و جدول اقساط.</p></a>
+    <a class="card" href="../tools/percent.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.pct.t">％ درصد و تخفیف</h3><p class="muted" data-i18n="tools.pct.d">درصد، تخفیف، افزایش و کاهش.</p></a>
+    <a class="card" href="../tools/tip.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.tip.t">💸 محاسبه انعام و صورت‌حساب</h3><p class="muted" data-i18n="tools.tip.d">انعام رستوران، تقسیم بین افراد و مالیات.</p></a>
+    <a class="card" href="../tools/compound-interest.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.ci.t">📈 محاسبه سود مرکب</h3><p class="muted" data-i18n="tools.ci.d">سپرده با مرکب‌سازی و ورود ماهانه + نمودار رشد.</p></a>
+  </div>
+</div>
+
+<div class="tool-cat-section" data-cat="health">
+  <div class="grid">
+    <a class="card" href="../tools/bmi.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.bmi.t">⚖️ BMI و سلامت</h3><p class="muted" data-i18n="tools.bmi.d">شاخص توده بدنی، کالری پایه و وضعیت سلامت.</p></a>
+    <a class="card" href="../tools/pomodoro.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.pomo.t">🍅 تایمر پومودورو</h3><p class="muted" data-i18n="tools.pomo.d">تمرکز ۲۵ دقیقه‌ای با استراحت — حلقه پیشرفت و زنگ.</p></a>
+    <a class="card" href="../tools/blood-pressure.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.bp.t">🩺 بررسی فشار خون</h3><p class="muted" data-i18n="tools.bp.d">دسته‌بندی فشار خون بر اساس راهنمای AHA.</p></a>
+    <a class="card" href="../tools/water-intake.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.water.t">💧 محاسبه آب روزانه</h3><p class="muted" data-i18n="tools.water.d">آب مورد نیاز بدن بر اساس وزن، فعالیت و اقلیم.</p></a>
+  </div>
+</div>
+
+<div class="tool-cat-section" data-cat="dev">
+  <div class="grid">
+    <a class="card" href="../tools/json.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.json.t">🧾 فرمت‌کننده JSON</h3><p class="muted" data-i18n="tools.json.d">زیباسازی، فشرده‌سازی و اعتبارسنجی JSON — آفلاین.</p></a>
+    <a class="card" href="../tools/basehash.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.base.t">🔢 مبدل مبنا و هش</h3><p class="muted" data-i18n="tools.base.d">دودویی/شانزده‌شانزدهی، Base64 و هش SHA-256.</p></a>
+    <a class="card" href="../tools/regex.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.regex.t">🔍 آزمایشگر Regex</h3><p class="muted" data-i18n="tools.regex.d">تست زنده عبارات باقاعده با الگوهای آماده.</p></a>
+    <a class="card" href="../tools/imgbase64.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.b64.t">🔁 عکس به Base64</h3><p class="muted" data-i18n="tools.b64.d">کد Data URL عکس بگیر یا از کد، عکس را ببین.</p></a>
+    <a class="card" href="../tools/speedtest.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.speed.t">📶 تست سرعت اینترنت</h3><p class="muted" data-i18n="tools.speed.d">پینگ، سرعت دانلود و آپلودت را در چند ثانیه بسنج.</p></a>
+    <a class="card" href="../tools/password.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.pass.t">🔐 تولید رمز عبور</h3><p class="muted" data-i18n="tools.pass.d">رمز امن با طول و کاراکتر دلخواه + سنجش قدرت.</p></a>
+    <a class="card" href="../tools/qr.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.qr.t">🔳 سازنده QR کد</h3><p class="muted" data-i18n="tools.qr.d">برای لینک و متن QR بساز، رنگ بده و PNG بگیر.</p></a>
+    <a class="card" href="../tools/password-strength.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.psc.t">🔒 سنجش قدرت رمز عبور</h3><p class="muted" data-i18n="tools.psc.d">بررسی قدرت رمز موجود + زمان شکستن + پیشنهاد.</p></a>
+  </div>
+</div>
+
+<div class="tool-cat-section" data-cat="media">
+  <div class="grid">
+    <a class="card" href="../tools/colors.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.color.t">🎨 رنگ‌ساز و پالت</h3><p class="muted" data-i18n="tools.color.d">HEX/RGB/HSL، سایه‌ها، هارمونی و گرادیان.</p></a>
+    <a class="card" href="../tools/image-compress.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.imgc.t">🖼️ فشرده‌ساز عکس</h3><p class="muted" data-i18n="tools.imgc.d">حجم عکس را کم کن — کیفیت و سایز دلخواه، کاملاً داخل مرورگر.</p></a>
+    <a class="card" href="../tools/imgbase64.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.b64.t">🔁 عکس به Base64</h3><p class="muted" data-i18n="tools.b64.d">کد Data URL عکس بگیر یا از کد، عکس را ببین.</p></a>
+    <a class="card" href="../tools/qr.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.qr.t">🔳 سازنده QR کد</h3><p class="muted" data-i18n="tools.qr.d">برای لینک و متن QR بساز، رنگ بده و PNG بگیر.</p></a>
+    <a class="card" href="../tools/tts.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.tts.t">🔊 متن به گفتار</h3><p class="muted" data-i18n="tools.tts.d">متن فارسی و انگلیسی را با صدای دستگاهت بخوان.</p></a>
+  </div>
+</div>
+
+<div class="tool-cat-section" data-cat="productivity">
+  <div class="grid">
+    <a class="card" href="../tools/todo.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.todo.t">📝 لیست کارها</h3><p class="muted" data-i18n="tools.todo.d">کارهایت را مدیریت کن — ذخیره خودکار روی مرورگر.</p></a>
+    <a class="card" href="../tools/notes.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.notes.t">🗒️ یادداشت سریع</h3><p class="muted" data-i18n="tools.notes.d">یادداشت‌های چندگانه با ذخیره خودکار روی مرورگر.</p></a>
+    <a class="card" href="../tools/pomodoro.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.pomo.t">🍅 تایمر پومودورو</h3><p class="muted" data-i18n="tools.pomo.d">تمرکز ۲۵ دقیقه‌ای با استراحت — حلقه پیشرفت و زنگ.</p></a>
+    <a class="card" href="../tools/stopwatch.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.stop.t">⏱️ کرنومتر و تایمر</h3><p class="muted" data-i18n="tools.stop.d">کرنومتر با دورها، تایمر معکوس و هشدار.</p></a>
+    <a class="card" href="../tools/countdown.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.countd.t">⏳ شمارش معکوس</h3><p class="muted" data-i18n="tools.countd.d">تایمر معکوس تا تاریخ و ساعت دلخواه با پیش‌نمایش زنده.</p></a>
+    <a class="card" href="../tools/password.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.pass.t">🔐 تولید رمز عبور</h3><p class="muted" data-i18n="tools.pass.d">رمز امن با طول و کاراکتر دلخواه + سنجش قدرت.</p></a>
+  </div>
+</div>
+
+<div class="tool-cat-section" data-cat="fun">
+  <div class="grid">
+    <a class="card" href="../tools/wheel.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.wheel.t">🎡 چرخ شانس و قرعه‌کشی</h3><p class="muted" data-i18n="tools.wheel.d">گزینه‌ها را بده، چرخ بچرخد و برنده را انتخاب کن.</p></a>
+    <a class="card" href="../tools/qr.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.qr.t">🔳 سازنده QR کد</h3><p class="muted" data-i18n="tools.qr.d">برای لینک و متن QR بساز، رنگ بده و PNG بگیر.</p></a>
+    <a class="card" href="../tools/colors.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.color.t">🎨 رنگ‌ساز و پالت</h3><p class="muted" data-i18n="tools.color.d">HEX/RGB/HSL، سایه‌ها، هارمونی و گرادیان.</p></a>
+    <a class="card" href="../tools/dice.html"><span class="tag" data-i18n="tools.tagNew">جدید</span><h3 data-i18n="tools.dice.t">🎲 تاس مجازی</h3><p class="muted" data-i18n="tools.dice.d">تاس واقعی با تعداد و روی دلخواه (D6، D20، ...).</p></a>
+  </div>
+</div>
+
+</main>
 
 
 
@@ -118,16 +282,16 @@
     <div>
       <div class="fv-brand"><img class="brand-logo" src="../assets/icons/logo-lt.png" alt="Lumitek" width="34" height="34"><span class="brand-word">Lumitek</span></div>
       <p data-i18n="footer.tag">همه ابزارها و بازی‌های مورد نیازت، سریع و ساده — همه‌جا با هم.</p>
-      <span class="vip-badge" style="display:inline-flex">v0.1.3 · PWA</span>
+      <span class="vip-badge" style="display:inline-flex">v0.2.1 · PWA</span>
     </div>
     <div>
       <h4 data-i18n="footer.explore">کاوش</h4>
       <ul>
-        <li><a href="../pages/digital-news.html" data-i18n="nav.digitalnews">اخبار دیجیتال</a></li><li><a href="../pages/technology.html" data-i18n="nav.tech">فناوری</a></li>
+        <li><a href="../pages/digital-news.html" data-i18n="footer.newsLink">اخبار دیجیتال</a></li>
         <li><a href="../pages/articles.html" class="nav-mid" data-i18n="nav.articles">مقالات</a></li>
         <li><a href="../pages/announcements.html" class="nav-mid" data-i18n="nav.updates">تغییرات</a></li>
         <li><a href="../pages/about.html" data-i18n="nav.about">درباره ما</a></li>
-        <li><a href="../pages/contact.html" data-i18n="nav.contact">تماس</a></li>
+        <li><a href="../pages/contact.html" data-i18n="nav.contact">تماس با ما</a></li>
       </ul>
     </div>
     <div>
@@ -152,18 +316,12 @@
     <div class="fv-social">
     <div class="fv-social-title" data-i18n="footer.socialT">ما را در شبکه‌های اجتماعی دنبال کنید</div>
     <div class="fv-social-row">
-      <a href="https://www.aparat.com/lumitek" target="_blank" rel="noopener" title="آپارات" aria-label="Aparat">
-        <svg width="26" height="26" viewBox="0 0 32 32"><rect x="1" y="1" width="30" height="30" rx="9" fill="#DF0F38"/><path d="M11 9.5l13 6.5-13 6.5v-13z" fill="#fff"/></svg>
-        <span>آپارات</span></a>
-      <a href="https://bale.ai/lumitek" target="_blank" rel="noopener" title="بله" aria-label="Bale">
-        <svg width="26" height="26" viewBox="0 0 32 32"><rect x="1" y="1" width="30" height="30" rx="9" fill="#00A693"/><path d="M8 22V10h5.2c2.6 0 4.3 1.3 4.3 3.4 0 1.5-.8 2.6-2.1 3.1l3.3 5.5h-3.4l-2.8-5h-1.4v5H8zm3.1-7.4h1.9c1 0 1.6-.5 1.6-1.3s-.6-1.3-1.6-1.3h-1.9v2.6z" fill="#fff"/><circle cx="22.5" cy="11.5" r="2.5" fill="#fff"/></svg>
-        <span>بله</span></a>
+      <a href="https://ble.ir/lumitek" target="_blank" rel="noopener" title="بله" aria-label="Bale">
+        <img src="../assets/icons/bale.svg" width="30" height="30" alt="بله" loading="lazy">
+        </a>
       <a href="https://eitaa.com/lumitek" target="_blank" rel="noopener" title="ایتا" aria-label="Eitaa">
-        <svg width="26" height="26" viewBox="0 0 32 32"><rect x="1" y="1" width="30" height="30" rx="9" fill="#F5793B"/><path d="M25 8.5L6.5 15.7c-.7.3-.6 1.3.1 1.4l4.6 1.2 1.7 5.2c.2.7 1.1.8 1.5.2l2.3-3 4.6 3.4c.6.4 1.4.1 1.6-.6L26.4 9.6c.2-.8-.6-1.4-1.4-1.1zm-9.8 10.6l-.4 3 1.6-2.4-1.2-.6z" fill="#fff"/></svg>
-        <span>ایتا</span></a>
-      <a href="https://rubika.ir/lumitek" target="_blank" rel="noopener" title="روبیکا" aria-label="Rubika">
-        <svg width="26" height="26" viewBox="0 0 32 32"><rect x="1" y="1" width="30" height="30" rx="9" fill="#8E24AA"/><path d="M9 24V8h6.5c3.4 0 5.5 1.7 5.5 4.5 0 2-.9 3.4-2.6 4.1l4 7.4h-4.2l-3.4-6.6h-1.9V24H9zm3.9-9.6h2.4c1.4 0 2.2-.7 2.2-1.9s-.8-1.9-2.2-1.9h-2.4v3.8z" fill="#fff"/></svg>
-        <span>روبیکا</span></a>
+        <img src="../assets/icons/eitaa.svg" width="30" height="30" alt="ایتا" loading="lazy">
+        </a>
     </div>
   </div>
   <div class="fv-bottom">
@@ -174,5 +332,31 @@
 
 <script src="../js/main.js"></script>
 
+<script>
+(function(){
+  var tabs = document.querySelectorAll("#toolCatTabs button");
+  var sections = document.querySelectorAll(".tool-cat-section");
+  tabs.forEach(function(btn){
+    btn.addEventListener("click", function(){
+      tabs.forEach(function(b){ b.classList.remove("active"); });
+      btn.classList.add("active");
+      var cat = btn.getAttribute("data-cat");
+      sections.forEach(function(s){
+        s.classList.toggle("active", s.getAttribute("data-cat") === cat);
+      });
+      /* اسکرول به ابتدای ابزارها */
+      var top = document.querySelector(".tool-cat-tabs");
+      if (top) top.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
+})();
+</script>
+
+<div class="donate-widget" id="donateWidget">
+<a class="donate-card" href="../pages/donate.html" title="حمایت از لومیتک" aria-label="حمایت مالی">
+<span class="dw-icon">❤️</span>
+<span class="dw-text"><b>حمایت</b><small>اختیاری</small></span>
+</a>
+</div>
 </body>
 </html>

@@ -7,8 +7,8 @@
 <meta name="description" content="مقالات آموزشی مفصل لومیتک — هر مبحث از صفر تا صد در یک صفحه کامل.">
 <meta name="robots" content="index,follow">
 <meta name="theme-color" content="#070b15">
-<link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
-<link rel="apple-touch-icon" href="../assets/icons/icon-192.png">
+<link rel="icon" type="image/png" href="../assets/icons/logo-lt.png">
+<link rel="apple-touch-icon" href="../assets/icons/logo-lt.png">
 <link rel="manifest" href="../manifest.json">
 <link rel="preconnect" href="https://fontnegar.ir/" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,22 +24,20 @@
 <header class="site-header">
   <a class="brand" href="../index.html"><img class="brand-logo" src="../assets/icons/logo-lt.png" alt="Lumitek" width="46" height="46"><span class="brand-word">Lumitek</span></a>
   <nav class="main-nav" id="mainNav">
-    <a href="../index.html" data-i18n="nav.home">nav.home</a>
-    <a href="../pages/tools.html" data-i18n="nav.tools">nav.tools</a>
-    <a href="../pages/games.html" data-i18n="nav.games">nav.games</a>
-    <a href="../pages/store.html" data-i18n="nav.store">nav.store</a>
-    <a href="../pages/sports.html" data-i18n="nav.sports">nav.sports</a>
-    <a href="../pages/digital-news.html" data-i18n="nav.digitalnews">اخبار دیجیتال 📰</a>
-    <a href="../pages/ai.html" data-i18n="nav.ai">لومیتک ای‌آی ✨</a>
-    <a href="../pages/download.html" class="nav-mid2" data-i18n="nav.download">nav.download</a>
-    <a href="../pages/technology.html" class="nav-extra" data-i18n="nav.tech">nav.tech</a>
-    <a href="../pages/articles.html" class="nav-mid" data-i18n="nav.articles">nav.articles</a>
-    <a href="../pages/announcements.html" class="nav-mid" data-i18n="nav.updates">nav.updates</a>
-    <a href="../pages/about.html" class="nav-extra" data-i18n="nav.about">nav.about</a>
-    <a href="../pages/contact.html" class="nav-extra" data-i18n="nav.contact">nav.contact</a>
-    <a href="../pages/account.html" class="nav-extra" data-i18n="nav.account">nav.account</a>
-    <a href="../pages/donate.html" class="nav-extra" data-i18n="nav.donate">nav.donate</a>
-    <a href="../pages/support.html" data-i18n="nav.supportE">nav.supportE</a>
+    <a href="../index.html" data-i18n="nav.home">خانه</a>
+    <a href="../pages/tools.html" data-i18n="nav.tools">ابزار</a>
+    <a href="../pages/games.html" data-i18n="nav.games">بازی‌ها</a>
+    <a href="../pages/store.html" data-i18n="nav.store">فروشگاه</a>
+    <a href="../pages/sports.html" data-i18n="nav.sports">اسپورتک</a>
+    <a href="../pages/digital-news.html" data-i18n="nav.digitalnews">اخبار دیجیتال</a>
+    <a href="../pages/ai.html" data-i18n="nav.ai">لومیتک ای‌آی</a>
+    <a href="../pages/download.html" data-i18n="nav.download">دانلود</a>
+    <a href="../pages/articles.html" data-i18n="nav.articles">مقالات</a>
+    <a href="../pages/announcements.html" data-i18n="nav.updates">تغییرات</a>
+    <a href="../pages/about.html" data-i18n="nav.about">درباره ما</a>
+    <a href="../pages/contact.html" data-i18n="nav.contact">تماس با ما</a>
+    <a href="../pages/donate.html" class="nav-donate-link" data-i18n="nav.donate">حمایت مالی</a>
+    <a href="../pages/support.html" data-i18n="nav.supportE">پشتیبانی</a>
   </nav>
   <div class="header-actions">
     <button id="languageToggle" class="icon-btn" data-i18n-title="nav.home" title="Language">EN</button>
@@ -117,10 +115,10 @@
     <div class="ar-body ar-page-body" id="pdBody"></div>
 
     <div class="ar-actions">
-      <button class="primary-btn" id="pdReadBtn">✅ <span data-i18n="ar.readCta">خواندم و یاد گرفتم — ۵ سکه بگیر!</span></button>
       <button class="ghost-btn" id="pdShare">🔗 <span data-i18n="ar.share">کپی لینک</span></button>
+      <button class="ghost-btn" id="pdPdfBtn">📄 <span id="pdPdfLbl" data-i18n="ar.pdf">دانلود پی‌دی‌اف — ۵۰ سکه</span></button>
     </div>
-    <p class="muted" id="pdReadDone" style="display:none;font-size:.82rem" data-i18n="ar.readDone">خوانده‌شده ✓ جایزه‌ات قبلاً واریز شده است</p>
+    <p class="ar-pdf-hint" data-i18n="ar.pdfHint">با پرداخت ۵۰ سکه، نسخه پی‌دی‌اف این مقاله فعال می‌شود و همیشه در همین مرورگر در دسترس می‌ماند؛ مطالعه در سایت رایگان است.</p>
 
     <div class="ar-nav-row" id="pdNavRow"></div>
 
@@ -134,16 +132,16 @@
     <div>
       <div class="fv-brand"><img class="brand-logo" src="../assets/icons/logo-lt.png" alt="Lumitek" width="34" height="34"><span class="brand-word">Lumitek</span></div>
       <p data-i18n="footer.tag">همه ابزارها و بازی‌های مورد نیازت، سریع و ساده — همه‌جا با هم.</p>
-      <span class="vip-badge" style="display:inline-flex">v0.1.3 · PWA</span>
+      <span class="vip-badge" style="display:inline-flex">v0.2.1 · PWA</span>
     </div>
     <div>
       <h4 data-i18n="footer.explore">کاوش</h4>
       <ul>
-        <li><a href="../pages/digital-news.html" data-i18n="nav.digitalnews">اخبار دیجیتال</a></li><li><a href="../pages/technology.html" data-i18n="nav.tech">فناوری</a></li>
+        <li><a href="../pages/digital-news.html" data-i18n="footer.newsLink">اخبار دیجیتال</a></li>
         <li><a href="../pages/articles.html" class="nav-mid" data-i18n="nav.articles">مقالات</a></li>
         <li><a href="../pages/announcements.html" class="nav-mid" data-i18n="nav.updates">تغییرات</a></li>
         <li><a href="../pages/about.html" data-i18n="nav.about">درباره ما</a></li>
-        <li><a href="../pages/contact.html" data-i18n="nav.contact">تماس</a></li>
+        <li><a href="../pages/contact.html" data-i18n="nav.contact">تماس با ما</a></li>
       </ul>
     </div>
     <div>
@@ -168,18 +166,12 @@
   <div class="fv-social">
     <div class="fv-social-title" data-i18n="footer.socialT">ما را در شبکه‌های اجتماعی دنبال کنید</div>
     <div class="fv-social-row">
-      <a href="https://www.aparat.com/lumitek" target="_blank" rel="noopener" title="آپارات" aria-label="Aparat">
-        <svg width="26" height="26" viewBox="0 0 32 32"><rect x="1" y="1" width="30" height="30" rx="9" fill="#DF0F38"/><path d="M11 9.5l13 6.5-13 6.5v-13z" fill="#fff"/></svg>
-        <span>آپارات</span></a>
-      <a href="https://bale.ai/lumitek" target="_blank" rel="noopener" title="بله" aria-label="Bale">
-        <svg width="26" height="26" viewBox="0 0 32 32"><rect x="1" y="1" width="30" height="30" rx="9" fill="#00A693"/><path d="M8 22V10h5.2c2.6 0 4.3 1.3 4.3 3.4 0 1.5-.8 2.6-2.1 3.1l3.3 5.5h-3.4l-2.8-5h-1.4v5H8zm3.1-7.4h1.9c1 0 1.6-.5 1.6-1.3s-.6-1.3-1.6-1.3h-1.9v2.6z" fill="#fff"/><circle cx="22.5" cy="11.5" r="2.5" fill="#fff"/></svg>
-        <span>بله</span></a>
+      <a href="https://ble.ir/lumitek" target="_blank" rel="noopener" title="بله" aria-label="Bale">
+        <img src="../assets/icons/bale.svg" width="30" height="30" alt="بله" loading="lazy">
+        </a>
       <a href="https://eitaa.com/lumitek" target="_blank" rel="noopener" title="ایتا" aria-label="Eitaa">
-        <svg width="26" height="26" viewBox="0 0 32 32"><rect x="1" y="1" width="30" height="30" rx="9" fill="#F5793B"/><path d="M25 8.5L6.5 15.7c-.7.3-.6 1.3.1 1.4l4.6 1.2 1.7 5.2c.2.7 1.1.8 1.5.2l2.3-3 4.6 3.4c.6.4 1.4.1 1.6-.6L26.4 9.6c.2-.8-.6-1.4-1.4-1.1zm-9.8 10.6l-.4 3 1.6-2.4-1.2-.6z" fill="#fff"/></svg>
-        <span>ایتا</span></a>
-      <a href="https://rubika.ir/lumitek" target="_blank" rel="noopener" title="روبیکا" aria-label="Rubika">
-        <svg width="26" height="26" viewBox="0 0 32 32"><rect x="1" y="1" width="30" height="30" rx="9" fill="#8E24AA"/><path d="M9 24V8h6.5c3.4 0 5.5 1.7 5.5 4.5 0 2-.9 3.4-2.6 4.1l4 7.4h-4.2l-3.4-6.6h-1.9V24H9zm3.9-9.6h2.4c1.4 0 2.2-.7 2.2-1.9s-.8-1.9-2.2-1.9h-2.4v3.8z" fill="#fff"/></svg>
-        <span>روبیکا</span></a>
+        <img src="../assets/icons/eitaa.svg" width="30" height="30" alt="ایتا" loading="lazy">
+        </a>
     </div>
   </div>
   <div class="fv-bottom">
@@ -223,7 +215,7 @@
   document.getElementById("pdMin").textContent = faNum(a.min);
   var catName = (CAT_NAMES[a.cat] || {})[(getLang() === "fa" ? "fa" : "en")] || a.cat;
   document.getElementById("pdCat").textContent = catName;
-  document.getElementById("pdDate").textContent = "Lumitek v0.1.3";
+  document.getElementById("pdDate").textContent = "Lumitek v" + (window.LUMITEK_VERSIONS ? LUMITEK_VERSIONS[0].v : "0.2.0");
 
   /* بدنه + شناسه برای فهرست */
   var bodyEl = document.getElementById("pdBody");
@@ -268,27 +260,6 @@
   });
   if (!rel.length) relBox.innerHTML = '<p class="muted" style="font-size:.82rem">—</p>';
 
-  /* جایزه مطالعه */
-  function isRead() {
-    try { var p = getProfile(); return (p.readArticles || []).indexOf(a.id) !== -1; } catch (e) { return false; }
-  }
-  function paintRead() {
-    var done = isRead();
-    document.getElementById("pdReadBtn").style.display = done ? "none" : "";
-    document.getElementById("pdReadDone").style.display = done ? "block" : "none";
-  }
-  document.getElementById("pdReadBtn").onclick = function () {
-    var p = getProfile();
-    p.readArticles = Array.isArray(p.readArticles) ? p.readArticles : [];
-    if (p.readArticles.indexOf(a.id) !== -1) { paintRead(); return; }
-    p.readArticles.push(a.id);
-    saveProfile(p);
-    var r = addReward(10, 5);
-    addNotification("🎓", T("m.articleReward") + " (" + r.coins + " 🪙)");
-    paintRead();
-  };
-  paintRead();
-
   /* کپی لینک */
   document.getElementById("pdShare").onclick = function () {
     var url = location.href;
@@ -304,8 +275,148 @@
     inp.remove();
   };
 
-  /* نوار پیشرفت مطالعه */
+  /* ---------- دانلود پی‌دی‌اف مقاله (۵۰ سکه — v0.2.0) ---------- */
+  var PDF_COST = 50;
+  var PDF_KEY = "lumitek_pdf_unlocked";
+  function pdfStore() { try { return JSON.parse(localStorage.getItem(PDF_KEY) || "{}") || {}; } catch (e) { return {}; } }
+  function pdfOwned() { return !!pdfStore()[a.id]; }
+  function markPdfOwned() { var st = pdfStore(); st[a.id] = 1; try { localStorage.setItem(PDF_KEY, JSON.stringify(st)); } catch (e) {} }
+  function paintPdf() {
+    var btn = document.getElementById("pdPdfBtn"), lbl = document.getElementById("pdPdfLbl");
+    if (!btn || !lbl) return;
+    if (pdfOwned()) { btn.classList.add("pdf-owned"); lbl.textContent = T2("ar.pdfOwned", "دانلود پی‌دی‌اف (فعال ✓)"); }
+    else { btn.classList.remove("pdf-owned"); lbl.textContent = T2("ar.pdf", "دانلود پی‌دی‌اف — ۵۰ سکه"); }
+  }
+  function needCoinsModal() {
+    var old = document.getElementById("pdfNeedModal");
+    if (old) old.remove();
+    var m = document.createElement("div");
+    m.className = "modal"; m.id = "pdfNeedModal";
+    m.innerHTML = '<div class="modal-card modal-small">' +
+      '<button class="modal-close" id="pdfNeedClose">×</button>' +
+      '<h3 style="margin-top:0">🪙 ' + T2("ar.pdfNeedT", "سکه کافی نیست") + '</h3>' +
+      '<p class="muted" style="font-size:.86rem;line-height:2">' +
+      T2("ar.pdfNeedD", "برای فعال‌سازی پی‌دی‌اف این مقاله به ۵۰ سکه نیاز دارید.").replace("{n}", faNum(getProfile().coins)) +
+      ' (' + T("coins.unit") + ': ' + faNum(getProfile().coins) + ')</p>' +
+      '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px">' +
+      '<a class="primary-btn" style="flex:1;display:inline-flex;justify-content:center" id="pdfNeedGo" href="' + resolveSearchHref("pages/store.html#coins") + '">' + T2("ar.pdfGo", "رفتن به خرید سکه") + '</a>' +
+      '<button class="ghost-btn" id="pdfNeedCancel">' + T2("ar.pdfCancel", "انصراف") + '</button>' +
+      '</div></div>';
+    document.body.appendChild(m);
+    m.classList.add("show");
+    m.querySelector("#pdfNeedClose").onclick = function () { m.classList.remove("show"); };
+    m.querySelector("#pdfNeedCancel").onclick = function () { m.classList.remove("show"); };
+    m.addEventListener("click", function (e) { if (e.target === m) m.classList.remove("show"); });
+  }
+  function buildPrintFrame() {
+    try {
+      var isFa = getLang() === "fa";
+      var dirAttr = isFa ? "rtl" : "ltr";
+      var esc = function (t) { return String(t).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); };
+      var ver = window.LUMITEK_VERSIONS ? LUMITEK_VERSIONS[0].v : "";
+      var fontFa = "https://fontnegar.ir/css2?family=shabnam:wght@300;400;500;700&display=swap";
+      var fontEn = "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap";
+      var fam = isFa ? "'Shabnam',Tahoma,sans-serif" : "'Inter',Tahoma,sans-serif";
+      var docHtml = '<!doctype html><html lang="' + (isFa ? "fa" : "en") + '" dir="' + dirAttr + '"><head><meta charset="utf-8"><title>' +
+        esc(a.title) + ' | Lumitek</title>' +
+        '<link rel="stylesheet" href="' + (isFa ? fontFa : fontEn) + '">' +
+        '<style>' +
+        '*{-webkit-print-color-adjust:exact;print-color-adjust:exact;box-sizing:border-box}' +
+        '@page{size:A4;margin:0}' +
+        'body{font-family:' + fam + ';direction:' + dirAttr + ';color:#1c2438;font-size:12.5px;line-height:2;margin:0;background:#fff}' +
+        /* --- جلد/کاور بالا --- */
+        '.cover{background:linear-gradient(135deg,#0b1226 0%,#12235c 55%,#1d4ed8 120%);color:#fff;padding:26px 18mm 20px}' +
+        '.cover-top{display:flex;justify-content:space-between;align-items:center;gap:12px}' +
+        '.brand{display:flex;align-items:center;gap:9px;font-weight:800;font-size:15px;letter-spacing:.2px}' +
+        '.brand img{width:34px;height:34px;border-radius:9px;background:#fff;padding:3px}' +
+        '.brand small{display:block;font-weight:400;font-size:8.5px;opacity:.75;letter-spacing:1.5px}' +
+        '.cover-badge{font-size:9px;font-weight:700;border:1px solid rgba(255,255,255,.45);border-radius:99px;padding:4px 11px;opacity:.95}' +
+        '.cover-title{font-size:23px;font-weight:800;line-height:1.7;margin:16px 0 6px}' +
+        '.cover-lead{font-size:11.5px;line-height:2;color:#d7e4ff;margin:0 0 12px;max-width:150mm}' +
+        '.cover-meta{display:flex;flex-wrap:wrap;gap:6px}' +
+        '.chip{display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);border-radius:99px;padding:3px 11px;font-size:9.5px;font-weight:600}' +
+        /* --- بدنه --- */
+        '.page-body{padding:20px 18mm 12px}' +
+        '.sec-num{display:inline-flex;align-items:center;justify-content:center;min-width:21px;height:21px;border-radius:7px;background:linear-gradient(135deg,#2563eb,#38bdf8);color:#fff;font-size:10.5px;font-weight:800;margin-' + (isFa ? "left" : "right") + ':7px;padding:0 5px}' +
+        'h4{font-size:14.5px;font-weight:800;color:#12235c;margin:20px 0 8px;display:flex;align-items:center}' +
+        'h4::after{content:"";flex:1;height:1px;background:linear-gradient(' + (isFa ? "270deg" : "90deg") + ',#dbe7ff,transparent);margin-' + (isFa ? "right" : "left") + ':10px}' +
+        'p{margin:0 0 9px;text-align:justify}' +
+        'strong,b{color:#0f1c3d}' +
+        'ul,ol{margin:0 0 11px;padding-' + (isFa ? "right" : "left") + ':20px}' +
+        'li{margin-bottom:4px;padding-' + (isFa ? "right" : "left") + ':3px}' +
+        'li::marker{color:#2563eb;font-weight:800}' +
+        'blockquote{margin:12px 0;padding:11px 14px;background:linear-gradient(' + (isFa ? "270deg" : "90deg") + ',#eef4ff,#f8fbff);border-' + (isFa ? "right" : "left") + ':3.5px solid #2563eb;border-radius:10px;color:#2a3854;font-size:12px}' +
+        'code{background:#f1f5fd;border:1px solid #dfe8f8;border-radius:5px;padding:1px 6px;font-size:11px;direction:ltr;unicode-bidi:embed;font-family:Consolas,Menlo,monospace;color:#1d4ed8}' +
+        'pre{background:#0f1c3d;color:#dbeafe;border-radius:11px;padding:13px 15px;overflow:auto;direction:ltr;text-align:left;font-size:10.5px;line-height:1.85;font-family:Consolas,Menlo,monospace}' +
+        'pre code{background:none;border:0;color:inherit;padding:0}' +
+        'table{border-collapse:collapse;width:100%;margin:11px 0;font-size:11px;border-radius:10px;overflow:hidden}' +
+        'th{background:linear-gradient(135deg,#12235c,#1d4ed8);color:#fff;font-weight:700;padding:8px 10px;text-align:' + (isFa ? "right" : "left") + '}' +
+        'td{border-bottom:1px solid #e4ebf8;padding:7px 10px;text-align:' + (isFa ? "right" : "left") + '}' +
+        'tr:nth-child(even) td{background:#f6f9ff}' +
+        'a{color:#2563eb;text-decoration:none}' +
+        'img{max-width:100%}' +
+        'hr{border:0;border-top:1px dashed #cdd9f0;margin:14px 0}' +
+        /* --- پانوشت --- */
+        '.doc-foot{margin:8px 18mm 14px;padding-top:9px;border-top:1.5px solid #e2e9f7;display:flex;justify-content:space-between;align-items:center;font-size:9px;color:#7c89a6}' +
+        '.doc-foot b{color:#12235c}' +
+        '.pagebreak{page-break-before:always}' +
+        'h4{page-break-after:avoid}p,li,blockquote,pre,table{page-break-inside:avoid}' +
+        '</style></head><body>' +
+        /* کاور */
+        '<div class="cover">' +
+        '<div class="cover-top">' +
+        '<span class="brand"><img src="../assets/icons/logo-lt.png" alt="Lumitek"><span>Lumitek<small>LUMITEK.DIGITAL</small></span></span>' +
+        '<span class="cover-badge">' + (isFa ? "نسخه آموزشی" : "Learning Guide") + ' · v' + esc(ver) + '</span>' +
+        '</div>' +
+        '<div class="cover-title">' + esc(a.emoji + " " + a.title) + '</div>' +
+        '<p class="cover-lead">' + esc(a.lead) + '</p>' +
+        '<div class="cover-meta">' +
+        '<span class="chip">🕒 ' + faNum(a.min) + ' ' + T2("ar.minutes", "دقیقه") + '</span>' +
+        '<span class="chip">📁 ' + esc(a.tag) + '</span>' +
+        '<span class="chip">📅 ' + (isFa ? "لومیتک" : "Lumitek") + ' v' + esc(ver) + '</span>' +
+        '</div></div>' +
+        /* بدنه */
+        '<div class="page-body">' + bodyEl.innerHTML + '</div>' +
+        /* پانوشت */
+        '<div class="doc-foot">' +
+        '<span>© Lumitek — ' + (isFa ? "این مقاله آموزشی برای استفاده شخصی تهیه شده است." : "This learning article is provided for personal use.") + '</span>' +
+        '<span><b>lumitek.netlify.app</b></span>' +
+        '</div></body></html>';
+      var frame = document.createElement("iframe");
+      frame.style.cssText = "position:fixed;left:-9999px;top:0;width:820px;height:1000px;border:0;";
+      document.body.appendChild(frame);
+      var fdoc = frame.contentDocument || frame.contentWindow.document;
+      fdoc.open(); fdoc.write(docHtml); fdoc.close();
+      setTimeout(function () {
+        try { frame.contentWindow.focus(); frame.contentWindow.print(); } catch (e) { addNotification("📄", T2("ar.pdfOk", "")); }
+        setTimeout(function () { frame.remove(); }, 60000);
+      }, 900);
+    } catch (e) {
+      addNotification("⚠️", "PDF error");
+    }
+  }
+  document.getElementById("pdPdfBtn").onclick = function () {
+    if (pdfOwned()) { buildPrintFrame(); return; }
+    if (spendCoins(PDF_COST)) {
+      markPdfOwned();
+      addNotification("📄", T2("ar.pdfSpent", "۵۰ سکه بابت فعال‌سازی پی‌دی‌اف این مقاله کسر شد.") + " (" + faNum(getProfile().coins) + " 🪙)");
+      paintPdf();
+      buildPrintFrame();
+    } else {
+      needCoinsModal();
+    }
+  };
+  paintPdf();
+  document.addEventListener("lumitek:langchange", paintPdf);
+
+  /* نوار پیشرفت مطالعه — زیر هدر می‌چسبد تا همیشه پیدا باشد */
   var bar = document.getElementById("arProgressBar");
+  var wrap = bar && bar.parentElement;
+  function fitBar() {
+    if (!wrap) return;
+    var hdr = document.querySelector(".site-header");
+    if (hdr) wrap.style.top = hdr.offsetHeight + "px";
+  }
   function onScroll() {
     var doc = document.documentElement;
     var total = doc.scrollHeight - window.innerHeight;
@@ -313,14 +424,22 @@
     bar.style.width = pct + "%";
   }
   window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", fitBar);
+  fitBar();
+  setTimeout(fitBar, 300);
   onScroll();
 
   document.addEventListener("lumitek:langchange", function () {
     var catName2 = (CAT_NAMES[a.cat] || {})[(getLang() === "fa" ? "fa" : "en")] || a.cat;
     document.getElementById("pdCat").textContent = catName2;
-    paintRead();
   });
 })();
 </script>
+<div class="donate-widget" id="donateWidget">
+<a class="donate-card" href="../pages/donate.html" title="حمایت از لومیتک" aria-label="حمایت مالی">
+<span class="dw-icon">❤️</span>
+<span class="dw-text"><b>حمایت</b><small>اختیاری</small></span>
+</a>
+</div>
 </body>
 </html>

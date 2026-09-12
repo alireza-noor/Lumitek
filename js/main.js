@@ -168,6 +168,16 @@ const catalog = [
   ["یادداشت سریع", "Quick Notes", "tools/notes.html", "ابزار"],
   ["بازی حافظه", "Memory Game", "pages/memory.html", "بازی"],
   ["ضربه‌گیر", "Whack-a-Mole", "pages/whack.html", "بازی"],
+  ["سایمون", "Simon", "pages/simon.html", "بازی"],
+  ["بازی سایمون", "Simon Memory", "pages/simon.html", "بازی"],
+  ["چراغ‌ها", "Lights Out", "pages/tile-flip.html", "بازی"],
+  ["پازل چراغ", "Lights Out Puzzle", "pages/tile-flip.html", "بازی"],
+  ["داربسته", "Hangman", "pages/hangman.html", "بازی"],
+  ["حدس کلمه داربسته", "Hangman Word", "pages/hangman.html", "بازی"],
+  ["حدس عدد", "Guess Number", "pages/guess-number.html", "بازی"],
+  ["بازی حدس عدد", "Number Guess", "pages/guess-number.html", "بازی"],
+  ["شبکه واکنش", "Reaction Grid", "pages/reaction-grid.html", "بازی"],
+  ["واکنش گرید", "Reflex Grid", "pages/reaction-grid.html", "بازی"],
   ["حمایت مالی", "Donate", "pages/donate.html", "بخش"],
   ["دونیشن", "Donation", "pages/donate.html", "بخش"],
   ["تغییرات", "Announcements", "pages/announcements.html", "بخش"],
@@ -179,8 +189,6 @@ const catalog = [
   ["تقویم ایران", "Iranian Calendar", "tools/calendar.html", "ابزار"],
   ["تاریخ شمسی", "Jalali Calendar", "tools/calendar.html", "ابزار"],
   ["تبدیل تاریخ", "Date Converter", "tools/calendar.html", "ابزار"],
-  ["اوقات شرعی", "Prayer Times", "tools/prayer-times.html", "ابزار"],
-  ["نماز", "Salah Times", "tools/prayer-times.html", "ابزار"],
   ["ساعت جهانی", "World Clock", "tools/world-clock.html", "ابزار"],
   ["درصد و تخفیف", "Percentage", "tools/percent.html", "ابزار"],
   ["محاسبه سن", "Age Calculator", "tools/age.html", "ابزار"],
@@ -283,7 +291,22 @@ const catalog = [
   ["VPN و حریم خصوصی", "VPN & Privacy", "pages/articles.html", "مقاله"],
   ["رمزنگاری چطور کار می‌کند", "How Encryption Works", "pages/articles.html", "مقاله"],
   ["امنیت وای‌فای خانه", "Home Wi-Fi Security", "pages/articles.html", "مقاله"],
-  ["بهینه‌سازی سرعت سایت و سئو", "Website Speed & SEO", "pages/articles.html", "مقاله"]
+  ["بهینه‌سازی سرعت سایت و سئو", "Website Speed & SEO", "pages/articles.html", "مقاله"],
+  ["مبدل اعداد رومی", "Roman Numeral Converter", "tools/roman.html", "ابزار"],
+  ["اعداد رومی", "Roman Numerals", "tools/roman.html", "ابزار"],
+  ["محاسبه انعام", "Tip Calculator", "tools/tip.html", "ابزار"],
+  ["انعام رستوران", "Restaurant Tip", "tools/tip.html", "ابزار"],
+  ["تقسیم صورت‌حساب", "Split Bill", "tools/tip.html", "ابزار"],
+  ["تاس مجازی", "Virtual Dice", "tools/dice.html", "ابزار"],
+  ["انداختن تاس", "Roll Dice", "tools/dice.html", "ابزار"],
+  ["سود مرکب", "Compound Interest", "tools/compound-interest.html", "ابزار"],
+  ["محاسبه سود مرکب", "Compound Interest Calculator", "tools/compound-interest.html", "ابزار"],
+  ["بررسی فشار خون", "Blood Pressure Checker", "tools/blood-pressure.html", "ابزار"],
+  ["دسته فشار خون", "BP Category", "tools/blood-pressure.html", "ابزار"],
+  ["محاسبه آب روزانه", "Water Intake Calculator", "tools/water-intake.html", "ابزار"],
+  ["آب مورد نیاز بدن", "Daily Water Need", "tools/water-intake.html", "ابزار"],
+  ["سنجش قدرت رمز عبور", "Password Strength Checker", "tools/password-strength.html", "ابزار"],
+  ["بررسی رمز عبور", "Check Password", "tools/password-strength.html", "ابزار"]
 ];
 
 /* ---------------- Store catalog ---------------- */
@@ -309,6 +332,12 @@ const STORE_ITEMS = [
   { id: "av_phoenix",type: "avatar", emoji: "🔥", price: 450, rarity: "epic" },
   { id: "av_dragon",type: "avatar", emoji: "🐲", price: 500, rarity: "legendary" },
   { id: "av_king",  type: "avatar", emoji: "🤴", price: 650, rarity: "legendary" },
+  { id: "av_owl",     type: "avatar", emoji: "🦉", price: 220, rarity: "rare" },
+  { id: "av_tiger",   type: "avatar", emoji: "🐯", price: 240, rarity: "rare" },
+  { id: "av_eagle",   type: "avatar", emoji: "🦅", price: 260, rarity: "rare" },
+  { id: "av_koala",   type: "avatar", emoji: "🐨", price: 130, rarity: "common" },
+  { id: "av_dragon2", type: "avatar", emoji: "🐉", price: 480, rarity: "epic" },
+  { id: "av_frog",    type: "avatar", emoji: "🐸", price: 90,  rarity: "common" },
   { id: "ti_arcade", type: "title", label: { fa: "قهرمان آرکید", en: "Arcade Champion" }, price: 250, rarity: "rare" },
   { id: "ti_hunter", type: "title", label: { fa: "شکارچی رکورد", en: "Record Hunter" },   price: 400, rarity: "epic" },
   { id: "ti_sniper", type: "title", label: { fa: "تک‌تیرانداز کیهانی", en: "Cosmic Sniper" }, price: 450, rarity: "epic" },
@@ -382,7 +411,98 @@ const STORE_ITEMS = [
   { id: "ti_master",  type: "title", label: { fa: "استاد بی‌رقیب", en: "Unrivaled Master" },price: 850, rarity: "legendary" },
   { id: "ac_cherry",  type: "accent", value: "cherry", label: { fa: "گیلاسی", en: "Cherry" },        price: 190, rarity: "rare" },
   { id: "ac_ice",     type: "accent", value: "ice",    label: { fa: "یخی قطبی", en: "Polar Ice" },   price: 280, rarity: "epic" },
-  { id: "boost_20", type: "boost", games: 20, label: { fa: "بوست ۲× XP (۲۰ بازی)", en: "2× XP Boost (20 games)" }, price: 320, rarity: "epic" }
+  { id: "ac_lavender", type: "accent", value: "lavender", label: { fa: "بنفش کمرنگ", en: "Lavender" },  price: 200, rarity: "rare" },
+  { id: "ac_forest",   type: "accent", value: "forest",   label: { fa: "جنگل تاریک", en: "Dark Forest" }, price: 280, rarity: "epic" },
+  { id: "ac_berry",    type: "accent", value: "berry",    label: { fa: "توت‌رنگ", en: "Berry" },          price: 350, rarity: "epic" },
+  { id: "ac_desert",   type: "accent", value: "desert",   label: { fa: "بیابان", en: "Desert" },           price: 220, rarity: "rare" },
+  { id: "boost_20", type: "boost", games: 20, label: { fa: "بوست ۲× XP (۲۰ بازی)", en: "2× XP Boost (20 games)" }, price: 320, rarity: "epic" },
+  /* اسکین‌های بیشتر برای هر بازی — تنوع بصری و گرافیکی قوی‌تر */
+  { id: "sniper_steel",   type: "sniper", label: { fa: "اسنایپر فولادی", en: "Steel Sniper" },      price: 450,  rarity: "rare" },
+  { id: "sniper_aurora",  type: "sniper", label: { fa: "اسنایپر شفق قطبی", en: "Aurora Sniper" },   price: 700,  rarity: "epic" },
+  { id: "sniper_vortex",  type: "sniper", label: { fa: "اسنایپر گردابه", en: "Vortex Sniper" },     price: 1000, rarity: "legendary" },
+  { id: "sniper_shadow",  type: "sniper", label: { fa: "اسنایپر سایه", en: "Shadow Sniper" },        price: 750,  rarity: "epic" },
+  { id: "car_vortex",     type: "car",    label: { fa: "گران‌تور گردابه", en: "Vortex GT" },          price: 450,  rarity: "rare" },
+  { id: "car_aurora",     type: "car",    label: { fa: "گران‌تور شفق قطبی", en: "Aurora GT" },        price: 700,  rarity: "epic" },
+  { id: "car_shadow",     type: "car",    label: { fa: "گران‌تور سایه", en: "Shadow GT" },            price: 750,  rarity: "epic" },
+  { id: "car_obsidian",   type: "car",    label: { fa: "گران‌تور ابسیدین", en: "Obsidian GT" },       price: 1000, rarity: "legendary" },
+  { id: "hero_crystal",   type: "hero",   label: { fa: "قهرمان بلورین", en: "Crystal Hero" },        price: 450,  rarity: "rare" },
+  { id: "hero_mystic",    type: "hero",   label: { fa: "قهرمان صوفی", en: "Mystic Hero" },           price: 700,  rarity: "epic" },
+  { id: "hero_obsidian",  type: "hero",   label: { fa: "قهرمان ابسیدین", en: "Obsidian Hero" },      price: 750,  rarity: "epic" },
+  { id: "hero_aurora",    type: "hero",   label: { fa: "قهرمان شفق قطبی", en: "Aurora Hero" },        price: 1000, rarity: "legendary" },
+  { id: "tower_steel",    type: "tower",  label: { fa: "برج فولادی", en: "Steel Tower" },            price: 450,  rarity: "rare" },
+  { id: "tower_aurora",   type: "tower",  label: { fa: "برج شفق قطبی", en: "Aurora Tower" },         price: 700,  rarity: "epic" },
+  { id: "tower_vortex",   type: "tower",  label: { fa: "برج گردابه", en: "Vortex Tower" },           price: 750,  rarity: "epic" },
+  { id: "tower_obsidian", type: "tower",  label: { fa: "برج ابسیدین", en: "Obsidian Tower" },         price: 1000, rarity: "legendary" },
+  { id: "snake_vortex",   type: "snake",  label: { fa: "مار گردابه", en: "Vortex Serpent" },         price: 350,  rarity: "rare" },
+  { id: "snake_aurora",   type: "snake",  label: { fa: "مار شفق قطبی", en: "Aurora Serpent" },       price: 700,  rarity: "epic" },
+  { id: "snake_shadow",   type: "snake",  label: { fa: "مار سایه", en: "Shadow Serpent" },           price: 750,  rarity: "epic" },
+  { id: "snake_mystic",   type: "snake",  label: { fa: "اژدهای صوفی", en: "Mystic Dragon" },          price: 1000, rarity: "legendary" },
+  { id: "g2048_aurora",   type: "g2048",  label: { fa: "۲۰۴۸ شفق قطبی", en: "Aurora 2048" },         price: 350,  rarity: "rare" },
+  { id: "g2048_neon",     type: "g2048",  label: { fa: "۲۰۴۸ نئون", en: "Neon 2048" },               price: 700,  rarity: "epic" },
+  { id: "g2048_obsidian", type: "g2048",  label: { fa: "۲۰۴۸ ابسیدین", en: "Obsidian 2048" },        price: 750,  rarity: "epic" },
+  { id: "g2048_rainbow",  type: "g2048",  label: { fa: "۲۰۴۸ رنگین‌کمان", en: "Rainbow 2048" },     price: 1000, rarity: "legendary" },
+  { id: "mines_crystal",  type: "mines",  label: { fa: "مین‌یاب بلورین", en: "Crystal Mines" },     price: 350,  rarity: "rare" },
+  { id: "mines_neon",     type: "mines",  label: { fa: "مین‌یاب نئون", en: "Neon Mines" },           price: 700,  rarity: "epic" },
+  { id: "mines_obsidian", type: "mines",  label: { fa: "مین‌یاب ابسیدین", en: "Obsidian Mines" },    price: 750,  rarity: "epic" },
+  { id: "mines_aurora",   type: "mines",  label: { fa: "مین‌یاب شفق قطبی", en: "Aurora Mines" },     price: 1000, rarity: "legendary" },
+  { id: "breakout_aurora",   type: "breakout", label: { fa: "آجرشکن شفق قطبی", en: "Aurora Breaker" },     price: 350,  rarity: "rare" },
+  { id: "breakout_plasma",   type: "breakout", label: { fa: "آجرشکن پلاسما", en: "Plasma Breaker" },       price: 700,  rarity: "epic" },
+  { id: "breakout_obsidian", type: "breakout", label: { fa: "آجرشکن ابسیدین", en: "Obsidian Breaker" },    price: 750,  rarity: "epic" },
+  { id: "breakout_rainbow",  type: "breakout", label: { fa: "آجرشکن رنگین‌کمان", en: "Rainbow Breaker" }, price: 1000, rarity: "legendary" },
+  { id: "hoops_aurora",   type: "hoops",  label: { fa: "توپ شفق قطبی", en: "Aurora Ball" },          price: 400,  rarity: "rare" },
+  { id: "hoops_plasma",   type: "hoops",  label: { fa: "توپ پلاسما", en: "Plasma Ball" },            price: 700,  rarity: "epic" },
+  { id: "hoops_vortex",   type: "hoops",  label: { fa: "توپ گردابه", en: "Vortex Ball" },            price: 750,  rarity: "epic" },
+  { id: "hoops_obsidian", type: "hoops",  label: { fa: "توپ ابسیدین", en: "Obsidian Ball" },         price: 1000, rarity: "legendary" },
+  { id: "shooter_aurora",   type: "shooter", label: { fa: "سفینه شفق قطبی", en: "Aurora Ship" },         price: 350,  rarity: "rare" },
+  { id: "shooter_plasma",   type: "shooter", label: { fa: "سفینه پلاسما", en: "Plasma Ship" },           price: 700,  rarity: "epic" },
+  { id: "shooter_obsidian", type: "shooter", label: { fa: "سفینه ابسیدین", en: "Obsidian Ship" },       price: 750,  rarity: "epic" },
+  { id: "shooter_rainbow",  type: "shooter", label: { fa: "سفینه رنگین‌کمان", en: "Rainbow Ship" },    price: 1000, rarity: "legendary" },
+  { id: "penalty_aurora",   type: "penalty", label: { fa: "توپ شفق قطبی پنالتی", en: "Aurora Penalty Ball" },     price: 350,  rarity: "rare" },
+  { id: "penalty_plasma",   type: "penalty", label: { fa: "توپ پلاسما پنالتی", en: "Plasma Penalty Ball" },       price: 700,  rarity: "epic" },
+  { id: "penalty_vortex",   type: "penalty", label: { fa: "توپ گردابه پنالتی", en: "Vortex Penalty Ball" },       price: 750,  rarity: "epic" },
+  { id: "penalty_obsidian", type: "penalty", label: { fa: "توپ ابسیدین پنالتی", en: "Obsidian Penalty Ball" },  price: 1000, rarity: "legendary" },
+  { id: "headball_aurora",   type: "headball", label: { fa: "توپ شفق قطبی هدبال", en: "Aurora HeadBall" },     price: 350,  rarity: "rare" },
+  { id: "headball_plasma",   type: "headball", label: { fa: "توپ پلاسما هدبال", en: "Plasma HeadBall" },       price: 700,  rarity: "epic" },
+  { id: "headball_vortex",   type: "headball", label: { fa: "توپ گردابه هدبال", en: "Vortex HeadBall" },       price: 750,  rarity: "epic" },
+  { id: "headball_obsidian", type: "headball", label: { fa: "توپ ابسیدین هدبال", en: "Obsidian HeadBall" },  price: 1000, rarity: "legendary" },
+  { id: "maze_neon",      type: "maze",     label: { fa: "هزارتوی نئون", en: "Neon Maze" },            price: 350,  rarity: "rare" },
+  { id: "maze_aurora",    type: "maze",     label: { fa: "هزارتوی شفق قطبی", en: "Aurora Maze" },     price: 700,  rarity: "epic" },
+  { id: "maze_obsidian",  type: "maze",     label: { fa: "هزارتوی ابسیدین", en: "Obsidian Maze" },    price: 750,  rarity: "epic" },
+  { id: "maze_vortex",    type: "maze",     label: { fa: "هزارتوی گردابه", en: "Vortex Maze" },        price: 1000, rarity: "legendary" },
+  { id: "connect4_neon",      type: "connect4", label: { fa: "مهره‌های نئون", en: "Neon Discs" },            price: 350,  rarity: "rare" },
+  { id: "connect4_aurora",    type: "connect4", label: { fa: "مهره‌های شفق قطبی", en: "Aurora Discs" },     price: 700,  rarity: "epic" },
+  { id: "connect4_obsidian",  type: "connect4", label: { fa: "مهره‌های ابسیدین", en: "Obsidian Discs" },    price: 750,  rarity: "epic" },
+  { id: "connect4_vortex",    type: "connect4", label: { fa: "مهره‌های گردابه", en: "Vortex Discs" },        price: 1000, rarity: "legendary" },
+  { id: "drive_aurora",   type: "drive",    label: { fa: "خودرو شفق قطبی", en: "Aurora Machine" },    price: 350,  rarity: "rare" },
+  { id: "drive_plasma",   type: "drive",    label: { fa: "خودرو پلاسما", en: "Plasma Machine" },      price: 700,  rarity: "epic" },
+  { id: "drive_obsidian", type: "drive",    label: { fa: "خودرو ابسیدین", en: "Obsidian Machine" },    price: 750,  rarity: "epic" },
+  { id: "drive_vortex",   type: "drive",    label: { fa: "خودرو گردابه", en: "Vortex Machine" },      price: 1000, rarity: "legendary" },
+  { id: "memory_aurora",   type: "memory",   label: { fa: "کارت‌های شفق قطبی", en: "Aurora Cards" },  price: 350,  rarity: "rare" },
+  { id: "memory_neon",     type: "memory",   label: { fa: "کارت‌های نئون", en: "Neon Cards" },         price: 700,  rarity: "epic" },
+  { id: "memory_obsidian", type: "memory",   label: { fa: "کارت‌های ابسیدین", en: "Obsidian Cards" }, price: 750,  rarity: "epic" },
+  { id: "memory_vortex",   type: "memory",   label: { fa: "کارت‌های گردابه", en: "Vortex Cards" },     price: 1000, rarity: "legendary" },
+  { id: "ttt_aurora",    type: "tictactoe", label: { fa: "دوز شفق قطبی", en: "Aurora Tic-Tac-Toe" },  price: 350,  rarity: "rare" },
+  { id: "ttt_plasma",    type: "tictactoe", label: { fa: "دوز پلاسما", en: "Plasma Tic-Tac-Toe" },     price: 700,  rarity: "epic" },
+  { id: "ttt_obsidian",  type: "tictactoe", label: { fa: "دوز ابسیدین", en: "Obsidian Tic-Tac-Toe" }, price: 750,  rarity: "epic" },
+  { id: "ttt_vortex",    type: "tictactoe", label: { fa: "دوز گردابه", en: "Vortex Tic-Tac-Toe" },     price: 1000, rarity: "legendary" },
+  /* اسکین‌های بیشتر — تم‌های جدید برای تنوع بیشتر هر بازی */
+  { id: "sniper_eclipse",    type: "sniper",    label: { fa: "اسنایپر کسوف", en: "Eclipse Sniper" },      price: 800,  rarity: "epic" },
+  { id: "car_comet",         type: "car",       label: { fa: "گران‌تور دنبچه", en: "Comet GT" },            price: 800,  rarity: "epic" },
+  { id: "hero_valkyrie",     type: "hero",      label: { fa: "قهرمان والکیری", en: "Valkyrie Hero" },      price: 800,  rarity: "epic" },
+  { id: "tower_glacier",     type: "tower",     label: { fa: "برج یخ", en: "Glacier Tower" },              price: 800,  rarity: "epic" },
+  { id: "snake_ruby",        type: "snake",     label: { fa: "مار یاقوتی", en: "Ruby Serpent" },          price: 800,  rarity: "epic" },
+  { id: "g2048_sunset",      type: "g2048",     label: { fa: "۲۰۴۸ غروب", en: "Sunset 2048" },              price: 800,  rarity: "epic" },
+  { id: "mines_emerald",     type: "mines",     label: { fa: "مین‌یاب زمردی", en: "Emerald Mines" },        price: 800,  rarity: "epic" },
+  { id: "breakout_sapphire", type: "breakout", label: { fa: "آجرشکن یاقوتی", en: "Sapphire Breaker" },   price: 800,  rarity: "epic" },
+  { id: "hoops_comet",       type: "hoops",     label: { fa: "توپ دنبچه", en: "Comet Ball" },              price: 800,  rarity: "epic" },
+  { id: "shooter_meteor",    type: "shooter",   label: { fa: "سفینه شهاب‌سنگ", en: "Meteor Ship" },         price: 800,  rarity: "epic" },
+  { id: "penalty_star",      type: "penalty",   label: { fa: "توپ ستاره پنالتی", en: "Star Penalty Ball" }, price: 800, rarity: "epic" },
+  { id: "headball_star",     type: "headball",  label: { fa: "توپ ستاره هدبال", en: "Star HeadBall" },    price: 800,  rarity: "epic" },
+  { id: "maze_ruby",         type: "maze",      label: { fa: "هزارتوی یاقوتی", en: "Ruby Maze" },          price: 800,  rarity: "epic" },
+  { id: "connect4_emerald",  type: "connect4", label: { fa: "مهره‌های زمردی", en: "Emerald Discs" },     price: 800,  rarity: "epic" },
+  { id: "drive_comet",       type: "drive",     label: { fa: "خودرو دنبچه", en: "Comet Machine" },          price: 800,  rarity: "epic" },
+  { id: "memory_sunset",     type: "memory",    label: { fa: "کارت‌های غروب", en: "Sunset Cards" },        price: 800,  rarity: "epic" },
+  { id: "ttt_sapphire",      type: "tictactoe", label: { fa: "دوز یاقوتی", en: "Sapphire Tic-Tac-Toe" },   price: 800,  rarity: "epic" }
 ];
 
 /* اسکین اسلحه‌ها برای بازی تیراندازی کیهانی */
@@ -454,7 +574,94 @@ const GAME_SKINS = {
   memory_rose:     { back: "#ff7eb6", back2: "#ffa07a" },
   tictactoe_default:{ x: "#ff5c5c", o: "#76e6c3" },
   ttt_neon:        { x: "#00e5ff", o: "#b2ff59" },
-  ttt_gold:        { x: "#ffd166", o: "#ffb46b" }
+  ttt_gold:        { x: "#ffd166", o: "#ffb46b" },
+  /* اسکین‌های بصری بیشتر برای هر بازی — رنگ‌های زنده و متنوع */
+  sniper_steel:    { scope: "#9aa8c1", trail: "rgba(154,168,193,.85)" },
+  sniper_aurora:   { scope: "#7cf7c4", trail: "rgba(124,247,196,.9)" },
+  sniper_vortex:   { scope: "#c98bff", trail: "rgba(201,139,255,.9)" },
+  sniper_shadow:   { scope: "#4a5a7a", trail: "rgba(74,90,122,.85)" },
+  car_vortex:       { body: "#c98bff", glow: "rgba(201,139,255,.6)" },
+  car_aurora:       { body: "#7cf7c4", glow: "rgba(124,247,196,.65)" },
+  car_shadow:       { body: "#3a3f5c", glow: "rgba(58,63,92,.7)" },
+  car_obsidian:     { body: "#1a1d2e", glow: "rgba(80,80,120,.8)" },
+  hero_crystal:    { skin: "#7cd5ff", hat: "#c98bff" },
+  hero_mystic:     { skin: "#b18cff", hat: "#5c4a8a" },
+  hero_obsidian:   { skin: "#3a3f5c", hat: "#1a1d2e" },
+  hero_aurora:     { skin: "#7cf7c4", hat: "#4fc3f7" },
+  tower_steel:     { color: "#9aa8c1", shot: "rgba(154,168,193,.9)" },
+  tower_aurora:    { color: "#7cf7c4", shot: "rgba(124,247,196,.9)" },
+  tower_vortex:    { color: "#c98bff", shot: "rgba(201,139,255,.9)" },
+  tower_obsidian:  { color: "#3a3f5c", shot: "rgba(80,80,120,.9)" },
+  snake_vortex:    { head: "#c98bff", body: "#8a5cff", glow: "rgba(201,139,255,.65)" },
+  snake_aurora:    { head: "#7cf7c4", body: "#4fc3f7", glow: "rgba(124,247,196,.65)" },
+  snake_shadow:    { head: "#3a3f5c", body: "#5a5f7c", glow: "rgba(58,63,92,.7)" },
+  snake_mystic:    { head: "#b18cff", body: "#7c5cff", glow: "rgba(177,140,255,.7)" },
+  g2048_aurora:    { bg: "#1a3a5c", tile: "#7cf7c4", high: "#c98bff" },
+  g2048_neon:      { bg: "#1a1d2e", tile: "#22e5a5", high: "#ff5c8a" },
+  g2048_obsidian:  { bg: "#1a1a1a", tile: "#3a3f5c", high: "#9aa8c1" },
+  g2048_rainbow:   { bg: "#2e1a5c", tile: "#ffd166", high: "#ff5c5c" },
+  mines_crystal:   { bg: "#1a3a5c", safe: "#274b63", flag: "#7cd5ff" },
+  mines_neon:       { bg: "#1a1d2e", safe: "#2a2d4e", flag: "#22e5a5" },
+  mines_obsidian:   { bg: "#1a1a1a", safe: "#2a2a2a", flag: "#9aa8c1" },
+  mines_aurora:     { bg: "#2a1a5c", safe: "#3a2a6c", flag: "#7cf7c4" },
+  breakout_aurora:   { paddle: "#7cf7c4", brick: "#c98bff", ball: "#ffffff" },
+  breakout_plasma:   { paddle: "#c98bff", brick: "#ff5c8a", ball: "#7cd5ff" },
+  breakout_obsidian: { paddle: "#3a3f5c", brick: "#9aa8c1", ball: "#ffd166" },
+  breakout_rainbow:  { paddle: "#ff5c5c", brick: "#22e5a5", ball: "#ffd166" },
+  hoops_aurora:    { ball: "#7cf7c4", trail: "rgba(124,247,196,.8)" },
+  hoops_plasma:    { ball: "#c98bff", trail: "rgba(201,139,255,.8)" },
+  hoops_vortex:    { ball: "#5c5cff", trail: "rgba(92,92,255,.8)" },
+  hoops_obsidian:  { ball: "#3a3f5c", trail: "rgba(154,168,193,.8)" },
+  shooter_aurora:    { ship: "#7cf7c4", bullet: "#4fc3f7" },
+  shooter_plasma:    { ship: "#c98bff", bullet: "#ff5c8a" },
+  shooter_obsidian:  { ship: "#3a3f5c", bullet: "#ffd166" },
+  shooter_rainbow:   { ship: "#ffd166", bullet: "#ff5c8a" },
+  penalty_aurora:    { ball: "#7cf7c4", glow: "rgba(124,247,196,.8)" },
+  penalty_plasma:    { ball: "#c98bff", glow: "rgba(201,139,255,.8)" },
+  penalty_vortex:    { ball: "#5c5cff", glow: "rgba(92,92,255,.8)" },
+  penalty_obsidian:  { ball: "#3a3f5c", glow: "rgba(154,168,193,.8)" },
+  headball_aurora:    { ball: "#7cf7c4", trail: "rgba(124,247,196,.8)" },
+  headball_plasma:    { ball: "#c98bff", trail: "rgba(201,139,255,.8)" },
+  headball_vortex:    { ball: "#5c5cff", trail: "rgba(92,92,255,.8)" },
+  headball_obsidian:  { ball: "#3a3f5c", trail: "rgba(154,168,193,.8)" },
+  maze_neon:        { wall: "#22e5a5", player: "#ff5c8a", exit: "#ffd166" },
+  maze_aurora:      { wall: "#7cf7c4", player: "#4fc3f7", exit: "#c98bff" },
+  maze_obsidian:    { wall: "#3a3f5c", player: "#9aa8c1", exit: "#ffd166" },
+  maze_vortex:      { wall: "#c98bff", player: "#ff5c8a", exit: "#7cf7c4" },
+  connect4_neon:      { p1: "#22e5a5", p2: "#ff5c8a", board: "#1a1d2e" },
+  connect4_aurora:    { p1: "#7cf7c4", p2: "#c98bff", board: "#1a3a5c" },
+  connect4_obsidian:  { p1: "#9aa8c1", p2: "#ffd166", board: "#1a1a1a" },
+  connect4_vortex:    { p1: "#c98bff", p2: "#4fc3f7", board: "#2e1a5c" },
+  drive_aurora:     { body: "#7cf7c4", glow: "rgba(124,247,196,.65)" },
+  drive_plasma:     { body: "#c98bff", glow: "rgba(201,139,255,.65)" },
+  drive_obsidian:   { body: "#3a3f5c", glow: "rgba(154,168,193,.7)" },
+  drive_vortex:     { body: "#5c5cff", glow: "rgba(92,92,255,.65)" },
+  memory_aurora:    { back: "#7cf7c4", back2: "#4fc3f7" },
+  memory_neon:      { back: "#22e5a5", back2: "#ff5c8a" },
+  memory_obsidian:  { back: "#3a3f5c", back2: "#9aa8c1" },
+  memory_vortex:    { back: "#c98bff", back2: "#4fc3f7" },
+  ttt_aurora:      { x: "#7cf7c4", o: "#c98bff" },
+  ttt_plasma:      { x: "#c98bff", o: "#ff5c8a" },
+  ttt_obsidian:    { x: "#9aa8c1", o: "#ffd166" },
+  ttt_vortex:      { x: "#c98bff", o: "#4fc3f7" },
+  /* اسکین‌های بیشتر — تم‌های جدید برای تنوع بیشتر */
+  sniper_eclipse:    { scope: "#ff4d4d", trail: "rgba(255,77,77,.85)" },
+  car_comet:         { body: "#a0c4ff", glow: "rgba(160,196,255,.6)" },
+  hero_valkyrie:     { skin: "#ffd700", hat: "#ffffff" },
+  tower_glacier:     { color: "#a0e8ff", shot: "rgba(160,232,255,.9)" },
+  snake_ruby:        { head: "#e0245e", body: "#ff4d6d", glow: "rgba(224,36,94,.6)" },
+  g2048_sunset:      { bg: "#3a2a4a", tile: "#ff8c5a", high: "#ffb367" },
+  mines_emerald:     { bg: "#1a3a2a", safe: "#234a3a", flag: "#2ecc71" },
+  breakout_sapphire: { paddle: "#3a7bd5", brick: "#5a9fff", ball: "#ffffff" },
+  hoops_comet:       { ball: "#a0c4ff", trail: "rgba(160,196,255,.8)" },
+  shooter_meteor:    { ship: "#ff6a3a", bullet: "#ffaa5a" },
+  penalty_star:      { ball: "#fff4b0", glow: "rgba(255,244,176,.85)" },
+  headball_star:     { ball: "#fff4b0", trail: "rgba(255,244,176,.8)" },
+  maze_ruby:         { wall: "#e0245e", player: "#ff4d6d", exit: "#ffd700" },
+  connect4_emerald:  { p1: "#2ecc71", p2: "#58d68a", board: "#1a3a2a" },
+  drive_comet:       { body: "#a0c4ff", glow: "rgba(160,196,255,.65)" },
+  memory_sunset:     { back: "#ff8c5a", back2: "#ffb367" },
+  ttt_sapphire:      { x: "#3a7bd5", o: "#5a9fff" }
 };
 const GAME_SKIN_DEFAULTS = { sniper: "sniper_default", car: "car_default", hero: "hero_default", tower: "tower_default", snake: "snake_default", g2048: "g2048_default", mines: "mines_default", breakout: "breakout_default", hoops: "hoops_default", shooter: "shooter_default", penalty: "penalty_default", headball: "headball_default", maze: "maze_default", connect4: "connect4_default", drive: "drive_default", memory: "memory_default", tictactoe: "tictactoe_default" };
 function migrateAiLegacy() {
@@ -497,7 +704,13 @@ const ACCENTS = {
   ocean:  { a: "#4fc3f7", b: "#7ce6b0" },
   rose:   { a: "#ff7eb6", b: "#ffa07a" },
   emerald:{ a: "#50d68a", b: "#b4f06e" },
-  neon:   { a: "#00e5ff", b: "#b2ff59" }
+  neon:     { a: "#00e5ff", b: "#b2ff59" },
+  cherry:   { a: "#ff5c8a", b: "#ffb3c8" },
+  ice:      { a: "#a0e8ff", b: "#d0f0ff" },
+  lavender: { a: "#c8b6ff", b: "#e0d4ff" },
+  forest:   { a: "#2e7d4f", b: "#52a374" },
+  berry:    { a: "#d946ef", b: "#f0a6d8" },
+  desert:   { a: "#d4a373", b: "#e9c89a" }
 };
 
 function applyAccent() {
@@ -648,7 +861,11 @@ const GAME_NAMES_FA = {
   memory: "حافظه", whack: "ضربه‌گیر",
   headball: "هدبال", headballGoals: "هدبال (گل‌ها)",
 
-  c4Wins: "چهار در یک ردیف (بردها)", mazeSolves: "ماز (حل‌شده)", penaltyGoals: "پنالتی (گل‌ها)"
+  c4Wins: "چهار در یک ردیف (بردها)", mazeSolves: "ماز (حل‌شده)", penaltyGoals: "پنالتی (گل‌ها)",
+
+  simon: "سایمون", tileflip: "چراغ‌ها",
+  hangman: "داربسته (جان)", hangmanWins: "داربسته (بردها)",
+  guessnumber: "حدس عدد", rgrid: "شبکه واکنش"
 };
 
 function gameName(game) {
@@ -734,6 +951,8 @@ window.GameScrollLock = (function () {
    پایان هر بازی حالا مثل بازی‌های واقعی نمایش داده می‌شود: برد یا باخت، امتیاز، جایزه و
    دکمه‌های «بازی دوباره» و «بستن». با نمایش این صفحه، قفل اسکرول هم خودکار برداشته می‌شود
    تا کاربر هیچ‌وقت در صفحه گیر نکند. */
+/* Small bilingual helper used by game-over overlay calls: fa("English","فارسی") */
+window.fa = function (en, faText) { return getLang() === "fa" ? faText : en; };
 window.LumitekGameOver = (function () {
   var el = null, confettiTimer = null;
 
@@ -1351,27 +1570,69 @@ function setupSearch() {
     var fa = searchNormalize(item[0]), en = searchNormalize(item[1]);
     var s = 0;
     if (fa === q || en === q) s = 100;
-    else if (fa.indexOf(q) === 0 || en.indexOf(q) === 0) s = 80;
+    else if (fa.indexOf(q) === 0 || en.indexOf(q) === 0) s = 85;
+    else if (fa.indexOf(q) !== -1 || en.indexOf(q) !== -1) s = 70;
     else {
-      var words = q.split(" ");
+      var words = q.split(" ").filter(function(w){ return w.length > 1; });
       var all = fa + " " + en;
       var hit = 0;
       words.forEach(function(w) { if (w && all.indexOf(w) !== -1) hit++; });
-      if (hit === words.length) s = 60;
-      else if (hit > 0) s = 30 * hit / words.length;
+      if (hit === words.length && words.length > 0) s = 60;
+      else if (hit > 0) s = 30 * hit / Math.max(1, words.length);
+      else {
+        /* تطبیق فازی: هر کاراکتر q به‌ترتیب در متن موجود باشد */
+        var sources = [fa, en];
+        for (var si = 0; si < sources.length; si++) {
+          var src = sources[si];
+          var qi = 0;
+          for (var ci = 0; ci < src.length && qi < q.length; ci++) {
+            if (src[ci] === q[qi]) qi++;
+          }
+          if (qi === q.length && q.length >= 3) { s = Math.max(s, 25 + qi * 3); break; }
+        }
+        /* تطبیق پیشوندی برای زیررشته‌ها */
+        if (s === 0 && q.length >= 2) {
+          for (var k = 0; k < sources.length; k++) {
+            var src2 = sources[k];
+            for (var p = 0; p <= src2.length - q.length; p++) {
+              var slice = src2.substr(p, q.length);
+              var same = 0;
+              for (var r = 0; r < q.length; r++) if (slice[r] === q[r]) same++;
+              if (same >= Math.ceil(q.length * 0.7)) { s = Math.max(s, 15 + same * 2); break; }
+            }
+            if (s > 0) break;
+          }
+        }
+      }
     }
     if (s > 0 && (item[3] === "ابزار" || item[3] === "بازی")) s += 4;
     return s;
   }
 
   function mark(text, q) {
-    var out = "";
-    var nq = searchNormalize(q);
-    var idx = searchNormalize(text).indexOf(nq);
-    if (idx === -1 || !nq) return text.replace(/&/g, "&amp;").replace(/</g, "&lt;");
     var plain = text.replace(/&/g, "&amp;").replace(/</g, "&lt;");
-    var realIdx = idx;
-    return plain.slice(0, realIdx) + "<mark>" + plain.slice(realIdx, realIdx + q.length) + "</mark>" + plain.slice(realIdx + q.length);
+    var nq = searchNormalize(q);
+    if (!nq) return plain;
+    var normText = searchNormalize(text);
+    var idx = normText.indexOf(nq);
+    if (idx !== -1) {
+      return plain.slice(0, idx) + "<mark>" + plain.slice(idx, idx + q.length) + "</mark>" + plain.slice(idx + q.length);
+    }
+    /* اگر تطبیق مستقیم نبود، کلمات را مارک کن */
+    var words = q.split(" ").filter(function(w){ return w.length > 1; });
+    var result = plain;
+    words.forEach(function(w) {
+      var nw = searchNormalize(w);
+      var pos = 0;
+      while (true) {
+        var npos = searchNormalize(result.slice(pos)).indexOf(nw);
+        if (npos === -1) break;
+        var realPos = pos + npos;
+        result = result.slice(0, realPos) + "<mark>" + result.slice(realPos, realPos + w.length) + "</mark>" + result.slice(realPos + w.length);
+        pos = realPos + w.length + 11; /* 11 = طول <mark></mark> */
+      }
+    });
+    return result;
   }
 
   function runSearch() {
@@ -1385,15 +1646,15 @@ function setupSearch() {
     var matches = catalog.map(function(x) { return [score(x, q), x]; })
       .filter(function(x) { return x[0] > 0; })
       .sort(function(a, b) { return b[0] - a[0]; })
-      .slice(0, 12)
+      .slice(0, 16)
       .map(function(x) { return x[1]; });
 
-    var tagIcon = { "ابزار": "🧰", "بازی": "🎮", "بخش": "📦", "جدول": "🏆", "مقاله": "📚", "فروشگاه": "🛍️", "هوش مصنوعی": "✨" };
+    var tagIcon = { "ابزار": "🧰", "بازی": "🎮", "بخش": "📦", "جدول": "🏆", "مقاله": "📚", "فروشگاه": "🛍️", "هوش مصنوعی": "✨", "خبر": "📰", "ورزش": "🏆" };
     if (!matches.length) {
       results.innerHTML = '<div class="search-empty">' + T("m.searchEmpty") + '</div>' +
         '<div class="search-hint">' + (getLang() === "fa"
-          ? '💡 کلمه‌های کوتاه‌تر امتحان کن — یا از <a href="pages/games.html">بازی‌ها</a> و <a href="pages/tools.html">ابزارها</a> شروع کن.'
-          : '💡 Try shorter words — or start from <a href="pages/games.html">Games</a> and <a href="pages/tools.html">Tools</a>.') + '</div>';
+          ? '💡 کلمه‌های کوتاه‌تر یا مرتبط امتحان کن — یا از <a href="pages/games.html">بازی‌ها</a> و <a href="pages/tools.html">ابزارها</a> شروع کن.'
+          : '💡 Try shorter or related words — or start from <a href="pages/games.html">Games</a> and <a href="pages/tools.html">Tools</a>.') + '</div>';
     } else {
       matches.forEach(function(x, i) {
         const a = document.createElement("a");
@@ -1401,9 +1662,9 @@ function setupSearch() {
         a.setAttribute("data-idx", i);
         var tag = x[3] || "";
         var icon = tagIcon[tag] || "•";
-        a.innerHTML = '<span class="sr-tag">' + icon + " " + tag + '</span><strong></strong><span></span>';
-        a.querySelector("strong").innerHTML = mark(x[0], input.value.trim());
-        a.querySelector("span").textContent = x[1];
+        a.innerHTML = '<span class="sr-tag">' + icon + " " + tag + '</span><strong class="sr-title"></strong><span class="sr-sub"></span>';
+        a.querySelector(".sr-title").innerHTML = mark(x[0], input.value.trim());
+        a.querySelector(".sr-sub").textContent = x[1];
         results.appendChild(a);
       });
     }
@@ -1496,6 +1757,267 @@ function setupNotifications() {
 
 /* ---------------- Changelog (تغییرات نسخه‌ها در هدر) ---------------- */
 const LUMITEK_VERSIONS = [
+  {
+    v: "0.2.1",
+    fa: "نسخه ۰٫۲٫۱: چرخش بی‌وقفه بازی‌ها، موج‌های پیوسته، جست‌وجو فقط در صفحه اصلی و پانوشت تمیزتر",
+    en: "Version 0.2.1: seamless game rotation, solid waves, search on the homepage only and a cleaner footer",
+    items: {
+      fa: [
+        "چرخش کارت‌های بازی در صفحه اصلی به یک حلقه بی‌نهایت بدون پرش تبدیل شد؛ تکرار حرکت برای بازدیدکننده محسوس نیست",
+        "کارت‌های «بازی‌های محبوب لومیتک» اکنون در یک ردیف یکپارچه نمایش داده می‌شوند و همه بازی‌ها را با چرخشی آرام و پیوسته نشان می‌دهند",
+        "خطوط موج بالای بخش اول صفحه اصلی بازطراحی شد؛ تعداد خطوط بیشتر شد، خط‌چین حذف و خطوط پیوسته با درخشش نرم جایگزین شد",
+        "در بخش «امکانات» صفحه اصلی، عبارت «اخبار» به «اخبار دیجیتال» تغییر کرد",
+        "در صفحه مقالات، بین کادر «نسخه پی‌دی‌اف مقاله‌ها» و بخش «آموزش‌های گام‌به‌گام» فاصله مناسبی اضافه شد",
+        "در پانوشت همه صفحه‌ها، پیوند «اخبار دیجیتال» بدون ایموجی نمایش داده می‌شود",
+        "بخش «فناوری» از پانوشت همه صفحه‌ها حذف شد",
+        "بخش جست‌وجوی سایت اکنون تنها در صفحه اصلی نمایش داده می‌شود",
+        "متن معرفی نسخه ۰٫۲٫۰ در تغییرات نسخه‌ها اصلاح شد"
+      ],
+      en: [
+        "The game-card rotation on the homepage became a seamless infinite loop — the repetition is invisible to visitors",
+        "The Popular Games cards are now shown in one continuous row, presenting every game with a calm, endless rotation",
+        "The wave lines above the first homepage section were rebuilt: more lines, no dashes — solid strokes with a soft glow",
+        "In the homepage Features rotator, the News item was renamed to Digital News",
+        "On the Articles page, a comfortable gap was added between the PDF box and the Step-by-Step Tutorials section",
+        "The Digital News link in the footer of every page is now shown without an emoji",
+        "The Technology section was removed from the footer of all pages",
+        "The site search section now appears only on the homepage",
+        "The summary text of version 0.2.0 in the changelog was corrected"
+      ]
+    }
+  },
+  {
+    v: "0.2.0",
+    fa: "نسخه ۰٫۲٫۰: بازطراحی صفحه اصلی، بهبود پی‌دی‌اف مقاله‌ها و حذف امکانات اضافی",
+    en: "Version 0.2.0: homepage redesign, better article PDFs and removal of unneeded features",
+    items: {
+      fa: [
+        "گرافیک لوگوی صفحه اصلی بازطراحی شد؛ قاب و خطوط اضافه اطراف لوگو حذف و هاله نوری نرم جایگزین شد",
+        "بالای بخش اول صفحه اصلی، خطوط موج‌دار دیجیتال متحرک اضافه شد تا حس دیجیتال بودن سایت در نگاه اول منتقل شود",
+        "برچسب نسخه زیر لوگو اکنون فاصله مناسبی با لوگو دارد",
+        "عددهای کوچک زیر دکمه «شروع تجربه» حذف شد؛ آمار تنها در بخش «اعداد، خودشان حرف می‌زنند» نمایان می‌شود",
+        "در بخش آمار، دایره‌های رنگی حذف شد؛ خط رنگی اکنون کاملاً دور کل کادر هر آمار کشیده می‌شود",
+        "کارت‌های بخش «بازی‌های محبوب» به صورت نوار متحرک و چرخان نمایان می‌شوند",
+        "بج «زنده» بخش اسپورتک از بالای راست به بالای چپ کارت انتقال یافت",
+        "منوی تنظیمات سایت به کلی حذف شد و هدر به حالت افقی استاندارد بازگشت",
+        "آیکون کنار «پشتیبانی» در هدر حذف شد",
+        "آیکون پشتیبانی شناور گوشه صفحه دوباره به ربات قبلی بازگشت و برچسب اضافه حذف شد",
+        "مقاله‌ها دیگر نوار خبری چرخان ندارند; نوار از بخش مقالات حذف شد",
+        "نوار پیشرفت مطالعه تنها در صفحه مقاله نمایان می‌شود و از صفحه اصلی حذف شد",
+        "جایزه پنج سکه‌ای «خواندم و یاد گرفتم» از صفحه مقاله حذف شد",
+        "دانلود پی‌دی‌اف مقاله‌ها اکنون ۵۰ سکه است",
+        "طراحی فایل پی‌دی‌اف مقاله‌ها کاملاً حرفه‌ای شد؛ فونت پی‌دی‌اف با فونت سایت یکسان است (شبنم برای فارسی و Inter برای انگلیسی)",
+        "در هدر صفحه اصلی، عبارت «ساخته‌شده برای» به «امکانات» تغییر کرد",
+        "گزینه «دانلود کامل سورس» از صفحه دانلود حذف شد",
+        "متن این تغییرات به سبک رسمی نوشته شده است"
+      ],
+      en: [
+        "The homepage logo graphic was redesigned; the extra frame and lines around the logo were replaced with a soft glowing halo",
+        "Animated digital wave lines were added to the top of the first homepage section to convey the digital feel of the site at first glance",
+        "The version pill beneath the logo now keeps a comfortable distance from the logo",
+        "The small numbers under the Start button were removed; stats appear only in the Numbers Speak for Themselves section",
+        "In the stats section the colored circles were removed; the colored line now runs around the whole stat card",
+        "The cards in the Popular Games section now move as rotating marquees",
+        "The LIVE badge of the Sportek card moved from the top right to the top left",
+        "The site settings menu was removed completely and the header returned to the standard horizontal layout",
+        "The icon next to Support in the header was removed",
+        "The floating support button in the corner is the friendly robot again and its text tag was removed",
+        "Articles no longer show the rotating news ticker; the ticker was removed from the Articles section",
+        "The reading progress bar now appears only on article pages, never on the homepage",
+        "The read-and-learn five-coin reward was removed from article pages",
+        "Article PDF downloads now cost 50 coins",
+        "The article PDF design was rebuilt to a professional standard; the PDF uses the same fonts as the site (Shabnam for Persian, Inter for English)",
+        "The Built-for label on the homepage was changed to Features",
+        "The full source download option was removed from the download page",
+        "These release notes were written in a formal tone"
+      ]
+    }
+  },
+  {
+    v: "0.1.9",
+    fa: "نسخه ۰٫۱٫۹: هدر یکدست در دو زبان، انتقال نوار خبری به بخش مقالات، پنل تنظیمات سایت و دانلود پی‌دی‌اف مقاله‌ها با سکه",
+    en: "Version 0.1.9: a consistent header in both languages, the news ticker moved to Articles, a site settings panel and coin-based article PDF downloads",
+    items: {
+      fa: [
+        "اندازه و چیدمان هدر در زبان‌های فارسی و انگلیسی یکدست و فشرده شد؛ همه بخش‌ها در یک ردیف منظم قرار می‌گیرند",
+        "نوار خبری متحرک از صفحه اصلی حذف و به بخش مقالات منتقل شد؛ جای نوار دقیقاً زیر هدر است",
+        "رنگ نوار خبری در پوسته روشن تیره‌تر شد تا خوانایی بهتری داشته باشد؛ پوسته تیره بدون تغییر ماند",
+        "پیش‌نمایش داشبورد از صفحه اصلی حذف شد",
+        "گرافیک لوگوی صفحه اصلی ساده و تمیز شد؛ حلقه‌های چرخان و نشان‌های اطراف آن حذف و یک قاب نوری ملایم جایگزین شد",
+        "برچسب «حمایت» اکنون همیشه کنار قلب گوشه پایین صفحه نمایش داده می‌شود",
+        "پنل «تنظیمات سایت» با دکمه چرخ‌دنده کنار حساب کاربری به هدر همه صفحه‌ها اضافه شد",
+        "تنظیمات سایت شامل چیدمان هدر (افقی، عمودی راست، عمودی چپ یا خودکار)، اندازه متن، خاموش‌کردن انیمیشن‌ها و پنهان‌کردن نوار خبری است",
+        "دانلود نسخه پی‌دی‌اف مقاله‌ها اضافه شد؛ هر پی‌دی‌اف با ۱۵ سکه فعال می‌شود و خرید در همان مرورگر برای همیشه باقی می‌ماند",
+        "در صفحه حمایت مالی، سطح‌های طلایی و برنزی حذف شد؛ حمایت اکنون در سه روش ریالی، ارز خارجی (دلار و یورو) و رمزارز ارائه می‌شود",
+        "در صفحه پشتیبانی، راهنمای ثبت تیکت و ارتباط با کارشناسان از طریق صفحه «تماس با ما» اضافه شد",
+        "نام منبع «نارنجی» از فهرست رسانه‌های ایرانی اخبار دیجیتال حذف شد",
+        "آیکون‌های بله و ایتا در پانوشت اکنون دقیقاً در وسط کادر خود قرار می‌گیرند",
+        "آیکون کوچک تنظیمات کنار دکمه حساب کاربری در هدر نشست",
+        "متن‌های تغییرات نسخه‌ها به سبک رسمی بازنویسی شد"
+      ],
+      en: [
+        "The header is now compact and consistent in both Persian and English — every section sits in one tidy row",
+        "The moving news ticker left the homepage and moved to the Articles section, placed exactly beneath the header",
+        "The ticker received a darker shade in the light theme for better readability; the dark theme is unchanged",
+        "The dashboard preview window was removed from the homepage",
+        "The homepage logo graphic was cleaned up — the spinning rings and badges around it were replaced with a soft glowing frame",
+        "The word “Donate” is now always displayed next to the heart in the bottom corner",
+        "A “Site settings” panel joined the header of every page, via a gear button right next to the account button",
+        "Settings include header layout (horizontal, vertical right, vertical left or automatic), text size, motion effects on/off and ticker on/off",
+        "Article PDF downloads arrived: each PDF unlocks for 15 coins and the purchase is kept in the same browser forever",
+        "On the donate page the gold and bronze tiers were removed; support is now offered as Rial, foreign currency (USD/EUR) or cryptocurrency",
+        "The support page gained a formal guide for submitting tickets and reaching the team through the Contact Us page",
+        "The “Narenji” source was removed from the Iranian digital-news sources list",
+        "The Bale and Eitaa icons in the footer are now perfectly centered inside their boxes",
+        "A small settings icon now sits beside the account button in the header",
+        "All version changelog texts were rewritten in a formal tone"
+      ]
+    }
+  },
+  {
+    v: "0.1.8",
+    fa: "نسخه ۰٫۱٫۸: بازطراحی صفحه اصلی، اصلاح عنوان صفحه‌ها و تقویت اسپورتک",
+    en: "Version 0.1.8: homepage redesign, corrected page titles and a stronger Sportek",
+    items: {
+      fa: [
+        "انیمیشن نقطه‌های متحرک پس‌زمینه صفحه اصلی حذف شد؛ هاله‌های نرم و شفاف تنها افکت پس‌زمینه هستند",
+        "لوگوی لومیتک در آغاز صفحه اصلی بزرگ و با یک انیمیشن تمیز نمایش داده می‌شود",
+        "گالری بازی‌ها با کارت‌های گرادیانی جدید، نشان «محبوب»، فلش راهنما و افکت درخشش بازطراحی شد",
+        "بخش «خرید سکه» به صفحه اصلی اضافه شد تا پکیج‌های سکه مستقیماً از صفحه اصلی به فروشگاه متصل شوند",
+        "عنوان صفحه حمایت مالی اصلاح شد و دیگر «اخبار دیجیتال» نمایش داده نمی‌شود؛ پرسش‌های متداول آن نیز ترجمه شد",
+        "ابزار اوقات شرعی و قطب‌نمای قبله از فهرست ابزارها حذف شد",
+        "نام فارسی ابزارهای مبدل اعداد رومی، انعام و صورت‌حساب، تاس مجازی، سود مرکب، فشار خون، آب روزانه و سنجش قدرت رمز اصلاح شد؛ عنوان و توضیح چهار ابزار دیگر نیز درست شد",
+        "آیکون صورتک با هدفون به دکمه پشتیبانی گوشه صفحه اضافه شد؛ برچسب «پشتیبانی» کنار آن و یک آیکون کوچک کنار گزینه «پشتیبانی» در هدر قرار گرفت",
+        "برچسب «حمایت» کنار قلب گوشه پایین صفحه نمایش داده می‌شود",
+        "رنگ پیوند «حمایت مالی» در هدر به حالت پیش‌فرض بازگشت و تنها با قرارگرفتن نشانگر ماوس صورتی‌قرمز می‌شود",
+        "روبیکا از پانوشت حذف شد؛ بله و ایتا با نشان‌های هم‌اندازه، رنگی و بدون متن نمایش داده می‌شوند",
+        "عنوان «تماس» در هدر و پانوشت به «تماس با ما» تغییر کرد",
+        "نوار پیشرفت مطالعه مقاله‌ها اکنون دقیقاً زیر هدر و به‌صورت تمام‌عرض نمایش داده می‌شود",
+        "اندازه هدر انگلیسی بهینه شد تا همه بخش‌ها در یک ردیف و در همه پنجره‌ها قابل مشاهده باشند",
+        "اسپورتک گسترش یافت: برای کشتی، وزنه‌برداری، شنا، دو و میدانی، کبدی، شطرنج، واترپلو، تیراندازی با کمان، اسنوکر، ژیمناستیک و اسکی جدول اضافه شد؛ بیس‌بال، کریکت، گلف و اسکواش نیز اضافه شدند و شمار جدول‌ها به ۴۰ رسید",
+        "نمایش ستون امتیاز در جدول رده‌بندی اسپورتک اصلاح شد",
+        "چهار مقاله جدید اضافه شد: هنر پرامپت‌نویسی، ورود دو مرحله‌ای، کار عمیق و راهنمای خرید کامپیوتر؛ مجموعه مقاله‌ها اکنون ۶۰ عنوان است",
+        "کارت‌های ابزارها و بازی‌ها گرافیک جدید گرفتند: نوار بالایی درخشان، هاله گوشه و جابه‌جایی نرم؛ سازگاری با گوشی و رایانه نیز بهتر شد"
+      ],
+      en: [
+        "The moving background dots were removed from the homepage; the soft aurora blobs are the only background effect",
+        "The Lumitek logo now opens the homepage large, with a clean animation",
+        "The games gallery was redesigned with new gradient cards, a “Popular” badge, guiding arrows and a hover glow",
+        "A “Buy coins” section joined the homepage, linking coin packs straight to the store",
+        "The Donate page title was corrected — it no longer opens as “Digital News”; its FAQ is now fully translated",
+        "The prayer-times tool and qibla compass were removed from the tools list",
+        "Persian names were fixed for the Roman numeral converter, tip & bill, virtual dice, compound interest, blood pressure, water intake and password-strength tools; four more tools received correct titles and descriptions",
+        "A mascot face with headphones was added to the corner support button; a “Support” label sits beside it and a small mascot icon sits next to “Support” in the header",
+        "The word “Donate” is now displayed next to the heart button in the corner",
+        "The header “Donate” link returned to its default color and only turns pink-red on hover",
+        "Rubika was removed from the footer; Bale and Eitaa are shown as equal-sized, colored, text-free icons",
+        "“Contact” in the header and footer was renamed to “Contact Us”",
+        "The article reading progress bar is now displayed full-width directly beneath the header",
+        "The English header was optimized so every section stays in one tidy row at all window sizes",
+        "Sportek expanded: tables were added for wrestling, weightlifting, swimming, athletics, kabaddi, chess, water polo, archery, snooker, gymnastics and skiing; baseball, cricket, golf and squash joined — 40 tables in total",
+        "The points column in the Sportek ranking table was fixed",
+        "Four new articles joined the library: the art of prompting, two-factor sign-in, deep work and a PC buying guide — 60 articles in total",
+        "Tool and game cards received new graphics: a glowing top bar, corner halo and smooth motion; responsiveness on phones and desktops improved"
+      ]
+    }
+  },
+  {
+    v: "0.1.7",
+    fa: "نسخه ۰٫۱٫۷: مدل جدید صفحه اصلی «آرورا» — پس‌زمینه ذرات ثابت، پنجره داشبورد شیشه‌ای، تیکر متحرک، بنتو گرید و گالری بازی‌ها",
+    en: "Version 0.1.7: new \u201cAurora\u201d homepage model — live particle background, glassy dashboard window, moving tickers, bento grid and a games gallery",
+    items: {
+      fa: [
+        "مدل صفحه اصلی کاملاً عوض شد: چیدمان جدید «آرورا» با هرو وسط‌چین، پس‌زمینه ذرات ثابت متصل به هم با واکنش به ماوس و رگباری‌های آبی/زرد/سبز",
+        "پنجره داشبورد شیشه‌ای جدید جایگزین اورب شد: دموی چت هوش مصنوعی با حباب‌های متحرک، نمودار خودکشو، سکه و XP چرخان و بج زنده",
+        "چرخش کلمات در هرو: ابزارها، بازی‌ها، مقالات، اخبار و هوش مصنوعی هر ۲ ثانیه عوض می‌شوند",
+        "دو ردیف تیکر بی‌نهایت با جهت مخالف هم — ابزار، سکه، XP، اسپورتک، اخبار و... با لهجه‌های زرد و سبز",
+        "بنتو گرید جدید با اندازه‌های متفاوت برای کارت‌ها + اسپات‌لایت دنبال‌کننده ماوس و تیلت سه‌بعدی",
+        "آیکون‌های متحرک در هر کارت: شناور، چرخش سکه، بونس، لرزش، رینگ پالس و ریل ایموجی بازی‌ها",
+        "گالری خودکار بازی‌ها با دو ردیف مخالف + توقف هنگام هاور و بزرگ‌نمایی کارت",
+        "بخش «چرا لومیتک؟» با ۴ کاشی شیشه‌ای و رینگ‌های آماری SVG که هنگام اسکرول پر می‌شوند",
+        "نوار پیشرفت اسکرول، ستاره‌های چشمک‌زن، هاله دنبال‌کننده ماوس، انیمیشن تایپ URL و FAQ دو ستونه",
+        "رنگ‌بندی: آبی همچنان رنگ اصلی قالب + لهجه‌های زرد و سبز در بج‌ها، رینگ‌ها و کلمات کلیدی",
+        "پشتیبانی کامل از حالت روشن، RTL/LTR، کاهش حرکت (accessibility) و موبایل"
+      ],
+      en: [
+        "Homepage layout fully replaced: new \u201cAurora\u201d model with a centered hero, mouse-reactive constellation particle background and blue/yellow/green aurora blobs",
+        "A glassy dashboard window replaces the orb: AI chat demo with animated bubbles, self-drawing chart, spinning coin & XP, LIVE badge",
+        "Hero word rotator: Tools, Games, Articles, News and AI swap every ~2 seconds",
+        "Two opposite-direction infinite tickers — Tools, Coins, XP, Sportek, News and more with yellow/green accents",
+        "New bento grid with mixed card sizes + mouse-following spotlight and 3D tilt",
+        "Animated icons in every card: float, coin flip, bounce, shake, ring pulse and a games emoji rail",
+        "Auto-scrolling games gallery with two opposite rows + hover pause and card zoom",
+        "New \u201cWhy Lumitek?\u201d glass tiles and SVG stat rings that fill on scroll",
+        "Scroll progress bar, twinkling stars, cursor glow, URL typing animation and two-column FAQ",
+        "Colors: blue stays the primary template color + yellow and green accents on badges, rings and keywords",
+        "Full support for light mode, RTL/LTR, reduced-motion accessibility and mobile"
+      ]
+    }
+  },
+  {
+    v: "0.1.5",
+    fa: "نسخه ۰٫۱٫۵: حذف المان مستطیلی بالای صفحه اصلی، اصلاح کلیک ویجت حمایت، رنگ بله به سبز-آبی، آیکون پشتیبانی جدید",
+    en: "Version 0.1.5: removed rectangular hero badge, fixed donate widget click, Bale blue-green color, new support icon",
+    items: {
+      fa: [
+        "المان مستطیلی بالای صفحه اصلی (هیرو بج) حذف شد — حالا صفحه اصلی مستقیم با تیتر و توضیحات شروع می‌شود",
+        "ویجت حمایت مالی پایین چپ اصلاح شد: کلیک روی آن حالا به‌درستی به صفحه‌ی «حمایت مالی» می‌رود (مشکل رفتن به صفحه‌ی اخبار دیجیتال حل شد) و متن «حمایت» دوباره نمایش داده می‌شود",
+        "آیکون پشتیبانی گوشه راست پایین با یک طراحی کاملاً جدید جایگزین شد: یک دایره‌ی گرادیانی با علامت سوال سفید درون آن (به‌جای ربات قبلی)",
+        "لینک «حمایت مالی» به هدر اضافه شد — حالا کنار «پشتیبانی» در هدر قرار دارد و دسترسی سریع به صفحه‌ی حمایت فراهم می‌کند",
+        "رنگ بله در فوتر به سبز-آبی (#00B8A6) تغییر کرد — ایتا نارنجی (#EF7F1A) و روبیکا با SVG چندرنگ اصلی باقی ماند",
+        "همه‌ی آیکون‌های شبکه‌های اجتماعی در فوتر هم‌اندازه شدند (۲۶×۲۶ پیکسل) و روبیکا دیگه کوچک‌تر نیست",
+        "آپارات از فوتر حذف شده است",
+        "هدر انگلیسی از لحاظ اندازه بهینه شد — تمام لینک‌ها در هر دو زبان فارسی و انگلیزی هم‌اندازه و همیشه قابل‌مشاهده",
+        "کلمه‌ی نامفهوم «آیکون کنار تب مرورگر» در تغییرات نسخه‌ی ۰٫۱٫۴ با عبارت روشن «آیکون کنار تب مرورگر» جایگزین شد تا همه بفهمند"
+      ],
+      en: [
+        "Removed the rectangular hero badge at the top of the homepage — the page now starts directly with the title and lead",
+        "Donate widget at bottom-left fixed: clicking it now correctly navigates to the Donate page (the bug that sent it to Digital News is gone) and the \"Donate\" label is back",
+        "Bottom-right support icon replaced with a brand new design: a gradient circle with a white question mark (replacing the previous robot)",
+        "A \"Donate\" link was added to the header — now next to \"Support\" in the nav for quick access to the donate page",
+        "Bale color in the footer changed to blue-green (#00B8A6) — Eitaa stays orange (#EF7F1A) and Rubika retains its original multicolor SVG",
+        "All three social icons in the footer are now the same size (26×26 px) and Rubika is no longer smaller",
+        "Aparat has been removed from the footer",
+        "English header sizing optimized — every nav link is now the same size and always visible in both Persian and English",
+        "The unclear term \"favicon\" in the 0.1.4 changelog was replaced with the clearer phrase \"browser-tab icon\""
+      ]
+    }
+  },
+  {
+    v: "0.1.4",
+    fa: "نسخه ۰٫۱٫۴: هدر پاک‌سازی‌شده، هوش مصنوعی لومیتک فعال، آیکون کنار تب مرورگر با لوگوی اصلی، اصلاح رنگ‌بندی و تقویت گرافیک",
+    en: "Version 0.1.4: clean header, working Lumitek AI, browser-tab icon replaced with main logo, color fixes and stronger graphics",
+    items: {
+      fa: [
+        "هدر سایت پاک‌سازی شد: فقط بخش‌های اصلی باقی ماند (خانه، ابزار، بازی، فروشگاه، اسپورتک، اخبار دیجیتال، لومیتک ای‌آی، دانلود، مقالات، تغییرات، درباره ما، تماس و پشتیبانی) و همگی در فارسی و انگلیسی معلوم می‌شوند",
+        "هوش مصنوعی لومیتک کامل بازنویسی شد و حالا واقعاً کار می‌کند: پاسخ‌های هوشمند، فارسی و انگلیسی، برای هر سوال",
+        "آیکون کنار تب مرورگر با لوگوی اصلی لومیتک جایگزین شد — حالا کنار تب مرورگر هم همان لوگوی زیبای اصلی دیده می‌شود",
+        "آیکون پشتیبانی گوشه راست پایین با یک نسخه‌ی مدرن‌تر، گرادیان‌دار و با گرافیک بهتر جایگزین شد",
+        "ویجت حمایت مالی پایین چپ ساده شد — فقط یک دکمه قلب کوچک بدون متن اضافه و بدون مزاحمت برای محتوا",
+        "آپارات از شبکه‌های اجتماعی فوتر حذف شد؛ بله با رنگ آبی-آکوای روشن، ایتا با نارنجی #EF7F1A و روبیکا با SVG اصلی که داشتیم",
+        "بگ تضاد رنگ در حالت روشن (Light) رفع شد: متن‌های سفید سیاه شدند، دایره‌های پیشرفت و سایر عناصر حالا در هر دو تم خوانا هستند",
+        "المان مستطیلی بالای صفحه اصلی بازطراحی شد و حالت طبیعی‌تر و زیباتری پیدا کرد",
+        "نوار نوتیفیکیشن آپدیت سایت در صفحه اصلی نوسازی شد تا به‌جای متن قدیمی، واقعیت نسخه‌ی ۰٫۱٫۴ را نشان دهد",
+        "ابزارهای موجود بهبود یافتند و چند ابزار تازه و مفید به مجموعه افزوده شد",
+        "بازی‌ها از لحاظ گرافیکی تقویت شدند و آیتم‌های فروشگاه برای هر بازی با تنوع بیشتر و گرافیک قوی‌تر آماده شد",
+        "اسکین‌های فروشگاه که به‌درستی کار نمی‌کردند تعمیر شدند و همگی حالا قابل تجهیز و استفاده هستند"
+      ],
+      en: [
+        "Header cleaned up: only the main sections remain (Home, Tools, Games, Store, Sports, Digital News, Lumitek AI, Download, Articles, Updates, About, Contact, Support) — all visible in both Persian and English",
+        "Lumitek AI was completely rewritten and now actually works: smart responses, Persian and English, for any question",
+        "Browser favicon replaced with the main Lumitek logo — the same beautiful logo now appears next to the browser tab",
+        "Support icon at bottom-right replaced with a more modern, gradient-styled version with better graphics",
+        "Donate widget at bottom-left simplified — just a small heart button with no extra text, no interference with content",
+        "Aparat removed from social media; Bale now uses aqua-blue, Eitaa orange #EF7F1A and Rubika the exact SVG we provided",
+        "Light theme contrast bug fixed: white text now turns dark, progress circles and other elements are readable in both themes",
+        "Rectangular element at the top of the homepage redesigned with a more natural, prettier look",
+        "Update notification bar on the homepage refreshed so it reflects version 0.1.4 instead of stale text",
+        "Existing tools improved and several fresh, useful tools added to the collection",
+        "Games graphically enhanced; store items for each game now come with more variety and stronger graphics",
+        "Broken store skins fixed — they can now be equipped and used properly"
+      ]
+    }
+  },
   {
     v: "0.1.3",
     fa: "نگارش تازه: پالایش چهره‌ی سایت، تقویت فروشگاه، ابزارها و مقالات",
@@ -1602,7 +2124,7 @@ const LUMITEK_VERSIONS = [
     items: {
       fa: [
         "بخش «اخبار دیجیتال» با خبرهای زنده گشوده شد و پیوندش در هدر همه‌ی صفحه‌ها نشست",
-        "اخبار تنها از سایت‌های ایرانی گرد می‌آید: دیجیاتو، زومیت، نارنجی، مهر و دیگران",
+        "اخبار تنها از سایت‌های ایرانی گرد می‌آید: دیجیاتو، زومیت، مهر و دیگران",
         "نام منبع حقیقی هر خبر اکنون نشان داده می‌شود",
         "اسپورتک به‌طور اختصاصی به ورزش مردان پرداخت و اخبار بانوان خودکار پالایش می‌شود",
         "با زدن «شروع بازی»، بازی درست در میانه‌ی صفحه قرار می‌گیرد",
@@ -1614,7 +2136,7 @@ const LUMITEK_VERSIONS = [
       ],
       en: [
         "The “Digital News” section opened with live feeds and took its place in every page header",
-        "News is gathered only from Iranian sites: Digiato, Zoomit, Narenji, Mehr and more",
+        "News is gathered only from Iranian sites: Digiato, Zoomit, Mehr and more",
         "The true source name is now displayed for every headline",
         "Sportek became dedicated to men’s sports, filtering women’s sports news automatically",
         "Pressing “Start” now centers the game precisely on screen",
@@ -2143,8 +2665,8 @@ const SUP_KB = [
     fa: "⬇️ از صفحه «دانلود» می‌توانی لومیتک را مثل یک اپ واقعی روی گوشی و کامپیوتر نصب کنی؛ بعد از نصب حتی بدون اینترنت هم کار می‌کند.",
     en: "⬇️ From the Download page you can install Lumitek like a real app on your phone or computer; once installed it even works offline." },
   { keys: ["ورزش", "اسپورتک", "sport", "لیگ", "اخبار", "news", "فوتبال"],
-    fa: "🏆 اسپورتک اخبار زنده‌ی مرتبط با هر رشته، جدول ۲۴ لیگ (خلیج فارس، پرمیرلیگ، لالیگا، NBA و...) و بازی‌های پیش رو را با یک دکمه «بروزرسانی همه» نشان می‌دهد.",
-    en: "🏆 Sportek shows live news per sport, 24 league tables (PGPL, Premier League, La Liga, NBA...) and upcoming matches — with one \u201cRefresh everything\u201d button." },
+    fa: "🏆 اسپورتک اخبار زنده‌ی مرتبط با هر رشته، جدول ۴۰ لیگ (خلیج فارس، پرمیرلیگ، لالیگا، NBA و...) و بازی‌های پیش رو را با یک دکمه «بروزرسانی همه» نشان می‌دهد.",
+    en: "🏆 Sportek shows live news per sport, 40 league tables (PGPL, Premier League, La Liga, NBA...) and upcoming matches — with one \u201cRefresh everything\u201d button." },
   { keys: ["هوش مصنوعی", "ai", "چت", "سوال از"],
     fa: "✨ هوش مصنوعی لومیتک بدون اشتراک است — هر سوال فقط ۲ سکه! اگر سکه نداری از بازی‌ها یا پاداش روزانه شارژ کن.",
     en: "✨ Lumitek AI needs no subscription — each question is just 2 coins! Out of coins? Earn them by playing or claim the daily reward." },
@@ -2171,21 +2693,26 @@ function supAnswer(q) {
   return fa ? best.fa : best.en;
 }
 
-/* ربات ناز پشتیبانی — SVG دستیار گوشه صفحه (جای آیکون پیام، نسخه ۱.۱) */
+/* آیکون ربات پشتیبانی گوشه راست پایین (v0.2.0 — بازگشت ربات دوست‌داشتنی) */
 function robotFaceSvg(size) {
-  size = size || 30;
-  return '<svg width="' + size + '" height="' + size + '" viewBox="0 0 48 48" fill="none" aria-hidden="true">' +
-    '<line x1="24" y1="3" x2="24" y2="8" stroke="#76e6c3" stroke-width="2.6" stroke-linecap="round"/>' +
-    '<circle cx="24" cy="3.4" r="2.4" fill="#76e6c3">' +
-      '<animate attributeName="opacity" values="1;.25;1" dur="1.6s" repeatCount="indefinite"/></circle>' +
-    '<rect x="7" y="9" width="34" height="28" rx="10" fill="#16233a" stroke="#76e6c3" stroke-width="2.4"/>' +
-    '<rect x="2.6" y="17" width="4.4" height="10" rx="2.2" fill="#76e6c3"/>' +
-    '<rect x="41" y="17" width="4.4" height="10" rx="2.2" fill="#76e6c3"/>' +
-    '<circle class="rb-eye" cx="17.5" cy="21.5" r="3.1" fill="#7cf7c4">' +
-      '<animate attributeName="ry" values="3.1;3.1;.5;3.1" keyTimes="0;.9;.94;1" dur="3.4s" repeatCount="indefinite"/></circle>' +
-    '<circle class="rb-eye" cx="30.5" cy="21.5" r="3.1" fill="#7cf7c4">' +
-      '<animate attributeName="ry" values="3.1;3.1;.5;3.1" keyTimes="0;.9;.94;1" dur="3.4s" repeatCount="indefinite"/></circle>' +
-    '<path d="M17.5 29.5q6.5 4.6 13 0" stroke="#7cf7c4" stroke-width="2.4" stroke-linecap="round" fill="none"/>' +
+  size = size || 32;
+  return '<svg width="' + size + '" height="' + size + '" viewBox="0 0 48 48" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">' +
+    '<defs><linearGradient id="rbg" x1="10" y1="10" x2="38" y2="42"><stop stop-color="#4f8cff"/><stop offset="1" stop-color="#2563eb"/></linearGradient></defs>' +
+    '/* آنتن */'.replace(/\/\*|\*\//g, '') +
+    '<line x1="24" y1="4.8" x2="24" y2="9.6" stroke="#38bdf8" stroke-width="2.6" stroke-linecap="round"/>' +
+    '<circle cx="24" cy="4.8" r="2.9" fill="#38bdf8"/>' +
+    '/* سر ربات */'.replace(/\/\*|\*\//g, '') +
+    '<rect x="7.5" y="9.5" width="33" height="26" rx="9.5" fill="url(#rbg)"/>' +
+    '<rect x="10.8" y="12.8" width="26.4" height="17.5" rx="7" fill="#0b1830" opacity=".5"/>' +
+    '/* چشم‌ها و لبخند */'.replace(/\/\*|\*\//g, '') +
+    '<circle cx="17.6" cy="21.4" r="3.5" fill="#eaf4ff"/>' +
+    '<circle cx="30.4" cy="21.4" r="3.5" fill="#eaf4ff"/>' +
+    '<circle cx="18.3" cy="22" r="1.8" fill="#0b1830"/>' +
+    '<circle cx="31.1" cy="22" r="1.8" fill="#0b1830"/>' +
+    '<path d="M18.6 26.8 q5.4 3.6 10.8 0" stroke="#9fd0ff" stroke-width="2" fill="none" stroke-linecap="round"/>' +
+    '/* گوش‌های کناری */'.replace(/\/\*|\*\//g, '') +
+    '<rect x="3.6" y="17.6" width="4.8" height="11" rx="2.4" fill="#38bdf8"/>' +
+    '<rect x="39.6" y="17.6" width="4.8" height="11" rx="2.4" fill="#38bdf8"/>' +
     '</svg>';
 }
 
@@ -2197,7 +2724,7 @@ function setupSupportWidget() {
   fab.className = "sup-fab";
   fab.type = "button";
   fab.setAttribute("aria-label", T("wgt.open"));
-  fab.innerHTML = '<span class="sup-i">' + robotFaceSvg(30) + '</span><span class="sup-x">✕</span>';
+  fab.innerHTML = '<span class="sup-i">' + robotFaceSvg(34) + '</span><span class="sup-x">✕</span>';
   document.body.appendChild(fab);
 
   const panel = document.createElement("div");
@@ -2270,8 +2797,8 @@ function setupSupportWidget() {
     const ctrl = typeof AbortController !== "undefined" ? new AbortController() : null;
     const timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 14000);
     const sys = fa
-      ? "تو دستیار شاد و کوتاه‌گوی وب‌سایت لومیتک هستی — یک گروه دیجیتال با ۲۹ بازی، ۳۷ ابزار، فروشگاه سکه و اسکین، اسپورتک با ۲۱ رشته ورزشی مردان، اخبار دیجیتال ایرانی، ۴۴ مقاله آموزشی و هوش مصنوعی. به فارسی خلاص و دوستانه جواب بده (حداکثر ۳ جمله). اگر سوال درباره لومیتک نبود هم مفید جواب بده."
-      : "You are the cheerful, concise assistant of Lumitek — a digital group with 29 games, 37 tools, a coin & skins store, 21-sport men's Sportek, Iranian digital news, 44 articles and AI. Reply briefly and friendly in English (max 3 sentences). Be helpful even if the question is not about Lumitek.";
+      ? "تو دستیار شاد و کوتاه‌گوی وب‌سایت لومیتک هستی — یک گروه دیجیتال با ۲۹ بازی، ۳۷ ابزار، فروشگاه سکه و اسکین، اسپورتک با ۲۵ رشته ورزشی و ۴۰ لیگ، اخبار دیجیتال ایرانی، ۶۰ مقاله آموزشی و هوش مصنوعی. به فارسی خلاص و دوستانه جواب بده (حداکثر ۳ جمله). اگر سوال درباره لومیتک نبود هم مفید جواب بده."
+      : "You are the cheerful, concise assistant of Lumitek — a digital group with 29 games, 37 tools, a coin & skins store, Sportek with 25 sports and 40 leagues, Iranian digital news, 60 articles and AI. Reply briefly and friendly in English (max 3 sentences). Be helpful even if the question is not about Lumitek.";
     fetch("https://text.pollinations.ai/" + encodeURIComponent(q) + "?model=openai-fast&referrer=lumitek&system=" + encodeURIComponent(sys), ctrl ? { signal: ctrl.signal } : {})
       .then(function (r) { if (!r.ok) throw new Error("s"); return r.text(); })
       .then(function (txt) {
@@ -2312,6 +2839,7 @@ function setupSupportWidget() {
 }
 
 /* ---------------- Boot ---------------- */
+
 document.addEventListener("DOMContentLoaded", function() {
   _liveProfile = getProfile();
   grantStarterCoins();
@@ -2342,11 +2870,11 @@ document.addEventListener("DOMContentLoaded", function() {
     window.LumiAuth.onChange(function() { renderProfile(); });
   }
 
-  const notifyFirst = localStorage.getItem("lumitek_first_notice_v13");
+  const notifyFirst = localStorage.getItem("lumitek_first_notice_v21");
   if (!notifyFirst) {
-    addNotification("🚀", getLang() === "fa"
-      ? "Lumitek 0.1.3 منتشر شد: صفحه پایان حرفه‌ای بازی‌ها، ۵ ابزار و ۱۲ مقاله تازه و فروشگاه بزرگ‌تر! 🎮"
-      : "Lumitek 0.1.3 is out: pro game-over screens, 5 new tools, 12 new articles & a bigger store! 🎮");
-    localStorage.setItem("lumitek_first_notice_v13", "1");
+    addNotification("🛠️", getLang() === "fa"
+      ? "Lumitek 0.2.1 نصب شد: چرخش بی‌وقفه و یک‌ردیفی بازی‌های محبوب، موج‌های پیوسته و درخشان، جست‌وجو فقط در صفحه اصلی و پانوشت تمیزتر."
+      : "Lumitek 0.2.1 is out: a single seamless row of rotating popular games, solid glowing waves, search on the homepage only and a cleaner footer.");
+    localStorage.setItem("lumitek_first_notice_v21", "1");
   }
 });

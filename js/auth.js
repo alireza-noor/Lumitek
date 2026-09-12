@@ -294,24 +294,30 @@ window.LumiAuth = (function () {
       '<div class="auth-or"><span></span><i data-i18n="auth.or">یا با ایمیل</i><span></span></div>' +
       '<div class="auth-tabs"><button data-auth-tab="in" class="active">ورود</button><button data-auth-tab="up">ثبت‌نام</button></div>' +
       '<div data-auth-mode="in">' +
-      '<input data-auth-email type="email" autocomplete="email" placeholder="ایمیل">' +
-      '<div class="auth-pass-wrap"><input data-auth-pass type="password" autocomplete="current-password" placeholder="رمز عبور"><button type="button" class="auth-eye" data-auth-eye tabindex="-1">👁</button></div>' +
+      '<label class="auth-field-label" data-i18n="auth.emailLabel">ایمیل</label>' +
+      '<input data-auth-email type="email" autocomplete="email" placeholder="ایمیل" style="display:block;width:100%;margin-bottom:14px">' +
+      '<label class="auth-field-label" data-i18n="auth.passLabel">رمز عبور</label>' +
+      '<div class="auth-pass-wrap" style="display:block;width:100%"><input data-auth-pass type="password" autocomplete="current-password" placeholder="رمز عبور" style="width:100%"><button type="button" class="auth-eye" data-auth-eye tabindex="-1">👁</button></div>' +
       '</div>' +
       '<div data-auth-mode="up" style="display:none">' +
-      '<input data-auth-name type="text" maxlength="24" placeholder="نام نمایشی">' +
-      '<input data-auth-email2 type="email" autocomplete="email" placeholder="ایمیل">' +
-      '<div class="auth-pass-wrap"><input data-auth-pass2 type="password" autocomplete="new-password" placeholder="رمز عبور (حداقل ۶ کاراکتر)"><button type="button" class="auth-eye" data-auth-eye tabindex="-1">👁</button></div>' +
+      '<label class="auth-field-label" data-i18n="auth.nameLabel">نام نمایشی</label>' +
+      '<input data-auth-name type="text" maxlength="24" placeholder="نام نمایشی" style="display:block;width:100%;margin-bottom:14px">' +
+      '<label class="auth-field-label" data-i18n="auth.emailLabel">ایمیل</label>' +
+      '<input data-auth-email2 type="email" autocomplete="email" placeholder="ایمیل" style="display:block;width:100%;margin-bottom:14px">' +
+      '<label class="auth-field-label" data-i18n="auth.passLabel">رمز عبور</label>' +
+      '<div class="auth-pass-wrap" style="display:block;width:100%"><input data-auth-pass2 type="password" autocomplete="new-password" placeholder="رمز عبور (حداقل ۶ کاراکتر)" style="width:100%"><button type="button" class="auth-eye" data-auth-eye tabindex="-1">👁</button></div>' +
       '<div class="auth-strength" data-auth-strength style="display:none">' +
       '<div class="auth-strength-track"><i data-auth-strength-fill></i></div>' +
       '<span data-auth-strength-label></span>' +
       '</div>' +
       '</div>' +
       '<div class="auth-error" data-auth-error style="display:none"></div>' +
-      '<button class="primary-btn" style="width:100%" data-auth-submit>ورود</button>' +
+      '<button class="primary-btn" style="width:100%;margin-top:8px" data-auth-submit>ورود</button>' +
       '</div>' +
       '<div data-auth-msstep style="display:none">' +
       '<p class="auth-ms-lead" data-i18n="auth.msLead">برای ورود با مایکروسافت، ایمیل اکانت خود را وارد کن:</p>' +
-      '<input data-auth-msemail type="email" autocomplete="email" dir="ltr" placeholder="you@outlook.com">' +
+      '<label class="auth-field-label">ایمیل مایکروسافت</label>' +
+      '<input data-auth-msemail type="email" autocomplete="email" dir="ltr" placeholder="you@outlook.com" style="display:block;width:100%;margin-bottom:14px">' +
       '<div class="auth-error" data-auth-error2 style="display:none"></div>' +
       '<button class="ms-btn ms-solid" style="width:100%;justify-content:center" data-auth-msgo>' + msLogo() + '<span>ادامه با مایکروسافت</span></button>' +
       '<button class="ghost-btn" style="width:100%;margin-top:8px" data-auth-msback>بازگشت</button>' +
@@ -341,6 +347,10 @@ window.LumiAuth = (function () {
     m.querySelector(".auth-note").textContent = T("auth.demoNote");
     var lead = m.querySelector("[data-i18n='auth.msLead']");
     if (lead) lead.textContent = T("auth.msLead") || "برای ورود با مایکروسافت، ایمیل اکانت خود را وارد کن:";
+    /* ترجمه‌ی لیبل‌های فیلد */
+    m.querySelectorAll(".auth-field-label[data-i18n='auth.emailLabel']").forEach(function(el){ el.textContent = T("auth.emailLabel"); });
+    m.querySelectorAll(".auth-field-label[data-i18n='auth.passLabel']").forEach(function(el){ el.textContent = T("auth.passLabel"); });
+    m.querySelectorAll(".auth-field-label[data-i18n='auth.nameLabel']").forEach(function(el){ el.textContent = T("auth.nameLabel"); });
   }
 
   function showMsStep(m, on) {

@@ -21,8 +21,8 @@
 <meta name="twitter:title" content="📚 مقالات | Lumitek">
 <meta name="twitter:description" content="مقالات علمی، آموزشی، تاریخی و دانستنی‌های عمومی در Lumitek.">
 <meta name="twitter:image" content="https://lumitek.netlify.app/assets/icons/og-cover.png">
-<link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
-<link rel="apple-touch-icon" href="../assets/icons/icon-192.png">
+<link rel="icon" type="image/png" href="../assets/icons/logo-lt.png">
+<link rel="apple-touch-icon" href="../assets/icons/logo-lt.png">
 <link rel="manifest" href="../manifest.json">
 <link rel="preconnect" href="https://fontnegar.ir/" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -53,22 +53,20 @@ html.light .ar-body pre{background:#f0f4fa;border-color:rgba(20,30,50,.1)}
 <header class="site-header">
   <a class="brand" href="../index.html"><img class="brand-logo" src="../assets/icons/logo-lt.png" alt="Lumitek" width="46" height="46"><span class="brand-word">Lumitek</span></a>
   <nav class="main-nav" id="mainNav">
-    <a href="../index.html" data-i18n="nav.home">nav.home</a>
-    <a href="../pages/tools.html" data-i18n="nav.tools">nav.tools</a>
-    <a href="../pages/games.html" data-i18n="nav.games">nav.games</a>
-    <a href="../pages/store.html" data-i18n="nav.store">nav.store</a>
-    <a href="../pages/sports.html" data-i18n="nav.sports">nav.sports</a>
-    <a href="../pages/digital-news.html" data-i18n="nav.digitalnews">اخبار دیجیتال 📰</a>
-    <a href="../pages/ai.html" data-i18n="nav.ai">لومیتک ای‌آی ✨</a>
-    <a href="../pages/download.html" class="nav-mid2" data-i18n="nav.download">nav.download</a>
-    <a href="../pages/technology.html" class="nav-extra" data-i18n="nav.tech">nav.tech</a>
-    <a href="../pages/articles.html" class="nav-mid" data-i18n="nav.articles">nav.articles</a>
-    <a href="../pages/announcements.html" class="nav-mid" data-i18n="nav.updates">nav.updates</a>
-    <a href="../pages/about.html" class="nav-extra" data-i18n="nav.about">nav.about</a>
-    <a href="../pages/contact.html" class="nav-extra" data-i18n="nav.contact">nav.contact</a>
-    <a href="../pages/account.html" class="nav-extra" data-i18n="nav.account">nav.account</a>
-    <a href="../pages/donate.html" class="nav-extra" data-i18n="nav.donate">nav.donate</a>
-    <a href="../pages/support.html" data-i18n="nav.supportE">nav.supportE</a>
+    <a href="../index.html" data-i18n="nav.home">خانه</a>
+    <a href="../pages/tools.html" data-i18n="nav.tools">ابزار</a>
+    <a href="../pages/games.html" data-i18n="nav.games">بازی‌ها</a>
+    <a href="../pages/store.html" data-i18n="nav.store">فروشگاه</a>
+    <a href="../pages/sports.html" data-i18n="nav.sports">اسپورتک</a>
+    <a href="../pages/digital-news.html" data-i18n="nav.digitalnews">اخبار دیجیتال</a>
+    <a href="../pages/ai.html" data-i18n="nav.ai">لومیتک ای‌آی</a>
+    <a href="../pages/download.html" data-i18n="nav.download">دانلود</a>
+    <a href="../pages/articles.html" data-i18n="nav.articles">مقالات</a>
+    <a href="../pages/announcements.html" data-i18n="nav.updates">تغییرات</a>
+    <a href="../pages/about.html" data-i18n="nav.about">درباره ما</a>
+    <a href="../pages/contact.html" data-i18n="nav.contact">تماس با ما</a>
+    <a href="../pages/donate.html" class="nav-donate-link" data-i18n="nav.donate">حمایت مالی</a>
+    <a href="../pages/support.html" data-i18n="nav.supportE">پشتیبانی</a>
   </nav>
   <div class="header-actions">
     <button id="languageToggle" class="icon-btn" data-i18n-title="nav.home" title="Language">EN</button>
@@ -114,16 +112,20 @@ html.light .ar-body pre{background:#f0f4fa;border-color:rgba(20,30,50,.1)}
   </div>
 </div>
 
-<div class="search-wrap">
-<input id="globalSearchInput" type="search" data-i18n-ph="head.searchPh" placeholder="جستجو..." aria-label="Search">
-<div id="searchResults" class="search-results"></div>
-</div>
 <main class="page">
 <p class="eyebrow">LUMITEK ARTICLES</p>
 <h1 data-i18n="ar.h1">مقالات</h1>
 <p class="muted" data-i18n="ar.lead">بخوان، یاد بگیر، کشف کن — ۲۸ مقاله علمی، آموزشی و فناوری با خواندن کامل داخل سایت.</p>
 
-<div class="section-title mt2" data-i18n="ar.tutTitle">🎓 آموزش‌های گام‌به‌گام — برای شروع کلیک کن</div>
+<div class="pdf-box mt2">
+  <span class="pdf-ico">📄</span>
+  <div>
+    <b data-i18n="ar.pdfBoxT">نسخه پی‌دی‌اف مقاله‌ها</b>
+    <p data-i18n="ar.pdfBoxD">هر مقاله یک نسخه PDF مرتب و آماده چاپ دارد. با پرداخت ۵۰ سکه در صفحه همان مقاله، فایل آن فعال می‌شود و برای همیشه در مرورگر شما باقی می‌ماند؛ مطالعه در سایت همچنان رایگان است.</p>
+  </div>
+</div>
+
+<div class="section-title mt3" data-i18n="ar.tutTitle">🎓 آموزش‌های گام‌به‌گام — برای شروع کلیک کن</div>
 <div class="store-tabs" id="arCats" style="margin:14px 0 0;flex-wrap:wrap">
   <button data-cat="all" class="active" data-i18n="ar.catAll">همه</button>
   <button data-cat="programming" data-i18n="ar.catProgram">💻 برنامه‌نویسی</button>
@@ -146,31 +148,21 @@ html.light .ar-body pre{background:#f0f4fa;border-color:rgba(20,30,50,.1)}
 </div>
 </main>
 
-<div id="arModal" class="modal ar-modal">
-  <div class="modal-card">
-    <button id="arClose" class="modal-close">×</button>
-    <h2 id="arTitle" style="font-size:1.25rem;line-height:1.8"></h2>
-    <p class="muted" id="arTag" style="font-size:.78rem;margin-top:2px"></p>
-    <div id="arBody" class="ar-body mt"></div>
-    <div class="ar-read-row" id="arReadRow"></div>
-  </div>
-</div>
-
 <footer class="footer-v2">
   <div class="fv-grid">
     <div>
       <div class="fv-brand"><img class="brand-logo" src="../assets/icons/logo-lt.png" alt="Lumitek" width="34" height="34"><span class="brand-word">Lumitek</span></div>
       <p data-i18n="footer.tag">همه ابزارها و بازی‌های مورد نیازت، سریع و ساده — همه‌جا با هم.</p>
-      <span class="vip-badge" style="display:inline-flex">v0.1.3 · PWA</span>
+      <span class="vip-badge" style="display:inline-flex">v0.2.1 · PWA</span>
     </div>
     <div>
       <h4 data-i18n="footer.explore">کاوش</h4>
       <ul>
-        <li><a href="../pages/digital-news.html" data-i18n="nav.digitalnews">اخبار دیجیتال</a></li><li><a href="../pages/technology.html" data-i18n="nav.tech">فناوری</a></li>
+        <li><a href="../pages/digital-news.html" data-i18n="footer.newsLink">اخبار دیجیتال</a></li>
         <li><a href="../pages/articles.html" class="nav-mid" data-i18n="nav.articles">مقالات</a></li>
         <li><a href="../pages/announcements.html" class="nav-mid" data-i18n="nav.updates">تغییرات</a></li>
         <li><a href="../pages/about.html" data-i18n="nav.about">درباره ما</a></li>
-        <li><a href="../pages/contact.html" data-i18n="nav.contact">تماس</a></li>
+        <li><a href="../pages/contact.html" data-i18n="nav.contact">تماس با ما</a></li>
       </ul>
     </div>
     <div>
@@ -195,18 +187,12 @@ html.light .ar-body pre{background:#f0f4fa;border-color:rgba(20,30,50,.1)}
     <div class="fv-social">
     <div class="fv-social-title" data-i18n="footer.socialT">ما را در شبکه‌های اجتماعی دنبال کنید</div>
     <div class="fv-social-row">
-      <a href="https://www.aparat.com/lumitek" target="_blank" rel="noopener" title="آپارات" aria-label="Aparat">
-        <svg width="26" height="26" viewBox="0 0 32 32"><rect x="1" y="1" width="30" height="30" rx="9" fill="#DF0F38"/><path d="M11 9.5l13 6.5-13 6.5v-13z" fill="#fff"/></svg>
-        <span>آپارات</span></a>
-      <a href="https://bale.ai/lumitek" target="_blank" rel="noopener" title="بله" aria-label="Bale">
-        <svg width="26" height="26" viewBox="0 0 32 32"><rect x="1" y="1" width="30" height="30" rx="9" fill="#00A693"/><path d="M8 22V10h5.2c2.6 0 4.3 1.3 4.3 3.4 0 1.5-.8 2.6-2.1 3.1l3.3 5.5h-3.4l-2.8-5h-1.4v5H8zm3.1-7.4h1.9c1 0 1.6-.5 1.6-1.3s-.6-1.3-1.6-1.3h-1.9v2.6z" fill="#fff"/><circle cx="22.5" cy="11.5" r="2.5" fill="#fff"/></svg>
-        <span>بله</span></a>
+      <a href="https://ble.ir/lumitek" target="_blank" rel="noopener" title="بله" aria-label="Bale">
+        <img src="../assets/icons/bale.svg" width="30" height="30" alt="بله" loading="lazy">
+        </a>
       <a href="https://eitaa.com/lumitek" target="_blank" rel="noopener" title="ایتا" aria-label="Eitaa">
-        <svg width="26" height="26" viewBox="0 0 32 32"><rect x="1" y="1" width="30" height="30" rx="9" fill="#F5793B"/><path d="M25 8.5L6.5 15.7c-.7.3-.6 1.3.1 1.4l4.6 1.2 1.7 5.2c.2.7 1.1.8 1.5.2l2.3-3 4.6 3.4c.6.4 1.4.1 1.6-.6L26.4 9.6c.2-.8-.6-1.4-1.4-1.1zm-9.8 10.6l-.4 3 1.6-2.4-1.2-.6z" fill="#fff"/></svg>
-        <span>ایتا</span></a>
-      <a href="https://rubika.ir/lumitek" target="_blank" rel="noopener" title="روبیکا" aria-label="Rubika">
-        <svg width="26" height="26" viewBox="0 0 32 32"><rect x="1" y="1" width="30" height="30" rx="9" fill="#8E24AA"/><path d="M9 24V8h6.5c3.4 0 5.5 1.7 5.5 4.5 0 2-.9 3.4-2.6 4.1l4 7.4h-4.2l-3.4-6.6h-1.9V24H9zm3.9-9.6h2.4c1.4 0 2.2-.7 2.2-1.9s-.8-1.9-2.2-1.9h-2.4v3.8z" fill="#fff"/></svg>
-        <span>روبیکا</span></a>
+        <img src="../assets/icons/eitaa.svg" width="30" height="30" alt="ایتا" loading="lazy">
+        </a>
     </div>
   </div>
   <div class="fv-bottom">
@@ -222,46 +208,13 @@ html.light .ar-body pre{background:#f0f4fa;border-color:rgba(20,30,50,.1)}
 var TUTORIALS = window.LUMITEK_ARTICLES || [];
 
 var grid = document.getElementById("tutGrid");
-var currentTut = null;
-function isTutRead(id) {
-  try { var p = getProfile(); return (p.readArticles || []).indexOf(id) !== -1; } catch(e) { return false; }
-}
-function claimTutReward() {
-  if (!currentTut) return;
-  var p = getProfile();
-  p.readArticles = Array.isArray(p.readArticles) ? p.readArticles : [];
-  if (p.readArticles.indexOf(currentTut.id) !== -1) { renderReadRow(); return; }
-  p.readArticles.push(currentTut.id);
-  saveProfile(p);
-  var r = addReward(10, 5);
-  addNotification("🎓", T("m.articleReward") + " (" + r.coins + " 🪙)");
-  renderTuts();
-  renderReadRow();
-}
-function renderReadRow() {
-  var row = document.getElementById("arReadRow");
-  if (!row || !currentTut) return;
-  row.innerHTML = "";
-  if (isTutRead(currentTut.id)) {
-    var done = document.createElement("div");
-    done.className = "ar-read-done";
-    done.textContent = T("ar.readDone");
-    row.appendChild(done);
-  } else {
-    var btn = document.createElement("button");
-    btn.className = "ar-read-btn";
-    btn.textContent = T("ar.readCta");
-    btn.onclick = claimTutReward;
-    row.appendChild(btn);
-  }
-}
 var curCat = "all";
 function renderTuts() {
   grid.innerHTML = "";
   TUTORIALS.filter(function(a){ return curCat === "all" || a.cat === curCat; }).forEach(function(a) {
     var card = document.createElement("article");
-    card.className = "card ar-item reveal" + (isTutRead(a.id) ? " is-done" : "");
-    card.innerHTML = '<span class="ar-done-chip">✓ ' + T("coins.unit") + '</span><span class="tag">' + a.emoji + " " + a.tag + '</span><h3></h3><p class="muted"></p>' +
+    card.className = "card ar-item reveal";
+    card.innerHTML = '<span class="tag">' + a.emoji + " " + a.tag + '</span><h3></h3><p class="muted"></p>' +
       '<div class="ar-meta">🕒 ' + a.min + " " + T("ar.minutes") + ' · <b style="color:var(--a)">' + T("ar.full") + ' →</b></div>';
     card.querySelector("h3").textContent = a.title;
     card.querySelector("p").textContent = a.lead;
@@ -271,14 +224,10 @@ function renderTuts() {
   if (window.LumiReveal) window.LumiReveal.scan(grid);
 }
 function openTut(a) {
-  currentTut = a;
   /* v1.2 — مقاله در یک صفحه کامل باز می‌شود، نه مودال کوچک */
   location.href = "article.html?id=" + encodeURIComponent(a.id);
 }
-var arModal = document.getElementById("arModal");
-arModal.addEventListener("click", function(e) { if (e.target === arModal) arModal.classList.remove("show"); });
-document.getElementById("arClose").onclick = function() { arModal.classList.remove("show"); };
-document.addEventListener("keydown", function(e) { if (e.key === "Escape") arModal.classList.remove("show"); });
+document.addEventListener("keydown", function(e) { if (e.key === "Escape") document.querySelectorAll(".modal.show").forEach(function(m){ m.classList.remove("show"); }); });
 document.getElementById("arCats").addEventListener("click", function(e) {
   var b = e.target.closest("button");
   if (!b) return;
@@ -290,6 +239,12 @@ document.addEventListener("lumitek:langchange", renderTuts);
 renderTuts();
 </script>
 
+<div class="donate-widget" id="donateWidget">
+<a class="donate-card" href="../pages/donate.html" title="حمایت از لومیتک" aria-label="حمایت مالی">
+<span class="dw-icon">❤️</span>
+<span class="dw-text"><b>حمایت</b><small>اختیاری</small></span>
+</a>
+</div>
 </body>
 
 </html>

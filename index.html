@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Lumitek — لومیتک | هوش مصنوعی، ۳۲ ابزار، ۳۰ بازی و ۳۴ مقاله آموزشی</title>
+<title>Lumitek — لومیتک | هوش مصنوعی، ۳۷ ابزار، ۲۹ بازی و ۶۰ مقاله آموزشی</title>
 <meta name="description" content="لومیتک (Lumitek) همه چیز را یکجا دارد: هوش مصنوعی لومیتک متصل به OpenAI، ۳۲ ابزار کاربردی (تقویم ایران، اوقات شرعی، آمار، فیزیک)، ۳۰ بازی آنلاین با سکه و لیدربرد، اخبار دیجیتال از رسانه‌های ایرانی، فروشگاه کامل با اسکین، اسپورتک و نصب به‌صورت اپلیکیشن (PWA).">
 <meta name="keywords" content="لومیتک, lumitek, ابزار آنلاین, بازی آنلاین, اخبار ورزش, پشتیبانی هوش مصنوعی, خرید سکه, وب اپلیکیشن">
 <meta name="robots" content="index,follow">
@@ -11,18 +11,18 @@
 <link rel="canonical" href="https://lumitek.netlify.app/index.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Lumitek">
-<meta property="og:title" content="Lumitek — لومیتک | هوش مصنوعی، ۳۲ ابزار، ۳۰ بازی و ۳۴ مقاله آموزشی">
+<meta property="og:title" content="Lumitek — لومیتک | هوش مصنوعی، ۳۷ ابزار، ۲۹ بازی و ۶۰ مقاله آموزشی">
 <meta property="og:description" content="هوش مصنوعی لومیتک متصل به OpenAI، ۳۲ ابزار کاربردی، ۳۰ بازی آنلاین با سکه، اخبار دیجیتال از رسانه‌های ایرانی و اسپورتک برای هواداران ورزش — همه در یک تجربه سریع، زیبا و یکپارچه.">
 <meta property="og:url" content="https://lumitek.netlify.app/index.html">
 <meta property="og:image" content="https://lumitek.netlify.app/assets/icons/og-cover.png">
 <meta property="og:locale" content="fa_IR">
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Lumitek — لومیتک | هوش مصنوعی، ۳۲ ابزار، ۳۰ بازی و ۳۴ مقاله آموزشی">
+<meta name="twitter:title" content="Lumitek — لومیتک | هوش مصنوعی، ۳۷ ابزار، ۲۹ بازی و ۶۰ مقاله آموزشی">
 <meta name="twitter:description" content="هوش مصنوعی لومیتک متصل به OpenAI، ۳۲ ابزار کاربردی، ۳۰ بازی آنلاین با سکه، اخبار دیجیتال از رسانه‌های ایرانی و اسپورتک برای هواداران ورزش — همه در یک تجربه سریع، زیبا و یکپارچه.">
 <meta name="twitter:image" content="https://lumitek.netlify.app/assets/icons/og-cover.png">
-<link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
-<link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+<link rel="icon" type="image/png" href="assets/icons/logo-lt.png">
+<link rel="apple-touch-icon" href="assets/icons/logo-lt.png">
 <link rel="manifest" href="manifest.json">
 <link rel="preconnect" href="https://fontnegar.ir/" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -55,30 +55,32 @@
 }
 </script>
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/home.css">
 <script>try{var t=localStorage.getItem("lumitek_theme");if(t==="light")document.documentElement.classList.add("light");var l=localStorage.getItem("lumitek_lang");if(l==="en"){document.documentElement.lang="en";document.documentElement.dir="ltr"}else{document.documentElement.lang="fa";document.documentElement.dir="rtl"}}catch(e){}</script>
 </head>
 <body>
 <div id="offlineBanner" class="offline-banner" data-i18n="offline.banner">🔌 حالت آفلاین — صفحه‌ها و بازی‌ها از حافظه اجرا می‌شوند و اخبار از آخرین نسخه ذخیره‌شده نمایش داده می‌شوند.</div>
+<!-- لایه‌های گرافیکی ثابت v0.2.0 (Aurora نرم — بدون نقاط متحرک) -->
+<div class="au-aurora" aria-hidden="true"><i class="blob b1"></i><i class="blob b2"></i><i class="blob b3"></i></div>
+<div id="auCursorGlow" aria-hidden="true"></div>
 <!--LT5-CHROME-->
 <header class="site-header">
   <a class="brand" href="index.html"><img class="brand-logo" src="assets/icons/logo-lt.png" alt="Lumitek" width="46" height="46"><span class="brand-word">Lumitek</span></a>
   <nav class="main-nav" id="mainNav">
-    <a href="index.html" data-i18n="nav.home">nav.home</a>
-    <a href="pages/tools.html" data-i18n="nav.tools">nav.tools</a>
-    <a href="pages/games.html" data-i18n="nav.games">nav.games</a>
-    <a href="pages/store.html" data-i18n="nav.store">nav.store</a>
-    <a href="pages/sports.html" data-i18n="nav.sports">nav.sports</a>
-    <a href="pages/digital-news.html" data-i18n="nav.digitalnews">اخبار دیجیتال 📰</a>
-    <a href="pages/ai.html" data-i18n="nav.ai">لومیتک ای‌آی ✨</a>
-    <a href="pages/download.html" class="nav-mid2" data-i18n="nav.download">nav.download</a>
-    <a href="pages/technology.html" class="nav-extra" data-i18n="nav.tech">nav.tech</a>
-    <a href="pages/articles.html" class="nav-mid" data-i18n="nav.articles">nav.articles</a>
-    <a href="pages/announcements.html" class="nav-mid" data-i18n="nav.updates">nav.updates</a>
-    <a href="pages/about.html" class="nav-extra" data-i18n="nav.about">nav.about</a>
-    <a href="pages/contact.html" class="nav-extra" data-i18n="nav.contact">nav.contact</a>
-    <a href="pages/account.html" class="nav-extra" data-i18n="nav.account">nav.account</a>
-    <a href="pages/donate.html" class="nav-extra" data-i18n="nav.donate">nav.donate</a>
-    <a href="pages/support.html" data-i18n="nav.supportE">nav.supportE</a>
+    <a href="index.html" data-i18n="nav.home">خانه</a>
+    <a href="pages/tools.html" data-i18n="nav.tools">ابزار</a>
+    <a href="pages/games.html" data-i18n="nav.games">بازی‌ها</a>
+    <a href="pages/store.html" data-i18n="nav.store">فروشگاه</a>
+    <a href="pages/sports.html" data-i18n="nav.sports">اسپورتک</a>
+    <a href="pages/digital-news.html" data-i18n="nav.digitalnews">اخبار دیجیتال</a>
+    <a href="pages/ai.html" data-i18n="nav.ai">لومیتک ای‌آی</a>
+    <a href="pages/download.html" data-i18n="nav.download">دانلود</a>
+    <a href="pages/articles.html" data-i18n="nav.articles">مقالات</a>
+    <a href="pages/announcements.html" data-i18n="nav.updates">تغییرات</a>
+    <a href="pages/about.html" data-i18n="nav.about">درباره ما</a>
+    <a href="pages/contact.html" data-i18n="nav.contact">تماس با ما</a>
+    <a href="pages/donate.html" class="nav-donate-link" data-i18n="nav.donate">حمایت مالی</a>
+    <a href="pages/support.html" data-i18n="nav.supportE">پشتیبانی</a>
   </nav>
   <div class="header-actions">
     <button id="languageToggle" class="icon-btn" data-i18n-title="nav.home" title="Language">EN</button>
@@ -129,101 +131,320 @@
 <div id="searchResults" class="search-results"></div>
 </div>
 <main class="wrap">
-<section class="hero">
-  <div>
-    <span class="hero-badge reveal" data-i18n="idx.badge">🚀 نسخه ۱.۲ — نوار کنترل بازی‌ها، مقالات تمام‌صفحه، لیدربرد و بازی هدبال</span>
-    <p class="eyebrow">THE LUMITEK DIGITAL GROUP</p>
-    <h1><span data-i18n="idx.h1a">همه چیز یکجا،</span><br><span class="gradient" data-i18n="idx.h1b">سریع و ساده.</span></h1>
-    <p class="lead" data-i18n="idx.lead">۳۲ ابزار کاربردی، ۳۰ بازی در ۷ دسته، ۳۴ مقاله آموزشی مفصل با خواندن کامل داخل سایت، فروشگاه با سکه و اسکین، هوش مصنوعی لومیتک متصل به OpenAI، اخبار دیجیتال از معتبرترین رسانه‌های ایرانی و اسپورتک برای هواداران ورزش — همه در یک تجربه سریع، زیبا و یکپارچه.</p>
-    <div class="buttons">
-      <a class="btn primary" href="pages/games.html" data-i18n="idx.ctaGames">🎮 بازی کن</a>
-      <a class="btn secondary" href="pages/ai.html" data-i18n="idx.ctaAI">✨ هوش مصنوعی لومیتک</a>
-      <a class="btn secondary" href="pages/store.html" data-i18n="idx.ctaStore">🛍️ فروشگاه</a>
-      <a class="btn secondary" href="pages/download.html" data-i18n="idx.ctaDownload">⬇️ نصب اپ</a>
+
+<!-- ================= HERO AURORA (بازطراحی کامل v0.1.7) ================= -->
+<section class="au-hero">
+  <div class="au-hero-inner">
+    <!-- صحنه‌ی لوگو v0.2.0: بزرگ، تمیز و دیجیتال (هاله نوری دایره‌ای بدون قاب اضافه) -->
+    <div class="au-logo-stage reveal" aria-hidden="false">
+      <span class="au-logo-halo"></span>
+      <span class="au-logo-halo2"></span>
+      <img class="au-logo-big" src="assets/icons/logo-lt.png" alt="Lumitek" width="132" height="132">
+    </div>
+    <!-- موج دیجیتال بالای هیرو — فقط همین بخش (خطوط پیوسته و درخشان v0.2.1) -->
+    <div class="au-waves" aria-hidden="true">
+<div class="au-wave-band wb1"><svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path class="au-wv s1" d="M0 64 C 120 38 120 38 240 64 C 360 90 360 90 480 64 C 600 38 600 38 720 64 C 840 90 840 90 960 64 C 1080 38 1080 38 1200 64 C 1320 90 1320 90 1440 64"/><path class="au-wv s2" d="M0 80 C 90 62 90 62 180 80 C 270 98 270 98 360 80 C 450 62 450 62 540 80 C 630 98 630 98 720 80 C 810 62 810 62 900 80 C 990 98 990 98 1080 80 C 1170 62 1170 62 1260 80 C 1350 98 1350 98 1440 80"/><path class="au-wv s3" d="M0 48 C 180 18 180 18 360 48 C 540 78 540 78 720 48 C 900 18 900 18 1080 48 C 1260 78 1260 78 1440 48"/></svg><svg viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path class="au-wv s1" d="M0 64 C 120 38 120 38 240 64 C 360 90 360 90 480 64 C 600 38 600 38 720 64 C 840 90 840 90 960 64 C 1080 38 1080 38 1200 64 C 1320 90 1320 90 1440 64"/><path class="au-wv s2" d="M0 80 C 90 62 90 62 180 80 C 270 98 270 98 360 80 C 450 62 450 62 540 80 C 630 98 630 98 720 80 C 810 62 810 62 900 80 C 990 98 990 98 1080 80 C 1170 62 1170 62 1260 80 C 1350 98 1350 98 1440 80"/><path class="au-wv s3" d="M0 48 C 180 18 180 18 360 48 C 540 78 540 78 720 48 C 900 18 900 18 1080 48 C 1260 78 1260 78 1440 48"/></svg></div>
+    <div class="au-wave-band wb2"><svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path class="au-wv s4" d="M0 30 C 120 10 120 10 240 30 C 360 50 360 50 480 30 C 600 10 600 10 720 30 C 840 50 840 50 960 30 C 1080 10 1080 10 1200 30 C 1320 50 1320 50 1440 30"/><path class="au-wv s5" d="M0 96 C 120 82 120 82 240 96 C 360 110 360 110 480 96 C 600 82 600 82 720 96 C 840 110 840 110 960 96 C 1080 82 1080 82 1200 96 C 1320 110 1320 110 1440 96"/><path class="au-wv s6" d="M0 62 C 90 28 90 28 180 62 C 270 96 270 96 360 62 C 450 28 450 28 540 62 C 630 96 630 96 720 62 C 810 28 810 28 900 62 C 990 96 990 96 1080 62 C 1170 28 1170 28 1260 62 C 1350 96 1350 96 1440 62"/></svg><svg viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path class="au-wv s4" d="M0 30 C 120 10 120 10 240 30 C 360 50 360 50 480 30 C 600 10 600 10 720 30 C 840 50 840 50 960 30 C 1080 10 1080 10 1200 30 C 1320 50 1320 50 1440 30"/><path class="au-wv s5" d="M0 96 C 120 82 120 82 240 96 C 360 110 360 110 480 96 C 600 82 600 82 720 96 C 840 110 840 110 960 96 C 1080 82 1080 82 1200 96 C 1320 110 1320 110 1440 96"/><path class="au-wv s6" d="M0 62 C 90 28 90 28 180 62 C 270 96 270 96 360 62 C 450 28 450 28 540 62 C 630 96 630 96 720 62 C 810 28 810 28 900 62 C 990 96 990 96 1080 62 C 1170 28 1170 28 1260 62 C 1350 96 1350 96 1440 62"/></svg></div>
+    </div>
+    <div class="au-pill reveal">
+      <span class="au-pill-dot"></span>
+      <span data-i18n="idx.pill9">نسخه ۰٫۲٫۱ — سریع، پایدار و به‌روز</span>
+      <span class="au-pill-shine"></span>
+    </div>
+
+    <h1 class="au-title reveal">
+      <span class="au-t1" data-i18n="idx.h1a">همه چیز یکجا،</span>
+      <span class="au-t2 au-grad-anim" data-i18n="idx.h1b">سریع و ساده.</span>
+    </h1>
+
+    <div class="au-rotator reveal">
+      <span class="au-rot-label" data-i18n="idx.rotPrefix">امکانات:</span>
+      <span class="au-rot-window">
+        <span class="au-rot-item is-on"><i>🧰</i><b data-i18n="idx.rot1">ابزارها</b></span>
+        <span class="au-rot-item"><i>🎮</i><b data-i18n="idx.rot2">بازی‌ها</b></span>
+        <span class="au-rot-item"><i>📚</i><b data-i18n="idx.rot3">مقالات</b></span>
+        <span class="au-rot-item"><i>📰</i><b data-i18n="idx.rot4">اخبار دیجیتال</b></span>
+        <span class="au-rot-item"><i>✨</i><b data-i18n="idx.rot5">هوش مصنوعی</b></span>
+      </span>
+    </div>
+
+    <p class="au-lead reveal" data-i18n="idx.lead">۳۷+ ابزار کاربردی، بازی‌های متنوع در چند دسته، ۵۶ مقاله آموزشی مفصل با خواندن کامل داخل سایت، فروشگاهی بزرگ با اسکین همه‌ی بازی‌ها، هوش مصنوعی لومیتک فعال، اخبار دیجیتال از معتبرترین رسانه‌های ایرانی و اسپورتک با ۲۱ رشته — همه در یک تجربه سریع، زیبا و یکپارچه.</p>
+
+    <div class="au-cta reveal">
+      <a class="au-btn-main" href="pages/games.html">
+        <span data-i18n="idx.ctaStart">شروع تجربه</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a class="au-btn-ghost" href="pages/ai.html"><span data-i18n="idx.ctaAI">✨ هوش مصنوعی لومیتک</span></a>
+      <a class="au-btn-ghost" href="pages/store.html"><span data-i18n="idx.ctaStore">🛍️ فروشگاه</span></a>
+      <a class="au-btn-ghost" href="pages/download.html"><span data-i18n="idx.ctaDownload">⬇️ نصب اپ</span></a>
+    </div>
+
+    <a class="au-scrollhint" href="#auExplore" aria-label="scroll">
+      <span class="au-mouse"><span class="au-wheel"></span></span>
+      <svg class="au-chevdown" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- ================= BENTO GRID ================= -->
+<section class="au-section" id="auExplore">
+  <div class="au-head reveal">
+    <p class="eyebrow" data-i18n="idx.exploreEyebrow">کاوش در Lumitek</p>
+    <h2 data-i18n="idx.exploreH2">برای بیش از یک چیز ساخته شده.</h2>
+    <p class="muted" data-i18n="idx.exploreLead">از هوش مصنوعی تا بازی و اخبار — هر چیزی که هر روز لازم داری، اینجاست.</p>
+  </div>
+  <div class="au-bento">
+    <a class="au-bcard au-b-ai reveal" data-spot data-tilt href="pages/ai.html">
+      <div class="au-b-aura"></div>
+      <div class="au-b-ico au-float-ico">✨</div>
+      <h3 data-i18n="idx.card.ai.t">هوش مصنوعی لومیتک</h3>
+      <p class="muted" data-i18n="idx.card.ai.d">دستیار AI آنلاین و قوی برای هر سوالی — هر سوال فقط ۲ سکه!</p>
+      <div class="au-chat-demo" aria-hidden="true">
+        <span class="au-cd u" data-i18n="idx.cdU">هوش مصنوعی چطور کار می‌کنه؟</span>
+        <span class="au-cd a" data-i18n="idx.cdA">سوالت رو بپرس، فقط ۲ سکه! ✨</span>
+      </div>
+      <span class="au-b-cta">شروع گفتگو →</span>
+    </a>
+
+    <a class="au-bcard au-b-games reveal" data-spot data-tilt href="pages/games.html">
+      <div class="au-b-aura"></div>
+      <div class="au-b-ico au-float-ico">🎮</div>
+      <h3 data-i18n="idx.card.games.t">بازی‌ها</h3>
+      <p class="muted" data-i18n="idx.card.games.d">۲۹ بازی در ۷ دسته، از هدبال محبوب تا تیراندازی کیهانی — با XP، سکه، رکورد، دستاورد، جدول افتخارات و اسکین اختصاصی هر بازی.</p>
+      <div class="au-ico-rail" aria-hidden="true">
+        <span>⚽</span><span>🚀</span><span>💣</span><span>🐍</span><span>🔢</span><span>🎵</span><span>🧩</span><span>🥅</span><span>⚽</span><span>🚀</span><span>💣</span><span>🐍</span><span>🔢</span><span>🎵</span><span>🧩</span><span>🥅</span>
+      </div>
+      <span class="au-b-cta">شروع بازی →</span>
+    </a>
+
+    <a class="au-bcard au-b-tools reveal" data-spot data-tilt href="pages/tools.html">
+      <div class="au-b-aura"></div>
+      <div class="au-b-ico au-wobble-ico">🧰</div>
+      <h3 data-i18n="idx.card.tools.t">ابزارها</h3>
+      <p class="muted" data-i18n="idx.card.tools.d">ماشین‌حساب، تقویم ایران، ساعت جهانی، آمار و احتمال، رسم نمودار، حل معادله، ماتریس، فیزیک، چرخ شانس، فشرده‌ساز عکس، تست سرعت اینترنت، سازنده QR و... — ۳۷ ابزار.</p>
+      <span class="au-b-cta">دیدن همه →</span>
+    </a>
+
+    <a class="au-bcard au-b-store reveal" data-spot data-tilt href="pages/store.html">
+      <div class="au-b-aura"></div>
+      <div class="au-b-ico au-float-ico">🛍️</div>
+      <h3 data-i18n="idx.card.store.t">فروشگاه</h3>
+      <p class="muted" data-i18n="idx.card.store.d">سکه، آواتار، اسلحه‌های تیراندازی، اسکین، عنوان اختصاصی و بوست XP — همه یکجا.</p>
+      <span class="au-b-cta">رفتن به فروشگاه →</span>
+    </a>
+
+    <a class="au-bcard au-b-coins reveal" data-spot data-tilt href="pages/store.html#coins">
+      <div class="au-b-aura"></div>
+      <div class="au-b-ico au-coin-flip">🪙</div>
+      <h3 data-i18n="idx.card.coins.t">سکه و VIP</h3>
+      <p class="muted" data-i18n="idx.card.coins.d">شارژ سکه، پاداش روزانه ۱۰ سکه‌ای و اشتراک VIP — همه داخل فروشگاه.</p>
+      <span class="au-b-cta">شارژ سکه →</span>
+    </a>
+
+    <a class="au-bcard au-b-sports reveal" data-spot data-tilt href="pages/sports.html">
+      <div class="au-b-aura"></div>
+      <div class="au-live-badge"><span class="au-live-dot"></span><span data-i18n="idx.live">زنده</span></div>
+      <div class="au-b-ico au-bounce-ico">🏆</div>
+      <h3 data-i18n="idx.card.sports.t">اسپورتک 🏆</h3>
+      <p class="muted" data-i18n="idx.card.sports.d">اخبار زنده ورزش مردان فقط از منابع ایرانی، جدول لیگ‌های ایران و دنیا (خلیج فارس، پرمیرلیگ، لالیگا، سری آ، بوندسلیگا، NBA و...) و بازی‌های پیش رو.</p>
+      <span class="au-b-cta">دیدن اخبار →</span>
+    </a>
+
+    <a class="au-bcard au-b-news reveal" data-spot data-tilt href="pages/digital-news.html">
+      <div class="au-b-aura"></div>
+      <div class="au-b-ico au-float-ico">📰</div>
+      <h3 data-i18n="idx.card.news.t">اخبار دیجیتال</h3>
+      <p class="muted" data-i18n="idx.card.news.d">آخرین اخبار فناوری، موبایل و هوش مصنوعی فقط از رسانه‌های معتبر ایرانی — با نام واقعی منبع.</p>
+      <span class="au-b-cta">خواندن اخبار →</span>
+    </a>
+
+    <a class="au-bcard au-b-articles reveal" data-spot data-tilt href="pages/articles.html">
+      <div class="au-b-aura"></div>
+      <div class="au-b-ico au-wobble-ico">📚</div>
+      <h3 data-i18n="idx.card.articles.t">مقالات</h3>
+      <p class="muted" data-i18n="idx.card.articles.d">۶۰ مقاله مفصل در ۶ دسته: آموزش‌های صفر تا صد (پایتون، ورد، کانوا، گیت و...) + علم، تاریخ و عمومی — با خواندن کامل در یک صفحه اختصاصی.</p>
+      <span class="au-b-cta">خواندن مقالات →</span>
+    </a>
+
+    <a class="au-bcard au-b-download reveal" data-spot data-tilt href="pages/download.html">
+      <div class="au-b-aura"></div>
+      <div class="au-dl-phone" aria-hidden="true"><span>📲</span><i class="au-dl-bar"></i></div>
+      <h3 data-i18n="idx.card.download.t">دانلود اپ</h3>
+      <p class="muted" data-i18n="idx.card.download.d">Lumitek را مثل یک اپلیکیشن واقعی روی گوشی و کامپیوتر نصب کن — حتی آفلاین کار می‌کند.</p>
+      <span class="au-b-cta">نصب اپلیکیشن →</span>
+    </a>
+
+    <a class="au-bcard au-b-account reveal" data-spot data-tilt href="pages/account.html">
+      <div class="au-b-aura"></div>
+      <div class="au-b-ico au-float-ico">👤</div>
+      <h3 data-i18n="idx.card.account.t">حساب کاربری</h3>
+      <p class="muted" data-i18n="idx.card.account.d">ورود با گوگل، مایکروسافت، ایمیل یا مهمان — آواتار، سطح، دستاوردها، رکوردها و بکاپ‌گیری.</p>
+      <span class="au-b-cta">ورود به حساب →</span>
+    </a>
+
+    <a class="au-bcard au-b-support reveal" data-spot data-tilt href="pages/support.html">
+      <div class="au-b-aura"></div>
+      <div class="au-b-ico au-ring-ico">🤖</div>
+      <h3 data-i18n="idx.card.support.t">پشتیبانی هوشمند</h3>
+      <p class="muted" data-i18n="idx.card.support.d">دستیار AI که به سوالاتت درباره Lumitek جواب می‌دهد.</p>
+      <span class="au-b-cta">پرسیدن سوال →</span>
+    </a>
+
+    <a class="au-bcard au-b-updates reveal" data-spot data-tilt href="pages/announcements.html">
+      <div class="au-b-aura"></div>
+      <div class="au-b-ico au-shake-ico">📢</div>
+      <h3 data-i18n="nav.updates">تغییرات</h3>
+      <p class="muted">جدیدترین به‌روزرسانی‌ها و امکانات اضافه‌شده به لومیتک را اینجا ببین.</p>
+      <span class="au-b-cta">دیدن تغییرات →</span>
+    </a>
+  </div>
+</section>
+
+
+<!-- ================= خرید سکه ================= -->
+<section class="au-section au-coinsec" id="buy-coins">
+  <div class="au-head reveal">
+    <p class="eyebrow au-eyebrow-y" data-i18n="idx.coinsEyebrow">فروشگاه سکه</p>
+    <h2 data-i18n="idx.coinsH2">سکه جمع کن، ویژه شو.</h2>
+    <p class="muted" data-i18n="idx.coinsLead">با سکه از هوش مصنوعی لومیتک بپرس، اسکین و آواتار بخر یا VIP شو — یکی از پکیج‌ها را انتخاب کن و مستقیم به فروشگاه برو.</p>
+  </div>
+  <div class="au-coin-grid">
+    <a class="au-coin-card reveal" data-spot href="pages/store.html#coins" style="--ga:#4f8cff;--gb:#38bdf8">
+      <span class="au-cc-ico au-coin-flip">🥉</span>
+      <b class="au-cc-amount">۵۰۰</b>
+      <small class="au-cc-unit" data-i18n="coins.unit">سکه</small>
+      <span class="au-cc-price">۴۹٫۰۰۰ تومان</span>
+      <span class="au-cc-go" data-i18n="idx.coinsGo">خرید سکه →</span>
+    </a>
+    <a class="au-coin-card reveal" data-spot href="pages/store.html#coins" style="--ga:#fbbf24;--gb:#f59e0b">
+      <span class="au-cc-badge" data-i18n="idx.coinsPop">پرطرفدار</span>
+      <span class="au-cc-ico au-coin-flip">🥈</span>
+      <b class="au-cc-amount">۱٬۲۰۰</b>
+      <small class="au-cc-unit" data-i18n="coins.unit">سکه</small>
+      <span class="au-cc-price">۹۹٫۰۰۰ تومان</span>
+      <span class="au-cc-go" data-i18n="idx.coinsGo">خرید سکه →</span>
+    </a>
+    <a class="au-coin-card reveal" data-spot href="pages/store.html#coins" style="--ga:#4ade80;--gb:#16a34a">
+      <span class="au-cc-ico au-coin-flip">🥇</span>
+      <b class="au-cc-amount">۳٬۰۰۰</b>
+      <small class="au-cc-unit" data-i18n="coins.unit">سکه</small>
+      <span class="au-cc-price">۱۹۹٫۰۰۰ تومان</span>
+      <span class="au-cc-go" data-i18n="idx.coinsGo">خرید سکه →</span>
+    </a>
+    <a class="au-coin-card reveal" data-spot href="pages/store.html#coins" style="--ga:#c084fc;--gb:#7c3aed">
+      <span class="au-cc-badge best" data-i18n="idx.coinsBest">بهترین ارزش</span>
+      <span class="au-cc-ico au-coin-flip">💎</span>
+      <b class="au-cc-amount">۷٬۵۰۰</b>
+      <small class="au-cc-unit" data-i18n="coins.unit">سکه</small>
+      <span class="au-cc-price">۳۹۹٫۰۰۰ تومان</span>
+      <span class="au-cc-go" data-i18n="idx.coinsGo">خرید سکه →</span>
+    </a>
+  </div>
+</section>
+
+<!-- ================= GAMES CAROUSEL ================= -->
+<section class="au-section au-gamessec">
+  <div class="au-head reveal">
+    <p class="eyebrow au-eyebrow-g" data-i18n="idx.gamesEyebrow">گیم‌تک</p>
+    <h2 data-i18n="idx.gamesH2">بازی‌های محبوب لومیتک</h2>
+    <p class="muted" data-i18n="idx.gamesLead">با XP و سکه بازی کن، رکورد بزن و در جدول افتخارات بالا برو.</p>
+  </div>
+</section>
+<div class="au-gal-wrap" aria-hidden="false">
+  <div class="au-gal">
+    <div class="au-gal-track"><a class="au-gcard2" href="pages/headball.html" style="--ga:#4f8cff;--gb:#38bdf8"><span class="au-g2-pop">⭐ محبوب</span><span class="au-g2-ico">⚽</span><span class="au-g2-body"><b data-i18n="g.headball.n">headball</b><small><i data-i18n="idx.gcatA">ورزشی</i></small></span><span class="au-g2-arrow">←</span></a><a class="au-gcard2" href="pages/shooter.html" style="--ga:#a78bfa;--gb:#6d28d9"><span class="au-g2-ico">🚀</span><span class="au-g2-body"><b data-i18n="g.shooter.n">shooter</b><small><i data-i18n="idx.gcatB">اکشن</i></small></span><span class="au-g2-arrow">←</span></a><a class="au-gcard2" href="pages/snake.html" style="--ga:#34d399;--gb:#059669"><span class="au-g2-ico">🐍</span><span class="au-g2-body"><b data-i18n="g.snake.n">snake</b><small><i data-i18n="idx.gcatB">اکشن</i></small></span><span class="au-g2-arrow">←</span></a><a class="au-gcard2" href="pages/mines.html" style="--ga:#fbbf24;--gb:#f59e0b"><span class="au-g2-ico">💣</span><span class="au-g2-body"><b data-i18n="g.mines.n">mines</b><small><i data-i18n="idx.gcatC">فکری</i></small></span><span class="au-g2-arrow">←</span></a><a class="au-gcard2" href="pages/g2048.html" style="--ga:#38bdf8;--gb:#2563eb"><span class="au-g2-ico">🔢</span><span class="au-g2-body"><b data-i18n="g.g2048.n">g2048</b><small><i data-i18n="idx.gcatC">فکری</i></small></span><span class="au-g2-arrow">←</span></a><a class="au-gcard2" href="pages/penalty.html" style="--ga:#4ade80;--gb:#16a34a"><span class="au-g2-ico">🥅</span><span class="au-g2-body"><b data-i18n="g.penalty.n">penalty</b><small><i data-i18n="idx.gcatA">ورزشی</i></small></span><span class="au-g2-arrow">←</span></a><a class="au-gcard2" href="pages/hoops.html" style="--ga:#fb923c;--gb:#ea580c"><span class="au-g2-ico">🏀</span><span class="au-g2-body"><b data-i18n="g.hoops.n">hoops</b><small><i data-i18n="idx.gcatA">ورزشی</i></small></span><span class="au-g2-arrow">←</span></a><a class="au-gcard2" href="pages/puzzle15.html" style="--ga:#f472b6;--gb:#db2777"><span class="au-g2-ico">🧩</span><span class="au-g2-body"><b data-i18n="g.puzzle15.n">puzzle15</b><small><i data-i18n="idx.gcatC">فکری</i></small></span><span class="au-g2-arrow">←</span></a><a class="au-gcard2" href="pages/tictactoe.html" style="--ga:#60a5fa;--gb:#3b82f6"><span class="au-g2-ico">⭕</span><span class="au-g2-body"><b data-i18n="g.tictactoe.n">tictactoe</b><small><i data-i18n="idx.gcatC">فکری</i></small></span><span class="au-g2-arrow">←</span></a><a class="au-gcard2" href="pages/connect4.html" style="--ga:#f87171;--gb:#dc2626"><span class="au-g2-ico">🔴</span><span class="au-g2-body"><b data-i18n="g.connect4.n">connect4</b><small><i data-i18n="idx.gcatC">فکری</i></small></span><span class="au-g2-arrow">←</span></a><a class="au-gcard2" href="pages/memory.html" style="--ga:#c084fc;--gb:#7c3aed"><span class="au-g2-ico">🃏</span><span class="au-g2-body"><b data-i18n="g.memory.n">memory</b><small><i data-i18n="idx.gcatD">حافظه</i></small></span><span class="au-g2-arrow">←</span></a><a class="au-gcard2" href="pages/reaction.html" style="--ga:#facc15;--gb:#d97706"><span class="au-g2-ico">⚡</span><span class="au-g2-body"><b data-i18n="g.reaction.n">reaction</b><small><i data-i18n="idx.gcatB">اکشن</i></small></span><span class="au-g2-arrow">←</span></a><a class="au-gcard2" href="pages/td.html" style="--ga:#34d399;--gb:#0d9488"><span class="au-g2-ico">🏰</span><span class="au-g2-body"><b data-i18n="g.td.n">td</b><small><i data-i18n="idx.gcatE">استراتژی</i></small></span><span class="au-g2-arrow">←</span></a><a class="au-gcard2" href="pages/drive.html" style="--ga:#f87171;--gb:#b91c1c"><span class="au-g2-ico">🏎️</span><span class="au-g2-body"><b data-i18n="g.drive.n">drive</b><small><i data-i18n="idx.gcatF">رانندگی</i></small></span><span class="au-g2-arrow">←</span></a><a class="au-gcard2" href="pages/headball.html" style="--ga:#4f8cff;--gb:#38bdf8"><span class="au-g2-pop">⭐ محبوب</span><span class="au-g2-ico">⚽</span><span class="au-g2-body"><b data-i18n="g.headball.n">headball</b><small><i data-i18n="idx.gcatA">ورزشی</i></small></span><span class="au-g2-arrow">←</span></a><a class="au-gcard2" href="pages/shooter.html" style="--ga:#a78bfa;--gb:#6d28d9"><span class="au-g2-ico">🚀</span><span class="au-g2-body"><b data-i18n="g.shooter.n">shooter</b><small><i data-i18n="idx.gcatB">اکشن</i></small></span><span class="au-g2-arrow">←</span></a><a class="au-gcard2" href="pages/snake.html" style="--ga:#34d399;--gb:#059669"><span class="au-g2-ico">🐍</span><span class="au-g2-body"><b data-i18n="g.snake.n">snake</b><small><i data-i18n="idx.gcatB">اکشن</i></small></span><span class="au-g2-arrow">←</span></a><a class="au-gcard2" href="pages/mines.html" style="--ga:#fbbf24;--gb:#f59e0b"><span class="au-g2-ico">💣</span><span class="au-g2-body"><b data-i18n="g.mines.n">mines</b><small><i data-i18n="idx.gcatC">فکری</i></small></span><span class="au-g2-arrow">←</span></a><a class="au-gcard2" href="pages/g2048.html" style="--ga:#38bdf8;--gb:#2563eb"><span class="au-g2-ico">🔢</span><span class="au-g2-body"><b data-i18n="g.g2048.n">g2048</b><small><i data-i18n="idx.gcatC">فکری</i></small></span><span class="au-g2-arrow">←</span></a><a class="au-gcard2" href="pages/penalty.html" style="--ga:#4ade80;--gb:#16a34a"><span class="au-g2-ico">🥅</span><span class="au-g2-body"><b data-i18n="g.penalty.n">penalty</b><small><i data-i18n="idx.gcatA">ورزشی</i></small></span><span class="au-g2-arrow">←</span></a><a class="au-gcard2" href="pages/hoops.html" style="--ga:#fb923c;--gb:#ea580c"><span class="au-g2-ico">🏀</span><span class="au-g2-body"><b data-i18n="g.hoops.n">hoops</b><small><i data-i18n="idx.gcatA">ورزشی</i></small></span><span class="au-g2-arrow">←</span></a><a class="au-gcard2" href="pages/puzzle15.html" style="--ga:#f472b6;--gb:#db2777"><span class="au-g2-ico">🧩</span><span class="au-g2-body"><b data-i18n="g.puzzle15.n">puzzle15</b><small><i data-i18n="idx.gcatC">فکری</i></small></span><span class="au-g2-arrow">←</span></a><a class="au-gcard2" href="pages/tictactoe.html" style="--ga:#60a5fa;--gb:#3b82f6"><span class="au-g2-ico">⭕</span><span class="au-g2-body"><b data-i18n="g.tictactoe.n">tictactoe</b><small><i data-i18n="idx.gcatC">فکری</i></small></span><span class="au-g2-arrow">←</span></a><a class="au-gcard2" href="pages/connect4.html" style="--ga:#f87171;--gb:#dc2626"><span class="au-g2-ico">🔴</span><span class="au-g2-body"><b data-i18n="g.connect4.n">connect4</b><small><i data-i18n="idx.gcatC">فکری</i></small></span><span class="au-g2-arrow">←</span></a><a class="au-gcard2" href="pages/memory.html" style="--ga:#c084fc;--gb:#7c3aed"><span class="au-g2-ico">🃏</span><span class="au-g2-body"><b data-i18n="g.memory.n">memory</b><small><i data-i18n="idx.gcatD">حافظه</i></small></span><span class="au-g2-arrow">←</span></a><a class="au-gcard2" href="pages/reaction.html" style="--ga:#facc15;--gb:#d97706"><span class="au-g2-ico">⚡</span><span class="au-g2-body"><b data-i18n="g.reaction.n">reaction</b><small><i data-i18n="idx.gcatB">اکشن</i></small></span><span class="au-g2-arrow">←</span></a><a class="au-gcard2" href="pages/td.html" style="--ga:#34d399;--gb:#0d9488"><span class="au-g2-ico">🏰</span><span class="au-g2-body"><b data-i18n="g.td.n">td</b><small><i data-i18n="idx.gcatE">استراتژی</i></small></span><span class="au-g2-arrow">←</span></a><a class="au-gcard2" href="pages/drive.html" style="--ga:#f87171;--gb:#b91c1c"><span class="au-g2-ico">🏎️</span><span class="au-g2-body"><b data-i18n="g.drive.n">drive</b><small><i data-i18n="idx.gcatF">رانندگی</i></small></span><span class="au-g2-arrow">←</span></a></div>
+  </div>
+</div>
+
+<!-- ================= WHY LUMITEK ================= -->
+<section class="au-section">
+  <div class="au-head reveal">
+    <p class="eyebrow au-eyebrow-y" data-i18n="idx.whyEyebrow">چرا لومیتک؟</p>
+    <h2 data-i18n="idx.whyH2">سریع، رایگان، همیشه در دسترس.</h2>
+    <p class="muted" data-i18n="idx.whyLead">لومیتک بدون فریم‌ورک و سبک ساخته شده — برای این که همین حالا، همین‌جا کار کند.</p>
+  </div>
+  <div class="au-why">
+    <div class="au-wtile reveal" data-spot>
+      <div class="au-w-ico au-bolt-ico">⚡</div>
+      <h3 data-i18n="idx.why1t">سریع مثل برق</h3>
+      <p class="muted" data-i18n="idx.why1d">بدون فریم‌ورک و بدون انتظار — همه‌چیز همین لحظه لود می‌شود.</p>
+    </div>
+    <div class="au-wtile reveal" data-spot>
+      <div class="au-w-ico au-wave-ico">📴</div>
+      <h3 data-i18n="idx.why2t">حتی آفلاین</h3>
+      <p class="muted" data-i18n="idx.why2d">نصبش کن و بدون اینترنت هم بازی کن و از ابزارها استفاده کن.</p>
+    </div>
+    <div class="au-wtile reveal" data-spot>
+      <div class="au-w-ico au-gift-ico">🎁</div>
+      <h3 data-i18n="idx.why3t">کاملاً رایگان</h3>
+      <p class="muted" data-i18n="idx.why3d">همه ابزارها و بازی‌ها رایگان‌اند؛ سکه فقط برای امکانات اضافه است.</p>
+    </div>
+    <div class="au-wtile reveal" data-spot>
+      <div class="au-w-ico au-shield-ico">🛡️</div>
+      <h3 data-i18n="idx.why4t">حساب و پیشرفت</h3>
+      <p class="muted" data-i18n="idx.why4d">XP، دستاورد، لیدربرد و شخصی‌سازی — پیشرفتت را ببین.</p>
     </div>
   </div>
-  <div class="visual">
-    <div class="ring"></div>
-    <div class="ring r2"></div>
-    <div class="core"><img src="assets/icons/logo-mark-lg.png" alt="Lumitek" width="152" height="152" style="filter:drop-shadow(0 10px 30px rgba(56,150,255,.35))"></div>
-    <div class="float f1" data-i18n="idx.float.store">🛍️ فروشگاه</div>
-    <div class="float f2" data-i18n="idx.float.sport">🏆 اسپورتک</div>
-    <div class="float f3" data-i18n="idx.float.ai">✨ Lumitek AI</div>
-    <div class="float f4" data-i18n="idx.float.news">📰 اخبار دیجیتال</div>
-    <div class="float f2" style="bottom:0;right:40px" data-i18n="idx.float.coins">🪙 سکه و XP</div>
+</section>
+
+<!-- ================= RING STATS ================= -->
+<section class="au-section au-ringssec">
+  <div class="au-head reveal">
+    <p class="eyebrow" data-i18n="idx.statsEyebrow">لومیتک در یک نگاه</p>
+    <h2 data-i18n="idx.statsH2">اعداد، خودشان حرف می‌زنند.</h2>
   </div>
-</section>
-
-<section class="stats-strip reveal" id="ltStats">
-  <div class="stat"><b data-count="32">0</b><span data-i18n="idx.statTools">ابزار کاربردی</span></div>
-  <div class="stat"><b data-count="30">0</b><span data-i18n="idx.statGames">بازی آنلاین</span></div>
-  <div class="stat"><b data-count="61">0</b><span data-i18n="idx.statItems">آیتم فروشگاه</span></div>
-  <div class="stat"><b data-count="24">0</b><span data-i18n="idx.statLeagues">لیگ در اسپورتک</span></div>
-</section>
-
-<section class="section">
-  <div class="head">
-    <div>
-      <p class="eyebrow" data-i18n="idx.exploreEyebrow">کاوش در Lumitek</p>
-      <h2 data-i18n="idx.exploreH2">برای بیش از یک چیز ساخته شده.</h2>
+  <div class="au-stats">
+    <div class="au-stat reveal" style="--sc:#4f8cff;--sc2:#38bdf8">
+      <b data-count="37">0</b>
+      <span data-i18n="idx.statTools">ابزار کاربردی</span>
+    </div>
+    <div class="au-stat reveal" style="--sc:#4ade80;--sc2:#34d399">
+      <b data-count="29">0</b>
+      <span data-i18n="idx.statGames">بازی آنلاین</span>
+    </div>
+    <div class="au-stat reveal" style="--sc:#ffd166;--sc2:#fbbf24">
+      <b data-count="120">0</b>
+      <span data-i18n="idx.statItems">آیتم فروشگاه</span>
+    </div>
+    <div class="au-stat reveal" style="--sc:#22d3ee;--sc2:#0ea5e9">
+      <b data-count="40">0</b>
+      <span data-i18n="idx.statLeagues">لیگ در اسپورتک</span>
     </div>
   </div>
-  <div class="grid">
-    <a class="card reveal" href="pages/ai.html"><div class="icon">✨</div><h3 data-i18n="idx.card.ai.t">هوش مصنوعی لومیتک</h3><p class="muted" data-i18n="idx.card.ai.d">دستیار AI آنلاین و قوی برای هر سوالی — هر سوال فقط ۲ سکه!</p></a>
-    <a class="card reveal" href="pages/tools.html"><div class="icon">🧰</div><h3 data-i18n="idx.card.tools.t">ابزارها</h3><p class="muted" data-i18n="idx.card.tools.d">ماشین‌حساب، تقویم ایران، اوقات شرعی، ساعت جهانی، آمار و احتمال، رسم نمودار، حل معادله، ماتریس، فیزیک، چرخ شانس و... — ۳۲ ابزار.</p></a>
-    <a class="card reveal" href="pages/games.html"><div class="icon">🎮</div><h3 data-i18n="idx.card.games.t">بازی‌ها</h3><p class="muted" data-i18n="idx.card.games.d">۳۰ بازی در ۷ دسته از جمله کشورگشایی آنلاین و هدبال — با XP، سکه، رکورد، دستاورد و لیدربرد.</p></a>
-    <a class="card reveal" href="pages/store.html"><div class="icon">🛍️</div><h3 data-i18n="idx.card.store.t">فروشگاه</h3><p class="muted" data-i18n="idx.card.store.d">سکه، آواتار، اسلحه‌های تیراندازی، اسکین، عنوان اختصاصی و بوست XP — همه یکجا.</p></a>
-    <a class="card reveal" href="pages/store.html#coins"><div class="icon">🪙</div><h3 data-i18n="idx.card.coins.t">سکه و VIP</h3><p class="muted" data-i18n="idx.card.coins.d">شارژ سکه، پاداش روزانه ۱۰ سکه‌ای و اشتراک VIP — همه داخل فروشگاه.</p></a>
-    <a class="card reveal" href="pages/sports.html"><div class="icon">🏆</div><h3 data-i18n="idx.card.sports.t">ورزش زنده</h3><p class="muted" data-i18n="idx.card.sports.d">اخبار زنده ورزش مردان از منابع ایرانی، جدول لیگ‌ها و برنامه بازی‌ها — با بروزرسانی خودکار هر ۵ دقیقه.</p></a>
-    <a class="card reveal" href="pages/digital-news.html"><div class="icon">📰</div><h3 data-i18n="idx.card.news.t">اخبار دیجیتال</h3><p class="muted" data-i18n="idx.card.news.d">آخرین اخبار فناوری، موبایل و هوش مصنوعی فقط از رسانه‌های معتبر ایرانی — با نام واقعی منبع.</p></a>
-    <a class="card reveal" href="pages/download.html"><div class="icon">⬇️</div><h3 data-i18n="idx.card.download.t">دانلود اپ</h3><p class="muted" data-i18n="idx.card.download.d">Lumitek را مثل یک اپلیکیشن واقعی روی گوشی و کامپیوتر نصب کن — حتی آفلاین کار می‌کند.</p></a>
-    <a class="card reveal" href="pages/articles.html"><div class="icon">📚</div><h3 data-i18n="idx.card.articles.t">مقالات</h3><p class="muted" data-i18n="idx.card.articles.d">۳۴ مقاله مفصل در ۸ دسته: آموزش‌های صفر تا صد (پایتون، ورد، کانوا، گیت و...) + علم، تاریخ و عمومی — با خواندن کامل در یک صفحه اختصاصی.</p></a>
-    <a class="card reveal" href="pages/account.html"><div class="icon">👤</div><h3 data-i18n="idx.card.account.t">حساب کاربری</h3><p class="muted" data-i18n="idx.card.account.d">ورود با گوگل، مایکروسافت، ایمیل یا مهمان — آواتار، سطح، دستاوردها، رکوردها و بکاپ‌گیری.</p></a>
-    <a class="card reveal" href="pages/support.html"><div class="icon">🤖</div><h3 data-i18n="idx.card.support.t">پشتیبانی هوشمند</h3><p class="muted" data-i18n="idx.card.support.d">دستیار رایگانی که ۲۴ ساعته به سوالاتت درباره Lumitek جواب می‌دهد.</p></a>
-    <a class="card reveal" href="pages/announcements.html"><div class="icon">📢</div><h3 data-i18n="nav.updates">تغییرات</h3><p class="muted" data-i18n="idx.noticeText">نوار کنترل همه بازی‌ها با توقف واقعی، مقالات تمام‌صفحه مفصل، لیدربرد بازی‌ها و بازی ورزشی هدبال!</p></a>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="au-section" id="faq">
+  <div class="au-head reveal">
+    <p class="eyebrow" data-i18n="faq.eyebrow">سوالات متداول</p>
+    <h2 data-i18n="faq.title">سوالات متداول</h2>
+    <p class="muted" data-i18n="faq.lead">پاسخ سریع سوال‌های رایج درباره لومیتک — اگر جوابت اینجا نبود، از پشتیبانی شناور گوشه صفحه یا پشتیبانی هوشمند بپرس.</p>
+  </div>
+  <div class="au-faqs">
+    <details class="au-faq reveal"><summary><span data-i18n="faq.q1">چطور با بازی‌ها سکه و XP بگیرم؟</span><i class="au-chev">▾</i></summary><div class="au-faq-a" data-i18n="faq.a1">کافیست وارد بخش بازی‌ها شوی و بازی کنی؛ هر بازی XP و سکه دارد و رکورد زدن جایزه بیشتری می‌دهد. پاداش روزانه (هر ۲۴ ساعت ۱۰ سکه از تب شارژ سکه فروشگاه) هم موجودی‌ات را بالا می‌برد.</div></details>
+    <details class="au-faq reveal"><summary><span data-i18n="faq.q2">سکه‌ها را کجا خرج کنم؟</span><i class="au-chev">▾</i></summary><div class="au-faq-a" data-i18n="faq.a2">در فروشگاه: آواتار، اسلحه و اسکین بازی‌ها، رنگ سایت، عنوان اختصاصی و بوست دوبرابر XP. برای شارژ سریع هم تب «شارژ سکه» در همان صفحه هست.</div></details>
+    <details class="au-faq reveal"><summary><span data-i18n="faq.q3">اسکین بازی‌ها چطور کار می‌کند؟</span><i class="au-chev">▾</i></summary><div class="au-faq-a" data-i18n="faq.a3">اسکین‌های تیراندازی کیهانی، تک‌تیرانداز، رانندگی، ماجراجویی و دژبان را از فروشگاه بخر و از همان‌جا تجهیز کن؛ ظاهر بازی به‌صورت خودکار عوض می‌شود.</div></details>
+    <details class="au-faq reveal"><summary><span data-i18n="faq.q4">ورود مهمان چیست و اطلاعاتم کجا ذخیره می‌شود؟</span><i class="au-chev">▾</i></summary><div class="au-faq-a" data-i18n="faq.a4">با «ورود مهمان» بدون ایمیل وارد می‌شوی و همه‌چیز (سکه، XP، رکوردها و خریدها) به‌صورت خودکار روی همین مرورگر ذخیره می‌شود — نیازی به کار دیگری نیست.</div></details>
+    <details class="au-faq reveal"><summary><span data-i18n="faq.q5">هوش مصنوعی لومیتک چطور کار می‌کند؟</span><i class="au-chev">▾</i></summary><div class="au-faq-a" data-i18n="faq.a5">بدون اشتراک! هر سوال فقط ۲ سکه دارد؛ سوالت را در صفحه هوش مصنوعی بنویس و جواب بگیر. اگر سکه نداری، از بازی‌ها یا پاداش روزانه شارژ کن.</div></details>
+    <details class="au-faq reveal"><summary><span data-i18n="faq.q6">اسپورتک چه بخش‌هایی دارد؟</span><i class="au-chev">▾</i></summary><div class="au-faq-a" data-i18n="faq.a6">اخبار زنده‌ی مرتبط با هر رشته، جدول ۲۴ لیگ (خلیج فارس، پرمیرلیگ، لالیگا، سری آ، بوندسلیگا، NBA و...) و بازی‌های پیش رو — همه با یک دکمه «بروزرسانی همه».</div></details>
+    <details class="au-faq reveal"><summary><span data-i18n="faq.q7">چطور لومیتک را مثل اپ نصب کنم؟</span><i class="au-chev">▾</i></summary><div class="au-faq-a" data-i18n="faq.a7">از صفحه «دانلود» دکمه نصب را بزن یا در منوی مرورگر گزینه «Add to Home screen / Install» را انتخاب کن. بعد از نصب حتی بدون اینترنت هم کار می‌کند.</div></details>
+    <details class="au-faq reveal"><summary><span data-i18n="faq.q8">سایت به زبان انگلیسی هم هست؟</span><i class="au-chev">▾</i></summary><div class="au-faq-a" data-i18n="faq.a8">بله! با دکمه EN بالای سایت، کل لومیتک فارسی و انگلیسی می‌شود؛ جهت صفحه، فونت و اعداد هم خودکار عوض می‌شوند.</div></details>
   </div>
 </section>
 
-<section class="section">
-  <div class="notice reveal">
-    <span>📢</span>
-    <div>
-      <strong data-i18n="idx.noticeTitle">جدیدترین: Lumitek 1.2</strong><br>
-      <span class="muted" data-i18n="idx.noticeText2">دکمه توقف و راهنما در همه بازی‌ها ⏸، مقالات با صفحه کامل از صفر تا صد (۳۴ مقاله)، لیدربرد با ۷ درجه، بازی هدبال ⚽، کشورگشایی قوی‌تر با پایتخت و سختی، رفع تداخل اخبار اسپورتک و دکمه گوگل هماهنگ با مایکروسافت!</span>
-    </div>
-    <a class="text-link" href="pages/announcements.html" style="margin-left:auto;color:var(--a)" data-i18n="idx.noticeLink">مشاهده تغییرات →</a>
-  </div>
-</section>
-
-<section class="section" id="faq">
-  <div class="head">
-    <div>
-      <p class="eyebrow" data-i18n="faq.eyebrow">سوالات متداول</p>
-      <h2 data-i18n="faq.title">سوالات متداول</h2>
-      <p class="muted" data-i18n="faq.lead">پاسخ سریع سوال‌های رایج درباره لومیتک — اگر جوابت اینجا نبود، از پشتیبانی شناور گوشه صفحه یا پشتیبانی هوشمند بپرس.</p>
-    </div>
-  </div>
-  <div class="faq-list">
-    <details class="faq-item reveal"><summary><span data-i18n="faq.q1">چطور با بازی‌ها سکه و XP بگیرم؟</span><i class="faq-chev">▾</i></summary><div class="faq-a" data-i18n="faq.a1">کافیست وارد بخش بازی‌ها شوی و بازی کنی؛ هر بازی XP و سکه دارد و رکورد زدن جایزه بیشتری می‌دهد. پاداش روزانه (هر ۲۴ ساعت ۱۰ سکه از تب شارژ سکه فروشگاه) هم موجودی‌ات را بالا می‌برد.</div></details>
-    <details class="faq-item reveal"><summary><span data-i18n="faq.q2">سکه‌ها را کجا خرج کنم؟</span><i class="faq-chev">▾</i></summary><div class="faq-a" data-i18n="faq.a2">در فروشگاه: آواتار، اسلحه و اسکین بازی‌ها، رنگ سایت، عنوان اختصاصی و بوست دوبرابر XP. برای شارژ سریع هم تب «شارژ سکه» در همان صفحه هست.</div></details>
-    <details class="faq-item reveal"><summary><span data-i18n="faq.q3">اسکین بازی‌ها چطور کار می‌کند؟</span><i class="faq-chev">▾</i></summary><div class="faq-a" data-i18n="faq.a3">اسکین‌های تیراندازی کیهانی، تک‌تیرانداز، رانندگی، ماجراجویی و دژبان را از فروشگاه بخر و از همان‌جا تجهیز کن؛ ظاهر بازی به‌صورت خودکار عوض می‌شود.</div></details>
-    <details class="faq-item reveal"><summary><span data-i18n="faq.q4">ورود مهمان چیست و اطلاعاتم کجا ذخیره می‌شود؟</span><i class="faq-chev">▾</i></summary><div class="faq-a" data-i18n="faq.a4">با «ورود مهمان» بدون ایمیل وارد می‌شوی و همه‌چیز (سکه، XP، رکوردها و خریدها) به‌صورت خودکار روی همین مرورگر ذخیره می‌شود — نیازی به کار دیگری نیست.</div></details>
-    <details class="faq-item reveal"><summary><span data-i18n="faq.q5">هوش مصنوعی لومیتک چطور کار می‌کند؟</span><i class="faq-chev">▾</i></summary><div class="faq-a" data-i18n="faq.a5">بدون اشتراک! هر سوال فقط ۲ سکه دارد؛ سوالت را در صفحه هوش مصنوعی بنویس و جواب بگیر. اگر سکه نداری، از بازی‌ها یا پاداش روزانه شارژ کن.</div></details>
-    <details class="faq-item reveal"><summary><span data-i18n="faq.q6">اسپورتک چه بخش‌هایی دارد؟</span><i class="faq-chev">▾</i></summary><div class="faq-a" data-i18n="faq.a6">اخبار زنده‌ی مرتبط با هر رشته، جدول ۲۴ لیگ (خلیج فارس، پرمیرلیگ، لالیگا، سری آ، بوندسلیگا، NBA و...) و بازی‌های پیش رو — همه با یک دکمه «بروزرسانی همه».</div></details>
-    <details class="faq-item reveal"><summary><span data-i18n="faq.q7">چطور لومیتک را مثل اپ نصب کنم؟</span><i class="faq-chev">▾</i></summary><div class="faq-a" data-i18n="faq.a7">از صفحه «دانلود» دکمه نصب را بزن یا در منوی مرورگر گزینه «Add to Home screen / Install» را انتخاب کن. بعد از نصب حتی بدون اینترنت هم کار می‌کند.</div></details>
-    <details class="faq-item reveal"><summary><span data-i18n="faq.q8">سایت به زبان انگلیسی هم هست؟</span><i class="faq-chev">▾</i></summary><div class="faq-a" data-i18n="faq.a8">بله! با دکمه EN بالای سایت، کل لومیتک فارسی و انگلیسی می‌شود؛ جهت صفحه، فونت و اعداد هم خودکار عوض می‌شوند.</div></details>
-  </div>
-</section>
-
-<section class="support reveal">
-  <div>
+<!-- ================= SUPPORT CTA ================= -->
+<section class="au-final reveal">
+  <div class="au-final-card">
+    <div class="au-hearts" aria-hidden="true"><span>❤️</span><span>💙</span><span>💛</span><span>💚</span></div>
     <p class="eyebrow">SUPPORT THE PROJECT</p>
     <h2 data-i18n="idx.supportTitle">به رشد Lumitek کمک کن.</h2>
     <p class="muted" data-i18n="idx.supportText">اگه Lumitek برات مفیده، یه حمایت اختیاری به هزینه‌های هاست، توسعه و امکانات جدید کمک می‌کنه.</p>
+    <a class="au-btn-main au-btn-lg" href="pages/donate.html"><span data-i18n="idx.supportBtn">❤️ حمایت مالی</span></a>
   </div>
-  <a class="btn primary" href="pages/donate.html" data-i18n="idx.supportBtn">❤️ حمایت مالی</a>
 </section>
 </main>
+
 
 
 
@@ -238,16 +459,16 @@
     <div>
       <div class="fv-brand"><img class="brand-logo" src="assets/icons/logo-lt.png" alt="Lumitek" width="34" height="34"><span class="brand-word">Lumitek</span></div>
       <p data-i18n="footer.tag">همه ابزارها و بازی‌های مورد نیازت، سریع و ساده — همه‌جا با هم.</p>
-      <span class="vip-badge" style="display:inline-flex">v0.1.3 · PWA</span>
+      <span class="vip-badge" style="display:inline-flex">v0.2.1 · PWA</span>
     </div>
     <div>
       <h4 data-i18n="footer.explore">کاوش</h4>
       <ul>
-        <li><a href="pages/digital-news.html" data-i18n="nav.digitalnews">اخبار دیجیتال</a></li><li><a href="pages/technology.html" data-i18n="nav.tech">فناوری</a></li>
+        <li><a href="pages/digital-news.html" data-i18n="footer.newsLink">اخبار دیجیتال</a></li>
         <li><a href="pages/articles.html" class="nav-mid" data-i18n="nav.articles">مقالات</a></li>
         <li><a href="pages/announcements.html" class="nav-mid" data-i18n="nav.updates">تغییرات</a></li>
         <li><a href="pages/about.html" data-i18n="nav.about">درباره ما</a></li>
-        <li><a href="pages/contact.html" data-i18n="nav.contact">تماس</a></li>
+        <li><a href="pages/contact.html" data-i18n="nav.contact">تماس با ما</a></li>
       </ul>
     </div>
     <div>
@@ -272,18 +493,12 @@
     <div class="fv-social">
     <div class="fv-social-title" data-i18n="footer.socialT">ما را در شبکه‌های اجتماعی دنبال کنید</div>
     <div class="fv-social-row">
-      <a href="https://www.aparat.com/lumitek" target="_blank" rel="noopener" title="آپارات" aria-label="Aparat">
-        <svg width="26" height="26" viewBox="0 0 32 32"><rect x="1" y="1" width="30" height="30" rx="9" fill="#DF0F38"/><path d="M11 9.5l13 6.5-13 6.5v-13z" fill="#fff"/></svg>
-        <span>آپارات</span></a>
-      <a href="https://bale.ai/lumitek" target="_blank" rel="noopener" title="بله" aria-label="Bale">
-        <svg width="26" height="26" viewBox="0 0 32 32"><rect x="1" y="1" width="30" height="30" rx="9" fill="#00A693"/><path d="M8 22V10h5.2c2.6 0 4.3 1.3 4.3 3.4 0 1.5-.8 2.6-2.1 3.1l3.3 5.5h-3.4l-2.8-5h-1.4v5H8zm3.1-7.4h1.9c1 0 1.6-.5 1.6-1.3s-.6-1.3-1.6-1.3h-1.9v2.6z" fill="#fff"/><circle cx="22.5" cy="11.5" r="2.5" fill="#fff"/></svg>
-        <span>بله</span></a>
+      <a href="https://ble.ir/lumitek" target="_blank" rel="noopener" title="بله" aria-label="Bale">
+        <img src="assets/icons/bale.svg" width="30" height="30" alt="بله" loading="lazy">
+        </a>
       <a href="https://eitaa.com/lumitek" target="_blank" rel="noopener" title="ایتا" aria-label="Eitaa">
-        <svg width="26" height="26" viewBox="0 0 32 32"><rect x="1" y="1" width="30" height="30" rx="9" fill="#F5793B"/><path d="M25 8.5L6.5 15.7c-.7.3-.6 1.3.1 1.4l4.6 1.2 1.7 5.2c.2.7 1.1.8 1.5.2l2.3-3 4.6 3.4c.6.4 1.4.1 1.6-.6L26.4 9.6c.2-.8-.6-1.4-1.4-1.1zm-9.8 10.6l-.4 3 1.6-2.4-1.2-.6z" fill="#fff"/></svg>
-        <span>ایتا</span></a>
-      <a href="https://rubika.ir/lumitek" target="_blank" rel="noopener" title="روبیکا" aria-label="Rubika">
-        <svg width="26" height="26" viewBox="0 0 32 32"><rect x="1" y="1" width="30" height="30" rx="9" fill="#8E24AA"/><path d="M9 24V8h6.5c3.4 0 5.5 1.7 5.5 4.5 0 2-.9 3.4-2.6 4.1l4 7.4h-4.2l-3.4-6.6h-1.9V24H9zm3.9-9.6h2.4c1.4 0 2.2-.7 2.2-1.9s-.8-1.9-2.2-1.9h-2.4v3.8z" fill="#fff"/></svg>
-        <span>روبیکا</span></a>
+        <img src="assets/icons/eitaa.svg" width="30" height="30" alt="ایتا" loading="lazy">
+        </a>
     </div>
   </div>
   <div class="fv-bottom">
@@ -293,6 +508,13 @@
 </footer>
 
 <script src="js/main.js"></script>
+<script src="js/home.js"></script>
 
+<div class="donate-widget" id="donateWidget">
+<a class="donate-card" href="pages/donate.html" title="حمایت از لومیتک" aria-label="حمایت مالی">
+<span class="dw-icon">❤️</span>
+<span class="dw-text"><b>حمایت</b><small>اختیاری</small></span>
+</a>
+</div>
 </body>
 </html>
