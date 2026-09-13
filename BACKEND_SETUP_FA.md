@@ -1,4 +1,4 @@
-# Lumitek 0.3.0 — Online Backend Edition
+# Lumitek 0.3.1 — Online Backend Edition
 
 این نسخه، Lumitek را برای تبدیل شدن از یک سایت استاتیک به یک وب‌اپ آنلاین آماده می‌کند.
 
@@ -43,3 +43,23 @@
 
 ## مهم
 `wrangler.toml` دارای placeholder برای `database_id` است. آن مقدار را از Cloudflare واقعی خودت بگیر؛ مقدار ساختگی را deploy نکن.
+
+
+## APIهای جدید v0.3.1
+
+- `GET /api/profile` — پروفایل و آمار کاربر
+- `POST /api/games/score` — ثبت Score و اعطای XP از سمت سرور
+- `GET /api/games/leaderboard?gameId=...` — رتبه‌بندی واقعی از D1
+- `POST /api/rewards/daily` — دریافت روزانه 10 Coins و 5 XP، فقط یک‌بار در هر روز UTC
+- `GET /api/store` — فهرست آیتم‌های فروشگاه فعال
+- `POST /api/store/buy` — خرید اتمیک با Coins
+- `GET /api/notifications` — اعلان‌های کاربر و اعلان‌های عمومی
+- `POST /api/notifications/read` — علامت‌گذاری یک اعلان یا همه اعلان‌ها به‌عنوان خوانده‌شده
+
+### نکته امنیتی Score
+
+سرور اکنون `gameId` و Score را اعتبارسنجی می‌کند و Coins/XP را فقط خودش تغییر می‌دهد، اما هیچ API عمومیِ ثبت Score نمی‌تواند بدون منطق اختصاصی هر بازی ثابت کند که Score واقعاً در بازی به‌دست آمده است. برای ضدتقلب قوی، هر بازی باید بعداً یک روش server-authoritative یا challenge/verification مخصوص خودش داشته باشد.
+
+### اجرای schema
+
+`backend/schema.sql` را می‌توان روی دیتابیس D1 اجرا کرد. همه جدول‌های جدید با `IF NOT EXISTS` ساخته می‌شوند و جدول‌های v0.3.0 حذف نمی‌شوند.

@@ -73,3 +73,49 @@ CREATE TABLE IF NOT EXISTS notifications (
 CREATE INDEX IF NOT EXISTS idx_sessions_expires ON sessions(expires_at);
 CREATE INDEX IF NOT EXISTS idx_orders_created ON orders(created_at);
 CREATE INDEX IF NOT EXISTS idx_scores_game ON game_scores(game_id, score DESC);
+
+
+-- v0.3.1 additions: daily rewards, store and purchases
+CREATE TABLE IF NOT EXISTS daily_rewards (
+  id TEXT PRIMARY KEY,
+  user_id TEXT NOT NULL,
+  reward_date TEXT NOT NULL,
+  coins INTEGER NOT NULL DEFAULT 10,
+  xp INTEGER NOT NULL DEFAULT 5,
+  created_at INTEGER NOT NULL,
+  UNIQUE(user_id, reward_date),
+  FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS store_items (
+  id TEXT PRIMARY KEY,
+  slug TEXT NOT NULL UNIQUE,
+  name TEXT NOT NULL,
+  description TEXT NOT NULL DEFAULT '',
+  cost INTEGER NOT NULL,
+  category TEXT NOT NULL DEFAULT 'general',
+  active INTEGER NOT NULL DEFAULT 1,
+  created_at INTEGER NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS purchases (
+  id TEXT PRIMARY KEY,
+  user_id TEXT NOT NULL,
+  item_id TEXT NOT NULL,
+  cost INTEGER NOT NULL,
+  status TEXT NOT NULL DEFAULT 'completed',
+  created_at INTEGER NOT NULL,
+  FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE CASCADE,
+  FOREIGN KEY(item_id) REFERENCES store_items(id) ON DELETE RESTRICT
+);
+
+CREATE INDEX IF NOT EXISTS idx_daily_rewards_user_date ON daily_rewards(user_id, reward_date);
+CREATE INDEX IF NOT EXISTS idx_purchases_user_created ON purchases(user_id, created_at DESC);
+CREATE INDEX IF NOT EXISTS idx_notifications_user_created ON notifications(user_id, created_at DESC);
+
+-- Starter catalog. Coins are never granted by the client.
+INSERT OR IGNORE INTO store_items(id,slug,name,description,cost,category,active,created_at)
+VALUES
+  ('store_theme_blue','blue-theme','Blue Theme','Unlock the blue profile theme.',25,'theme',1,0),
+  ('store_badge_star','star-badge','Star Badge','Unlock a profile star badge.',50,'badge',1,0),
+  ('store_xp_boost','xp-boost','XP Boost','A store item prepared for future game integrations.',100,'boost',1,0);

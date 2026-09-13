@@ -129,6 +129,217 @@ async function ai(request, env, user) {
   return json({text:textOut,model:model});
 }
 
+
+function cleanGameId(value) {
+  return String(value || "").trim().toLowerCase().replace(/[^a-z0-9_-]/g, "").slice(0, 64);
+}
+
+function clampInt(value, min, max) {
+  const n = Number(value);
+  if (!Number.isFinite(n)) return null;
+  return Math.max(min, Math.min(max, Math.floor(n)));
+}
+
+function levelFromXp(xp) {
+  const n = Math.max(0, Math.floor(Number(xp) || 0));
+  return Math.floor(n / 100) + 1;
+}
+
+async function profile(request, env, user) {
+  if (!user) return json({code:"unauthorized",message:"Authentication required"},401);
+  const [u, games, scores, unread] = await Promise.all([
+    env.DB.prepare("SELECT id,email,name,role,coins,xp,level,vip_until,created_at,last_login FROM users WHERE id=?").bind(user.id).first(),
+    env.DB.prepare("SELECT COUNT(*) c FROM game_scores WHERE user_id=?").bind(user.id).first(),
+    env.DB.prepare("SELECT COUNT(DISTINCT game_id) c FROM game_scores WHERE user_id=?").bind(user.id).first(),
+    env.DB.prepare("SELECT COUNT(*) c FROM notifications WHERE user_id=? AND read_at IS NULL").bind(user.id).first()
+  ]);
+  if (!u) return json({code:"not_found",message:"User not found"},404);
+  return json({
+    user: publicUser(u),
+    stats: {
+      scoreSubmissions: games?.c || 0,
+      gamesPlayed: scores?.c || 0,
+      unreadNotifications: unread?.c || 0
+    }
+  });
+}
+
+async function submitScore(request, env, user) {
+  if (!user) return json({code:"unauthorized",message:"Authentication required"},401);
+  const b = await body(request);
+  const gameId = cleanGameId(b.gameId);
+  const score = clampInt(b.score, 0, 10000000);
+  if (!gameId) return json({code:"bad_game",message:"Invalid gameId"},400);
+  if (score === null) return json({code:"bad_score",message:"Invalid score"},400);
+
+  const id = randomId(16);
+  const now = Date.now();
+  const result = await env.DB.prepare(
+    "INSERT INTO game_scores(id,user_id,game_id,score,created_at) VALUES(?,?,?,?,?)"
+  ).bind(id,user.id,gameId,score,now).run();
+
+  // XP is granted only by the server. One submission gives at most 25 XP.
+  const xpGain = Math.min(25, Math.max(1, Math.floor(score / 100)));
+  const newXp = Math.max(0, Math.floor(Number(user.xp) || 0)) + xpGain;
+  const newLevel = levelFromXp(newXp);
+  await env.DB.prepare("UPDATE users SET xp=?, level=? WHERE id=?").bind(newXp,newLevel,user.id).run();
+
+  return json({ok:true,scoreId:id,gameId,score,xpGained:xpGain,xp:newXp,level:newLevel},201);
+}
+
+async function leaderboard(request, env, user) {
+  const url = new URL(request.url);
+  const gameId = cleanGameId(url.searchParams.get("gameId"));
+  const limit = clampInt(url.searchParams.get("limit") || 20, 1, 100);
+  if (!gameId) return json({code:"bad_game",message:"gameId is required"},400);
+
+  const r = await env.DB.prepare(
+    `SELECT gs.game_id, gs.score, gs.created_at, u.id AS user_id, u.name
+     FROM game_scores gs
+     JOIN users u ON u.id=gs.user_id
+     WHERE gs.game_id=? AND u.disabled=0
+     ORDER BY gs.score DESC, gs.created_at ASC
+     LIMIT ${limit}`
+  ).bind(gameId).all();
+
+  const rows = r.results || [];
+  return json({
+    gameId,
+    leaderboard: rows.map((x,i)=>({
+      rank:i+1,
+      userId:x.user_id,
+      name:x.name,
+      score:x.score,
+      createdAt:x.created_at
+    }))
+  });
+}
+
+async function dailyReward(request, env, user) {
+  if (!user) return json({code:"unauthorized",message:"Authentication required"},401);
+  if (request.method !== "POST") return json({code:"method_not_allowed"},405);
+
+  // UTC calendar day is used so the rule is deterministic across devices/time zones.
+  const rewardDate = new Date().toISOString().slice(0,10);
+  const rewardCoins = 10;
+  const rewardXp = 5;
+  const rewardId = randomId(16);
+  const now = Date.now();
+
+  const result = await env.DB.batch([
+    env.DB.prepare(
+      "INSERT OR IGNORE INTO daily_rewards(id,user_id,reward_date,coins,xp,created_at) VALUES(?,?,?,?,?,?)"
+    ).bind(rewardId,user.id,rewardDate,rewardCoins,rewardXp,now),
+    env.DB.prepare(
+      "UPDATE users SET coins=coins+?, xp=xp+?, level=? WHERE id=? AND EXISTS (SELECT 1 FROM daily_rewards WHERE user_id=? AND reward_date=? AND id=?)"
+    ).bind(rewardCoins,rewardXp,levelFromXp((Number(user.xp)||0)+rewardXp),user.id,user.id,rewardDate,rewardId)
+  ]);
+
+  const inserted = result?.[0]?.meta?.changes || 0;
+  if (!inserted) {
+    return json({ok:false,claimed:false,code:"already_claimed",message:"Daily reward already claimed today"});
+  }
+
+  const updated = await env.DB.prepare("SELECT coins,xp,level FROM users WHERE id=?").bind(user.id).first();
+  return json({
+    ok:true,
+    claimed:true,
+    reward:{coins:rewardCoins,xp:rewardXp,date:rewardDate},
+    user:{coins:updated?.coins||0,xp:updated?.xp||0,level:updated?.level||1}
+  });
+}
+
+async function store(request, env, path, user) {
+  if (path === "/store" && request.method === "GET") {
+    const r = await env.DB.prepare(
+      "SELECT id,slug,name,description,cost,category,active,created_at FROM store_items WHERE active=1 ORDER BY category, cost, created_at"
+    ).all();
+    return json({items:r.results||[]});
+  }
+
+  if (path === "/store/buy" && request.method === "POST") {
+    if (!user) return json({code:"unauthorized",message:"Authentication required"},401);
+    const b = await body(request);
+    const itemId = String(b.itemId || "").trim();
+    if (!itemId) return json({code:"bad_item",message:"itemId is required"},400);
+
+    const item = await env.DB.prepare(
+      "SELECT id,slug,name,cost,active FROM store_items WHERE id=? AND active=1"
+    ).bind(itemId).first();
+    if (!item) return json({code:"item_not_found",message:"Store item not found"},404);
+
+    const purchaseId = randomId(16);
+    const now = Date.now();
+
+    // D1 batch is atomic: the coin deduction is conditional on sufficient balance,
+    // and the purchase row is written in the same transaction.
+    const result = await env.DB.batch([
+      env.DB.prepare(
+        "UPDATE users SET coins=coins-? WHERE id=? AND coins>=?"
+      ).bind(item.cost,user.id,item.cost),
+      env.DB.prepare(
+        "INSERT INTO purchases(id,user_id,item_id,cost,status,created_at) SELECT ?,?,?,?,?,? WHERE EXISTS (SELECT 1 FROM users WHERE id=? AND coins>=?)"
+      ).bind(purchaseId,user.id,item.id,item.cost,"completed",now,user.id,item.cost)
+    ]);
+
+    const deducted = result?.[0]?.meta?.changes || 0;
+    if (!deducted) {
+      return json({ok:false,code:"insufficient_coins",message:"Not enough coins"},400);
+    }
+
+    const updated = await env.DB.prepare("SELECT coins,xp,level FROM users WHERE id=?").bind(user.id).first();
+    return json({
+      ok:true,
+      purchase:{id:purchaseId,itemId:item.id,name:item.name,cost:item.cost,status:"completed",createdAt:now},
+      user:{coins:updated?.coins||0,xp:updated?.xp||0,level:updated?.level||1}
+    },201);
+  }
+
+  return json({code:"not_found",message:"Store route not found"},404);
+}
+
+async function notifications(request, env, path, user) {
+  if (!user) return json({code:"unauthorized",message:"Authentication required"},401);
+
+  if (path === "/notifications" && request.method === "GET") {
+    const url = new URL(request.url);
+    const limit = clampInt(url.searchParams.get("limit") || 50, 1, 100);
+    const r = await env.DB.prepare(
+      `SELECT id,title,body,read_at,created_at
+       FROM notifications
+       WHERE user_id=? OR user_id IS NULL
+       ORDER BY created_at DESC
+       LIMIT ${limit}`
+    ).bind(user.id).all();
+    return json({
+      notifications:(r.results||[]).map(x=>({
+        id:x.id,title:x.title,body:x.body,readAt:x.read_at,createdAt:x.created_at
+      }))
+    });
+  }
+
+  if (path === "/notifications/read" && request.method === "POST") {
+    const b = await body(request);
+    const now = Date.now();
+    if (b.all === true) {
+      await env.DB.prepare(
+        "UPDATE notifications SET read_at=? WHERE read_at IS NULL AND (user_id=? OR user_id IS NULL)"
+      ).bind(now,user.id).run();
+      return json({ok:true,all:true,readAt:now});
+    }
+
+    const id = String(b.id || "").trim();
+    if (!id) return json({code:"bad_request",message:"Notification id is required"},400);
+    const result = await env.DB.prepare(
+      "UPDATE notifications SET read_at=? WHERE id=? AND read_at IS NULL AND (user_id=? OR user_id IS NULL)"
+    ).bind(now,id,user.id).run();
+    if (!(result?.meta?.changes || 0)) return json({code:"not_found",message:"Notification not found"},404);
+    return json({ok:true,id,readAt:now});
+  }
+
+  return json({code:"not_found",message:"Notification route not found"},404);
+}
+
 async function admin(request, env, path, user) {
   if (!user || user.role!=="admin") return json({code:"forbidden",message:"Admin access required"},403);
   if (path==="/admin/stats") {
@@ -166,8 +377,8 @@ async function admin(request, env, path, user) {
 export async function onRequest(context) {
   const {request,env}=context;
   const url=new URL(request.url); const path=url.pathname.replace(/^\/api/,"")||"/";
-  if (path==="/health" && request.method==="GET") return json({ok:true,service:"Lumitek API",version:"0.3.0",time:Date.now()});
-  if (!path || path==="/") return json({ok:true,service:"Lumitek API",version:"0.3.0"});
+  if (path==="/health" && request.method==="GET") return json({ok:true,service:"Lumitek API",version:"0.3.1",time:Date.now()});
+  if (!path || path==="/") return json({ok:true,service:"Lumitek API",version:"0.3.1"});
   const user=await authUser(request,env);
 
   if (request.method==="POST" && path==="/auth/signup") return signup(request,env);
@@ -178,6 +389,12 @@ export async function onRequest(context) {
   }
   if (request.method==="GET" && path==="/auth/me") return user ? json({user:publicUser(user)}) : json({user:null},401);
   if (request.method==="POST" && path==="/ai") return ai(request,env,user);
+  if (request.method==="GET" && path==="/profile") return profile(request,env,user);
+  if (request.method==="POST" && path==="/games/score") return submitScore(request,env,user);
+  if (request.method==="GET" && path==="/games/leaderboard") return leaderboard(request,env,user);
+  if (path==="/rewards/daily") return dailyReward(request,env,user);
+  if (path==="/store" || path==="/store/buy") return store(request,env,path,user);
+  if (path==="/notifications" || path==="/notifications/read") return notifications(request,env,path,user);
   if (request.method==="POST" && path==="/payments/create") return createPayment(request,env,user);
   if (request.method==="POST" && path==="/payments/verify") return verifyPayment(request,env,user);
   if (path.startsWith("/admin/")) return admin(request,env,path,user);
