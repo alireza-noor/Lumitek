@@ -1,4 +1,4 @@
-/* Lumitek v0.3.0 â€” Cloudflare Pages Function
+/* Lumitek v0.3.0 — Cloudflare Pages Function
    Bind a D1 database as DB and set GEMINI_API_KEY.
    Set ADMIN_EMAIL to the owner's email.
    Payment provider integration is intentionally adapter-based: add your
@@ -277,109 +277,75 @@ async function dailyReward(request, env, user) {
 }
 
 async function store(request, env, user) {
-  if (!env.DB) {
-    return json({
-      code: "db_missing",
-      message: "D1 is not configured"
-    }, 503);
-  }
+  if (!env.DB) return json({code:"db_missing",message:"D1 is not configured"},503);
 
-  const r = await env.DB.prepare(
-    "SELECT id,slug,name,description,cost,category,active,created_at FROM store_items WHERE active=1 ORDER BY cost ASC"
+  const r=await env.DB.prepare(
+    "SELECT id,name,description,price,stock,created_at FROM store_items WHERE active=1 ORDER BY price ASC"
   ).all();
 
-  return json({
-    items: r.results || []
-  });
+  return json({items:r.results||[]});
 }
 
 async function storeBuy(request, env, user) {
-  if (!user) {
-    return json({
-      code: "unauthorized",
-      message: "Authentication required"
-    }, 401);
-  }
+  if (!user) return json({code:"unauthorized",message:"Authentication required"},401);
+  if (!env.DB) return json({code:"db_missing",message:"D1 is not configured"},503);
 
-  if (!env.DB) {
-    return json({
-      code: "db_missing",
-      message: "D1 is not configured"
-    }, 503);
-  }
-
-  const b = await body(request);
-  const itemId = String(b.itemId || "").trim();
+  const b=await body(request);
+  const itemId=String(b.itemId||"").trim();
 
   if (!itemId) {
-    return json({
-      code: "bad_request",
-      message: "itemId is required"
-    }, 400);
+    return json({code:"bad_request",message:"itemId is required"},400);
   }
 
-  const item = await env.DB.prepare(
-    "SELECT id,name,description,cost,category,active FROM store_items WHERE id=?"
+  const item=await env.DB.prepare(
+    "SELECT id,name,description,price,stock,active FROM store_items WHERE id=?"
   ).bind(itemId).first();
 
   if (!item || !item.active) {
-    return json({
-      code: "item_not_found",
-      message: "Store item not found"
-    }, 404);
+    return json({code:"item_not_found",message:"Store item not found"},404);
   }
 
-  const cost = Math.max(0, Math.floor(Number(item.cost)));
+  if (item.stock!==null && item.stock!==undefined && item.stock<=0) {
+    return json({code:"out_of_stock",message:"Item is out of stock"},409);
+  }
 
-  const result = await env.DB.prepare(
+  const price=Math.max(0,Math.floor(Number(item.price)));
+
+  const result=await env.DB.prepare(
     "UPDATE users SET coins=coins-? WHERE id=? AND coins>=?"
-  ).bind(cost, user.id, cost).run();
+  ).bind(price,user.id,price).run();
 
-  if (!result.meta || result.meta.changes !== 1) {
-    return json({
-      code: "insufficient_coins",
-      message: "Not enough Coins"
-    }, 409);
+  if (!result.meta || result.meta.changes!==1) {
+    return json({code:"insufficient_coins",message:"Not enough Coins"},409);
   }
 
-  const purchaseId = randomId(16);
+  const purchaseId=randomId(16);
 
-  try {
+  if (item.stock!==null && item.stock!==undefined) {
     await env.DB.prepare(
-      "INSERT INTO purchases(id,user_id,item_id,cost,status,created_at) VALUES(?,?,?,?,?,?)"
-    ).bind(
-      purchaseId,
-      user.id,
-      itemId,
-      cost,
-      "completed",
-      Date.now()
-    ).run();
-  } catch (e) {
-    await env.DB.prepare(
-      "UPDATE users SET coins=coins+? WHERE id=?"
-    ).bind(cost, user.id).run();
-
-    return json({
-      code: "purchase_failed",
-      message: "Purchase could not be completed"
-    }, 500);
+      "UPDATE store_items SET stock=stock-1 WHERE id=? AND stock>0"
+    ).bind(itemId).run();
   }
 
-  const updated = await env.DB.prepare(
+  await env.DB.prepare(
+    "INSERT INTO purchases(id,user_id,item_id,price,created_at) VALUES(?,?,?,?,?)"
+  ).bind(purchaseId,user.id,itemId,price,Date.now()).run();
+
+  const updated=await env.DB.prepare(
     "SELECT coins,xp,level FROM users WHERE id=?"
   ).bind(user.id).first();
 
   return json({
-    ok: true,
-    purchase: {
-      id: purchaseId,
-      itemId: itemId,
-      cost: cost
+    ok:true,
+    purchase:{
+      id:purchaseId,
+      itemId:itemId,
+      price:price
     },
-    user: updated
-  }, 201);
+    user:updated
+  },201);
 }
+
 async function notifications(request, env, user) {
   if (!user) return json({code:"unauthorized",message:"Authentication required"},401);
   if (!env.DB) return json({code:"db_missing",message:"D1 is not configured"},503);

@@ -6,3 +6,6 @@ pages_build_output_dir = "."
 binding = "DB"
 database_name = "lumitek-db"
 database_id = "01fb7308-5030-4c9a-be65-50a5bbb30c85"
+
+[ai]
+binding = "AI"
